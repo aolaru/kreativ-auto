@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <circle cx="305" cy="248" r="112" fill="#CBD5E1"/>
+  <circle cx="305" cy="248" r="70" fill="#F8FAFC"/>
+  <circle cx="305" cy="248" r="18" fill="#94A3B8"/>
+  <circle cx="305" cy="177" r="9" fill="#94A3B8"/>
+  <circle cx="366" cy="213" r="9" fill="#94A3B8"/>
+  <circle cx="366" cy="283" r="9" fill="#94A3B8"/>
+  <circle cx="305" cy="319" r="9" fill="#94A3B8"/>
+  <circle cx="244" cy="283" r="9" fill="#94A3B8"/>
+  <circle cx="244" cy="213" r="9" fill="#94A3B8"/>
+  <text x="453" y="134" fill="#0F1720" font-family="Arial, sans-serif" font-size="36" font-weight="700">Raybestos Element3</text>
+  <path d="M453 170H579" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="453" y="220" fill="#475569" font-family="Arial, sans-serif" font-size="24">Coated front rotor</text>
+  <text x="453" y="364" fill="#64748B" font-family="Arial, sans-serif" font-size="22">Daily-driver corrosion resistance</text>
+  <defs>
+    <linearGradient id="bg" x1="94" y1="82" x2="628" y2="409" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+</svg>

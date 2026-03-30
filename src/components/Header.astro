@@ -1,0 +1,36 @@
+---
+const navItems = [
+  { href: "/cars/", label: "Cars" },
+  { href: "/problems/", label: "Problems" },
+  { href: "/best/", label: "Best Parts" },
+  { href: "/tools/", label: "Tools" }
+];
+---
+
+<header class="border-b border-black/5 bg-white/85 backdrop-blur">
+  <div class="container-shell flex items-center justify-between gap-6 py-4">
+    <a href="/" class="flex items-center gap-3 text-ink">
+      <span class="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-sm font-bold uppercase tracking-[0.2em] text-white">
+        KA
+      </span>
+      <span>
+        <span class="block text-lg font-semibold">Kreativ Auto</span>
+        <span class="block text-sm text-steel">Automotive guides, diagnostics, and affiliate picks</span>
+      </span>
+    </a>
+
+    <nav aria-label="Primary" class="hidden md:block">
+      <ul class="flex items-center gap-6 text-sm font-medium text-steel">
+        {
+          navItems.map((item) => (
+            <li>
+              <a class="transition hover:text-accent" href={item.href}>
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

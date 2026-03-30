@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const bestPages = await getCollection("best");
+---
+
+<BaseLayout title="Best Parts" description="Comparison pages for the best automotive parts by vehicle and category.">
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface p-8 sm:p-10">
+      <p class="eyebrow">Best Parts</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Affiliate-ready parts comparisons</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        Comparison pages combine search-friendly structure, fast tables, and concise buyer guidance built for commercial intent.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6">
+      {
+        bestPages.map((entry) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/best/${entry.id}/`}>
+            <p class="eyebrow">{entry.data.category}</p>
+            <h2 class="mt-3 text-2xl font-semibold text-ink">{entry.data.title}</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">
+              {entry.data.products.length} curated products for {entry.data.car_model}.
+            </p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Page Not Found"
+  description="The page you requested could not be found on Kreativ Auto."
+  noindex={true}
+>
+  <div class="container-shell py-16 sm:py-24">
+    <div class="surface max-w-3xl p-8 sm:p-10">
+      <p class="eyebrow">404</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">That page does not exist</h1>
+      <p class="mt-4 text-lg leading-8 text-steel">
+        The URL may be outdated, the page may have moved, or the content has not been published yet.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a class="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white hover:bg-accent" href="/">
+          Go to homepage
+        </a>
+        <a class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-ink hover:border-accent hover:text-accent" href="/cars/">
+          Browse car hubs
+        </a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,37 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import FAQBlock from "../components/FAQBlock.astro";
+
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  intro: string;
+  faqs?: FAQItem[];
+  image?: string;
+  modifiedTime?: Date;
+}
+
+const { title, description, intro, faqs = [], image, modifiedTime } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={image} modifiedTime={modifiedTime}>
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface overflow-hidden p-8 sm:p-10">
+      <p class="eyebrow">Kreativ Auto</p>
+      <h1 class="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+        {title}
+      </h1>
+      <p class="mt-5 max-w-3xl text-lg leading-8 text-steel">{intro}</p>
+    </div>
+
+    <div class="mt-10 space-y-8">
+      <slot />
+      <FAQBlock items={faqs} />
+    </div>
+  </div>
+</BaseLayout>

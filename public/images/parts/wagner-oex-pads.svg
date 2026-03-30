@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <path d="M168 309C168 250.458 215.458 203 274 203H344V349H168V309Z" fill="#0F1720"/>
+  <path d="M546 309C546 250.458 498.542 203 440 203H370V349H546V309Z" fill="#475569"/>
+  <rect x="289" y="214" width="134" height="127" rx="16" fill="#CBD5E1"/>
+  <path d="M132 140H292" stroke="#0F1720" stroke-opacity=".7" stroke-width="10" stroke-linecap="round"/>
+  <text x="131" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">Wagner OEX</text>
+  <text x="131" y="390" fill="#475569" font-family="Arial, sans-serif" font-size="24">Ceramic street pad set</text>
+  <defs>
+    <linearGradient id="bg" x1="100" y1="86" x2="622" y2="416" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E5E7EB"/>
+    </linearGradient>
+  </defs>
+</svg>

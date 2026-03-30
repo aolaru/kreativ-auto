@@ -1,0 +1,97 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+
+export async function getStaticPaths() {
+  const problems = await getCollection("problems");
+
+  return problems.map((problem) => ({
+    params: { slug: problem.id },
+    props: { slug: problem.id }
+  }));
+}
+
+const { slug } = Astro.props;
+const problem = await getEntry("problems", slug);
+
+if (!problem) {
+  throw new Error(`Problem entry not found for slug: ${slug}`);
+}
+
+const [carEntries, bestEntries] = await Promise.all([
+  getCollection("cars"),
+  getCollection("best")
+]);
+
+const relatedCars = carEntries
+  .filter((entry) => problem.data.relatedCars.includes(entry.id))
+  .map((entry) => ({
+    href: `/cars/${entry.id}/`,
+    title: entry.data.title,
+    description: entry.data.excerpt ?? entry.data.metaDescription ?? entry.data.description,
+    eyebrow: "Car hub"
+  }));
+
+const relatedBest = bestEntries
+  .filter((entry) => problem.data.relatedBest.includes(entry.id))
+  .map((entry) => ({
+    href: `/best/${entry.id}/`,
+    title: entry.data.title,
+    description: entry.data.excerpt ?? entry.data.metaDescription ?? `${entry.data.products.length} product picks for ${entry.data.car_model}.`,
+    eyebrow: entry.data.category
+  }));
+
+const seoTitle = problem.data.metaTitle ?? problem.data.title;
+const seoDescription =
+  problem.data.metaDescription ??
+  `Diagnostic guide covering symptoms, likely causes, and repair solutions for: ${problem.data.title.toLowerCase()}.`;
+const socialImage = problem.data.heroImage ?? problem.data.recommendedParts[0]?.image;
+---
+
+<ContentLayout
+  title={seoTitle}
+  description={seoDescription}
+  intro="This page structure is optimized for high-intent searches by clearly separating what the driver notices, what may be causing it, and what to do next."
+  faqs={problem.data.faqs}
+  image={socialImage}
+  modifiedTime={problem.data.updatedAt}
+>
+  <Section id="symptoms" title="Symptoms" intro="Describe the behavior drivers notice before parts are replaced or inspections begin.">
+    <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
+      {problem.data.symptoms.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ul>
+  </Section>
+
+  <Section id="causes" title="Causes" intro="List the most likely culprits from common to less frequent so diagnosis stays efficient.">
+    <ol class="space-y-3 text-sm leading-6 text-steel">
+      {problem.data.causes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ol>
+  </Section>
+
+  <Section id="solutions" title="Solutions" intro="Solutions should lead readers from inspection to repair, while keeping the content useful even before purchase.">
+    <ol class="space-y-3 text-sm leading-6 text-steel">
+      {problem.data.solutions.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ol>
+  </Section>
+
+  <Section id="recommended-parts" title="Recommended parts" intro="Affiliate-ready blocks can sit after the diagnostic guidance once reader intent is clearer.">
+    <div class="grid gap-6 md:grid-cols-2">
+      {problem.data.recommendedParts.map((product) => <ProductCard product={product} />)}
+    </div>
+  </Section>
+
+  <RelatedLinks
+    title="Related car pages"
+    intro="Show readers which vehicle-specific pages this symptom commonly connects back to."
+    items={relatedCars}
+  />
+
+  <RelatedLinks
+    title="Related best-parts guides"
+    intro="Readers often want buying help immediately after understanding the likely repair path."
+    items={relatedBest}
+  />
+</ContentLayout>

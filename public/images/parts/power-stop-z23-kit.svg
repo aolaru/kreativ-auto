@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#FFF7ED"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <circle cx="265" cy="252" r="96" fill="#CBD5E1"/>
+  <circle cx="265" cy="252" r="58" fill="#F8FAFC"/>
+  <circle cx="265" cy="252" r="14" fill="#94A3B8"/>
+  <path d="M388 187C388 163.804 406.804 145 430 145H516C539.196 145 558 163.804 558 187V319H388V187Z" fill="#1E293B"/>
+  <path d="M412 319H536" stroke="#FB923C" stroke-width="12" stroke-linecap="round"/>
+  <text x="117" y="112" fill="#7C2D12" font-family="Arial, sans-serif" font-size="38" font-weight="700">Power Stop Z23</text>
+  <text x="117" y="390" fill="#9A3412" font-family="Arial, sans-serif" font-size="24">Pad and rotor brake kit</text>
+  <defs>
+    <linearGradient id="bg" x1="89" y1="86" x2="627" y2="411" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#FFEDD5"/>
+    </linearGradient>
+  </defs>
+</svg>

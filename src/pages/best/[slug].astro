@@ -1,0 +1,90 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import ComparisonTable from "../../components/ComparisonTable.astro";
+import ProductCard from "../../components/ProductCard.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("best");
+
+  return entries.map((entry) => ({
+    params: { slug: entry.id },
+    props: { slug: entry.id }
+  }));
+}
+
+const { slug } = Astro.props;
+const entry = await getEntry("best", slug);
+
+if (!entry) {
+  throw new Error(`Best entry not found for slug: ${slug}`);
+}
+
+const [carEntries, problemEntries] = await Promise.all([
+  getCollection("cars"),
+  getCollection("problems")
+]);
+
+const relatedCars = carEntries
+  .filter((car) => entry.data.relatedCars.includes(car.id))
+  .map((car) => ({
+    href: `/cars/${car.id}/`,
+    title: car.data.title,
+    description: car.data.excerpt ?? car.data.metaDescription ?? car.data.description,
+    eyebrow: "Car hub"
+  }));
+
+const relatedProblems = problemEntries
+  .filter((problem) => entry.data.relatedProblems.includes(problem.id))
+  .map((problem) => ({
+    href: `/problems/${problem.id}/`,
+    title: problem.data.title,
+    description:
+      problem.data.excerpt ?? problem.data.metaDescription ?? `Solutions: ${problem.data.solutions.slice(0, 2).join(", ")}.`,
+    eyebrow: "Problem guide"
+  }));
+
+const seoTitle = entry.data.metaTitle ?? entry.data.title;
+const seoDescription =
+  entry.data.metaDescription ?? `Comparison guide for the best ${entry.data.category.toLowerCase()} for ${entry.data.car_model}.`;
+const socialImage = entry.data.heroImage ?? entry.data.products[0]?.image;
+---
+
+<ContentLayout
+  title={seoTitle}
+  description={seoDescription}
+  intro="This commercial page pattern supports both ranking and conversions with a compact table, product summaries, and visible affiliate actions."
+  faqs={entry.data.faqs}
+  image={socialImage}
+  modifiedTime={entry.data.updatedAt}
+>
+  <Section id="comparison-table" title="Comparison table" intro="Lead with a table so users can scan price, rating, and positioning without extra scrolling.">
+    <ComparisonTable products={entry.data.products} />
+  </Section>
+
+  <Section id="product-cards" title="Product cards" intro="Use cards below the table to add nuance around fitment, value, or performance bias.">
+    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {entry.data.products.map((product) => <ProductCard product={product} />)}
+    </div>
+  </Section>
+
+  <Section id="buying-advice" title="Buying advice" intro="Commercial content performs better when buyers understand why one option is better for their use case.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      {entry.data.buyingAdvice.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ul>
+  </Section>
+
+  <RelatedLinks
+    title="Related car hubs"
+    intro="Support commercial pages with adjacent ownership content so readers can validate fitment and context."
+    items={relatedCars}
+  />
+
+  <RelatedLinks
+    title="Related problem guides"
+    intro="Tie product comparisons back to the repair symptoms that often trigger purchase intent."
+    items={relatedProblems}
+  />
+</ContentLayout>

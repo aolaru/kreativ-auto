@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Automotive Tools" description="Future-ready section for calculators, service interval tools, and ownership utilities.">
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface p-8 sm:p-10">
+      <p class="eyebrow">Tools</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Automotive tools coming next</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        This section is reserved for interactive features such as maintenance cost calculators, brake life estimators, and fluid capacity tools.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      <article class="surface p-6">
+        <h2 class="text-2xl font-semibold text-ink">Planned utility pages</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Brake replacement cost calculator</li>
+          <li>Oil service interval guide by vehicle</li>
+          <li>Tire size and compatibility helper</li>
+        </ul>
+      </article>
+      <article class="surface p-6">
+        <h2 class="text-2xl font-semibold text-ink">Implementation note</h2>
+        <p class="mt-4 text-sm leading-6 text-steel">
+          Astro’s file-based routing keeps the tools area isolated so interactive features can be added later without disturbing the content publishing flow.
+        </p>
+      </article>
+    </div>
+  </div>
+</BaseLayout>

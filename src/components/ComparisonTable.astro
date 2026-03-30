@@ -1,0 +1,53 @@
+---
+interface Product {
+  name: string;
+  price: string;
+  rating: number;
+  affiliate_url: string;
+  summary?: string;
+}
+
+interface Props {
+  products: Product[];
+}
+
+const { products } = Astro.props;
+---
+
+<div class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+  <div class="overflow-x-auto">
+    <table class="min-w-full divide-y divide-slate-200 text-left text-sm">
+      <thead class="bg-slate-50 text-steel">
+        <tr>
+          <th class="px-4 py-4 font-semibold">Product</th>
+          <th class="px-4 py-4 font-semibold">Price</th>
+          <th class="px-4 py-4 font-semibold">Rating</th>
+          <th class="px-4 py-4 font-semibold">Why it stands out</th>
+          <th class="px-4 py-4 font-semibold">Link</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100">
+        {
+          products.map((product) => (
+            <tr class="align-top">
+              <td class="px-4 py-4 font-semibold text-ink">{product.name}</td>
+              <td class="px-4 py-4 text-steel">{product.price}</td>
+              <td class="px-4 py-4 text-steel">{product.rating.toFixed(1)} / 5</td>
+              <td class="px-4 py-4 text-steel">{product.summary ?? "Balanced value and fitment confidence."}</td>
+              <td class="px-4 py-4">
+                <a
+                  class="font-semibold text-accent underline decoration-accent/30 underline-offset-4"
+                  href={product.affiliate_url}
+                  rel="nofollow sponsored"
+                  target="_blank"
+                >
+                  View deal
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

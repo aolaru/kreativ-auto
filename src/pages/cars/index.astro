@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const cars = await getCollection("cars");
+---
+
+<BaseLayout title="Car Hubs" description="Vehicle-specific pages covering maintenance, common issues, and recommended parts.">
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface p-8 sm:p-10">
+      <p class="eyebrow">Cars</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Car-specific content hubs</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        Each hub is designed to rank for model-specific searches while connecting ownership advice, problems, and parts recommendations.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6">
+      {
+        cars.map((car) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
+            {
+              car.data.image && (
+                <div class="mb-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                  <img
+                    src={car.data.image}
+                    alt={car.data.title}
+                    class="h-52 w-full object-cover"
+                    loading="lazy"
+                    width="960"
+                    height="640"
+                  />
+                </div>
+              )
+            }
+            <p class="eyebrow">{car.data.brand}</p>
+            <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">{car.data.description}</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

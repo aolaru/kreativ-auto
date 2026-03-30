@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <path d="M183 308C183 251.115 229.115 205 286 205H347V348H183V308Z" fill="#111827"/>
+  <path d="M537 308C537 251.115 490.885 205 434 205H373V348H537V308Z" fill="#1F2937"/>
+  <rect x="289" y="214" width="141" height="127" rx="18" fill="#D1D5DB"/>
+  <path d="M123 140H254" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="123" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">Akebono ProACT</text>
+  <text x="123" y="390" fill="#475569" font-family="Arial, sans-serif" font-size="24">Ultra-premium ceramic pads</text>
+  <defs>
+    <linearGradient id="bg" x1="103" y1="86" x2="618" y2="413" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E5E7EB"/>
+    </linearGradient>
+  </defs>
+</svg>

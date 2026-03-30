@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <path d="M178 303C178 247.219 223.219 202 279 202H337V347H178V303Z" fill="#1E293B"/>
+  <path d="M543 303C543 247.219 497.781 202 442 202H384V347H543V303Z" fill="#334155"/>
+  <rect x="289" y="210" width="142" height="130" rx="18" fill="#94A3B8"/>
+  <path d="M130 140H314" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="129" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">Bosch QuietCast</text>
+  <text x="129" y="390" fill="#475569" font-family="Arial, sans-serif" font-size="24">Premium ceramic brake pads</text>
+  <defs>
+    <linearGradient id="bg" x1="99" y1="84" x2="616" y2="413" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#E2E8F0"/>
+    </linearGradient>
+  </defs>
+</svg>

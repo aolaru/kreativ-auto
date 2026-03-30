@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0f1720;
+  --color-steel: #334155;
+  --color-sand: #f5efe7;
+  --color-accent: #c2410c;
+  --color-chrome: #e2e8f0;
+  --shadow-panel: 0 18px 40px rgba(15, 23, 32, 0.08);
+}
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(194, 65, 12, 0.08), transparent 28%),
+    linear-gradient(180deg, #fcfaf7 0%, #f4efe7 100%);
+  color: #0f1720;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+.surface {
+  @apply rounded-3xl border border-white/70 bg-white/90 shadow-panel backdrop-blur;
+}
+
+.eyebrow {
+  @apply text-xs font-semibold uppercase tracking-[0.25em] text-accent;
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <rect width="1200" height="800" fill="#F4EFE7"/>
+  <rect x="48" y="54" width="1104" height="692" rx="36" fill="url(#bg)"/>
+  <path d="M203 502C203 442.905 250.905 395 310 395H747C794.697 395 837.936 422.154 857.313 464.88L896 550H203V502Z" fill="#DBE4EC"/>
+  <path d="M311 395L394 286H674C725.502 286 772.506 315.301 794 362L809 395H311Z" fill="#EFF4F8"/>
+  <path d="M269 383H340L393 304H340L269 383Z" fill="#C8D2DB"/>
+  <path d="M802 387L760 311H650L685 387H802Z" fill="#C8D2DB"/>
+  <rect x="401" y="310" width="222" height="78" rx="18" fill="#9FB2C0"/>
+  <rect x="629" y="310" width="122" height="78" rx="18" fill="#B7C6D0"/>
+  <circle cx="358" cy="552" r="80" fill="#111827"/>
+  <circle cx="358" cy="552" r="41" fill="#CBD5E1"/>
+  <circle cx="770" cy="552" r="80" fill="#111827"/>
+  <circle cx="770" cy="552" r="41" fill="#CBD5E1"/>
+  <path d="M940 214H1041" stroke="#FB923C" stroke-width="12" stroke-linecap="round"/>
+  <path d="M940 260H1100" stroke="#1E293B" stroke-opacity=".75" stroke-width="12" stroke-linecap="round"/>
+  <path d="M940 308H1067" stroke="#1E293B" stroke-opacity=".35" stroke-width="12" stroke-linecap="round"/>
+  <text x="941" y="170" fill="#0F1720" font-family="Arial, sans-serif" font-size="48" font-weight="700">VW Tiguan 2020</text>
+  <text x="941" y="360" fill="#475569" font-family="Arial, sans-serif" font-size="26">Compact SUV hub page</text>
+  <defs>
+    <linearGradient id="bg" x1="110" y1="112" x2="1022" y2="698" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EEF2F6"/>
+    </linearGradient>
+  </defs>
+</svg>

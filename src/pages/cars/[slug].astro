@@ -1,0 +1,144 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import ProductCard from "../../components/ProductCard.astro";
+
+export async function getStaticPaths() {
+  const cars = await getCollection("cars");
+
+  return cars.map((car) => ({
+    params: { slug: car.id },
+    props: { slug: car.id }
+  }));
+}
+
+const { slug } = Astro.props;
+const car = await getEntry("cars", slug);
+
+if (!car) {
+  throw new Error(`Car entry not found for slug: ${slug}`);
+}
+
+const [problemEntries, bestEntries] = await Promise.all([
+  getCollection("problems"),
+  getCollection("best")
+]);
+
+const relatedProblems = problemEntries
+  .filter((entry) => car.data.relatedProblems.includes(entry.id))
+  .map((entry) => ({
+    href: `/problems/${entry.id}/`,
+    title: entry.data.title,
+    description: entry.data.excerpt ?? entry.data.metaDescription ?? `Symptoms: ${entry.data.symptoms.slice(0, 2).join(", ")}.`,
+    eyebrow: "Problem guide"
+  }));
+
+const relatedBest = bestEntries
+  .filter((entry) => car.data.relatedBest.includes(entry.id))
+  .map((entry) => ({
+    href: `/best/${entry.id}/`,
+    title: entry.data.title,
+    description: entry.data.excerpt ?? entry.data.metaDescription ?? `${entry.data.products.length} affiliate-ready product picks.`,
+    eyebrow: entry.data.category
+  }));
+
+const seoTitle = car.data.metaTitle ?? car.data.title;
+const seoDescription = car.data.metaDescription ?? car.data.description;
+const socialImage = car.data.heroImage ?? car.data.image;
+---
+
+<ContentLayout
+  title={seoTitle}
+  description={seoDescription}
+  intro={`${car.data.brand} ${car.data.model} ${car.data.year} ownership guide with common issues, recommended parts, and maintenance advice.`}
+  faqs={car.data.faqs}
+  image={socialImage}
+  modifiedTime={car.data.updatedAt}
+>
+  <Section
+    id="overview"
+    title="Overview"
+    intro="A quick view of what owners and shoppers should know before diving into repairs or upgrades."
+  >
+    <div class="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
+      <div>
+        {
+          car.data.image && (
+            <div class="mb-5 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50">
+              <img
+                src={car.data.image}
+                alt={car.data.title}
+                class="h-72 w-full object-cover sm:h-80"
+                width="1200"
+                height="800"
+              />
+            </div>
+          )
+        }
+        <div class="max-w-none text-base leading-7 text-steel">
+          <p>{car.data.description}</p>
+        </div>
+      </div>
+      <div class="rounded-3xl bg-slate-50 p-6">
+        <dl class="grid gap-4 text-sm">
+          <div>
+            <dt class="font-semibold text-ink">Brand</dt>
+            <dd class="mt-1 text-steel">{car.data.brand}</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-ink">Model</dt>
+            <dd class="mt-1 text-steel">{car.data.model}</dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-ink">Year</dt>
+            <dd class="mt-1 text-steel">{car.data.year}</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    id="common-problems"
+    title="Common problems"
+    intro="Use this section to build internal links to deeper symptom-specific guides."
+  >
+    <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
+      {car.data.commonProblems.map((problem) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{problem}</li>)}
+    </ul>
+  </Section>
+
+  <Section
+    id="recommended-parts"
+    title="Recommended parts"
+    intro="Parts are structured for affiliate use with clear pricing and outbound calls to action."
+  >
+    <div class="grid gap-6 md:grid-cols-2">
+      {car.data.recommendedParts.map((product) => <ProductCard product={product} />)}
+    </div>
+  </Section>
+
+  <Section
+    id="maintenance-tips"
+    title="Maintenance tips"
+    intro="Keep these bullets specific and practical so the page earns repeat visits and links."
+  >
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      {car.data.maintenanceTips.map((tip) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{tip}</li>)}
+    </ul>
+  </Section>
+
+  <RelatedLinks
+    title="Related problem guides"
+    intro="Connect the car hub to symptom-led diagnosis pages so readers can move from general ownership research to specific repair intent."
+    items={relatedProblems}
+  />
+
+  <RelatedLinks
+    title="Related best parts pages"
+    intro="Commercial pages should sit close to the ownership and repair content they support."
+    items={relatedBest}
+  />
+</ContentLayout>
