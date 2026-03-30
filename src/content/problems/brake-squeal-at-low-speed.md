@@ -1,8 +1,8 @@
 ---
 title: Brake squeal at low speed
 metaTitle: "Brake Squeal at Low Speed: Causes, Fixes, and Parts to Check"
-metaDescription: Diagnose low-speed brake squeal by reviewing common pad, rotor, and hardware causes before buying replacement parts.
-excerpt: Repair guide for low-speed brake squeal with practical inspection steps and parts recommendations.
+metaDescription: Diagnose low-speed brake squeal by checking the common pad, rotor, and hardware causes before buying new parts.
+excerpt: Low-speed brake squeal is annoying, but it is usually fixable if you check the friction material and hardware properly.
 heroImage: /images/parts/akebono-proact-pads.svg
 updatedAt: 2026-03-30
 relatedCars:
@@ -41,4 +41,4 @@ faqs:
     answer: Often yes. A quality ceramic pad tends to be quieter and cleaner in daily driving than cheaper alternatives.
 ---
 
-Low-speed brake squeal is a strong commercial-intent topic because many readers are already comparing replacement pads by the time they search it.
+Low-speed brake squeal is one of those problems that makes a car feel worse than it is. Sometimes it needs new pads. Sometimes it just needs better hardware cleanup and a more sensible pad choice. The key is not to treat every squeal like a full brake disaster.

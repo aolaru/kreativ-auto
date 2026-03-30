@@ -1,8 +1,8 @@
 ---
 title: Car shakes when braking
 metaTitle: "Car Shakes When Braking: Causes, Fixes, and Parts to Check"
-metaDescription: Diagnose why a car shakes when braking by reviewing the most common symptoms, causes, and repair solutions before buying parts.
-excerpt: Symptom-led diagnostic guide for brake vibration, pulsing pedals, and likely rotor or suspension causes.
+metaDescription: Diagnose why a car shakes when braking by checking the most common causes first, before wasting money on the wrong parts.
+excerpt: If the car shakes when braking, start with the obvious brake and front-end checks before guessing.
 heroImage: /images/parts/raybestos-element3-rotor.svg
 updatedAt: 2026-03-30
 relatedCars:
@@ -41,4 +41,4 @@ faqs:
     answer: Mild vibration may still allow short trips, but worsening shake, noise, or longer stopping distances should be treated as a near-term safety repair.
 ---
 
-This diagnostic template is built for symptom-led searches. It keeps the core information scannable while leaving room for trim-specific notes, mechanic checks, and internal links to car-model pages.
+If the car shakes when braking, the mistake most people make is jumping straight to “warped rotors” and ordering parts too early. Sometimes it is the rotors. Sometimes it is pad deposits, sloppy hardware, wheel torque, or worn front-end parts making the shake feel worse than it really is. The right move is to check the basics first and then spend money once the problem is clear.

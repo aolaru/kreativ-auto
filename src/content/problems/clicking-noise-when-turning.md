@@ -1,8 +1,8 @@
 ---
 title: Clicking noise when turning
 metaTitle: "Clicking Noise When Turning: Causes, Fixes, and Parts to Check"
-metaDescription: Learn what usually causes a clicking noise when turning, how to diagnose it, and which axle-related parts are often involved.
-excerpt: Diagnostic guide for clicking during turns, CV axle failure, and related steering or suspension checks.
+metaDescription: Learn what usually causes a clicking noise when turning and how to confirm whether the CV axle is really the problem.
+excerpt: Clicking in turns usually points to the axle, but it still pays to confirm before ordering parts.
 heroImage: /images/parts/cv-axle-kit.svg
 updatedAt: 2026-03-30
 relatedCars:
@@ -41,4 +41,4 @@ faqs:
     answer: Short-term driving is often possible, but the joint can worsen quickly once grease is lost, so it should be repaired soon.
 ---
 
-Turning-click pages are useful because they bridge symptom searches with a clearly defined replacement part category.
+When a car clicks on turns, people often know the answer before they know why. Yes, it is often the CV axle. But it still makes sense to look for torn boots, grease loss, and side-to-side clues before replacing anything.

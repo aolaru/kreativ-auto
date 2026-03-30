@@ -3,11 +3,11 @@ title: VW Tiguan 2020
 brand: Volkswagen
 model: Tiguan
 year: 2020
-description: The 2020 VW Tiguan is a practical compact SUV with broad family appeal, but owners tend to research brakes, suspension feel, and routine maintenance intervals early in the ownership cycle.
+description: The 2020 VW Tiguan is a solid family SUV, but it is also the kind of vehicle where brake feel, front-end vibration, and routine maintenance start coming up pretty early if the car spends a lot of time in traffic.
 image: /images/cars/vw-tiguan-2020.svg
 metaTitle: VW Tiguan 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore the most common VW Tiguan 2020 issues, practical maintenance tips, and recommended brake-related parts for daily drivers.
-excerpt: Ownership hub for the 2020 VW Tiguan focused on common issues, service priorities, and recommended parts.
+excerpt: What usually goes wrong on a 2020 VW Tiguan, what matters most in maintenance, and which parts are worth looking at first.
 heroImage: /images/cars/vw-tiguan-2020.svg
 updatedAt: 2026-03-30
 relatedProblems:
@@ -42,4 +42,4 @@ faqs:
     answer: They can be, as long as the pad compound matches your driving style and the part is confirmed for your trim and axle setup.
 ---
 
-Use car hub pages to connect ownership research with deeper transactional and diagnostic content. This sample entry shows how a single vehicle page can support internal linking, FAQ markup, and future expansion into service or accessory coverage.
+If you own a Tiguan like this, the useful stuff is not complicated: keep an eye on the brakes, do not ignore vibration, and do not assume every front-end issue is something major. A lot of problems start small on these cars, which is exactly why it makes sense to catch them early.

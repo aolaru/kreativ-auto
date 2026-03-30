@@ -1,8 +1,8 @@
 ---
 title: Engine misfires at idle
 metaTitle: "Engine Misfires at Idle: Common Causes, Fixes, and Parts to Check"
-metaDescription: Diagnose why an engine misfires at idle with a practical breakdown of symptoms, likely causes, and ignition-related repair paths.
-excerpt: Symptom-led diagnostic guide for idle misfires, rough running, and common ignition or fuel-delivery causes.
+metaDescription: Diagnose an engine misfire at idle by checking the usual ignition and air-leak causes before throwing random parts at it.
+excerpt: A rough idle misfire usually has a short list of real causes. Start there before wasting money.
 heroImage: /images/parts/delphi-ignition-coils.svg
 updatedAt: 2026-03-30
 relatedCars:
@@ -41,4 +41,4 @@ faqs:
     answer: Not always, but if the plugs are worn and the coils are aging, replacing both can prevent repeat labor and recurring misfire issues.
 ---
 
-Idle misfire pages tend to rank well because the symptom is common, urgent, and strongly tied to repair or parts-purchase intent.
+An idle misfire feels worse than it looks because the car is sitting still and you notice every stumble. The good news is that this problem usually follows a fairly predictable path: plugs, coils, vacuum leaks, then fuel. Start in that order unless you already have scan data pointing somewhere else.

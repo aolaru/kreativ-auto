@@ -1,8 +1,8 @@
 ---
 title: Humming noise that gets louder with speed
 metaTitle: "Humming Noise That Gets Louder With Speed: Causes, Fixes, and Parts to Check"
-metaDescription: Diagnose humming or growling that increases with speed by reviewing likely wheel bearing, tire, and hub-related causes.
-excerpt: Troubleshooting guide for humming road noise with a focus on wheel bearings and hub assemblies.
+metaDescription: Diagnose a humming noise that gets louder with speed by separating tire noise from wheel-bearing and hub problems.
+excerpt: A speed-related hum usually comes down to tires or wheel bearings. The job is figuring out which one before spending money.
 heroImage: /images/parts/timken-wheel-bearing.svg
 updatedAt: 2026-03-30
 relatedCars:
@@ -41,4 +41,4 @@ faqs:
     answer: It can become one. Early noise may seem minor, but a failing bearing should be replaced before play or heat buildup gets worse.
 ---
 
-This kind of noise-diagnosis page converts well because it sits right between early symptom research and a clear replacement part decision.
+This is one of the most misdiagnosed noise complaints because tires and bearings can sound similar from inside the cabin. A quick rotation test and a careful road test can save you from replacing the wrong part.
