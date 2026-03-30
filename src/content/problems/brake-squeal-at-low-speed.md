@@ -3,7 +3,7 @@ title: Brake squeal at low speed
 metaTitle: "Brake Squeal at Low Speed: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose low-speed brake squeal by checking the common pad, rotor, and hardware causes before buying new parts.
 excerpt: Low-speed brake squeal is annoying, but it is usually fixable if you check the friction material and hardware properly.
-heroImage: /images/parts/akebono-proact-pads.svg
+heroImage: /images/photos/parts/brake-pads.jpg
 updatedAt: 2026-03-30
 relatedCars:
   - toyota-rav4-2021
@@ -27,13 +27,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://example.com/akebono-proact-rav4
     summary: Quiet ceramic pad option designed for daily drivers who want low dust and less squeal.
-    image: /images/parts/akebono-proact-pads.svg
+    image: /images/photos/parts/brake-pads.jpg
   - name: Raybestos Element3 Coated Rotor
     price: "$96"
     rating: 4.6
     affiliate_url: https://example.com/raybestos-element3-rav4
     summary: Coated rotor upgrade that pairs well with fresh pads when the surface is worn or glazed.
-    image: /images/parts/raybestos-element3-rotor.svg
+    image: /images/photos/parts/brake-pads.jpg
 faqs:
   - question: Do I need new rotors if my brakes squeal?
     answer: Not always. Squeal can come from pad compound or hardware issues, but rotors should still be inspected for wear or glazing.

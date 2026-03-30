@@ -3,7 +3,7 @@ title: Humming noise that gets louder with speed
 metaTitle: "Humming Noise That Gets Louder With Speed: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a humming noise that gets louder with speed by separating tire noise from wheel-bearing and hub problems.
 excerpt: A speed-related hum usually comes down to tires or wheel bearings. The job is figuring out which one before spending money.
-heroImage: /images/parts/timken-wheel-bearing.svg
+heroImage: /images/photos/parts/wheel-hub.jpg
 updatedAt: 2026-03-30
 relatedCars:
   - toyota-rav4-2021
@@ -27,13 +27,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://example.com/timken-wheel-bearing-rav4
     summary: OE-style bearing hub with strong fitment confidence for curing front-end humming.
-    image: /images/parts/timken-wheel-bearing.svg
+    image: /images/photos/parts/wheel-hub.jpg
   - name: SKF Wheel Bearing and Hub Assembly
     price: "$179"
     rating: 4.8
     affiliate_url: https://example.com/skf-wheel-bearing-rav4
     summary: Premium hub option for owners prioritizing long-term bearing durability.
-    image: /images/parts/skf-wheel-bearing.svg
+    image: /images/photos/parts/wheel-hub.jpg
 faqs:
   - question: How do I know if the noise is a tire or a wheel bearing?
     answer: Tire noise often changes after rotation, while bearing noise usually follows load shifts and keeps getting louder as wear progresses.

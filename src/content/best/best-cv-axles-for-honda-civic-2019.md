@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best CV Axles for Honda Civic 2019
 metaDescription: Compare the best CV axle options for the Honda Civic 2019 if you are trying to fix clicking turns without creating new vibration.
 excerpt: The best Civic CV axle options are the ones that solve the click without adding new headaches after installation.
-heroImage: /images/parts/cv-axle-kit.svg
+heroImage: /images/photos/parts/cv-axle.jpg
 updatedAt: 2026-03-30
 relatedCars:
   - honda-civic-2019
@@ -17,19 +17,19 @@ products:
     rating: 4.5
     affiliate_url: https://example.com/gsp-cv-axle-civic
     summary: Good-value replacement for drivers who need a fast fix for turning-click issues.
-    image: /images/parts/cv-axle-kit.svg
+    image: /images/photos/parts/cv-axle.jpg
   - name: Cardone Select CV Axle
     price: "$132"
     rating: 4.4
     affiliate_url: https://example.com/cardone-cv-axle-civic
     summary: Widely available option with decent fitment support for everyday repairs.
-    image: /images/parts/cardone-cv-axle.svg
+    image: /images/photos/parts/cv-axle.jpg
   - name: TRQ CV Axle and Wheel Bearing Kit
     price: "$188"
     rating: 4.6
     affiliate_url: https://example.com/trq-cv-axle-civic
     summary: Useful bundle for owners handling a broader front-end refresh in one job.
-    image: /images/parts/trq-cv-axle-kit.svg
+    image: /images/photos/parts/cv-axle.jpg
 buyingAdvice:
   - Confirm whether the noise is on the inner or outer joint and which side of the car is affected before ordering.
   - Budget axles can work on daily drivers, but premium units often offer better long-term smoothness and boot durability.

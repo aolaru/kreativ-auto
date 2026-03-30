@@ -4,11 +4,11 @@ brand: Honda
 model: Civic
 year: 2019
 description: The 2019 Honda Civic is generally dependable, but once mileage starts building, ignition parts, rough idle complaints, and front axle noise are the issues people usually end up chasing.
-image: /images/cars/honda-civic-2019.svg
+image: /images/photos/cars/honda-civic-2019.jpg
 metaTitle: Honda Civic 2019 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Research common Honda Civic 2019 issues, practical maintenance advice, and recommended ignition and steering-related parts.
 excerpt: The common 2019 Honda Civic issues worth paying attention to, plus the parts and maintenance items most likely to matter.
-heroImage: /images/cars/honda-civic-2019.svg
+heroImage: /images/photos/cars/honda-civic-2019.jpg
 updatedAt: 2026-03-30
 relatedProblems:
   - engine-misfires-at-idle
@@ -25,13 +25,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://example.com/delphi-ignition-coils-civic
     summary: Reliable replacement coil set for restoring smooth idle and stronger cold starts.
-    image: /images/parts/delphi-ignition-coils.svg
+    image: /images/photos/parts/ignition-coil.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
     affiliate_url: https://example.com/ngk-laser-iridium-civic
     summary: OEM-trusted spark plug option for stable combustion and long service intervals.
-    image: /images/parts/ngk-spark-plugs.svg
+    image: /images/photos/parts/ignition-coil.jpg
 maintenanceTips:
   - Replace spark plugs on schedule before a mild idle stumble becomes a recurring misfire complaint.
   - Inspect axle boots during routine service to catch CV joint wear before clicking turns into vibration.

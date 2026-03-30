@@ -3,7 +3,7 @@ title: Car shakes when braking
 metaTitle: "Car Shakes When Braking: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose why a car shakes when braking by checking the most common causes first, before wasting money on the wrong parts.
 excerpt: If the car shakes when braking, start with the obvious brake and front-end checks before guessing.
-heroImage: /images/parts/raybestos-element3-rotor.svg
+heroImage: /images/photos/parts/brake-pads.jpg
 updatedAt: 2026-03-30
 relatedCars:
   - vw-tiguan-2020
@@ -27,13 +27,13 @@ recommendedParts:
     rating: 4.5
     affiliate_url: https://example.com/wagner-oex-ceramic
     summary: Strong everyday replacement pad for drivers who want low dust and stable bite.
-    image: /images/parts/wagner-oex-pads.svg
+    image: /images/photos/parts/brake-pads.jpg
   - name: Raybestos Element3 Coated Rotor
     price: "$92"
     rating: 4.6
     affiliate_url: https://example.com/raybestos-element3-rotor
     summary: Coated rotor option with solid corrosion resistance for daily drivers.
-    image: /images/parts/raybestos-element3-rotor.svg
+    image: /images/photos/parts/brake-pads.jpg
 faqs:
   - question: Does brake vibration always mean the rotors are warped?
     answer: No. Pad deposits, uneven lug torque, and worn suspension components can create similar symptoms, so inspection matters before parts are ordered.

@@ -4,11 +4,11 @@ brand: Volkswagen
 model: Tiguan
 year: 2020
 description: The 2020 VW Tiguan is a solid family SUV, but it is also the kind of vehicle where brake feel, front-end vibration, and routine maintenance start coming up pretty early if the car spends a lot of time in traffic.
-image: /images/cars/vw-tiguan-2020.svg
+image: /images/photos/cars/vw-tiguan-2020.jpg
 metaTitle: VW Tiguan 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore the most common VW Tiguan 2020 issues, practical maintenance tips, and recommended brake-related parts for daily drivers.
 excerpt: What usually goes wrong on a 2020 VW Tiguan, what matters most in maintenance, and which parts are worth looking at first.
-heroImage: /images/cars/vw-tiguan-2020.svg
+heroImage: /images/photos/cars/vw-tiguan-2020.jpg
 updatedAt: 2026-03-30
 relatedProblems:
   - car-shakes-when-braking
@@ -24,13 +24,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://example.com/power-stop-z23-tiguan
     summary: Balanced daily-driving option with low dust pads and coated rotors.
-    image: /images/parts/power-stop-z23-kit.svg
+    image: /images/photos/parts/brake-pads.jpg
   - name: Bosch QuietCast Premium Brake Pads
     price: "$74"
     rating: 4.6
     affiliate_url: https://example.com/bosch-quietcast-tiguan
     summary: Good fit for owners prioritizing noise control and OEM-like feel.
-    image: /images/parts/bosch-quietcast-pads.svg
+    image: /images/photos/parts/brake-pads.jpg
 maintenanceTips:
   - Inspect front brake pad thickness every 10,000 miles if the vehicle sees mostly stop-and-go driving.
   - Flush brake fluid on schedule to maintain pedal feel and reduce heat-related fade under load.
