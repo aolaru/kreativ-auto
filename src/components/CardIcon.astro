@@ -1,0 +1,66 @@
+---
+interface Props {
+  kind: "car" | "problem" | "parts" | "brand" | "model" | "category";
+}
+
+const { kind } = Astro.props;
+---
+
+<div class="grid h-12 w-12 place-items-center rounded-2xl bg-slate-50 text-accent ring-1 ring-slate-200">
+  {
+    kind === "car" && (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 13.5h18" />
+        <path d="M5 13.5 7.3 8h9.4l2.3 5.5" />
+        <path d="M6.5 17.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+        <path d="M17.5 17.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+      </svg>
+    )
+  }
+  {
+    kind === "problem" && (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3 2.8 19h18.4L12 3Z" />
+        <path d="M12 9v4.5" />
+        <path d="M12 17h.01" />
+      </svg>
+    )
+  }
+  {
+    kind === "parts" && (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M14.5 4.5a4 4 0 0 0-5.7 5.6l-4.3 4.3a1.8 1.8 0 0 0 2.5 2.6l4.3-4.3a4 4 0 0 0 5.6-5.7l-2.7 2.2-2-2 2.3-2.7Z" />
+      </svg>
+    )
+  }
+  {
+    kind === "brand" && (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 19h16" />
+        <path d="M6 19V8l6-3 6 3v11" />
+        <path d="M9 11h.01" />
+        <path d="M12 11h.01" />
+        <path d="M15 11h.01" />
+      </svg>
+    )
+  }
+  {
+    kind === "model" && (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="4" y="5" width="16" height="14" rx="2" />
+        <path d="M8 9h8" />
+        <path d="M8 13h5" />
+      </svg>
+    )
+  }
+  {
+    kind === "category" && (
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-6 w-6 fill-none stroke-current" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M4 7h7v7H4z" />
+        <path d="M13 7h7v4h-7z" />
+        <path d="M13 13h7v4h-7z" />
+        <path d="M4 16h7" />
+      </svg>
+    )
+  }
+</div>

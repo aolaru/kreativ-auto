@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import CardIcon from "../components/CardIcon.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const [cars, problems, bestPages] = await Promise.all([
@@ -68,6 +69,7 @@ const [cars, problems, bestPages] = await Promise.all([
   <section class="container-shell pb-8">
     <div class="grid gap-6 md:grid-cols-3">
       <article class="surface p-6">
+        <CardIcon kind="car" />
         <p class="eyebrow">Cars</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Car pages that stay useful</h2>
         <p class="mt-3 text-sm leading-6 text-steel">
@@ -75,6 +77,7 @@ const [cars, problems, bestPages] = await Promise.all([
         </p>
       </article>
       <article class="surface p-6">
+        <CardIcon kind="problem" />
         <p class="eyebrow">Problems</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Problem guides that get to the point</h2>
         <p class="mt-3 text-sm leading-6 text-steel">
@@ -82,6 +85,7 @@ const [cars, problems, bestPages] = await Promise.all([
         </p>
       </article>
       <article class="surface p-6">
+        <CardIcon kind="parts" />
         <p class="eyebrow">Best Parts</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Parts guides with a clear opinion</h2>
         <p class="mt-3 text-sm leading-6 text-steel">
@@ -94,16 +98,19 @@ const [cars, problems, bestPages] = await Promise.all([
   <section class="container-shell pb-12">
     <div class="grid gap-6 md:grid-cols-3">
       <a class="surface block p-6 transition hover:-translate-y-0.5" href="/brands/">
+        <CardIcon kind="brand" />
         <p class="eyebrow">Taxonomy</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Brands</h2>
         <p class="mt-3 text-sm leading-6 text-steel">Browse by make if you want to stay inside one brand and compare patterns across models.</p>
       </a>
       <a class="surface block p-6 transition hover:-translate-y-0.5" href="/models/">
+        <CardIcon kind="model" />
         <p class="eyebrow">Taxonomy</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Models</h2>
         <p class="mt-3 text-sm leading-6 text-steel">Model pages pull together the problems, maintenance points, and parts that matter for one vehicle.</p>
       </a>
       <a class="surface block p-6 transition hover:-translate-y-0.5" href="/categories/">
+        <CardIcon kind="category" />
         <p class="eyebrow">Taxonomy</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Part Categories</h2>
         <p class="mt-3 text-sm leading-6 text-steel">Use category pages when you already know the part type and want the best options by vehicle.</p>

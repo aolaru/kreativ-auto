@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import CardIcon from "../../components/CardIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const cars = await getCollection("cars");
@@ -19,6 +20,13 @@ const cars = await getCollection("cars");
       {
         cars.map((car) => (
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
+            <div class="mb-4 flex items-center gap-3">
+              <CardIcon kind="car" />
+              <div>
+                <p class="eyebrow">{car.data.brand}</p>
+                <h2 class="mt-1 text-2xl font-semibold text-ink">{car.data.title}</h2>
+              </div>
+            </div>
             {
               car.data.image && (
                 <div class="mb-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
@@ -33,9 +41,7 @@ const cars = await getCollection("cars");
                 </div>
               )
             }
-            <p class="eyebrow">{car.data.brand}</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">{car.data.description}</p>
+            <p class="text-sm leading-6 text-steel">{car.data.description}</p>
           </a>
         ))
       }

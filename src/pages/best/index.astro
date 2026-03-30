@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import CardIcon from "../../components/CardIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const bestPages = await getCollection("best");
@@ -19,8 +20,13 @@ const bestPages = await getCollection("best");
       {
         bestPages.map((entry) => (
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/best/${entry.id}/`}>
-            <p class="eyebrow">{entry.data.category}</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{entry.data.title}</h2>
+            <div class="mb-4 flex items-center gap-3">
+              <CardIcon kind="parts" />
+              <div>
+                <p class="eyebrow">{entry.data.category}</p>
+                <h2 class="mt-1 text-2xl font-semibold text-ink">{entry.data.title}</h2>
+              </div>
+            </div>
             <p class="mt-3 text-sm leading-6 text-steel">
               {entry.data.products.length} curated products for {entry.data.car_model}.
             </p>

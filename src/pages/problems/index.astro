@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import CardIcon from "../../components/CardIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const problems = await getCollection("problems");
@@ -19,8 +20,13 @@ const problems = await getCollection("problems");
       {
         problems.map((problem) => (
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/problems/${problem.id}/`}>
-            <p class="eyebrow">Diagnostic guide</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{problem.data.title}</h2>
+            <div class="mb-4 flex items-center gap-3">
+              <CardIcon kind="problem" />
+              <div>
+                <p class="eyebrow">Diagnostic guide</p>
+                <h2 class="mt-1 text-2xl font-semibold text-ink">{problem.data.title}</h2>
+              </div>
+            </div>
             <p class="mt-3 text-sm leading-6 text-steel">
               Covers {problem.data.symptoms.length} symptoms, {problem.data.causes.length} likely causes, and {problem.data.solutions.length} solution paths.
             </p>
