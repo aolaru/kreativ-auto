@@ -116,24 +116,24 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro="This commercial page pattern supports both ranking and conversions with a compact table, product summaries, and visible affiliate actions."
+  intro="This guide is here to help you compare the strongest options quickly, understand the tradeoffs, and choose the part that makes the most sense for your car."
   faqs={entry.data.faqs}
   image={socialImage}
   modifiedTime={entry.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
 >
-  <Section id="comparison-table" title="Comparison table" intro="Lead with a table so users can scan price, rating, and positioning without extra scrolling.">
+  <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
     <ComparisonTable products={entry.data.products} />
   </Section>
 
-  <Section id="product-cards" title="Product cards" intro="Use cards below the table to add nuance around fitment, value, or performance bias.">
+  <Section id="product-cards" title="Product cards" intro="The cards below give a little more context on where each option makes sense.">
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       {entry.data.products.map((product) => <ProductCard product={product} />)}
     </div>
   </Section>
 
-  <Section id="buying-advice" title="Buying advice" intro="Commercial content performs better when buyers understand why one option is better for their use case.">
+  <Section id="buying-advice" title="Buying advice" intro="The right part depends on how the car is driven, how much refinement you want, and how much compromise you are willing to accept.">
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {entry.data.buyingAdvice.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>

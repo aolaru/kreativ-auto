@@ -58,7 +58,7 @@ const relatedBest = uniqueByHref(
   .map((entry) => ({
     href: `/best/${entry.id}/`,
     title: entry.data.title,
-    description: entry.data.excerpt ?? entry.data.metaDescription ?? `${entry.data.products.length} affiliate-ready product picks.`,
+    description: entry.data.excerpt ?? entry.data.metaDescription ?? `${entry.data.products.length} parts worth comparing for this vehicle.`,
     eyebrow: entry.data.category
   }))
 );
@@ -160,7 +160,7 @@ const schemas = [
   <Section
     id="recommended-parts"
     title="Recommended parts"
-    intro="Parts are structured for affiliate use with clear pricing and outbound calls to action."
+    intro="These are the parts worth looking at first if you are trying to solve a common issue or stay ahead of wear."
   >
     <div class="grid gap-6 md:grid-cols-2">
       {car.data.recommendedParts.map((product) => <ProductCard product={product} />)}
@@ -179,13 +179,13 @@ const schemas = [
 
   <RelatedLinks
     title="Related problem guides"
-    intro="Connect the car hub to symptom-led diagnosis pages so readers can move from general ownership research to specific repair intent."
+    intro="If one of the common issues below sounds familiar, these guides go deeper into what to check and what usually fixes it."
     items={relatedProblems}
   />
 
   <RelatedLinks
     title="Related best parts pages"
-    intro="Commercial pages should sit close to the ownership and repair content they support."
+    intro="These parts guides are useful if you already know the area you are dealing with and want to compare options."
     items={relatedBest}
   />
 </ContentLayout>
