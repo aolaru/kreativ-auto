@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <path d="M255 176C255 149.49 276.49 128 303 128H417C443.51 128 465 149.49 465 176V303C465 329.51 443.51 351 417 351H303C276.49 351 255 329.51 255 303V176Z" fill="#1F2937"/>
+  <path d="M292 166H428" stroke="#6B7280" stroke-width="12" stroke-linecap="round"/>
+  <path d="M292 314H428" stroke="#6B7280" stroke-width="12" stroke-linecap="round"/>
+  <path d="M147 140H323" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="146" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">CV Boot Kit</text>
+  <text x="146" y="389" fill="#475569" font-family="Arial, sans-serif" font-size="24">Boot clamps and hardware</text>
+  <defs><linearGradient id="bg" x1="98" y1="85" x2="621" y2="414" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient></defs>
+</svg>

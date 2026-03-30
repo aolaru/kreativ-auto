@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <rect x="160" y="178" width="82" height="145" rx="18" fill="#111827"/>
+  <rect x="274" y="178" width="82" height="145" rx="18" fill="#1F2937"/>
+  <rect x="388" y="178" width="82" height="145" rx="18" fill="#374151"/>
+  <path d="M142 141H320" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="141" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">Denso Coils</text>
+  <text x="141" y="389" fill="#475569" font-family="Arial, sans-serif" font-size="24">Premium direct ignition set</text>
+  <defs><linearGradient id="bg" x1="98" y1="85" x2="623" y2="413" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient></defs>
+</svg>

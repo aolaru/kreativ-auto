@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <rect x="176" y="177" width="74" height="146" rx="18" fill="#111827"/>
+  <rect x="282" y="177" width="74" height="146" rx="18" fill="#1F2937"/>
+  <rect x="388" y="177" width="74" height="146" rx="18" fill="#4B5563"/>
+  <rect x="494" y="177" width="50" height="146" rx="18" fill="#6B7280"/>
+  <path d="M147 140H303" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="146" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">Hitachi Coils</text>
+  <text x="146" y="389" fill="#475569" font-family="Arial, sans-serif" font-size="24">Mid-range coil replacement set</text>
+  <defs><linearGradient id="bg" x1="99" y1="85" x2="621" y2="415" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient></defs>
+</svg>

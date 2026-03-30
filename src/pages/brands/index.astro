@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { slugify } from "../../utils/taxonomy";
+
+const cars = await getCollection("cars");
+const brands = Array.from(
+  cars.reduce((map, car) => {
+    const key = car.data.brand;
+    const current = map.get(key) ?? [];
+    current.push(car);
+    map.set(key, current);
+    return map;
+  }, new Map<string, typeof cars>())
+).sort(([a], [b]) => a.localeCompare(b));
+---
+
+<BaseLayout
+  title="Brands"
+  description="Browse automotive content by vehicle brand, including car hubs and related guides."
+>
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface p-8 sm:p-10">
+      <p class="eyebrow">Taxonomy</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by brand</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        Brand hubs group model-specific ownership pages and create a scalable top-level navigation layer for search and editorial planning.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {
+        brands.map(([brand, entries]) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/brands/${slugify(brand)}/`}>
+            <p class="eyebrow">Brand</p>
+            <h2 class="mt-3 text-2xl font-semibold text-ink">{brand}</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">{entries.length} car hub page{entries.length === 1 ? "" : "s"} published.</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

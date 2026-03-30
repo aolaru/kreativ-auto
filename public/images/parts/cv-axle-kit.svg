@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <rect x="126" y="229" width="468" height="20" rx="10" fill="#6B7280"/>
+  <circle cx="141" cy="239" r="44" fill="#111827"/>
+  <circle cx="579" cy="239" r="44" fill="#111827"/>
+  <circle cx="141" cy="239" r="20" fill="#CBD5E1"/>
+  <circle cx="579" cy="239" r="20" fill="#CBD5E1"/>
+  <path d="M121 140H270" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="120" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">CV Axle</text>
+  <text x="120" y="389" fill="#475569" font-family="Arial, sans-serif" font-size="24">Front axle assembly</text>
+  <defs><linearGradient id="bg" x1="99" y1="85" x2="621" y2="414" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E5E7EB"/></linearGradient></defs>
+</svg>

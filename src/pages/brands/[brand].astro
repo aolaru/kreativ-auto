@@ -1,0 +1,87 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import { slugify, uniqueByHref } from "../../utils/taxonomy";
+
+export async function getStaticPaths() {
+  const cars = await getCollection("cars");
+  const brands = Array.from(new Set(cars.map((car) => car.data.brand)));
+
+  return brands.map((brand) => ({
+    params: { brand: slugify(brand) },
+    props: { brand }
+  }));
+}
+
+const { brand } = Astro.props;
+const [cars, problems, bestPages] = await Promise.all([
+  getCollection("cars"),
+  getCollection("problems"),
+  getCollection("best")
+]);
+
+const brandCars = cars.filter((car) => car.data.brand === brand);
+const linkedProblems = uniqueByHref(
+  problems
+    .filter((problem) =>
+      brandCars.some((car) => car.data.relatedProblems.includes(problem.id))
+    )
+    .map((problem) => ({
+      href: `/problems/${problem.id}/`,
+      title: problem.data.title,
+      description: problem.data.excerpt ?? problem.data.metaDescription,
+      eyebrow: "Problem guide"
+    }))
+);
+
+const linkedBest = uniqueByHref(
+  bestPages
+    .filter((entry) =>
+      brandCars.some((car) => car.data.relatedBest.includes(entry.id))
+    )
+    .map((entry) => ({
+      href: `/best/${entry.id}/`,
+      title: entry.data.title,
+      description: entry.data.excerpt ?? entry.data.metaDescription,
+      eyebrow: entry.data.category
+    }))
+);
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Brands", href: "/brands/" },
+  { label: brand }
+];
+---
+
+<BaseLayout title={`${brand} Cars`} description={`Browse ${brand} car hub pages, linked problems, and best-parts comparisons.`}>
+  <div class="container-shell py-12 sm:py-16">
+    <Breadcrumbs items={breadcrumbs} />
+    <div class="surface p-8 sm:p-10">
+      <p class="eyebrow">Brand Hub</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{brand}</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        This brand landing page groups model-specific ownership content and supporting repair or buyer-intent pages.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6">
+      {
+        brandCars.map((car) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
+            <p class="eyebrow">Car hub</p>
+            <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.description}</p>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="mt-8 space-y-8">
+      <RelatedLinks title="Related problem guides" items={linkedProblems} />
+      <RelatedLinks title="Related best-parts guides" items={linkedBest} />
+    </div>
+  </div>
+</BaseLayout>

@@ -5,6 +5,7 @@ import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
   const entries = await getCollection("best");
@@ -27,29 +28,89 @@ const [carEntries, problemEntries] = await Promise.all([
   getCollection("problems")
 ]);
 
-const relatedCars = carEntries
-  .filter((car) => entry.data.relatedCars.includes(car.id))
+const relatedCars = uniqueByHref(
+  carEntries
+  .filter((car) => {
+    return (
+      entry.data.relatedCars.includes(car.id) ||
+      includesPhrase(entry.data.car_model, `${car.data.brand} ${car.data.model} ${car.data.year}`) ||
+      includesPhrase(entry.data.car_model, car.data.model)
+    );
+  })
   .map((car) => ({
     href: `/cars/${car.id}/`,
     title: car.data.title,
     description: car.data.excerpt ?? car.data.metaDescription ?? car.data.description,
     eyebrow: "Car hub"
-  }));
+  }))
+);
 
-const relatedProblems = problemEntries
-  .filter((problem) => entry.data.relatedProblems.includes(problem.id))
+const relatedProblems = uniqueByHref(
+  problemEntries
+  .filter((problem) => {
+    return (
+      entry.data.relatedProblems.includes(problem.id) ||
+      includesPhrase(problem.data.title, entry.data.category) ||
+      problem.data.symptoms.some((item) => includesPhrase(item, entry.data.category)) ||
+      problem.data.causes.some((item) => includesPhrase(item, entry.data.category))
+    );
+  })
   .map((problem) => ({
     href: `/problems/${problem.id}/`,
     title: problem.data.title,
     description:
       problem.data.excerpt ?? problem.data.metaDescription ?? `Solutions: ${problem.data.solutions.slice(0, 2).join(", ")}.`,
     eyebrow: "Problem guide"
-  }));
+  }))
+);
 
 const seoTitle = entry.data.metaTitle ?? entry.data.title;
 const seoDescription =
   entry.data.metaDescription ?? `Comparison guide for the best ${entry.data.category.toLowerCase()} for ${entry.data.car_model}.`;
 const socialImage = entry.data.heroImage ?? entry.data.products[0]?.image;
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Best Parts", href: "/best/" },
+  { label: entry.data.title }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: seoTitle,
+    itemListElement: entry.data.products.map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "Product",
+        name: product.name,
+        image: product.image ? new URL(product.image, Astro.site).toString() : undefined,
+        offers: {
+          "@type": "Offer",
+          url: product.affiliate_url,
+          priceCurrency: "USD",
+          price: product.price.replace(/[^0-9.]/g, "")
+        },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: product.rating,
+          reviewCount: 1
+        }
+      }
+    })),
+    dateModified: entry.data.updatedAt?.toISOString()
+  }
+];
 ---
 
 <ContentLayout
@@ -59,6 +120,8 @@ const socialImage = entry.data.heroImage ?? entry.data.products[0]?.image;
   faqs={entry.data.faqs}
   image={socialImage}
   modifiedTime={entry.data.updatedAt}
+  breadcrumbs={breadcrumbs}
+  schemas={schemas}
 >
   <Section id="comparison-table" title="Comparison table" intro="Lead with a table so users can scan price, rating, and positioning without extra scrolling.">
     <ComparisonTable products={entry.data.products} />

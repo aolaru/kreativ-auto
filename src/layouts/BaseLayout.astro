@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import StructuredData from "../components/StructuredData.astro";
 import "../styles/global.css";
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
   noindex?: boolean;
   publishedTime?: Date;
   modifiedTime?: Date;
+  schemas?: Record<string, unknown>[];
 }
 
 const {
@@ -20,10 +22,13 @@ const {
   image = "/og-default.svg",
   noindex = false,
   publishedTime,
-  modifiedTime
+  modifiedTime,
+  schemas = []
 } = Astro.props;
 const resolvedCanonical = canonical ? new URL(canonical, Astro.site).toString() : Astro.url.href;
 const pageTitle = `${title} | Kreativ Auto`;
+const searchConsoleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 ---
 
 <!doctype html>
@@ -47,12 +52,30 @@ const pageTitle = `${title} | Kreativ Auto`;
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site).toString()} />
+    {searchConsoleVerification && <meta name="google-site-verification" content={searchConsoleVerification} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <StructuredData items={schemas} />
+    {
+      gaMeasurementId && (
+        <>
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+          <script
+            is:inline
+            define:vars={{ gaMeasurementId }}
+          >{`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', gaMeasurementId);
+          `}</script>
+        </>
+      )
+    }
   </head>
   <body class="min-h-screen">
     <Header />

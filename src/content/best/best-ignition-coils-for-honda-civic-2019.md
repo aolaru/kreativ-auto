@@ -1,0 +1,44 @@
+---
+title: Best ignition coils for Honda Civic 2019
+category: Ignition Coils
+car_model: Honda Civic 2019
+metaTitle: Best Ignition Coils for Honda Civic 2019
+metaDescription: Compare the best ignition coil options for the Honda Civic 2019 with pricing, ratings, and fitment-minded advice.
+excerpt: Commercial comparison page for Honda Civic 2019 ignition coils with practical buyer guidance and top picks.
+heroImage: /images/parts/delphi-ignition-coils.svg
+updatedAt: 2026-03-30
+relatedCars:
+  - honda-civic-2019
+relatedProblems:
+  - engine-misfires-at-idle
+products:
+  - name: Delphi Ignition Coil Pack Set
+    price: "$128"
+    rating: 4.7
+    affiliate_url: https://example.com/delphi-ignition-coils-civic
+    summary: Balanced OE-style replacement set for restoring idle quality and throttle response.
+    image: /images/parts/delphi-ignition-coils.svg
+  - name: Denso Direct Ignition Coil
+    price: "$142"
+    rating: 4.8
+    affiliate_url: https://example.com/denso-ignition-coils-civic
+    summary: Premium brand choice for owners who want factory-like reliability and fitment.
+    image: /images/parts/denso-ignition-coils.svg
+  - name: Hitachi Ignition Coil Set
+    price: "$136"
+    rating: 4.6
+    affiliate_url: https://example.com/hitachi-ignition-coils-civic
+    summary: Good mid-range option with strong daily-driver durability and clean fitment.
+    image: /images/parts/hitachi-ignition-coils.svg
+buyingAdvice:
+  - If one coil has failed on a higher-mileage Civic, replacing the full set can reduce repeat diagnostics and labor.
+  - Confirm engine and trim compatibility before ordering because coil part numbers can vary by configuration.
+  - Ignition coils should be evaluated alongside spark plugs since worn plugs can stress new coils quickly.
+faqs:
+  - question: Should I replace all ignition coils or just one?
+    answer: If mileage is high or multiple coils are aging, replacing the full set can be the more practical long-term choice.
+  - question: Do cheap ignition coils cause repeat misfires?
+    answer: They can. Poor-quality coils often have weaker consistency and can trigger another diagnosis cycle sooner than expected.
+---
+
+Ignition coil comparison pages work well because readers are already close to purchase once they have a confirmed misfire or rough-idle diagnosis.

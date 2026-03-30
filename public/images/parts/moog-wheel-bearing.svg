@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <circle cx="295" cy="239" r="98" fill="#CBD5E1"/>
+  <circle cx="295" cy="239" r="55" fill="#F8FAFC"/>
+  <circle cx="295" cy="239" r="16" fill="#94A3B8"/>
+  <text x="444" y="137" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">MOOG Hub</text>
+  <path d="M444 173H562" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="444" y="222" fill="#475569" font-family="Arial, sans-serif" font-size="24">Value wheel bearing hub</text>
+  <defs><linearGradient id="bg" x1="99" y1="84" x2="621" y2="413" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient></defs>
+</svg>

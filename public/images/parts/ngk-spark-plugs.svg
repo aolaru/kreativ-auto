@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="480" viewBox="0 0 720 480" fill="none">
+  <rect width="720" height="480" rx="28" fill="#F8FAFC"/>
+  <rect x="40" y="40" width="640" height="400" rx="24" fill="url(#bg)"/>
+  <rect x="263" y="122" width="44" height="214" rx="12" fill="#CBD5E1"/>
+  <rect x="309" y="122" width="44" height="214" rx="12" fill="#E2E8F0"/>
+  <rect x="355" y="122" width="44" height="214" rx="12" fill="#CBD5E1"/>
+  <rect x="258" y="148" width="146" height="28" rx="10" fill="#94A3B8"/>
+  <path d="M143 140H315" stroke="#FB923C" stroke-width="10" stroke-linecap="round"/>
+  <text x="142" y="112" fill="#0F1720" font-family="Arial, sans-serif" font-size="38" font-weight="700">NGK Spark Plugs</text>
+  <text x="142" y="389" fill="#475569" font-family="Arial, sans-serif" font-size="24">Laser iridium plug set</text>
+  <defs><linearGradient id="bg" x1="99" y1="84" x2="620" y2="414" gradientUnits="userSpaceOnUse"><stop stop-color="#FFFFFF"/><stop offset="1" stop-color="#E2E8F0"/></linearGradient></defs>
+</svg>
