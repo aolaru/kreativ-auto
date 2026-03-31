@@ -16,19 +16,19 @@ products:
   - name: Raybestos Element3 Coated Rotor
     price: "$92"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Raybestos+Element3+Coated+Rotor+VW+Tiguan+2020
+    affiliate_url: https://www.allrotors.com/vehicle/2020/volkswagen/tiguan/
     summary: Best overall option for a daily-driven Tiguan that needs smooth braking and solid corrosion resistance.
     image: /images/photos/parts/brake-pads.jpg
   - name: Power Stop Evolution Geomet Coated Rotor
     price: "$104"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Power+Stop+Evolution+Geomet+Coated+Rotor+VW+Tiguan+2020
+    affiliate_url: https://www.powerstop.com/product/evolution-coated-rotors/
     summary: Good fit if you want coated rotors with stable street performance and clean pairing with modern pads.
     image: /images/photos/parts/brake-pads.jpg
   - name: Bosch QuietCast Premium Rotor
     price: "$96"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Rotor+VW+Tiguan+2020
+    affiliate_url: https://www.buybrakes.com/bosch-14011564-quietcast-disc-brake-rotors-geo-met-coating
     summary: Strong alternative for drivers who want refined daily braking without chasing the sportiest setup.
     image: /images/photos/parts/brake-pads.jpg
 buyingAdvice:

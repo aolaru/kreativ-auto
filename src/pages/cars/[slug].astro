@@ -4,6 +4,8 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import ProductCard from "../../components/ProductCard.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { carTrustPoints, editorialTeam } from "../../data/editorial";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -89,7 +91,15 @@ const schemas = [
     description: seoDescription,
     image: socialImage ? [new URL(socialImage, Astro.site).toString()] : undefined,
     mainEntityOfPage: Astro.url.href,
-    dateModified: car.data.updatedAt?.toISOString()
+    dateModified: car.data.updatedAt?.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
   }
 ];
 ---
@@ -104,6 +114,13 @@ const schemas = [
   breadcrumbs={breadcrumbs}
   schemas={schemas}
 >
+  <TrustBlock
+    summary="This ownership guide is written for drivers who want the main problem areas, the parts that usually matter, and the maintenance moves worth doing before a small issue grows."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={car.data.updatedAt ? `Checked ${car.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
+    points={carTrustPoints}
+  />
+
   <Section
     id="overview"
     title="Overview"
@@ -150,7 +167,7 @@ const schemas = [
   <Section
     id="common-problems"
     title="Common problems"
-    intro="Use this section to build internal links to deeper symptom-specific guides."
+    intro="These are the issues owners usually notice first before the repair turns into a bigger annoyance."
   >
     <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
       {car.data.commonProblems.map((problem) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{problem}</li>)}
@@ -170,7 +187,7 @@ const schemas = [
   <Section
     id="maintenance-tips"
     title="Maintenance tips"
-    intro="Keep these bullets specific and practical so the page earns repeat visits and links."
+    intro="These are the maintenance habits most likely to keep the common complaints from getting expensive."
   >
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {car.data.maintenanceTips.map((tip) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{tip}</li>)}

@@ -9,6 +9,7 @@ relatedCars:
   - toyota-rav4-2021
 relatedBest:
   - best-brake-pads-for-toyota-rav4-2021
+  - best-brake-rotors-for-toyota-rav4-2021
 symptoms:
   - High-pitched squeal when lightly braking in parking lots or traffic
   - Brake noise disappears at higher speeds or during harder braking
@@ -37,13 +38,13 @@ recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+RAV4+2021
+    affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quiet ceramic pad option designed for daily drivers who want low dust and less squeal.
     image: /images/photos/parts/brake-pads.jpg
   - name: Raybestos Element3 Coated Rotor
     price: "$96"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Raybestos+Element3+Coated+Rotor+Toyota+RAV4+2021
+    affiliate_url: https://www.raybestos.com/disc-brake-rotor-980477fzn.html
     summary: Coated rotor upgrade that pairs well with fresh pads when the surface is worn or glazed.
     image: /images/photos/parts/brake-pads.jpg
 faqs:

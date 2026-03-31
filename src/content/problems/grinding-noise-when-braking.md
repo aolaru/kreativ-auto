@@ -38,13 +38,13 @@ recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+RAV4+2021
+    affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quality replacement pad option once the worn hardware is diagnosed correctly.
     image: /images/photos/parts/brake-pads.jpg
   - name: Bosch QuietCast Premium
     price: "$81"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Toyota+RAV4+2021
+    affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-rotors
     summary: Good alternative if the goal is quiet daily-driver braking after the damaged parts are replaced.
     image: /images/photos/parts/brake-pads.jpg
 faqs:

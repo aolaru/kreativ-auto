@@ -9,6 +9,7 @@ relatedCars:
   - vw-tiguan-2020
 relatedBest:
   - best-brake-pads-for-vw-tiguan-2020
+  - best-brake-rotors-for-vw-tiguan-2020
 symptoms:
   - Steering wheel shakes while slowing down from highway speed
   - Brake pedal pulses during moderate or hard braking
@@ -37,13 +38,13 @@ recommendedParts:
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$68"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Wagner+OEX+Ceramic+Brake+Pad+Set+VW+Tiguan+2020
+    affiliate_url: https://www.wagnerbrake.com/products/brakes/wagner-oex.html
     summary: Strong everyday replacement pad for drivers who want low dust and stable bite.
     image: /images/photos/parts/brake-pads.jpg
   - name: Raybestos Element3 Coated Rotor
     price: "$92"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Raybestos+Element3+Coated+Rotor+VW+Tiguan+2020
+    affiliate_url: https://www.allrotors.com/vehicle/2020/volkswagen/tiguan/
     summary: Coated rotor option with solid corrosion resistance for daily drivers.
     image: /images/photos/parts/brake-pads.jpg
 faqs:

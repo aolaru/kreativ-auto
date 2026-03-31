@@ -16,19 +16,19 @@ products:
   - name: Michelin Defender 2
     price: "$214"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Michelin+Defender+2+Toyota+RAV4+2021
+    affiliate_url: https://www.michelinman.com/auto/tires/michelin-defender2
     summary: Best overall choice if the goal is smoother highway behavior, low noise, and strong long-term stability.
     image: /images/photos/parts/wheel-hub.jpg
   - name: Continental CrossContact LX25
     price: "$198"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Continental+CrossContact+LX25+Toyota+RAV4+2021
+    affiliate_url: https://www.continental-tires.com/products/b2c/car/tires/crosscontact-lx25/
     summary: Strong alternative for drivers who want a quiet ride and good all-around daily-road manners.
     image: /images/photos/parts/wheel-hub.jpg
   - name: Bridgestone Alenza AS Ultra
     price: "$206"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Bridgestone+Alenza+AS+Ultra+Toyota+RAV4+2021
+    affiliate_url: https://www.bridgestonetire.com/tire/alenza-as-ultra/
     summary: Good fit for owners who want a more refined crossover tire with stable highway feel.
     image: /images/photos/parts/wheel-hub.jpg
 buyingAdvice:

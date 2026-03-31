@@ -15,19 +15,19 @@ products:
   - name: MOOG K750809 Stabilizer Bar Link
     price: "$43"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=MOOG+K750809+Stabilizer+Bar+Link+VW+Tiguan+2020
+    affiliate_url: https://www.oreillyauto.com/detail/c/moog/moog-stabilizer-bar-link/moo0/k750809
     summary: Best overall pick if you want a widely trusted replacement for everyday front-end noise repair.
     image: /images/photos/parts/wheel-hub.jpg
   - name: TRW Stabilizer Link Kit
     price: "$49"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=TRW+Stabilizer+Link+Kit+VW+Tiguan+2020
+    affiliate_url: https://trwaftermarket.us/products/suspension-stabilizer-bar-link-kit-trw-jts483
     summary: Strong OE-style option for owners who want cleaner fitment and a more factory-like repair feel.
     image: /images/photos/parts/wheel-hub.jpg
   - name: Delphi Stabilizer Bar Link
     price: "$38"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Delphi+Stabilizer+Bar+Link+VW+Tiguan+2020
+    affiliate_url: https://www.carparts.com/details/Volkswagen/Tiguan/Delphi/Sway_Bar_Link/2020/DELTC1315.html
     summary: Good value choice if the goal is to solve a clear clunk without overspending.
     image: /images/photos/parts/wheel-hub.jpg
 buyingAdvice:

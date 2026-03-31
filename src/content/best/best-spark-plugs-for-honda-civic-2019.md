@@ -17,19 +17,19 @@ products:
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=NGK+Laser+Iridium+Spark+Plugs+Honda+Civic+2019
+    affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
     summary: Best overall choice for long service life, stable spark, and factory-style drivability.
     image: /images/photos/parts/ignition-coil.jpg
   - name: Denso Iridium TT Spark Plugs
     price: "$52"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Denso+Iridium+TT+Spark+Plugs+Honda+Civic+2019
+    affiliate_url: https://www.densoautoparts.com/es/iridium-tt-es/
     summary: Strong alternative if you want a trusted brand with crisp startup and good everyday value.
     image: /images/photos/parts/ignition-coil.jpg
   - name: Bosch Double Iridium Spark Plugs
     price: "$49"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Bosch+Double+Iridium+Spark+Plugs+Honda+Civic+2019
+    affiliate_url: https://www.boschautoparts.com/double-iridium-spark-plugs
     summary: Good mid-range plug set for drivers refreshing overdue maintenance without overspending.
     image: /images/photos/parts/ignition-coil.jpg
 buyingAdvice:

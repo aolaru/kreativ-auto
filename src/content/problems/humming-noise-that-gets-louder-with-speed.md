@@ -9,6 +9,7 @@ relatedCars:
   - toyota-rav4-2021
 relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
+  - best-tires-for-toyota-rav4-2021-highway-vibration
 symptoms:
   - Low humming or growling that increases with road speed
   - Noise changes slightly when steering weight shifts left or right
@@ -37,13 +38,13 @@ recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Timken+Front+Wheel+Bearing+Hub+Assembly+Toyota+RAV4+2021
+    affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: OE-style bearing hub with strong fitment confidence for curing front-end humming.
     image: /images/photos/parts/wheel-hub.jpg
   - name: SKF Wheel Bearing and Hub Assembly
     price: "$179"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=SKF+Wheel+Bearing+and+Hub+Assembly+Toyota+RAV4+2021
+    affiliate_url: https://vehicleaftermarket.skf.com/us/en/products/wheel-end
     summary: Premium hub option for owners prioritizing long-term bearing durability.
     image: /images/photos/parts/wheel-hub.jpg
 faqs:

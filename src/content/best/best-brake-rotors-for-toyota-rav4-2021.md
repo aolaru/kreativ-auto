@@ -16,19 +16,19 @@ products:
   - name: Raybestos Element3 Coated Rotor
     price: "$96"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Raybestos+Element3+Coated+Rotor+Toyota+RAV4+2021
+    affiliate_url: https://www.raybestos.com/disc-brake-rotor-980477fzn.html
     summary: Best overall option if you want coated daily-driver rotors with solid value and stable feel.
     image: /images/photos/parts/brake-pads.jpg
   - name: Bosch QuietCast Premium Rotor
     price: "$101"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Rotor+Toyota+RAV4+2021
+    affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-rotors
     summary: Strong alternative for drivers who want a smooth, refined street setup.
     image: /images/photos/parts/brake-pads.jpg
   - name: Power Stop Evolution Geomet Coated Rotor
     price: "$108"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Power+Stop+Evolution+Geomet+Coated+Rotor+Toyota+RAV4+2021
+    affiliate_url: https://www.powerstop.com/product/evolution-coated-rotors/
     summary: Good fit if you want coated hardware and dependable pairing with ceramic pads.
     image: /images/photos/parts/brake-pads.jpg
 buyingAdvice:

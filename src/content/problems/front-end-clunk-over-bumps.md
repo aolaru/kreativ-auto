@@ -7,6 +7,8 @@ heroImage: /images/photos/parts/wheel-hub.jpg
 updatedAt: 2026-03-31
 relatedCars:
   - vw-tiguan-2020
+relatedBest:
+  - best-sway-bar-links-for-vw-tiguan-2020
 symptoms:
   - A dull clunk or knock from the front suspension on broken pavement
   - Noise is easier to hear at low speed than on smooth highway roads
@@ -32,12 +34,12 @@ commonMistakes:
   - Ignoring torque checks after recent brake or suspension service
   - Chasing cabin noises before inspecting the obvious front suspension points
 recommendedParts:
-  - name: Power Stop Z23 Evolution Sport Front Brake Kit
-    price: "$189"
+  - name: MOOG K750809 Stabilizer Bar Link
+    price: "$43"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Power+Stop+Z23+Evolution+Sport+VW+Tiguan+2020
-    summary: Relevant if the clunk started after front-end service and you are refreshing worn front hardware at the same time.
-    image: /images/photos/parts/brake-pads.jpg
+    affiliate_url: https://www.oreillyauto.com/detail/c/moog/moog-stabilizer-bar-link/moo0/k750809
+    summary: One of the first parts worth checking when the front end knocks over small bumps and driveway entries.
+    image: /images/photos/parts/wheel-hub.jpg
 faqs:
   - question: What usually causes a front-end clunk over bumps?
     answer: Sway bar links, bushings, mounts, and loose front-end hardware are some of the most common causes.

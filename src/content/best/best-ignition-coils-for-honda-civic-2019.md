@@ -15,19 +15,19 @@ products:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Delphi+Ignition+Coil+Pack+Set+Honda+Civic+2019
+    affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Balanced OE-style replacement set for restoring idle quality and throttle response.
     image: /images/photos/parts/ignition-coil.jpg
   - name: Denso Direct Ignition Coil
     price: "$142"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Denso+Direct+Ignition+Coil+Honda+Civic+2019
+    affiliate_url: https://www.densoautoparts.com/direct-ignition-coils-cop/
     summary: Premium brand choice for owners who want factory-like reliability and fitment.
     image: /images/photos/parts/ignition-coil.jpg
   - name: Hitachi Ignition Coil Set
     price: "$136"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Hitachi+Ignition+Coil+Set+Honda+Civic+2019
+    affiliate_url: https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils
     summary: Good mid-range option with strong daily-driver durability and clean fitment.
     image: /images/photos/parts/ignition-coil.jpg
 buyingAdvice:

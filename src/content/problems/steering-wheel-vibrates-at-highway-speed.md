@@ -10,6 +10,7 @@ relatedCars:
   - toyota-rav4-2020
 relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
+  - best-tires-for-toyota-rav4-2021-highway-vibration
 symptoms:
   - The steering wheel starts shaking around highway speeds and smooths out below that
   - Vibration feels worse on certain road surfaces or after hitting bumps
@@ -38,13 +39,13 @@ recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Timken+Front+Wheel+Bearing+Hub+Assembly+Toyota+RAV4+2021
+    affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Worth considering if the shake is paired with front-end hum or bearing roughness.
     image: /images/photos/parts/wheel-hub.jpg
   - name: SKF Wheel Bearing and Hub Assembly
     price: "$179"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=SKF+Wheel+Bearing+and+Hub+Assembly+Toyota+RAV4+2021
+    affiliate_url: https://vehicleaftermarket.skf.com/us/en/products/wheel-end
     summary: Strong hub option when diagnosis confirms the front bearing is part of the highway-speed vibration.
     image: /images/photos/parts/wheel-hub.jpg
 faqs:

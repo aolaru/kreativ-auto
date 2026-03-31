@@ -4,6 +4,8 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, problemTrustPoints } from "../../data/editorial";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -96,7 +98,15 @@ const schemas = [
     description: seoDescription,
     image: socialImage ? [new URL(socialImage, Astro.site).toString()] : undefined,
     mainEntityOfPage: Astro.url.href,
-    dateModified: problem.data.updatedAt?.toISOString()
+    dateModified: problem.data.updatedAt?.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
   }
 ];
 ---
@@ -111,6 +121,13 @@ const schemas = [
   breadcrumbs={breadcrumbs}
   schemas={schemas}
 >
+  <TrustBlock
+    summary="Problem guides here are built to help a driver decide what is most likely, how urgent it is, and which repairs are worth checking before money goes in the wrong direction."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={problem.data.updatedAt ? `Checked ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
+    points={problemTrustPoints}
+  />
+
   <Section id="quick-answer" title="What to know first" intro="This is the short version if you want to decide how serious the problem is before digging deeper.">
     <div class="grid gap-4 md:grid-cols-2">
       {

@@ -4,7 +4,9 @@ import ComparisonTable from "../../components/ComparisonTable.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import { bestMethodologyPoints, editorialTeam } from "../../data/editorial";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -104,6 +106,23 @@ const schemas = [
       }
     })),
     dateModified: entry.data.updatedAt?.toISOString()
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: seoTitle,
+    description: seoDescription,
+    image: socialImage ? [new URL(socialImage, Astro.site).toString()] : undefined,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: entry.data.updatedAt?.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
   }
 ];
 ---
@@ -118,6 +137,14 @@ const schemas = [
   breadcrumbs={breadcrumbs}
   schemas={schemas}
 >
+  <TrustBlock
+    title="How these picks are chosen"
+    summary="These recommendations prioritize fitment confidence, predictable daily use, and brands with a solid aftermarket reputation. The goal is to help narrow the field quickly, not pad the page with parts that do the same job."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={entry.data.updatedAt ? `Checked ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
+    points={bestMethodologyPoints}
+  />
+
   <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
     <ComparisonTable products={entry.data.products} />
   </Section>
@@ -131,6 +158,16 @@ const schemas = [
   <Section id="buying-advice" title="Buying advice" intro="The right part depends on how the car is driven, how much refinement you want, and how much compromise you are willing to accept.">
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {entry.data.buyingAdvice.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ul>
+  </Section>
+
+  <Section
+    id="methodology"
+    title="Methodology"
+    intro="The shortlist is built around parts that are easy to recommend to a normal owner, not just the most expensive or most aggressively marketed option."
+  >
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      {bestMethodologyPoints.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
 

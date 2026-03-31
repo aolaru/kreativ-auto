@@ -20,6 +20,7 @@ relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
   - best-brake-pads-for-toyota-rav4-2020
   - best-brake-rotors-for-toyota-rav4-2021
+  - best-tires-for-toyota-rav4-2021-highway-vibration
 commonProblems:
   - Brake squeal at low speed from glazing, pad compound, or dry hardware contact points
   - Humming or growling with speed caused by a worn wheel bearing or hub assembly
@@ -28,13 +29,13 @@ recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+RAV4+2021
+    affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quiet ceramic pad set for drivers who want low dust, less squeal, and an easy daily-driver setup.
     image: /images/photos/parts/brake-pads.jpg
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Timken+Front+Wheel+Bearing+Hub+Assembly+Toyota+RAV4+2021
+    affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Trusted hub option when a speed-related hum points to an actual bearing problem.
     image: /images/photos/parts/wheel-hub.jpg
 maintenanceTips:

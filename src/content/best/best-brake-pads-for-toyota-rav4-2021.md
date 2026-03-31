@@ -15,19 +15,19 @@ products:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+RAV4+2021
+    affiliate_url: https://www.buybrakes.com/akebono-act2076-proact-ultra-premium-ceramic-disc-brake-pad-set-2-wheel-set
     summary: Best overall pick for quiet operation, low dust, and daily-driver smoothness.
     image: /images/photos/parts/brake-pads.jpg
   - name: Bosch QuietCast Premium
     price: "$81"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Toyota+RAV4+2021
+    affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Great alternative for owners prioritizing refined pedal feel and solid noise control.
     image: /images/photos/parts/brake-pads.jpg
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$77"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Wagner+OEX+Ceramic+Brake+Pad+Set+Toyota+RAV4+2021
+    affiliate_url: https://www.partsgeek.com/qd6hv2w-toyota-rav4-brake-pad-set.html
     summary: Strong value option for commuters who want stable braking with low dust.
     image: /images/photos/parts/brake-pads.jpg
 buyingAdvice:

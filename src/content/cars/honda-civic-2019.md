@@ -18,6 +18,7 @@ relatedProblems:
 relatedBest:
   - best-ignition-coils-for-honda-civic-2019
   - best-spark-plugs-for-honda-civic-2019
+  - best-cv-axles-for-honda-civic-2019
 commonProblems:
   - Engine misfire at idle from worn spark plugs or weak ignition coils
   - Clicking noise when turning caused by worn CV axle joints
@@ -27,13 +28,13 @@ recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Delphi+Ignition+Coil+Pack+Set+Honda+Civic+2019
+    affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Reliable replacement coil set for restoring smooth idle and stronger cold starts.
     image: /images/photos/parts/ignition-coil.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=NGK+Laser+Iridium+Spark+Plugs+Honda+Civic+2019
+    affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
     summary: OEM-trusted spark plug option for stable combustion and long service intervals.
     image: /images/photos/parts/ignition-coil.jpg
 maintenanceTips:
