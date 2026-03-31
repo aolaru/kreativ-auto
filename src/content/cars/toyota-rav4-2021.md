@@ -13,12 +13,15 @@ updatedAt: 2026-03-30
 relatedProblems:
   - brake-squeal-at-low-speed
   - humming-noise-that-gets-louder-with-speed
+  - grinding-noise-when-braking
+  - steering-wheel-vibrates-at-highway-speed
 relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
 commonProblems:
   - Brake squeal at low speed from glazing, pad material, or hardware wear
   - Humming noise that grows with speed due to wheel bearing deterioration
   - Front-end road noise that owners confuse with tire issues
+  - Highway-speed steering vibration that starts with tires but sometimes points deeper
 recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"

@@ -12,12 +12,15 @@ heroImage: /images/photos/cars/vw-tiguan-2020.jpg
 updatedAt: 2026-03-30
 relatedProblems:
   - car-shakes-when-braking
+  - brake-pedal-feels-soft
+  - front-end-clunk-over-bumps
 relatedBest:
   - best-brake-pads-for-vw-tiguan-2020
 commonProblems:
   - Steering wheel vibration during braking from uneven front rotor wear
   - Premature front brake pad wear in city-heavy driving
   - Occasional suspension noise from worn sway bar links on rough roads
+  - Soft or inconsistent brake pedal feel when fluid service or bleeding is overdue
 recommendedParts:
   - name: Power Stop Z23 Evolution Sport Front Brake Kit
     price: "$189"

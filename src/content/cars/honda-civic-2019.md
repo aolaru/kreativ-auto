@@ -13,12 +13,15 @@ updatedAt: 2026-03-30
 relatedProblems:
   - engine-misfires-at-idle
   - clicking-noise-when-turning
+  - rough-cold-start
+  - engine-hesitates-under-acceleration
 relatedBest:
   - best-ignition-coils-for-honda-civic-2019
 commonProblems:
   - Engine misfire at idle from worn spark plugs or weak ignition coils
   - Clicking noise when turning caused by worn CV axle joints
   - Rough cold starts tied to delayed maintenance on ignition components
+  - Acceleration hesitation that points back to overdue ignition maintenance
 recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"

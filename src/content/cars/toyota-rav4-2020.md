@@ -13,6 +13,8 @@ updatedAt: 2026-03-31
 relatedProblems:
   - brake-squeal-at-low-speed
   - humming-noise-that-gets-louder-with-speed
+  - grinding-noise-when-braking
+  - steering-wheel-vibrates-at-highway-speed
 relatedBest:
   - best-brake-pads-for-toyota-rav4-2021
   - best-wheel-bearings-for-toyota-rav4-2021
