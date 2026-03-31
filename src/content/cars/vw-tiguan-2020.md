@@ -16,6 +16,8 @@ relatedProblems:
   - front-end-clunk-over-bumps
 relatedBest:
   - best-brake-pads-for-vw-tiguan-2020
+  - best-brake-rotors-for-vw-tiguan-2020
+  - best-sway-bar-links-for-vw-tiguan-2020
 commonProblems:
   - Steering wheel vibration during braking from uneven front rotor wear
   - Premature front brake pad wear in city-heavy driving

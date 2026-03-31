@@ -17,6 +17,7 @@ relatedProblems:
   - engine-hesitates-under-acceleration
 relatedBest:
   - best-ignition-coils-for-honda-civic-2019
+  - best-spark-plugs-for-honda-civic-2019
 commonProblems:
   - Engine misfire at idle from worn spark plugs or weak ignition coils
   - Clicking noise when turning caused by worn CV axle joints

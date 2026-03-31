@@ -17,6 +17,9 @@ relatedProblems:
   - steering-wheel-vibrates-at-highway-speed
 relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
+  - best-brake-pads-for-toyota-rav4-2021
+  - best-brake-rotors-for-toyota-rav4-2021
+  - best-tires-for-toyota-rav4-2021-highway-vibration
 commonProblems:
   - Brake squeal at low speed from glazing, pad material, or hardware wear
   - Humming noise that grows with speed due to wheel bearing deterioration

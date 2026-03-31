@@ -18,6 +18,8 @@ relatedProblems:
 relatedBest:
   - best-brake-pads-for-toyota-rav4-2021
   - best-wheel-bearings-for-toyota-rav4-2021
+  - best-brake-pads-for-toyota-rav4-2020
+  - best-brake-rotors-for-toyota-rav4-2021
 commonProblems:
   - Brake squeal at low speed from glazing, pad compound, or dry hardware contact points
   - Humming or growling with speed caused by a worn wheel bearing or hub assembly
