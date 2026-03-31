@@ -4,11 +4,11 @@ brand: BMW
 model: 3 Series
 year: 2019
 description: The 2019 BMW 3 Series can be an excellent car to drive, but it is also less forgiving than the mainstream options here when maintenance is delayed or cheap parts get mixed into the repair history.
-image: /images/photos/cars/honda-civic-2019.jpg
+image: /images/photos/cars/bmw-3-series-2019.jpg
 metaTitle: BMW 3 Series 2019 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common BMW 3 Series 2019 issues, useful maintenance advice, and the parts worth looking at first.
 excerpt: What to watch on a 2019 BMW 3 Series if you want to avoid turning a small drivability issue into an expensive repair chain.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
+heroImage: /images/photos/cars/bmw-3-series-2019.jpg
 updatedAt: 2026-03-31
 commonProblems:
   - Brake vibration or squeal from aggressive pad compounds, deposits, or uneven rotor wear

@@ -4,11 +4,11 @@ brand: Mazda
 model: CX-5
 year: 2020
 description: The 2020 Mazda CX-5 is one of the better-driving compact SUVs in this class, but owners still run into the usual wear-item complaints like brake noise, suspension clunks, and the kind of road hum that gets more noticeable once mileage builds.
-image: /images/photos/cars/toyota-rav4-2021.jpg
+image: /images/photos/cars/mazda-cx-5-2020.jpg
 metaTitle: Mazda CX-5 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common Mazda CX-5 2020 problems, useful maintenance advice, and the replacement parts worth looking at first.
 excerpt: What usually matters on a 2020 Mazda CX-5 if you want to stay ahead of brake noise, front-end clunks, and the wear items that change how the SUV feels.
-heroImage: /images/photos/cars/toyota-rav4-2021.jpg
+heroImage: /images/photos/cars/mazda-cx-5-2020.jpg
 updatedAt: 2026-03-31
 commonProblems:
   - Brake squeal or light vibration caused by pad deposits, glazing, or worn front brake hardware

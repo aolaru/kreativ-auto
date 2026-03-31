@@ -4,11 +4,11 @@ brand: Toyota
 model: Camry
 year: 2020
 description: The 2020 Toyota Camry is generally a low-drama car to own, but brake noise, rough idle complaints, and road hum from tires or hubs are still the kinds of issues that owners end up noticing first.
-image: /images/photos/cars/honda-civic-2019.jpg
+image: /images/photos/cars/toyota-camry-2020.jpg
 metaTitle: Toyota Camry 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common Toyota Camry 2020 issues, practical maintenance advice, and the replacement parts worth looking at first.
 excerpt: What to watch on a 2020 Toyota Camry if you want to keep it quiet, smooth, and easy to live with over the long run.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
+heroImage: /images/photos/cars/toyota-camry-2020.jpg
 updatedAt: 2026-03-31
 commonProblems:
   - Brake squeal or mild front brake vibration from glazing, pad deposits, or uneven rotor wear

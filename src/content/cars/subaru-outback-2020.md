@@ -4,11 +4,11 @@ brand: Subaru
 model: Outback
 year: 2020
 description: "The 2020 Subaru Outback is built for everyday use and long trips, but the ownership complaints people notice most are still the familiar ones: brake noise, wheel-bearing hum, and front-end wear that shows up as clunks or looseness."
-image: /images/photos/cars/toyota-rav4-2021.jpg
+image: /images/photos/cars/subaru-outback-2020.jpg
 metaTitle: Subaru Outback 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common Subaru Outback 2020 issues, practical maintenance advice, and the replacement parts worth checking first.
 excerpt: What to watch on a 2020 Subaru Outback if you want to keep it quiet, stable, and pleasant on long drives.
-heroImage: /images/photos/cars/toyota-rav4-2021.jpg
+heroImage: /images/photos/cars/subaru-outback-2020.jpg
 updatedAt: 2026-03-31
 commonProblems:
   - Brake squeal or mild vibration from pad wear, deposits, or rotor condition
