@@ -67,6 +67,12 @@ const seoDescription =
   problem.data.metaDescription ??
   `Diagnostic guide covering symptoms, likely causes, and repair solutions for: ${problem.data.title.toLowerCase()}.`;
 const socialImage = problem.data.heroImage ?? problem.data.recommendedParts[0]?.image;
+const quickFacts = [
+  { label: "Repair urgency", value: problem.data.urgency },
+  { label: "Can you drive it?", value: problem.data.canYouDrive },
+  { label: "Estimated cost", value: problem.data.estimatedCost },
+  { label: "DIY difficulty", value: problem.data.diyDifficulty }
+].filter((item) => item.value);
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Problems", href: "/problems/" },
@@ -98,32 +104,57 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro="This page structure is optimized for high-intent searches by clearly separating what the driver notices, what may be causing it, and what to do next."
+  intro="Use this guide to figure out what the symptom usually means, how urgent it is, and what to check before buying parts or booking the repair."
   faqs={problem.data.faqs}
   image={socialImage}
   modifiedTime={problem.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
 >
-  <Section id="symptoms" title="Symptoms" intro="Describe the behavior drivers notice before parts are replaced or inspections begin.">
+  <Section id="quick-answer" title="What to know first" intro="This is the short version if you want to decide how serious the problem is before digging deeper.">
+    <div class="grid gap-4 md:grid-cols-2">
+      {
+        quickFacts.map((item) => (
+          <div class="rounded-2xl bg-slate-50 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-steel">{item.label}</p>
+            <p class="mt-3 text-sm leading-6 text-ink">{item.value}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section id="symptoms" title="Symptoms" intro="These are the signs drivers usually notice before the real cause is confirmed.">
     <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
       {problem.data.symptoms.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
 
-  <Section id="causes" title="Causes" intro="List the most likely culprits from common to less frequent so diagnosis stays efficient.">
+  <Section id="causes" title="Likely causes" intro="Start with the common causes first so diagnosis stays efficient and the wrong parts do not get ordered too early.">
     <ol class="space-y-3 text-sm leading-6 text-steel">
       {problem.data.causes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ol>
   </Section>
 
-  <Section id="solutions" title="Solutions" intro="Solutions should lead readers from inspection to repair, while keeping the content useful even before purchase.">
+  <Section id="solutions" title="What usually fixes it" intro="Work through these in order so you can confirm the problem before spending money on parts.">
     <ol class="space-y-3 text-sm leading-6 text-steel">
       {problem.data.solutions.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ol>
   </Section>
 
-  <Section id="recommended-parts" title="Recommended parts" intro="Affiliate-ready blocks can sit after the diagnostic guidance once reader intent is clearer.">
+  <Section id="when-to-see-mechanic" title="When to involve a mechanic" intro="These are the signs that the problem is moving past a basic driveway diagnosis.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      {problem.data.whenToSeeMechanic.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ul>
+  </Section>
+
+  <Section id="common-mistakes" title="Common mistakes" intro="These are the errors that usually waste time, money, or both.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      {problem.data.commonMistakes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+    </ul>
+  </Section>
+
+  <Section id="recommended-parts" title="Parts worth checking" intro="These are the parts most likely to matter once the diagnosis is pointing in the right direction.">
     <div class="grid gap-6 md:grid-cols-2">
       {problem.data.recommendedParts.map((product) => <ProductCard product={product} />)}
     </div>
@@ -131,13 +162,13 @@ const schemas = [
 
   <RelatedLinks
     title="Related car pages"
-    intro="Show readers which vehicle-specific pages this symptom commonly connects back to."
+    intro="These vehicle pages give you more context if the same symptom shows up on a specific model."
     items={relatedCars}
   />
 
   <RelatedLinks
     title="Related best-parts guides"
-    intro="Readers often want buying help immediately after understanding the likely repair path."
+    intro="If you already know the likely repair area, these guides can help you compare the next parts to look at."
     items={relatedBest}
   />
 </ContentLayout>

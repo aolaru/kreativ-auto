@@ -21,6 +21,18 @@ solutions:
   - Rotate tires and road-test again before replacing a hub blindly
   - Inspect hub play and listen for bearing roughness with the wheel off the ground
   - Replace the noisy hub assembly and verify alignment or tire condition afterward
+urgency: Medium because the noise itself may start small, but a failing bearing should not be ignored for long
+canYouDrive: Sometimes for a short period, but only if the noise is mild and there is no looseness, vibration spike, or heat from the hub area
+estimatedCost: $0 to $600 depending on whether the issue is only tire noise, a hub assembly, or added alignment and tire work
+diyDifficulty: Easy for basic tire checks, moderate to hard for bearing confirmation and hub replacement
+whenToSeeMechanic:
+  - The noise is getting louder week by week
+  - The sound changes clearly with steering load or is joined by vibration
+  - There is wheel play, heat, or roughness from the hub area
+commonMistakes:
+  - Replacing a wheel bearing before doing a tire rotation test
+  - Assuming every highway hum is a bad hub
+  - Ignoring alignment and tire wear after the noisy part is replaced
 recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"

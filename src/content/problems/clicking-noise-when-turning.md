@@ -21,6 +21,18 @@ solutions:
   - Inspect CV boots and axle joints before assuming the noise is a steering rack problem
   - Replace the affected axle assembly if the joint clicks consistently under load
   - Recheck alignment and suspension hardware after axle replacement
+urgency: Medium because a worn joint usually gets worse, not better
+canYouDrive: Usually yes for a short period, but it should be repaired soon once the clicking is consistent
+estimatedCost: $25 to $450 depending on whether the issue is only hardware, a torn boot, or a full axle replacement
+diyDifficulty: Moderate for inspection, moderate to hard for axle replacement depending on tools and rust
+whenToSeeMechanic:
+  - The clicking gets louder quickly or turns into vibration
+  - The boot is torn and grease has already been thrown around the wheel area
+  - You are not sure whether the noise is from the axle, wheel bearing, or suspension
+commonMistakes:
+  - Replacing the wrong side because the noise was not confirmed properly
+  - Ignoring a torn boot until the joint is beyond saving
+  - Buying the cheapest axle available and ending up with new vibration
 recommendedParts:
   - name: GSP CV Axle Assembly
     price: "$119"

@@ -100,11 +100,6 @@ const schemas = [
           url: product.affiliate_url,
           priceCurrency: "USD",
           price: product.price.replace(/[^0-9.]/g, "")
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: product.rating,
-          reviewCount: 1
         }
       }
     })),
@@ -141,13 +136,13 @@ const schemas = [
 
   <RelatedLinks
     title="Related car hubs"
-    intro="Support commercial pages with adjacent ownership content so readers can validate fitment and context."
+    intro="These vehicle pages help confirm fitment context, common issues, and the maintenance picture around the part."
     items={relatedCars}
   />
 
   <RelatedLinks
     title="Related problem guides"
-    intro="Tie product comparisons back to the repair symptoms that often trigger purchase intent."
+    intro="These guides are useful if you are still confirming the symptom or trying to make sure you are solving the right problem."
     items={relatedProblems}
   />
 </ContentLayout>

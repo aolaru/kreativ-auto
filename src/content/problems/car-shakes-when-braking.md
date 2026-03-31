@@ -21,6 +21,18 @@ solutions:
   - Inspect brake rotors, pads, and caliper slide hardware before replacing parts blindly
   - Measure rotor thickness variation and replace or resurface components if they are out of spec
   - Check wheel torque, bushings, and front suspension play after brake service
+urgency: Medium to high because braking stability can get worse quickly
+canYouDrive: Short trips may be possible if braking is still controlled, but worsening shake or longer stopping distances should be treated as a near-term repair
+estimatedCost: $80 to $700 depending on whether the fix is wheel torque, front brake hardware, rotors and pads, or extra suspension work
+diyDifficulty: Moderate because diagnosis matters as much as the part replacement
+whenToSeeMechanic:
+  - The steering wheel shakes hard under light braking
+  - The brake pedal pulses heavily or stopping distances increase
+  - You already replaced pads or rotors and the vibration came back quickly
+commonMistakes:
+  - Ordering rotors immediately without checking pad deposits or wheel torque
+  - Ignoring worn front-end components that make brake vibration feel worse
+  - Reusing sticky slide hardware during a brake job
 recommendedParts:
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$68"

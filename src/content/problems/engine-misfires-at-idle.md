@@ -21,6 +21,18 @@ solutions:
   - Scan for misfire codes and inspect spark plugs before replacing multiple parts at once
   - Test ignition coils and swap suspect coils between cylinders if the platform allows it
   - Check intake hoses and vacuum lines for leaks before moving into deeper fuel diagnostics
+urgency: Medium because misfires can damage the catalytic converter if ignored
+canYouDrive: Maybe for a very short time if the misfire is mild, but flashing warning lights or strong stumbling mean stop driving and diagnose it
+estimatedCost: $0 to $500 depending on whether the cause is a simple plug job, a coil replacement, or deeper vacuum or fuel diagnosis
+diyDifficulty: Easy to moderate for code reading, plugs, and coil swaps; harder if the issue moves into leak testing or fuel diagnosis
+whenToSeeMechanic:
+  - The check engine light is flashing
+  - The engine stumbles badly under light throttle or cold starts get much worse
+  - Swapping plugs or coils did not move the misfire or fix it
+commonMistakes:
+  - Throwing coils at the problem before checking plugs and codes
+  - Ignoring a vacuum leak because the engine improves slightly once warm
+  - Continuing to drive a flashing-misfire car and risking catalyst damage
 recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"

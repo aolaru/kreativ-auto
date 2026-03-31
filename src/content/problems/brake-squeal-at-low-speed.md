@@ -21,6 +21,18 @@ solutions:
   - Inspect pad thickness and rotor finish before assuming a full brake job is required
   - Clean and lubricate brake hardware during service
   - Replace noisy pads with a better compound if squeal keeps returning
+urgency: Low to medium if braking performance is still normal
+canYouDrive: Usually yes for short-term driving, as long as braking feels normal and stopping distances have not changed
+estimatedCost: $20 to $350 depending on whether the fix is hardware service, new pads, or a full pad-and-rotor job
+diyDifficulty: Easy to moderate depending on whether this is inspection, pad replacement, or full brake service
+whenToSeeMechanic:
+  - The squeal is joined by grinding, vibration, or weak braking
+  - Pad thickness looks low or the rotor surface is badly grooved
+  - The noise keeps returning after basic cleanup and hardware lubrication
+commonMistakes:
+  - Replacing pads without cleaning and lubricating the contact points
+  - Assuming every squeal means the rotors must be replaced immediately
+  - Buying the cheapest pad compound and expecting it to stay quiet
 recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
