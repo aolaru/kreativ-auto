@@ -25,13 +25,13 @@ recommendedParts:
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$68"
     rating: 4.5
-    affiliate_url: https://example.com/wagner-oex-ceramic
+    affiliate_url: https://www.amazon.com/s?k=Wagner+OEX+Ceramic+Brake+Pad+Set+VW+Tiguan+2020
     summary: Strong everyday replacement pad for drivers who want low dust and stable bite.
     image: /images/photos/parts/brake-pads.jpg
   - name: Raybestos Element3 Coated Rotor
     price: "$92"
     rating: 4.6
-    affiliate_url: https://example.com/raybestos-element3-rotor
+    affiliate_url: https://www.amazon.com/s?k=Raybestos+Element3+Coated+Rotor+VW+Tiguan+2020
     summary: Coated rotor option with solid corrosion resistance for daily drivers.
     image: /images/photos/parts/brake-pads.jpg
 faqs:

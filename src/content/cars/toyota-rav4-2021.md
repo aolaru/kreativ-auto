@@ -23,13 +23,13 @@ recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7
-    affiliate_url: https://example.com/timken-wheel-bearing-rav4
+    affiliate_url: https://www.amazon.com/s?k=Timken+Front+Wheel+Bearing+Hub+Assembly+Toyota+RAV4+2021
     summary: Strong OE-style bearing hub option for curing humming or growling at speed.
     image: /images/photos/parts/wheel-hub.jpg
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
-    affiliate_url: https://example.com/akebono-proact-rav4
+    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+RAV4+2021
     summary: Quiet ceramic pad set well-suited to reducing dust and low-speed squeal.
     image: /images/photos/parts/brake-pads.jpg
 maintenanceTips:

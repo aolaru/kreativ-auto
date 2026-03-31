@@ -15,19 +15,19 @@ products:
   - name: Bosch QuietCast Premium
     price: "$74"
     rating: 4.6
-    affiliate_url: https://example.com/bosch-quietcast-tiguan
+    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+VW+Tiguan+2020
     summary: Best for owners who want quiet operation and a closer-to-stock pedal feel.
     image: /images/photos/parts/brake-pads.jpg
   - name: Power Stop Z23 Evolution Sport
     price: "$89"
     rating: 4.7
-    affiliate_url: https://example.com/power-stop-z23-tiguan
+    affiliate_url: https://www.amazon.com/s?k=Power+Stop+Z23+Evolution+Sport+VW+Tiguan+2020
     summary: Best fit for mixed commuting with lower dust and a slightly sportier bite.
     image: /images/photos/parts/brake-pads.jpg
   - name: Akebono ProACT Ultra-Premium
     price: "$96"
     rating: 4.8
-    affiliate_url: https://example.com/akebono-proact-tiguan
+    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ultra-Premium+VW+Tiguan+2020
     summary: Premium ceramic option with strong refinement and long service life.
     image: /images/photos/parts/brake-pads.jpg
 buyingAdvice:

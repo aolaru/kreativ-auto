@@ -15,19 +15,19 @@ products:
   - name: GSP CV Axle Assembly
     price: "$119"
     rating: 4.5
-    affiliate_url: https://example.com/gsp-cv-axle-civic
+    affiliate_url: https://www.amazon.com/s?k=GSP+CV+Axle+Assembly+Honda+Civic+2019
     summary: Good-value replacement for drivers who need a fast fix for turning-click issues.
     image: /images/photos/parts/cv-axle.jpg
   - name: Cardone Select CV Axle
     price: "$132"
     rating: 4.4
-    affiliate_url: https://example.com/cardone-cv-axle-civic
+    affiliate_url: https://www.amazon.com/s?k=Cardone+Select+CV+Axle+Honda+Civic+2019
     summary: Widely available option with decent fitment support for everyday repairs.
     image: /images/photos/parts/cv-axle.jpg
   - name: TRQ CV Axle and Wheel Bearing Kit
     price: "$188"
     rating: 4.6
-    affiliate_url: https://example.com/trq-cv-axle-civic
+    affiliate_url: https://www.amazon.com/s?k=TRQ+CV+Axle+Wheel+Bearing+Kit+Honda+Civic+2019
     summary: Useful bundle for owners handling a broader front-end refresh in one job.
     image: /images/photos/parts/cv-axle.jpg
 buyingAdvice:

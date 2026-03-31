@@ -22,13 +22,13 @@ recommendedParts:
   - name: Power Stop Z23 Evolution Sport Front Brake Kit
     price: "$189"
     rating: 4.7
-    affiliate_url: https://example.com/power-stop-z23-tiguan
+    affiliate_url: https://www.amazon.com/s?k=Power+Stop+Z23+Evolution+Sport+VW+Tiguan+2020
     summary: Balanced daily-driving option with low dust pads and coated rotors.
     image: /images/photos/parts/brake-pads.jpg
   - name: Bosch QuietCast Premium Brake Pads
     price: "$74"
     rating: 4.6
-    affiliate_url: https://example.com/bosch-quietcast-tiguan
+    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+VW+Tiguan+2020
     summary: Good fit for owners prioritizing noise control and OEM-like feel.
     image: /images/photos/parts/brake-pads.jpg
 maintenanceTips:

@@ -25,13 +25,13 @@ recommendedParts:
   - name: GSP CV Axle Assembly
     price: "$119"
     rating: 4.5
-    affiliate_url: https://example.com/gsp-cv-axle-civic
+    affiliate_url: https://www.amazon.com/s?k=GSP+CV+Axle+Assembly+Honda+Civic+2019
     summary: Budget-friendly axle assembly for addressing turning-click complaints on daily drivers.
     image: /images/photos/parts/cv-axle.jpg
   - name: Dorman CV Boot Clamp Kit
     price: "$18"
     rating: 4.3
-    affiliate_url: https://example.com/dorman-cv-boot-clamps
+    affiliate_url: https://www.amazon.com/s?k=Dorman+CV+Boot+Clamp+Kit
     summary: Useful hardware set when servicing boots or supporting an axle replacement job.
     image: /images/photos/parts/cv-axle.jpg
 faqs:

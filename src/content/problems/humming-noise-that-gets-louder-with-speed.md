@@ -25,13 +25,13 @@ recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7
-    affiliate_url: https://example.com/timken-wheel-bearing-rav4
+    affiliate_url: https://www.amazon.com/s?k=Timken+Front+Wheel+Bearing+Hub+Assembly+Toyota+RAV4+2021
     summary: OE-style bearing hub with strong fitment confidence for curing front-end humming.
     image: /images/photos/parts/wheel-hub.jpg
   - name: SKF Wheel Bearing and Hub Assembly
     price: "$179"
     rating: 4.8
-    affiliate_url: https://example.com/skf-wheel-bearing-rav4
+    affiliate_url: https://www.amazon.com/s?k=SKF+Wheel+Bearing+and+Hub+Assembly+Toyota+RAV4+2021
     summary: Premium hub option for owners prioritizing long-term bearing durability.
     image: /images/photos/parts/wheel-hub.jpg
 faqs:

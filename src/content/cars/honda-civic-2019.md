@@ -23,13 +23,13 @@ recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"
     rating: 4.7
-    affiliate_url: https://example.com/delphi-ignition-coils-civic
+    affiliate_url: https://www.amazon.com/s?k=Delphi+Ignition+Coil+Pack+Set+Honda+Civic+2019
     summary: Reliable replacement coil set for restoring smooth idle and stronger cold starts.
     image: /images/photos/parts/ignition-coil.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
-    affiliate_url: https://example.com/ngk-laser-iridium-civic
+    affiliate_url: https://www.amazon.com/s?k=NGK+Laser+Iridium+Spark+Plugs+Honda+Civic+2019
     summary: OEM-trusted spark plug option for stable combustion and long service intervals.
     image: /images/photos/parts/ignition-coil.jpg
 maintenanceTips:
