@@ -7,6 +7,7 @@ import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import { bestMethodologyPoints, editorialTeam } from "../../data/editorial";
+import { withAffiliateTag } from "../../utils/affiliate";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -99,7 +100,7 @@ const schemas = [
         image: product.image ? new URL(product.image, Astro.site).toString() : undefined,
         offers: {
           "@type": "Offer",
-          url: product.affiliate_url,
+          url: withAffiliateTag(product.affiliate_url),
           priceCurrency: "USD",
           price: product.price.replace(/[^0-9.]/g, "")
         }

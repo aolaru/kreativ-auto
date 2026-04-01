@@ -1,4 +1,6 @@
 ---
+import { withAffiliateTag } from "../utils/affiliate";
+
 interface Product {
   name: string;
   price: string;
@@ -12,6 +14,7 @@ interface Props {
 }
 
 const { product } = Astro.props;
+const productUrl = withAffiliateTag(product.affiliate_url);
 ---
 
 <article class="surface flex h-full flex-col p-6">
@@ -44,7 +47,7 @@ const { product } = Astro.props;
     <p class="text-base font-semibold text-ink">{product.price}</p>
     <a
       class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent"
-      href={product.affiliate_url}
+      href={productUrl}
       rel="nofollow sponsored"
       target="_blank"
     >
