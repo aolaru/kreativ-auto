@@ -3,6 +3,11 @@ title: VW Tiguan 2020
 brand: Volkswagen
 model: Tiguan
 year: 2020
+generation: Second Generation
+generationCode: Tiguan II
+generationYears: 2016-2024
+phase: Facelift
+phaseYears: 2020-2024
 description: The 2020 VW Tiguan is a solid family SUV, but it is also the kind of vehicle where brake feel, front-end vibration, and routine maintenance start coming up pretty early if the car spends a lot of time in traffic.
 image: /images/photos/cars/vw-tiguan-2020.jpg
 metaTitle: VW Tiguan 2020 Common Problems, Maintenance Tips, and Best Parts

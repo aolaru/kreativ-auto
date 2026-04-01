@@ -3,6 +3,9 @@ title: Toyota Camry 2020
 brand: Toyota
 model: Camry
 year: 2020
+generation: Eighth Generation
+generationCode: XV70
+generationYears: 2018-2020
 description: The 2020 Toyota Camry is generally a low-drama car to own, but brake noise, rough idle complaints, and road hum from tires or hubs are still the kinds of issues that owners end up noticing first.
 image: /images/photos/cars/toyota-camry-2020.jpg
 metaTitle: Toyota Camry 2020 Common Problems, Maintenance Tips, and Best Parts

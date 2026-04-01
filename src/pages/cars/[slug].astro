@@ -6,7 +6,7 @@ import Section from "../../components/Section.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { carTrustPoints, editorialTeam } from "../../data/editorial";
-import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
+import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
   const cars = await getCollection("cars");
@@ -159,6 +159,29 @@ const schemas = [
             <dt class="font-semibold text-ink">Year</dt>
             <dd class="mt-1 text-steel">{car.data.year}</dd>
           </div>
+          <div>
+            <dt class="font-semibold text-ink">Generation</dt>
+            <dd class="mt-1 text-steel">
+              <a class="text-accent hover:underline" href={`/generations/${getGenerationSlug(car.data)}/`}>
+                {getGenerationLabel(car.data)}
+              </a>
+            </dd>
+          </div>
+          <div>
+            <dt class="font-semibold text-ink">Generation range</dt>
+            <dd class="mt-1 text-steel">{getGenerationRange(car.data)}</dd>
+          </div>
+          {
+            car.data.phase && (
+              <div>
+                <dt class="font-semibold text-ink">Phase</dt>
+                <dd class="mt-1 text-steel">
+                  {car.data.phase}
+                  {car.data.phaseYears ? ` (${car.data.phaseYears})` : ""}
+                </dd>
+              </div>
+            )
+          }
         </dl>
       </div>
     </div>

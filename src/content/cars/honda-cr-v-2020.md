@@ -3,6 +3,11 @@ title: Honda CR-V 2020
 brand: Honda
 model: CR-V
 year: 2020
+generation: Fifth Generation
+generationCode: RW/RT
+generationYears: 2017-2022
+phase: Facelift
+phaseYears: 2020-2022
 description: The 2020 Honda CR-V is practical and easy to live with, but brake noise, suspension wear, and the usual road-hum complaints can still make the SUV feel older than it should if they are ignored too long.
 image: /images/photos/cars/honda-cr-v-2020.jpg
 metaTitle: Honda CR-V 2020 Common Problems, Maintenance Tips, and Best Parts

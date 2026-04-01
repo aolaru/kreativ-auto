@@ -1,0 +1,49 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { getGenerationKey, getGenerationLabel, getGenerationRange, getGenerationSlug } from "../../utils/taxonomy";
+
+const cars = await getCollection("cars");
+const generations = Array.from(
+  cars.reduce((map, car) => {
+    const key = getGenerationKey(car.data);
+    const current = map.get(key) ?? [];
+    current.push(car);
+    map.set(key, current);
+    return map;
+  }, new Map<string, typeof cars>())
+).sort(([a], [b]) => a.localeCompare(b));
+---
+
+<BaseLayout title="Generations" description="Browse vehicle content by generation and facelift group, not just by single model year.">
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface p-8 sm:p-10">
+      <p class="eyebrow">Generations</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by generation</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        These pages group model years by generation and facelift window so related years stay together when problems and parts overlap.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+      {
+        generations.map(([, entries]) => {
+          const lead = entries[0];
+          const label = getGenerationLabel(lead.data);
+          const range = getGenerationRange(lead.data);
+
+          return (
+            <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/generations/${getGenerationSlug(lead.data)}/`}>
+              <p class="eyebrow">Generation</p>
+              <h2 class="mt-3 text-2xl font-semibold text-ink">{label}</h2>
+              <p class="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-steel">{range}</p>
+              <p class="mt-3 text-sm leading-6 text-steel">
+                {entries.length} published model-year page{entries.length === 1 ? "" : "s"} in this generation group.
+              </p>
+            </a>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>

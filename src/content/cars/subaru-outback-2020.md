@@ -3,6 +3,9 @@ title: Subaru Outback 2020
 brand: Subaru
 model: Outback
 year: 2020
+generation: Sixth Generation
+generationCode: BT
+generationYears: 2020-2022
 description: "The 2020 Subaru Outback is built for everyday use and long trips, but the ownership complaints people notice most are still the familiar ones: brake noise, wheel-bearing hum, and front-end wear that shows up as clunks or looseness."
 image: /images/photos/cars/subaru-outback-2020.jpg
 metaTitle: Subaru Outback 2020 Common Problems, Maintenance Tips, and Best Parts

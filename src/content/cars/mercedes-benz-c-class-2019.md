@@ -3,6 +3,11 @@ title: Mercedes-Benz C-Class 2019
 brand: Mercedes-Benz
 model: C-Class
 year: 2019
+generation: Fourth Generation
+generationCode: W205
+generationYears: 2015-2021
+phase: Facelift
+phaseYears: 2019-2021
 description: The 2019 Mercedes-Benz C-Class is comfortable and refined when sorted, but like most premium sedans, the first complaints owners notice are often brake feel, suspension looseness, and drivability changes that should not be ignored.
 image: /images/photos/cars/mercedes-benz-c-class-2019.jpg
 metaTitle: Mercedes-Benz C-Class 2019 Common Problems, Maintenance Tips, and Best Parts

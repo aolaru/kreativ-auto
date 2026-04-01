@@ -3,6 +3,9 @@ title: Mazda CX-5 2020
 brand: Mazda
 model: CX-5
 year: 2020
+generation: Second Generation
+generationCode: KF
+generationYears: 2017-2021
 description: The 2020 Mazda CX-5 is one of the better-driving compact SUVs in this class, but owners still run into the usual wear-item complaints like brake noise, suspension clunks, and the kind of road hum that gets more noticeable once mileage builds.
 image: /images/photos/cars/mazda-cx-5-2020.jpg
 metaTitle: Mazda CX-5 2020 Common Problems, Maintenance Tips, and Best Parts

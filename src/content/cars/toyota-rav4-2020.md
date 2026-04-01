@@ -3,6 +3,9 @@ title: Toyota RAV4 2020
 brand: Toyota
 model: RAV4
 year: 2020
+generation: Fifth Generation
+generationCode: XA50
+generationYears: 2019-2021
 description: The 2020 Toyota RAV4 is a strong everyday SUV, but it is still the kind of vehicle where brake noise, wheel-bearing hum, and tire-related road noise can slowly chip away at how refined it feels.
 image: /images/photos/cars/toyota-rav4-2021.jpg
 metaTitle: Toyota RAV4 2020 Common Problems, Maintenance Tips, and Best Parts

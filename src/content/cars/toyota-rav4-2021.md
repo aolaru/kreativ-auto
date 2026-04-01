@@ -3,6 +3,9 @@ title: Toyota RAV4 2021
 brand: Toyota
 model: RAV4
 year: 2021
+generation: Fifth Generation
+generationCode: XA50
+generationYears: 2019-2021
 description: The 2021 Toyota RAV4 is one of those SUVs people expect to just work, which is mostly true, but brake noise, wheel-bearing hum, and general road-noise complaints still come up often enough to be worth covering properly.
 image: /images/photos/cars/toyota-rav4-2021.jpg
 metaTitle: Toyota RAV4 2021 Common Problems, Maintenance Tips, and Best Parts

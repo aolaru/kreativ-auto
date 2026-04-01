@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { slugify } from "../../utils/taxonomy";
+import { getGenerationKey, slugify } from "../../utils/taxonomy";
 
 const cars = await getCollection("cars");
 const models = Array.from(
@@ -9,9 +9,9 @@ const models = Array.from(
     const key = `${car.data.brand} ${car.data.model}`;
     const current = map.get(key) ?? [];
     current.push(car);
-    map.set(key, current);
-    return map;
-  }, new Map<string, typeof cars>())
+        map.set(key, current);
+        return map;
+      }, new Map<string, typeof cars>())
 ).sort(([a], [b]) => a.localeCompare(b));
 ---
 
@@ -24,7 +24,7 @@ const models = Array.from(
       <p class="eyebrow">Taxonomy</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by model</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Model pages are the most natural internal-link destinations for supporting problems, parts roundups, and future ownership tools.
+        Model pages group the published years first, then break them down by generation and facelift phase where the underlying car really changes.
       </p>
     </div>
 
@@ -34,7 +34,11 @@ const models = Array.from(
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/models/${slugify(model)}/`}>
             <p class="eyebrow">Model</p>
             <h2 class="mt-3 text-2xl font-semibold text-ink">{model}</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">{entries.length} published year-specific hub page{entries.length === 1 ? "" : "s"}.</p>
+            <p class="mt-3 text-sm leading-6 text-steel">
+              {entries.length} published year-specific hub page{entries.length === 1 ? "" : "s"} across{" "}
+              {new Set(entries.map((entry) => getGenerationKey(entry.data))).size} generation group
+              {new Set(entries.map((entry) => getGenerationKey(entry.data))).size === 1 ? "" : "s"}.
+            </p>
           </a>
         ))
       }

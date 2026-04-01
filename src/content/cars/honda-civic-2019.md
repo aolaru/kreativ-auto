@@ -3,6 +3,11 @@ title: Honda Civic 2019
 brand: Honda
 model: Civic
 year: 2019
+generation: Tenth Generation
+generationCode: FC/FK
+generationYears: 2016-2021
+phase: Facelift
+phaseYears: 2019-2021
 description: The 2019 Honda Civic is generally dependable, but once mileage starts building, ignition parts, rough idle complaints, and front axle noise are the issues people usually end up chasing.
 image: /images/photos/cars/honda-civic-2019.jpg
 metaTitle: Honda Civic 2019 Common Problems, Maintenance Tips, and Best Parts

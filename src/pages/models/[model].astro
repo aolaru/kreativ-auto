@@ -3,7 +3,15 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
-import { slugify, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
+import {
+  getGenerationKey,
+  getGenerationLabel,
+  getGenerationRange,
+  getGenerationSlug,
+  slugify,
+  includesPhrase,
+  uniqueByHref
+} from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
   const cars = await getCollection("cars");
@@ -56,6 +64,15 @@ const breadcrumbs = [
   { label: "Models", href: "/models/" },
   { label: model }
 ];
+const generationGroups = Array.from(
+  modelCars.reduce((map, car) => {
+    const key = getGenerationKey(car.data);
+    const current = map.get(key) ?? [];
+    current.push(car);
+    map.set(key, current);
+    return map;
+  }, new Map<string, typeof modelCars>())
+);
 ---
 
 <BaseLayout title={`${model} Guides`} description={`Browse ${model} car hubs, problem pages, and best-parts content.`}>
@@ -65,19 +82,44 @@ const breadcrumbs = [
       <p class="eyebrow">Model Hub</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{model}</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Model taxonomy pages consolidate all year-specific hubs and related commercial or diagnostic content for one vehicle line.
+        This model page keeps the published years together, but also groups them by generation and facelift window so part fitment and common issues stay easier to track.
       </p>
     </div>
 
-    <div class="mt-10 grid gap-6">
+    <div class="mt-10 space-y-8">
       {
-        modelCars.map((car) => (
-          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
-            <p class="eyebrow">{car.data.year}</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.description}</p>
-          </a>
-        ))
+        generationGroups.map(([, entries]) => {
+          const lead = entries[0];
+
+          return (
+            <section class="surface p-6 sm:p-8">
+              <div class="flex flex-col gap-3 border-b border-slate-200 pb-5 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p class="eyebrow">Generation</p>
+                  <h2 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(lead.data)}</h2>
+                  <p class="mt-3 text-sm leading-6 text-steel">
+                    Covers the {getGenerationRange(lead.data)} window for {model}.
+                  </p>
+                </div>
+                <a class="text-sm font-semibold text-accent" href={`/generations/${getGenerationSlug(lead.data)}/`}>
+                  View generation hub
+                </a>
+              </div>
+
+              <div class="mt-6 grid gap-6">
+                {entries
+                  .sort((a, b) => a.data.year - b.data.year)
+                  .map((car) => (
+                    <a class="rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
+                      <p class="eyebrow">{car.data.year}</p>
+                      <h3 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h3>
+                      <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.description}</p>
+                    </a>
+                  ))}
+              </div>
+            </section>
+          );
+        })
       }
     </div>
 

@@ -3,6 +3,9 @@ title: BMW 3 Series 2019
 brand: BMW
 model: 3 Series
 year: 2019
+generation: Seventh Generation
+generationCode: G20
+generationYears: 2019-2022
 description: The 2019 BMW 3 Series can be an excellent car to drive, but it is also less forgiving than the mainstream options here when maintenance is delayed or cheap parts get mixed into the repair history.
 image: /images/photos/cars/bmw-3-series-2019.jpg
 metaTitle: BMW 3 Series 2019 Common Problems, Maintenance Tips, and Best Parts

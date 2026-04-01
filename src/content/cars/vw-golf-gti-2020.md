@@ -3,6 +3,11 @@ title: VW Golf GTI 2020
 brand: Volkswagen
 model: Golf GTI
 year: 2020
+generation: Seventh Generation
+generationCode: Mk7.5
+generationYears: 2018-2021
+phase: Facelift
+phaseYears: 2018-2021
 description: The 2020 VW Golf GTI is one of those cars where people notice every change in brake feel, idle quality, and suspension response, which makes routine wear items more important than the badge might suggest.
 image: /images/photos/cars/vw-golf-gti-2020.jpg
 metaTitle: VW Golf GTI 2020 Common Problems, Maintenance Tips, and Best Parts
