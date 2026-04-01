@@ -48,7 +48,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=AGM+battery+VW+Tiguan+2020
     summary: Strong replacement route if the SUV sees short-trip driving and the current battery no longer has reserve capacity.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/car-battery.jpg
 faqs:
   - question: Can short trips really make a healthy battery feel weak?
     answer: Yes. A battery that never gets enough drive time to recover can feel worse than the rest of the system actually is.

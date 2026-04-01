@@ -39,13 +39,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Pentosin+Pentofrost+E+coolant
     summary: Correct-spec coolant option for topping up or refilling the system once the leak source is confirmed.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/pentosin-coolant.jpg
   - name: Rein Expansion Tank Cap
     price: "$18"
     rating: 4.5
     affiliate_url: https://www.amazon.com/s?k=Rein+expansion+tank+cap+VW+Tiguan+2020
     summary: Useful if testing points to a weak cap rather than a larger coolant-system failure.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/pentosin-coolant.jpg
 faqs:
   - question: Can coolant disappear without leaving a puddle?
     answer: Yes. Small pressure leaks can evaporate on hot engine parts or only seep while the system is fully warmed up.

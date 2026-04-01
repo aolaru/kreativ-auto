@@ -39,7 +39,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=Denso+AC+condenser+Honda+Civic+2019
     summary: Trusted condenser option when the system diagnosis points to the common heat-exchanger side of the problem.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/denso-condenser.jpeg
 faqs:
   - question: Why is my A/C colder when I am driving than when idling?
     answer: Airflow and condenser efficiency matter most at idle, so weaknesses in that part of the system tend to show up first in traffic.

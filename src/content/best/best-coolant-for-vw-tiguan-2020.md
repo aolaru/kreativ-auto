@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Pentosin+Pentofrost+E+coolant
     summary: Best overall choice if you want a widely trusted VW-appropriate coolant for proper refill or top-up use.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/pentosin-coolant.jpg
   - name: Febi Bilstein G12 Evo Coolant
     price: "$24"
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=Febi+Bilstein+G12+Evo+coolant
     summary: Good alternative when you want a European-spec coolant that aligns with modern VW requirements.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/pentosin-coolant.jpg
   - name: Genuine Volkswagen Coolant
     price: "$31"
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=Volkswagen+G12+Evo+coolant
     summary: Strong OE-leaning option for owners who would rather stay close to factory labeling and compatibility.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/pentosin-coolant.jpg
 buyingAdvice:
   - On this platform, the right spec matters more than brand marketing, so avoid mixing unknown coolant types.
   - If the level is dropping, fix the leak first instead of treating coolant as the repair.

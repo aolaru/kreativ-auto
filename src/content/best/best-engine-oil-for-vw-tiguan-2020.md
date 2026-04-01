@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Liqui+Moly+Special+Tec+LL+5W-30
     summary: Best overall choice if you want a trusted Euro-spec oil for normal daily driving and clean service intervals.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.jpg
   - name: Mobil 1 ESP 0W-30
     price: "$54"
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Mobil+1+ESP+0W-30
     summary: Strong premium option for owners who want a widely available low-ash Euro formula with strong reputation.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.jpg
   - name: Castrol Edge Euro Car 5W-30
     price: "$42"
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=Castrol+Edge+Euro+Car+5W-30
     summary: Good mainstream choice when you want easier availability without drifting away from the right type of oil.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.jpg
 buyingAdvice:
   - The exact approval matters more than brand loyalty on a modern Tiguan.
   - If the car is using oil between services, fix the consumption pattern instead of treating frequent top-ups as normal forever.

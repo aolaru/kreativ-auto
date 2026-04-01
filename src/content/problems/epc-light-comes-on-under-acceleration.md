@@ -39,13 +39,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=Eldor+ignition+coil+set+VW+Tiguan+2020
     summary: Strong OE-style coil option when the EPC warning traces back to ignition breakdown under load.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: NGK Ruthenium HX Spark Plugs
     price: "$62"
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=NGK+Ruthenium+HX+spark+plugs+VW+Tiguan+2020
     summary: Smart plug choice when the car is due for ignition service and misfire counts rise under boost.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/ngk-spark-plugs.png
 faqs:
   - question: Does an EPC light always mean the throttle body is bad?
     answer: No. Ignition and boost-related faults can trigger EPC behavior too, especially when the issue only shows up under acceleration.

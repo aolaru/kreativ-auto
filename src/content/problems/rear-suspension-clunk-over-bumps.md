@@ -40,7 +40,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=MOOG+rear+stabilizer+bar+link+Toyota+RAV4+2021
     summary: One of the first rear suspension parts worth checking when the RAV4 starts knocking over sharper bumps.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/moog-sway-bar-links.png
 faqs:
   - question: Can rear cargo-area hardware sound like suspension noise?
     answer: Yes. Loose spare-tire hardware or trim can mimic a rear suspension clunk surprisingly well.

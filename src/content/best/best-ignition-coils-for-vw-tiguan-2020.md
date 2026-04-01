@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=Eldor+ignition+coil+set+VW+Tiguan+2020
     summary: Best overall choice if you want an OE-style coil set with strong reputation on modern VW applications.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: Bremi Ignition Coil
     price: "$149"
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=Bremi+ignition+coil+VW+Tiguan+2020
     summary: Good alternative if you want a European-brand coil option with clean fitment and solid drivability.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: Delphi Ignition Coil
     price: "$136"
     rating: 4.5
     affiliate_url: https://www.amazon.com/s?k=Delphi+ignition+coil+VW+Tiguan+2020
     summary: Value-minded option for drivers refreshing worn coils without paying the highest premium.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
 buyingAdvice:
   - If the car misfires under load, coils and plugs should be evaluated together instead of separately.
   - Cheap coil sets can create the exact repeat problem this repair is supposed to solve.

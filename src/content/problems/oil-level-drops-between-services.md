@@ -48,13 +48,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Liqui+Moly+Special+Tec+LL+5W-30
     summary: Strong VW-friendly oil choice if the next step is confirming the car is running the right spec before chasing deeper causes.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.jpg
   - name: Mann Oil Filter
     price: "$14"
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Mann+oil+filter+VW+Tiguan+2020
     summary: OE-leaning filter option if you are resetting the service baseline with a proper oil change.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.jpg
 faqs:
   - question: Is some oil use normal on a Tiguan 2.0T?
     answer: A little can be, but repeated top-ups between normal services are worth measuring and tracking rather than ignoring.

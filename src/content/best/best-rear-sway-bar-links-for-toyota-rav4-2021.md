@@ -18,19 +18,19 @@ products:
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=MOOG+rear+stabilizer+bar+link+Toyota+RAV4+2021
     summary: Best overall pick for a simple, credible rear clunk repair on a daily-driven RAV4.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/moog-sway-bar-links.png
   - name: Delphi Rear Stabilizer Link
     price: "$34"
     rating: 4.5
     affiliate_url: https://www.amazon.com/s?k=Delphi+rear+stabilizer+link+Toyota+RAV4+2021
     summary: Strong value option if the goal is to fix a clear rear knock without paying OE-level money.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/moog-sway-bar-links.png
   - name: Genuine Toyota Rear Stabilizer Link
     price: "$58"
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Toyota+rear+stabilizer+link+RAV4+2021
     summary: Best fit if you want the safest factory-style route and do not mind paying more for it.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/moog-sway-bar-links.png
 buyingAdvice:
   - Rear clunks can come from cargo or trim, so isolate the sound before ordering parts.
   - If one link is worn, inspect the other side and the rear bushings at the same time.

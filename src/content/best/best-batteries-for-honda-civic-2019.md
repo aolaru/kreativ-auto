@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=AGM+battery+Honda+Civic+2019
     summary: Best overall choice for short-trip use, stronger reserve capacity, and fewer weak-start complaints.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/car-battery.jpg
   - name: DieHard Platinum AGM Battery
     price: "$229"
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=DieHard+Platinum+AGM+battery+Honda+Civic+2019
     summary: Strong premium option for owners who want dependable daily-start performance and good voltage stability.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/car-battery.jpg
   - name: Optima YellowTop Battery
     price: "$249"
     rating: 4.5
     affiliate_url: https://www.amazon.com/s?k=Optima+YellowTop+Honda+Civic+2019
     summary: Good fit if the car sees heavier accessory load or a tougher driving pattern than normal commuting.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/car-battery.jpg
 buyingAdvice:
   - Verify group size and terminal configuration before buying.
   - If the battery light is flickering, test the charging system and grounds too.

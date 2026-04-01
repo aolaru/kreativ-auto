@@ -39,7 +39,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=AGM+battery+Honda+Civic+2019
     summary: Good battery replacement option when testing shows the original unit has become the weak link in the system.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/car-battery.jpg
 faqs:
   - question: Can a weak battery make the battery light flicker?
     answer: Yes. If the battery is no longer stabilizing voltage well, idle-speed charging behavior can look worse than it should.

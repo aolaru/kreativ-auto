@@ -46,7 +46,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=303+rubber+seal+protectant
     summary: Useful for restoring and maintaining weatherstrip pliability once the leak source is confirmed and cleaned.
-    image: /images/photos/cars/vw-tiguan-2020.jpg
+    image: /images/photos/parts/303-protectant.png
 faqs:
   - question: Can a small cabin leak really cause larger problems?
     answer: Yes. Wet carpet and trapped moisture can lead to odor, corrosion, and electrical trouble surprisingly quickly.

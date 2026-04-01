@@ -40,7 +40,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=AGM+battery+Toyota+RAV4+2021
     summary: Strong replacement choice if testing shows the existing battery has simply reached the end of its useful life.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/car-battery.jpg
 faqs:
   - question: Can short trips cause a battery to keep going flat?
     answer: Yes. If the battery never fully recovers from repeated short-trip starts, it can feel weak even when no major fault is present.

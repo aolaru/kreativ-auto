@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=Denso+AC+condenser+Honda+Civic+2019
     summary: Best overall choice if you want a trusted brand for a common Civic cooling-performance repair.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/denso-condenser.jpeg
   - name: TYC A/C Condenser
     price: "$118"
     rating: 4.5
     affiliate_url: https://www.amazon.com/s?k=TYC+AC+condenser+Honda+Civic+2019
     summary: Good value option when the goal is to restore normal cooling without pushing the budget too far.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/denso-condenser.jpeg
   - name: Genuine Honda A/C Condenser
     price: "$186"
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Genuine+Honda+AC+condenser+2019+Civic
     summary: Best OE-style route for owners who want the most conservative fitment choice.
-    image: /images/photos/cars/honda-civic-2019.jpg
+    image: /images/photos/parts/denso-condenser.jpeg
 buyingAdvice:
   - Confirm the system issue is actually condenser-related before ordering parts.
   - Do not ignore fan operation and refrigerant diagnosis just because a Civic condenser issue is common.

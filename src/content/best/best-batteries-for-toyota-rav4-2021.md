@@ -18,19 +18,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=AGM+battery+Toyota+RAV4+2021
     summary: Best overall choice if you want stronger reserve capacity for short-trip use and longer sits.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/car-battery.jpg
   - name: DieHard Platinum AGM Battery
     price: "$239"
     rating: 4.7
     affiliate_url: https://www.amazon.com/s?k=DieHard+Platinum+AGM+battery+Toyota+RAV4+2021
     summary: Strong premium option for owners who want durable daily reliability and good cold-start confidence.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/car-battery.jpg
   - name: Optima YellowTop Battery
     price: "$264"
     rating: 4.5
     affiliate_url: https://www.amazon.com/s?k=Optima+YellowTop+Toyota+RAV4+2021
     summary: Good fit if the vehicle sees frequent accessory load, short trips, or more severe use.
-    image: /images/photos/cars/toyota-rav4-2021.jpg
+    image: /images/photos/parts/car-battery.jpg
 buyingAdvice:
   - Confirm battery group size and terminal layout before ordering.
   - If the old battery died from charging or parasitic-draw issues, solve that first or the new battery will suffer too.
