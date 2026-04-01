@@ -18,23 +18,29 @@ relatedProblems:
   - humming-noise-that-gets-louder-with-speed
   - grinding-noise-when-braking
   - steering-wheel-vibrates-at-highway-speed
+  - rear-suspension-clunk-over-bumps
+  - battery-goes-dead-after-sitting
 relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
   - best-brake-pads-for-toyota-rav4-2021
   - best-brake-rotors-for-toyota-rav4-2021
   - best-tires-for-toyota-rav4-2021-highway-vibration
+  - best-rear-sway-bar-links-for-toyota-rav4-2021
+  - best-batteries-for-toyota-rav4-2021
 commonProblems:
   - Brake squeal at low speed from glazing, pad material, or hardware wear
   - Humming noise that grows with speed due to wheel bearing deterioration
   - Front-end road noise that owners confuse with tire issues
   - Highway-speed steering vibration that starts with tires but sometimes points deeper
+  - Rear suspension clunks over broken pavement from smaller rear hardware wear
+  - A battery that feels fine daily but weakens quickly after sitting
 recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7
     affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Strong OE-style bearing hub option for curing humming or growling at speed.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.jpg
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
@@ -50,6 +56,19 @@ faqs:
     answer: Wheel bearing wear is a common cause, though tire tread noise should be ruled out before ordering parts.
   - question: Are ceramic brake pads a good fit for the RAV4?
     answer: Yes. For most daily drivers, quality ceramic pads provide the best balance of noise control, brake dust, and service life.
+fitment:
+  appliesTo:
+    - Best fit for 2021 XA50 gas and hybrid RAV4 trims where the common complaints are still brake noise, hub hum, battery behavior, and rear suspension noises.
+    - Most of the parts guidance assumes a standard daily-driven crossover on stock-size wheels or close to it.
+  doesNotApplyTo:
+    - Prime and specialty trims can introduce different battery, brake, or wheel package considerations, so confirm the exact configuration before ordering.
+    - This page should not be treated as direct fitment proof for earlier-generation RAV4 models.
+  phaseDifferences:
+    - The 2021 model sits in the same XA50 run as 2020, so the broad diagnosis pattern stays similar, but part revisions and trim mixes still changed over time.
+    - If you are comparing this page with a later refreshed XA50, use it as a baseline and then verify any part that depends on trim or supplier changes.
+  powertrainDifferences:
+    - Hybrid RAV4s can mask brake feel differently because regenerative braking changes how owners describe pedal feel and noise.
+    - Gas RAV4s are usually more straightforward for 12-volt battery complaints, while hybrid owners should separate the small battery issue from the traction-battery system.
 ---
 
 With the RAV4, a lot of the ownership experience comes down to noise, feel, and how quickly you deal with the first signs of wear. Ignore a small hum or squeal for too long and the repair usually gets more annoying than it needed to be.

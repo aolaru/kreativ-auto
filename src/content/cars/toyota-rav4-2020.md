@@ -18,16 +18,22 @@ relatedProblems:
   - humming-noise-that-gets-louder-with-speed
   - grinding-noise-when-braking
   - steering-wheel-vibrates-at-highway-speed
+  - rear-suspension-clunk-over-bumps
+  - battery-goes-dead-after-sitting
 relatedBest:
   - best-brake-pads-for-toyota-rav4-2021
   - best-wheel-bearings-for-toyota-rav4-2021
   - best-brake-pads-for-toyota-rav4-2020
   - best-brake-rotors-for-toyota-rav4-2021
   - best-tires-for-toyota-rav4-2021-highway-vibration
+  - best-rear-sway-bar-links-for-toyota-rav4-2021
+  - best-batteries-for-toyota-rav4-2021
 commonProblems:
   - Brake squeal at low speed from glazing, pad compound, or dry hardware contact points
   - Humming or growling with speed caused by a worn wheel bearing or hub assembly
   - Road noise that gets blamed on bearings when the real problem is uneven tire wear
+  - Rear suspension clunks over sharper bumps from smaller rear hardware wear
+  - Weak battery behavior after the SUV sits for a few days
 recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
@@ -40,7 +46,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Trusted hub option when a speed-related hum points to an actual bearing problem.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.jpg
 maintenanceTips:
   - Rotate tires on schedule and pay attention to changing road noise so tire wear is not mistaken for a bad bearing.
   - Service brake hardware properly during pad jobs instead of swapping friction material alone and hoping the squeal goes away.
@@ -50,6 +56,19 @@ faqs:
     answer: Brake squeal and speed-related humming are two of the more common complaints, especially once wear starts building in the brakes, tires, or hubs.
   - question: Is the 2020 Toyota RAV4 expensive to maintain?
     answer: Usually no. Most routine costs stay reasonable, but small noise complaints are worth addressing early so they do not turn into bigger parts or tire bills.
+fitment:
+  appliesTo:
+    - Best fit for 2020 XA50 RAV4 gas trims and the mainstream hybrid trims that share the same basic chassis noise and wear-item pattern.
+    - The brake-noise, hub-hum, and rear-clunk notes are aimed at normal daily-driver use rather than off-road builds or heavy accessory setups.
+  doesNotApplyTo:
+    - Adventure, TRD Off-Road, and other trim packages with different wheel-and-tire combinations can shift the noise picture enough that you should verify parts before ordering.
+    - This page is not meant to cover older XA40-generation RAV4 fitment or region-specific powertrains outside the 2019-2021 XA50 family.
+  phaseDifferences:
+    - 2020 and 2021 XA50 cars are close enough to group together for most brake, hub, and suspension advice, but trim and supplier changes can still alter exact part numbers.
+    - Pre-XA50 RAV4 generations do not share enough platform detail to treat the same noise diagnosis as a one-click parts match.
+  powertrainDifferences:
+    - Hybrid models still see brake-noise, wheel-hub, and suspension complaints, but battery and regenerative-braking behavior can change how owners describe the symptom.
+    - Gas models are usually simpler when chasing battery and charging complaints because the 12-volt support system is less layered than the hybrid setup.
 ---
 
 The 2020 RAV4 does not usually fail in dramatic ways. It is more a matter of catching the smaller wear items before they make the SUV louder, rougher, or more annoying to live with every day.

@@ -23,15 +23,15 @@ recommendedParts:
   - name: Bosch QuietCast Premium Brake Pads
     price: "$92"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Mercedes-Benz+C-Class+2019
+    affiliate_url: https://www.boschautoparts.com/quietcast-premium-disc-brake-pads1
     summary: Solid option if you want calmer brake behavior in daily use.
     image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$67"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=NGK+Laser+Iridium+Spark+Plugs+Mercedes-Benz+C-Class+2019
+    affiliate_url: https://www.ngkntk.com/products/spark-plugs/
     summary: Useful long-life maintenance part if idle quality starts drifting.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/ngk-spark-plugs.png
 maintenanceTips:
   - Pay attention to brake feel because premium sedans lose a lot of their appeal when the brakes feel rough or noisy.
   - Do not postpone ignition service once idle quality changes or cold starts feel less clean.

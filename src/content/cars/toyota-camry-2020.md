@@ -21,15 +21,15 @@ recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$82"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+Camry+2020
+    affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quiet daily-driver brake pad option that suits the Camry well.
     image: /images/photos/parts/akebono-proact.png
   - name: NGK Laser Iridium Spark Plugs
     price: "$61"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=NGK+Laser+Iridium+Spark+Plugs+Toyota+Camry+2020
+    affiliate_url: https://www.ngkntk.com/products/spark-plugs/
     summary: Long-life plug choice if you are trying to clean up idle quality and stay ahead of maintenance.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/ngk-spark-plugs.png
 maintenanceTips:
   - Stay on top of spark plug intervals because small drivability complaints tend to start there on otherwise reliable sedans.
   - Service brake hardware correctly during pad changes so noise does not come back right away.

@@ -21,13 +21,13 @@ recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$139"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Delphi+Ignition+Coil+Pack+Set+BMW+3+Series+2019
+    affiliate_url: https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils
     summary: Sensible ignition part choice if the car starts stumbling at idle or under light load.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: Bosch QuietCast Premium Brake Pads
     price: "$89"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+BMW+3+Series+2019
+    affiliate_url: https://www.boschautoparts.com/quietcast-premium-disc-brake-pads1
     summary: Good option if you want a quieter street setup instead of something overly aggressive.
     image: /images/photos/parts/bosch-quietcast-pads.jpg
 maintenanceTips:

@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import { generationHubContent } from "../../data/generation-hubs";
 import {
   getGenerationKey,
   getGenerationLabel,
@@ -82,6 +84,14 @@ const linkedBest = uniqueByHref(
 
 const generationLabel = getGenerationLabel(leadCar.data);
 const generationRange = getGenerationRange(leadCar.data);
+const generationSlug = getGenerationSlug(leadCar.data);
+const hubContent = generationHubContent[generationSlug];
+const featuredProblems = hubContent?.featuredProblems?.length
+  ? linkedProblems.filter((item) => hubContent.featuredProblems?.some((slug) => item.href === `/problems/${slug}/`))
+  : linkedProblems;
+const featuredBest = hubContent?.featuredBest?.length
+  ? linkedBest.filter((item) => hubContent.featuredBest?.some((slug) => item.href === `/best/${slug}/`))
+  : linkedBest;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Generations", href: "/generations/" },
@@ -89,17 +99,70 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout title={`${generationLabel} Guides`} description={`Browse ${generationLabel} pages, grouped by generation range and facelift phase.`}>
+<BaseLayout
+  title={`${generationLabel} Guides`}
+  description={
+    hubContent?.intro ?? `Browse ${generationLabel} pages, grouped by generation range and facelift phase.`
+  }
+  image={leadCar.data.heroImage ?? leadCar.data.image}
+>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Generation Hub</p>
+      <p class="eyebrow">{hubContent?.eyebrow ?? "Generation Hub"}</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{generationLabel}</h1>
       <p class="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-steel">{generationRange}</p>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        This page groups model-year guides that share the same generation or facelift window, which is usually the level where problems and parts overlap the most.
+        {hubContent?.intro ??
+          "This page groups model-year guides that share the same generation or facelift window, which is usually the level where problems and parts overlap the most."}
       </p>
     </div>
+
+    {
+      hubContent && (
+        <div class="mt-10 space-y-8">
+          <Section
+            title="Why this generation matters"
+            intro="These are the ownership patterns that repeat often enough to make the generation hub more useful than a single model-year page."
+          >
+            <ul class="space-y-3 text-sm leading-6 text-steel">
+              {hubContent.overview.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+            </ul>
+          </Section>
+
+          <Section
+            title="Common trouble spots"
+            intro="These are the areas worth checking first when a Tiguan II facelift starts feeling rougher, noisier, or less sorted."
+          >
+            <ul class="grid gap-3 text-sm leading-6 text-steel md:grid-cols-2">
+              {hubContent.painPoints.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+            </ul>
+          </Section>
+
+          <Section
+            title="Ownership notes"
+            intro="Use these notes to keep diagnosis and parts buying grounded in how the facelifted Tiguan is actually used."
+          >
+            <ul class="space-y-3 text-sm leading-6 text-steel">
+              {hubContent.ownershipNotes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+            </ul>
+          </Section>
+
+          {
+            hubContent.phaseNotes && hubContent.phaseNotes.length > 0 && (
+              <Section
+                title="Pre-facelift vs facelift"
+                intro="These notes help keep the 2020-2024 facelift guidance separate from earlier Mk2 overlap."
+              >
+                <ul class="space-y-3 text-sm leading-6 text-steel">
+                  {hubContent.phaseNotes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+                </ul>
+              </Section>
+            )
+          }
+        </div>
+      )
+    }
 
     <div class="mt-10 grid gap-6">
       {
@@ -116,8 +179,16 @@ const breadcrumbs = [
     </div>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Related problem guides" items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" items={linkedBest} />
+      <RelatedLinks
+        title="Problem guides for this generation"
+        intro="Start with these if the Tiguan is showing the symptoms owners in this facelift range run into most often."
+        items={featuredProblems}
+      />
+      <RelatedLinks
+        title="Best-parts guides for this generation"
+        intro="These parts pages are the fastest way to narrow the shortlist once you know the repair area."
+        items={featuredBest}
+      />
     </div>
   </div>
 </BaseLayout>

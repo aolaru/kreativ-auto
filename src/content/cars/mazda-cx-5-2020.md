@@ -21,15 +21,15 @@ recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$84"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Mazda+CX-5+2020
+    affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Good daily-driver brake pad choice if the goal is quiet braking, low dust, and predictable feel.
     image: /images/photos/parts/akebono-proact.png
   - name: MOOG Sway Bar Link Kit
     price: "$49"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=MOOG+Sway+Bar+Link+Kit+Mazda+CX-5+2020
+    affiliate_url: https://www.moogparts.com/parts/suspension/sway-bar-links.html
     summary: Sensible first part to check when the front suspension starts clunking over rough roads.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/moog-sway-bar-links.png
 maintenanceTips:
   - Inspect brake pad wear and rotor condition together so a minor brake complaint does not turn into vibration and unnecessary repeat work.
   - Pay attention to small suspension noises early because worn links and bushings are cheaper to deal with before they start affecting ride quality.

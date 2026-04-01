@@ -4,6 +4,7 @@ import ComparisonTable from "../../components/ComparisonTable.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
+import FitmentNotes from "../../components/FitmentNotes.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import { bestMethodologyPoints, editorialTeam } from "../../data/editorial";
@@ -161,6 +162,21 @@ const schemas = [
       {entry.data.buyingAdvice.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
+
+  {
+    (entry.data.fitment.appliesTo.length > 0 ||
+      entry.data.fitment.doesNotApplyTo.length > 0 ||
+      entry.data.fitment.phaseDifferences.length > 0 ||
+      entry.data.fitment.powertrainDifferences.length > 0) && (
+      <Section
+        id="fitment-notes"
+        title="Fitment and model notes"
+        intro="Check these notes before ordering so the shortlist matches the trim, generation phase, and powertrain you actually have."
+      >
+        <FitmentNotes fitment={entry.data.fitment} />
+      </Section>
+    )
+  }
 
   <Section
     id="methodology"

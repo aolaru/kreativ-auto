@@ -18,6 +18,20 @@ const seoFields = {
   updatedAt: z.coerce.date().optional()
 };
 
+const fitmentNotesDefaults = {
+  appliesTo: [],
+  doesNotApplyTo: [],
+  phaseDifferences: [],
+  powertrainDifferences: []
+};
+
+const fitmentNotesSchema = z.object({
+  appliesTo: z.array(z.string()).default([]),
+  doesNotApplyTo: z.array(z.string()).default([]),
+  phaseDifferences: z.array(z.string()).default([]),
+  powertrainDifferences: z.array(z.string()).default([])
+});
+
 const cars = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/cars" }),
   schema: z.object({
@@ -45,6 +59,7 @@ const cars = defineCollection({
         })
       )
       .default([]),
+    fitment: fitmentNotesSchema.default(fitmentNotesDefaults),
     ...seoFields
   })
 });
@@ -73,6 +88,7 @@ const problems = defineCollection({
         })
       )
       .default([]),
+    fitment: fitmentNotesSchema.default(fitmentNotesDefaults),
     ...seoFields
   })
 });
@@ -95,6 +111,7 @@ const best = defineCollection({
         })
       )
       .default([]),
+    fitment: fitmentNotesSchema.default(fitmentNotesDefaults),
     ...seoFields
   })
 });

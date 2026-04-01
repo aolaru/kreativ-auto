@@ -21,15 +21,15 @@ recommendedParts:
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$78"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Wagner+OEX+Ceramic+Brake+Pad+Set+Subaru+Outback+2020
+    affiliate_url: https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html
     summary: Good everyday brake pad choice if you want clean, quiet braking.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/wagner-oex.png
   - name: Timken Wheel Bearing Hub Assembly
     price: "$171"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Timken+Wheel+Bearing+Hub+Assembly+Subaru+Outback+2020
+    affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Strong first-look part when road-speed hum points to more than just tire noise.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.jpg
 maintenanceTips:
   - Rotate tires on time because the Outback can get loud fast when tire wear starts going uneven.
   - Do not ignore early brake noise, especially if the car sees hills, loads, or long daily driving.

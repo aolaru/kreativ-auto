@@ -4,6 +4,7 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
+import FitmentNotes from "../../components/FitmentNotes.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, problemTrustPoints } from "../../data/editorial";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
@@ -170,6 +171,21 @@ const schemas = [
       {problem.data.commonMistakes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
+
+  {
+    (problem.data.fitment.appliesTo.length > 0 ||
+      problem.data.fitment.doesNotApplyTo.length > 0 ||
+      problem.data.fitment.phaseDifferences.length > 0 ||
+      problem.data.fitment.powertrainDifferences.length > 0) && (
+      <Section
+        id="fitment-notes"
+        title="Fitment and model notes"
+        intro="Before you order parts or assume the diagnosis is universal, check the trim, phase, and powertrain notes below."
+      >
+        <FitmentNotes fitment={problem.data.fitment} />
+      </Section>
+    )
+  }
 
   <Section id="recommended-parts" title="Parts worth checking" intro="These are the parts most likely to matter once the diagnosis is pointing in the right direction.">
     <div class="grid gap-6 md:grid-cols-2">
