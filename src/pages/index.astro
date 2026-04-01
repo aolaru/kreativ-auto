@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import CardIcon from "../components/CardIcon.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getGenerationLabel, getGenerationRange, getGenerationSlug } from "../utils/taxonomy";
 
 const [cars, problems, bestPages] = await Promise.all([
   getCollection("cars"),
@@ -9,9 +10,19 @@ const [cars, problems, bestPages] = await Promise.all([
   getCollection("best")
 ]);
 
-const featuredCars = cars.slice(0, 3);
-const featuredProblems = problems.slice(0, 3);
-const featuredBest = bestPages.slice(0, 3);
+const newestCars = [...cars].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
+const newestProblems = [...problems].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
+const newestBest = [...bestPages].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
+
+const featuredCars = newestCars.slice(0, 3);
+const featuredProblems = newestProblems.slice(0, 3);
+const featuredBest = newestBest.slice(0, 3);
+const tiguanCar = cars.find((car) => car.id === "vw-tiguan-2020");
+const tiguanGenerationHref = tiguanCar ? `/generations/${getGenerationSlug(tiguanCar.data)}/` : "/generations/";
+const tiguanGenerationLabel = tiguanCar ? getGenerationLabel(tiguanCar.data) : "Volkswagen Tiguan";
+const tiguanGenerationRange = tiguanCar ? getGenerationRange(tiguanCar.data) : "2020-2024";
+const tiguanProblems = newestProblems.filter((problem) => problem.data.relatedCars.includes("vw-tiguan-2020")).slice(0, 3);
+const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes("vw-tiguan-2020")).slice(0, 3);
 ---
 
 <BaseLayout
@@ -36,11 +47,11 @@ const featuredBest = bestPages.slice(0, 3);
           <a class="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white hover:bg-accent" href="/cars/">
             Browse car hubs
           </a>
+          <a class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-ink hover:border-accent hover:text-accent" href="/generations/">
+            Browse generations
+          </a>
           <a class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-ink hover:border-accent hover:text-accent" href="/best/">
             Explore best parts
-          </a>
-          <a class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-ink hover:border-accent hover:text-accent" href="/brands/">
-            Browse taxonomies
           </a>
         </div>
 
@@ -108,11 +119,48 @@ const featuredBest = bestPages.slice(0, 3);
   </section>
 
   <section class="container-shell pb-8">
+    <div class="surface p-6 sm:p-8">
+      <div class="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
+        <div>
+          <p class="eyebrow">Featured Generation</p>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">{tiguanGenerationLabel}</h2>
+          <p class="mt-3 text-sm font-semibold uppercase tracking-[0.18em] text-steel">{tiguanGenerationRange}</p>
+          <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
+            The strongest cluster on the site right now. Use the Tiguan II facelift hub to jump between the generation overview, the most relevant problem guides, and the parts pages that matter for the 2020-2024 update window.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-4">
+            <a class="rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white hover:bg-accent" href={tiguanGenerationHref}>
+              Open generation hub
+            </a>
+            <a class="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold text-ink hover:border-accent hover:text-accent" href="/cars/vw-tiguan-2020/">
+              Open Tiguan car page
+            </a>
+          </div>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="rounded-3xl bg-slate-50 p-5">
+            <p class="eyebrow">Problems In This Cluster</p>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+              {tiguanProblems.map((problem) => <li><a class="hover:text-accent" href={`/problems/${problem.id}/`}>{problem.data.title}</a></li>)}
+            </ul>
+          </div>
+          <div class="rounded-3xl bg-slate-50 p-5">
+            <p class="eyebrow">Parts In This Cluster</p>
+            <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+              {tiguanBest.map((entry) => <li><a class="hover:text-accent" href={`/best/${entry.id}/`}>{entry.data.title}</a></li>)}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-shell pb-8">
     <div class="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
       <div class="surface p-6 sm:p-8">
         <div class="flex items-center justify-between gap-4">
           <div>
-            <p class="eyebrow">Featured Cars</p>
+            <p class="eyebrow">Recently Updated Cars</p>
             <h2 class="mt-3 text-3xl font-semibold text-ink">Start with the vehicle</h2>
           </div>
           <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/cars/">
@@ -149,7 +197,7 @@ const featuredBest = bestPages.slice(0, 3);
       <div class="surface p-6 sm:p-8">
         <div class="flex items-center justify-between gap-4">
           <div>
-            <p class="eyebrow">Common Problems</p>
+            <p class="eyebrow">Latest Problem Guides</p>
             <h2 class="mt-3 text-3xl font-semibold text-ink">Fix the symptom first</h2>
           </div>
           <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/problems/">
@@ -181,7 +229,7 @@ const featuredBest = bestPages.slice(0, 3);
     <div class="surface p-6 sm:p-8">
       <div class="flex items-center justify-between gap-4">
         <div>
-          <p class="eyebrow">Best Parts</p>
+          <p class="eyebrow">Latest Parts Guides</p>
           <h2 class="mt-3 text-3xl font-semibold text-ink">Parts guides worth opening</h2>
         </div>
         <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/best/">
@@ -222,6 +270,12 @@ const featuredBest = bestPages.slice(0, 3);
         <p class="eyebrow">Browse</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Models</h2>
         <p class="mt-3 text-sm leading-6 text-steel">Model pages pull together the problems, maintenance points, and parts that matter for one vehicle.</p>
+      </a>
+      <a class="surface block p-6 transition hover:-translate-y-0.5" href="/generations/">
+        <CardIcon kind="car" />
+        <p class="eyebrow">Browse</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Generations</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Generation hubs group the years that actually share the same problems, parts, and facelift-era patterns.</p>
       </a>
       <a class="surface block p-6 transition hover:-translate-y-0.5" href="/categories/">
         <CardIcon kind="category" />
