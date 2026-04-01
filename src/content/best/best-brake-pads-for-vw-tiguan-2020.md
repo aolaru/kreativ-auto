@@ -23,7 +23,7 @@ products:
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-brake-kit/
     summary: Best fit for mixed commuting with lower dust and a slightly sportier bite.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: Akebono ProACT Ultra-Premium
     price: "$96"
     rating: 4.8

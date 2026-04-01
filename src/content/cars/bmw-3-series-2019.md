@@ -29,7 +29,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+BMW+3+Series+2019
     summary: Good option if you want a quieter street setup instead of something overly aggressive.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
 maintenanceTips:
   - Do not stretch plug and ignition maintenance intervals if idle quality or cold starts begin changing.
   - Use decent-quality brake parts because cheap compounds tend to make premium cars feel worse fast.

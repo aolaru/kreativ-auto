@@ -24,7 +24,7 @@ products:
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Great all-around alternative for owners who want smooth pedal feel and strong noise control.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$77"
     rating: 4.5

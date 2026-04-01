@@ -39,7 +39,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Useful once the hydraulic issue is solved and you are refreshing worn front brake hardware.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: Power Stop Z23 Evolution Sport
     price: "$89"
     rating: 4.7

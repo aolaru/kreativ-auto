@@ -25,7 +25,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Honda+CR-V+2020
     summary: Strong everyday brake pad option if the priority is low noise and easy daily use.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: MOOG Sway Bar Link Kit
     price: "$46"
     rating: 4.5

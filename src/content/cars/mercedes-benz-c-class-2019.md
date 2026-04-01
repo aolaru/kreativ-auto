@@ -25,7 +25,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Mercedes-Benz+C-Class+2019
     summary: Solid option if you want calmer brake behavior in daily use.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$67"
     rating: 4.8

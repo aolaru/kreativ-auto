@@ -34,7 +34,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-brake-kit/
     summary: Balanced daily-driving option with low dust pads and coated rotors.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: Bosch QuietCast Premium Brake Pads
     price: "$74"
     rating: 4.6
