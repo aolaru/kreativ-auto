@@ -20,7 +20,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+Camry+2020
     summary: Quiet daily-driver brake pad option that suits the Camry well.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
   - name: NGK Laser Iridium Spark Plugs
     price: "$61"
     rating: 4.8

@@ -31,7 +31,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quiet ceramic pad set for drivers who want low dust, less squeal, and an easy daily-driver setup.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"
     rating: 4.7

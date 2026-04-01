@@ -5,7 +5,7 @@ car_model: Toyota RAV4 2020
 metaTitle: Best Brake Pads for Toyota RAV4 2020
 metaDescription: Compare the best brake pad options for the Toyota RAV4 2020 if your priority is quiet everyday braking, lower dust, and less repeat noise.
 excerpt: These RAV4 brake pad picks are for drivers who want a clean, quiet setup that feels right in normal daily use.
-heroImage: /images/photos/parts/brake-pads.jpg
+heroImage: /images/photos/parts/akebono-proact.png
 updatedAt: 2026-03-31
 relatedCars:
   - toyota-rav4-2020
@@ -16,9 +16,9 @@ products:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8
-    affiliate_url: https://www.buybrakes.com/akebono-act2076-proact-ultra-premium-ceramic-disc-brake-pad-set-2-wheel-set
+    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Toyota+RAV4+2020
     summary: Best overall option for quiet daily-driver braking with low dust and strong refinement.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
   - name: Bosch QuietCast Premium
     price: "$81"
     rating: 4.6

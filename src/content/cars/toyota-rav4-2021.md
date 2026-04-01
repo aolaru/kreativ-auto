@@ -37,7 +37,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quiet ceramic pad set well-suited to reducing dust and low-speed squeal.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
 maintenanceTips:
   - Rotate tires and inspect wheel-bearing noise trends together so tire cupping is not misdiagnosed as a bad hub.
   - Clean and lubricate brake hardware when servicing pads to prevent noise returning quickly.

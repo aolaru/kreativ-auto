@@ -28,7 +28,7 @@ products:
   - name: Bosch QuietCast Premium Rotor
     price: "$96"
     rating: 4.5
-    affiliate_url: https://www.buybrakes.com/bosch-14011564-quietcast-disc-brake-rotors-geo-met-coating
+    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Rotor+VW+Tiguan+2020
     summary: Strong alternative for drivers who want refined daily braking without chasing the sportiest setup.
     image: /images/photos/parts/brake-pads.jpg
 buyingAdvice:

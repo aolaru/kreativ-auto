@@ -20,7 +20,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+Ceramic+Brake+Pads+Mazda+CX-5+2020
     summary: Good daily-driver brake pad choice if the goal is quiet braking, low dust, and predictable feel.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
   - name: MOOG Sway Bar Link Kit
     price: "$49"
     rating: 4.5

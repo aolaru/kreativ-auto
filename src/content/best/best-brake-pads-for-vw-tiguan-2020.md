@@ -17,7 +17,7 @@ products:
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Best for owners who want quiet operation and a closer-to-stock pedal feel.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
   - name: Power Stop Z23 Evolution Sport
     price: "$89"
     rating: 4.7
