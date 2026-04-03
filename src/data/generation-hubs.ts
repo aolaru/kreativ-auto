@@ -16,6 +16,46 @@ export interface GenerationHubContent {
 }
 
 export const generationHubContent: Record<string, GenerationHubContent> = {
+  "toyota-rav4-xa50-2019-2021": {
+    eyebrow: "Generation Hub",
+    intro:
+      "The XA50 RAV4 is the version most owners expect to be simple, quiet, and low-drama. That is mostly true, but the repeat ownership pattern is still clear: brake noise, road hum, rear suspension knocks, and 12-volt battery complaints show up often enough that the generation is better understood as a cluster, not as isolated model years.",
+    overview: [
+      "The 2019-2021 XA50 window is where the current RAV4 ownership pattern settles in, especially around brake refinement, wheel-bearing noise, tire-related hum, and light rear suspension wear.",
+      "A lot of wasted money on these SUVs comes from misdiagnosing tire noise as hubs, replacing bigger suspension parts before checking links and bushings, or ordering parts without paying attention to trim and hybrid differences.",
+      "If you stay on top of tires, brake hardware, and the smaller suspension pieces, the XA50 usually stays quieter and more refined than the complaint forums make it look."
+    ],
+    painPoints: [
+      "Low-speed brake squeal and occasional rear-brake noise are common enough that hardware condition and pad compound matter more than people expect.",
+      "Road hum is frequently blamed on wheel hubs when the real answer is tread pattern, rotation history, or tire cupping.",
+      "Rear-end and driveway-entry clunks often trace back to smaller sway-bar-link or stabilizer-hardware wear rather than a major suspension failure.",
+      "Gas and hybrid owners both deal with 12-volt battery complaints, but the way they describe the symptom can differ a lot."
+    ],
+    ownershipNotes: [
+      "Do not buy hub assemblies before ruling out tire noise. On the XA50, bad tire wear and bad diagnosis travel together.",
+      "Check trim, wheel size, and hybrid versus gas layout before ordering brake or battery parts.",
+      "Rear clunks are worth isolating carefully because cargo-area noise and rear suspension noise can sound almost identical from the driver seat.",
+      "If the SUV sees short trips, watch 12-volt battery health earlier instead of waiting for a no-start."
+    ],
+    phaseNotes: [
+      "The 2020 and 2021 years are close enough to group confidently, but Toyota trim and supplier changes still make VIN-level parts confirmation worth doing.",
+      "Earlier pre-XA50 RAV4 generations overlap in broad ownership logic, but not enough in fitment or chassis behavior to mix the pages together."
+    ],
+    featuredProblems: [
+      "brake-squeal-at-low-speed",
+      "humming-noise-that-gets-louder-with-speed",
+      "rear-suspension-clunk-over-bumps",
+      "rear-brakes-squeak-after-rain",
+      "front-end-clunk-when-pulling-into-driveways"
+    ],
+    featuredBest: [
+      "best-brake-pads-for-toyota-rav4-2021",
+      "best-wheel-bearings-for-toyota-rav4-2021",
+      "best-rear-sway-bar-links-for-toyota-rav4-2021",
+      "best-rear-brake-pads-for-toyota-rav4-2021",
+      "best-front-sway-bar-links-for-toyota-rav4-2021"
+    ]
+  },
   "volkswagen-tiguan-tiguan-ii-facelift-2020-2024": {
     eyebrow: "Generation Hub",
     intro:

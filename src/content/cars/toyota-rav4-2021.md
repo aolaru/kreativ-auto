@@ -20,6 +20,8 @@ relatedProblems:
   - steering-wheel-vibrates-at-highway-speed
   - rear-suspension-clunk-over-bumps
   - battery-goes-dead-after-sitting
+  - rear-brakes-squeak-after-rain
+  - front-end-clunk-when-pulling-into-driveways
 relatedBest:
   - best-wheel-bearings-for-toyota-rav4-2021
   - best-brake-pads-for-toyota-rav4-2021
@@ -27,12 +29,16 @@ relatedBest:
   - best-tires-for-toyota-rav4-2021-highway-vibration
   - best-rear-sway-bar-links-for-toyota-rav4-2021
   - best-batteries-for-toyota-rav4-2021
+  - best-rear-brake-pads-for-toyota-rav4-2021
+  - best-front-sway-bar-links-for-toyota-rav4-2021
 commonProblems:
   - Brake squeal at low speed from glazing, pad material, or hardware wear
+  - Rear brake squeak after rain when the rear pad and hardware setup are more noise-prone than expected
   - Humming noise that grows with speed due to wheel bearing deterioration
   - Front-end road noise that owners confuse with tire issues
   - Highway-speed steering vibration that starts with tires but sometimes points deeper
   - Rear suspension clunks over broken pavement from smaller rear hardware wear
+  - Front-end clunks on driveway entries from smaller stabilizer or bushing wear
   - A battery that feels fine daily but weakens quickly after sitting
 recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly

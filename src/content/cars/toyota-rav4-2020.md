@@ -20,6 +20,8 @@ relatedProblems:
   - steering-wheel-vibrates-at-highway-speed
   - rear-suspension-clunk-over-bumps
   - battery-goes-dead-after-sitting
+  - rear-brakes-squeak-after-rain
+  - front-end-clunk-when-pulling-into-driveways
 relatedBest:
   - best-brake-pads-for-toyota-rav4-2021
   - best-wheel-bearings-for-toyota-rav4-2021
@@ -28,11 +30,15 @@ relatedBest:
   - best-tires-for-toyota-rav4-2021-highway-vibration
   - best-rear-sway-bar-links-for-toyota-rav4-2021
   - best-batteries-for-toyota-rav4-2021
+  - best-rear-brake-pads-for-toyota-rav4-2021
+  - best-front-sway-bar-links-for-toyota-rav4-2021
 commonProblems:
   - Brake squeal at low speed from glazing, pad compound, or dry hardware contact points
+  - Rear brakes squeak after rain when pad compound and hardware setup are more noise-prone than they should be
   - Humming or growling with speed caused by a worn wheel bearing or hub assembly
   - Road noise that gets blamed on bearings when the real problem is uneven tire wear
   - Rear suspension clunks over sharper bumps from smaller rear hardware wear
+  - Front-end clunks on driveway entries from sway bar links or other small front-suspension wear points
   - Weak battery behavior after the SUV sits for a few days
 recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
