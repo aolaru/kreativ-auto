@@ -22,12 +22,18 @@ relatedProblems:
   - engine-hesitates-under-acceleration
   - air-conditioner-blows-warm-at-idle
   - battery-light-flickers-at-idle
+  - front-suspension-rattles-over-small-bumps
+  - rear-brakes-squeak-after-overnight-rain
+  - front-brakes-squeal-at-low-speed
 relatedBest:
   - best-ignition-coils-for-honda-civic-2019
   - best-spark-plugs-for-honda-civic-2019
   - best-cv-axles-for-honda-civic-2019
   - best-ac-condensers-for-honda-civic-2019
   - best-batteries-for-honda-civic-2019
+  - best-front-sway-bar-links-for-honda-civic-2019
+  - best-rear-brake-pads-for-honda-civic-2019
+  - best-front-brake-pads-for-honda-civic-2019
 commonProblems:
   - Engine misfire at idle from worn spark plugs or weak ignition coils
   - Clicking noise when turning caused by worn CV axle joints
@@ -35,6 +41,9 @@ commonProblems:
   - Acceleration hesitation that points back to overdue ignition maintenance
   - Air conditioning that cools poorly at idle or in traffic
   - Battery-light flicker and weak voltage behavior at idle
+  - Front suspension rattle over small bumps from sway bar link or hardware wear
+  - Rear brake squeak after rain from noisy pad compound or sticky hardware
+  - Front brake squeal at low speed when pad compound and hardware are not working well together
 recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"

@@ -16,6 +16,48 @@ export interface GenerationHubContent {
 }
 
 export const generationHubContent: Record<string, GenerationHubContent> = {
+  "honda-civic-fc-fk-facelift-2019-2021": {
+    eyebrow: "Generation Hub",
+    intro:
+      "The facelifted tenth-generation Civic is the version a lot of owners expect to be almost trouble-free, and broadly it is. The repeat pattern is still easy to spot though: ignition-related drivability issues when maintenance slips, A/C performance complaints in traffic, and the smaller chassis noises that make the car feel more worn than it really is.",
+    overview: [
+      "The 2019-2021 facelift years are the cleanest way to group the later Civic X ownership pattern, especially for the regular gas sedan, coupe, and hatchback trims.",
+      "What wastes money on these cars is usually not a huge catastrophic failure. It is replacing the wrong ignition part first, blaming every front-end noise on something major, or shopping brake and suspension parts without checking trim and body style closely enough.",
+      "If you stay disciplined on spark plugs, charging health, front-end inspection, and common A/C weak points, these Civics usually stay cheap and easy to live with."
+    ],
+    painPoints: [
+      "Idle misfires, cold-start roughness, and light hesitation still cluster around overdue ignition maintenance more than owners want to believe.",
+      "A/C complaints are often most obvious at idle or in traffic, where condenser efficiency and fan behavior show their weakness fastest.",
+      "Small front-end rattles and driveway-entry clunks are easy to overdiagnose unless sway-bar links, axle condition, and brake hardware get checked in the right order.",
+      "Brake squeal on these cars is often more about compound choice and hardware condition than some serious brake-system failure."
+    ],
+    ownershipNotes: [
+      "Confirm whether the car is a 2.0, 1.5T, Si, or Type R before buying parts. The mainstream Civic advice here is for the regular gas lineup, not the special trims.",
+      "Do not lump every Civic X year together by default. The facelift years share a lot, but condenser listings, trim packaging, and some supplier changes are cleaner if you keep 2019-2021 together.",
+      "Short-trip cars need battery and ground checks sooner, especially if voltage behavior starts looking random.",
+      "When front-end noise shows up, inspect links, pads, and axle boots before assuming the repair is bigger than it is."
+    ],
+    phaseNotes: [
+      "The 2019 facelift does not transform the chassis, but it is still the right split for keeping condenser, trim, and later-year fitment guidance cleaner.",
+      "Earlier 2016-2018 Civic X cars overlap in broad ownership logic, but mixing them blindly into the facelift cluster makes parts and trim guidance sloppier."
+    ],
+    featuredProblems: [
+      "engine-misfires-at-idle",
+      "air-conditioner-blows-warm-at-idle",
+      "battery-light-flickers-at-idle",
+      "front-suspension-rattles-over-small-bumps",
+      "rear-brakes-squeak-after-overnight-rain",
+      "front-brakes-squeal-at-low-speed"
+    ],
+    featuredBest: [
+      "best-ignition-coils-for-honda-civic-2019",
+      "best-spark-plugs-for-honda-civic-2019",
+      "best-ac-condensers-for-honda-civic-2019",
+      "best-front-sway-bar-links-for-honda-civic-2019",
+      "best-rear-brake-pads-for-honda-civic-2019",
+      "best-front-brake-pads-for-honda-civic-2019"
+    ]
+  },
   "toyota-rav4-xa50-2019-2021": {
     eyebrow: "Generation Hub",
     intro:
