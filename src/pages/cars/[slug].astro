@@ -7,6 +7,7 @@ import ProductCard from "../../components/ProductCard.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { carTrustPoints, editorialTeam } from "../../data/editorial";
+import { comparisonGuides } from "../../data/comparison-guides";
 import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -64,6 +65,23 @@ const relatedBest = uniqueByHref(
     description: entry.data.excerpt ?? entry.data.metaDescription ?? `${entry.data.products.length} parts worth comparing for this vehicle.`,
     eyebrow: entry.data.category
   }))
+);
+
+const relatedComparisons = uniqueByHref(
+  comparisonGuides
+    .filter((guide) => {
+      return (
+        guide.relatedCars?.includes(car.id) ||
+        guide.relatedModels?.some((model) => includesPhrase(model, `${car.data.brand} ${car.data.model}`)) ||
+        guide.relatedGenerations?.includes(getGenerationSlug(car.data))
+      );
+    })
+    .map((guide) => ({
+      href: guide.href,
+      title: guide.title,
+      description: guide.description,
+      eyebrow: guide.eyebrow
+    }))
 );
 
 const seoTitle = car.data.metaTitle ?? car.data.title;
@@ -243,5 +261,11 @@ const schemas = [
     title="Related best parts pages"
     intro="These parts guides are useful if you already know the area you are dealing with and want to compare options."
     items={relatedBest}
+  />
+
+  <RelatedLinks
+    title="Trim and powertrain guides"
+    intro="Use these comparison guides when the next question is which version of the car the advice actually applies to."
+    items={relatedComparisons}
   />
 </ContentLayout>

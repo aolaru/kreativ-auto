@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { comparisonGuides } from "../../data/comparison-guides";
 ---
 
 <BaseLayout title="Automotive Tools" description="Future-ready section for calculators, service interval tools, and ownership utilities.">
@@ -8,9 +9,23 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
       <p class="eyebrow">Tools</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Automotive tools coming next</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        This section is reserved for interactive features such as maintenance cost calculators, brake life estimators, and fluid capacity tools.
+        This section now covers practical comparison guides first, with interactive tools and calculators still planned after that.
       </p>
     </div>
+
+    {
+      comparisonGuides.length > 0 && (
+        <div class="mt-10 grid gap-6 md:grid-cols-2">
+          {comparisonGuides.map((guide) => (
+            <a class="surface block p-6 transition hover:-translate-y-0.5" href={guide.href}>
+              <p class="eyebrow">{guide.eyebrow}</p>
+              <h2 class="mt-3 text-2xl font-semibold text-ink">{guide.title}</h2>
+              <p class="mt-3 text-sm leading-6 text-steel">{guide.description}</p>
+            </a>
+          ))}
+        </div>
+      )
+    }
 
     <div class="mt-10 grid gap-6 md:grid-cols-2">
       <article class="surface p-6">
@@ -22,9 +37,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         </ul>
       </article>
       <article class="surface p-6">
-        <h2 class="text-2xl font-semibold text-ink">Implementation note</h2>
+        <h2 class="text-2xl font-semibold text-ink">What is here now</h2>
         <p class="mt-4 text-sm leading-6 text-steel">
-          This section is set aside for future tools that can make maintenance costs, intervals, and repair decisions easier to estimate.
+          The first layer in this section is trim and powertrain guidance. That is where the site can clear up the ownership differences that standard year pages do not explain well enough.
         </p>
       </article>
     </div>
