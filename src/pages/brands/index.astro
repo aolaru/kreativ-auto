@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { slugify } from "../../utils/taxonomy";
+import Section from "../../components/Section.astro";
+import { generationHubContent } from "../../data/generation-hubs";
+import { getGenerationKey, getGenerationSlug, slugify } from "../../utils/taxonomy";
 
 const cars = await getCollection("cars");
 const brands = Array.from(
@@ -12,29 +14,81 @@ const brands = Array.from(
     map.set(key, current);
     return map;
   }, new Map<string, typeof cars>())
-).sort(([a], [b]) => a.localeCompare(b));
+).map(([brand, entries]) => {
+  const generationCount = new Set(entries.map((entry) => getGenerationKey(entry.data))).size;
+  const featuredGeneration = entries.find((entry) => generationHubContent[getGenerationSlug(entry.data)]);
+
+  return {
+    brand,
+    entries,
+    generationCount,
+    featuredGeneration
+  };
+});
+
+const featuredBrands = [...brands]
+  .filter((item) => item.featuredGeneration)
+  .sort((a, b) => b.entries.length - a.entries.length || a.brand.localeCompare(b.brand))
+  .slice(0, 3);
+
+const allBrands = [...brands].sort((a, b) => a.brand.localeCompare(b.brand));
 ---
 
 <BaseLayout
   title="Brands"
-  description="Browse automotive content by vehicle brand, including car hubs and related guides."
+  description="Browse the site by vehicle brand, with the strongest generation hubs and best starting points surfaced first."
 >
   <div class="container-shell py-12 sm:py-16">
     <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Taxonomy</p>
+      <p class="eyebrow">Brands</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by brand</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Brand hubs group model-specific ownership pages and create a scalable top-level navigation layer for search and editorial planning.
+        Start with the brands where the site already has real depth, then drill into the models and generation hubs that have the strongest ownership coverage.
       </p>
     </div>
 
+    {
+      featuredBrands.length > 0 && (
+        <div class="mt-10">
+          <Section
+            title="Start with the strongest brand hubs"
+            intro="These brands already have clearer generation-level coverage and are the fastest way into the deepest parts of the site."
+          >
+            <div class="grid gap-6 lg:grid-cols-3">
+              {featuredBrands.map((item) => (
+                <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/brands/${slugify(item.brand)}/`}>
+                  <p class="eyebrow">Brand hub</p>
+                  <h2 class="mt-3 text-2xl font-semibold text-ink">{item.brand}</h2>
+                  <p class="mt-3 text-sm leading-6 text-steel">
+                    {item.entries.length} car hub page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+                  </p>
+                  {item.featuredGeneration && (
+                    <p class="mt-4 text-sm font-semibold text-accent">
+                      Start with {item.featuredGeneration.data.model} {item.featuredGeneration.data.generationCode ?? item.featuredGeneration.data.generation}
+                    </p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </Section>
+        </div>
+      )
+    }
+
     <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       {
-        brands.map(([brand, entries]) => (
-          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/brands/${slugify(brand)}/`}>
+        allBrands.map((item) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/brands/${slugify(item.brand)}/`}>
             <p class="eyebrow">Brand</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{brand}</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">{entries.length} car hub page{entries.length === 1 ? "" : "s"} published.</p>
+            <h2 class="mt-3 text-2xl font-semibold text-ink">{item.brand}</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">
+              {item.entries.length} car hub page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+            </p>
+            {item.featuredGeneration && (
+              <p class="mt-4 text-sm font-semibold text-accent">
+                Featured generation: {item.featuredGeneration.data.model} {item.featuredGeneration.data.generationCode ?? item.featuredGeneration.data.generation}
+              </p>
+            )}
           </a>
         ))
       }

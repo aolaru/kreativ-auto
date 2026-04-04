@@ -3,6 +3,8 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import { generationHubContent } from "../../data/generation-hubs";
 import {
   getGenerationKey,
   getGenerationLabel,
@@ -72,7 +74,31 @@ const generationGroups = Array.from(
     map.set(key, current);
     return map;
   }, new Map<string, typeof modelCars>())
+).map(([, entries]) => {
+  const lead = entries[0];
+  const generationSlug = getGenerationSlug(lead.data);
+  const relatedProblems = linkedProblems.filter((item) =>
+    entries.some((car) => car.data.relatedProblems.some((slug) => item.href === `/problems/${slug}/`))
+  );
+  const relatedBest = linkedBest.filter((item) =>
+    entries.some((car) => car.data.relatedBest.some((slug) => item.href === `/best/${slug}/`))
+  );
+
+  return {
+    lead,
+    entries: [...entries].sort((a, b) => a.data.year - b.data.year),
+    generationSlug,
+    hasEditorialHub: Boolean(generationHubContent[generationSlug]),
+    relatedProblems,
+    relatedBest
+  };
+});
+const featuredGenerationGroups = [...generationGroups].sort(
+  (a, b) =>
+    Number(b.hasEditorialHub) - Number(a.hasEditorialHub) ||
+    b.relatedProblems.length + b.relatedBest.length - (a.relatedProblems.length + a.relatedBest.length)
 );
+const startHere = featuredGenerationGroups[0];
 ---
 
 <BaseLayout title={`${model} Guides`} description={`Browse ${model} car hubs, problem pages, and best-parts content.`}>
@@ -82,14 +108,80 @@ const generationGroups = Array.from(
       <p class="eyebrow">Model Hub</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{model}</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        This model page keeps the published years together, but also groups them by generation and facelift window so part fitment and common issues stay easier to track.
+        Start with the strongest generation hub for {model}, then use the year-specific pages and supporting guides when you need something narrower.
       </p>
     </div>
 
+    {
+      startHere && (
+        <div class="mt-10">
+          <Section
+            title={`Start here with ${getGenerationLabel(startHere.lead.data)}`}
+            intro={`This is the clearest entry point into the published ${model} coverage right now.`}
+          >
+            <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+              <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/generations/${startHere.generationSlug}/`}>
+                <p class="eyebrow">Featured generation hub</p>
+                <h2 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(startHere.lead.data)}</h2>
+                <p class="mt-3 text-sm leading-6 text-steel">
+                  Covers the {getGenerationRange(startHere.lead.data)} window with linked problems, parts guides, and year-specific car hubs.
+                </p>
+                <p class="mt-4 text-sm font-semibold text-accent">Open generation hub</p>
+              </a>
+              <div class="grid gap-4">
+                {startHere.relatedProblems.slice(0, 2).map((item) => (
+                  <a class="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-accent/40" href={item.href}>
+                    <p class="eyebrow">{item.eyebrow}</p>
+                    <h3 class="mt-2 text-lg font-semibold text-ink">{item.title}</h3>
+                    {item.description && <p class="mt-2 text-sm leading-6 text-steel">{item.description}</p>}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </Section>
+        </div>
+      )
+    }
+
     <div class="mt-10 space-y-8">
+      <Section
+        title="Generation hubs"
+        intro="Use the generation hubs first when the ownership pattern or parts overlap matters more than the exact model year."
+      >
+        <div class="grid gap-6">
+          {featuredGenerationGroups.map((group) => (
+            <div class="rounded-3xl border border-slate-200 bg-white p-6">
+              <div class="flex flex-col gap-3 border-b border-slate-200 pb-5 sm:flex-row sm:items-end sm:justify-between">
+                <div>
+                  <p class="eyebrow">Generation</p>
+                  <h2 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(group.lead.data)}</h2>
+                  <p class="mt-3 text-sm leading-6 text-steel">
+                    Covers the {getGenerationRange(group.lead.data)} window for {model}.
+                  </p>
+                </div>
+                <a class="text-sm font-semibold text-accent" href={`/generations/${group.generationSlug}/`}>
+                  View generation hub
+                </a>
+              </div>
+
+              <div class="mt-6 grid gap-4 md:grid-cols-2">
+                {group.relatedProblems.slice(0, 2).map((item) => (
+                  <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:bg-white" href={item.href}>
+                    <p class="eyebrow">{item.eyebrow}</p>
+                    <h3 class="mt-2 text-lg font-semibold text-ink">{item.title}</h3>
+                    {item.description && <p class="mt-2 text-sm leading-6 text-steel">{item.description}</p>}
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Published years" intro="Drop to the model-year pages when you want the narrower ownership summary for a specific year.">
       {
-        generationGroups.map(([, entries]) => {
-          const lead = entries[0];
+        generationGroups.map((group) => {
+          const lead = group.lead;
 
           return (
             <section class="surface p-6 sm:p-8">
@@ -107,9 +199,7 @@ const generationGroups = Array.from(
               </div>
 
               <div class="mt-6 grid gap-6">
-                {entries
-                  .sort((a, b) => a.data.year - b.data.year)
-                  .map((car) => (
+                {group.entries.map((car) => (
                     <a class="rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
                       <p class="eyebrow">{car.data.year}</p>
                       <h3 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h3>
@@ -121,11 +211,12 @@ const generationGroups = Array.from(
           );
         })
       }
+      </Section>
     </div>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Related problem guides" items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" items={linkedBest} />
+      <RelatedLinks title="Related problem guides" intro={`These are the problem pages currently connected to the published ${model} coverage.`} items={linkedProblems} />
+      <RelatedLinks title="Related best-parts guides" intro={`These are the parts-comparison pages already linked into the ${model} hub and generation pages.`} items={linkedBest} />
     </div>
   </div>
 </BaseLayout>

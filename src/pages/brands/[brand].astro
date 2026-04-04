@@ -3,7 +3,9 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
-import { slugify, uniqueByHref } from "../../utils/taxonomy";
+import Section from "../../components/Section.astro";
+import { generationHubContent } from "../../data/generation-hubs";
+import { getGenerationKey, getGenerationLabel, getGenerationRange, getGenerationSlug, slugify, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
   const cars = await getCollection("cars");
@@ -35,7 +37,6 @@ const linkedProblems = uniqueByHref(
       eyebrow: "Problem guide"
     }))
 );
-
 const linkedBest = uniqueByHref(
   bestPages
     .filter((entry) =>
@@ -48,6 +49,59 @@ const linkedBest = uniqueByHref(
       eyebrow: entry.data.category
     }))
 );
+const generationGroups = Array.from(
+  brandCars.reduce((map, car) => {
+    const key = getGenerationKey(car.data);
+    const current = map.get(key) ?? [];
+    current.push(car);
+    map.set(key, current);
+    return map;
+  }, new Map<string, typeof brandCars>())
+).map(([, entries]) => {
+  const lead = entries[0];
+  const generationSlug = getGenerationSlug(lead.data);
+  const relatedProblems = linkedProblems.filter((item) =>
+    entries.some((car) => car.data.relatedProblems.some((slug) => item.href === `/problems/${slug}/`))
+  );
+  const relatedBest = linkedBest.filter((item) =>
+    entries.some((car) => car.data.relatedBest.some((slug) => item.href === `/best/${slug}/`))
+  );
+
+  return {
+    lead,
+    entries: [...entries].sort((a, b) => a.data.year - b.data.year),
+    generationSlug,
+    hasEditorialHub: Boolean(generationHubContent[generationSlug]),
+    relatedProblems,
+    relatedBest
+  };
+});
+
+const featuredGenerations = [...generationGroups]
+  .sort(
+    (a, b) =>
+      Number(b.hasEditorialHub) - Number(a.hasEditorialHub) ||
+      b.relatedProblems.length + b.relatedBest.length - (a.relatedProblems.length + a.relatedBest.length)
+  )
+  .slice(0, 3);
+
+const modelGroups = Array.from(
+  brandCars.reduce((map, car) => {
+    const key = car.data.model;
+    const current = map.get(key) ?? [];
+    current.push(car);
+    map.set(key, current);
+    return map;
+  }, new Map<string, typeof brandCars>())
+)
+  .map(([model, entries]) => ({
+    model,
+    entries,
+    featuredGeneration: featuredGenerations.find((group) => group.entries.some((entry) => entry.data.model === model))
+  }))
+  .sort((a, b) => b.entries.length - a.entries.length || a.model.localeCompare(b.model));
+
+const startHere = featuredGenerations[0];
 
 const breadcrumbs = [
   { label: "Home", href: "/" },
@@ -63,25 +117,96 @@ const breadcrumbs = [
       <p class="eyebrow">Brand Hub</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{brand}</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        This brand landing page groups model-specific ownership content and supporting repair or buyer-intent pages.
+        Start with the strongest generation hub for {brand}, then drill into the model years, problem guides, and parts pages that already have the best coverage.
       </p>
     </div>
 
-    <div class="mt-10 grid gap-6">
-      {
-        brandCars.map((car) => (
-          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
-            <p class="eyebrow">Car hub</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.description}</p>
-          </a>
-        ))
-      }
+    {
+      startHere && (
+        <div class="mt-10">
+          <Section
+            title={`Start here with ${getGenerationLabel(startHere.lead.data)}`}
+            intro={`This is the clearest way into the strongest ${brand} coverage currently on the site.`}
+          >
+            <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+              <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/generations/${startHere.generationSlug}/`}>
+                <p class="eyebrow">Featured generation hub</p>
+                <h3 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(startHere.lead.data)}</h3>
+                <p class="mt-3 text-sm leading-6 text-steel">
+                  Covers the {getGenerationRange(startHere.lead.data)} window with linked year pages, common problems, and best-parts guides.
+                </p>
+                <p class="mt-4 text-sm font-semibold text-accent">Open generation hub</p>
+              </a>
+              <div class="grid gap-4">
+                {startHere.relatedProblems.slice(0, 2).map((item) => (
+                  <a class="rounded-2xl border border-slate-200 bg-white p-5 transition hover:border-accent/40" href={item.href}>
+                    <p class="eyebrow">{item.eyebrow}</p>
+                    <h3 class="mt-2 text-lg font-semibold text-ink">{item.title}</h3>
+                    {item.description && <p class="mt-2 text-sm leading-6 text-steel">{item.description}</p>}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </Section>
+        </div>
+      )
+    }
+
+    <div class="mt-10 space-y-8">
+      <Section
+        title="Best generation hubs in this brand"
+        intro={`These are the ${brand} generation clusters with the clearest path into deeper troubleshooting and parts content.`}
+      >
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {featuredGenerations.map((group) => (
+            <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/generations/${group.generationSlug}/`}>
+              <p class="eyebrow">Generation hub</p>
+              <h3 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(group.lead.data)}</h3>
+              <p class="mt-3 text-sm leading-6 text-steel">
+                {getGenerationRange(group.lead.data)} with {group.relatedProblems.length} problem guide{group.relatedProblems.length === 1 ? "" : "s"} and {group.relatedBest.length} parts page{group.relatedBest.length === 1 ? "" : "s"}.
+              </p>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Models in this brand" intro="Use the model hubs if you want the full year-by-year picture before narrowing down to a generation.">
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {modelGroups.map((group) => (
+            <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/models/${slugify(`${brand} ${group.model}`)}/`}>
+              <p class="eyebrow">Model hub</p>
+              <h3 class="mt-3 text-2xl font-semibold text-ink">{brand} {group.model}</h3>
+              <p class="mt-3 text-sm leading-6 text-steel">
+                {group.entries.length} year-specific hub page{group.entries.length === 1 ? "" : "s"} published.
+              </p>
+              {group.featuredGeneration && (
+                <p class="mt-4 text-sm font-semibold text-accent">
+                  Start with {getGenerationLabel(group.featuredGeneration.lead.data)}
+                </p>
+              )}
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Published car hubs" intro="These are the individual model-year pages currently available for this brand.">
+        <div class="grid gap-6">
+          {
+            brandCars.map((car) => (
+              <a class="rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
+                <p class="eyebrow">Car hub</p>
+                <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
+                <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.description}</p>
+              </a>
+            ))
+          }
+        </div>
+      </Section>
     </div>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Related problem guides" items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" items={linkedBest} />
+      <RelatedLinks title="Related problem guides" intro={`These are the most relevant ${brand} problem pages already connected to the published car hubs.`} items={linkedProblems} />
+      <RelatedLinks title="Related best-parts guides" intro={`These are the current ${brand} parts-comparison pages linked from the model and generation hubs.`} items={linkedBest} />
     </div>
   </div>
 </BaseLayout>

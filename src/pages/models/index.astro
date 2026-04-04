@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { getGenerationKey, slugify } from "../../utils/taxonomy";
+import Section from "../../components/Section.astro";
+import { generationHubContent } from "../../data/generation-hubs";
+import { getGenerationKey, getGenerationSlug, slugify } from "../../utils/taxonomy";
 
 const cars = await getCollection("cars");
 const models = Array.from(
@@ -11,8 +13,25 @@ const models = Array.from(
     current.push(car);
         map.set(key, current);
         return map;
-      }, new Map<string, typeof cars>())
-).sort(([a], [b]) => a.localeCompare(b));
+  }, new Map<string, typeof cars>())
+).map(([model, entries]) => {
+  const generationCount = new Set(entries.map((entry) => getGenerationKey(entry.data))).size;
+  const featuredGeneration = entries.find((entry) => generationHubContent[getGenerationSlug(entry.data)]);
+
+  return {
+    model,
+    entries,
+    generationCount,
+    featuredGeneration
+  };
+});
+
+const featuredModels = [...models]
+  .filter((item) => item.featuredGeneration)
+  .sort((a, b) => b.entries.length - a.entries.length || a.model.localeCompare(b.model))
+  .slice(0, 3);
+
+const allModels = [...models].sort((a, b) => a.model.localeCompare(b.model));
 ---
 
 <BaseLayout
@@ -21,24 +40,51 @@ const models = Array.from(
 >
   <div class="container-shell py-12 sm:py-16">
     <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Taxonomy</p>
+      <p class="eyebrow">Models</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by model</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Model pages group the published years first, then break them down by generation and facelift phase where the underlying car really changes.
+        The strongest model pages now lead with the generation hubs that already have real depth, then break the coverage down by year where that still helps.
       </p>
     </div>
 
+    {
+      featuredModels.length > 0 && (
+        <div class="mt-10">
+          <Section
+            title="Start with the deepest model clusters"
+            intro="These models already have stronger generation-level coverage, so they are the best place to start if you want more than a single model-year page."
+          >
+            <div class="grid gap-6 lg:grid-cols-3">
+              {featuredModels.map((item) => (
+                <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/models/${slugify(item.model)}/`}>
+                  <p class="eyebrow">Model hub</p>
+                  <h2 class="mt-3 text-2xl font-semibold text-ink">{item.model}</h2>
+                  <p class="mt-3 text-sm leading-6 text-steel">
+                    {item.entries.length} year-specific page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+                  </p>
+                  {item.featuredGeneration && (
+                    <p class="mt-4 text-sm font-semibold text-accent">
+                      Featured generation hub available
+                    </p>
+                  )}
+                </a>
+              ))}
+            </div>
+          </Section>
+        </div>
+      )
+    }
+
     <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       {
-        models.map(([model, entries]) => (
-          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/models/${slugify(model)}/`}>
+        allModels.map((item) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/models/${slugify(item.model)}/`}>
             <p class="eyebrow">Model</p>
-            <h2 class="mt-3 text-2xl font-semibold text-ink">{model}</h2>
+            <h2 class="mt-3 text-2xl font-semibold text-ink">{item.model}</h2>
             <p class="mt-3 text-sm leading-6 text-steel">
-              {entries.length} published year-specific hub page{entries.length === 1 ? "" : "s"} across{" "}
-              {new Set(entries.map((entry) => getGenerationKey(entry.data))).size} generation group
-              {new Set(entries.map((entry) => getGenerationKey(entry.data))).size === 1 ? "" : "s"}.
+              {item.entries.length} published year-specific hub page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
             </p>
+            {item.featuredGeneration && <p class="mt-4 text-sm font-semibold text-accent">Generation hub available</p>}
           </a>
         ))
       }
