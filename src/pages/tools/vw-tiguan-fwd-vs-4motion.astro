@@ -1,0 +1,247 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+
+const title = "VW Tiguan FWD vs 4MOTION";
+const description =
+  "A practical comparison of front-wheel-drive and 4MOTION VW Tiguans, including ownership differences, tire strategy, maintenance priorities, and where parts advice does not transfer cleanly.";
+const intro =
+  "The Tiguan FWD and 4MOTION versions overlap enough that people often shop or maintain them like the drivetrain choice barely matters. That is not quite right. Most of the common complaints still overlap, but tire strategy, driveline sensitivity, and how strictly you need to manage chassis-related maintenance are different enough that the advice should be split clearly.";
+const modifiedTime = new Date("2026-04-04");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Tools", href: "/tools/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is 4MOTION better than FWD on a Tiguan?",
+    answer:
+      "Not automatically. 4MOTION makes more sense if weather, traction, or year-round confidence matter to you. FWD is usually the simpler ownership path if you mostly want lower maintenance friction and do not need the extra drivetrain complexity."
+  },
+  {
+    question: "Do FWD and 4MOTION Tiguans share the same common problems?",
+    answer:
+      "A lot of the brake, coolant, EPC, and suspension complaints still overlap. The difference is that 4MOTION owners need to be stricter about tire matching, rotation history, and anything that adds unnecessary drivetrain stress."
+  },
+  {
+    question: "Can I use the same parts guides for both drivetrains?",
+    answer:
+      "Sometimes. Brake, ignition, and coolant guidance can overlap, but tire strategy, axle assumptions, and some trim-specific fitment checks matter more on 4MOTION."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/car-shakes-when-braking/",
+    title: "Car shakes when braking",
+    description: "Still relevant to both drivetrains, but especially useful when tire and brake assumptions start overlapping.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/front-end-clunk-over-bumps/",
+    title: "Front-end clunk over bumps",
+    description: "A good follow-up if a front-end noise is being blamed on the wrong part before the smaller wear items are checked.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/battery-struggles-after-short-trips/",
+    title: "Battery struggles after short trips",
+    description: "Useful because the drivetrain choice does not eliminate ordinary battery-use patterns, but it can change how owners interpret them.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-brake-pads-for-vw-tiguan-2020/",
+    title: "Best brake pads for VW Tiguan 2020",
+    description: "Still useful across both drivetrains when the real question is refinement, noise, and everyday street braking.",
+    eyebrow: "Brake Pads"
+  },
+  {
+    href: "/best/best-brake-rotors-for-vw-tiguan-2020/",
+    title: "Best brake rotors for VW Tiguan 2020",
+    description: "A good next step when the drivetrain conversation is distracting from a more ordinary brake-vibration repair.",
+    eyebrow: "Brake Rotors"
+  },
+  {
+    href: "/best/best-batteries-for-vw-tiguan-2020/",
+    title: "Best batteries for VW Tiguan 2020",
+    description: "Useful if the real issue is short-trip use and reserve capacity, not the front-axle versus 4MOTION badge.",
+    eyebrow: "Batteries"
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  image="/images/photos/cars/vw-tiguan-2020.jpg"
+  schemas={schemas}
+>
+  <TrustBlock
+    title="Why this comparison matters"
+    summary="This page is written to separate the drivetrain differences that actually change ownership behavior from the ones people exaggerate online."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={problemTrustPoints}
+  />
+
+  <Section
+    title="The short version"
+    intro="If you only need the fast answer, this is the cleanest way to think about Tiguan FWD versus 4MOTION."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Tiguan FWD</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Better if you want the simpler ownership path</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Usually easier to live with if your priority is lower maintenance friction and fewer drivetrain-related fitment variables.</li>
+          <li>Makes tire shopping and replacement strategy simpler because matching is less strict than on 4MOTION.</li>
+          <li>Best fit if you do not need the extra traction confidence badly enough to accept the extra discipline.</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Tiguan 4MOTION</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Better if traction and year-round confidence matter more</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Usually the better fit if weather, wet roads, or mixed conditions make the extra traction feel worthwhile.</li>
+          <li>Needs stricter tire management so you do not create drivetrain stress by accident.</li>
+          <li>Best fit for owners who are comfortable treating tire matching and rotation as part of drivetrain care, not just routine upkeep.</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="Where the ownership pattern really changes"
+    intro="This is the part people underplay when they say the drivetrain choice does not matter."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Tires and driveline load</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>4MOTION owners need to be more disciplined about tire matching, wear, and rotation because the drivetrain reacts badly to sloppy tire strategy.</li>
+          <li>On the FWD Tiguan, bad tires are still a problem, but they usually stay a tire problem instead of turning into a driveline-anxiety problem too.</li>
+          <li>This is the biggest real-world ownership split between the two, and it affects buying decisions more than people expect.</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Fitment and maintenance</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Brake, coolant, and ignition advice can overlap heavily, but axle setup and wheel package checks matter more once 4MOTION enters the picture.</li>
+          <li>FWD owners can usually shop more simply, while 4MOTION owners should be slower and stricter before clicking buy on broad fitment listings.</li>
+          <li>The drivetrain does not rewrite the common Tiguan complaints, but it does change how careful you need to be with the surrounding maintenance choices.</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="What still overlaps"
+    intro="A lot of the Tiguan ownership story still lives above the drivetrain level."
+  >
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front brake vibration, soft pedal feel, coolant seepage, EPC warnings, and ordinary battery complaints still overlap strongly across FWD and 4MOTION.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Most of the useful diagnosis still starts with the normal suspects, not with the drivetrain badge itself.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The drivetrain split matters most when a reader is about to buy tires, assume all wheel packages are equal, or ignore how uneven wear can change behavior.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the car is already making a brake, battery, or coolant complaint obvious, the drivetrain question often matters less than simple disciplined diagnosis.</li>
+    </ul>
+  </Section>
+
+  <Section
+    title="Who each one fits better"
+    intro="This is the practical shortcut for someone deciding which Tiguan ownership path they actually want."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Choose FWD if</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>You want the simpler, lower-friction maintenance path.</li>
+          <li>Your climate and road conditions do not make all-wheel-drive confidence a must-have.</li>
+          <li>You would rather keep tire strategy and parts buying as straightforward as possible.</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Choose 4MOTION if</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>You care enough about weather and traction confidence to accept the extra discipline that comes with it.</li>
+          <li>You are willing to stay stricter on tire matching, rotation, and axle-aware shopping.</li>
+          <li>You understand that “same size tire” is not always enough when the drivetrain is more sensitive to uneven wear.</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="Where to go next"
+    intro="Use these pages if the FWD versus 4MOTION question turns into a real maintenance or parts decision."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Start with the generation hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">VW Tiguan II facelift 2020-2024</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use the generation page if you want the broad ownership pattern for the facelifted Tiguan before narrowing it down by drivetrain.
+        </p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/volkswagen-tiguan-tiguan-ii-facelift-2020-2024/">Open generation hub</a>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Use the year page</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">VW Tiguan 2020 hub</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use the 2020 Tiguan page if you already know the model year and want the linked problem and best-parts pages from there.
+        </p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/cars/vw-tiguan-2020/">Open Tiguan hub</a>
+      </article>
+    </div>
+  </Section>
+
+  <RelatedLinks
+    title="Related problem guides"
+    intro="These are the next problem pages worth reading if the drivetrain question turns into a real diagnosis or maintenance decision."
+    items={relatedProblems}
+  />
+
+  <RelatedLinks
+    title="Related best-parts guides"
+    intro="These are the best-parts pages that matter once the comparison points you toward the actual repair area."
+    items={relatedBest}
+  />
+</ContentLayout>
