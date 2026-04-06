@@ -38,5 +38,15 @@ export const comparisonGuides: ComparisonGuide[] = [
     relatedCars: ["vw-tiguan-2020"],
     relatedModels: ["Volkswagen Tiguan", "VW Tiguan"],
     relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "VW Tiguan pre-facelift vs facelift",
+    href: "/tools/vw-tiguan-pre-facelift-vs-facelift/",
+    description:
+      "A practical guide to what really changed between the earlier Mk2 Tiguan and the 2020-2024 facelift, including fitment, trim confusion, and where advice stops carrying over cleanly.",
+    eyebrow: "Generation guide",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedModels: ["Volkswagen Tiguan", "VW Tiguan"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
   }
 ];

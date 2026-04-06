@@ -18,7 +18,7 @@ const newestBest = [...bestPages].sort((a, b) => (b.data.updatedAt?.getTime() ??
 const featuredCars = newestCars.slice(0, 3);
 const featuredProblems = newestProblems.slice(0, 3);
 const featuredBest = newestBest.slice(0, 3);
-const featuredComparisons = comparisonGuides.slice(0, 3);
+const featuredComparisons = comparisonGuides.slice(0, 4);
 const tiguanCar = cars.find((car) => car.id === "vw-tiguan-2020");
 const tiguanGenerationHref = tiguanCar ? `/generations/${getGenerationSlug(tiguanCar.data)}/` : "/generations/";
 const tiguanGenerationLabel = tiguanCar ? getGenerationLabel(tiguanCar.data) : "Volkswagen Tiguan";
@@ -247,7 +247,7 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
           See all parts guides
         </a>
       </div>
-      <div class="mt-6 grid gap-5 md:grid-cols-3">
+      <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {
           featuredBest.map((entry) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={`/best/${entry.id}/`}>
