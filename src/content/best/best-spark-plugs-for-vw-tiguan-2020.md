@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Spark Plugs for VW Tiguan 2020
 metaDescription: Compare the best spark plug options for the VW Tiguan 2020 if you are chasing hesitation, misfires, or EPC behavior under load.
 excerpt: The right Tiguan spark plug is the one that keeps the 2.0T clean under load instead of creating another round of misfire diagnosis.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/parts/ngk-spark-plugs.png
 updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020

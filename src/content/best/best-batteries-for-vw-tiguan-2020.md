@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Batteries for VW Tiguan 2020
 metaDescription: Compare the best battery options for the VW Tiguan 2020 if short trips, colder starts, or sitting time are exposing a weak battery.
 excerpt: The right Tiguan battery is the one that matches the SUV’s real use pattern instead of barely surviving another season.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/parts/car-battery.jpg
 updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020

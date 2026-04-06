@@ -5,7 +5,7 @@ car_model: Toyota RAV4 2021
 metaTitle: Best Batteries for Toyota RAV4 2021
 metaDescription: Compare the best battery options for the Toyota RAV4 2021 if you want a reliable replacement instead of another weak start after the car sits.
 excerpt: The right RAV4 battery is the one that handles short trips, sitting time, and normal accessory load without turning into a repeat no-start problem.
-heroImage: /images/photos/cars/toyota-rav4-2021.jpg
+heroImage: /images/photos/parts/car-battery.jpg
 updatedAt: 2026-04-06
 relatedCars:
   - toyota-rav4-2020

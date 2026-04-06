@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best Ignition Coils for Honda Civic 2019
 metaDescription: Compare the best ignition coil options for the Honda Civic 2019 if you want to fix a misfire without buying junk.
 excerpt: The ignition coil picks here are for Civic owners who want a proper repair, not the cheapest box they can click on.
-heroImage: /images/photos/parts/ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.jpg
 updatedAt: 2026-03-30
 relatedCars:
   - honda-civic-2019

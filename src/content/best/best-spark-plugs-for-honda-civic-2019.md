@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best Spark Plugs for Honda Civic 2019
 metaDescription: Compare the best spark plug options for the Honda Civic 2019 if you want smoother cold starts, cleaner idle, and fewer repeat ignition issues.
 excerpt: The best Civic spark plugs are the ones that restore cold-start smoothness and idle quality without turning a basic tune-up into guesswork.
-heroImage: /images/photos/parts/ignition-coil.jpg
+heroImage: /images/photos/parts/ngk-spark-plugs.png
 updatedAt: 2026-03-31
 relatedCars:
   - honda-civic-2019

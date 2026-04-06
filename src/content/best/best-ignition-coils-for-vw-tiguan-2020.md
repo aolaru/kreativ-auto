@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Ignition Coils for VW Tiguan 2020
 metaDescription: Compare the best ignition coil options for the VW Tiguan 2020 if you are chasing misfire counts, EPC warnings, or weak performance under load.
 excerpt: The right Tiguan ignition coil is the one that restores clean power under load without sending you back into diagnosis next week.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.jpg
 updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020

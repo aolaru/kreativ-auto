@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best A/C Condensers for Honda Civic 2019
 metaDescription: Compare the best A/C condenser options for the Honda Civic 2019 if cooling drops off at idle or the system is losing efficiency in traffic.
 excerpt: The right Civic condenser is the one that restores proper cooling without making the repair feel temporary.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
+heroImage: /images/photos/parts/denso-condenser.jpeg
 updatedAt: 2026-04-06
 relatedCars:
   - honda-civic-2019
@@ -21,13 +21,13 @@ products:
   - name: TYC A/C Condenser
     price: "$118"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=TYC+AC+condenser+Honda+Civic+2019
+    affiliate_url: https://www.partsgeek.com/4mjvvlv-honda-civic-ac-condenser.html
     summary: Good value option when the goal is to restore normal cooling without pushing the budget too far.
     image: /images/photos/parts/denso-condenser.jpeg
   - name: Genuine Honda A/C Condenser
     price: "$186"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Genuine+Honda+AC+condenser+2019+Civic
+    affiliate_url: https://www.hondapartsnow.com/parts-list/2019-honda-civic--4dr_sport_hcm_eng_hdm_cvt-ka_cvt/body_air_conditioning/a_c_air_conditioner_condenser.html
     summary: Best OE-style route for owners who want the most conservative fitment choice.
     image: /images/photos/parts/denso-condenser.jpeg
 buyingAdvice:

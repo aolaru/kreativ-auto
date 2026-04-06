@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Coolant for VW Tiguan 2020
 metaDescription: Compare the best coolant options for the VW Tiguan 2020 if you need the right spec fluid for top-ups, leak repairs, or a proper refill.
 excerpt: On a Tiguan, the right coolant matters more than it seems because using the wrong chemistry can create a second problem while you are trying to solve the first.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/parts/pentosin-coolant.jpg
 updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020

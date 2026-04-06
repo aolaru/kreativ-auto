@@ -5,8 +5,8 @@ car_model: Toyota RAV4 2021
 metaTitle: Best Front Sway Bar Links for Toyota RAV4 2021
 metaDescription: Compare the best front sway bar link options for the Toyota RAV4 2021 if front-end clunks show up over driveways, angled entries, or rough pavement.
 excerpt: The right front sway bar link is the one that solves the front-end knock without turning a small suspension repair into a parts roulette game.
-heroImage: /images/photos/cars/toyota-rav4-2021.jpg
-updatedAt: 2026-04-03
+heroImage: /images/photos/parts/moog-sway-bar-links.png
+updatedAt: 2026-04-06
 relatedCars:
   - toyota-rav4-2020
   - toyota-rav4-2021
@@ -16,19 +16,19 @@ products:
   - name: MOOG Front Stabilizer Link
     price: "$39"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=MOOG+front+stabilizer+link+Toyota+RAV4+2021
+    affiliate_url: https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/
     summary: Best overall choice if you want a straightforward repair for the classic front-end driveway clunk.
     image: /images/photos/parts/moog-sway-bar-links.png
   - name: Delphi Front Stabilizer Link
     price: "$37"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Delphi+front+stabilizer+link+Toyota+RAV4+2021
+    affiliate_url: https://www.delphiautoparts.com/en-gb/products-technologies/steering-suspension/
     summary: Good value option for daily-driven RAV4s that need a clean, simple front-link refresh.
     image: /images/photos/parts/moog-sway-bar-links.png
   - name: Genuine Toyota Front Stabilizer Link
     price: "$63"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Genuine+Toyota+front+stabilizer+link+RAV4+2021
+    affiliate_url: https://www.toyotapartsnow.com/parts-select/2021-toyota-rav4-sway-bar-link
     summary: Safest OE-style pick if you want the most conservative fitment route.
     image: /images/photos/parts/moog-sway-bar-links.png
 buyingAdvice:

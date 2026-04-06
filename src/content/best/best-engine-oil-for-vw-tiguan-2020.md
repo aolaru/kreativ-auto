@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Engine Oil for VW Tiguan 2020
 metaDescription: Compare the best engine oil options for the VW Tiguan 2020 if you want the right spec for routine service, top-ups, or tracking consumption between changes.
 excerpt: The right Tiguan oil is mostly about using the correct VW-friendly spec consistently, not chasing the fanciest bottle on the shelf.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/parts/liqui-moly-engine-oil.jpg
 updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020

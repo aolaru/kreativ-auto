@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best Batteries for Honda Civic 2019
 metaDescription: Compare the best battery options for the Honda Civic 2019 if you want more reliable starts and less voltage-related annoyance.
 excerpt: The best Civic battery is the one that fits the actual driving pattern, not the one with the loudest marketing on the label.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
+heroImage: /images/photos/parts/car-battery.jpg
 updatedAt: 2026-04-06
 relatedCars:
   - honda-civic-2019
