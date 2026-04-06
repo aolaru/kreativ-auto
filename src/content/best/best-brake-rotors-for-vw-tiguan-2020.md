@@ -6,7 +6,7 @@ metaTitle: Best Brake Rotors for VW Tiguan 2020
 metaDescription: Compare the best brake rotors for the VW Tiguan 2020 if you are trying to fix vibration, improve pedal feel, or avoid cheap rotor headaches.
 excerpt: The right Tiguan rotor is the one that stays smooth, resists corrosion, and works with the kind of everyday braking this SUV actually sees.
 heroImage: /images/photos/parts/brake-pads.jpg
-updatedAt: 2026-03-31
+updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020
 relatedProblems:
@@ -28,7 +28,7 @@ products:
   - name: Bosch QuietCast Premium Rotor
     price: "$96"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+Premium+Rotor+VW+Tiguan+2020
+    affiliate_url: https://www.boschautoparts.com/g/quietcast-premium-disc-brake-rotors
     summary: Strong alternative for drivers who want refined daily braking without chasing the sportiest setup.
     image: /images/photos/parts/brake-pads.jpg
 buyingAdvice:

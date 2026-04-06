@@ -6,7 +6,7 @@ metaTitle: Best Batteries for Honda Civic 2019
 metaDescription: Compare the best battery options for the Honda Civic 2019 if you want more reliable starts and less voltage-related annoyance.
 excerpt: The best Civic battery is the one that fits the actual driving pattern, not the one with the loudest marketing on the label.
 heroImage: /images/photos/cars/honda-civic-2019.jpg
-updatedAt: 2026-04-01
+updatedAt: 2026-04-06
 relatedCars:
   - honda-civic-2019
 relatedProblems:
@@ -15,19 +15,19 @@ products:
   - name: Interstate AGM Battery
     price: "$219"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=AGM+battery+Honda+Civic+2019
+    affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Best overall choice for short-trip use, stronger reserve capacity, and fewer weak-start complaints.
     image: /images/photos/parts/car-battery.jpg
   - name: DieHard Platinum AGM Battery
     price: "$229"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=DieHard+Platinum+AGM+battery+Honda+Civic+2019
+    affiliate_url: https://shop.advanceautoparts.com/brands/diehard-platinum-agm
     summary: Strong premium option for owners who want dependable daily-start performance and good voltage stability.
     image: /images/photos/parts/car-battery.jpg
   - name: Optima YellowTop Battery
     price: "$249"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Optima+YellowTop+Honda+Civic+2019
+    affiliate_url: https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries
     summary: Good fit if the car sees heavier accessory load or a tougher driving pattern than normal commuting.
     image: /images/photos/parts/car-battery.jpg
 buyingAdvice:

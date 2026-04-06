@@ -6,7 +6,7 @@ metaTitle: Best Spark Plugs for VW Tiguan 2020
 metaDescription: Compare the best spark plug options for the VW Tiguan 2020 if you are chasing hesitation, misfires, or EPC behavior under load.
 excerpt: The right Tiguan spark plug is the one that keeps the 2.0T clean under load instead of creating another round of misfire diagnosis.
 heroImage: /images/photos/cars/vw-tiguan-2020.jpg
-updatedAt: 2026-04-01
+updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020
 relatedProblems:
@@ -15,19 +15,19 @@ products:
   - name: NGK Ruthenium HX Spark Plugs
     price: "$62"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=NGK+Ruthenium+HX+spark+plugs+VW+Tiguan+2020
+    affiliate_url: https://ngksparkplugs.com/en/products/ignition-parts/spark-plugs/ruthenium-spark-plugs
     summary: Best overall choice if you want a modern plug that handles daily use and load without drama.
     image: /images/photos/parts/ngk-spark-plugs.png
   - name: Bosch Double Iridium Spark Plugs
     price: "$58"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Bosch+Double+Iridium+spark+plugs+VW+Tiguan+2020
+    affiliate_url: https://www.boschautoparts.com/g/double-iridium-spark-plugs
     summary: Strong alternative if you want a familiar brand with broad availability and clean drivability.
     image: /images/photos/parts/ngk-spark-plugs.png
   - name: Genuine Volkswagen Spark Plugs
     price: "$69"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Genuine+Volkswagen+spark+plugs+VW+Tiguan+2020
+    affiliate_url: https://parts.vw.com/p/Volkswagen_2020_Tiguan-20L-AT-AWD-SEL-Sport-Utility/Spark-Plug-Spark-Plug-Spark-Plug/70047941/06K905601K.html
     summary: Best OE-style route for owners who want the most conservative fitment call.
     image: /images/photos/parts/ngk-spark-plugs.png
 buyingAdvice:

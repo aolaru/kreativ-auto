@@ -6,7 +6,7 @@ metaTitle: Best Rear Brake Pads for Honda Civic 2019
 metaDescription: Compare the best rear brake pad options for the Honda Civic 2019 if you want less noise after rain and a cleaner daily-driver brake setup.
 excerpt: The best Civic rear brake pads are the ones that stay quiet in daily use and do not turn every damp morning into a brake-noise ritual.
 heroImage: /images/photos/parts/akebono-proact.png
-updatedAt: 2026-04-03
+updatedAt: 2026-04-06
 relatedCars:
   - honda-civic-2019
 relatedProblems:
@@ -15,19 +15,19 @@ products:
   - name: Akebono ProACT Ceramic Rear Brake Pads
     price: "$66"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Akebono+ProACT+rear+brake+pads+Honda+Civic+2019
+    affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Best overall if you want a clean, quiet daily-driver pad with very little drama in damp weather.
     image: /images/photos/parts/akebono-proact.png
   - name: Wagner OEX Rear Brake Pads
     price: "$59"
     rating: 4.6
-    affiliate_url: https://www.amazon.com/s?k=Wagner+OEX+rear+brake+pads+Honda+Civic+2019
+    affiliate_url: https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html
     summary: Good choice if you want a street-focused pad with a strong balance of noise control and everyday bite.
     image: /images/photos/parts/wagner-oex.png
   - name: Bosch QuietCast Premium Rear Brake Pads
     price: "$61"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Bosch+QuietCast+rear+brake+pads+Honda+Civic+2019
+    affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Solid option for owners who care most about refinement and predictable street use.
     image: /images/photos/parts/bosch-quietcast-pads.jpg
 buyingAdvice:
