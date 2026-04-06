@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
+import { comparisonGuides } from "../../data/comparison-guides";
 import { generationHubContent } from "../../data/generation-hubs";
 import {
   getGenerationKey,
@@ -86,6 +87,16 @@ const generationLabel = getGenerationLabel(leadCar.data);
 const generationRange = getGenerationRange(leadCar.data);
 const generationSlug = getGenerationSlug(leadCar.data);
 const hubContent = generationHubContent[generationSlug];
+const relatedComparisons = uniqueByHref(
+  comparisonGuides
+    .filter((guide) => guide.relatedGenerations?.includes(generationSlug))
+    .map((guide) => ({
+      href: guide.href,
+      title: guide.title,
+      description: guide.description,
+      eyebrow: guide.eyebrow
+    }))
+);
 const featuredProblems = hubContent?.featuredProblems?.length
   ? linkedProblems.filter((item) => hubContent.featuredProblems?.some((slug) => item.href === `/problems/${slug}/`))
   : linkedProblems;
@@ -188,6 +199,11 @@ const breadcrumbs = [
         title="Best-parts guides for this generation"
         intro="These parts pages are the fastest way to narrow the shortlist once you know the repair area."
         items={featuredBest}
+      />
+      <RelatedLinks
+        title="Comparison guides for this generation"
+        intro="Use these when the next question is which engine, drivetrain, or powertrain version the advice actually applies to."
+        items={relatedComparisons}
       />
     </div>
   </div>
