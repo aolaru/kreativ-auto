@@ -3,8 +3,8 @@ title: EPC light comes on under acceleration
 metaTitle: "EPC Light Comes On Under Acceleration: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose an EPC light that shows up under acceleration by checking ignition, boost-control, and throttle-related causes before replacing the wrong parts.
 excerpt: An EPC warning under load usually means the engine management system is seeing something it does not like once boost and throttle demand rise.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
-updatedAt: 2026-04-01
+heroImage: /images/photos/parts/delphi-ignition-coil.jpg
+updatedAt: 2026-04-07
 relatedCars:
   - vw-tiguan-2020
 relatedBest:
@@ -37,13 +37,13 @@ recommendedParts:
   - name: Eldor Ignition Coil Set
     price: "$164"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Eldor+ignition+coil+set+VW+Tiguan+2020
+    affiliate_url: https://www.europaparts.com/ignition-coil-pack-06l905110h.html
     summary: Strong OE-style coil option when the EPC warning traces back to ignition breakdown under load.
     image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: NGK Ruthenium HX Spark Plugs
     price: "$62"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=NGK+Ruthenium+HX+spark+plugs+VW+Tiguan+2020
+    affiliate_url: https://ngksparkplugs.com/en/products/ignition-parts/spark-plugs/ruthenium-spark-plugs
     summary: Smart plug choice when the car is due for ignition service and misfire counts rise under boost.
     image: /images/photos/parts/ngk-spark-plugs.png
 faqs:

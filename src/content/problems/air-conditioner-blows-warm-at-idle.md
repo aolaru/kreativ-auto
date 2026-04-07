@@ -3,8 +3,8 @@ title: Air conditioner blows warm at idle
 metaTitle: "Air Conditioner Blows Warm at Idle: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose an air conditioner that blows warm at idle by checking condenser health, refrigerant level, and fan performance before replacing the wrong HVAC parts.
 excerpt: A/C that goes warm at idle usually means airflow or refrigerant efficiency has slipped somewhere in the system.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
-updatedAt: 2026-04-01
+heroImage: /images/photos/parts/denso-condenser.jpeg
+updatedAt: 2026-04-07
 relatedCars:
   - honda-civic-2019
 relatedBest:
@@ -37,7 +37,7 @@ recommendedParts:
   - name: Denso A/C Condenser
     price: "$142"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=Denso+AC+condenser+Honda+Civic+2019
+    affiliate_url: https://www.densoautoparts.com/condensers/
     summary: Trusted condenser option when the system diagnosis points to the common heat-exchanger side of the problem.
     image: /images/photos/parts/denso-condenser.jpeg
 faqs:

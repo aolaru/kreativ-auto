@@ -3,8 +3,8 @@ title: Battery struggles after short trips
 metaTitle: "Battery Struggles After Short Trips: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a Tiguan battery that feels weak after short-trip use by checking battery health, charging recovery, and parasitic drain before replacing the wrong part.
 excerpt: A Tiguan that mostly does short trips can make a weak battery feel like a bigger electrical problem than it really is.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
-updatedAt: 2026-04-01
+heroImage: /images/photos/parts/car-battery.jpg
+updatedAt: 2026-04-07
 relatedCars:
   - vw-tiguan-2020
 relatedBest:
@@ -46,7 +46,7 @@ recommendedParts:
   - name: Interstate AGM Battery
     price: "$239"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=AGM+battery+VW+Tiguan+2020
+    affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Strong replacement route if the SUV sees short-trip driving and the current battery no longer has reserve capacity.
     image: /images/photos/parts/car-battery.jpg
 faqs:

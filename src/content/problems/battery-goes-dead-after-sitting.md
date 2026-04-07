@@ -3,8 +3,8 @@ title: Battery goes dead after sitting
 metaTitle: "Battery Goes Dead After Sitting: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a battery that dies after the car sits by checking battery age, charging health, and parasitic draw before replacing parts blindly.
 excerpt: A dead battery after sitting is often just an aging battery, but confirming that early saves a lot of unnecessary diagnosis.
-heroImage: /images/photos/cars/toyota-rav4-2021.jpg
-updatedAt: 2026-04-01
+heroImage: /images/photos/parts/car-battery.jpg
+updatedAt: 2026-04-07
 relatedCars:
   - toyota-rav4-2020
   - toyota-rav4-2021
@@ -38,7 +38,7 @@ recommendedParts:
   - name: Interstate AGM Battery
     price: "$229"
     rating: 4.7
-    affiliate_url: https://www.amazon.com/s?k=AGM+battery+Toyota+RAV4+2021
+    affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Strong replacement choice if testing shows the existing battery has simply reached the end of its useful life.
     image: /images/photos/parts/car-battery.jpg
 faqs:

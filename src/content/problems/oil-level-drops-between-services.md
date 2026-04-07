@@ -3,8 +3,8 @@ title: Oil level drops between services
 metaTitle: "Oil Level Drops Between Services: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a Tiguan that needs oil between changes by checking PCV behavior, leaks, turbo-related consumption, and the service pattern before guessing.
 excerpt: A Tiguan that needs oil between services is not always catastrophic, but it is a problem worth measuring instead of normalizing.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
-updatedAt: 2026-04-01
+heroImage: /images/photos/parts/liqui-moly-engine-oil.jpg
+updatedAt: 2026-04-07
 relatedCars:
   - vw-tiguan-2020
 relatedBest:
@@ -46,13 +46,13 @@ recommendedParts:
   - name: Liqui Moly Special Tec LL 5W-30
     price: "$49"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Liqui+Moly+Special+Tec+LL+5W-30
+    affiliate_url: https://www.liqui-moly.com/en/us/special-tec-ll-sae-5w-30-p000314.html
     summary: Strong VW-friendly oil choice if the next step is confirming the car is running the right spec before chasing deeper causes.
     image: /images/photos/parts/liqui-moly-engine-oil.jpg
   - name: Mann Oil Filter
     price: "$14"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Mann+oil+filter+VW+Tiguan+2020
+    affiliate_url: https://www.mann-filter.com/us-en/catalog/oil-filters/
     summary: OE-leaning filter option if you are resetting the service baseline with a proper oil change.
     image: /images/photos/parts/liqui-moly-engine-oil.jpg
 faqs:

@@ -3,8 +3,8 @@ title: Coolant level drops with no visible leak
 metaTitle: "Coolant Level Drops With No Visible Leak: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a falling coolant level when no obvious leak is visible by checking common pressure-loss points, water pump seepage, and cooling-system weak spots.
 excerpt: A falling coolant level without a puddle usually means the system is losing pressure somewhere small before it becomes obvious.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
-updatedAt: 2026-04-01
+heroImage: /images/photos/parts/pentosin-coolant.jpg
+updatedAt: 2026-04-07
 relatedCars:
   - vw-tiguan-2020
 relatedBest:
@@ -37,13 +37,13 @@ recommendedParts:
   - name: Pentosin Pentofrost E Coolant
     price: "$27"
     rating: 4.8
-    affiliate_url: https://www.amazon.com/s?k=Pentosin+Pentofrost+E+coolant
+    affiliate_url: https://pentosin.com.mx/2020/06/08/anticongelante-libre-de-fosfatos-pentofrost-e/
     summary: Correct-spec coolant option for topping up or refilling the system once the leak source is confirmed.
     image: /images/photos/parts/pentosin-coolant.jpg
   - name: Rein Expansion Tank Cap
     price: "$18"
     rating: 4.5
-    affiliate_url: https://www.amazon.com/s?k=Rein+expansion+tank+cap+VW+Tiguan+2020
+    affiliate_url: https://www.fcpeuro.com/products/audi-vw-coolant-expansion-tank-cap-rein-3b0121321
     summary: Useful if testing points to a weak cap rather than a larger coolant-system failure.
     image: /images/photos/parts/pentosin-coolant.jpg
 faqs:
