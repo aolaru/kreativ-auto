@@ -1,0 +1,60 @@
+---
+interface Props {
+  quickVerdict?: string;
+  firstCheck?: string;
+  confusedWith?: string[];
+  stopDrivingIf?: string[];
+}
+
+const {
+  quickVerdict,
+  firstCheck,
+  confusedWith = [],
+  stopDrivingIf = []
+} = Astro.props;
+
+const hasContent = Boolean(quickVerdict || firstCheck || confusedWith.length || stopDrivingIf.length);
+---
+
+{
+  hasContent && (
+    <div class="grid gap-4 lg:grid-cols-2">
+      {
+        quickVerdict && (
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="eyebrow">Quick verdict</p>
+            <p class="mt-3 text-sm leading-6 text-ink">{quickVerdict}</p>
+          </div>
+        )
+      }
+      {
+        firstCheck && (
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="eyebrow">First thing to check</p>
+            <p class="mt-3 text-sm leading-6 text-ink">{firstCheck}</p>
+          </div>
+        )
+      }
+      {
+        confusedWith.length > 0 && (
+          <div class="rounded-3xl border border-slate-200 bg-white p-6">
+            <p class="eyebrow">Often confused with</p>
+            <ul class="mt-3 space-y-3 text-sm leading-6 text-steel">
+              {confusedWith.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        )
+      }
+      {
+        stopDrivingIf.length > 0 && (
+          <div class="rounded-3xl border border-slate-200 bg-white p-6">
+            <p class="eyebrow">Stop driving if</p>
+            <ul class="mt-3 space-y-3 text-sm leading-6 text-steel">
+              {stopDrivingIf.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        )
+      }
+    </div>
+  )
+}

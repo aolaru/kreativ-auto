@@ -4,21 +4,91 @@ import CardIcon from "../../components/CardIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const cars = await getCollection("cars");
+const newestCars = [...cars].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
+
+const civicCars = newestCars.filter((car) => car.id === "honda-civic-2019");
+const rav4Cars = newestCars.filter((car) => car.id === "toyota-rav4-2021" || car.id === "toyota-rav4-2020");
+const tiguanCars = newestCars.filter((car) => car.id === "vw-tiguan-2020");
+
+const featuredPaths = [
+  {
+    title: "Browse by generation",
+    description: "Use generation hubs first when multiple years share the same parts, problems, and facelift-era behavior.",
+    href: "/generations/"
+  },
+  {
+    title: "Browse by model",
+    description: "Model hubs group the year pages, linked problems, and best-parts guides for one vehicle line.",
+    href: "/models/"
+  },
+  {
+    title: "Browse by brand",
+    description: "Brand hubs are the fastest way to compare the strongest coverage inside one make.",
+    href: "/brands/"
+  }
+];
 ---
 
 <BaseLayout title="Car Hubs" description="Vehicle-specific pages covering maintenance, common issues, and recommended parts.">
   <div class="container-shell py-12 sm:py-16">
     <div class="surface p-8 sm:p-10">
       <p class="eyebrow">Cars</p>
-      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Car pages by model</h1>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Start with the strongest vehicle clusters</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Use these pages to get a quick read on the common problems, maintenance priorities, and parts that matter most for a specific vehicle.
+        Use these pages when you want the ownership picture for a specific vehicle, but start with the deepest clusters first. That is where the site already has the clearest mix of car hubs, problem guides, best-parts pages, and generation context.
       </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 lg:grid-cols-3">
+      <section class="surface p-6">
+        <p class="eyebrow">Civic cluster</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic 2019</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The cleanest starting point for Civic commuter problems, brake refinement, A/C behavior, and the parts that matter once the car starts feeling tired.</p>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          {civicCars.map((car) => <li><a class="hover:text-accent" href={`/cars/${car.id}/`}>{car.data.title}</a></li>)}
+        </ul>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/honda-civic-fc-fk-facelift-2019-2021/">Open Civic generation hub</a>
+      </section>
+      <section class="surface p-6">
+        <p class="eyebrow">RAV4 cluster</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota RAV4 XA50</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The best place to start for everyday RAV4 battery complaints, suspension noises, brake refinement, and gas-versus-hybrid ownership differences.</p>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          {rav4Cars.map((car) => <li><a class="hover:text-accent" href={`/cars/${car.id}/`}>{car.data.title}</a></li>)}
+        </ul>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/toyota-rav4-xa50-2019-2021/">Open RAV4 generation hub</a>
+      </section>
+      <section class="surface p-6">
+        <p class="eyebrow">Tiguan cluster</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">VW Tiguan II facelift</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The strongest late-model Tiguan entry point for coolant loss, EPC behavior, oil use, drivetrain comparisons, and facelift-era parts buying.</p>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          {tiguanCars.map((car) => <li><a class="hover:text-accent" href={`/cars/${car.id}/`}>{car.data.title}</a></li>)}
+        </ul>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/volkswagen-tiguan-tiguan-ii-facelift-2020-2024/">Open Tiguan generation hub</a>
+      </section>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-3">
+      {
+        featuredPaths.map((path) => (
+          <a class="surface block p-6 transition hover:-translate-y-0.5" href={path.href}>
+            <div class="flex items-center gap-3">
+              <CardIcon kind="car" />
+              <div>
+                <p class="eyebrow">Browse</p>
+                <h2 class="mt-1 text-2xl font-semibold text-ink">{path.title}</h2>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-steel">{path.description}</p>
+          </a>
+        ))
+      }
     </div>
 
     <div class="mt-10 grid gap-6">
       {
-        cars.map((car) => (
+        newestCars.map((car) => (
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
             <div class="mb-4 flex items-center gap-3">
               <CardIcon kind="car" />
@@ -41,7 +111,7 @@ const cars = await getCollection("cars");
                 </div>
               )
             }
-            <p class="text-sm leading-6 text-steel">{car.data.description}</p>
+            <p class="text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.description}</p>
           </a>
         ))
       }

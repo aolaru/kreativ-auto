@@ -5,6 +5,7 @@ import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
+import ProblemTriageBlock from "../../components/ProblemTriageBlock.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, problemTrustPoints } from "../../data/editorial";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
@@ -76,6 +77,11 @@ const quickFacts = [
   { label: "Estimated cost", value: problem.data.estimatedCost },
   { label: "DIY difficulty", value: problem.data.diyDifficulty }
 ].filter((item) => item.value);
+const triageVerdict = problem.data.quickVerdict ?? problem.data.excerpt;
+const triageFirstCheck = problem.data.firstCheck ?? problem.data.solutions[0];
+const triageConfusedWith = problem.data.confusedWith;
+const triageStopDrivingIf =
+  problem.data.stopDrivingIf.length > 0 ? problem.data.stopDrivingIf : problem.data.whenToSeeMechanic.slice(0, 2);
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Problems", href: "/problems/" },
@@ -140,6 +146,15 @@ const schemas = [
         ))
       }
     </div>
+  </Section>
+
+  <Section id="triage" title="Quick triage" intro="Use this section if you want the shortest path from symptom to the first sensible check.">
+    <ProblemTriageBlock
+      quickVerdict={triageVerdict}
+      firstCheck={triageFirstCheck}
+      confusedWith={triageConfusedWith}
+      stopDrivingIf={triageStopDrivingIf}
+    />
   </Section>
 
   <Section id="symptoms" title="Symptoms" intro="These are the signs drivers usually notice before the real cause is confirmed.">

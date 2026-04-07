@@ -5,6 +5,14 @@ metaDescription: Diagnose an EPC light that shows up under acceleration by check
 excerpt: An EPC warning under load usually means the engine management system is seeing something it does not like once boost and throttle demand rise.
 heroImage: /images/photos/parts/delphi-ignition-coil.jpg
 updatedAt: 2026-04-07
+quickVerdict: If the EPC light appears only under load, ignition parts are still one of the first places to look before blaming expensive sensors or throttle hardware.
+firstCheck: Pull scan data before clearing anything, then look at misfire counts and the condition of the plugs and coils.
+confusedWith:
+  - Drivers often assume an EPC warning automatically means the throttle body is bad when weak coils or worn plugs are still common triggers.
+  - It also gets blamed on bad fuel too quickly, even when the real clue is that the fault appears only once boost and load rise.
+stopDrivingIf:
+  - The EPC light stays on, the car drops into limp mode, or acceleration becomes genuinely unsafe in traffic.
+  - The warning is joined by flashing MIL behavior, heavy misfires, or obvious rough running.
 relatedCars:
   - vw-tiguan-2020
 relatedBest:

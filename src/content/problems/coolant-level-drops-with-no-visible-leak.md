@@ -5,6 +5,14 @@ metaDescription: Diagnose a falling coolant level when no obvious leak is visibl
 excerpt: A falling coolant level without a puddle usually means the system is losing pressure somewhere small before it becomes obvious.
 heroImage: /images/photos/parts/pentosin-coolant.jpg
 updatedAt: 2026-04-07
+quickVerdict: A slow coolant drop with no obvious puddle is usually a small pressure leak or weak cap problem, not a mystery that gets better on its own.
+firstCheck: Inspect the reservoir, cap, water pump area, and hose connections for dried coolant residue before you top up again.
+confusedWith:
+  - Owners often mistake normal evaporation or an old low level for a one-time event when the system is actually starting to leak under pressure.
+  - It also gets confused with internal engine trouble too early when the external leak points have not even been inspected yet.
+stopDrivingIf:
+  - The temperature starts climbing, cabin heat turns inconsistent, or the level drops quickly over a very short distance.
+  - You can smell coolant strongly and the level keeps falling even after a top-up.
 relatedCars:
   - vw-tiguan-2020
 relatedBest:

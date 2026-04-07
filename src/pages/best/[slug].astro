@@ -5,6 +5,7 @@ import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
+import BestDecisionBlock from "../../components/BestDecisionBlock.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import { bestMethodologyPoints, editorialTeam } from "../../data/editorial";
@@ -72,6 +73,9 @@ const seoTitle = entry.data.metaTitle ?? entry.data.title;
 const seoDescription =
   entry.data.metaDescription ?? `Comparison guide for the best ${entry.data.category.toLowerCase()} for ${entry.data.car_model}.`;
 const socialImage = entry.data.heroImage ?? entry.data.products[0]?.image;
+const quickVerdict = entry.data.quickVerdict ?? entry.data.excerpt;
+const bestFor = entry.data.bestFor.length > 0 ? entry.data.bestFor : entry.data.products.slice(0, 2).map((product) => product.summary ?? product.name).filter(Boolean);
+const avoidIf = entry.data.avoidIf;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Best Parts", href: "/best/" },
@@ -146,6 +150,10 @@ const schemas = [
     checkedLabel={entry.data.updatedAt ? `Checked ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
     points={bestMethodologyPoints}
   />
+
+  <Section id="decision-block" title="Quick decision" intro="Use this section if you want the shortlist logic before digging through the full comparison.">
+    <BestDecisionBlock quickVerdict={quickVerdict} bestFor={bestFor} avoidIf={avoidIf} />
+  </Section>
 
   <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
     <ComparisonTable products={entry.data.products} />

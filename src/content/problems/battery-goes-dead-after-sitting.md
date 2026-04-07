@@ -5,6 +5,14 @@ metaDescription: Diagnose a battery that dies after the car sits by checking bat
 excerpt: A dead battery after sitting is often just an aging battery, but confirming that early saves a lot of unnecessary diagnosis.
 heroImage: /images/photos/parts/car-battery.jpg
 updatedAt: 2026-04-07
+quickVerdict: Most vehicles that die after sitting have a battery or charging-recovery problem before they have a dramatic parasitic-draw story.
+firstCheck: Load-test the battery and confirm charging voltage before you start chasing modules, accessories, or hidden drains.
+confusedWith:
+  - A weak battery often gets mistaken for a parasitic draw before basic battery health is even checked.
+  - Owners also jump straight to the alternator when short-trip use and lost reserve capacity are enough to explain the symptom.
+stopDrivingIf:
+  - The car needs repeated jump starts, warning lights are appearing, or voltage behavior is becoming unpredictable.
+  - The battery is new but the vehicle still goes flat quickly after sitting.
 relatedCars:
   - toyota-rav4-2020
   - toyota-rav4-2021

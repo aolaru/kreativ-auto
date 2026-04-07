@@ -71,6 +71,10 @@ const problems = defineCollection({
     symptoms: z.array(z.string()),
     causes: z.array(z.string()),
     solutions: z.array(z.string()),
+    quickVerdict: z.string().optional(),
+    firstCheck: z.string().optional(),
+    confusedWith: z.array(z.string()).default([]),
+    stopDrivingIf: z.array(z.string()).default([]),
     urgency: z.string().optional(),
     canYouDrive: z.string().optional(),
     estimatedCost: z.string().optional(),
@@ -102,6 +106,9 @@ const best = defineCollection({
     relatedCars: z.array(z.string()).default([]),
     relatedProblems: z.array(z.string()).default([]),
     products: z.array(affiliateProductSchema),
+    quickVerdict: z.string().optional(),
+    bestFor: z.array(z.string()).default([]),
+    avoidIf: z.array(z.string()).default([]),
     buyingAdvice: z.array(z.string()).default([]),
     faqs: z
       .array(
