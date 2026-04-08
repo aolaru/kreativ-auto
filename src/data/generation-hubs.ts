@@ -4,13 +4,22 @@ export interface GenerationHubSection {
   items: string[];
 }
 
+export interface GenerationHubStartHere {
+  title: string;
+  description: string;
+  href: string;
+}
+
 export interface GenerationHubContent {
   eyebrow?: string;
   intro: string;
   overview: string[];
   painPoints: string[];
+  firstPartsToCheck?: string[];
+  cautionNotes?: string[];
   ownershipNotes: string[];
   phaseNotes?: string[];
+  startHere?: GenerationHubStartHere[];
   featuredProblems?: string[];
   featuredBest?: string[];
 }
@@ -31,6 +40,17 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "Small front-end rattles and driveway-entry clunks are easy to overdiagnose unless sway-bar links, axle condition, and brake hardware get checked in the right order.",
       "Brake squeal on these cars is often more about compound choice and hardware condition than some serious brake-system failure."
     ],
+    firstPartsToCheck: [
+      "Start ignition complaints with spark plugs and then coils, not with random sensor guesses.",
+      "For warm-idle A/C complaints, check condenser condition, fan performance, and whether the symptom is worse in traffic than at speed.",
+      "If the front end rattles or clunks, inspect sway-bar links, brake hardware, and axle boots before you assume struts or racks.",
+      "If the car squeaks after rain, rear pad compound and hardware condition are usually worth checking before ordering a full brake overhaul."
+    ],
+    cautionNotes: [
+      "Do not treat Si and Type R fitment like regular Civic trim fitment. Brake, suspension, and powertrain assumptions drift quickly there.",
+      "The 1.5T and 2.0 share a lot of ownership logic, but they do not share every ignition, drivability, or buying conclusion cleanly.",
+      "Late-year facelift cars are the cleaner group for later condenser and trim guidance. Earlier Civic X overlap exists, but parts shopping gets sloppier if you flatten it too much."
+    ],
     ownershipNotes: [
       "Confirm whether the car is a 2.0, 1.5T, Si, or Type R before buying parts. The mainstream Civic advice here is for the regular gas lineup, not the special trims.",
       "Do not lump every Civic X year together by default. The facelift years share a lot, but condenser listings, trim packaging, and some supplier changes are cleaner if you keep 2019-2021 together.",
@@ -40,6 +60,23 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     phaseNotes: [
       "The 2019 facelift does not transform the chassis, but it is still the right split for keeping condenser, trim, and later-year fitment guidance cleaner.",
       "Earlier 2016-2018 Civic X cars overlap in broad ownership logic, but mixing them blindly into the facelift cluster makes parts and trim guidance sloppier."
+    ],
+    startHere: [
+      {
+        title: "Start with the powertrain split",
+        description: "Use the 1.5T versus 2.0 guide first if you are still mixing advice across the two mainstream engines.",
+        href: "/tools/honda-civic-1-5t-vs-2-0/"
+      },
+      {
+        title: "If the engine feels rough",
+        description: "Start on the misfire and ignition pages before shopping random sensors or fuel parts.",
+        href: "/problems/engine-misfires-at-idle/"
+      },
+      {
+        title: "If the car feels worn in traffic",
+        description: "The A/C, front-end noise, and rear-brake refinement pages are where this generation usually shows age first.",
+        href: "/problems/air-conditioner-blows-warm-at-idle/"
+      }
     ],
     featuredProblems: [
       "engine-misfires-at-idle",
@@ -73,6 +110,17 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "Rear-end and driveway-entry clunks often trace back to smaller sway-bar-link or stabilizer-hardware wear rather than a major suspension failure.",
       "Gas and hybrid owners both deal with 12-volt battery complaints, but the way they describe the symptom can differ a lot."
     ],
+    firstPartsToCheck: [
+      "If the complaint is brake noise, start with pad compound, rear hardware condition, and rotor surface before upgrading to a bigger theory.",
+      "If the SUV hums at speed, inspect tires, rotation pattern, and tread wear before buying wheel hubs.",
+      "If the rear knocks over bumps, look at sway-bar links and simple cargo-area causes before assuming shocks or major rear suspension wear.",
+      "If the battery keeps feeling weak, match the diagnosis to gas versus hybrid use pattern before buying the first battery on the list."
+    ],
+    cautionNotes: [
+      "Gas and hybrid versions share some complaints, but battery, brake-use pattern, and ownership advice do not transfer perfectly.",
+      "Trim and wheel-package differences matter more here than owners expect, especially once brake and suspension fitment enter the picture.",
+      "This XA50 hub is strongest for the normal North American ownership pattern. Earlier RAV4 generations should stay separate instead of being flattened into the same advice."
+    ],
     ownershipNotes: [
       "Do not buy hub assemblies before ruling out tire noise. On the XA50, bad tire wear and bad diagnosis travel together.",
       "Check trim, wheel size, and hybrid versus gas layout before ordering brake or battery parts.",
@@ -82,6 +130,23 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     phaseNotes: [
       "The 2020 and 2021 years are close enough to group confidently, but Toyota trim and supplier changes still make VIN-level parts confirmation worth doing.",
       "Earlier pre-XA50 RAV4 generations overlap in broad ownership logic, but not enough in fitment or chassis behavior to mix the pages together."
+    ],
+    startHere: [
+      {
+        title: "Start with hybrid versus gas",
+        description: "Use the comparison page first if you are still mixing battery, brake, and ownership advice across both powertrains.",
+        href: "/tools/toyota-rav4-hybrid-vs-gas/"
+      },
+      {
+        title: "If the SUV hums or feels rough",
+        description: "Road-noise complaints on this generation are worth sorting through tires, wheel bearings, and suspension in that order.",
+        href: "/problems/humming-noise-that-gets-louder-with-speed/"
+      },
+      {
+        title: "If the brakes feel cheap or noisy",
+        description: "Start with the brake squeal and rear-brake guides before throwing parts at the whole system.",
+        href: "/problems/brake-squeal-at-low-speed/"
+      }
     ],
     featuredProblems: [
       "brake-squeal-at-low-speed",
@@ -113,6 +178,17 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "EPC warnings and hesitation under load often trace back to ignition or boost-related weak links, not some mystery electronic curse.",
       "Front-end knocks, sway-bar-link noise, and alignment-sensitive vibration all chip away at refinement quickly on these cars."
     ],
+    firstPartsToCheck: [
+      "For brake shake, start with pads, rotors, and hardware quality before blaming the whole front end.",
+      "For coolant loss, confirm exact coolant spec and inspect for small seepage before mixing fluids or topping up forever.",
+      "If EPC or hesitation shows up under load, check spark plugs and coils before turning the car into an electronics mystery.",
+      "If the front end feels busy or noisy, inspect sway-bar links, tire condition, and wheel torque before escalating to larger suspension theories."
+    ],
+    cautionNotes: [
+      "Do not flatten pre-facelift and facelift Tiguans together if the page is supposed to help with parts buying. The overlap is real, but the trim and supplier differences still matter.",
+      "FWD and 4MOTION ownership logic overlaps until tires, driveline behavior, and chassis diagnosis enter the picture. Then the split matters quickly.",
+      "This hub assumes the mainstream 2.0T facelift ownership pattern. Market-specific diesel or hybrid variants should not inherit the same parts and cooling advice blindly."
+    ],
     ownershipNotes: [
       "Check trim, axle setup, and wheel size before ordering brake parts because Tiguan fitment gets messy fast when listings are too broad.",
       "Do not mix random coolant types. On this platform, fluid spec matters more than brand marketing.",
@@ -122,6 +198,23 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     phaseNotes: [
       "The facelift years overlap heavily in core maintenance patterns, but supplier changes and trim packaging still mean VIN-level confirmation matters for some parts.",
       "Earlier pre-facelift Mk2 Tiguans can share broad symptoms, but the 2020-2024 group is the cleaner place to keep electronics, trim, and parts guidance together."
+    ],
+    startHere: [
+      {
+        title: "Start with facelift versus pre-facelift",
+        description: "Use this first if you are still mixing older Mk2 advice into the facelift-era ownership pattern.",
+        href: "/tools/vw-tiguan-pre-facelift-vs-facelift/"
+      },
+      {
+        title: "If the car hesitates or shows EPC",
+        description: "Begin with the load-related drivability and ignition pages before chasing random electronics.",
+        href: "/problems/epc-light-comes-on-under-acceleration/"
+      },
+      {
+        title: "If the SUV feels less refined",
+        description: "Brake shake, coolant seepage, and front-end noise are the three fastest places to get traction on this generation.",
+        href: "/problems/car-shakes-when-braking/"
+      }
     ],
     featuredProblems: [
       "car-shakes-when-braking",

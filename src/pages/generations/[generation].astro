@@ -132,6 +132,25 @@ const breadcrumbs = [
     {
       hubContent && (
         <div class="mt-10 space-y-8">
+          {
+            hubContent.startHere && hubContent.startHere.length > 0 && (
+              <Section
+                title="Start here"
+                intro="If this is your first stop on the generation, use these paths to get to the most useful problem, parts, and comparison pages faster."
+              >
+                <div class="grid gap-4 md:grid-cols-3">
+                  {hubContent.startHere.map((item) => (
+                    <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:border-sand-300" href={item.href}>
+                      <p class="eyebrow">Best next read</p>
+                      <h3 class="mt-3 text-lg font-semibold text-ink">{item.title}</h3>
+                      <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+                    </a>
+                  ))}
+                </div>
+              </Section>
+            )
+          }
+
           <Section
             title="Why this generation matters"
             intro="These are the ownership patterns that repeat often enough to make the generation hub more useful than a single model-year page."
@@ -150,6 +169,21 @@ const breadcrumbs = [
             </ul>
           </Section>
 
+          {
+            hubContent.firstPartsToCheck && hubContent.firstPartsToCheck.length > 0 && (
+              <Section
+                title="Best first parts to check"
+                intro="These are the first repair areas worth checking before the diagnosis gets more expensive than it needs to be."
+              >
+                <ul class="grid gap-3 text-sm leading-6 text-steel md:grid-cols-2">
+                  {hubContent.firstPartsToCheck.map((item) => (
+                    <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>
+                  ))}
+                </ul>
+              </Section>
+            )
+          }
+
           <Section
             title="Ownership notes"
             intro="Use these notes to keep diagnosis and parts buying grounded in how this generation is actually used."
@@ -167,6 +201,19 @@ const breadcrumbs = [
               >
                 <ul class="space-y-3 text-sm leading-6 text-steel">
                   {hubContent.phaseNotes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+                </ul>
+              </Section>
+            )
+          }
+
+          {
+            hubContent.cautionNotes && hubContent.cautionNotes.length > 0 && (
+              <Section
+                title="Which trims or years need extra care"
+                intro="These are the places where advice starts drifting if you treat the whole generation like one identical car."
+              >
+                <ul class="space-y-3 text-sm leading-6 text-steel">
+                  {hubContent.cautionNotes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
                 </ul>
               </Section>
             )
