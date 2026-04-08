@@ -49,28 +49,47 @@ const {
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface overflow-hidden p-8 sm:p-10">
-      <p class="eyebrow">Kreativ Auto</p>
-      <h1 class="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
-        {title}
-      </h1>
-      <p class="mt-5 max-w-3xl text-lg leading-8 text-steel">{intro}</p>
-      {
-        editorialByline && (
-          <EditorialHeader
-            summary={editorialSummary}
-            byline={editorialByline}
-            reviewedLabel={editorialReviewedLabel}
-            badges={editorialBadges}
-          />
-        )
-      }
-      {
-        modifiedTime && !editorialByline && (
-          <p class="mt-5 text-sm text-steel">
-            Last updated {modifiedTime.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-          </p>
-        )
-      }
+      <div class:list={["grid gap-8 lg:items-start", image ? "lg:grid-cols-[1.05fr_0.95fr]" : ""]}>
+        <div>
+          <p class="eyebrow">Kreativ Auto</p>
+          <h1 class="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
+            {title}
+          </h1>
+          <p class="mt-5 max-w-3xl text-lg leading-8 text-steel">{intro}</p>
+          {
+            editorialByline && (
+              <EditorialHeader
+                summary={editorialSummary}
+                byline={editorialByline}
+                reviewedLabel={editorialReviewedLabel}
+                badges={editorialBadges}
+              />
+            )
+          }
+          {
+            modifiedTime && !editorialByline && (
+              <p class="mt-5 text-sm text-steel">
+                Last updated {modifiedTime.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+              </p>
+            )
+          }
+        </div>
+
+        {
+          image && (
+            <div class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50">
+              <img
+                src={image}
+                alt={title}
+                class="h-72 w-full object-cover sm:h-80 lg:h-full lg:min-h-[22rem]"
+                width="1200"
+                height="800"
+                loading="eager"
+              />
+            </div>
+          )
+        }
+      </div>
     </div>
 
     <div class="mt-10 space-y-8">
