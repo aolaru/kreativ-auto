@@ -33,6 +33,14 @@ commonMistakes:
   - Replacing struts first when the noise is actually in the links or brake hardware
   - Ignoring brake hardware because the noise sounds like suspension
   - Assuming every front-end rattle is serious without checking the small wear items first
+quickVerdict: A small-bump front rattle on a Civic is usually a smaller link or hardware issue before it is a dramatic suspension failure.
+firstCheck: Inspect sway-bar links and front brake hardware before you let the diagnosis drift into bigger front-end parts.
+confusedWith:
+  - This rattle gets blamed on struts too early when the smaller stabilizer and brake pieces have not even been checked yet.
+  - It also gets dismissed as “just interior trim” when the sound is actually tied to sharp front suspension inputs.
+stopDrivingIf:
+  - The rattle turns into obvious looseness through the steering or is joined by visible wear and uneven tire behavior.
+  - You find torn boots, loose hardware, or damage that suggests the noise is no longer just an annoyance.
 recommendedParts:
   - name: MOOG Front Sway Bar Link Kit
     price: "$49"

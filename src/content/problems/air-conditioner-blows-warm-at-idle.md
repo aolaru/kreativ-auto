@@ -33,6 +33,14 @@ commonMistakes:
   - Adding refrigerant without checking why the system is low
   - Replacing the compressor first when the condenser is the real weak point
   - Ignoring fan operation and focusing only on refrigerant
+quickVerdict: Warm A/C at idle usually means the system is struggling where airflow and condenser efficiency matter most, not that the compressor automatically failed.
+firstCheck: Check condenser condition, fan behavior, and whether cooling improves noticeably with road speed before replacing major HVAC parts.
+confusedWith:
+  - Owners often blame the compressor first when the condenser or airflow side of the system is the cleaner explanation.
+  - It also gets treated like a simple recharge issue even when the idle-versus-moving pattern is already pointing somewhere more specific.
+stopDrivingIf:
+  - A/C performance drops sharply across all conditions and you suspect a larger leak or system-pressure issue.
+  - Fan behavior looks wrong or the system starts making new noises while cooling fades.
 recommendedParts:
   - name: Denso A/C Condenser
     price: "$142"

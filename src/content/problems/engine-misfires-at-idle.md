@@ -33,6 +33,14 @@ commonMistakes:
   - Throwing coils at the problem before checking plugs and codes
   - Ignoring a vacuum leak because the engine improves slightly once warm
   - Continuing to drive a flashing-misfire car and risking catalyst damage
+quickVerdict: A Civic idle misfire is usually solved by disciplined ignition diagnosis before it ever becomes a fuel-system story.
+firstCheck: Read the misfire codes and inspect spark plugs before replacing a full set of coils or chasing deeper causes.
+confusedWith:
+  - Idle misfires often get blamed on injectors too early when the spark plugs are already overdue or one coil is obviously weak.
+  - Owners also mistake a cold-start stumble for a one-off rough morning when the car is already setting up a repeat ignition complaint.
+stopDrivingIf:
+  - The check engine light is flashing, raw-fuel smell is obvious, or the engine is stumbling badly enough to risk catalyst damage.
+  - The misfire gets worse with even light throttle instead of staying confined to idle.
 recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"

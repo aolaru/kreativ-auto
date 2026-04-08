@@ -33,6 +33,14 @@ commonMistakes:
   - Replacing the alternator first because the car feels weak to start
   - Ignoring battery age and usage pattern
   - Buying the cheapest replacement battery instead of the right spec and reserve capacity
+quickVerdict: A short-trip Tiguan usually needs honest battery testing before it needs a dramatic charging-system theory.
+firstCheck: Test battery reserve capacity and charging recovery against the actual drive pattern before you blame the alternator or electronics.
+confusedWith:
+  - Owners often read short-trip weakness as an alternator problem when the battery simply never recovers fully.
+  - It also gets confused with parasitic draw too early, even when the usage pattern already explains most of the complaint.
+stopDrivingIf:
+  - The car is becoming unreliable to start, warning lights are appearing, or the battery goes flat even after longer drives.
+  - The battery is relatively new and voltage behavior still looks unstable.
 fitment:
   appliesTo:
     - Best fit for 2020-2024 Tiguan II facelift gas models used mainly for short city driving.

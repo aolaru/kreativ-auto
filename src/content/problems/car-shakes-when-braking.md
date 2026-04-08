@@ -34,6 +34,14 @@ commonMistakes:
   - Ordering rotors immediately without checking pad deposits or wheel torque
   - Ignoring worn front-end components that make brake vibration feel worse
   - Reusing sticky slide hardware during a brake job
+quickVerdict: Brake shake is often a rotor or pad-deposit problem first, but the wrong hardware, wheel torque, or tired front-end parts can make it feel worse than it really is.
+firstCheck: Check rotor condition, pad surface, and wheel torque before you assume the rotors are automatically the whole story.
+confusedWith:
+  - Drivers often call every brake shake "warped rotors" even when pad deposits or bad wheel torque are still on the table.
+  - It also gets confused with general front-end vibration when the symptom is really strongest under braking load.
+stopDrivingIf:
+  - The shake is strong enough to affect steering control or stopping confidence.
+  - The pedal pulses hard, the noise gets worse quickly, or stopping distances start increasing.
 recommendedParts:
   - name: Wagner OEX Ceramic Brake Pad Set
     price: "$68"

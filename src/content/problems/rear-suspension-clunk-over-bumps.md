@@ -34,6 +34,14 @@ commonMistakes:
   - Replacing rear shocks before checking the smaller links and bushings
   - Ignoring loose cargo or spare-tire hardware that mimics suspension noise
   - Treating every rear clunk as a major suspension failure
+quickVerdict: Rear clunks usually deserve a calm isolation process first, because small links, bushings, or loose cargo hardware are still common answers.
+firstCheck: Empty the cargo area and inspect the rear sway-bar links before you assume the shocks or a larger rear suspension part are done.
+confusedWith:
+  - Rear trim or spare-tire hardware often sounds enough like suspension noise to waste time if you skip basic isolation.
+  - It also gets blamed on shocks too quickly when the smaller rear stabilizer parts have not even been checked yet.
+stopDrivingIf:
+  - The rear feels loose, you see damaged links or leaking shocks, or the clunk is getting worse quickly.
+  - The noise is joined by a clear stability change rather than just a sound over sharp bumps.
 recommendedParts:
   - name: MOOG Rear Stabilizer Bar Link
     price: "$36"

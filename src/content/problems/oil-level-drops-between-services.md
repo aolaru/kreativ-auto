@@ -33,6 +33,14 @@ commonMistakes:
   - Topping up with the wrong oil because the bottle was convenient
   - Treating repeated consumption as “just a turbo thing” without measuring it
   - Stretching the next oil change because you already added oil once
+quickVerdict: A Tiguan using oil between services needs to be measured and understood, not casually normalized as a turbo habit.
+firstCheck: Confirm the correct oil spec and track how much oil the car is actually using over known mileage.
+confusedWith:
+  - Owners often call this “normal 2.0T behavior” too early when the rate of consumption has never been measured properly.
+  - It also gets blamed on leaks alone even when PCV behavior, service intervals, or oil choice are still in play.
+stopDrivingIf:
+  - The low-oil warning returns quickly, smoke appears, or the engine starts running rough along with the oil-use complaint.
+  - You see clear leakage or consumption rising fast over short mileage.
 fitment:
   appliesTo:
     - Most relevant to the 2020-2024 Tiguan II facelift with the 2.0T gas engine.

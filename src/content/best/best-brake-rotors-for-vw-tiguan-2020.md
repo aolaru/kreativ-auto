@@ -35,6 +35,13 @@ buyingAdvice:
   - If the car already shakes when braking, inspect pad deposits and hardware too instead of blaming only the rotor.
   - Coated rotors usually make more sense on a daily SUV because they hold up better against corrosion.
   - Replace or inspect pads at the same time so the new rotors do not inherit the old problem.
+quickVerdict: The right Tiguan rotor is the one that stays smooth in daily traffic and does not bring the same vibration back after a few weeks.
+bestFor:
+  - Owners fixing brake shake, uneven braking feel, or worn rotors on a daily-driven Tiguan.
+  - Drivers who want coated street rotors that make sense for commuting, weather exposure, and ordinary SUV use.
+avoidIf:
+  - You are blaming the rotor before checking pad deposits, slide hardware, and wheel torque.
+  - You want the cheapest bare rotor possible and do not care about corrosion resistance or repeat vibration risk.
 faqs:
   - question: Are coated rotors worth it on a Tiguan?
     answer: Usually yes. A coated rotor holds up better in daily use and tends to stay cleaner around the hat and edges.

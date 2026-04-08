@@ -33,6 +33,14 @@ commonMistakes:
   - Assuming every morning squeak means the rear brakes are worn out
   - Replacing only pads without checking the slides and hardware
   - Ignoring a noise that stops being occasional and starts happening all the time
+quickVerdict: If the rear brakes only squeak on damp mornings and braking still feels normal, the setup usually needs better pad and hardware behavior, not panic.
+firstCheck: Inspect rear hardware and pad condition before assuming the rear brakes need a full overhaul.
+confusedWith:
+  - Morning squeak gets mistaken for worn-out brakes even when the real issue is still moisture, pad compound, or dry hardware.
+  - It also gets blamed on the rotors too early when the rear pad and hardware setup has not been checked properly.
+stopDrivingIf:
+  - The noise stops being occasional and turns into constant squeal, grinding, or a change in rear braking feel.
+  - Pad wear is low or rotor wear looks uneven enough to suggest dragging or hardware trouble.
 recommendedParts:
   - name: Akebono ProACT Ceramic Rear Brake Pads
     price: "$66"

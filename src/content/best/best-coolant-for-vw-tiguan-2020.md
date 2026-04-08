@@ -34,6 +34,13 @@ buyingAdvice:
   - On this platform, the right spec matters more than brand marketing, so avoid mixing unknown coolant types.
   - If the level is dropping, fix the leak first instead of treating coolant as the repair.
   - Use distilled water only if the product is a concentrate rather than premixed.
+quickVerdict: Coolant choice on a Tiguan is mostly about staying disciplined on the exact VW-compatible chemistry, not grabbing whatever bottle looks close enough.
+bestFor:
+  - Owners topping up or refilling a Tiguan after confirming the cooling system needs the correct spec fluid.
+  - Drivers who want to avoid creating a second coolant problem while chasing a small leak.
+avoidIf:
+  - You are planning to mix unknown coolant types just because the color looks similar.
+  - You are using top-ups to avoid diagnosing repeated coolant loss.
 faqs:
   - question: Can I mix random coolant colors in a Tiguan?
     answer: That is a bad idea. The correct VW-compatible coolant spec matters more than color alone.

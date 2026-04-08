@@ -34,6 +34,13 @@ buyingAdvice:
   - Verify group size and terminal configuration before buying.
   - If the battery light is flickering, test the charging system and grounds too.
   - AGM is usually the better choice if the car sees repeated short trips or voltage-sensitive use.
+quickVerdict: A stronger Civic battery helps most when the car does short trips or idle-heavy use, but it is still a bad substitute for real charging-system diagnosis.
+bestFor:
+  - Owners dealing with weak starts, idle-voltage complaints, or a battery that never seems happy after short-trip use.
+  - Drivers who want better reserve capacity and fewer cold-start or accessory-load surprises.
+avoidIf:
+  - You have not confirmed the correct group size and terminal layout first.
+  - The battery light is flickering because of an unresolved charging or ground issue rather than a worn battery alone.
 faqs:
   - question: Is AGM worth it on a Civic?
     answer: Often yes, especially if the car is driven in shorter trips or has already shown weak-start behavior.

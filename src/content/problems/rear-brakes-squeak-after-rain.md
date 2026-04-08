@@ -34,6 +34,14 @@ commonMistakes:
   - Replacing front pads when the noise is clearly from the rear
   - Ignoring rear hardware condition and focusing only on friction material
   - Assuming every wet-weather squeak means the rotors are ruined
+quickVerdict: A damp-weather rear squeak is usually a pad-and-hardware refinement problem before it is a major brake failure.
+firstCheck: Check rear pad wear, hardware condition, and rotor surface before assuming the rotors or calipers need major work.
+confusedWith:
+  - Owners often mistake a moisture-related squeak for ruined rotors when the hardware or pad compound is still the more likely answer.
+  - It also gets confused with front brake noise if the sound is bouncing around the cabin at low speed.
+stopDrivingIf:
+  - The squeak turns into grinding, braking gets rough, or the rear brakes start dragging.
+  - Rotor scoring or uneven pad wear is visible during inspection.
 fitment:
   appliesTo:
     - Best fit for 2020-2021 XA50 RAV4 gas and hybrid trims where rear brake noise is a refinement complaint rather than a major braking failure.

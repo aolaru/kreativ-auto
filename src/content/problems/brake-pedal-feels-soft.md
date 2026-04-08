@@ -33,6 +33,14 @@ commonMistakes:
   - Assuming new pads alone can cause a truly soft pedal
   - Driving too long while hoping the pedal will firm up on its own
   - Bleeding the brakes poorly and trapping more air in the system
+quickVerdict: A soft pedal is a real brake-system warning, but the first job is to confirm whether the issue is air, old fluid, or an actual hydraulic leak before guessing at larger parts.
+firstCheck: Check brake fluid level and look for leaks before driving much farther or assuming the master cylinder is bad.
+confusedWith:
+  - A long pedal after recent brake work is often blamed on pads settling in when trapped air is still the cleaner explanation.
+  - Drivers also confuse a soft pedal with ordinary brake feel changes even when the system is clearly losing firmness.
+stopDrivingIf:
+  - The pedal sinks at a stop, fluid is visibly leaking, or the car no longer feels predictable under braking.
+  - The pedal is getting softer quickly instead of staying at the same already-bad level.
 recommendedParts:
   - name: Bosch QuietCast Premium
     price: "$74"

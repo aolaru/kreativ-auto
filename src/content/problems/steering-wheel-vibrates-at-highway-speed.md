@@ -35,6 +35,14 @@ commonMistakes:
   - Blaming the wheel bearing before checking balance and tire condition
   - Rebalancing the same bad tire repeatedly instead of inspecting the tread
   - Ignoring alignment after curb hits or pothole impacts
+quickVerdict: Highway-speed steering vibration is usually a tire-and-wheel problem first, but repeated shake that survives balancing deserves a deeper front-end check.
+firstCheck: Inspect tire wear and balance history before you assume bearings or bigger front-end parts are the answer.
+confusedWith:
+  - Drivers often blame bearings too early when the tires are already showing the real problem in the tread.
+  - It also gets mislabeled as a simple balance issue even when wheel damage or front-end wear is helping the shake along.
+stopDrivingIf:
+  - The vibration is getting worse quickly, the front end feels unstable, or the shake is paired with humming and looseness.
+  - Tire damage or abnormal wear is severe enough that continued highway driving is a bad bet.
 recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"

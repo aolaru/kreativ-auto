@@ -34,6 +34,14 @@ commonMistakes:
   - Replacing a wheel bearing before doing a tire rotation test
   - Assuming every highway hum is a bad hub
   - Ignoring alignment and tire wear after the noisy part is replaced
+quickVerdict: A speed-related hum should be treated like a tire-versus-bearing question first, not an excuse to buy a hub immediately.
+firstCheck: Rotate the tires and road-test again before committing to a wheel-bearing diagnosis.
+confusedWith:
+  - Tire cupping gets blamed on hubs constantly because the cabin noise sounds more dramatic than the tread wear looks.
+  - Owners also confuse minor road-surface noise with bearing failure before load changes or rotation tests tell a clearer story.
+stopDrivingIf:
+  - The hum turns into roughness, heat, wheel play, or a stronger vibration through the floor and steering.
+  - You can feel looseness or hear the noise changing aggressively with steering load.
 recommendedParts:
   - name: Timken Front Wheel Bearing Hub Assembly
     price: "$164"

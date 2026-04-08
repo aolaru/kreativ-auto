@@ -34,6 +34,14 @@ commonMistakes:
   - Replacing pads without cleaning and lubricating the contact points
   - Assuming every squeal means the rotors must be replaced immediately
   - Buying the cheapest pad compound and expecting it to stay quiet
+quickVerdict: Low-speed brake squeal is usually a pad-and-hardware refinement problem before it is a real brake-system emergency.
+firstCheck: Inspect pad condition, rotor surface, and hardware contact points before buying a full brake job.
+confusedWith:
+  - Owners often treat every squeal like ruined rotors when the real issue is still pad compound, glazing, or dry hardware.
+  - It also gets mistaken for major brake wear even when braking feel is still normal and the setup just sounds cheap.
+stopDrivingIf:
+  - The squeal turns into grinding, vibration, or a change in stopping feel.
+  - Pad thickness is visibly low or the rotor surface looks badly scored.
 recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"

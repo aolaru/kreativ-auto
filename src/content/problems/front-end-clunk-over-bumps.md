@@ -33,6 +33,14 @@ commonMistakes:
   - Replacing struts first when the real issue is a small link or bushing
   - Ignoring torque checks after recent brake or suspension service
   - Chasing cabin noises before inspecting the obvious front suspension points
+quickVerdict: A front-end clunk over bumps is usually a smaller wear-item problem before it is a full strut or major suspension story.
+firstCheck: Check sway-bar links, obvious hardware, and nearby front-end bushings before assuming the biggest part is bad.
+confusedWith:
+  - Drivers often blame struts too early when the clunk is still living in links, bushings, or recently touched hardware.
+  - It also gets confused with brake-hardware noise if the front end was serviced recently and no torque check was done.
+stopDrivingIf:
+  - The clunk is joined by loose steering feel, visible suspension damage, or a sudden change in front-end control.
+  - The noise gets much worse quickly after recent brake or suspension work.
 recommendedParts:
   - name: MOOG K750809 Stabilizer Bar Link
     price: "$43"

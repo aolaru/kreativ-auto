@@ -33,6 +33,14 @@ commonMistakes:
   - Replacing the wrong side because the noise was not confirmed properly
   - Ignoring a torn boot until the joint is beyond saving
   - Buying the cheapest axle available and ending up with new vibration
+quickVerdict: A turning click is still most often a CV-joint problem, but it is worth confirming the side and the boot damage before ordering an axle blindly.
+firstCheck: Inspect both front CV boots and confirm which side clicks under load before you buy parts.
+confusedWith:
+  - Owners often call every turning click a CV axle without checking whether the sound is actually from that side.
+  - It can also get mixed up with bearing or suspension noise when no one verifies the click under power in a tight turn.
+stopDrivingIf:
+  - The clicking turns into vibration, harsh knocking, or obvious axle instability.
+  - The boot is split badly, grease is thrown everywhere, and the joint noise is worsening quickly.
 recommendedParts:
   - name: GSP CV Axle Assembly
     price: "$119"

@@ -31,6 +31,14 @@ commonMistakes:
   - Drying the carpet without fixing the source
   - Guessing at the windshield or door seal before tracing where the water actually enters
   - Ignoring a small leak until it reaches wiring or under-carpet insulation
+quickVerdict: A cabin leak is usually a drain or seal-path problem first, but it gets expensive fast if you only dry the carpet and never trace the source.
+firstCheck: Find the exact wet area and inspect the obvious drains and seal paths before you start removing random trim.
+confusedWith:
+  - Owners often blame the windshield immediately when the real leak path is still a blocked drain or a simpler sealing issue.
+  - It also gets treated like a comfort problem only, even though wiring and mold damage start quietly once the carpet stays wet.
+stopDrivingIf:
+  - Water is reaching modules, wiring, or large areas of carpet and insulation.
+  - The leak keeps returning quickly and the interior is no longer drying between storms.
 fitment:
   appliesTo:
     - Most relevant to the 2020-2024 Tiguan II facelift where everyday-use water intrusion complaints are still tied to drains and seals, not a one-off body repair.

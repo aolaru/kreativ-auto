@@ -33,6 +33,14 @@ commonMistakes:
   - Replacing the alternator before testing the battery
   - Ignoring battery terminals and ground points
   - Treating a flickering warning light as normal because the car still starts
+quickVerdict: An idle-only battery-light flicker is usually a charging-margin problem first, not proof that the entire charging system is suddenly done.
+firstCheck: Test battery condition, charging voltage, and ground quality together before you guess at the alternator.
+confusedWith:
+  - Owners often treat a flickering battery light like automatic alternator failure when weak battery reserve or bad grounds can still explain it.
+  - It also gets dismissed as harmless because the car still starts, even when the voltage behavior is already drifting out of spec.
+stopDrivingIf:
+  - The battery light stops flickering and stays on, or the car starts dimming lights and stumbling at idle.
+  - Starting reliability drops quickly or voltage swings become obvious with accessories on.
 recommendedParts:
   - name: Interstate AGM Battery
     price: "$219"

@@ -33,6 +33,14 @@ commonMistakes:
   - Jumping straight to fuel parts before checking plugs and coils
   - Replacing sensors because the symptom feels electronic
   - Testing only idle behavior even though the real issue shows up under load
+quickVerdict: Hesitation under acceleration is usually an ignition or airflow problem first, especially when the car still idles well enough to fool you.
+firstCheck: Pull codes and check plug and coil condition before you assume the fuel system or transmission is the real problem.
+confusedWith:
+  - Drivers often call hesitation a transmission issue when the engine is really dropping spark or airflow quality under load.
+  - It also gets blamed on fuel quality too early even when maintenance history already points toward plugs or coils.
+stopDrivingIf:
+  - The hesitation turns into bucking, obvious misfires, or flashing warning lights.
+  - The car feels unsafe entering traffic because throttle response is no longer predictable.
 recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"

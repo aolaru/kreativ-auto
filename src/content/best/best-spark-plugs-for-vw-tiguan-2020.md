@@ -43,6 +43,13 @@ fitment:
     - Earlier Mk2 Tiguans may overlap in plug choice, but facelift-era service and parts shopping are the focus here.
   powertrainDifferences:
     - This shortlist assumes the regular gas engine. Alternative powertrains fall outside scope.
+quickVerdict: If the Tiguan is hesitating or setting up EPC behavior under load, a confirmed-fitment plug is worth more than the cheapest option in the catalog.
+bestFor:
+  - Owners chasing hesitation, load-related misfires, or overdue ignition service on the 2.0T.
+  - Drivers who want a conservative, clean-running plug choice instead of a bargain plug that may not stay stable under boost.
+avoidIf:
+  - You have not confirmed engine-specific fitment yet.
+  - You are replacing plugs while ignoring obvious coil or scan-data clues.
 faqs:
   - question: Can spark plugs trigger EPC warnings?
     answer: Yes. If a plug starts breaking down under boost or higher load, EPC behavior can follow.

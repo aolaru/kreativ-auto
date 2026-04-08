@@ -35,6 +35,13 @@ buyingAdvice:
   - Rear clunks can come from cargo or trim, so isolate the sound before ordering parts.
   - If one link is worn, inspect the other side and the rear bushings at the same time.
   - A simple rear clunk does not automatically mean the shocks are done.
+quickVerdict: A rear-link repair should quiet the knock without turning a small RAV4 suspension complaint into a much bigger rear-end theory.
+bestFor:
+  - Owners dealing with a rear clunk over smaller bumps who want a sensible first repair target.
+  - Drivers who want to refresh the rear stabilizer links before wandering into shocks and larger parts.
+avoidIf:
+  - You have not ruled out cargo, trim, or other simple rear-noise causes yet.
+  - You are assuming a rear clunk automatically means the shocks are finished.
 faqs:
   - question: Are rear sway bar links a common RAV4 clunk source?
     answer: They can be, especially when the noise shows up over smaller, sharper bumps.

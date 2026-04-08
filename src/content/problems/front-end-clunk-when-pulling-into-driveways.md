@@ -34,6 +34,14 @@ commonMistakes:
   - Replacing struts first when the problem is a smaller front stabilizer component
   - Ignoring torque checks after recent front brake or suspension work
   - Chasing interior trim noise before inspecting the front links and bushings
+quickVerdict: A driveway-entry clunk is usually a smaller front stabilizer or bushing problem before it is a full strut story.
+firstCheck: Reproduce the noise at low speed and inspect the front sway bar links and nearby hardware before chasing bigger suspension parts.
+confusedWith:
+  - This noise gets blamed on struts too early even when the smaller front stabilizer parts are a cleaner first answer.
+  - It can also be mistaken for interior trim or brake-hardware noise if the diagnosis stays too casual.
+stopDrivingIf:
+  - The clunk is joined by loose steering feel, visible suspension damage, or a change in how the front end tracks.
+  - The noise is getting worse quickly after recent front-end or brake work.
 fitment:
   appliesTo:
     - Best fit for 2020-2021 XA50 RAV4 gas and hybrid trims where the front-end clunk is tied to ordinary street-use suspension wear.

@@ -43,6 +43,13 @@ fitment:
     - Earlier Mk2 Tiguans can overlap in battery shopping, but this page is grouped around the facelift daily-use profile.
   powertrainDifferences:
     - This page assumes the regular gas Tiguan and its normal 12-volt battery path.
+quickVerdict: If the Tiguan mostly does short trips or sits long enough to feel lazy on cold starts, AGM is usually the sensible default, but only after the charging picture is checked honestly.
+bestFor:
+  - Tiguan owners dealing with short-trip battery weakness or repeated slow starts in colder weather.
+  - Drivers who want better reserve capacity instead of just the cheapest battery that technically fits.
+avoidIf:
+  - You have not confirmed the correct group size and terminal layout yet.
+  - The real problem is still unresolved charging or parasitic-draw behavior.
 faqs:
   - question: Is AGM worth it for a Tiguan?
     answer: Often yes, especially if the SUV does a lot of short trips or sits long enough for reserve capacity to matter.

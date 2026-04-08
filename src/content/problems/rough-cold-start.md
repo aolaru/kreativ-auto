@@ -33,6 +33,14 @@ commonMistakes:
   - Replacing only one ignition part without checking maintenance history
   - Ignoring small vacuum leaks because the car drives better once warm
   - Assuming battery weakness is the only reason a cold start feels rough
+quickVerdict: A rough cold start is usually an early ignition or air-leak clue, not something you should wait on until it becomes a full-time misfire.
+firstCheck: Scan for pending codes and inspect plug condition before you guess at injectors, sensors, or battery issues.
+confusedWith:
+  - Cold-start roughness gets blamed on the battery too often when the engine is really stumbling once combustion starts.
+  - It also gets dismissed as “normal morning behavior” even when the same car is quietly setting up a repeat ignition complaint.
+stopDrivingIf:
+  - The check engine light flashes, the stumble lasts longer than a few seconds, or the symptom starts showing up warm too.
+  - The cold-start roughness is joined by strong misfire behavior instead of a brief uneven idle.
 recommendedParts:
   - name: Delphi Ignition Coil Pack Set
     price: "$128"

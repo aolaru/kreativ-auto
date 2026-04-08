@@ -34,6 +34,14 @@ commonMistakes:
   - Waiting because the brakes still seem to stop the car
   - Replacing only pads after the rotor surface is already damaged
   - Ignoring sticky slide pins or seized hardware that caused the wear
+quickVerdict: Grinding brakes should be treated like a real wear-or-damage warning, not like an annoying noise that can wait until next week.
+firstCheck: Inspect pad thickness and rotor damage immediately before you drive any farther than necessary.
+confusedWith:
+  - Some owners hope the noise is just debris when the pad backing plate is already on the rotor.
+  - It also gets mislabeled as simple squeal even when the sound is clearly metal-on-metal.
+stopDrivingIf:
+  - The noise is obviously metal-on-metal, braking feel is worse, or one corner is running hotter than the rest.
+  - Rotor damage is visible and the car is no longer stopping smoothly.
 recommendedParts:
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
