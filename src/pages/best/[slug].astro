@@ -142,6 +142,10 @@ const schemas = [
   modifiedTime={entry.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
+  editorialSummary="These best-parts guides prioritize fitment confidence, normal daily use, and parts that make sense for real ownership instead of inflated spec-sheet hype."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={entry.data.updatedAt ? `Reviewed ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
+  editorialBadges={["Comparison guide", "Methodology applied", "Fitment notes checked"]}
 >
   <TrustBlock
     title="How these picks are chosen"

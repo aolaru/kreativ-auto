@@ -127,6 +127,10 @@ const schemas = [
   modifiedTime={problem.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
+  editorialSummary="These problem guides are written to help drivers identify the most likely cause, make a sensible first check, and avoid wasting money on the wrong repair."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={problem.data.updatedAt ? `Reviewed ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
+  editorialBadges={["Problem guide", "Fitment notes checked", "Parts links reviewed"]}
 >
   <TrustBlock
     summary="Problem guides here are built to help a driver decide what is most likely, how urgent it is, and which repairs are worth checking before money goes in the wrong direction."
