@@ -29,7 +29,7 @@ products:
     rating: 4.5
     affiliate_url: https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html
     summary: Strong value option for commuters who want stable braking with low dust.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/wagner-oex.png
 buyingAdvice:
   - For a daily-driven RAV4, ceramic pads are usually the best default because they stay quiet and clean.
   - If squeal has been persistent, inspect and service all pad contact points instead of replacing friction material alone.

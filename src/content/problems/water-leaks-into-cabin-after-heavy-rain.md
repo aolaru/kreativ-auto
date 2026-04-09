@@ -3,7 +3,7 @@ title: Water leaks into cabin after heavy rain
 metaTitle: "Water Leaks Into Cabin After Heavy Rain: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose Tiguan cabin water leaks after rain by checking drain paths, seals, and common intrusion points before replacing trim blindly.
 excerpt: Cabin water leaks are usually less mysterious than they look, but they get expensive fast if the source is left alone.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/parts/303-protectant.png
 updatedAt: 2026-04-01
 relatedCars:
   - vw-tiguan-2020

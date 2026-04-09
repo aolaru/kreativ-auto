@@ -3,7 +3,7 @@ title: Front suspension rattles over small bumps
 metaTitle: "Front Suspension Rattles Over Small Bumps: Causes, Checks, and Fixes"
 metaDescription: Diagnose a Civic front suspension rattle over small bumps by checking sway bar links, brake hardware, and worn front-end components before replacing bigger parts.
 excerpt: A light front-end rattle over patched roads or small bumps is usually a wear item, not a major suspension failure.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
+heroImage: /images/photos/parts/moog-sway-bar-links.png
 updatedAt: 2026-04-03
 relatedCars:
   - honda-civic-2019

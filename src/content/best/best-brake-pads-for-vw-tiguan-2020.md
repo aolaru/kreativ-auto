@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Brake Pads for VW Tiguan 2020
 metaDescription: Compare the best brake pads for the VW Tiguan 2020 if you want quiet braking, less dust, and a setup that makes sense for daily driving.
 excerpt: The best brake pad choices for a 2020 VW Tiguan if you want a clean, quiet daily-driver setup and not marketing hype.
-heroImage: /images/photos/parts/brake-pads.jpg
+heroImage: /images/photos/parts/bosch-quietcast-pads.jpg
 updatedAt: 2026-03-30
 quickVerdict: For most daily-driven Tiguans, a quiet ceramic street pad is the right answer. The real decision is whether you want closer-to-stock refinement or a little more initial bite.
 bestFor:
@@ -24,19 +24,19 @@ products:
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Best for owners who want quiet operation and a closer-to-stock pedal feel.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/bosch-quietcast-pads.jpg
   - name: Power Stop Z23 Evolution Sport
     price: "$89"
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-brake-kit/
     summary: Best fit for mixed commuting with lower dust and a slightly sportier bite.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/power-stop-z23.jpg
   - name: Akebono ProACT Ultra-Premium
     price: "$96"
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Premium ceramic option with strong refinement and long service life.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/akebono-proact.png
 buyingAdvice:
   - Ceramic pads are usually the safest default for a daily-driven Tiguan because they reduce dust and stay quiet.
   - Confirm axle fitment and trim compatibility before ordering, especially if the vehicle has a specific brake package.

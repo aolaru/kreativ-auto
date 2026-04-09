@@ -30,7 +30,7 @@ products:
     rating: 4.5
     affiliate_url: https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html
     summary: Good value pick for commuters who want a stable ceramic setup without overspending.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/wagner-oex.png
 buyingAdvice:
   - Ceramic pads are usually the smart default on a RAV4 because they stay cleaner and quieter in daily use.
   - If the old brakes were grinding, inspect the rotors before assuming pads alone will fix everything.

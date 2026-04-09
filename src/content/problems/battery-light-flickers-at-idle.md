@@ -3,7 +3,7 @@ title: Battery light flickers at idle
 metaTitle: "Battery Light Flickers at Idle: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a battery light that flickers at idle by checking charging voltage, battery condition, and belt-driven accessory health before replacing the wrong parts.
 excerpt: A battery light that flickers mostly at idle usually means the charging system is right on the edge, not that the whole car is about to die instantly.
-heroImage: /images/photos/cars/honda-civic-2019.jpg
+heroImage: /images/photos/parts/car-battery.jpg
 updatedAt: 2026-04-01
 relatedCars:
   - honda-civic-2019
