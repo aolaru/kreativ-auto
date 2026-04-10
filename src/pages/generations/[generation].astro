@@ -6,6 +6,7 @@ import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { generationHubContent } from "../../data/generation-hubs";
+import { ownershipGuides } from "../../data/ownership-guides";
 import {
   getGenerationKey,
   getGenerationLabel,
@@ -89,6 +90,16 @@ const generationSlug = getGenerationSlug(leadCar.data);
 const hubContent = generationHubContent[generationSlug];
 const relatedComparisons = uniqueByHref(
   comparisonGuides
+    .filter((guide) => guide.relatedGenerations?.includes(generationSlug))
+    .map((guide) => ({
+      href: guide.href,
+      title: guide.title,
+      description: guide.description,
+      eyebrow: guide.eyebrow
+    }))
+);
+const relatedOwnershipGuides = uniqueByHref(
+  ownershipGuides
     .filter((guide) => guide.relatedGenerations?.includes(generationSlug))
     .map((guide) => ({
       href: guide.href,
@@ -278,6 +289,11 @@ const breadcrumbs = [
         title="Best-parts guides for this generation"
         intro="These parts pages are the fastest way to narrow the shortlist once you know the repair area."
         items={featuredBest}
+      />
+      <RelatedLinks
+        title="Ownership guides for this generation"
+        intro="Use these flagship guides when you want the broader repeat-pattern view before dropping into a single symptom or parts page."
+        items={relatedOwnershipGuides}
       />
       <RelatedLinks
         title="Comparison guides for this generation"

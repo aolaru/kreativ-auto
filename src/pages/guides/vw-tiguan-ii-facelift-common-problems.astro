@@ -1,0 +1,296 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "VW Tiguan II facelift common problems";
+const description =
+  "The most common VW Tiguan II facelift problems to know before buying, diagnosing, or sinking money into the wrong repair path.";
+const intro =
+  "The facelifted Tiguan is not the disaster some forums make it sound like, but it does have a repeat ownership pattern. If the SUV starts feeling less refined, the same themes keep showing up: brake vibration, small coolant loss, load-related EPC behavior, battery complaints from short-trip use, and front-end noises that get overdiagnosed fast. This guide is here to put those patterns in one place.";
+const modifiedTime = new Date("2026-04-10");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/vw-tiguan-ii-facelift-common-problems/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the Tiguan II facelift actually unreliable?",
+    answer:
+      "Not in a dramatic across-the-board sense. The better description is that it has a few repeat trouble areas that become expensive mostly when they are diagnosed loosely or ignored too long."
+  },
+  {
+    question: "What usually shows up first on the facelift Tiguan?",
+    answer:
+      "Brake refinement issues, small coolant loss, and occasional EPC or hesitation complaints are the patterns owners usually run into before anything larger feels wrong."
+  },
+  {
+    question: "Should I worry about every Tiguan noise or warning light the same way?",
+    answer:
+      "No. The useful move is to sort the symptom into the right bucket first. The front brakes, cooling system, ignition side, and smaller front-end wear points are the places that usually deserve the first look."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/car-shakes-when-braking/",
+    title: "Car shakes when braking",
+    description: "The first page to open if the Tiguan feels roughest through the pedal and steering under braking.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/coolant-level-drops-with-no-visible-leak/",
+    title: "Coolant level drops with no visible leak",
+    description: "The right next read when the level keeps dropping slowly and the SUV never leaves a dramatic puddle.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/epc-light-comes-on-under-acceleration/",
+    title: "EPC light comes on under acceleration",
+    description: "Useful when hesitation or a load-related warning starts turning the car into an electronics guessing game.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/oil-level-drops-between-services/",
+    title: "Oil level drops between services",
+    description: "Worth opening if the ownership story is turning into topping up fluids instead of driving the car normally.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/water-leaks-into-cabin-after-heavy-rain/",
+    title: "Water leaks into cabin after heavy rain",
+    description: "A practical next step when the facelift Tiguan feels fine mechanically but starts acting old through damp carpet and trim smell.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-brake-pads-for-vw-tiguan-2020/",
+    title: "Best brake pads for VW Tiguan 2020",
+    description: "Start here if the fix is moving toward the front brakes and you want a calmer daily-driver setup.",
+    eyebrow: "Brake Pads"
+  },
+  {
+    href: "/best/best-brake-rotors-for-vw-tiguan-2020/",
+    title: "Best brake rotors for VW Tiguan 2020",
+    description: "Useful when the pad conversation turns into a full brake-shake cleanup instead of a simple friction-material swap.",
+    eyebrow: "Brake Rotors"
+  },
+  {
+    href: "/best/best-coolant-for-vw-tiguan-2020/",
+    title: "Best coolant for VW Tiguan 2020",
+    description: "The right page if coolant seepage is already real and the next mistake would be mixing fluids blindly.",
+    eyebrow: "Coolant"
+  },
+  {
+    href: "/best/best-ignition-coils-for-vw-tiguan-2020/",
+    title: "Best ignition coils for VW Tiguan 2020",
+    description: "Open this when EPC or hesitation has already pushed the diagnosis onto the ignition side.",
+    eyebrow: "Ignition Coils"
+  }
+];
+
+const relatedComparisons = [
+  {
+    href: "/tools/vw-tiguan-pre-facelift-vs-facelift/",
+    title: "VW Tiguan pre-facelift vs facelift",
+    description: "Useful if you are still mixing older Mk2 advice into the facelift-era ownership path.",
+    eyebrow: "Generation guide"
+  },
+  {
+    href: "/tools/vw-tiguan-fwd-vs-4motion/",
+    title: "VW Tiguan FWD vs 4MOTION",
+    description: "Open this when the next question is whether drivetrain layout changes the maintenance and diagnosis story.",
+    eyebrow: "Drivetrain guide"
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/vw-tiguan-2020.jpg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schemas={schemas}
+  editorialSummary="This guide is written as a flagship ownership page for the facelift Tiguan, pulling the repeat complaints and best next reads into one place."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Ownership guide", "Generation-specific", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the Tiguan still feels broadly fine, but not quite right. The goal is to sort the symptom into the right repeat pattern before money disappears into the wrong repair theory."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section
+    title="The short version"
+    intro="If you only need the fast read, this is the facelift Tiguan ownership pattern in plain language."
+  >
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Most Tiguan II facelift complaints are not random. They cluster around the front brakes, coolant seepage, ignition-side drivability, battery reserve, and smaller front-end wear.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The expensive mistakes usually come from diagnosing too loosely: buying broad parts listings, ignoring fluid spec, or assuming every noise means a major chassis failure.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the repair path stays disciplined, the facelift Tiguan is easier to live with than its reputation suggests.</li>
+    </ul>
+  </Section>
+
+  <Section
+    title="The five trouble areas worth knowing"
+    intro="These are the patterns that come up often enough to define the ownership experience for a lot of late Mk2 Tiguans."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">1. Brake refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Brake shake and low-grade front brake disappointment</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A lot of owners first feel the Tiguan getting older through the front brakes. Cheap pads, poor rotor choices, and half-finished hardware service bring vibration and uneven feel back too easily.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">2. Cooling system</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Small coolant loss that lingers too long</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The dangerous part is not always a dramatic leak. It is the slow seepage pattern that gets topped up repeatedly until the owner forgets the level should not be drifting at all.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">3. Load-related drivability</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">EPC warnings and hesitation that feel bigger than they are</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">These complaints get dramatic fast because they sound electronic. The useful first look is still usually on the ignition and boost side, not on a vague module theory.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">4. Short-trip use</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Battery reserve that quietly gets weak</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A Tiguan that mostly sees short trips can start looking electrically grumpy long before the owner gets a clean no-start event that makes the problem obvious.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 lg:col-span-2">
+        <p class="eyebrow">5. Front-end refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Small noises that sound worse than the actual repair</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Sway-bar links, tire condition, and other ordinary wear points make the facelift Tiguan feel rougher than it is. That creates a lot of wasted money when the diagnosis jumps straight to bigger suspension parts.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="What to check first before spending money"
+    intro="The fastest way to waste money on this Tiguan is to skip the repeat offenders and go straight to the expensive theory."
+  >
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the car shakes under braking, start with brake pad quality, rotor condition, and hardware service before turning it into a steering or suspension story.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If coolant keeps dropping, confirm the exact spec and look for small seepage before topping it up forever or mixing the wrong fluid.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If EPC or hesitation appears under load, read the codes and inspect spark plugs and coils before blaming the whole electronics layer.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the front end sounds loose, check links, tires, and wheel torque before assuming the repair starts with larger suspension parts.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the battery behavior looks odd, test reserve and charging margin together instead of swapping one part and hoping the dashboard gets quieter.</li>
+    </ul>
+  </Section>
+
+  <Section
+    title="Where owners usually overreact"
+    intro="These are the spots where the Tiguan reputation gets inflated because the diagnosis starts in the wrong place."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">The brakes get blamed on the whole front end</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Brake vibration makes people think steering and suspension immediately, when the first repair layer is often still the brake package itself.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">EPC gets treated like a mystery curse</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The warning feels dramatic, but a lot of these cases still become ordinary plug, coil, or drivability diagnosis once the codes are left intact long enough to read properly.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">Coolant drift gets normalized</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Owners top it up because the loss feels small. The longer that continues, the harder it becomes to remember the system was never supposed to drift in the first place.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">Noise gets mistaken for big-dollar suspension work</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">This platform can sound rougher than it really is. Smaller wear items and basic tire issues need to lose first before the large repair estimate earns the right to exist.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="Who should be more careful"
+    intro="The same facelift Tiguan advice does not transfer perfectly across every version."
+  >
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">4MOTION owners should stay stricter on tire matching, rotation, and drivetrain-related assumptions.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Anyone mixing pre-facelift and facelift parts listings should slow down before ordering, especially on trim-sensitive brake and front-end items.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Short-trip cars deserve battery attention earlier, even if the SUV still starts and drives normally most of the time.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Market-specific diesel or hybrid variants should not inherit this mainstream 2.0T ownership logic blindly.</li>
+    </ul>
+  </Section>
+
+  <Section
+    title="Best next reads"
+    intro="These are the pages worth opening once you know which Tiguan complaint bucket you are actually in."
+  >
+    <div class="grid gap-6 lg:grid-cols-3">
+      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/volkswagen-tiguan-tiguan-ii-facelift-2020-2024/">
+        <p class="eyebrow">Generation hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">VW Tiguan II facelift 2020-2024</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub if you want the broader ownership map before jumping into a narrower repair page.</p>
+      </a>
+      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/tools/vw-tiguan-pre-facelift-vs-facelift/">
+        <p class="eyebrow">Generation guide</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Pre-facelift vs facelift</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Open this if the real issue is that advice and fitment are getting blurred across the whole Mk2 run.</p>
+      </a>
+      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/tools/vw-tiguan-fwd-vs-4motion/">
+        <p class="eyebrow">Drivetrain guide</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">FWD vs 4MOTION</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Use this when the next decision depends on drivetrain layout, not just the model year.</p>
+      </a>
+    </div>
+  </Section>
+
+  <RelatedLinks
+    title="Problem guides linked from this page"
+    intro="These are the problem pages that matter most once the facelift Tiguan starts showing the same repeat complaints."
+    items={relatedProblems}
+  />
+
+  <RelatedLinks
+    title="Best-parts guides linked from this page"
+    intro="These are the parts pages worth opening when the diagnosis is already pointing at the right repair area."
+    items={relatedBest}
+  />
+
+  <RelatedLinks
+    title="Comparison guides linked from this page"
+    intro="These are the comparison pages that keep the Tiguan advice from drifting across the wrong phase or drivetrain."
+    items={relatedComparisons}
+  />
+</ContentLayout>
