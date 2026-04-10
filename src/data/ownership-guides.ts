@@ -3,6 +3,7 @@ export interface OwnershipGuide {
   href: string;
   description: string;
   eyebrow: string;
+  image?: string;
   relatedCars?: string[];
   relatedGenerations?: string[];
 }
@@ -14,6 +15,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A flagship ownership guide to the repeat Tiguan facelift trouble spots, what to check first, and which pages to open next when the car starts feeling less sorted.",
     eyebrow: "Ownership guide",
+    image: "/images/photos/cars/vw-tiguan-2020.jpg",
     relatedCars: ["vw-tiguan-2020"],
     relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
   }

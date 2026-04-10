@@ -10,6 +10,13 @@ export interface GenerationHubStartHere {
   href: string;
 }
 
+export interface GenerationHubVisualHighlight {
+  title: string;
+  description: string;
+  image: string;
+  href?: string;
+}
+
 export interface GenerationHubContent {
   eyebrow?: string;
   intro: string;
@@ -22,6 +29,7 @@ export interface GenerationHubContent {
   startHere?: GenerationHubStartHere[];
   featuredProblems?: string[];
   featuredBest?: string[];
+  visualHighlights?: GenerationHubVisualHighlight[];
 }
 
 export const generationHubContent: Record<string, GenerationHubContent> = {
@@ -93,6 +101,26 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "best-front-sway-bar-links-for-honda-civic-2019",
       "best-rear-brake-pads-for-honda-civic-2019",
       "best-front-brake-pads-for-honda-civic-2019"
+    ],
+    visualHighlights: [
+      {
+        title: "Ignition upkeep matters early",
+        description: "The facelift Civic gets rough around the edges fastest when plugs and coils are left alone too long.",
+        image: "/images/photos/parts/ngk-spark-plugs.png",
+        href: "/best/best-spark-plugs-for-honda-civic-2019/"
+      },
+      {
+        title: "Traffic exposes the A/C weak point",
+        description: "Warm-idle A/C complaints are one of the easiest ways this generation starts feeling older than it should.",
+        image: "/images/photos/parts/denso-condenser.jpeg",
+        href: "/problems/air-conditioner-blows-warm-at-idle/"
+      },
+      {
+        title: "Small front-end noises add up",
+        description: "A light rattle over broken pavement usually points to smaller wear items before anything dramatic in the chassis.",
+        image: "/images/photos/parts/moog-sway-bar-links.png",
+        href: "/problems/front-suspension-rattles-over-small-bumps/"
+      }
     ]
   },
   "toyota-rav4-xa50-2019-2021": {
@@ -161,6 +189,26 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "best-rear-sway-bar-links-for-toyota-rav4-2021",
       "best-rear-brake-pads-for-toyota-rav4-2021",
       "best-front-sway-bar-links-for-toyota-rav4-2021"
+    ],
+    visualHighlights: [
+      {
+        title: "Brake refinement is a real theme",
+        description: "Pad choice and hardware condition do more to shape daily RAV4 feel than most owners expect.",
+        image: "/images/photos/parts/akebono-proact.png",
+        href: "/best/best-brake-pads-for-toyota-rav4-2021/"
+      },
+      {
+        title: "Highway comfort starts with tires",
+        description: "A lot of road hum and vibration stories on the XA50 start with the tire, not the wheel bearing.",
+        image: "/images/photos/parts/michelin-defender2.webp",
+        href: "/best/best-tires-for-toyota-rav4-2021-highway-vibration/"
+      },
+      {
+        title: "Short-trip battery complaints are common",
+        description: "The 12-volt battery story is one of the main ownership differences that keeps coming up across gas and hybrid use.",
+        image: "/images/photos/parts/car-battery.jpg",
+        href: "/problems/battery-goes-dead-after-sitting/"
+      }
     ]
   },
   "volkswagen-tiguan-tiguan-ii-facelift-2020-2024": {
@@ -229,6 +277,26 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "best-ignition-coils-for-vw-tiguan-2020",
       "best-engine-oil-for-vw-tiguan-2020",
       "best-batteries-for-vw-tiguan-2020"
+    ],
+    visualHighlights: [
+      {
+        title: "Brake quality changes the whole car",
+        description: "On the facelift Tiguan, weak pad and rotor choices are one of the fastest ways to make the SUV feel older than it is.",
+        image: "/images/photos/parts/bosch-quietcast-pads.jpg",
+        href: "/best/best-brake-pads-for-vw-tiguan-2020/"
+      },
+      {
+        title: "Coolant issues often start small",
+        description: "This platform is much easier to live with when the first trace of coolant drift gets treated as a diagnosis, not a topping-up habit.",
+        image: "/images/photos/parts/pentosin-coolant.jpg",
+        href: "/problems/coolant-level-drops-with-no-visible-leak/"
+      },
+      {
+        title: "Ignition-side drivability is a repeat pattern",
+        description: "EPC and hesitation complaints feel electronic, but the first useful look is often still the spark and coil side.",
+        image: "/images/photos/parts/delphi-ignition-coil.jpg",
+        href: "/problems/epc-light-comes-on-under-acceleration/"
+      }
     ]
   }
 };

@@ -4,6 +4,7 @@ interface LinkItem {
   title: string;
   description?: string;
   eyebrow?: string;
+  image?: string;
 }
 
 interface Props {
@@ -26,6 +27,20 @@ const { title, intro, items } = Astro.props;
         {
           items.map((item) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent/40 hover:bg-white" href={item.href}>
+              {
+                item.image && (
+                  <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      class="h-44 w-full object-cover"
+                      loading="lazy"
+                      width="960"
+                      height="640"
+                    />
+                  </div>
+                )
+              }
               {item.eyebrow && <p class="eyebrow">{item.eyebrow}</p>}
               <h3 class="mt-2 text-lg font-semibold text-ink">{item.title}</h3>
               {item.description && <p class="mt-2 text-sm leading-6 text-steel">{item.description}</p>}

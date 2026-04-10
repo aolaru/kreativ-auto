@@ -46,7 +46,8 @@ const relatedProblems = uniqueByHref(
     href: `/problems/${entry.id}/`,
     title: entry.data.title,
     description: entry.data.excerpt ?? entry.data.metaDescription ?? `Symptoms: ${entry.data.symptoms.slice(0, 2).join(", ")}.`,
-    eyebrow: "Problem guide"
+    eyebrow: "Problem guide",
+    image: entry.data.heroImage
   }))
 );
 
@@ -64,7 +65,8 @@ const relatedBest = uniqueByHref(
     href: `/best/${entry.id}/`,
     title: entry.data.title,
     description: entry.data.excerpt ?? entry.data.metaDescription ?? `${entry.data.products.length} parts worth comparing for this vehicle.`,
-    eyebrow: entry.data.category
+    eyebrow: entry.data.category,
+    image: entry.data.heroImage
   }))
 );
 
@@ -81,7 +83,8 @@ const relatedComparisons = uniqueByHref(
       href: guide.href,
       title: guide.title,
       description: guide.description,
-      eyebrow: guide.eyebrow
+      eyebrow: guide.eyebrow,
+      image: guide.image
     }))
 );
 const relatedOwnershipGuides = uniqueByHref(
@@ -93,7 +96,8 @@ const relatedOwnershipGuides = uniqueByHref(
       href: guide.href,
       title: guide.title,
       description: guide.description,
-      eyebrow: guide.eyebrow
+      eyebrow: guide.eyebrow,
+      image: guide.image
     }))
 );
 

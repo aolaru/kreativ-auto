@@ -63,7 +63,8 @@ const linkedProblems = uniqueByHref(
       href: `/problems/${problem.id}/`,
       title: problem.data.title,
       description: problem.data.excerpt ?? problem.data.metaDescription,
-      eyebrow: "Problem guide"
+      eyebrow: "Problem guide",
+      image: problem.data.heroImage
     }))
 );
 
@@ -80,7 +81,8 @@ const linkedBest = uniqueByHref(
       href: `/best/${entry.id}/`,
       title: entry.data.title,
       description: entry.data.excerpt ?? entry.data.metaDescription,
-      eyebrow: entry.data.category
+      eyebrow: entry.data.category,
+      image: entry.data.heroImage
     }))
 );
 
@@ -95,7 +97,8 @@ const relatedComparisons = uniqueByHref(
       href: guide.href,
       title: guide.title,
       description: guide.description,
-      eyebrow: guide.eyebrow
+      eyebrow: guide.eyebrow,
+      image: guide.image
     }))
 );
 const relatedOwnershipGuides = uniqueByHref(
@@ -105,7 +108,8 @@ const relatedOwnershipGuides = uniqueByHref(
       href: guide.href,
       title: guide.title,
       description: guide.description,
-      eyebrow: guide.eyebrow
+      eyebrow: guide.eyebrow,
+      image: guide.image
     }))
 );
 const featuredProblems = hubContent?.featuredProblems?.length
@@ -175,6 +179,42 @@ const breadcrumbs = [
                       <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
                     </a>
                   ))}
+                </div>
+              </Section>
+            )
+          }
+
+          {
+            hubContent.visualHighlights && hubContent.visualHighlights.length > 0 && (
+              <Section
+                title="What this generation looks like in practice"
+                intro="These visual checkpoints are the fastest way to understand the complaints and repair areas that shape the ownership pattern."
+              >
+                <div class="grid gap-6 md:grid-cols-3">
+                  {hubContent.visualHighlights.map((item) => {
+                    const Tag = item.href ? "a" : "article";
+
+                    return (
+                      <Tag
+                        class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300"
+                        href={item.href}
+                      >
+                        <img
+                          src={item.image}
+                          alt={item.title}
+                          class="h-52 w-full object-cover"
+                          loading="lazy"
+                          width="960"
+                          height="640"
+                        />
+                        <div class="p-5">
+                          <p class="eyebrow">Visual highlight</p>
+                          <h3 class="mt-3 text-xl font-semibold text-ink">{item.title}</h3>
+                          <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+                        </div>
+                      </Tag>
+                    );
+                  })}
                 </div>
               </Section>
             )
