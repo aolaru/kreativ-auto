@@ -1,4 +1,6 @@
 ---
+import { toThumbnail } from "../utils/images";
+
 interface LinkItem {
   href: string;
   title: string;
@@ -31,10 +33,11 @@ const { title, intro, items } = Astro.props;
                 item.image && (
                   <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                     <img
-                      src={item.image}
+                      src={toThumbnail(item.image)}
                       alt={item.title}
                       class="h-44 w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                       width="960"
                       height="640"
                     />

@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import CardIcon from "../../components/CardIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { toThumbnail } from "../../utils/images";
 
 const bestPages = await getCollection("best");
 const newestBest = [...bestPages].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
@@ -47,10 +48,11 @@ const featuredCategories = [
           civicBest[0]?.data.heroImage && (
             <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
               <img
-                src={civicBest[0].data.heroImage}
+                src={toThumbnail(civicBest[0].data.heroImage)}
                 alt="Honda Civic best-parts guide"
                 class="h-44 w-full object-cover"
                 loading="lazy"
+                decoding="async"
                 width="960"
                 height="640"
               />
@@ -69,10 +71,11 @@ const featuredCategories = [
           rav4Best[0]?.data.heroImage && (
             <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
               <img
-                src={rav4Best[0].data.heroImage}
+                src={toThumbnail(rav4Best[0].data.heroImage)}
                 alt="Toyota RAV4 best-parts guide"
                 class="h-44 w-full object-cover"
                 loading="lazy"
+                decoding="async"
                 width="960"
                 height="640"
               />
@@ -91,10 +94,11 @@ const featuredCategories = [
           tiguanBest[0]?.data.heroImage && (
             <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
               <img
-                src={tiguanBest[0].data.heroImage}
+                src={toThumbnail(tiguanBest[0].data.heroImage)}
                 alt="Volkswagen Tiguan best-parts guide"
                 class="h-44 w-full object-cover"
                 loading="lazy"
+                decoding="async"
                 width="960"
                 height="640"
               />
@@ -140,10 +144,11 @@ const featuredCategories = [
               entry.data.heroImage && (
                 <div class="mb-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                   <img
-                    src={entry.data.heroImage}
+                    src={toThumbnail(entry.data.heroImage)}
                     alt={entry.data.title}
                     class="h-52 w-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     width="960"
                     height="640"
                   />

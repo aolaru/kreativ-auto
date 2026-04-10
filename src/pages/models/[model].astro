@@ -5,6 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import { generationHubContent } from "../../data/generation-hubs";
+import { toThumbnail } from "../../utils/images";
 import {
   getGenerationKey,
   getGenerationLabel,
@@ -127,10 +128,11 @@ const startHere = featuredGenerationGroups[0];
                   (startHere.lead.data.heroImage ?? startHere.lead.data.image) && (
                     <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                       <img
-                        src={startHere.lead.data.heroImage ?? startHere.lead.data.image}
+                        src={toThumbnail(startHere.lead.data.heroImage ?? startHere.lead.data.image)}
                         alt={getGenerationLabel(startHere.lead.data)}
                         class="h-56 w-full object-cover"
                         loading="lazy"
+                        decoding="async"
                         width="960"
                         height="640"
                       />
@@ -182,10 +184,11 @@ const startHere = featuredGenerationGroups[0];
                 (group.lead.data.heroImage ?? group.lead.data.image) && (
                   <div class="mt-6 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                     <img
-                      src={group.lead.data.heroImage ?? group.lead.data.image}
+                      src={toThumbnail(group.lead.data.heroImage ?? group.lead.data.image)}
                       alt={getGenerationLabel(group.lead.data)}
                       class="h-56 w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                       width="960"
                       height="640"
                     />
@@ -236,10 +239,11 @@ const startHere = featuredGenerationGroups[0];
                         (car.data.heroImage ?? car.data.image) && (
                           <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                             <img
-                              src={car.data.heroImage ?? car.data.image}
+                              src={toThumbnail(car.data.heroImage ?? car.data.image)}
                               alt={car.data.title}
                               class="h-52 w-full object-cover"
                               loading="lazy"
+                              decoding="async"
                               width="960"
                               height="640"
                             />

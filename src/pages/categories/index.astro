@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { toThumbnail } from "../../utils/images";
 import { slugify } from "../../utils/taxonomy";
 
 const bestPages = await getCollection("best");
@@ -38,10 +39,11 @@ const categories = Array.from(
               entries[0]?.data.heroImage && (
                 <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                   <img
-                    src={entries[0].data.heroImage}
+                    src={toThumbnail(entries[0].data.heroImage)}
                     alt={category}
                     class="h-48 w-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     width="960"
                     height="640"
                   />

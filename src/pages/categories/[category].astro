@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
+import { toThumbnail } from "../../utils/images";
 import { slugify, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -73,10 +74,11 @@ const breadcrumbs = [
               entry.data.heroImage && (
                 <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                   <img
-                    src={entry.data.heroImage}
+                    src={toThumbnail(entry.data.heroImage)}
                     alt={entry.data.title}
                     class="h-52 w-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     width="960"
                     height="640"
                   />

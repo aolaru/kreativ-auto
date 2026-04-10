@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import Section from "../../components/Section.astro";
 import { generationHubContent } from "../../data/generation-hubs";
+import { toThumbnail } from "../../utils/images";
 import { getGenerationKey, getGenerationSlug, slugify } from "../../utils/taxonomy";
 
 const cars = await getCollection("cars");
@@ -63,10 +64,11 @@ const allBrands = [...brands].sort((a, b) => a.brand.localeCompare(b.brand));
                     (item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image) && (
                       <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                         <img
-                          src={item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image}
+                          src={toThumbnail(item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image)}
                           alt={item.brand}
                           class="h-48 w-full object-cover"
                           loading="lazy"
+                          decoding="async"
                           width="960"
                           height="640"
                         />
@@ -99,10 +101,11 @@ const allBrands = [...brands].sort((a, b) => a.brand.localeCompare(b.brand));
               (item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image) && (
                 <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                   <img
-                    src={item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image}
+                    src={toThumbnail(item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image)}
                     alt={item.brand}
                     class="h-48 w-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     width="960"
                     height="640"
                   />

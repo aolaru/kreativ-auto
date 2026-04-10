@@ -4,6 +4,7 @@ import CardIcon from "../components/CardIcon.astro";
 import { comparisonGuides } from "../data/comparison-guides";
 import { ownershipGuides } from "../data/ownership-guides";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { toThumbnail } from "../utils/images";
 import { getGenerationLabel, getGenerationRange, getGenerationSlug } from "../utils/taxonomy";
 
 const [cars, problems, bestPages] = await Promise.all([
@@ -203,10 +204,11 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
                 {
                   car.data.image && (
                     <img
-                      src={car.data.image}
+                      src={toThumbnail(car.data.image)}
                       alt={car.data.title}
                       class="h-40 w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                       width="960"
                       height="640"
                     />
@@ -241,10 +243,11 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
                   problem.data.heroImage && (
                     <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                       <img
-                        src={problem.data.heroImage}
+                        src={toThumbnail(problem.data.heroImage)}
                         alt={problem.data.title}
                         class="h-44 w-full object-cover"
                         loading="lazy"
+                        decoding="async"
                         width="960"
                         height="640"
                       />
@@ -287,10 +290,11 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
                 entry.data.heroImage && (
                   <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                     <img
-                      src={entry.data.heroImage}
+                      src={toThumbnail(entry.data.heroImage)}
                       alt={entry.data.title}
                       class="h-44 w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                       width="960"
                       height="640"
                     />
@@ -333,10 +337,11 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
                 guide.image && (
                   <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
                     <img
-                      src={guide.image}
+                      src={toThumbnail(guide.image)}
                       alt={guide.title}
                       class="h-44 w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                       width="960"
                       height="640"
                     />

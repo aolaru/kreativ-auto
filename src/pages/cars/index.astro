@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import CardIcon from "../../components/CardIcon.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { toThumbnail } from "../../utils/images";
 
 const cars = await getCollection("cars");
 const newestCars = [...cars].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
@@ -101,10 +102,11 @@ const featuredPaths = [
               car.data.image && (
                 <div class="mb-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                   <img
-                    src={car.data.image}
+                    src={toThumbnail(car.data.image)}
                     alt={car.data.title}
                     class="h-52 w-full object-cover"
                     loading="lazy"
+                    decoding="async"
                     width="960"
                     height="640"
                   />

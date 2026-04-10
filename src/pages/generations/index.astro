@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { toThumbnail } from "../../utils/images";
 import { getGenerationKey, getGenerationLabel, getGenerationRange, getGenerationSlug } from "../../utils/taxonomy";
 
 const cars = await getCollection("cars");
@@ -41,10 +42,11 @@ const generations = Array.from(
                 (lead.data.heroImage ?? lead.data.image) && (
                   <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                     <img
-                      src={lead.data.heroImage ?? lead.data.image}
+                    src={toThumbnail(lead.data.heroImage ?? lead.data.image)}
                       alt={label}
-                      class="h-48 w-full object-cover"
-                      loading="lazy"
+                    class="h-48 w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
                       width="960"
                       height="640"
                     />

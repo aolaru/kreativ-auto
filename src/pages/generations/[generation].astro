@@ -7,6 +7,7 @@ import Section from "../../components/Section.astro";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { generationHubContent } from "../../data/generation-hubs";
 import { ownershipGuides } from "../../data/ownership-guides";
+import { toThumbnail } from "../../utils/images";
 import {
   getGenerationKey,
   getGenerationLabel,
@@ -200,10 +201,11 @@ const breadcrumbs = [
                         href={item.href}
                       >
                         <img
-                          src={item.image}
+                          src={toThumbnail(item.image)}
                           alt={item.title}
                           class="h-52 w-full object-cover"
                           loading="lazy"
+                          decoding="async"
                           width="960"
                           height="640"
                         />
@@ -303,10 +305,11 @@ const breadcrumbs = [
                 (car.data.heroImage ?? car.data.image) && (
                   <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                     <img
-                      src={car.data.heroImage ?? car.data.image}
+                      src={toThumbnail(car.data.heroImage ?? car.data.image)}
                       alt={car.data.title}
                       class="h-52 w-full object-cover"
                       loading="lazy"
+                      decoding="async"
                       width="960"
                       height="640"
                     />
