@@ -1,0 +1,292 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50 common problems";
+const description =
+  "The most common Toyota RAV4 XA50 problems to know before buying parts, chasing noises, or assuming every issue is bigger than it is.";
+const intro =
+  "The XA50 RAV4 is one of the easier modern crossovers to live with, but it still has a repeat ownership pattern. Battery complaints from short-trip use, brake noise that comes and goes with weather, front and rear suspension clunks, and tire or wheel-related highway vibration are the themes that come up most often. This guide puts those patterns in one place before the diagnosis gets loose.";
+const modifiedTime = new Date("2026-04-11");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/toyota-rav4-xa50-common-problems/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the RAV4 XA50 generally reliable?",
+    answer:
+      "Yes, in broad terms. The useful caveat is that the small repeat complaints still matter, especially battery reserve, brake noise, sway-bar-link wear, and highway vibration diagnosis."
+  },
+  {
+    question: "What usually annoys owners first on the XA50 RAV4?",
+    answer:
+      "The first things people notice are often brake squeak after moisture, small suspension clunks, battery complaints after sitting, and vibration that feels larger than the actual repair."
+  },
+  {
+    question: "Do hybrid and gas RAV4s share all the same advice?",
+    answer:
+      "No. A lot overlaps, but battery and braking behavior need to be read more carefully on hybrids, and not every ownership note transfers cleanly."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/battery-goes-dead-after-sitting/",
+    title: "Battery goes dead after sitting",
+    description: "The right first page when the RAV4 still feels normal in motion but gets weak after short-trip or parked use.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/rear-brakes-squeak-after-rain/",
+    title: "Rear brakes squeak after rain",
+    description: "Open this when the brake complaint is more about wet-weather refinement than obvious stopping power loss.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/front-end-clunk-when-pulling-into-driveways/",
+    title: "Front-end clunk when pulling into driveways",
+    description: "Useful when the noise sounds expensive but the first look should still stay on ordinary front-end wear items.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/rear-suspension-clunk-over-bumps/",
+    title: "Rear suspension clunk over bumps",
+    description: "Worth opening when the back of the RAV4 starts sounding looser than the actual repair usually is.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/steering-wheel-vibrates-at-highway-speed/",
+    title: "Steering wheel vibrates at highway speed",
+    description: "The best next read when tire, wheel, or hub diagnosis starts getting mixed together.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-batteries-for-toyota-rav4-2021/",
+    title: "Best batteries for Toyota RAV4 2021",
+    description: "Start here if the real complaint is reserve capacity and the next bad move would be guessing on battery size or quality.",
+    eyebrow: "Batteries"
+  },
+  {
+    href: "/best/best-brake-pads-for-toyota-rav4-2021/",
+    title: "Best brake pads for Toyota RAV4 2021",
+    description: "Useful when the XA50 brake story is really about daily-driver refinement, not maximum bite or marketing claims.",
+    eyebrow: "Brake Pads"
+  },
+  {
+    href: "/best/best-rear-brake-pads-for-toyota-rav4-2021/",
+    title: "Best rear brake pads for Toyota RAV4 2021",
+    description: "Open this when the squeak and light brake noise are clearly coming from the rear axle side.",
+    eyebrow: "Rear Brake Pads"
+  },
+  {
+    href: "/best/best-front-sway-bar-links-for-toyota-rav4-2021/",
+    title: "Best front sway bar links for Toyota RAV4 2021",
+    description: "The first useful parts page when the front-end clunk sounds suspension-related but not catastrophic.",
+    eyebrow: "Front Sway Bar Links"
+  },
+  {
+    href: "/best/best-rear-sway-bar-links-for-toyota-rav4-2021/",
+    title: "Best rear sway bar links for Toyota RAV4 2021",
+    description: "Worth opening when the noise pattern points rearward and the goal is to keep the repair modest and targeted.",
+    eyebrow: "Rear Sway Bar Links"
+  }
+];
+
+const relatedComparisons = [
+  {
+    href: "/tools/toyota-rav4-hybrid-vs-gas/",
+    title: "Toyota RAV4 Hybrid vs gas",
+    description: "Use this when the next decision is whether the ownership or fitment advice changes with the powertrain.",
+    eyebrow: "Powertrain guide"
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schemas={schemas}
+  editorialSummary="This guide is written as a flagship ownership page for the XA50 RAV4, pulling the repeat complaints and best next reads into one place."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Ownership guide", "Generation-specific", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the XA50 RAV4 still looks like a sensible crossover overall, but small repeat complaints are starting to shape the ownership experience."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the XA50 RAV4 ownership pattern in plain language.">
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The XA50 RAV4 is broadly solid, but it does have repeat weak spots around battery reserve, brake refinement, small suspension noises, and highway vibration diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The expensive mistakes usually come from turning mild noises into major suspension theories or treating battery complaints like random electronics problems.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If you keep the diagnosis disciplined, most XA50 complaints stay in the ordinary-parts-and-normal-wear category.</li>
+    </ul>
+  </Section>
+
+  <Section title="The five trouble areas worth knowing" intro="These are the patterns that come up often enough to define the daily-use ownership story for a lot of XA50 RAV4s.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">1. Battery reserve</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Weak starts and short-trip battery complaints</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A lot of XA50 annoyance starts with reserve capacity, not dramatic alternator failure. Short trips and long sits make the car feel more electrical than it really is.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">2. Brake refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Rear brake squeak and weather-sensitive brake noise</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The complaint is often more about refinement than stopping power. Moisture, rear pad behavior, and light-use noise can make the brake system feel worse than it is.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">3. Front-end refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Front clunks that sound bigger than the repair</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The XA50 can sound loose over driveway entries or slow compression when the real repair is still down in the sway-bar-link and small wear-item tier.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">4. Rear-end noises</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Rear suspension clunks that age the car early</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Rear noises change the feel of the vehicle quickly, but they still need a smaller-parts-first diagnosis before the repair estimate grows legs.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6 lg:col-span-2">
+        <p class="eyebrow">5. Highway refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Tire and wheel issues that get blamed on the wrong parts</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Highway vibration on the XA50 often turns into a wheel-bearing or chassis story too quickly when the tire, balance, and wheel condition still need to lose first.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="The three areas that make the biggest visual impression" intro="These are the repair buckets that most clearly change how the XA50 feels in normal use.">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <a class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300" href="/best/best-batteries-for-toyota-rav4-2021/">
+        <img src="/images/photos/parts/car-battery.jpg" alt="Battery for Toyota RAV4" class="h-52 w-full object-cover" loading="lazy" width="960" height="640" />
+        <div class="p-5">
+          <p class="eyebrow">Battery reserve</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Short-trip use changes the whole mood of the car</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">A tired battery makes the RAV4 feel electronically grumpy long before it creates a simple, obvious no-start.</p>
+        </div>
+      </a>
+      <a class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300" href="/problems/rear-brakes-squeak-after-rain/">
+        <img src="/images/photos/parts/akebono-proact.png" alt="Brake pads for Toyota RAV4" class="h-52 w-full object-cover" loading="lazy" width="960" height="640" />
+        <div class="p-5">
+          <p class="eyebrow">Brake refinement</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Rear brake noise is more common than people expect</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">The brake story is often about squeak and light-use refinement, not a full braking-system failure.</p>
+        </div>
+      </a>
+      <a class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300" href="/problems/front-end-clunk-when-pulling-into-driveways/">
+        <img src="/images/photos/parts/moog-sway-bar-links.png" alt="Sway bar links for Toyota RAV4" class="h-52 w-full object-cover" loading="lazy" width="960" height="640" />
+        <div class="p-5">
+          <p class="eyebrow">Suspension noise</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Small front-end wear changes the feel fast</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">The good news is that the usual first suspects are still the normal wear items, not instant big-dollar suspension work.</p>
+        </div>
+      </a>
+    </div>
+  </Section>
+
+  <Section title="What to check first before spending money" intro="The easiest way to waste money on an XA50 RAV4 is to skip the repeat offenders and jump straight to the broad theory.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the battery goes flat after sitting, test reserve and usage pattern together before assuming a larger charging-system problem.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the brakes squeak after rain, separate refinement noise from actual braking weakness before replacing the wrong axle or mixing pad types loosely.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the front or rear end clunks, start with links, bushings, and visible wear items before treating it like a major chassis problem.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the steering vibrates at speed, make tires and wheel condition lose before the diagnosis moves toward hubs or larger hardware.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If you are on a hybrid, keep powertrain-specific advice separate instead of assuming the gas and hybrid ownership patterns are identical.</li>
+    </ul>
+  </Section>
+
+  <Section title="Where owners usually overreact" intro="These are the spots where the RAV4 reputation gets distorted because the diagnosis starts too high on the parts tree.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">Battery complaints get treated like random electronics</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A weak-use pattern looks mysterious on a modern crossover, but the first useful move is often still basic battery reserve and usage diagnosis.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">Brake squeak gets turned into a full brake-system drama</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A lot of XA50 brake complaints are about refinement and pad behavior, not a bigger safety-system failure story.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">Small suspension noises get blamed on major suspension work</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The platform can sound more expensive than it is, especially when the first look should still be on links and ordinary wear points.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <h2 class="text-2xl font-semibold text-ink">Highway vibration diagnosis jumps past the tires too fast</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">People want a mechanical explanation quickly, but tires and balance still deserve to lose before the repair gets ambitious.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Who should be more careful" intro="The same XA50 advice does not transfer perfectly across every powertrain and usage pattern.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Hybrid owners should keep brake feel, battery assumptions, and maintenance habits separate from the gas-only version where the overlap ends.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Cars used mostly for short local trips deserve battery scrutiny earlier, even if the crossover still starts normally most mornings.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Drivers who spend a lot of time on rough roads or broken pavement should expect sway-bar-link and small noise complaints sooner.</li>
+    </ul>
+  </Section>
+
+  <Section title="Best next reads" intro="These are the pages worth opening once you know which XA50 complaint bucket you are actually in.">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/toyota-rav4-xa50-2019-2021/">
+        <p class="eyebrow">Generation hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota RAV4 XA50 2019-2021</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub if you want the broader ownership map before jumping into a narrower repair page.</p>
+      </a>
+      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/tools/toyota-rav4-hybrid-vs-gas/">
+        <p class="eyebrow">Powertrain guide</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Hybrid vs gas</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Open this if the real issue is whether the advice changes with the hybrid system, not just the model year.</p>
+      </a>
+      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/cars/toyota-rav4-2021/">
+        <p class="eyebrow">Car hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota RAV4 2021</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Use the model-year page if the next step is narrowing from the generation pattern into one published year hub.</p>
+      </a>
+    </div>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="These are the problem pages that matter most once the XA50 starts showing the same repeat complaints." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening when the diagnosis is already pointing at the right repair area." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="These are the comparison pages that keep the RAV4 advice from drifting across the wrong powertrain assumptions." items={relatedComparisons} />
+</ContentLayout>
