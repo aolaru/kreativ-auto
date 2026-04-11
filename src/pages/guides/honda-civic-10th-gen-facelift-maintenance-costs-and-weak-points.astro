@@ -1,0 +1,130 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Honda Civic 10th gen facelift maintenance costs and weak points";
+const description =
+  "What it usually costs to keep a Honda Civic 10th gen facelift sorted, which weak points matter most, and where owners tend to overspend.";
+const intro =
+  "The facelift Civic is still one of the easier daily drivers to keep on the road, but it has a real running-cost pattern. A/C weakness at idle, brake-noise cleanup, short-trip battery complaints, and spark-side drivability work are the areas most likely to shape the budget. This guide separates ordinary Civic ownership cost from the bigger diagnosis stories owners sometimes talk themselves into.";
+const modifiedTime = new Date("2026-04-11");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/honda-civic-10th-gen-facelift-maintenance-costs-and-weak-points/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the facelift Civic expensive to maintain?",
+    answer:
+      "Usually no. It stays reasonable as long as climate, brake, battery, and ignition complaints are diagnosed cleanly instead of loosely."
+  },
+  {
+    question: "What usually costs money first on a facelift Civic?",
+    answer:
+      "A/C-related work, brake-refinement cleanup, batteries on commuter use, and spark-side parts when drivability goes rough."
+  },
+  {
+    question: "What is the biggest money mistake on this Civic?",
+    answer:
+      "Treating small commuter complaints like major mystery failures instead of handling the ordinary wear and fitment issues first."
+  }
+];
+
+const relatedProblems = [
+  { href: "/problems/air-conditioner-blows-warm-at-idle/", title: "Air conditioner blows warm at idle", description: "Open this when the budget question is really about fixing comfort without drifting into the wrong parts.", eyebrow: "Problem guide" },
+  { href: "/problems/battery-light-flickers-at-idle/", title: "Battery light flickers at idle", description: "Useful when charging complaints are starting to shape the next spend decision.", eyebrow: "Problem guide" },
+  { href: "/problems/engine-misfires-at-idle/", title: "Engine misfires at idle", description: "The right next read when spark-side drivability is turning into a parts budget question.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-ac-condensers-for-honda-civic-2019/", title: "Best A/C condensers for Honda Civic 2019", description: "Use this when idle cooling has already pushed the budget into real A/C parts.", eyebrow: "A/C Condensers" },
+  { href: "/best/best-front-brake-pads-for-honda-civic-2019/", title: "Best front brake pads for Honda Civic 2019", description: "Open this when the cost story is really about finishing the front brake setup properly.", eyebrow: "Front Brake Pads" },
+  { href: "/best/best-batteries-for-honda-civic-2019/", title: "Best batteries for Honda Civic 2019", description: "Worth opening when battery reserve matters more than chasing the cheapest listing.", eyebrow: "Batteries" },
+  { href: "/best/best-spark-plugs-for-honda-civic-2019/", title: "Best spark plugs for Honda Civic 2019", description: "Useful when the drivability budget still belongs on the spark side first.", eyebrow: "Spark Plugs" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/honda-civic-1-5t-vs-2-0/", title: "Honda Civic 1.5T vs 2.0", description: "Use this when the running-cost story depends on engine choice, not just the facelift window.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/honda-civic-2019.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  editorialSummary="This guide is written as a maintenance and running-cost overview for the facelift Civic, focusing on the weak points that shape ownership cost first."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Maintenance guide", "Generation-specific", "Cost-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not just what can go wrong, but what usually costs money first and where owners waste that money by overdiagnosing ordinary Civic complaints."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the facelift Civic running-cost pattern in plain language.">
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Routine Civic ownership is still reasonable, but the cost story changes when A/C, brake, battery, and spark-side complaints are handled loosely.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The most common early money buckets are A/C parts, brake-refinement cleanup, batteries on commuter use, and plugs or coils when drivability gets rough.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The costliest habit is not one giant failure. It is paying several times for small problems because the first diagnosis never got specific enough.</li>
+    </ul>
+  </Section>
+
+  <Section title="Where the money usually goes first" intro="These are the repair buckets most likely to shape the real ownership budget on a facelift Civic.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Climate system</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">A/C condenser and idle-cooling fixes</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A lot of the first meaningful spend on these cars starts with comfort, not mechanical drama.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Brake refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Pad choice and brake-noise cleanup</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The Civic brake budget is usually about refinement and correct fitment, not chasing a large hardware failure.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Electrical reserve</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Battery replacements on commuter use</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Short-trip use shapes the battery story earlier than a lot of owners expect on an otherwise easy car to run.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Drivability</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Spark-side service before bigger engine theories</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The cheaper version of the story starts with plugs and coils. The expensive version starts after those basics were skipped.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Weak points worth budgeting for" intro="These are not dramatic failures. They are simply the areas most likely to shape the ownership budget first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A/C performance at idle is one of the few complaints that changes how the whole car feels day to day.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake pads and related refinement work deserve a real budget if you want the car to stay quiet and composed.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery reserve matters sooner on commuter-use cars than owners usually expect.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Spark-side maintenance is still the smart first spend when drivability starts getting rough.</li>
+    </ul>
+  </Section>
+
+  <Section title="How owners overspend" intro="The costliest Civic habits are usually diagnostic mistakes, not surprising failures.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Buying A/C parts before the complaint is narrowed down to the right part of the system.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Treating brake squeal like a bigger brake-system issue instead of a pad and refinement choice problem.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Replacing a battery without checking whether the daily-use pattern is what shortened its life.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Skipping plugs and coils early enough, then letting drivability concerns drift toward larger engine or electronics theories.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the ownership budget is clearly being driven by one repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the cost story changes with the engine." items={relatedComparisons} />
+</ContentLayout>

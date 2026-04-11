@@ -1,0 +1,130 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50 maintenance costs and weak points";
+const description =
+  "What it usually costs to keep a Toyota RAV4 XA50 sorted, which weak points matter most, and where owners tend to overspend.";
+const intro =
+  "The XA50 RAV4 is one of the easier compact SUVs to run, but that does not mean the ownership budget is random. Batteries on short-trip cars, brake-noise cleanup, sway-bar-link wear, and highway-vibration diagnosis are the places where normal use starts costing money. This guide is here to sort the real running-cost pattern from the idea that every complaint means a bigger Toyota problem.";
+const modifiedTime = new Date("2026-04-11");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/toyota-rav4-xa50-maintenance-costs-and-weak-points/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the XA50 RAV4 cheap to maintain?",
+    answer:
+      "Usually yes, relative to a lot of rivals. The cost climbs mostly when battery, brake, and vibration complaints are diagnosed loosely or dragged out too long."
+  },
+  {
+    question: "What usually costs money first on an XA50 RAV4?",
+    answer:
+      "Battery reserve on short-trip cars, brake-noise cleanup, sway-bar-link or small suspension wear, and tires or wheel-related highway refinement issues."
+  },
+  {
+    question: "What is the biggest money mistake on this RAV4?",
+    answer:
+      "Turning a small noise or refinement complaint into a bigger suspension or electronics theory before the normal wear items have even been checked."
+  }
+];
+
+const relatedProblems = [
+  { href: "/problems/battery-goes-dead-after-sitting/", title: "Battery goes dead after sitting", description: "Use this when the ownership cost story is shifting toward reserve capacity and parked-use complaints.", eyebrow: "Problem guide" },
+  { href: "/problems/rear-brakes-squeak-after-rain/", title: "Rear brakes squeak after rain", description: "Open this when brake refinement, not outright stopping performance, is driving the next spend decision.", eyebrow: "Problem guide" },
+  { href: "/problems/steering-wheel-vibrates-at-highway-speed/", title: "Steering wheel vibrates at highway speed", description: "Useful when the running-cost question is really about not buying hubs or suspension parts too early.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-batteries-for-toyota-rav4-2021/", title: "Best batteries for Toyota RAV4 2021", description: "Start here if the battery budget needs to be right once instead of cheap twice.", eyebrow: "Batteries" },
+  { href: "/best/best-brake-pads-for-toyota-rav4-2021/", title: "Best brake pads for Toyota RAV4 2021", description: "Useful when brake noise and refinement are driving the next maintenance spend.", eyebrow: "Brake Pads" },
+  { href: "/best/best-front-sway-bar-links-for-toyota-rav4-2021/", title: "Best front sway bar links for Toyota RAV4 2021", description: "Worth opening when front-end clunks still point toward a modest repair tier.", eyebrow: "Front Sway Bar Links" },
+  { href: "/best/best-tires-for-toyota-rav4-2021-highway-vibration/", title: "Best tires for Toyota RAV4 2021 highway vibration", description: "Open this when the budget question is really about solving the highway refinement issue cleanly.", eyebrow: "Tires" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/toyota-rav4-hybrid-vs-gas/", title: "Toyota RAV4 Hybrid vs gas", description: "Use this when the ownership-cost story depends on the powertrain, not just the generation.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  editorialSummary="This guide is written as a maintenance and running-cost overview for the XA50 RAV4, focusing on the weak points that shape ownership cost first."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Maintenance guide", "Generation-specific", "Cost-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not just what can go wrong, but what usually costs money first and where owners turn simple XA50 complaints into bigger expenses than they need to be."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the XA50 RAV4 running-cost pattern in plain language.">
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Routine maintenance is reasonable, but the cost story changes when battery reserve, brake refinement, or vibration complaints are allowed to drift.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The most common early money buckets are batteries, brake-related refinement work, sway-bar links, and tire or wheel fixes tied to highway feel.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The costliest habit is not one catastrophic failure. It is buying larger repairs before the normal wear and usage patterns are ruled out.</li>
+    </ul>
+  </Section>
+
+  <Section title="Where the money usually goes first" intro="These are the repair buckets most likely to shape the real ownership budget on an XA50.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Battery reserve</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Short-trip battery replacements</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The first real spend on many XA50s comes from reserve capacity and usage pattern, not a larger charging-system fault.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Brake refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Brake-noise cleanup and pad choice</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The brake story is often less about urgent failure and more about paying once for the right refinement setup instead of chasing noise repeatedly.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Front and rear links</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Small suspension parts that affect daily feel</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The budget hit is usually moderate, but it matters because these parts make the crossover feel older than it is.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Highway refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Tire and wheel diagnosis done properly</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The expensive version of this story starts when tires and wheels are skipped and the repair jumps toward bigger hardware too early.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Weak points worth budgeting for" intro="These are not dramatic failures. They are simply the areas most likely to shape the ownership budget first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery reserve deserves earlier attention on short-trip and lightly used cars.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Rear brake noise and general brake refinement can become an annoying repeat spend if the first parts choice is weak.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front and rear sway-bar-link wear should stay in the normal-maintenance budget, not in the major-suspension bucket.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Tire quality and balance matter more to the perceived cost story than many owners expect.</li>
+    </ul>
+  </Section>
+
+  <Section title="How owners overspend" intro="The costliest XA50 habits are usually diagnostic mistakes, not surprising Toyota failures.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Replacing a battery without checking whether the use pattern is what killed it early.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Treating rear brake squeak like a bigger brake-system failure instead of a refinement and pad-choice issue.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Turning modest clunks into larger suspension repairs before the links and smaller wear items have been checked.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Jumping past tires and balance when the highway vibration story still has not ruled them out cleanly.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the ownership budget is clearly being shaped by one repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the cost story changes with the powertrain." items={relatedComparisons} />
+</ContentLayout>

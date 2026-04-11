@@ -38,5 +38,35 @@ export const ownershipGuides: OwnershipGuide[] = [
     image: "/images/photos/cars/honda-civic-2019.webp",
     relatedCars: ["honda-civic-2019"],
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
+    title: "VW Tiguan II facelift maintenance costs and weak points",
+    href: "/guides/vw-tiguan-ii-facelift-maintenance-costs-and-weak-points/",
+    description:
+      "A maintenance-focused flagship guide to Tiguan II facelift running costs, common weak points, and the service areas most likely to cost real money first.",
+    eyebrow: "Maintenance guide",
+    image: "/images/photos/cars/vw-tiguan-2020.webp",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "Toyota RAV4 XA50 maintenance costs and weak points",
+    href: "/guides/toyota-rav4-xa50-maintenance-costs-and-weak-points/",
+    description:
+      "A maintenance-focused flagship guide to RAV4 XA50 ownership costs, repeat weak points, and the repair areas most likely to shape long-term running costs.",
+    eyebrow: "Maintenance guide",
+    image: "/images/photos/cars/toyota-rav4-2021.webp",
+    relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
+    relatedGenerations: ["toyota-rav4-xa50-2019-2021"]
+  },
+  {
+    title: "Honda Civic 10th gen facelift maintenance costs and weak points",
+    href: "/guides/honda-civic-10th-gen-facelift-maintenance-costs-and-weak-points/",
+    description:
+      "A maintenance-focused flagship guide to facelift Civic ownership costs, recurring weak points, and the service items most likely to matter first on a daily-driven car.",
+    eyebrow: "Maintenance guide",
+    image: "/images/photos/cars/honda-civic-2019.webp",
+    relatedCars: ["honda-civic-2019"],
+    relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
   }
 ];
