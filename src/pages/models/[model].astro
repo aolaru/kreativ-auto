@@ -5,6 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import { generationHubContent } from "../../data/generation-hubs";
+import { ownershipGuides } from "../../data/ownership-guides";
 import { toThumbnail } from "../../utils/images";
 import {
   getGenerationKey,
@@ -59,6 +60,17 @@ const linkedBest = uniqueByHref(
       title: entry.data.title,
       description: entry.data.excerpt ?? entry.data.metaDescription,
       eyebrow: entry.data.category
+    }))
+);
+const linkedOwnershipGuides = uniqueByHref(
+  ownershipGuides
+    .filter((guide) => modelCars.some((car) => guide.relatedCars?.includes(car.id)))
+    .map((guide) => ({
+      href: guide.href,
+      title: guide.title,
+      description: guide.description,
+      eyebrow: guide.eyebrow,
+      image: guide.image
     }))
 );
 
@@ -262,6 +274,7 @@ const startHere = featuredGenerationGroups[0];
     </div>
 
     <div class="mt-8 space-y-8">
+      <RelatedLinks title="Flagship guides for this model" intro={`Use these if you want the bigger ${model} ownership picture before narrowing down to one specific symptom or part.`} items={linkedOwnershipGuides} />
       <RelatedLinks title="Related problem guides" intro={`These are the problem pages currently connected to the published ${model} coverage.`} items={linkedProblems} />
       <RelatedLinks title="Related best-parts guides" intro={`These are the parts-comparison pages already linked into the ${model} hub and generation pages.`} items={linkedBest} />
     </div>

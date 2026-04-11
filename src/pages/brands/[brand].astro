@@ -4,6 +4,7 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
+import { ownershipGuides } from "../../data/ownership-guides";
 import { generationHubContent } from "../../data/generation-hubs";
 import { toThumbnail } from "../../utils/images";
 import { getGenerationKey, getGenerationLabel, getGenerationRange, getGenerationSlug, slugify, uniqueByHref } from "../../utils/taxonomy";
@@ -48,6 +49,17 @@ const linkedBest = uniqueByHref(
       title: entry.data.title,
       description: entry.data.excerpt ?? entry.data.metaDescription,
       eyebrow: entry.data.category
+    }))
+);
+const linkedOwnershipGuides = uniqueByHref(
+  ownershipGuides
+    .filter((guide) => brandCars.some((car) => guide.relatedCars?.includes(car.id)))
+    .map((guide) => ({
+      href: guide.href,
+      title: guide.title,
+      description: guide.description,
+      eyebrow: guide.eyebrow,
+      image: guide.image
     }))
 );
 const generationGroups = Array.from(
@@ -266,6 +278,7 @@ const breadcrumbs = [
     </div>
 
     <div class="mt-8 space-y-8">
+      <RelatedLinks title="Flagship guides for this brand" intro={`Use these if you want the strongest ${brand} ownership and buying guides before dropping into one symptom or parts page.`} items={linkedOwnershipGuides} />
       <RelatedLinks title="Related problem guides" intro={`These are the most relevant ${brand} problem pages already connected to the published car hubs.`} items={linkedProblems} />
       <RelatedLinks title="Related best-parts guides" intro={`These are the current ${brand} parts-comparison pages linked from the model and generation hubs.`} items={linkedBest} />
     </div>
