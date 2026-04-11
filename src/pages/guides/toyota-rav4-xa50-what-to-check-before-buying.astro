@@ -1,0 +1,92 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50 what to check before buying";
+const description = "What to inspect on a Toyota RAV4 XA50 before buying, which weak points deserve the closest look, and what should not scare you too fast.";
+const intro = "An XA50 RAV4 can still be one of the easier used crossovers to buy, but only if the inspection stays disciplined. The useful checks are battery condition, brake refinement, suspension noise, tire and highway-feel issues, and whether hybrid-versus-gas advice is being mixed together lazily. This guide is here to keep the viewing practical.";
+const modifiedTime = new Date("2026-04-11");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/toyota-rav4-xa50-what-to-check-before-buying/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/battery-goes-dead-after-sitting/", title: "Battery goes dead after sitting", description: "Open this if the parked-use or short-trip story already feels weak.", eyebrow: "Problem guide" },
+  { href: "/problems/rear-brakes-squeak-after-rain/", title: "Rear brakes squeak after rain", description: "Useful when the brake story is clearly about refinement and moisture sensitivity.", eyebrow: "Problem guide" },
+  { href: "/problems/front-end-clunk-when-pulling-into-driveways/", title: "Front-end clunk when pulling into driveways", description: "The right next read if the test drive makes the front end sound older than it should.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-batteries-for-toyota-rav4-2021/", title: "Best batteries for Toyota RAV4 2021", description: "Use this if the battery story needs a clean, realistic replacement plan.", eyebrow: "Batteries" },
+  { href: "/best/best-brake-pads-for-toyota-rav4-2021/", title: "Best brake pads for Toyota RAV4 2021", description: "Worth opening if the car is still good but the brake refinement needs work.", eyebrow: "Brake Pads" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/toyota-rav4-hybrid-vs-gas/", title: "Toyota RAV4 Hybrid vs gas", description: "Use this when the purchase decision depends on the powertrain, not just the model year.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a buyer-focused checklist for the XA50 RAV4, concentrating on the weak points and viewing checks that matter most."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Buying guide", "Generation-specific", "Inspection-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page before a viewing or test drive. The goal is to separate normal XA50 wear from the signs that the price or the car itself needs more caution."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, these are the checks that matter most.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Check battery behavior, especially on cars used for short trips or sitting for longer periods.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Listen for front or rear suspension clunks and do not let “they all do that” end the conversation too early.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Pay attention to brake refinement and highway feel. Those are the two places where a good RAV4 starts feeling worse than it should.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to inspect first" intro="These checks are worth doing before the viewing turns into generic Toyota small talk.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Cold-start or parked-use battery behavior, not just whether the car starts once on the seller’s timetable.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake refinement after the car has seen some moisture or lower-speed use, not only one hard stop.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front-end and rear-end noise over driveway entries, small bumps, and rough pavement.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Tire condition, matching set quality, and highway stability at real road speed.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Whether the seller is mixing hybrid and gas maintenance logic like it all transfers one-to-one.</li>
+    </ul>
+  </Section>
+
+  <Section title="What should lower confidence quickly" intro="These are the things that should change the price or make you move on.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A battery story that keeps getting explained away without a clear test result or replacement history.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A front or rear clunk that is already obvious on a short drive plus a vague explanation instead of a recent repair record.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Highway vibration or steering shake that the seller tries to frame as “just road feel.”</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake noise plus poor recent brake work or mismatched pad choices that suggest the car has been repaired cheaply.</li>
+    </ul>
+  </Section>
+
+  <Section title="What should not scare you too fast" intro="These issues deserve a discount or a repair plan, but not instant panic if the rest of the car is strong.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A battery nearing replacement age on a short-trip family crossover.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Moderate brake squeak where the rest of the system still feels healthy.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Smaller sway-bar-link or wear-item noises that still live in the ordinary maintenance tier.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the viewing or test drive already points at a repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but the weak point needs a realistic repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the buying advice changes with the powertrain." items={relatedComparisons} />
+</ContentLayout>

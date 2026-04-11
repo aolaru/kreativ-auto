@@ -1,0 +1,92 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "VW Tiguan II facelift what to check before buying";
+const description = "What to inspect on a VW Tiguan II facelift before buying, which weak points deserve the closest look, and what should not scare you too fast.";
+const intro = "A facelift Tiguan can still be a sensible buy, but only if you inspect it in the right order. The useful checks are not dramatic: brake behavior, coolant history, warning-light story, battery reserve, tire condition, and whether normal front-end wear has been turned into vague suspension language. This guide is here to keep the viewing disciplined.";
+const modifiedTime = new Date("2026-04-11");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/vw-tiguan-ii-facelift-what-to-check-before-buying/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/car-shakes-when-braking/", title: "Car shakes when braking", description: "Open this if the test drive hints at front brake vibration.", eyebrow: "Problem guide" },
+  { href: "/problems/coolant-level-drops-with-no-visible-leak/", title: "Coolant level drops with no visible leak", description: "Useful when the coolant story feels incomplete or too casual.", eyebrow: "Problem guide" },
+  { href: "/problems/epc-light-comes-on-under-acceleration/", title: "EPC light comes on under acceleration", description: "The right next read if the seller story around drivability feels vague.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-brake-pads-for-vw-tiguan-2020/", title: "Best brake pads for VW Tiguan 2020", description: "Use this if the brakes feel tired but the car still looks worth buying.", eyebrow: "Brake Pads" },
+  { href: "/best/best-coolant-for-vw-tiguan-2020/", title: "Best coolant for VW Tiguan 2020", description: "Worth opening if the cooling system history needs a clean reset.", eyebrow: "Coolant" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/vw-tiguan-pre-facelift-vs-facelift/", title: "VW Tiguan pre-facelift vs facelift", description: "Use this when you need to separate facelift-specific buying advice from the earlier Mk2 years.", eyebrow: "Generation guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/vw-tiguan-2020.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a buyer-focused checklist for the facelift Tiguan, concentrating on the weak points and viewing checks that matter most."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Buying guide", "Generation-specific", "Inspection-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page before a viewing or test drive. The goal is to sort the normal weak points from the red flags that should change the price or make you walk."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, these are the checks that matter most.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Test the front brakes properly. Vibration, uneven feel, or rushed recent brake work can turn a tidy SUV into a repeat-spend story fast.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Check coolant level, service history, and whether the seller talks about topping up like it is normal.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Watch for hesitation, EPC history, weak battery behavior, and front-end noises that are being explained away too casually.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to inspect first" intro="These are the checks worth doing before the walk-around turns into generic used-car small talk.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake feel on the test drive, especially from speed and on repeated stops.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Coolant level and whether the engine bay shows signs of small seepage or recent cleanup.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Cold start and battery behavior on a car that has not just been freshly charged for sale day.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front-end noises over broken pavement, slow turns, and parking-lot maneuvering.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Tire condition and whether the set matches cleanly, especially on 4MOTION cars.</li>
+    </ul>
+  </Section>
+
+  <Section title="What should lower confidence quickly" intro="These are the things that should change the price conversation or make you move on.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A seller who normalizes coolant top-ups without a clear repair history.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake vibration plus vague talk about recent pads only, with no real rotor or hardware story.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Warning-light history that is described as “just electronics” with no codes or paperwork behind it.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Mixed tires or obvious wear-pattern mismatch on a drivetrain-sensitive setup.</li>
+    </ul>
+  </Section>
+
+  <Section title="What should not scare you too fast" intro="These are issues that deserve attention, but not instant panic if the rest of the car is strong.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Minor front-end noises that still sound like ordinary wear-item territory.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A battery nearing replacement age on a short-trip family car.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A brake refresh that needs to be finished properly rather than the cheapest possible way.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the viewing or test drive already points at a repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but the weak point needs a realistic repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the buying advice changes with phase or drivetrain." items={relatedComparisons} />
+</ContentLayout>
