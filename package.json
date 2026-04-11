@@ -11,7 +11,8 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "auto:improve": "node scripts/auto-improve.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

@@ -1,0 +1,71 @@
+name: Auto-improve content
+
+on:
+  schedule:
+    - cron: "0 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: auto-improve
+  cancel-in-progress: false
+
+jobs:
+  auto-improve:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run constrained improvement pass
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          AUTO_IMPROVE_MODEL: ${{ vars.AUTO_IMPROVE_MODEL }}
+        run: npm run auto:improve
+
+      - name: Validate build
+        env:
+          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+        run: npm run build
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "has_changes=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_changes=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create or update automation PR
+        if: steps.changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: codex/auto-improve
+          delete-branch: false
+          commit-message: "chore: automated content improvement"
+          title: "Automated content improvement pass"
+          body: |
+            Automated 3-hour improvement pass.
+
+            Safety rules:
+            - edits are limited to one approved content file per run
+            - build must pass before a PR is created
+            - changes land on `codex/auto-improve`, never directly on `main`
+          labels: automation
