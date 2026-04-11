@@ -37,14 +37,14 @@ You can copy values from `.env.example`.
 
 ## Scheduled self-improvement workflow
 
-The repo also includes `.github/workflows/auto-improve.yml`, which can run every hour and open an automation PR.
+The repo also includes `.github/workflows/auto-improve.yml`, which can run every hour and open one automation PR per day.
 
 How it works:
 
 - picks one approved content page from the strongest clusters
 - asks an LLM for a constrained clarity improvement
 - runs `npm run build`
-- opens or updates a PR on `codex/auto-improve`
+- opens or updates a PR on a dated branch like `codex/auto-improve-2026-04-11`
 
 Required secret:
 
@@ -60,6 +60,7 @@ Important safety constraints:
 - it never pushes directly to `main`
 - it edits only one approved content file per run
 - it creates or updates a PR only if the build passes
+- hourly runs stack onto the same dated PR for that calendar day
 - it is intended to improve existing pages, not generate broad uncontrolled site changes
 
 ### Custom domain
