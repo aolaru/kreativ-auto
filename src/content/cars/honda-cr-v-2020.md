@@ -9,11 +9,11 @@ generationYears: 2017-2022
 phase: Facelift
 phaseYears: 2020-2022
 description: The 2020 Honda CR-V is practical and easy to live with, but brake noise, suspension wear, and the usual road-hum complaints can still make the SUV feel older than it should if they are ignored too long.
-image: /images/photos/cars/honda-cr-v-2020.jpg
+image: /images/photos/cars/honda-cr-v-2020.webp
 metaTitle: Honda CR-V 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common Honda CR-V 2020 issues, practical maintenance advice, and the parts worth checking first.
 excerpt: What matters most on a 2020 Honda CR-V if you want to stay ahead of brake wear, front-end noise, and small ownership annoyances.
-heroImage: /images/photos/cars/honda-cr-v-2020.jpg
+heroImage: /images/photos/cars/honda-cr-v-2020.webp
 updatedAt: 2026-03-31
 commonProblems:
   - Brake squeal or vibration from pad deposits, glazing, or worn front rotors

@@ -7,11 +7,11 @@ generation: Fifth Generation
 generationCode: XA50
 generationYears: 2019-2021
 description: The 2021 Toyota RAV4 is one of those SUVs people expect to just work, which is mostly true, but brake noise, wheel-bearing hum, and general road-noise complaints still come up often enough to be worth covering properly.
-image: /images/photos/cars/toyota-rav4-2021.jpg
+image: /images/photos/cars/toyota-rav4-2021.webp
 metaTitle: Toyota RAV4 2021 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore Toyota RAV4 2021 maintenance guidance, common noise-related issues, and recommended replacement parts.
 excerpt: The 2021 Toyota RAV4 issues and maintenance points that matter most if you want to keep the car quiet, smooth, and easy to live with.
-heroImage: /images/photos/cars/toyota-rav4-2021.jpg
+heroImage: /images/photos/cars/toyota-rav4-2021.webp
 updatedAt: 2026-03-30
 relatedProblems:
   - brake-squeal-at-low-speed
@@ -46,7 +46,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Strong OE-style bearing hub option for curing humming or growling at speed.
-    image: /images/photos/parts/timken-wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.webp
   - name: Akebono ProACT Ceramic Brake Pads
     price: "$88"
     rating: 4.8

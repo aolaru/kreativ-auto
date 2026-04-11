@@ -9,11 +9,11 @@ generationYears: 2018-2021
 phase: Facelift
 phaseYears: 2018-2021
 description: The 2020 VW Golf GTI is one of those cars where people notice every change in brake feel, idle quality, and suspension response, which makes routine wear items more important than the badge might suggest.
-image: /images/photos/cars/vw-golf-gti-2020.jpg
+image: /images/photos/cars/vw-golf-gti-2020.webp
 metaTitle: VW Golf GTI 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common VW Golf GTI 2020 issues, practical maintenance advice, and the parts worth checking first.
 excerpt: What to watch on a 2020 VW Golf GTI if you want to keep it sharp without turning normal wear into a constant stream of repairs.
-heroImage: /images/photos/cars/vw-golf-gti-2020.jpg
+heroImage: /images/photos/cars/vw-golf-gti-2020.webp
 updatedAt: 2026-03-31
 commonProblems:
   - Brake vibration or squeal from pad deposits, rotor condition, or the wrong street setup

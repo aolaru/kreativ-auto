@@ -9,11 +9,11 @@ generationYears: 2015-2021
 phase: Facelift
 phaseYears: 2019-2021
 description: The 2019 Mercedes-Benz C-Class is comfortable and refined when sorted, but like most premium sedans, the first complaints owners notice are often brake feel, suspension looseness, and drivability changes that should not be ignored.
-image: /images/photos/cars/mercedes-benz-c-class-2019.jpg
+image: /images/photos/cars/mercedes-benz-c-class-2019.webp
 metaTitle: Mercedes-Benz C-Class 2019 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common Mercedes-Benz C-Class 2019 issues, useful maintenance advice, and the parts worth checking first.
 excerpt: What to watch on a 2019 Mercedes-Benz C-Class if you want to keep it smooth, quiet, and worth the premium badge.
-heroImage: /images/photos/cars/mercedes-benz-c-class-2019.jpg
+heroImage: /images/photos/cars/mercedes-benz-c-class-2019.webp
 updatedAt: 2026-03-31
 commonProblems:
   - Brake squeal or vibration that shows up quickly when pad and rotor quality is not right

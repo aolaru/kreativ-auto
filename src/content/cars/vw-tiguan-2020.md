@@ -9,11 +9,11 @@ generationYears: 2016-2024
 phase: Facelift
 phaseYears: 2020-2024
 description: The 2020 VW Tiguan is a solid family SUV, but it is also the kind of vehicle where brake feel, front-end vibration, and routine maintenance start coming up pretty early if the car spends a lot of time in traffic.
-image: /images/photos/cars/vw-tiguan-2020.jpg
+image: /images/photos/cars/vw-tiguan-2020.webp
 metaTitle: VW Tiguan 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore the most common VW Tiguan 2020 issues, practical maintenance tips, and recommended brake-related parts for daily drivers.
 excerpt: What usually goes wrong on a 2020 VW Tiguan, what matters most in maintenance, and which parts are worth looking at first.
-heroImage: /images/photos/cars/vw-tiguan-2020.jpg
+heroImage: /images/photos/cars/vw-tiguan-2020.webp
 updatedAt: 2026-03-30
 relatedProblems:
   - car-shakes-when-braking

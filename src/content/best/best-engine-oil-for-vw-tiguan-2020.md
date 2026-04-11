@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Engine Oil for VW Tiguan 2020
 metaDescription: Compare the best engine oil options for the VW Tiguan 2020 if you want the right spec for routine service, top-ups, or tracking consumption between changes.
 excerpt: The right Tiguan oil is mostly about using the correct VW-friendly spec consistently, not chasing the fanciest bottle on the shelf.
-heroImage: /images/photos/parts/liqui-moly-engine-oil.jpg
+heroImage: /images/photos/parts/liqui-moly-engine-oil.webp
 updatedAt: 2026-04-06
 relatedCars:
   - vw-tiguan-2020
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: https://www.liqui-moly.com/en/us/special-tec-ll-sae-5w-30-p000314.html
     summary: Best overall choice if you want a trusted Euro-spec oil for normal daily driving and clean service intervals.
-    image: /images/photos/parts/liqui-moly-engine-oil.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.webp
   - name: Mobil 1 ESP 0W-30
     price: "$54"
     rating: 4.8
     affiliate_url: https://www.mobil.com/en/lubricants/for-personal-vehicles/our-products/products/mobil-1-esp-0w-30
     summary: Strong premium option for owners who want a widely available low-ash Euro formula with strong reputation.
-    image: /images/photos/parts/liqui-moly-engine-oil.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.webp
   - name: Castrol Edge Euro Car 5W-30
     price: "$42"
     rating: 4.7
     affiliate_url: https://www.castrol.com/en_us/united-states/home/products/our-brands/automotive/castrol-edge-oils/castrol-edge-euro.html
     summary: Good mainstream choice when you want easier availability without drifting away from the right type of oil.
-    image: /images/photos/parts/liqui-moly-engine-oil.jpg
+    image: /images/photos/parts/liqui-moly-engine-oil.webp
 buyingAdvice:
   - The exact approval matters more than brand loyalty on a modern Tiguan.
   - If the car is using oil between services, fix the consumption pattern instead of treating frequent top-ups as normal forever.

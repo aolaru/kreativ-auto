@@ -5,9 +5,5 @@ export function toThumbnail(src?: string) {
     return src;
   }
 
-  if (src.endsWith(".webp")) {
-    return src;
-  }
-
   return src.replace("/images/photos/", "/images/thumbs/");
 }
