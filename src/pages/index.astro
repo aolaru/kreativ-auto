@@ -36,8 +36,8 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
 >
   <section class="container-shell py-12 sm:py-16">
     <div class="grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
-      <div class="surface p-8 sm:p-10">
-        <p class="eyebrow">Kreativ Auto</p>
+      <div class="surface surface-dark hero-frame p-8 sm:p-10">
+        <p class="editorial-kicker">Kreativ Auto</p>
         <h1 class="mt-4 max-w-4xl text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
           Straight answers for car problems, parts, and maintenance.
         </h1>
@@ -61,15 +61,15 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
         </div>
 
         <div class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="rounded-2xl bg-slate-50 px-5 py-4 ring-1 ring-slate-200">
+          <div class="stat-tile">
             <p class="text-2xl font-semibold text-ink">{cars.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Cars</p>
           </div>
-          <div class="rounded-2xl bg-slate-50 px-5 py-4 ring-1 ring-slate-200">
+          <div class="stat-tile">
             <p class="text-2xl font-semibold text-ink">{problems.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Problems</p>
           </div>
-          <div class="rounded-2xl bg-slate-50 px-5 py-4 ring-1 ring-slate-200">
+          <div class="stat-tile">
             <p class="text-2xl font-semibold text-ink">{bestPages.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Best Picks</p>
           </div>
@@ -77,7 +77,7 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
       </div>
 
       <div class="grid gap-6">
-        <div class="surface p-7">
+        <div class="mesh-card p-7">
           <p class="eyebrow">Start Here</p>
           <div class="mt-5 grid gap-4">
             <a class="rounded-2xl border border-slate-200 bg-slate-50 p-4 transition hover:border-accent/40 hover:bg-white" href="/problems/">
@@ -119,21 +119,30 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
           </div>
         </div>
 
-        <div class="surface p-7">
-          <p class="eyebrow">What You Will Find</p>
-          <ul class="mt-5 space-y-3 text-sm leading-6 text-steel">
-            <li>Car pages with common issues, maintenance notes, and useful parts</li>
-            <li>Problem guides that break symptoms into likely causes and realistic fixes</li>
-            <li>Best-parts pages that compare options without sounding like a catalog</li>
-            <li>Comparison guides that separate drivetrain, trim, and powertrain advice cleanly</li>
-          </ul>
+        <div class="accent-panel p-7">
+          <p class="eyebrow">Editorial Focus</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Built around three strong clusters, not random coverage</h2>
+          <div class="mt-5 guide-rail">
+            <a href="/guides/vw-tiguan-ii-facelift-common-problems/">
+              <p class="eyebrow">Tiguan II facelift</p>
+              <p class="mt-2 text-sm leading-6 text-steel">The deepest cluster on the site, with flagship guide coverage, parts pages, and version comparisons.</p>
+            </a>
+            <a href="/guides/toyota-rav4-xa50-common-problems/">
+              <p class="eyebrow">RAV4 XA50</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Ownership, maintenance, and buying guides tied back to the generation and year hubs.</p>
+            </a>
+            <a href="/guides/honda-civic-10th-gen-facelift-common-problems/">
+              <p class="eyebrow">Civic 10th gen facelift</p>
+              <p class="mt-2 text-sm leading-6 text-steel">A tighter commuter-focused cluster with trim and powertrain comparison coverage.</p>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="container-shell pb-8">
-    <div class="surface p-6 sm:p-8">
+    <div class="surface hero-frame p-6 sm:p-8">
       <div class="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
         <div>
           <p class="eyebrow">Featured Generation</p>
@@ -155,22 +164,22 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
           </div>
         </div>
         <div class="grid gap-4 sm:grid-cols-2">
-          <div class="rounded-3xl bg-slate-50 p-5">
+          <div class="soft-panel p-5">
             <p class="eyebrow">Problems In This Cluster</p>
             <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
               {tiguanProblems.map((problem) => <li><a class="hover:text-accent" href={`/problems/${problem.id}/`}>{problem.data.title}</a></li>)}
             </ul>
           </div>
-          <div class="rounded-3xl bg-slate-50 p-5">
+          <div class="soft-panel p-5">
             <p class="eyebrow">Parts In This Cluster</p>
             <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
               {tiguanBest.map((entry) => <li><a class="hover:text-accent" href={`/best/${entry.id}/`}>{entry.data.title}</a></li>)}
             </ul>
           </div>
-          <div class="rounded-3xl bg-slate-50 p-5 sm:col-span-2">
+          <div class="accent-panel p-5 sm:col-span-2">
             <p class="eyebrow">Flagship Ownership Guides</p>
-            <div class="mt-4 grid gap-4">
-              {featuredOwnershipGuides.map((guide) => (
+            <div class="mt-4 grid gap-4 md:grid-cols-2">
+              {featuredOwnershipGuides.slice(0, 4).map((guide) => (
                 <a class="rounded-2xl border border-slate-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-accent/40" href={guide.href}>
                   <h3 class="text-lg font-semibold text-ink">{guide.title}</h3>
                   <p class="mt-2 text-sm leading-6 text-steel">{guide.description}</p>
@@ -184,7 +193,7 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
   </section>
 
   <section class="container-shell pb-8">
-    <div class="surface p-6 sm:p-8">
+    <div class="surface hero-frame p-6 sm:p-8">
       <div class="flex items-center justify-between gap-4">
         <div>
           <p class="eyebrow">Flagship Guides</p>
@@ -197,7 +206,7 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
       <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
         {
           featuredOwnershipGuides.map((guide) => (
-            <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href}>
+            <a class="mesh-card p-5 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href}>
               {
                 guide.image && (
                   <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
