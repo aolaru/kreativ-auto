@@ -37,7 +37,7 @@ You can copy values from `.env.example`.
 
 ## Scheduled self-improvement workflow
 
-The repo also includes `.github/workflows/auto-improve.yml`, which can run every 3 hours and open an automation PR.
+The repo also includes `.github/workflows/auto-improve.yml`, which can run every hour and open an automation PR.
 
 How it works:
 
