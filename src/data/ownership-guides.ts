@@ -98,5 +98,35 @@ export const ownershipGuides: OwnershipGuide[] = [
     image: "/images/photos/cars/honda-civic-2019.webp",
     relatedCars: ["honda-civic-2019"],
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
+    title: "VW Tiguan II facelift trims: which one to buy",
+    href: "/guides/vw-tiguan-ii-facelift-trims-which-one-to-buy/",
+    description:
+      "A trim-focused guide to the facelift Tiguan range, including which versions make the most sense for daily use and which ones are easier to overpay for.",
+    eyebrow: "Trim guide",
+    image: "/images/photos/cars/vw-tiguan-2020.webp",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "Toyota RAV4 XA50 trims: which one to buy",
+    href: "/guides/toyota-rav4-xa50-trims-which-one-to-buy/",
+    description:
+      "A trim-focused guide to the XA50 RAV4 range, including where the equipment and value balance is strongest and which trims need a more careful read.",
+    eyebrow: "Trim guide",
+    image: "/images/photos/cars/toyota-rav4-2021.webp",
+    relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
+    relatedGenerations: ["toyota-rav4-xa50-2019-2021"]
+  },
+  {
+    title: "Honda Civic 10th gen facelift trims and engines: which one to buy",
+    href: "/guides/honda-civic-10th-gen-facelift-trims-and-engines-which-one-to-buy/",
+    description:
+      "A trim-and-engine buying guide for the facelift Civic, focused on which versions suit normal daily use best and where the ownership tradeoffs actually change.",
+    eyebrow: "Trim guide",
+    image: "/images/photos/cars/honda-civic-2019.webp",
+    relatedCars: ["honda-civic-2019"],
+    relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
   }
 ];

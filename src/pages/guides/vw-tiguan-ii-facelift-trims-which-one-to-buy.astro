@@ -1,0 +1,103 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "VW Tiguan II facelift trims: which one to buy";
+const description =
+  "Which VW Tiguan II facelift trim to buy, which versions make the most sense for normal ownership, and where the extra money stops improving the car.";
+const intro =
+  "The facelift Tiguan range looks simple until you start paying for equipment that does not really change the daily ownership experience. The practical decision is usually less about chasing the highest trim and more about getting the right mix of engine, drivetrain, comfort equipment, and honest condition. This guide is here to keep the trim decision grounded.";
+const modifiedTime = new Date("2026-04-12");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/vw-tiguan-ii-facelift-trims-which-one-to-buy/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/epc-light-comes-on-under-acceleration/", title: "EPC light comes on under acceleration", description: "Open this if the trim you are considering has a vague drivability or warning-light story.", eyebrow: "Problem guide" },
+  { href: "/problems/car-shakes-when-braking/", title: "Car shakes when braking", description: "Useful when a higher-spec Tiguan still drives like the brake package has been handled cheaply.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-brake-pads-for-vw-tiguan-2020/", title: "Best brake pads for VW Tiguan 2020", description: "Worth opening if the trim is right but the front-brake story needs a practical reset.", eyebrow: "Brake Pads" },
+  { href: "/best/best-batteries-for-vw-tiguan-2020/", title: "Best batteries for VW Tiguan 2020", description: "Use this if the car is otherwise good and only the battery reserve or short-trip behavior needs sorting.", eyebrow: "Batteries" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/vw-tiguan-fwd-vs-4motion/", title: "VW Tiguan FWD vs 4MOTION", description: "Use this when the real trim question is whether the drivetrain changes the ownership story enough to pay for it.", eyebrow: "Drivetrain guide" },
+  { href: "/tools/vw-tiguan-pre-facelift-vs-facelift/", title: "VW Tiguan pre-facelift vs facelift", description: "Open this if you are still mixing earlier Mk2 advice into the facelift trim decision.", eyebrow: "Generation guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/vw-tiguan-2020.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a trim-buying page for the facelift Tiguan range, focusing on the versions that make the most sense for normal ownership."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Trim guide", "Generation-specific", "Buying-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the main question is which facelift Tiguan trim makes the most sense, not whether the model line itself is worth considering."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the trim logic in plain language.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">For most buyers, the smart Tiguan is the one with the right condition and service story, not automatically the highest trim.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Mid-range trims usually make the most sense because they avoid the stripped feeling of the base car without forcing you to overpay for equipment that does not fix the ownership weak points.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">4MOTION should be bought because you actually want the drivetrain, not because it sounds like the “better” version on paper.</li>
+    </ul>
+  </Section>
+
+  <Section title="Best fit for most buyers" intro="This is the trim logic that usually makes the most sense in normal ownership.">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <article class="mesh-card p-6">
+        <p class="eyebrow">Best overall</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Mid-range comfort trim</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The sweet spot is usually a trim that feels properly equipped without pushing the price up just for cosmetic upgrade language.</p>
+      </article>
+      <article class="mesh-card p-6">
+        <p class="eyebrow">Best value</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Well-kept lower trim</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A clean lower trim with better maintenance history often beats a flashy higher trim that has been repaired lazily.</p>
+      </article>
+      <article class="editorial-card-accent p-6">
+        <p class="eyebrow">Use caution</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Highest trim at the wrong price</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The extra spec can make it easier to ignore condition, tires, brakes, and warning-light history that still matter more than the badge line.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="When 4MOTION is worth it" intro="The drivetrain question matters more than some trim names do.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Buy 4MOTION if you actually need the traction or want the all-weather confidence, not just because it sounds like the premium version.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the car will live on normal roads and you care more about lower running complexity, a clean FWD example can be the smarter buy.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">On any AWD Tiguan, tire condition and matching set quality matter more because sloppy tire history creates avoidable drivetrain wear and noise risk.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to avoid" intro="These are the trim-buying mistakes that cause the most regret.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Paying a big premium for the highest trim when the condition, brake feel, coolant history, or battery story is still weak.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Treating 4MOTION as an automatic upgrade even when the tire setup and maintenance record do not support it.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Ignoring warning-light history because the cabin spec and equipment list make the car feel more premium than it drives.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the trim you are considering already shows the repeat complaints that matter most." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the trim is still worth buying but one weak area needs a realistic repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the trim decision is really about drivetrain or facelift overlap." items={relatedComparisons} />
+</ContentLayout>

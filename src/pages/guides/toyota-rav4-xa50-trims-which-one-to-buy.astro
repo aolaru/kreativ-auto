@@ -1,0 +1,102 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50 trims: which one to buy";
+const description =
+  "Which Toyota RAV4 XA50 trim to buy, where the value is strongest, and which versions need a more careful read before you pay the premium.";
+const intro =
+  "The XA50 RAV4 range is easy to overcomplicate. Most buyers do not need the most expensive version, but they also should not treat every trim like it drives, feels, and ages the same way. The practical decision is usually about getting the right equipment level, the right powertrain, and the cleanest ownership story, not winning the spec-sheet contest.";
+const modifiedTime = new Date("2026-04-12");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/toyota-rav4-xa50-trims-which-one-to-buy/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/battery-goes-dead-after-sitting/", title: "Battery goes dead after sitting", description: "Open this if the trim you are considering already shows short-trip or parked-use weakness.", eyebrow: "Problem guide" },
+  { href: "/problems/front-end-clunk-when-pulling-into-driveways/", title: "Front-end clunk when pulling into driveways", description: "Useful when the suspension story is already part of the buying decision.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-batteries-for-toyota-rav4-2021/", title: "Best batteries for Toyota RAV4 2021", description: "Use this if the car is still a good buy and only the reserve-capacity story needs sorting.", eyebrow: "Batteries" },
+  { href: "/best/best-brake-pads-for-toyota-rav4-2021/", title: "Best brake pads for Toyota RAV4 2021", description: "Worth opening if the brake refinement is the one weak point on an otherwise good example.", eyebrow: "Brake Pads" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/toyota-rav4-hybrid-vs-gas/", title: "Toyota RAV4 Hybrid vs gas", description: "Use this when the real trim decision is actually a powertrain decision.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a trim-buying page for the XA50 RAV4 range, focusing on where the value and ownership balance is strongest."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Trim guide", "Generation-specific", "Buying-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the main question is which XA50 RAV4 trim makes the most sense, not whether the model line itself is a good crossover."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the trim logic in plain language.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">For most buyers, the smart XA50 is a well-kept mid-range trim with the right equipment, not automatically the most expensive version.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Hybrid versus gas matters more than some trim names do, because the ownership story changes enough that the powertrain decision should come first.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A clean lower or mid trim with honest maintenance history is usually a better buy than a premium trim with vague battery, brake, or suspension stories.</li>
+    </ul>
+  </Section>
+
+  <Section title="Best fit for most buyers" intro="This is where the XA50 trim range usually makes the most sense.">
+    <div class="grid gap-6 lg:grid-cols-3">
+      <article class="mesh-card p-6">
+        <p class="eyebrow">Best overall</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Mid-range trim with clean history</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">This is usually the best balance of comfort, resale appeal, and not paying extra for the top-spec badge alone.</p>
+      </article>
+      <article class="mesh-card p-6">
+        <p class="eyebrow">Best value</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Simple gas trim in strong condition</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">If you want lower complexity and a cleaner used-car equation, a tidy gas example can be the smarter long-term buy.</p>
+      </article>
+      <article class="editorial-card-accent p-6">
+        <p class="eyebrow">Use caution</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">High trim with sloppy ownership story</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The nicer cabin and equipment can make it easier to overlook battery weakness, brake refinement issues, or obvious small-noise neglect.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="When the hybrid is worth it" intro="The biggest trim-choice mistake is often treating the hybrid question like a footnote.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Buy the hybrid because it suits your usage and expectations, not because it automatically sounds like the “best” RAV4 on paper.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">If you mostly want a straightforward used crossover and do not need the hybrid ownership profile, a clean gas trim can still be the easier decision.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Do not let a seller mix hybrid and gas maintenance logic together loosely. The powertrain choice should be explicit in the buying process.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to avoid" intro="These are the trim-buying mistakes that create the most regret.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Paying a premium for the top trim while ignoring highway vibration, battery age, or obvious suspension noise.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Choosing a hybrid because it sounds better without actually wanting the ownership tradeoffs that come with it.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Assuming every trim feels equally sorted when the real difference may be condition, tires, and maintenance honesty, not equipment list length.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the trim you are considering already shows the repeat complaints that matter most." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area needs a practical repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the trim decision is really about hybrid versus gas." items={relatedComparisons} />
+</ContentLayout>
