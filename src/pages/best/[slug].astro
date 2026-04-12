@@ -76,6 +76,7 @@ const socialImage = entry.data.heroImage ?? entry.data.products[0]?.image;
 const quickVerdict = entry.data.quickVerdict ?? entry.data.excerpt;
 const bestFor = entry.data.bestFor.length > 0 ? entry.data.bestFor : entry.data.products.slice(0, 2).map((product) => product.summary ?? product.name).filter(Boolean);
 const avoidIf = entry.data.avoidIf;
+const buyingTiers = entry.data.buyingTiers;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Best Parts", href: "/best/" },
@@ -156,7 +157,7 @@ const schemas = [
   />
 
   <Section id="decision-block" title="Quick decision" intro="Use this section if you want the shortlist logic before digging through the full comparison.">
-    <BestDecisionBlock quickVerdict={quickVerdict} bestFor={bestFor} avoidIf={avoidIf} />
+    <BestDecisionBlock quickVerdict={quickVerdict} bestFor={bestFor} avoidIf={avoidIf} buyingTiers={buyingTiers} />
   </Section>
 
   <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">

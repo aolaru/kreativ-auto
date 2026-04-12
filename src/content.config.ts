@@ -10,6 +10,12 @@ const affiliateProductSchema = z.object({
   image: z.string().optional()
 });
 
+const buyingTierSchema = z.object({
+  label: z.string(),
+  product: z.string(),
+  reason: z.string()
+});
+
 const seoFields = {
   metaTitle: z.string().optional(),
   metaDescription: z.string().optional(),
@@ -109,6 +115,7 @@ const best = defineCollection({
     quickVerdict: z.string().optional(),
     bestFor: z.array(z.string()).default([]),
     avoidIf: z.array(z.string()).default([]),
+    buyingTiers: z.array(buyingTierSchema).default([]),
     buyingAdvice: z.array(z.string()).default([]),
     faqs: z
       .array(
