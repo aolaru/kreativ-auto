@@ -1,0 +1,91 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Honda Civic 10th gen facelift: what to avoid";
+const description =
+  "What to avoid on a Honda Civic 10th gen facelift, which ownership shortcuts create the most regret, and which examples deserve more caution than the reputation suggests.";
+const intro =
+  "The facelift Civic is easy to trust too fast because the platform reputation is strong. That is exactly where buyers get caught. The biggest mistakes are overpaying for the nicest trim without checking idle A/C, ignoring battery and charging clues, treating front-end rattles like harmless background noise, and flattening all 1.5T and 2.0 advice into one generic Civic story. This guide is about avoiding those mistakes before they become yours.";
+const modifiedTime = new Date("2026-04-12");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/honda-civic-10th-gen-facelift-what-to-avoid/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/air-conditioner-blows-warm-at-idle/", title: "Air conditioner blows warm at idle", description: "Open this if the car already shows one of the most common daily-use Civic complaints.", eyebrow: "Problem guide" },
+  { href: "/problems/front-suspension-rattles-over-small-bumps/", title: "Front suspension rattles over small bumps", description: "Useful when the front-end story is being minimized too casually.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-ac-condensers-for-honda-civic-2019/", title: "Best A/C condensers for Honda Civic 2019", description: "Use this if the car is still worth buying but the idle-cooling story clearly needs a realistic plan.", eyebrow: "A/C Condensers" },
+  { href: "/best/best-front-brake-pads-for-honda-civic-2019/", title: "Best front brake pads for Honda Civic 2019", description: "Worth opening if the brakes are the one weak area on an otherwise solid car.", eyebrow: "Front Brake Pads" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/honda-civic-1-5t-vs-2-0/", title: "Honda Civic 1.5T vs 2.0", description: "Use this when the version you should avoid depends more on engine fit than trim badge alone.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/honda-civic-2019.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as an avoidance and red-flag page for the facelift Civic range, focusing on the examples and ownership shortcuts that create the most regret."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Avoid guide", "Generation-specific", "Buying-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not whether the Civic line is generally good, but whether the specific facelift example in front of you is worth paying for."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, these are the facelift Civic mistakes to avoid first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid buying on Civic reputation alone. The weak examples usually hide behind that trust.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid nicer trims with vague idle A/C, battery, or front-end refinement stories that never got a proper diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid mixing 1.5T and 2.0 ownership logic into one generic answer when the engine choice still matters.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to walk away from" intro="These are the patterns most likely to create annoying regret quickly.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Idle A/C weakness with no honest repair story behind it.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery or charging behavior that the seller treats as random and not worth checking properly.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front-end rattle that is already obvious but still dismissed as “just a Honda thing.”</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">An engine-specific question answered with broad Civic generalities instead of actual trim and powertrain detail.</li>
+    </ul>
+  </Section>
+
+  <Section title="What people overpay for" intro="These are the places where spec and reputation hide an average ownership story.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Top trims with better equipment but obvious comfort or refinement weaknesses already showing.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">1.5T cars bought because they sound more desirable, even when the buyer does not actually prefer that ownership path.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Cars with tidy cosmetics but vague battery, A/C, or brake history.</li>
+    </ul>
+  </Section>
+
+  <Section title="What is usually still fixable" intro="Not every weak Civic is automatically a bad Civic. These are the issues that are often manageable if the rest of the car is strong enough.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Idle A/C weakness that still points toward a known and manageable repair path.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake refinement problems that still live in the pad and daily-use tier.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Smaller front-end rattles that still sound like wear-item work rather than larger suspension trouble.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the example you are considering already shows one of the repeat complaints that makes a facelift Civic riskier to buy." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area clearly needs a realistic repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the risk story changes with the engine choice." items={relatedComparisons} />
+</ContentLayout>

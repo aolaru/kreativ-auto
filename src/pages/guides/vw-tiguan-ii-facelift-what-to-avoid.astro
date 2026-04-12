@@ -1,0 +1,91 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "VW Tiguan II facelift: what to avoid";
+const description =
+  "What to avoid on a VW Tiguan II facelift, which ownership shortcuts create the most regret, and which examples deserve more caution than the badge suggests.";
+const intro =
+  "A facelift Tiguan can still be a sensible SUV, but there are a few easy ways to buy the wrong one. The biggest mistakes are overpaying for trim instead of condition, ignoring brake feel, normalizing coolant top-ups, trusting vague warning-light stories, and letting a polished interior hide weak mechanical upkeep. This guide is about avoiding those mistakes before they become your repair budget.";
+const modifiedTime = new Date("2026-04-12");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/vw-tiguan-ii-facelift-what-to-avoid/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/coolant-level-drops-with-no-visible-leak/", title: "Coolant level drops with no visible leak", description: "Open this if the seller has normalized topping up coolant like routine maintenance.", eyebrow: "Problem guide" },
+  { href: "/problems/epc-light-comes-on-under-acceleration/", title: "EPC light comes on under acceleration", description: "Useful when the warning-light history is vague and the drivability story does not feel fully honest.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-brake-pads-for-vw-tiguan-2020/", title: "Best brake pads for VW Tiguan 2020", description: "Use this if the car is still worth buying but the front-brake setup clearly needs to be corrected properly.", eyebrow: "Brake Pads" },
+  { href: "/best/best-coolant-for-vw-tiguan-2020/", title: "Best coolant for VW Tiguan 2020", description: "Worth opening if the cooling story is weak but still repairable with the right fluid and diagnosis path.", eyebrow: "Coolant" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/vw-tiguan-fwd-vs-4motion/", title: "VW Tiguan FWD vs 4MOTION", description: "Use this when the version you should avoid depends more on drivetrain fit than on trim name alone.", eyebrow: "Drivetrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/vw-tiguan-2020.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as an avoidance and red-flag page for the facelift Tiguan range, focusing on the examples and ownership shortcuts that create the most regret."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Avoid guide", "Generation-specific", "Buying-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not which Tiguan looks best on paper, but which one is most likely to become an annoying ownership story after the purchase."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, these are the Tiguan mistakes to avoid first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid a high-spec Tiguan with vague mechanical history. The trim will not save you from weak brakes, coolant seepage, or a warning-light story that was never properly solved.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid cars where the seller talks about topping up coolant, clearing warnings, or replacing “just pads” like that finishes the issue.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid paying extra for 4MOTION if the tire history and condition story are already messy.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to walk away from" intro="These are the patterns most likely to create expensive regret quickly.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Coolant-loss history with no clear repair explanation.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Warning-light or EPC history treated as “just electronics” with no scan records or repair detail.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake vibration on the test drive plus a vague “recent brakes” story that does not explain rotors or hardware properly.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Mismatched tire quality or obvious tire neglect on an AWD example.</li>
+    </ul>
+  </Section>
+
+  <Section title="What people overpay for" intro="These are the places where the trim badge hides a weak ownership story.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Top trims with polished interiors but lazy mechanical maintenance.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">4MOTION examples bought for status rather than actual need or condition quality.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Cars with nice equipment lists but short-trip battery behavior already showing through.</li>
+    </ul>
+  </Section>
+
+  <Section title="What is usually still fixable" intro="Not every weak Tiguan is automatically a bad Tiguan. These are the issues that are often manageable if the rest of the car is strong enough.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front brakes that need a proper pad and rotor reset.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A battery nearing replacement on a family-use SUV that mostly saw short trips.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Smaller front-end noises that still point toward wear items instead of major suspension work.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the example you are considering already shows one of the repeat complaints that makes a facelift Tiguan riskier to buy." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area clearly needs a clean repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the risk story changes with drivetrain choice." items={relatedComparisons} />
+</ContentLayout>

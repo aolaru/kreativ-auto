@@ -8,6 +8,7 @@ const commonProblemGuides = ownershipGuides.filter((guide) => guide.title.toLowe
 const maintenanceGuides = ownershipGuides.filter((guide) => guide.title.toLowerCase().includes("maintenance costs and weak points"));
 const buyingGuides = ownershipGuides.filter((guide) => guide.title.toLowerCase().includes("what to check before buying"));
 const trimGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Trim guide");
+const avoidGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Avoid guide");
 ---
 
 <BaseLayout title="Guides" description="Cornerstone ownership, maintenance, buying, and comparison guides for the strongest vehicle clusters on the site.">
@@ -43,6 +44,10 @@ const trimGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Trim gui
             <div class="soft-panel p-4 sm:col-span-2">
               <p class="text-2xl font-semibold text-ink">{trimGuides.length}</p>
               <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Trim guides</p>
+            </div>
+            <div class="soft-panel p-4 sm:col-span-2">
+              <p class="text-2xl font-semibold text-ink">{avoidGuides.length}</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Avoid guides</p>
             </div>
           </div>
         </div>
@@ -132,6 +137,20 @@ const trimGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Trim gui
       <h2 class="mt-3 text-3xl font-semibold text-ink">Which trim to buy guides</h2>
       <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {trimGuides.map((guide) => (
+          <a class="mesh-card p-5 transition hover:-translate-y-0.5" href={guide.href}>
+            <p class="eyebrow">{guide.eyebrow}</p>
+            <h3 class="mt-2 text-xl font-semibold text-ink">{guide.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">What to avoid</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Ownership red flags and regret guides</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {avoidGuides.map((guide) => (
           <a class="mesh-card p-5 transition hover:-translate-y-0.5" href={guide.href}>
             <p class="eyebrow">{guide.eyebrow}</p>
             <h3 class="mt-2 text-xl font-semibold text-ink">{guide.title}</h3>

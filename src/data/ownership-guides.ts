@@ -128,5 +128,35 @@ export const ownershipGuides: OwnershipGuide[] = [
     image: "/images/photos/cars/honda-civic-2019.webp",
     relatedCars: ["honda-civic-2019"],
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
+    title: "VW Tiguan II facelift: what to avoid",
+    href: "/guides/vw-tiguan-ii-facelift-what-to-avoid/",
+    description:
+      "An ownership guide to the facelift Tiguan mistakes, weak-condition examples, and buying shortcuts that create the most regret.",
+    eyebrow: "Avoid guide",
+    image: "/images/photos/cars/vw-tiguan-2020.webp",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "Toyota RAV4 XA50: what to avoid",
+    href: "/guides/toyota-rav4-xa50-what-to-avoid/",
+    description:
+      "An ownership guide to the XA50 RAV4 mistakes, weak-condition examples, and buying shortcuts that create the most regret.",
+    eyebrow: "Avoid guide",
+    image: "/images/photos/cars/toyota-rav4-2021.webp",
+    relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
+    relatedGenerations: ["toyota-rav4-xa50-2019-2021"]
+  },
+  {
+    title: "Honda Civic 10th gen facelift: what to avoid",
+    href: "/guides/honda-civic-10th-gen-facelift-what-to-avoid/",
+    description:
+      "An ownership guide to the facelift Civic mistakes, weak-condition examples, and buying shortcuts that create the most regret.",
+    eyebrow: "Avoid guide",
+    image: "/images/photos/cars/honda-civic-2019.webp",
+    relatedCars: ["honda-civic-2019"],
+    relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
   }
 ];

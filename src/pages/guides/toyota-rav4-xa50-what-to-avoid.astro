@@ -1,0 +1,91 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50: what to avoid";
+const description =
+  "What to avoid on a Toyota RAV4 XA50, which ownership shortcuts create the most regret, and which examples deserve more caution than the badge suggests.";
+const intro =
+  "The XA50 RAV4 is easy to trust too quickly. That is exactly why buyers sometimes miss the weak examples. The biggest mistakes are assuming every RAV4 is automatically a safe buy, ignoring battery condition, treating suspension noise like background Toyota character, and overpaying for higher trims without checking the real ownership story. This guide is about avoiding those mistakes before they become your problem.";
+const modifiedTime = new Date("2026-04-12");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/toyota-rav4-xa50-what-to-avoid/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/battery-goes-dead-after-sitting/", title: "Battery goes dead after sitting", description: "Open this if the battery story already feels weak or the parked-use pattern is being shrugged off.", eyebrow: "Problem guide" },
+  { href: "/problems/steering-wheel-vibrates-at-highway-speed/", title: "Steering wheel vibrates at highway speed", description: "Useful when the highway-refinement story is vague and the seller is minimizing it.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-batteries-for-toyota-rav4-2021/", title: "Best batteries for Toyota RAV4 2021", description: "Use this if the car is still worth buying but the battery story clearly needs a realistic reset.", eyebrow: "Batteries" },
+  { href: "/best/best-front-sway-bar-links-for-toyota-rav4-2021/", title: "Best front sway bar links for Toyota RAV4 2021", description: "Worth opening if the RAV4 is still good overall but the front-end clunk clearly needs a modest repair plan.", eyebrow: "Front Sway Bar Links" }
+];
+
+const relatedComparisons = [
+  { href: "/tools/toyota-rav4-hybrid-vs-gas/", title: "Toyota RAV4 Hybrid vs gas", description: "Use this when the version you should avoid depends more on powertrain fit than trim label alone.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as an avoidance and red-flag page for the XA50 RAV4 range, focusing on the examples and ownership shortcuts that create the most regret."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Avoid guide", "Generation-specific", "Buying-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not whether the RAV4 name is trustworthy, but whether the specific XA50 example in front of you is worth taking on."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, these are the XA50 mistakes to avoid first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid assuming the RAV4 badge does all the work for you. Weak-condition examples still exist and still cost money.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid cars with vague battery, brake, or highway-vibration stories that the seller treats like ordinary background noise.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid paying a premium for trim alone when the real ownership clues are in tires, battery reserve, and suspension feel.</li>
+    </ul>
+  </Section>
+
+  <Section title="What to walk away from" intro="These are the patterns most likely to create annoying regret quickly.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A weak battery or parked-use story with no clear test result or replacement history.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Highway vibration that the seller frames as “normal for SUVs” instead of something worth fixing.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front or rear clunks that are already easy to hear but still have no maintenance explanation behind them.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A hybrid-versus-gas story that the seller talks through loosely because they assume the badge alone sells the car.</li>
+    </ul>
+  </Section>
+
+  <Section title="What people overpay for" intro="These are the places where a higher trim hides an average or weak ownership story.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Upper trims with nicer materials but tired tires, weak batteries, or obvious small suspension noise.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Hybrids bought as the “smart choice” without actually wanting the powertrain and ownership differences.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Cars with cosmetic cleanliness that distracts from an incomplete battery or brake story.</li>
+    </ul>
+  </Section>
+
+  <Section title="What is usually still fixable" intro="Not every weak XA50 is automatically a bad one. These are the issues that are often manageable if the rest of the car is strong enough.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake refinement issues that still point to pads and ordinary service quality.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery reserve complaints on a short-trip or lightly used family car.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Small clunks from normal sway-bar-link wear rather than bigger suspension trouble.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the example you are considering already shows one of the repeat complaints that makes an XA50 riskier to buy." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area clearly needs a practical repair plan." items={relatedBest} />
+  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the risk story changes with the powertrain." items={relatedComparisons} />
+</ContentLayout>
