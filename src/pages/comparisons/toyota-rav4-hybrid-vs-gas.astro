@@ -1,0 +1,292 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 Hybrid vs gas";
+const description =
+  "A practical comparison of the Toyota RAV4 Hybrid and gas models, including ownership differences, braking feel, battery complaints, and where parts advice does not transfer cleanly.";
+const intro =
+  "The XA50 RAV4 Hybrid and the gas RAV4 look close enough that people often treat them like the same ownership story with different fuel economy. That is too simplistic. The chassis overlap is real, but brake feel, battery complaints, trim assumptions, and the way owners describe problems can shift enough that the advice needs to be separated.";
+const modifiedTime = new Date("2026-04-04");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Comparisons", href: "/comparisons/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the RAV4 Hybrid better than the gas model?",
+    answer:
+      "Not universally. The Hybrid usually makes more sense if efficiency and smoother low-speed response are the priority, while the gas model is often simpler to reason through when battery or braking questions start coming up."
+  },
+  {
+    question: "Do the Hybrid and gas RAV4 share the same common problems?",
+    answer:
+      "A lot of the chassis complaints overlap, especially around brake noise, tires, and suspension hardware. The ownership story diverges more when 12-volt battery behavior, braking feel, or powertrain-specific assumptions enter the picture."
+  },
+  {
+    question: "Can I use the same parts guides for both?",
+    answer:
+      "Sometimes. Many brake, tire, and suspension guides still help across both, but battery, trim, and some brake-behavior advice needs to be read with the hybrid-versus-gas split in mind."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/battery-goes-dead-after-sitting/",
+    title: "Battery goes dead after sitting",
+    description: "Useful because hybrid and gas owners often describe this problem differently even when the 12-volt side is the real issue.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/rear-brakes-squeak-after-rain/",
+    title: "Rear brakes squeak after rain",
+    description: "Worth reading if the brake-noise conversation is getting muddled by assumptions about regenerative braking.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/front-end-clunk-when-pulling-into-driveways/",
+    title: "Front-end clunk when pulling into driveways",
+    description: "A good reminder that many of the real RAV4 complaints are chassis-based and shared across both powertrains.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-batteries-for-toyota-rav4-2021/",
+    title: "Best batteries for Toyota RAV4 2021",
+    description: "Use this if the comparison points you toward the 12-volt battery path rather than a bigger hybrid-system assumption.",
+    eyebrow: "Batteries"
+  },
+  {
+    href: "/best/best-brake-pads-for-toyota-rav4-2021/",
+    title: "Best brake pads for Toyota RAV4 2021",
+    description: "Still useful across both powertrains when the real question is brake noise, pad feel, and daily-driver refinement.",
+    eyebrow: "Brake Pads"
+  },
+  {
+    href: "/best/best-rear-brake-pads-for-toyota-rav4-2021/",
+    title: "Best rear brake pads for Toyota RAV4 2021",
+    description: "Helpful if hybrid-versus-gas confusion is masking a much simpler rear-brake setup problem.",
+    eyebrow: "Rear Brake Pads"
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  schemas={schemas}
+  editorialSummary="This comparison is built to separate the powertrain differences that really affect ownership, parts buying, and diagnosis from the ones that only sound big in forum arguments."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Comparison guide", "Hybrid vs gas context", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="Why this comparison matters"
+    summary="This page is written to separate the ownership differences that actually change diagnosis and buying decisions from the ones people overcomplicate online."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={problemTrustPoints}
+  />
+
+  <Section
+    title="The short version"
+    intro="If you only need the fast answer, this is the cleanest way to think about the two XA50 RAV4 ownership paths."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">RAV4 Hybrid</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Better if efficiency and smooth low-speed response matter most</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Usually feels more relaxed in daily commuting, especially in stop-and-go traffic.</li>
+          <li>Can make owners overthink brake feel or battery behavior because the system layer is more complex on paper.</li>
+          <li>Best for people who want the stronger fuel-economy case and are comfortable reading the fitment notes more carefully.</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">RAV4 Gas</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Better if you want the simpler long-term ownership story</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Usually easier to reason through when a no-start, brake feel, or maintenance complaint shows up.</li>
+          <li>Still shares most of the same chassis noise and wear-item pattern as the Hybrid.</li>
+          <li>Best for owners who care more about straightforward diagnosis than maximum efficiency.</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="What the split looks like in practice"
+    intro="These visual checkpoints make the hybrid-versus-gas difference easier to understand without overcomplicating the whole SUV."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+        <img
+          src="/images/photos/cars/toyota-rav4-2021.webp"
+          alt="Toyota RAV4 Hybrid and gas comparison"
+          class="h-56 w-full object-cover"
+          loading="lazy"
+          width="960"
+          height="640"
+        />
+        <div class="p-5">
+          <p class="eyebrow">Shared ownership reality</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">The chassis still behaves like the same RAV4</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Road hum, brake noise, and the smaller suspension complaints still overlap heavily, which is why many RAV4 pages still help across both powertrains.</p>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+        <img
+          src="/images/photos/parts/car-battery.jpg"
+          alt="Toyota RAV4 battery and hybrid context"
+          class="h-56 w-full object-cover"
+          loading="lazy"
+          width="960"
+          height="640"
+        />
+        <div class="p-5">
+          <p class="eyebrow">Where the split gets confusing</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Battery and brake assumptions drift quickly</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Hybrid owners often jump to the wrong battery story, while gas owners read the same symptom in a simpler way. That is where the advice needs to split cleanly.</p>
+        </div>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="Where the ownership story really changes"
+    intro="This is the part people blur together too often when they are shopping or diagnosing an XA50 RAV4."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Braking and feel</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>The Hybrid can make brake feel and noise complaints sound stranger than they are because regenerative braking changes how the driver experiences the system.</li>
+          <li>The gas model usually makes brake complaints easier to interpret because the feel is more conventional from the start.</li>
+          <li>Both still deal with the same basic realities around pad compound, brake hardware, and everyday noise control.</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Battery and diagnosis</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>The Hybrid causes more confusion because owners jump straight to the traction-battery conversation when the complaint is often still the ordinary 12-volt side.</li>
+          <li>The gas RAV4 is usually easier to explain when the car sits and then starts acting weak or erratic.</li>
+          <li>Both powertrains still reward basic diagnosis before buying parts, especially around 12-volt batteries and charging assumptions.</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="What still overlaps"
+    intro="Not everything needs to be split into hybrid-specific and gas-specific advice."
+  >
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A lot of the useful RAV4 ownership guidance still lives in tire noise, brake noise, wheel-hub diagnosis, and small suspension wear.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Rear clunks, driveway-entry front-end noises, and the usual brake-noise complaints still overlap heavily across both versions.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The powertrain split matters most when a reader is about to buy battery-related parts or assume the same brake feel means the same diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Trim, wheel package, and hybrid-versus-gas fitment notes still matter more than broad internet folklore.</li>
+    </ul>
+  </Section>
+
+  <Section
+    title="Who each one fits better"
+    intro="This is the practical shortcut for someone deciding which ownership pattern they would rather live with."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Choose the Hybrid if</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>You value efficiency and smoother low-speed commuting enough to accept a little more complexity in how problems are described.</li>
+          <li>You want the stronger city-driving ownership case and are fine reading the fitment notes more carefully.</li>
+          <li>You can separate ordinary 12-volt problems from bigger hybrid-system assumptions without panicking.</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Choose the gas model if</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>You want the simpler explanation when battery, braking, or ownership questions start showing up.</li>
+          <li>You care less about the Hybrid efficiency case and more about a straightforward long-term maintenance story.</li>
+          <li>You would rather keep the diagnosis path as conventional as possible.</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="Where to go next"
+    intro="Use these pages if the hybrid-versus-gas question turns into a real ownership, diagnosis, or parts decision."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Start with the generation hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota RAV4 XA50 2019-2021</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use the generation page if you want the broad ownership pattern for the XA50 RAV4 before you narrow it down by powertrain.
+        </p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/toyota-rav4-xa50-2019-2021/">Open generation hub</a>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Use the year pages</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota RAV4 2020 and 2021 hubs</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use the year-specific RAV4 pages if you already know the model year and want the linked problem and best-parts guides from there.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-4">
+          <a class="inline-flex text-sm font-semibold text-accent" href="/cars/toyota-rav4-2020/">Open RAV4 2020</a>
+          <a class="inline-flex text-sm font-semibold text-accent" href="/cars/toyota-rav4-2021/">Open RAV4 2021</a>
+        </div>
+      </article>
+    </div>
+  </Section>
+
+  <RelatedLinks
+    title="Related problem guides"
+    intro="These are the next problem pages worth reading if the hybrid-versus-gas question turns into a real diagnosis decision."
+    items={relatedProblems}
+  />
+
+  <RelatedLinks
+    title="Related best-parts guides"
+    intro="These are the best-parts pages that matter once the comparison points you toward the actual repair area."
+    items={relatedBest}
+  />
+</ContentLayout>

@@ -1,0 +1,173 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import CardIcon from "../../components/CardIcon.astro";
+import FilterToolbar from "../../components/FilterToolbar.astro";
+import { comparisonGuides } from "../../data/comparison-guides";
+import { toThumbnail } from "../../utils/images";
+
+const getComparisonCluster = (guide: (typeof comparisonGuides)[number]) => {
+  if (guide.relatedCars?.includes("honda-civic-2019")) return "civic";
+  if (guide.relatedCars?.includes("toyota-rav4-2020") || guide.relatedCars?.includes("toyota-rav4-2021")) return "rav4";
+  if (guide.relatedCars?.includes("vw-tiguan-2020")) return "tiguan";
+  return "other";
+};
+
+const getComparisonType = (guide: (typeof comparisonGuides)[number]) => {
+  if (guide.eyebrow.toLowerCase().includes("powertrain")) return "powertrain";
+  if (guide.eyebrow.toLowerCase().includes("drivetrain")) return "drivetrain";
+  return "generation";
+};
+
+const comparisonFilters = [
+  {
+    name: "cluster",
+    label: "Cluster",
+    options: [
+      { value: "civic", label: "Honda Civic" },
+      { value: "rav4", label: "Toyota RAV4" },
+      { value: "tiguan", label: "VW Tiguan" },
+      { value: "other", label: "Other vehicles" }
+    ]
+  },
+  {
+    name: "type",
+    label: "Comparison type",
+    options: [
+      { value: "powertrain", label: "Powertrain" },
+      { value: "drivetrain", label: "Drivetrain" },
+      { value: "generation", label: "Generation" }
+    ]
+  }
+];
+---
+
+<BaseLayout title="Comparisons" description="Trim, powertrain, drivetrain, and generation comparison guides for the strongest vehicle clusters on the site.">
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p class="eyebrow">Comparisons</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Version guides for the questions year pages cannot answer cleanly</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+            Use these guides when the right answer depends on engine choice, drivetrain, hybrid versus gas differences, or where one generation phase stops carrying over cleanly into the next.
+          </p>
+        </div>
+        <div class="accent-panel p-6">
+          <p class="eyebrow">What this section does</p>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="soft-panel p-4">
+              <p class="text-2xl font-semibold text-ink">{comparisonGuides.length}</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Comparison guides</p>
+            </div>
+            <div class="soft-panel p-4">
+              <p class="text-2xl font-semibold text-ink">3</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Strong clusters</p>
+            </div>
+            <div class="soft-panel p-4 sm:col-span-2">
+              <p class="text-sm leading-6 text-steel">
+                These pages exist to stop the common mistake of treating every version of the same car like the ownership story is identical.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="mt-10 surface hero-frame p-6 sm:p-8">
+      <div class="flex items-center justify-between gap-4">
+        <div>
+          <p class="eyebrow">Start Here</p>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">The strongest comparison guides</h2>
+        </div>
+      </div>
+      <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {comparisonGuides.map((guide) => (
+          <a class="mesh-card p-5 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href}>
+            {
+              guide.image && (
+                <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                  <img
+                    src={toThumbnail(guide.image)}
+                    alt={guide.title}
+                    class="h-44 w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="960"
+                    height="640"
+                  />
+                </div>
+              )
+            }
+            <div class="flex items-center gap-3">
+              <CardIcon kind="model" />
+              <div>
+                <p class="eyebrow">{guide.eyebrow}</p>
+                <h2 class="mt-1 text-xl font-semibold text-ink">{guide.title}</h2>
+              </div>
+            </div>
+            <p class="mt-4 text-sm leading-6 text-steel">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8" data-filter-root>
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">Browse all</p>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">Filter every comparison guide</h2>
+          <p class="mt-3 max-w-3xl text-sm leading-6 text-steel">
+            Use the filters when you already know the cluster and want the version split that matters most for diagnosis, buying, or maintenance.
+          </p>
+        </div>
+        <p class="text-sm text-steel">
+          <span class="font-semibold text-ink" data-filter-count></span> guides
+        </p>
+      </div>
+
+      <div class="mt-6">
+        <FilterToolbar filters={comparisonFilters} />
+      </div>
+
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {comparisonGuides.map((guide) => (
+          <a
+            class="surface block p-6 transition hover:-translate-y-0.5"
+            href={guide.href}
+            data-filter-item
+            data-filter-cluster={getComparisonCluster(guide)}
+            data-filter-type={getComparisonType(guide)}
+          >
+            <div class="mb-4 flex items-center gap-3">
+              <CardIcon kind="model" />
+              <div>
+                <p class="eyebrow">{guide.eyebrow}</p>
+                <h2 class="mt-1 text-2xl font-semibold text-ink">{guide.title}</h2>
+              </div>
+            </div>
+            {
+              guide.image && (
+                <div class="mb-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
+                  <img
+                    src={toThumbnail(guide.image)}
+                    alt={guide.title}
+                    class="h-52 w-full object-cover"
+                    loading="lazy"
+                    decoding="async"
+                    width="960"
+                    height="640"
+                  />
+                </div>
+              )
+            }
+            <p class="text-sm leading-6 text-steel">{guide.description}</p>
+          </a>
+        ))}
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-dashed border-slate-300 px-4 py-5 text-sm leading-6 text-steel" data-empty-state hidden>
+        No comparison guides match the current filters.
+      </div>
+    </section>
+  </div>
+</BaseLayout>

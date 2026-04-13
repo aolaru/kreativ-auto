@@ -1,0 +1,289 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+
+const title = "Honda Civic 1.5T vs 2.0";
+const description =
+  "A practical comparison of the Civic 1.5T and 2.0 powertrains, including ownership differences, common problem patterns, and where parts advice does not transfer cleanly.";
+const intro =
+  "The Civic 1.5T and 2.0 are close enough that people often shop or maintain them as if they were the same car. They are not. The chassis overlap is real, but the ownership pattern, drivability complaints, and the parts mistakes people make are different enough that it is worth separating them cleanly.";
+const modifiedTime = new Date("2026-04-04");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Comparisons", href: "/comparisons/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the Civic 1.5T better than the 2.0?",
+    answer:
+      "Not universally. The 1.5T usually feels stronger and easier at highway pace, but the 2.0 is simpler and often the easier long-term ownership choice if you care more about straightforward maintenance than extra torque."
+  },
+  {
+    question: "Do the 1.5T and 2.0 share the same common problems?",
+    answer:
+      "Some overlap is real around suspension noise, brakes, and general Civic X ownership, but ignition, turbo-related drivability, and parts-shopping logic do not transfer perfectly between them."
+  },
+  {
+    question: "Can I use the same parts guides for both engines?",
+    answer:
+      "Only sometimes. Brake and chassis advice can overlap, but engine, ignition, intake, and some maintenance parts need to be checked by exact powertrain and trim."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: {
+      "@type": "Organization",
+      name: editorialTeam.name
+    },
+    publisher: {
+      "@type": "Organization",
+      name: editorialTeam.publisher
+    }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/engine-misfires-at-idle/",
+    title: "Engine misfires at idle",
+    description: "More useful if the 1.5T or 2.0 is starting to feel uneven and the first instinct is to blame the wrong ignition part.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/rough-cold-start/",
+    title: "Rough cold start",
+    description: "A good follow-up if the engine starts poorly and you are trying to separate basic maintenance from a deeper drivability issue.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/air-conditioner-blows-warm-at-idle/",
+    title: "Air conditioner blows warm at idle",
+    description: "Useful because the Civic ownership pattern overlaps here even when the engines differ.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-spark-plugs-for-honda-civic-2019/",
+    title: "Best spark plugs for Honda Civic 2019",
+    description: "Worth using when the comparison points you toward a basic ignition maintenance reset rather than a bigger diagnosis.",
+    eyebrow: "Spark Plugs"
+  },
+  {
+    href: "/best/best-ignition-coils-for-honda-civic-2019/",
+    title: "Best ignition coils for Honda Civic 2019",
+    description: "A better next step if the engine behavior is moving beyond plugs and into repeat misfire or hesitation territory.",
+    eyebrow: "Ignition Coils"
+  },
+  {
+    href: "/best/best-batteries-for-honda-civic-2019/",
+    title: "Best batteries for Honda Civic 2019",
+    description: "Useful if the real difference is how short-trip use and voltage sensitivity affect ownership, not which engine badge is on the trunk.",
+    eyebrow: "Batteries"
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  image="/images/photos/cars/honda-civic-2019.webp"
+  schemas={schemas}
+  editorialSummary="This comparison is written to separate the ownership differences that actually change fitment, diagnosis, and buying decisions from the ones people overstate."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Comparison guide", "Powertrain context checked", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="Why this comparison matters"
+    summary="This page is written to separate the ownership differences that actually change buying and maintenance decisions from the ones people overstate online."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={problemTrustPoints}
+  />
+
+  <Section
+    title="The short version"
+    intro="If you only need the fast answer, this is the cleanest way to think about the 1.5T and 2.0."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Civic 1.5T</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Better if you want easier torque and stronger highway pace</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Feels lighter on its feet when merging or climbing without needing as much revs.</li>
+          <li>Usually the better fit if the car spends more time on faster roads than crawling in town.</li>
+          <li>Needs a little more discipline around engine-specific maintenance and diagnosis.</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Civic 2.0</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Better if you want the simpler long-term ownership path</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>Feels more straightforward to own if your priority is fewer engine-related variables.</li>
+          <li>Usually easier to explain, maintain, and shop parts for when the car ages.</li>
+          <li>Can feel flatter at low revs, but that tradeoff is acceptable for a lot of commuter use.</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="What the split looks like in practice"
+    intro="These visual checkpoints are the easiest way to understand what changes and what still stays shared."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+        <img
+          src="/images/photos/cars/honda-civic-2019.webp"
+          alt="Honda Civic 1.5T and 2.0 comparison"
+          class="h-56 w-full object-cover"
+          loading="lazy"
+          width="960"
+          height="640"
+        />
+        <div class="p-5">
+          <p class="eyebrow">Shared chassis reality</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">A lot of the Civic still overlaps</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Brake feel, front-end noise, and most of the basic daily-driver complaints still live at the Civic-platform level, not the engine badge alone.</p>
+        </div>
+      </article>
+      <article class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
+        <img
+          src="/images/photos/parts/ngk-spark-plugs.png"
+          alt="Honda Civic ignition and maintenance split"
+          class="h-56 w-full object-cover"
+          loading="lazy"
+          width="960"
+          height="640"
+        />
+        <div class="p-5">
+          <p class="eyebrow">Where the split starts</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Ignition and engine behavior separate the story</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Once the car hesitates, misfires, or needs engine-specific maintenance, the 1.5T and 2.0 stop being interchangeable in the way owners talk about them.</p>
+        </div>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="What actually changes between them"
+    intro="This is where owners waste time if they assume the two powertrains behave the same in daily use."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Drivability and feel</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>The 1.5T usually feels stronger in normal traffic because it makes torque earlier and does not need to be worked as hard.</li>
+          <li>The 2.0 feels more linear and simpler, but also less eager once the car is loaded or asked to pass at speed.</li>
+          <li>If your expectation is calm, predictable commuter behavior, the 2.0 often makes more sense than the internet gives it credit for.</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Ownership and diagnosis</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>The 1.5T tends to create more overthinking around hesitation, plugs, coils, intake, and turbo-related drivability complaints.</li>
+          <li>The 2.0 usually pushes the ownership conversation back toward simpler maintenance and ordinary Civic wear items.</li>
+          <li>Both still share the same Civic X patterns around brakes, battery behavior, front-end noise, and A/C complaints.</li>
+        </ul>
+      </div>
+    </div>
+  </Section>
+
+  <Section
+    title="When the advice does not transfer cleanly"
+    intro="This is the part that matters most for readers trying to avoid the wrong repair or the wrong parts order."
+  >
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Ignition advice overlaps, but the way owners describe hesitation and responsiveness is often different enough that the 1.5T gets misdiagnosed more easily.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake and suspension pages usually transfer across both engines because the chassis complaints are more trim-and-hardware driven than engine-driven.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery and charging complaints can show up on both, but short-trip use and accessory load matter more than which engine you picked.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Do not assume every engine, trim, or body style uses the exact same ignition, HVAC, or service parts just because the car is a 2019 Civic.</li>
+    </ul>
+  </Section>
+
+  <Section
+    title="Who each one fits better"
+    intro="This is the buying shortcut for readers who are deciding which ownership pattern they would rather live with."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Choose the 1.5T if</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>You care about easier real-world torque more than maximum simplicity.</li>
+          <li>The car will spend meaningful time on faster roads where the extra low-end pull matters.</li>
+          <li>You are fine being stricter about engine-specific maintenance and fitment checks.</li>
+        </ul>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <h2 class="text-2xl font-semibold text-ink">Choose the 2.0 if</h2>
+        <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+          <li>You want the simpler explanation when the car ages and something small starts feeling off.</li>
+          <li>Your driving is mostly normal commuting where a little less torque is not a deal-breaker.</li>
+          <li>You would rather trade some pace for a more straightforward long-term ownership story.</li>
+        </ul>
+      </article>
+    </div>
+  </Section>
+
+  <Section
+    title="Where to go next"
+    intro="Use these pages if the comparison makes you realize the next step is diagnosis or parts selection, not more general reading."
+  >
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Start with the car hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic 2019 ownership guide</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use the main Civic hub if you want the year-specific overview first and then want to branch into the generation, problem, and parts pages from there.
+        </p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/cars/honda-civic-2019/">Open Civic hub</a>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <p class="eyebrow">Use the generation hub</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic FC/FK facelift 2019-2021</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use the generation page if you want the broader ownership pattern for the facelifted Civic X, not just one model year.
+        </p>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/honda-civic-fc-fk-facelift-2019-2021/">Open generation hub</a>
+      </article>
+    </div>
+  </Section>
+
+  <RelatedLinks
+    title="Related problem guides"
+    intro="These are the next problem pages worth reading if the 1.5T vs 2.0 question turns into a real diagnosis decision."
+    items={relatedProblems}
+  />
+
+  <RelatedLinks
+    title="Related best-parts guides"
+    intro="These are the best-parts pages that matter once the comparison points you toward the actual repair area."
+    items={relatedBest}
+  />
+</ContentLayout>

@@ -73,7 +73,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Start with the powertrain split",
         description: "Use the 1.5T versus 2.0 guide first if you are still mixing advice across the two mainstream engines.",
-        href: "/tools/honda-civic-1-5t-vs-2-0/"
+        href: "/comparisons/honda-civic-1-5t-vs-2-0/"
       },
       {
         title: "If the engine feels rough",
@@ -163,7 +163,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Start with hybrid versus gas",
         description: "Use the comparison page first if you are still mixing battery, brake, and ownership advice across both powertrains.",
-        href: "/tools/toyota-rav4-hybrid-vs-gas/"
+        href: "/comparisons/toyota-rav4-hybrid-vs-gas/"
       },
       {
         title: "If the SUV hums or feels rough",
@@ -251,7 +251,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Start with facelift versus pre-facelift",
         description: "Use this first if you are still mixing older Mk2 advice into the facelift-era ownership pattern.",
-        href: "/tools/vw-tiguan-pre-facelift-vs-facelift/"
+        href: "/comparisons/vw-tiguan-pre-facelift-vs-facelift/"
       },
       {
         title: "If the car hesitates or shows EPC",
