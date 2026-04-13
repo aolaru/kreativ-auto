@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import CardIcon from "../../components/CardIcon.astro";
+import FilterToolbar from "../../components/FilterToolbar.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { toThumbnail } from "../../utils/images";
 
@@ -9,6 +10,51 @@ const newestProblems = [...problems].sort((a, b) => (b.data.updatedAt?.getTime()
 const civicProblems = newestProblems.filter((problem) => problem.data.relatedCars.includes("honda-civic-2019")).slice(0, 3);
 const rav4Problems = newestProblems.filter((problem) => problem.data.relatedCars.includes("toyota-rav4-2021") || problem.data.relatedCars.includes("toyota-rav4-2020")).slice(0, 3);
 const tiguanProblems = newestProblems.filter((problem) => problem.data.relatedCars.includes("vw-tiguan-2020")).slice(0, 3);
+
+const getProblemCluster = (problem: (typeof newestProblems)[number]) => {
+  if (problem.data.relatedCars.includes("honda-civic-2019")) return "civic";
+  if (problem.data.relatedCars.includes("toyota-rav4-2020") || problem.data.relatedCars.includes("toyota-rav4-2021")) return "rav4";
+  if (problem.data.relatedCars.includes("vw-tiguan-2020")) return "tiguan";
+  return "other";
+};
+
+const getProblemArea = (problem: (typeof newestProblems)[number]) => {
+  const haystack = [problem.data.title, ...problem.data.symptoms, ...problem.data.causes].join(" ").toLowerCase();
+
+  if (haystack.includes("brake") || haystack.includes("rotor") || haystack.includes("pedal")) return "brakes";
+  if (haystack.includes("battery") || haystack.includes("charging") || haystack.includes("start")) return "battery-charging";
+  if (haystack.includes("coolant") || haystack.includes("a/c") || haystack.includes("air conditioner") || haystack.includes("warm")) return "cooling-hvac";
+  if (haystack.includes("suspension") || haystack.includes("clunk") || haystack.includes("rattle") || haystack.includes("vibrat") || haystack.includes("wheel bearing") || haystack.includes("turning")) {
+    return "suspension-steering";
+  }
+  if (haystack.includes("leak") || haystack.includes("water")) return "leaks-body";
+  return "engine-drivability";
+};
+
+const problemFilters = [
+  {
+    name: "cluster",
+    label: "Cluster",
+    options: [
+      { value: "civic", label: "Honda Civic" },
+      { value: "rav4", label: "Toyota RAV4" },
+      { value: "tiguan", label: "VW Tiguan" },
+      { value: "other", label: "Other vehicles" }
+    ]
+  },
+  {
+    name: "area",
+    label: "Symptom area",
+    options: [
+      { value: "brakes", label: "Brakes" },
+      { value: "battery-charging", label: "Battery and charging" },
+      { value: "cooling-hvac", label: "Cooling and A/C" },
+      { value: "engine-drivability", label: "Engine and drivability" },
+      { value: "suspension-steering", label: "Suspension and steering" },
+      { value: "leaks-body", label: "Leaks and body" }
+    ]
+  }
+];
 ---
 
 <BaseLayout title="Problem Guides" description="Automotive diagnostic pages focused on symptoms, causes, solutions, and recommended parts.">
@@ -93,10 +139,34 @@ const tiguanProblems = newestProblems.filter((problem) => problem.data.relatedCa
       </section>
     </div>
 
-    <div class="mt-10 grid gap-6">
+    <section class="mt-10 surface p-6 sm:p-8" data-filter-root>
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="eyebrow">Browse all</p>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">Filter every problem guide</h2>
+          <p class="mt-3 max-w-3xl text-sm leading-6 text-steel">
+            Narrow the list by vehicle cluster and symptom area when you already know roughly where the complaint belongs.
+          </p>
+        </div>
+        <p class="text-sm text-steel">
+          <span class="font-semibold text-ink" data-filter-count></span> guides
+        </p>
+      </div>
+
+      <div class="mt-6">
+        <FilterToolbar filters={problemFilters} />
+      </div>
+
+      <div class="mt-8 grid gap-6">
       {
         newestProblems.map((problem) => (
-          <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/problems/${problem.id}/`}>
+          <a
+            class="surface block p-6 transition hover:-translate-y-0.5"
+            href={`/problems/${problem.id}/`}
+            data-filter-item
+            data-filter-cluster={getProblemCluster(problem)}
+            data-filter-area={getProblemArea(problem)}
+          >
             <div class="mb-4 flex items-center gap-3">
               <CardIcon kind="problem" />
               <div>
@@ -125,6 +195,11 @@ const tiguanProblems = newestProblems.filter((problem) => problem.data.relatedCa
           </a>
         ))
       }
-    </div>
+      </div>
+
+      <div class="mt-6 rounded-2xl border border-dashed border-slate-300 px-4 py-5 text-sm leading-6 text-steel" data-empty-state hidden>
+        No problem guides match the current filters.
+      </div>
+    </section>
   </div>
 </BaseLayout>

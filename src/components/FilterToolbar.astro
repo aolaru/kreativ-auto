@@ -1,0 +1,85 @@
+---
+interface FilterOption {
+  value: string;
+  label: string;
+}
+
+interface FilterDefinition {
+  name: string;
+  label: string;
+  options: FilterOption[];
+}
+
+interface Props {
+  filters: FilterDefinition[];
+}
+
+const { filters } = Astro.props;
+---
+
+<div class="filter-toolbar" data-filter-controls>
+  {filters.map((filter) => (
+    <label class="filter-field">
+      <span class="filter-label">{filter.label}</span>
+      <select class="filter-select" data-filter-name={filter.name}>
+        <option value="">All</option>
+        {filter.options.map((option) => (
+          <option value={option.value}>{option.label}</option>
+        ))}
+      </select>
+    </label>
+  ))}
+</div>
+
+<script is:inline>
+  const roots = Array.from(document.querySelectorAll("[data-filter-root]"));
+
+  for (const root of roots) {
+    if (root.dataset.filterInitialized === "true") continue;
+    root.dataset.filterInitialized = "true";
+
+    const controls = Array.from(root.querySelectorAll("[data-filter-name]"));
+    const items = Array.from(root.querySelectorAll("[data-filter-item]"));
+    const count = root.querySelector("[data-filter-count]");
+    const emptyState = root.querySelector("[data-empty-state]");
+
+    const applyFilters = () => {
+      let visible = 0;
+
+      for (const item of items) {
+        const matches = controls.every((control) => {
+          const name = control.getAttribute("data-filter-name");
+          const activeValue = control.value;
+
+          if (!name || !activeValue) return true;
+
+          const raw = item.getAttribute(`data-filter-${name}`) ?? "";
+          const values = raw
+            .split("|")
+            .map((value) => value.trim())
+            .filter(Boolean);
+
+          return values.includes(activeValue);
+        });
+
+        item.hidden = !matches;
+
+        if (matches) visible += 1;
+      }
+
+      if (count) {
+        count.textContent = `${visible}`;
+      }
+
+      if (emptyState) {
+        emptyState.hidden = visible > 0;
+      }
+    };
+
+    for (const control of controls) {
+      control.addEventListener("change", applyFilters);
+    }
+
+    applyFilters();
+  }
+</script>
