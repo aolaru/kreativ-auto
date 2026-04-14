@@ -1,8 +1,8 @@
-name: Weekly cluster draft
+name: Daily site maintenance
 
 on:
   schedule:
-    - cron: "15 6 * * 1"
+    - cron: "35 3 * * *"
   workflow_dispatch:
 
 permissions:
@@ -10,11 +10,11 @@ permissions:
   pull-requests: write
 
 concurrency:
-  group: weekly-new-car
+  group: daily-site-maintenance
   cancel-in-progress: true
 
 jobs:
-  add-car:
+  maintain:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Add next backlog cluster
-        run: npm run autopilot:add-next-car
+      - name: Apply one daily maintenance fix
+        run: npm run autopilot:daily-maintenance
 
       - name: Build Astro site
         env:
@@ -42,20 +42,21 @@ jobs:
       - name: Create pull request
         uses: peter-evans/create-pull-request@v7
         with:
-          branch: codex/weekly-new-car
+          branch: codex/daily-site-maintenance
           delete-branch: true
-          commit-message: Add next backlog cluster
-          title: Add next backlog cluster
+          commit-message: Apply daily site maintenance fix
+          title: Apply daily site maintenance fix
           body: |
-            Weekly automation draft.
+            Daily maintenance automation draft.
 
-            This PR adds the next curated backlog cluster:
+            This PR applies one bounded deterministic fix to existing content:
 
-            - 1 new car page
-            - 1 matching problem guide
-            - 1 matching best-parts guide
+            - image-path optimization to `.webp` when a matching asset already exists
+            - missing `excerpt` fill from `metaDescription`
+            - missing `heroImage` fill from `image`
+            - missing `updatedAt` fill
 
             It also runs the site build and leaves the result for review before merge.
           labels: |
-            content
+            maintenance
             automation

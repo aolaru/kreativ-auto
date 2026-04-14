@@ -13,7 +13,9 @@
     "preview": "astro preview",
     "astro": "astro",
     "autopilot:add-next-car": "node scripts/autopilot/add-next-car.mjs",
-    "autopilot:add-next-car:dry": "node scripts/autopilot/add-next-car.mjs --dry-run"
+    "autopilot:add-next-car:dry": "node scripts/autopilot/add-next-car.mjs --dry-run",
+    "autopilot:daily-maintenance": "node scripts/autopilot/daily-maintenance.mjs",
+    "autopilot:daily-maintenance:dry": "node scripts/autopilot/daily-maintenance.mjs --dry-run"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",

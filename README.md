@@ -38,14 +38,17 @@ You can copy values from `.env.example`.
 
 Use `kreativauto.com` as the site's public domain.
 
-## Weekly car autopilot
+## Weekly content autopilot
 
 The repo includes a weekly workflow at `.github/workflows/weekly-new-car.yml`.
 
 What it does:
 
-- picks the next missing car from `scripts/autopilot/car-backlog.mjs`
-- creates one new car page scaffold in `src/content/cars/`
+- picks the next missing curated backlog entry from `scripts/autopilot/car-backlog.mjs`
+- creates:
+  - one new car page scaffold in `src/content/cars/`
+  - one matching problem guide in `src/content/problems/`
+  - one matching best-parts guide in `src/content/best/`
 - runs `npm run build`
 - opens or updates a review PR from `codex/weekly-new-car`
 
@@ -65,6 +68,32 @@ Scheduling note:
 
 - the workflow is scheduled weekly on Monday at `06:15 UTC`
 - GitHub Actions cron is UTC-only, so local Europe/Bucharest run time shifts with daylight saving time
+
+## Daily maintenance autopilot
+
+The repo also includes a daily workflow at `.github/workflows/daily-site-maintenance.yml`.
+
+What it does:
+
+- applies at most one deterministic maintenance fix to existing content
+- prefers:
+  - swapping `.jpg` or `.jpeg` image paths to matching `.webp` assets that already exist
+  - adding missing `excerpt` from `metaDescription`
+  - adding missing `heroImage` from `image`
+  - adding missing `updatedAt`
+- runs `npm run build`
+- opens or updates a review PR from `codex/daily-site-maintenance`
+
+Useful local commands:
+
+```bash
+npm run autopilot:daily-maintenance:dry
+npm run autopilot:daily-maintenance
+```
+
+Scheduling note:
+
+- the workflow is scheduled daily at `03:35 UTC`
 
 ### Notes
 
