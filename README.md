@@ -81,6 +81,8 @@ What it does:
   - adding missing `excerpt` from `metaDescription`
   - adding missing `heroImage` from `image`
   - adding missing `updatedAt`
+  - adding generic `buyingTiers` to older best-parts pages that still lack them
+  - adding an explicit `relatedBest` field to problem pages that still omit it
 - runs `npm run build`
 - opens or updates a review PR from `codex/daily-site-maintenance`
 

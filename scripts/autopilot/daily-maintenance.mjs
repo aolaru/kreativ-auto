@@ -154,6 +154,164 @@ function tryUpdatedAtFix(source) {
   };
 }
 
+function parseProductBlocks(frontmatter) {
+  const productsMatch = frontmatter.match(/^products:\n([\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m);
+  if (!productsMatch) {
+    return [];
+  }
+
+  const block = productsMatch[1];
+  const chunks = block.split(/\n(?=\s*-\sname:)/).map((chunk) => chunk.trim()).filter(Boolean);
+
+  return chunks
+    .map((chunk) => {
+      const name = chunk.match(/name:\s*("?)(.+?)\1$/m)?.[2];
+      const summary = chunk.match(/summary:\s*("?)(.+?)\1$/m)?.[2];
+      const priceRaw = chunk.match(/price:\s*("?)(.+?)\1$/m)?.[2];
+      const ratingRaw = chunk.match(/rating:\s*([0-9.]+)/m)?.[1];
+      const price = priceRaw ? Number(priceRaw.replace(/[^0-9.]/g, "")) : Number.NaN;
+      const rating = ratingRaw ? Number(ratingRaw) : Number.NaN;
+
+      if (!name) {
+        return null;
+      }
+
+      return {
+        name,
+        summary: summary ?? "",
+        price,
+        rating
+      };
+    })
+    .filter(Boolean);
+}
+
+function buildBuyingTiers(products) {
+  if (products.length < 2) {
+    return [];
+  }
+
+  const byRating = [...products].sort((a, b) => (b.rating - a.rating) || (a.price - b.price));
+  const byPrice = [...products].sort((a, b) => (a.price - b.price) || (b.rating - a.rating));
+  const byPremium = [...products].sort((a, b) => (b.price - a.price) || (b.rating - a.rating));
+
+  const used = new Set();
+  const tiers = [];
+
+  const overall = byRating[0];
+  if (overall) {
+    used.add(overall.name);
+    tiers.push({
+      label: "Best overall",
+      product: overall.name,
+      reason: overall.summary || "The strongest all-around choice in the current shortlist."
+    });
+  }
+
+  const value = byPrice.find((item) => !used.has(item.name)) ?? byPrice[0];
+  if (value) {
+    used.add(value.name);
+    tiers.push({
+      label: "Best value",
+      product: value.name,
+      reason: value.summary || "The lower-cost option if you want a sensible repair without overspending."
+    });
+  }
+
+  const premium = byPremium.find((item) => !used.has(item.name));
+  if (premium) {
+    used.add(premium.name);
+    tiers.push({
+      label: "Best alternative",
+      product: premium.name,
+      reason: premium.summary || "The alternative pick if the main recommendation is not the one you want to buy."
+    });
+  }
+
+  return tiers;
+}
+
+function tryBuyingTierFix(source) {
+  const frontmatterMatch = source.match(/^---\n([\s\S]*?)\n---/m);
+  if (!frontmatterMatch) {
+    return { changed: false };
+  }
+
+  const frontmatter = frontmatterMatch[1];
+  if (!/^products:\s*(?:\n|\[)/m.test(frontmatter) || /^buyingTiers:\s*(?:\n|\[)/m.test(frontmatter)) {
+    return { changed: false };
+  }
+
+  const products = parseProductBlocks(frontmatter);
+  const tiers = buildBuyingTiers(products);
+  if (tiers.length < 2) {
+    return { changed: false };
+  }
+
+  const buyingTiersBlock = [
+    "buyingTiers:",
+    ...tiers.map((tier) =>
+      [
+        `  - label: ${JSON.stringify(tier.label)}`,
+        `    product: ${JSON.stringify(tier.product)}`,
+        `    reason: ${JSON.stringify(tier.reason)}`
+      ].join("\n")
+    )
+  ].join("\n");
+
+  let updatedFrontmatter;
+  if (/^avoidIf:\s*(?:\n|\[)/m.test(frontmatter)) {
+    updatedFrontmatter = frontmatter.replace(/^avoidIf:\s*(?:\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m, (match) => `${match.trimEnd()}\n${buyingTiersBlock}\n`);
+  } else if (/^bestFor:\s*(?:\n|\[)/m.test(frontmatter)) {
+    updatedFrontmatter = frontmatter.replace(/^bestFor:\s*(?:\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m, (match) => `${match.trimEnd()}\navoidIf: []\n${buyingTiersBlock}\n`);
+  } else if (/^quickVerdict:\s*.+$/m.test(frontmatter)) {
+    updatedFrontmatter = frontmatter.replace(/^quickVerdict:\s*.+$/m, (match) => `${match}\nbestFor: []\navoidIf: []\n${buyingTiersBlock}`);
+  } else {
+    return { changed: false };
+  }
+
+  updatedFrontmatter = updateUpdatedAt(updatedFrontmatter);
+  const next = source.replace(/^---\n[\s\S]*?\n---/m, `---\n${updatedFrontmatter}\n---`);
+
+  return {
+    changed: true,
+    reason: "Add missing buying tiers to a best-parts page",
+    content: next
+  };
+}
+
+function tryRelatedBestFix(source) {
+  const frontmatterMatch = source.match(/^---\n([\s\S]*?)\n---/m);
+  if (!frontmatterMatch) {
+    return { changed: false };
+  }
+
+  const frontmatter = frontmatterMatch[1];
+  if (
+    !/^symptoms:\s*(?:\n|\[)/m.test(frontmatter) ||
+    !/^relatedCars:\s*(?:\n|\[)/m.test(frontmatter) ||
+    /^relatedBest:\s*(?:\n|\[)/m.test(frontmatter)
+  ) {
+    return { changed: false };
+  }
+
+  let updatedFrontmatter;
+  if (/^relatedCars:\s*(?:\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m.test(frontmatter)) {
+    updatedFrontmatter = frontmatter.replace(/^relatedCars:\s*(?:\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m, (match) => `${match.trimEnd()}\nrelatedBest: []\n`);
+  } else {
+    return { changed: false };
+  }
+
+  updatedFrontmatter = updateUpdatedAt(updatedFrontmatter);
+  const next = source.replace(/^---\n[\s\S]*?\n---/m, `---\n${updatedFrontmatter}\n---`);
+
+  return {
+    changed: true,
+    reason: "Add explicit relatedBest field to a problem page",
+    content: next
+  };
+}
+
 const files = await getMarkdownFiles();
 let appliedFix = null;
 
@@ -163,7 +321,9 @@ for (const filePath of files) {
     await tryImageWebpFix(filePath, source),
     tryExcerptFix(source),
     tryHeroImageFix(source),
-    tryUpdatedAtFix(source)
+    tryUpdatedAtFix(source),
+    tryBuyingTierFix(source),
+    tryRelatedBestFix(source)
   ];
 
   const fix = fixes.find((candidate) => candidate.changed);

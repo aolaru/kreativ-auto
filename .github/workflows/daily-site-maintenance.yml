@@ -33,13 +33,34 @@ jobs:
       - name: Apply one daily maintenance fix
         run: npm run autopilot:daily-maintenance
 
+      - name: Detect maintenance changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Daily site maintenance"
+              echo
+              echo "No deterministic fix was available, so no PR was created."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Daily site maintenance"
+              echo
+              echo "A bounded maintenance fix was applied and the workflow will build the site and open a PR."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Build Astro site
+        if: steps.changes.outputs.changed == 'true'
         env:
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: npm run build
 
       - name: Create pull request
+        if: steps.changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           branch: codex/daily-site-maintenance
@@ -55,6 +76,8 @@ jobs:
             - missing `excerpt` fill from `metaDescription`
             - missing `heroImage` fill from `image`
             - missing `updatedAt` fill
+            - missing `buyingTiers` fill on best-parts pages
+            - missing `relatedBest` fill on problem pages
 
             It also runs the site build and leaves the result for review before merge.
           labels: |
