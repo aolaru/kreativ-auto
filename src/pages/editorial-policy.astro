@@ -4,15 +4,66 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Editorial Policy" description="Read how Kreativ Auto approaches research, recommendations, and publishing standards.">
   <div class="container-shell py-12 sm:py-16">
-    <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Editorial Policy</p>
-      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">How content is approached</h1>
-      <div class="mt-6 max-w-3xl space-y-4 text-base leading-7 text-steel">
-        <p>Kreativ Auto is written with a bias toward clarity, usefulness, and practical judgment.</p>
-        <p>Problem guides are meant to help readers narrow down likely causes before spending money blindly. Best-parts pages are meant to compare reasonable options, not pad out a list for the sake of having more links.</p>
-        <p>Recommendations are based on fitment relevance, reputation, expected use case, and overall practicality for normal drivers.</p>
-        <p>Automotive content should never replace proper inspection, service information, or professional diagnosis when safety is involved. The site is here to help readers ask better questions and make better decisions.</p>
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p class="eyebrow">Editorial Policy</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">How the content is approached</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+            Kreativ Auto is written with a bias toward clarity, usefulness, and practical judgment. The site is here to help readers make a better decision, not to overwhelm them with generic filler.
+          </p>
+        </div>
+        <div class="accent-panel p-6">
+          <p class="eyebrow">Core standards</p>
+          <div class="mt-4 grid gap-4">
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Useful first</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Pages should give readers a clearer next step, not just repeat what they already suspected.</p>
+            </div>
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Fitment-aware</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Advice should stay tied to the vehicle context that actually changes diagnosis, repair, or parts choice.</p>
+            </div>
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Commercially restrained</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Best-parts pages should compare sensible options, not inflate a list just to add more links.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Publishing rules</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">What guides are expected to do well</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Problem guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Should help readers narrow likely causes, understand urgency, and avoid treating every symptom as a worst-case failure.</p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Best-parts guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Should compare reasonable options, explain tradeoffs clearly, and keep fitment or use-case caveats visible.</p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Ownership guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Should act as real entry pages that link readers toward the most relevant problems, parts, and comparison pages.</p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Comparison guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Should separate the version differences that materially affect maintenance, buying, and fitment from the ones people overstate.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Limits</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">What the site is not trying to replace</h2>
+      <ul class="mt-6 space-y-3 text-sm leading-6 text-steel">
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">Kreativ Auto does not replace proper inspection, service information, or professional diagnosis where safety is involved.</li>
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">The site is not written as one-to-one repair advice for a specific vehicle in front of a mechanic.</li>
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">Recommendations should still be checked against trim, engine, drivetrain, market, and exact part compatibility before purchase.</li>
+      </ul>
+    </section>
   </div>
 </BaseLayout>

@@ -4,14 +4,74 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="About" description="Learn what Kreativ Auto is, how the site is written, and what readers should expect from it.">
   <div class="container-shell py-12 sm:py-16">
-    <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">About</p>
-      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">What Kreativ Auto is here to do</h1>
-      <div class="mt-6 max-w-3xl space-y-4 text-base leading-7 text-steel">
-        <p>Kreativ Auto is built for people who want clearer answers about car problems, maintenance, and replacement parts.</p>
-        <p>The goal is simple: make automotive content easier to trust, easier to scan, and more useful when someone is trying to decide what to check, what to fix, or what to buy.</p>
-        <p>This site focuses on practical guidance, not hype. That means better explanations, clearer comparisons, and a stronger bias toward helping readers make a sensible decision.</p>
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p class="eyebrow">About</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">What Kreativ Auto is here to do</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+            Kreativ Auto exists to make automotive content easier to trust, easier to scan, and more useful when someone is trying to decide what to check, what to fix, or what to buy.
+          </p>
+          <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
+            The site is built around practical ownership questions, not generic traffic bait. That means clearer explanations, better internal linking, and a stronger bias toward giving readers a sensible next step.
+          </p>
+        </div>
+        <div class="accent-panel p-6">
+          <p class="eyebrow">What readers should expect</p>
+          <div class="mt-4 grid gap-4 sm:grid-cols-2">
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Focus</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Common problems, parts worth buying, and ownership guidance that holds up in normal use.</p>
+            </div>
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Bias</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Practical fitment and decision quality over hype, catalog spam, or dramatic claims.</p>
+            </div>
+            <div class="soft-panel p-4 sm:col-span-2">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Audience</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Drivers who want a better ownership decision, not a vague summary that still leaves the real question unresolved.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">What the site covers</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Three layers of automotive guidance</h2>
+      <div class="mt-6 grid gap-6 md:grid-cols-3">
+        <article class="mesh-card p-5">
+          <h3 class="text-xl font-semibold text-ink">Problem guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Start with the symptom, narrow the likely causes, and get to a better first check before spending money blindly.</p>
+        </article>
+        <article class="mesh-card p-5">
+          <h3 class="text-xl font-semibold text-ink">Best-parts guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Compare parts by real use case, fitment confidence, and ownership logic instead of padded affiliate lists.</p>
+        </article>
+        <article class="mesh-card p-5">
+          <h3 class="text-xl font-semibold text-ink">Ownership guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Use the flagship guides when the real question is broader than one symptom or one part.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">How it is written</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">The editorial standard is deliberately narrow</h2>
+      <div class="mt-6 grid gap-4">
+        <div class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Practical over exhaustive</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">The goal is not to list every theoretical possibility. The goal is to help readers get to the most defensible next step faster.</p>
+        </div>
+        <div class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Fitment-aware over generic</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Advice is better when it is kept tied to the generation, phase, trim, engine, or drivetrain split that actually changes the decision.</p>
+        </div>
+        <div class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Useful over performative</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Kreativ Auto is not built to pretend every repair needs the most expensive part or the most dramatic diagnosis.</p>
+        </div>
+      </div>
+    </section>
   </div>
 </BaseLayout>

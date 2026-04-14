@@ -4,14 +4,33 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout title="Contact" description="Contact Kreativ Auto about the site, updates, or general feedback.">
   <div class="container-shell py-12 sm:py-16">
-    <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Contact</p>
-      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Get in touch</h1>
-      <div class="mt-6 max-w-3xl space-y-4 text-base leading-7 text-steel">
-        <p>If you want to get in touch about the site, suggest a correction, or point out something that should be improved, use the contact details below.</p>
-        <p>For now, the simplest contact method is email:</p>
-        <p><a class="font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="mailto:hello@kreativauto.com">hello@kreativauto.com</a></p>
-        <p>This site does not provide one-to-one repair advice, but feedback about accuracy, usability, or missing topics is always useful.</p>
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Get in touch</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+            If you want to suggest a correction, point out a fitment issue, or flag something that should be clearer, email is the simplest way to reach the site.
+          </p>
+          <p class="mt-6">
+            <a class="inline-flex rounded-full bg-ink px-5 py-3 text-sm font-semibold text-white hover:bg-accent" href="mailto:hello@kreativauto.com">
+              hello@kreativauto.com
+            </a>
+          </p>
+        </div>
+        <div class="accent-panel p-6">
+          <p class="eyebrow">Best use of this page</p>
+          <div class="mt-4 grid gap-4">
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Useful feedback</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Accuracy corrections, broken links, fitment concerns, or high-value content gaps are all useful to flag.</p>
+            </div>
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Not offered</p>
+              <p class="mt-2 text-sm leading-6 text-steel">This site does not provide one-to-one repair diagnosis or private vehicle troubleshooting by email.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
