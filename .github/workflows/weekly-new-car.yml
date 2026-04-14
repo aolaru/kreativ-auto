@@ -1,0 +1,55 @@
+name: Weekly new car draft
+
+on:
+  schedule:
+    - cron: "15 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: weekly-new-car
+  cancel-in-progress: true
+
+jobs:
+  add-car:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Add next backlog car
+        run: npm run autopilot:add-next-car
+
+      - name: Build Astro site
+        env:
+          PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
+          PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+        run: npm run build
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: codex/weekly-new-car
+          delete-branch: true
+          commit-message: Add next backlog car
+          title: Add next backlog car
+          body: |
+            Weekly automation draft.
+
+            This PR adds the next car scaffold from the curated backlog, runs the site build, and leaves the result for review before merge.
+          labels: |
+            content
+            automation

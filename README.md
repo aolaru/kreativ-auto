@@ -38,6 +38,34 @@ You can copy values from `.env.example`.
 
 Use `kreativauto.com` as the site's public domain.
 
+## Weekly car autopilot
+
+The repo includes a weekly workflow at `.github/workflows/weekly-new-car.yml`.
+
+What it does:
+
+- picks the next missing car from `scripts/autopilot/car-backlog.mjs`
+- creates one new car page scaffold in `src/content/cars/`
+- runs `npm run build`
+- opens or updates a review PR from `codex/weekly-new-car`
+
+Useful local commands:
+
+```bash
+npm run autopilot:add-next-car:dry
+npm run autopilot:add-next-car
+```
+
+Required GitHub settings:
+
+- `Settings -> Actions -> General -> Workflow permissions -> Read and write permissions`
+- enable `Allow GitHub Actions to create and approve pull requests`
+
+Scheduling note:
+
+- the workflow is scheduled weekly on Monday at `06:15 UTC`
+- GitHub Actions cron is UTC-only, so local Europe/Bucharest run time shifts with daylight saving time
+
 ### Notes
 
 - The site is fully static.

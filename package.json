@@ -11,7 +11,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "autopilot:add-next-car": "node scripts/autopilot/add-next-car.mjs",
+    "autopilot:add-next-car:dry": "node scripts/autopilot/add-next-car.mjs --dry-run"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
