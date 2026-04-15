@@ -12,7 +12,7 @@ metaTitle: Subaru Outback 2020 Common Problems, Maintenance Tips, and Best Parts
 metaDescription: Explore common Subaru Outback 2020 issues, practical maintenance advice, and the replacement parts worth checking first.
 excerpt: What to watch on a 2020 Subaru Outback if you want to keep it quiet, stable, and pleasant on long drives.
 heroImage: /images/photos/cars/subaru-outback-2020.webp
-updatedAt: 2026-03-31
+updatedAt: 2026-04-15
 commonProblems:
   - Brake squeal or mild vibration from pad wear, deposits, or rotor condition
   - Humming at speed caused by tire wear or a wheel bearing starting to fail
@@ -39,6 +39,12 @@ faqs:
     answer: "A lot of the usual complaints are wear-item related: brake noise, wheel-bearing or tire hum, and suspension sounds over rough surfaces."
   - question: Is the 2020 Outback expensive to maintain?
     answer: Routine costs are usually manageable, but staying ahead of tires, brakes, and front-end wear makes a big difference in how refined the car feels.
+relatedProblems:
+  - "front-brakes-squeal-at-low-speed"
+  - "front-end-clunk-when-pulling-into-driveways"
+  - "front-suspension-rattles-over-small-bumps"
+  - "front-end-clunk-over-bumps"
+  - "rear-brakes-squeak-after-rain"
 ---
 
 The Outback works best when it stays quiet and planted. Once brake noise, road hum, or suspension clunks start building, the whole car feels older than it really is.
