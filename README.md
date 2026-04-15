@@ -75,16 +75,19 @@ The repo also includes a daily workflow at `.github/workflows/daily-site-mainten
 
 What it does:
 
-- applies at most one deterministic maintenance fix to existing content
+- applies up to four deterministic content-quality fixes to existing content
 - prefers:
   - swapping `.jpg` or `.jpeg` image paths to matching `.webp` assets that already exist
   - adding missing `excerpt` from `metaDescription`
   - adding missing `heroImage` from `image`
   - adding missing `updatedAt`
+  - adding missing `relatedProblems` and `relatedBest` links on car pages
   - adding generic `buyingTiers` to older best-parts pages that still lack them
-  - adding an explicit `relatedBest` field to problem pages that still omit it
+  - filling missing best-page recommendation fields like `bestFor`, `avoidIf`, and `buyingAdvice`
+  - filling missing problem-page `relatedBest` links
+  - refreshing the current month in `Updates` with a bounded automation note when it is still missing
 - runs `npm run build`
-- opens or updates a review PR from `codex/daily-site-maintenance`
+- commits and pushes directly to `main` when there is a real fix
 
 Useful local commands:
 
@@ -95,7 +98,12 @@ npm run autopilot:daily-maintenance
 
 Scheduling note:
 
-- the workflow is scheduled daily at `03:35 UTC`
+- the workflow is scheduled every 2 hours at minute `35`
+
+Operational note:
+
+- this workflow now writes directly to `main`
+- if branch protection blocks GitHub Actions pushes, the job will fail until those rules are adjusted
 
 ### Notes
 

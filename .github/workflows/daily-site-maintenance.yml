@@ -2,12 +2,11 @@ name: Daily site maintenance
 
 on:
   schedule:
-    - cron: "35 3 * * *"
+    - cron: "35 */2 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
-  pull-requests: write
 
 concurrency:
   group: daily-site-maintenance
@@ -41,14 +40,14 @@ jobs:
             {
               echo "## Daily site maintenance"
               echo
-              echo "No deterministic fix was available, so no PR was created."
+              echo "No deterministic fix was available, so nothing was committed."
             } >> "$GITHUB_STEP_SUMMARY"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
             {
               echo "## Daily site maintenance"
               echo
-              echo "A bounded maintenance fix was applied and the workflow will build the site and open a PR."
+              echo "Up to four bounded content-quality fixes were applied and the workflow will build the site and push them directly to main."
             } >> "$GITHUB_STEP_SUMMARY"
           fi
 
@@ -59,27 +58,11 @@ jobs:
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: npm run build
 
-      - name: Create pull request
+      - name: Commit and push maintenance fix
         if: steps.changes.outputs.changed == 'true'
-        uses: peter-evans/create-pull-request@v8
-        with:
-          branch: codex/daily-site-maintenance
-          delete-branch: true
-          commit-message: Apply daily site maintenance fix
-          title: Apply daily site maintenance fix
-          body: |
-            Daily maintenance automation draft.
-
-            This PR applies one bounded deterministic fix to existing content:
-
-            - image-path optimization to `.webp` when a matching asset already exists
-            - missing `excerpt` fill from `metaDescription`
-            - missing `heroImage` fill from `image`
-            - missing `updatedAt` fill
-            - missing `buyingTiers` fill on best-parts pages
-            - missing `relatedBest` fill on problem pages
-
-            It also runs the site build and leaves the result for review before merge.
-          labels: |
-            maintenance
-            automation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Apply daily site maintenance fix"
+          git push origin main
