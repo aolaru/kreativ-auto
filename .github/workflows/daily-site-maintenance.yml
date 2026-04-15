@@ -2,7 +2,7 @@ name: Daily site maintenance
 
 on:
   schedule:
-    - cron: "35 */2 * * *"
+    - cron: "35 */3 * * *"
   workflow_dispatch:
 
 permissions:

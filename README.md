@@ -98,7 +98,7 @@ npm run autopilot:daily-maintenance
 
 Scheduling note:
 
-- the workflow is scheduled every 2 hours at minute `35`
+- the workflow is scheduled every 3 hours at minute `35`
 
 Operational note:
 
