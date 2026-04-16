@@ -3,7 +3,7 @@ title: Rough cold start
 metaTitle: "Rough Cold Start: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a rough cold start by checking the common ignition, fuel, and air-leak causes before replacing random parts.
 excerpt: A rough cold start usually points to a short list of repeat offenders, and most of them are easier to catch before the car fully warms up.
-heroImage: /images/photos/parts/ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.jpg
 updatedAt: 2026-03-31
 relatedCars:
   - honda-civic-2019
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Reliable coil set if cold-start roughness is tied to aging ignition components.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
     affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
     summary: Long-life plug option when overdue maintenance is the real cause of the stumble.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/ngk-spark-plugs.png
 faqs:
   - question: Why does my car only start rough when cold?
     answer: Cold starts put more stress on weak plugs, coils, air leaks, and fuel delivery problems, so small issues often show up there first.

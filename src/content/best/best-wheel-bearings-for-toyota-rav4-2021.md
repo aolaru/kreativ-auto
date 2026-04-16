@@ -5,7 +5,7 @@ car_model: Toyota RAV4 2021
 metaTitle: Best Wheel Bearings for Toyota RAV4 2021
 metaDescription: Compare the best wheel bearing and hub options for the Toyota RAV4 2021 if you want to fix the hum once and move on.
 excerpt: The right RAV4 wheel bearing is the one that solves the noise properly, not the one that is cheapest today.
-heroImage: /images/photos/parts/wheel-hub.jpg
+heroImage: /images/photos/parts/timken-wheel-hub.webp
 updatedAt: 2026-03-30
 relatedCars:
   - toyota-rav4-2021
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Best balance of OE-style reliability, broad availability, and long-term road-noise correction.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.webp
   - name: SKF Wheel Bearing and Hub Assembly
     price: "$179"
     rating: 4.8
     affiliate_url: https://vehicleaftermarket.skf.com/us/en/products/wheel-end
     summary: Premium hub option for owners willing to spend more for brand reputation and durability.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.webp
   - name: MOOG Complete Wheel Bearing Hub
     price: "$151"
     rating: 4.5
     affiliate_url: https://www.moogparts.com/parts/wheel-end/hub-assemblies-products.html
     summary: Good-value complete hub for drivers solving a clear bearing-noise issue without overspending.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/timken-wheel-hub.webp
 buyingAdvice:
   - Diagnose the noisy corner before ordering because front and rear hub failures can sound similar from the cabin.
   - Premium hubs usually earn their price through better bearing quality and more consistent long-term noise performance.

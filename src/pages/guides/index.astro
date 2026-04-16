@@ -116,15 +116,16 @@ const guideFilters = [
         {commonProblemGuides.slice(0, 1).map((guide) => (
           <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href}>
             {guide.image && (
-              <img
-                src={toThumbnail(guide.image)}
-                alt={guide.title}
-                class="h-48 w-full object-cover"
-                loading="lazy"
-                decoding="async"
-                width="960"
-                height="640"
-              />
+              <div class="image-frame image-frame-feature">
+                <img
+                  src={toThumbnail(guide.image)}
+                  alt={guide.title}
+                  loading="lazy"
+                  decoding="async"
+                  width="960"
+                  height="640"
+                />
+              </div>
             )}
             <div class="p-5">
               <p class="eyebrow">{guide.eyebrow}</p>
@@ -258,11 +259,10 @@ const guideFilters = [
           >
             {
               guide.image && (
-                <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                <div class="image-frame image-frame-card mb-4">
                   <img
                     src={toThumbnail(guide.image)}
                     alt={guide.title}
-                    class="h-44 w-full object-cover"
                     loading="lazy"
                     decoding="async"
                     width="960"

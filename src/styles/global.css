@@ -144,6 +144,43 @@ a {
     linear-gradient(180deg, rgba(255, 247, 237, 0.98), rgba(255, 255, 255, 0.94));
 }
 
+.image-frame {
+  @apply overflow-hidden rounded-2xl border border-slate-200 bg-white;
+}
+
+.image-frame > img {
+  @apply block w-full object-cover;
+}
+
+.image-frame-card > img {
+  height: 11rem;
+}
+
+.image-frame-feature > img {
+  height: 12rem;
+}
+
+.image-frame-tall > img {
+  height: 13rem;
+}
+
+.image-frame-hero > img {
+  height: 18rem;
+}
+
+@media (min-width: 640px) {
+  .image-frame-hero > img {
+    height: 20rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .image-frame-hero > img {
+    height: 100%;
+    min-height: 22rem;
+  }
+}
+
 .filter-toolbar {
   @apply grid gap-4 md:grid-cols-2 xl:grid-cols-4;
 }

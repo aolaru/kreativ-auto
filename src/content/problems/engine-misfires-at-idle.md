@@ -3,7 +3,7 @@ title: Engine misfires at idle
 metaTitle: "Engine Misfires at Idle: Common Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose an engine misfire at idle by checking the usual ignition and air-leak causes before throwing random parts at it.
 excerpt: A rough idle misfire usually has a short list of real causes. Start there before wasting money.
-heroImage: /images/photos/parts/ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.jpg
 updatedAt: 2026-03-30
 relatedCars:
   - honda-civic-2019
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Dependable coil replacement set for smoothing idle and improving ignition consistency.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.jpg
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
     affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
     summary: Long-life spark plug option commonly used to eliminate wear-related idle misfires.
-    image: /images/photos/parts/ignition-coil.jpg
+    image: /images/photos/parts/ngk-spark-plugs.png
 faqs:
   - question: Can a bad ignition coil cause an idle-only misfire?
     answer: Yes. Weak coils often show themselves first at idle or cold start before drivability worsens under load.

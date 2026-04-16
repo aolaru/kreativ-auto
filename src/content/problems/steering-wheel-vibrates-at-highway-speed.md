@@ -3,7 +3,7 @@ title: Steering wheel vibrates at highway speed
 metaTitle: "Steering Wheel Vibrates at Highway Speed: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose highway-speed steering wheel vibration by separating tire, wheel, bearing, and front-end causes before replacing the wrong part.
 excerpt: Highway-speed vibration usually starts with tires and wheels, but not every shake is a balancing problem.
-heroImage: /images/photos/parts/wheel-hub.jpg
+heroImage: /images/photos/parts/michelin-defender2.webp
 updatedAt: 2026-03-31
 relatedCars:
   - toyota-rav4-2021

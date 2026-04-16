@@ -209,11 +209,10 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
             <a class="mesh-card p-5 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href}>
               {
                 guide.image && (
-                  <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                  <div class="image-frame image-frame-card mb-4">
                     <img
                       src={toThumbnail(guide.image)}
                       alt={guide.title}
-                      class="h-44 w-full object-cover"
                       loading="lazy"
                       decoding="async"
                       width="960"
@@ -255,15 +254,16 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
               <a class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={`/cars/${car.id}/`}>
                 {
                   car.data.image && (
-                    <img
-                      src={toThumbnail(car.data.image)}
-                      alt={car.data.title}
-                      class="h-40 w-full object-cover"
-                      loading="lazy"
-                      decoding="async"
-                      width="960"
-                      height="640"
-                    />
+                    <div class="image-frame image-frame-card">
+                      <img
+                        src={toThumbnail(car.data.image)}
+                        alt={car.data.title}
+                        loading="lazy"
+                        decoding="async"
+                        width="960"
+                        height="640"
+                      />
+                    </div>
                   )
                 }
                 <div class="p-5">
@@ -293,11 +293,10 @@ const tiguanBest = newestBest.filter((entry) => entry.data.relatedCars.includes(
               <a class="block rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={`/problems/${problem.id}/`}>
                 {
                   problem.data.heroImage && (
-                    <div class="mb-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                    <div class="image-frame image-frame-card mb-4">
                       <img
                         src={toThumbnail(problem.data.heroImage)}
                         alt={problem.data.title}
-                        class="h-44 w-full object-cover"
                         loading="lazy"
                         decoding="async"
                         width="960"

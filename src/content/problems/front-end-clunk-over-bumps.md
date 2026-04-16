@@ -3,7 +3,7 @@ title: Front-end clunk over bumps
 metaTitle: "Front-End Clunk Over Bumps: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a front-end clunk over bumps by checking sway bar links, bushings, mounts, and related suspension wear before replacing the wrong part.
 excerpt: A front-end clunk usually comes from worn suspension hardware, but the exact part matters if you want the repair to stick.
-heroImage: /images/photos/parts/wheel-hub.jpg
+heroImage: /images/photos/parts/moog-sway-bar-links.png
 updatedAt: 2026-03-31
 relatedCars:
   - vw-tiguan-2020
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.oreillyauto.com/detail/c/moog/moog-stabilizer-bar-link/moo0/k750809
     summary: One of the first parts worth checking when the front end knocks over small bumps and driveway entries.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/moog-sway-bar-links.png
 faqs:
   - question: What usually causes a front-end clunk over bumps?
     answer: Sway bar links, bushings, mounts, and loose front-end hardware are some of the most common causes.
