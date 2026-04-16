@@ -1,0 +1,130 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50 service schedule and intervals";
+const description =
+  "A practical service-interval guide to the Toyota RAV4 XA50, including where normal use, hybrid versus gas, and short-trip ownership change the maintenance rhythm.";
+const intro =
+  "The XA50 RAV4 is not difficult to maintain, but that does not mean every owner can safely drift through service timing on autopilot. The useful version of the schedule is the practical one: what to stay disciplined about, what usage patterns accelerate, and where hybrid and gas ownership overlap versus split.";
+const modifiedTime = new Date("2026-04-16");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the RAV4 XA50 sensitive to maintenance timing?",
+    answer:
+      "It is forgiving compared with many vehicles, but tire, brake, battery, and fluid-service neglect still changes how refined and predictable it feels."
+  },
+  {
+    question: "Does hybrid versus gas change the service rhythm?",
+    answer:
+      "Some of the routine logic overlaps, but the battery, braking, and drivetrain-use pattern can change what deserves more attention first."
+  },
+  {
+    question: "What service area gets postponed too often on the XA50 RAV4?",
+    answer:
+      "Tire, brake, and alignment-related maintenance often gets delayed because the vehicle still feels usable long after the refinement started slipping."
+  }
+];
+
+const relatedProblems = [
+  { href: "/problems/rear-brakes-squeak-after-rain/", title: "Rear brakes squeak after rain", description: "Use this when brake service timing and wet-weather use are starting to overlap.", eyebrow: "Problem guide" },
+  { href: "/problems/front-end-clunk-when-pulling-into-driveways/", title: "Front-end clunk when pulling into driveways", description: "Open this when the service question is already turning into wear-item noise.", eyebrow: "Problem guide" },
+  { href: "/problems/steering-wheel-vibrates-at-highway-speed/", title: "Steering wheel vibrates at highway speed", description: "A useful next read when tire and wheel service timing is already getting too loose.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-brake-pads-for-toyota-rav4-2021/", title: "Best brake pads for Toyota RAV4 2021", description: "Use this when the interval says brake service is due and the next question is which pads to buy.", eyebrow: "Brake Pads" },
+  { href: "/best/best-rear-brake-pads-for-toyota-rav4-2021/", title: "Best rear brake pads for Toyota RAV4 2021", description: "Useful when rear-brake service is the actual maintenance decision in front of you.", eyebrow: "Rear Brake Pads" },
+  { href: "/best/best-batteries-for-toyota-rav4-2021/", title: "Best batteries for Toyota RAV4 2021", description: "Worth opening when the use pattern is telling you battery timing matters now.", eyebrow: "Batteries" },
+  { href: "/best/best-tires-for-toyota-rav4-2021-highway-vibration/", title: "Best tires for Toyota RAV4 2021 highway vibration", description: "Use this when service timing is already intersecting with tire quality and highway refinement.", eyebrow: "Tires" }
+];
+
+const relatedGuides = [
+  { href: "/guides/toyota-rav4-xa50-maintenance-costs-and-weak-points/", title: "Toyota RAV4 XA50 maintenance costs and weak points", description: "Open this when the service rhythm question becomes a longer-term running-cost question too.", eyebrow: "Maintenance guide" },
+  { href: "/comparisons/toyota-rav4-hybrid-vs-gas/", title: "Toyota RAV4 Hybrid vs gas", description: "Use this when the maintenance interval question depends on powertrain choice.", eyebrow: "Powertrain guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  editorialSummary="This guide is written as a practical service-interval and maintenance timing overview for the XA50 RAV4, with emphasis on the areas that shape refinement and ownership quality first."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Service guide", "Generation-specific", "Interval-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the goal is to keep an XA50 RAV4 feeling tight and predictable, not just to react once a complaint is already obvious."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, start here.">
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The RAV4 rewards consistent tire, brake, battery, and fluid-service timing even when it feels mechanically tolerant.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Hybrid and gas examples share most of the ownership rhythm, but some usage patterns change which maintenance area matters first.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The expensive mistake is letting “still runs fine” justify pushing service timing until refinement issues stack up together.</li>
+    </ul>
+  </Section>
+
+  <Section title="Core service rhythm" intro="These are the service areas that matter most in ordinary XA50 ownership.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Tires and alignment</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Do not wait for highway vibration to remind you</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The RAV4’s service rhythm is strongly affected by tire quality, rotation discipline, and alignment attention after impacts.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Brake timing</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Brake service should stay ahead of squeal and drag</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Owners often wait too long because the vehicle still feels generally fine, then complain about wet-weather squeak or uneven feel later.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Battery and charging</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Use pattern matters as much as mileage</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The battery story changes with trip pattern and climate, which is why interval thinking should stay practical rather than generic.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Fluids and checks</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Routine fluid discipline is still what keeps it feeling low-drama</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The XA50’s strongest service advantage is how predictable it feels when the routine items are simply handled on time.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="When to tighten the interval" intro="These are the use cases that justify more conservative timing.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Short-trip city use justifies closer attention to battery reserve and general service rhythm.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Highway vibration, curb hits, and pothole use justify more disciplined tire, wheel, and alignment checks.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Wet-weather use and infrequent long drives justify staying ahead of brake complaints instead of waiting for noise.</li>
+    </ul>
+  </Section>
+
+  <Section title="Where owners get the schedule wrong" intro="These are the maintenance habits that make a generally low-drama RAV4 feel older than it is.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Treating tires and alignment like comfort items instead of core maintenance.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Waiting until brake noise is obvious instead of servicing before wet-weather squeal and uneven feel settle in.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Ignoring battery and trip-pattern clues because the vehicle still starts most of the time.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Assuming hybrid versus gas changes everything when much of the useful maintenance logic still overlaps.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when service timing has already turned into a real complaint." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the service interval is due and the next step is buying the right replacement parts." items={relatedBest} />
+  <RelatedLinks title="Related ownership guides" intro="Open these when service timing is only one part of the broader XA50 ownership decision." items={relatedGuides} />
+</ContentLayout>

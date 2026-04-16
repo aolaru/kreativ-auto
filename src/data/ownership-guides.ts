@@ -70,6 +70,36 @@ export const ownershipGuides: OwnershipGuide[] = [
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
   },
   {
+    title: "VW Tiguan II facelift service schedule and intervals",
+    href: "/guides/vw-tiguan-ii-facelift-service-schedule-and-intervals/",
+    description:
+      "A service-interval guide to the facelift Tiguan maintenance rhythm, including which jobs deserve strict timing and which ones should be moved up on harder-use cars.",
+    eyebrow: "Service guide",
+    image: "/images/photos/cars/vw-tiguan-2020.webp",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "Toyota RAV4 XA50 service schedule and intervals",
+    href: "/guides/toyota-rav4-xa50-service-schedule-and-intervals/",
+    description:
+      "A service-interval guide to the XA50 RAV4 maintenance rhythm, including where everyday use, short trips, and hybrid-versus-gas usage change the practical schedule.",
+    eyebrow: "Service guide",
+    image: "/images/photos/cars/toyota-rav4-2021.webp",
+    relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
+    relatedGenerations: ["toyota-rav4-xa50-2019-2021"]
+  },
+  {
+    title: "Honda Civic 10th gen facelift service schedule and intervals",
+    href: "/guides/honda-civic-10th-gen-facelift-service-schedule-and-intervals/",
+    description:
+      "A service-interval guide to the facelift Civic maintenance rhythm, including the jobs that matter most on commuter-driven cars and where owners should not stretch the schedule.",
+    eyebrow: "Service guide",
+    image: "/images/photos/cars/honda-civic-2019.webp",
+    relatedCars: ["honda-civic-2019"],
+    relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
     title: "VW Tiguan II facelift what to check before buying",
     href: "/guides/vw-tiguan-ii-facelift-what-to-check-before-buying/",
     description:
