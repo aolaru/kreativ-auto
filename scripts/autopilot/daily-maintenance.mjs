@@ -1,6 +1,7 @@
 import { access, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
+import { load as parseYaml } from "js-yaml";
 
 const cwd = process.cwd();
 const carsDir = path.join(cwd, "src/content/cars");
@@ -70,6 +71,20 @@ function extractFrontmatter(source) {
 
 function replaceFrontmatter(source, frontmatter) {
   return source.replace(/^---\n[\s\S]*?\n---/m, `---\n${frontmatter}\n---`);
+}
+
+function assertValidFrontmatter(content, filePath) {
+  const frontmatter = extractFrontmatter(content);
+  if (!frontmatter) {
+    return;
+  }
+
+  try {
+    parseYaml(frontmatter);
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    throw new Error(`Invalid frontmatter generated for ${path.relative(cwd, filePath)}: ${detail}`);
+  }
 }
 
 function updateUpdatedAt(frontmatter) {
@@ -645,6 +660,7 @@ if (dryRun) {
 }
 
 for (const fix of appliedFixes) {
+  assertValidFrontmatter(fix.content, fix.filePath);
   await writeFile(fix.filePath, fix.content, "utf8");
   console.log(`Updated ${path.relative(cwd, fix.filePath)}`);
   console.log(`Reason: ${fix.reason}`);
