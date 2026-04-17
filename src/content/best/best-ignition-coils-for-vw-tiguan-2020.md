@@ -6,7 +6,7 @@ metaTitle: Best Ignition Coils for VW Tiguan 2020
 metaDescription: Compare the best ignition coil options for the VW Tiguan 2020 if you are chasing misfire counts, EPC warnings, or weak performance under load.
 excerpt: The right Tiguan ignition coil is the one that restores clean power under load without sending you back into diagnosis next week.
 heroImage: /images/photos/parts/delphi-ignition-coil.jpg
-updatedAt: 2026-04-06
+updatedAt: 2026-04-17
 relatedCars:
   - vw-tiguan-2020
 relatedProblems:
@@ -41,6 +41,16 @@ bestFor:
 avoidIf:
   - You have not checked spark plugs and scan data yet.
   - You are shopping only by lowest price while expecting OE-like stability under boost.
+buyingTiers:
+  - label: "Best overall"
+    product: "Eldor Ignition Coil Set"
+    reason: "Best overall choice if you want an OE-style coil set with strong reputation on modern VW applications."
+  - label: "Best value"
+    product: "Delphi Ignition Coil"
+    reason: "Value-minded option for drivers refreshing worn coils without paying the highest premium."
+  - label: "Best alternative"
+    product: "Bremi Ignition Coil"
+    reason: "Good alternative if you want a European-brand coil option with clean fitment and solid drivability."
 faqs:
   - question: Can weak coils trigger an EPC warning?
     answer: Yes. Load-related misfires can trigger EPC behavior, especially once boost and throttle demand rise.
