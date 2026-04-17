@@ -133,18 +133,26 @@ function renderList(key, items) {
   return `${key}:\n${items.map((item) => `  - ${quote(item)}`).join("\n")}`;
 }
 
+function replaceBlockPreservingBoundary(frontmatter, regex, block) {
+  return frontmatter.replace(regex, (match) => {
+    const suffix = match.endsWith("\n") ? "\n" : "";
+    return `${block}${suffix}`;
+  });
+}
+
 function replaceOrInsertList(frontmatter, key, items, afterKeyCandidates = []) {
   const block = renderList(key, items);
   const keyRegex = new RegExp(`^${key}:\\s*(?:\\[(?:[^\\]]*)\\]|\\n[\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\\Z)`, "m");
   if (keyRegex.test(frontmatter)) {
-    return frontmatter.replace(keyRegex, block);
+    return replaceBlockPreservingBoundary(frontmatter, keyRegex, block);
   }
 
   for (const afterKey of afterKeyCandidates) {
     const afterRegex = new RegExp(`^${afterKey}:\\s*(?:\\[(?:[^\\]]*)\\]|\\n[\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\\Z)`, "m");
     const match = frontmatter.match(afterRegex);
     if (match) {
-      return frontmatter.replace(afterRegex, `${match[0].trimEnd()}\n${block}`);
+      const suffix = match[0].endsWith("\n") ? "\n" : "";
+      return frontmatter.replace(afterRegex, `${match[0].trimEnd()}\n${block}${suffix}`);
     }
   }
 
@@ -430,7 +438,10 @@ function tryBestFieldCompletion(entry) {
   if (!/^buyingTiers:\s*(?:\n|\[)/m.test(nextFrontmatter) && derived.buyingTiers.length >= 2) {
     const block = renderBuyingTiers(derived.buyingTiers);
     if (/^avoidIf:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
-      nextFrontmatter = nextFrontmatter.replace(/^avoidIf:\s*(?:\[(?:[^\]]*)\]|\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m, (match) => `${match.trimEnd()}\n${block}\n`);
+      nextFrontmatter = nextFrontmatter.replace(/^avoidIf:\s*(?:\[(?:[^\]]*)\]|\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m, (match) => {
+        const suffix = match.endsWith("\n") ? "\n" : "";
+        return `${match.trimEnd()}\n${block}${suffix}`;
+      });
     } else {
       nextFrontmatter = `${nextFrontmatter}\n${block}`;
     }
