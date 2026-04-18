@@ -74,6 +74,10 @@ function replaceFrontmatter(source, frontmatter) {
 }
 
 function assertValidFrontmatter(content, filePath) {
+  if (path.extname(filePath) !== ".md") {
+    return;
+  }
+
   const frontmatter = extractFrontmatter(content);
   if (!frontmatter) {
     return;
@@ -672,6 +676,9 @@ if (dryRun) {
 
 for (const fix of appliedFixes) {
   assertValidFrontmatter(fix.content, fix.filePath);
+}
+
+for (const fix of appliedFixes) {
   await writeFile(fix.filePath, fix.content, "utf8");
   console.log(`Updated ${path.relative(cwd, fix.filePath)}`);
   console.log(`Reason: ${fix.reason}`);
