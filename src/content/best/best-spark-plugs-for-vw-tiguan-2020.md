@@ -6,7 +6,7 @@ metaTitle: Best Spark Plugs for VW Tiguan 2020
 metaDescription: Compare the best spark plug options for the VW Tiguan 2020 if you are chasing hesitation, misfires, or EPC behavior under load.
 excerpt: The right Tiguan spark plug is the one that keeps the 2.0T clean under load instead of creating another round of misfire diagnosis.
 heroImage: /images/photos/parts/ngk-spark-plugs.png
-updatedAt: 2026-04-06
+updatedAt: 2026-04-18
 relatedCars:
   - vw-tiguan-2020
 relatedProblems:
@@ -50,6 +50,16 @@ bestFor:
 avoidIf:
   - You have not confirmed engine-specific fitment yet.
   - You are replacing plugs while ignoring obvious coil or scan-data clues.
+buyingTiers:
+  - label: "Best overall"
+    product: "NGK Ruthenium HX Spark Plugs"
+    reason: "Best overall choice if you want a modern plug that handles daily use and load without drama."
+  - label: "Best value"
+    product: "Bosch Double Iridium Spark Plugs"
+    reason: "Strong alternative if you want a familiar brand with broad availability and clean drivability."
+  - label: "Best alternative"
+    product: "Genuine Volkswagen Spark Plugs"
+    reason: "Best OE-style route for owners who want the most conservative fitment call."
 faqs:
   - question: Can spark plugs trigger EPC warnings?
     answer: Yes. If a plug starts breaking down under boost or higher load, EPC behavior can follow.
