@@ -6,7 +6,7 @@ metaTitle: Best Front Sway Bar Links for Honda Civic 2019
 metaDescription: Compare the best front sway bar link options for the Honda Civic 2019 if the front end rattles over small bumps or sounds loose on rough city pavement.
 excerpt: The right Civic front sway bar links are the ones that quiet the small-bump rattle without turning a simple repair into another guess.
 heroImage: /images/photos/parts/moog-sway-bar-links.png
-updatedAt: 2026-04-20
+updatedAt: 2026-04-21
 relatedCars:
   - honda-civic-2019
 relatedProblems:
