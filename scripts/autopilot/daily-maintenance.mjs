@@ -1,7 +1,7 @@
 import { access, readFile, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
-import { load as parseYaml } from "js-yaml";
+import { dump as dumpYaml, load as parseYaml } from "js-yaml";
 
 const cwd = process.cwd();
 const carsDir = path.join(cwd, "src/content/cars");
@@ -18,10 +18,6 @@ const currentMonthLabel = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "Europe/Bucharest"
 }).format(new Date());
-
-function quote(value) {
-  return JSON.stringify(value);
-}
 
 function normalize(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
@@ -69,144 +65,90 @@ function extractFrontmatter(source) {
   return match[1];
 }
 
-function replaceFrontmatter(source, frontmatter) {
-  return source.replace(/^---\n[\s\S]*?\n---/m, `---\n${frontmatter}\n---`);
+function extractBody(source) {
+  const match = source.match(/^---\n[\s\S]*?\n---\n?([\s\S]*)$/m);
+  return match ? match[1] : source;
 }
 
-function assertValidFrontmatter(content, filePath) {
+function parseFrontmatterData(source, filePath) {
+  const frontmatter = extractFrontmatter(source);
+  if (!frontmatter) {
+    return {};
+  }
+
+  try {
+    return parseYaml(frontmatter) ?? {};
+  } catch (error) {
+    const detail = error instanceof Error ? error.message : String(error);
+    throw new Error(`Invalid existing frontmatter in ${path.relative(cwd, filePath)}: ${detail}`);
+  }
+}
+
+function serializeFrontmatterData(data) {
+  return dumpYaml(data, {
+    lineWidth: -1,
+    noRefs: true,
+    sortKeys: false,
+    quotingType: "\"",
+    forceQuotes: true
+  }).trimEnd();
+}
+
+function buildMarkdownContent(data, body) {
+  return `---\n${serializeFrontmatterData(data)}\n---\n${body}`;
+}
+
+function assertValidMarkdownData(data, filePath) {
   if (path.extname(filePath) !== ".md") {
     return;
   }
 
-  const frontmatter = extractFrontmatter(content);
-  if (!frontmatter) {
-    return;
-  }
-
   try {
-    parseYaml(frontmatter);
+    parseYaml(serializeFrontmatterData(data));
   } catch (error) {
     const detail = error instanceof Error ? error.message : String(error);
     throw new Error(`Invalid frontmatter generated for ${path.relative(cwd, filePath)}: ${detail}`);
   }
 }
 
-function updateUpdatedAt(frontmatter) {
-  if (/^updatedAt:\s*.+$/m.test(frontmatter)) {
-    return frontmatter.replace(/^updatedAt:\s*.+$/m, `updatedAt: ${today}`);
-  }
-
-  if (/^heroImage:\s*.+$/m.test(frontmatter)) {
-    return frontmatter.replace(/^heroImage:\s*.+$/m, (match) => `${match}\nupdatedAt: ${today}`);
-  }
-
-  if (/^excerpt:\s*.+$/m.test(frontmatter)) {
-    return frontmatter.replace(/^excerpt:\s*.+$/m, (match) => `${match}\nupdatedAt: ${today}`);
-  }
-
-  return `${frontmatter}\nupdatedAt: ${today}`;
+function updateUpdatedAt(data) {
+  data.updatedAt = today;
+  return data;
 }
 
-function parseList(frontmatter, key) {
-  const bulletMatch = frontmatter.match(new RegExp(`^${key}:\\n([\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\\Z)`, "m"));
-  if (bulletMatch) {
-    return bulletMatch[1]
-      .split("\n")
-      .map((line) => line.trim())
-      .filter((line) => line.startsWith("- "))
-      .map((line) => line.replace(/^- /, "").trim().replace(/^"(.*)"$/, "$1"));
-  }
-
-  const inlineMatch = frontmatter.match(new RegExp(`^${key}:\\s*\\[(.*)\\]$`, "m"));
-  if (inlineMatch) {
-    return inlineMatch[1]
-      .split(",")
-      .map((item) => item.trim())
-      .filter(Boolean)
-      .map((item) => item.replace(/^"(.*)"$/, "$1"));
-  }
-
-  return [];
+function getStringList(data, key) {
+  return Array.isArray(data[key]) ? data[key].filter((item) => typeof item === "string") : [];
 }
 
-function renderList(key, items) {
-  if (items.length === 0) {
-    return `${key}: []`;
-  }
-
-  return `${key}:\n${items.map((item) => `  - ${quote(item)}`).join("\n")}`;
+function getProducts(data) {
+  return Array.isArray(data.products)
+    ? data.products
+        .filter((item) => item && typeof item === "object" && typeof item.name === "string")
+        .map((item) => ({
+          name: item.name,
+          summary: typeof item.summary === "string" ? item.summary : "",
+          price: Number(String(item.price ?? "").replace(/[^0-9.]/g, "")),
+          rating: Number(item.rating ?? 0)
+        }))
+    : [];
 }
 
-function replaceBlockPreservingBoundary(frontmatter, regex, block) {
-  return frontmatter.replace(regex, (match) => {
-    const suffix = match.endsWith("\n") ? "\n" : "";
-    return `${block}${suffix}`;
-  });
-}
-
-function replaceOrInsertList(frontmatter, key, items, afterKeyCandidates = []) {
-  const block = renderList(key, items);
-  const keyRegex = new RegExp(`^${key}:\\s*(?:\\[(?:[^\\]]*)\\]|\\n[\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\\Z)`, "m");
-  if (keyRegex.test(frontmatter)) {
-    return replaceBlockPreservingBoundary(frontmatter, keyRegex, block);
+function deepReplaceStringValues(value, from, to) {
+  if (typeof value === "string") {
+    return value === from ? to : value;
   }
 
-  for (const afterKey of afterKeyCandidates) {
-    const afterRegex = new RegExp(`^${afterKey}:\\s*(?:\\[(?:[^\\]]*)\\]|\\n[\\s\\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\\Z)`, "m");
-    const match = frontmatter.match(afterRegex);
-    if (match) {
-      const suffix = match[0].endsWith("\n") ? "\n" : "";
-      return frontmatter.replace(afterRegex, `${match[0].trimEnd()}\n${block}${suffix}`);
-    }
+  if (Array.isArray(value)) {
+    return value.map((item) => deepReplaceStringValues(item, from, to));
   }
 
-  return `${frontmatter}\n${block}`;
-}
-
-function replaceOrInsertScalar(frontmatter, key, value, afterKeyCandidates = []) {
-  const line = `${key}: ${quote(value)}`;
-  const keyRegex = new RegExp(`^${key}:\\s*.+$`, "m");
-  if (keyRegex.test(frontmatter)) {
-    return frontmatter.replace(keyRegex, line);
+  if (value && typeof value === "object") {
+    return Object.fromEntries(
+      Object.entries(value).map(([key, nested]) => [key, deepReplaceStringValues(nested, from, to)])
+    );
   }
 
-  for (const afterKey of afterKeyCandidates) {
-    const afterRegex = new RegExp(`^${afterKey}:\\s*.+$`, "m");
-    const match = frontmatter.match(afterRegex);
-    if (match) {
-      return frontmatter.replace(afterRegex, `${match[0]}\n${line}`);
-    }
-  }
-
-  return `${frontmatter}\n${line}`;
-}
-
-function parseProductBlocks(frontmatter) {
-  const productsMatch = frontmatter.match(/^products:\n([\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m);
-  if (!productsMatch) {
-    return [];
-  }
-
-  return productsMatch[1]
-    .split(/\n(?=\s*-\sname:)/)
-    .map((chunk) => chunk.trim())
-    .filter(Boolean)
-    .map((chunk) => {
-      const name = chunk.match(/name:\s*("?)(.+?)\1$/m)?.[2];
-      const summary = chunk.match(/summary:\s*("?)(.+?)\1$/m)?.[2] ?? "";
-      const priceRaw = chunk.match(/price:\s*("?)(.+?)\1$/m)?.[2] ?? "";
-      const ratingRaw = chunk.match(/rating:\s*([0-9.]+)/m)?.[1] ?? "";
-
-      return name
-        ? {
-            name,
-            summary,
-            price: Number(priceRaw.replace(/[^0-9.]/g, "")),
-            rating: Number(ratingRaw)
-          }
-        : null;
-    })
-    .filter(Boolean);
+  return value;
 }
 
 function buildBuyingTiers(products) {
@@ -253,23 +195,6 @@ function buildBuyingTiers(products) {
   return tiers;
 }
 
-function renderBuyingTiers(items) {
-  if (items.length === 0) {
-    return "buyingTiers: []";
-  }
-
-  return [
-    "buyingTiers:",
-    ...items.map((tier) =>
-      [
-        `  - label: ${quote(tier.label)}`,
-        `    product: ${quote(tier.product)}`,
-        `    reason: ${quote(tier.reason)}`
-      ].join("\n")
-    )
-  ].join("\n");
-}
-
 async function loadEntries(dir, type) {
   const files = (await readdir(dir)).filter((file) => file.endsWith(".md")).sort();
   const entries = [];
@@ -277,31 +202,33 @@ async function loadEntries(dir, type) {
   for (const file of files) {
     const filePath = path.join(dir, file);
     const source = await readFile(filePath, "utf8");
-    const frontmatter = extractFrontmatter(source) ?? "";
+    const data = parseFrontmatterData(source, filePath);
+    const body = extractBody(source);
     const id = file.replace(/\.md$/, "");
-    const title = frontmatter.match(/^title:\s*("?)(.+?)\1$/m)?.[2] ?? id;
+    const title = typeof data.title === "string" ? data.title : id;
     entries.push({
       id,
       type,
       filePath,
       source,
-      frontmatter,
+      body,
+      data,
       title,
-      brand: frontmatter.match(/^brand:\s*("?)(.+?)\1$/m)?.[2] ?? "",
-      model: frontmatter.match(/^model:\s*("?)(.+?)\1$/m)?.[2] ?? "",
-      year: frontmatter.match(/^year:\s*([0-9]{4})$/m)?.[1] ?? "",
-      carModel: frontmatter.match(/^car_model:\s*("?)(.+?)\1$/m)?.[2] ?? "",
-      description: frontmatter.match(/^description:\s*("?)(.+?)\1$/m)?.[2] ?? "",
-      excerpt: frontmatter.match(/^excerpt:\s*("?)(.+?)\1$/m)?.[2] ?? "",
-      symptoms: parseList(frontmatter, "symptoms"),
-      causes: parseList(frontmatter, "causes"),
-      commonProblems: parseList(frontmatter, "commonProblems"),
-      relatedCars: parseList(frontmatter, "relatedCars"),
-      relatedBest: parseList(frontmatter, "relatedBest"),
-      relatedProblems: parseList(frontmatter, "relatedProblems"),
-      recommendedParts: parseList(frontmatter, "recommendedParts"),
-      maintenanceTips: parseList(frontmatter, "maintenanceTips"),
-      products: parseProductBlocks(frontmatter)
+      brand: typeof data.brand === "string" ? data.brand : "",
+      model: typeof data.model === "string" ? data.model : "",
+      year: data.year ? String(data.year) : "",
+      carModel: typeof data.car_model === "string" ? data.car_model : "",
+      description: typeof data.description === "string" ? data.description : "",
+      excerpt: typeof data.excerpt === "string" ? data.excerpt : "",
+      symptoms: getStringList(data, "symptoms"),
+      causes: getStringList(data, "causes"),
+      commonProblems: getStringList(data, "commonProblems"),
+      relatedCars: getStringList(data, "relatedCars"),
+      relatedBest: getStringList(data, "relatedBest"),
+      relatedProblems: getStringList(data, "relatedProblems"),
+      recommendedParts: Array.isArray(data.recommendedParts) ? data.recommendedParts : [],
+      maintenanceTips: getStringList(data, "maintenanceTips"),
+      products: getProducts(data)
     });
   }
 
@@ -320,12 +247,12 @@ async function tryImageWebpFix(entry) {
       continue;
     }
 
-    const replaced = entry.source.split(current).join(candidate);
-    const next = replaceFrontmatter(replaced, updateUpdatedAt(entry.frontmatter));
+    const nextData = deepReplaceStringValues(structuredClone(entry.data), current, candidate);
+    updateUpdatedAt(nextData);
     return {
       changed: true,
       reason: `Use lighter .webp image variant for ${current}`,
-      content: next
+      data: nextData
     };
   }
 
@@ -333,54 +260,56 @@ async function tryImageWebpFix(entry) {
 }
 
 function tryExcerptFix(entry) {
-  if (/^excerpt:\s*.+$/m.test(entry.frontmatter)) {
+  if (typeof entry.data.excerpt === "string" && entry.data.excerpt.trim()) {
     return { changed: false };
   }
 
-  const metaDescriptionMatch = entry.frontmatter.match(/^metaDescription:\s*(.+)$/m);
-  if (!metaDescriptionMatch) {
+  if (typeof entry.data.metaDescription !== "string" || !entry.data.metaDescription.trim()) {
     return { changed: false };
   }
 
-  let nextFrontmatter = replaceOrInsertScalar(entry.frontmatter, "excerpt", metaDescriptionMatch[1].replace(/^"(.*)"$/, "$1"), ["metaDescription"]);
-  nextFrontmatter = updateUpdatedAt(nextFrontmatter);
+  const nextData = structuredClone(entry.data);
+  nextData.excerpt = entry.data.metaDescription;
+  updateUpdatedAt(nextData);
 
   return {
     changed: true,
     reason: "Add missing excerpt from metaDescription",
-    content: replaceFrontmatter(entry.source, nextFrontmatter)
+    data: nextData
   };
 }
 
 function tryHeroImageFix(entry) {
-  if (/^heroImage:\s*.+$/m.test(entry.frontmatter)) {
+  if (typeof entry.data.heroImage === "string" && entry.data.heroImage.trim()) {
     return { changed: false };
   }
 
-  const imageMatch = entry.frontmatter.match(/^image:\s*(.+)$/m);
-  if (!imageMatch) {
+  if (typeof entry.data.image !== "string" || !entry.data.image.trim()) {
     return { changed: false };
   }
 
-  let nextFrontmatter = replaceOrInsertScalar(entry.frontmatter, "heroImage", imageMatch[1].replace(/^"(.*)"$/, "$1"), ["image"]);
-  nextFrontmatter = updateUpdatedAt(nextFrontmatter);
+  const nextData = structuredClone(entry.data);
+  nextData.heroImage = entry.data.image;
+  updateUpdatedAt(nextData);
 
   return {
     changed: true,
     reason: "Add missing heroImage from image",
-    content: replaceFrontmatter(entry.source, nextFrontmatter)
+    data: nextData
   };
 }
 
 function tryUpdatedAtFix(entry) {
-  if (/^updatedAt:\s*.+$/m.test(entry.frontmatter)) {
+  if (entry.data.updatedAt) {
     return { changed: false };
   }
 
+  const nextData = structuredClone(entry.data);
+  updateUpdatedAt(nextData);
   return {
     changed: true,
     reason: "Add missing updatedAt",
-    content: replaceFrontmatter(entry.source, updateUpdatedAt(entry.frontmatter))
+    data: nextData
   };
 }
 
@@ -391,7 +320,7 @@ function deriveBestPageFields(entry) {
   }
 
   const carLabel = entry.carModel || entry.title.replace(/^Best\s+/i, "");
-  const category = entry.frontmatter.match(/^category:\s*("?)(.+?)\1$/m)?.[2] ?? "parts";
+  const category = typeof entry.data.category === "string" ? entry.data.category : "parts";
 
   return {
     buyingAdvice: [
@@ -421,34 +350,26 @@ function tryBestFieldCompletion(entry) {
     return { changed: false };
   }
 
-  let nextFrontmatter = entry.frontmatter;
+  const nextData = structuredClone(entry.data);
   let changed = false;
 
-  if (!/^buyingAdvice:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
-    nextFrontmatter = replaceOrInsertList(nextFrontmatter, "buyingAdvice", derived.buyingAdvice, ["products"]);
+  if (!Array.isArray(nextData.buyingAdvice) || nextData.buyingAdvice.length === 0) {
+    nextData.buyingAdvice = derived.buyingAdvice;
     changed = true;
   }
 
-  if (!/^bestFor:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
-    nextFrontmatter = replaceOrInsertList(nextFrontmatter, "bestFor", derived.bestFor, ["quickVerdict", "buyingAdvice"]);
+  if (!Array.isArray(nextData.bestFor) || nextData.bestFor.length === 0) {
+    nextData.bestFor = derived.bestFor;
     changed = true;
   }
 
-  if (!/^avoidIf:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
-    nextFrontmatter = replaceOrInsertList(nextFrontmatter, "avoidIf", derived.avoidIf, ["bestFor"]);
+  if (!Array.isArray(nextData.avoidIf) || nextData.avoidIf.length === 0) {
+    nextData.avoidIf = derived.avoidIf;
     changed = true;
   }
 
-  if (!/^buyingTiers:\s*(?:\n|\[)/m.test(nextFrontmatter) && derived.buyingTiers.length >= 2) {
-    const block = renderBuyingTiers(derived.buyingTiers);
-    if (/^avoidIf:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
-      nextFrontmatter = nextFrontmatter.replace(/^avoidIf:\s*(?:\[(?:[^\]]*)\]|\n[\s\S]*?)(?=^[A-Za-z][A-Za-z0-9_]*:|\Z)/m, (match) => {
-        const suffix = match.endsWith("\n") ? "\n" : "";
-        return `${match.trimEnd()}\n${block}${suffix}`;
-      });
-    } else {
-      nextFrontmatter = `${nextFrontmatter}\n${block}`;
-    }
+  if ((!Array.isArray(nextData.buyingTiers) || nextData.buyingTiers.length === 0) && derived.buyingTiers.length >= 2) {
+    nextData.buyingTiers = derived.buyingTiers;
     changed = true;
   }
 
@@ -456,11 +377,11 @@ function tryBestFieldCompletion(entry) {
     return { changed: false };
   }
 
-  nextFrontmatter = updateUpdatedAt(nextFrontmatter);
+  updateUpdatedAt(nextData);
   return {
     changed: true,
     reason: "Complete missing best-parts page recommendation fields",
-    content: replaceFrontmatter(entry.source, nextFrontmatter)
+    data: nextData
   };
 }
 
@@ -507,24 +428,26 @@ function tryProblemFieldCompletion(entry, cars, bestPages) {
     return { changed: false };
   }
 
-  let nextFrontmatter = entry.frontmatter;
+  const nextData = structuredClone(entry.data);
   let changed = false;
 
-  if (!/^relatedBest:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
+  if (!Array.isArray(nextData.relatedBest) || nextData.relatedBest.length === 0) {
     const relatedBest = deriveProblemRelatedBest(entry, cars, bestPages);
-    nextFrontmatter = replaceOrInsertList(nextFrontmatter, "relatedBest", relatedBest, ["relatedCars"]);
-    changed = true;
+    if (relatedBest.length > 0) {
+      nextData.relatedBest = relatedBest;
+      changed = true;
+    }
   }
 
   if (!changed) {
     return { changed: false };
   }
 
-  nextFrontmatter = updateUpdatedAt(nextFrontmatter);
+  updateUpdatedAt(nextData);
   return {
     changed: true,
     reason: "Complete missing problem-page related links",
-    content: replaceFrontmatter(entry.source, nextFrontmatter)
+    data: nextData
   };
 }
 
@@ -556,21 +479,21 @@ function tryCarInternalLinks(entry, problemPages, bestPages) {
     return { changed: false };
   }
 
-  let nextFrontmatter = entry.frontmatter;
+  const nextData = structuredClone(entry.data);
   let changed = false;
 
-  if (!/^relatedProblems:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
+  if (!Array.isArray(nextData.relatedProblems) || nextData.relatedProblems.length === 0) {
     const relatedProblems = deriveCarRelatedProblems(entry, problemPages);
     if (relatedProblems.length > 0) {
-      nextFrontmatter = replaceOrInsertList(nextFrontmatter, "relatedProblems", relatedProblems, ["heroImage", "updatedAt"]);
+      nextData.relatedProblems = relatedProblems;
       changed = true;
     }
   }
 
-  if (!/^relatedBest:\s*(?:\n|\[)/m.test(nextFrontmatter)) {
+  if (!Array.isArray(nextData.relatedBest) || nextData.relatedBest.length === 0) {
     const relatedBest = deriveCarRelatedBest(entry, bestPages);
     if (relatedBest.length > 0) {
-      nextFrontmatter = replaceOrInsertList(nextFrontmatter, "relatedBest", relatedBest, ["relatedProblems", "heroImage", "updatedAt"]);
+      nextData.relatedBest = relatedBest;
       changed = true;
     }
   }
@@ -579,11 +502,11 @@ function tryCarInternalLinks(entry, problemPages, bestPages) {
     return { changed: false };
   }
 
-  nextFrontmatter = updateUpdatedAt(nextFrontmatter);
+  updateUpdatedAt(nextData);
   return {
     changed: true,
     reason: "Add missing internal links to a car page",
-    content: replaceFrontmatter(entry.source, nextFrontmatter)
+    data: nextData
   };
 }
 
@@ -646,7 +569,7 @@ for (const entry of entries) {
   appliedFixes.push({
     filePath: entry.filePath,
     reason: fix.reason,
-    content: fix.content
+    content: fix.content ?? buildMarkdownContent(fix.data, entry.body)
   });
 
   if (appliedFixes.length >= maxFixes) {
@@ -675,7 +598,9 @@ if (dryRun) {
 }
 
 for (const fix of appliedFixes) {
-  assertValidFrontmatter(fix.content, fix.filePath);
+  if (path.extname(fix.filePath) === ".md") {
+    assertValidMarkdownData(parseFrontmatterData(fix.content, fix.filePath), fix.filePath);
+  }
 }
 
 for (const fix of appliedFixes) {
