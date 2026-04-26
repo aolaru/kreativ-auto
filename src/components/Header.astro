@@ -49,10 +49,10 @@ const searchIndex = [
     description: guide.description,
     type: guide.eyebrow
   }))
-];
+].filter((entry) => entry.title && entry.href);
 ---
 
-<header class="border-b border-black/5 bg-white/85 backdrop-blur">
+<header class="relative z-40 border-b border-black/5 bg-white/85 backdrop-blur">
   <div class="container-shell py-4">
     <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div class="flex min-w-0 items-center gap-3 text-ink">
@@ -236,7 +236,10 @@ const searchIndex = [
         const activeLink = links[activeIndex] || links[0];
         if (activeLink) {
           event.preventDefault();
-          window.location.href = activeLink.getAttribute("href");
+          const href = activeLink.getAttribute("href");
+          if (href) {
+            window.location.href = href;
+          }
         }
       }
 
