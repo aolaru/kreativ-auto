@@ -2,7 +2,7 @@ export function GET() {
   const body = `User-agent: *
 Allow: /
 
-Sitemap: https://kreativauto.com/sitemap-index.xml
+Sitemap: https://kreativauto.com/sitemap.xml
 `;
 
   return new Response(body, {

@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/promote-sitemap.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "autopilot:add-next-car": "node scripts/autopilot/add-next-car.mjs",

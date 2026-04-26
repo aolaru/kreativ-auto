@@ -1,4 +1,8 @@
 ---
+import { getCollection } from "astro:content";
+import { comparisonGuides } from "../data/comparison-guides";
+import { ownershipGuides } from "../data/ownership-guides";
+
 const navItems = [
   { href: "/cars/", label: "Cars" },
   { href: "/generations/", label: "Generations" },
@@ -7,32 +11,258 @@ const navItems = [
   { href: "/best/", label: "Best Parts" },
   { href: "/comparisons/", label: "Comparisons" }
 ];
+
+const [cars, problems, bestPages] = await Promise.all([
+  getCollection("cars"),
+  getCollection("problems"),
+  getCollection("best")
+]);
+
+const searchIndex = [
+  ...cars.map((entry) => ({
+    title: entry.data.title,
+    href: `/cars/${entry.slug}/`,
+    description: entry.data.metaDescription,
+    type: "Car"
+  })),
+  ...problems.map((entry) => ({
+    title: entry.data.title,
+    href: `/problems/${entry.slug}/`,
+    description: entry.data.metaDescription,
+    type: "Problem guide"
+  })),
+  ...bestPages.map((entry) => ({
+    title: entry.data.title,
+    href: `/best/${entry.slug}/`,
+    description: entry.data.metaDescription,
+    type: "Best parts"
+  })),
+  ...ownershipGuides.map((guide) => ({
+    title: guide.title,
+    href: guide.href,
+    description: guide.description,
+    type: guide.eyebrow
+  })),
+  ...comparisonGuides.map((guide) => ({
+    title: guide.title,
+    href: guide.href,
+    description: guide.description,
+    type: guide.eyebrow
+  }))
+];
 ---
 
 <header class="border-b border-black/5 bg-white/85 backdrop-blur">
-  <div class="container-shell flex items-center justify-between gap-6 py-4">
-    <a href="/" class="flex items-center gap-3 text-ink">
-      <span class="grid h-11 w-11 place-items-center rounded-2xl bg-ink text-sm font-bold uppercase tracking-[0.2em] text-white">
-        KA
-      </span>
-      <span>
-        <span class="block text-lg font-semibold">Kreativ Auto</span>
-        <span class="block text-sm text-steel">Automotive guides, diagnostics, and affiliate picks</span>
-      </span>
-    </a>
+  <div class="container-shell py-4">
+    <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+      <div class="flex min-w-0 items-center gap-3 text-ink">
+        <a href="/" class="flex min-w-0 items-center gap-3 text-ink">
+          <span class="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-ink text-sm font-bold uppercase tracking-[0.2em] text-white">
+            KA
+          </span>
+          <span class="min-w-0">
+            <span class="block text-lg font-semibold">Kreativ Auto</span>
+            <span class="block truncate text-sm text-steel">Automotive guides, diagnostics, and affiliate picks</span>
+          </span>
+        </a>
+      </div>
 
-    <nav aria-label="Primary" class="hidden md:block">
-      <ul class="flex items-center gap-6 text-sm font-medium text-steel">
-        {
-          navItems.map((item) => (
-            <li>
-              <a class="transition hover:text-accent" href={item.href}>
-                {item.label}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </nav>
+      <div class="flex flex-col gap-4 lg:min-w-[42rem] lg:flex-1 lg:items-end">
+        <div class="header-search w-full lg:max-w-xl">
+          <label class="sr-only" for="site-search">Search the site</label>
+          <div class="header-search-shell">
+            <svg
+              aria-hidden="true"
+              class="header-search-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.7"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="11" cy="11" r="7"></circle>
+              <path d="m20 20-3.5-3.5"></path>
+            </svg>
+            <input
+              id="site-search"
+              class="header-search-input"
+              type="search"
+              placeholder="Search cars, guides, problems, and parts"
+              autocomplete="off"
+              spellcheck="false"
+            />
+            <button class="header-search-clear" type="button" aria-label="Clear search" hidden>Clear</button>
+          </div>
+          <div class="header-search-results" hidden>
+            <p class="header-search-empty" hidden>No matching pages found.</p>
+            <ul class="header-search-list"></ul>
+          </div>
+          <script id="site-search-index" type="application/json" set:html={JSON.stringify(searchIndex)}></script>
+        </div>
+
+        <nav aria-label="Primary" class="hidden md:block">
+          <ul class="flex flex-wrap items-center justify-end gap-6 text-sm font-medium text-steel">
+            {
+              navItems.map((item) => (
+                <li>
+                  <a class="transition hover:text-accent" href={item.href}>
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </div>
   </div>
 </header>
+
+<script is:inline>
+  const searchIndexNode = document.getElementById("site-search-index");
+  const searchInput = document.getElementById("site-search");
+  const searchRoot = searchInput?.closest(".header-search");
+  const searchResults = searchRoot?.querySelector(".header-search-results");
+  const searchList = searchRoot?.querySelector(".header-search-list");
+  const searchEmpty = searchRoot?.querySelector(".header-search-empty");
+  const clearButton = searchRoot?.querySelector(".header-search-clear");
+
+  if (searchIndexNode && searchInput && searchRoot && searchResults && searchList && searchEmpty && clearButton) {
+    const entries = JSON.parse(searchIndexNode.textContent || "[]");
+    let activeIndex = -1;
+
+    const escapeHtml = (value) =>
+      value
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#39;");
+
+    const scoreEntry = (entry, query) => {
+      const haystackTitle = entry.title.toLowerCase();
+      const haystackDescription = (entry.description || "").toLowerCase();
+      const haystackType = entry.type.toLowerCase();
+
+      if (haystackTitle === query) return 120;
+      if (haystackTitle.startsWith(query)) return 90;
+      if (haystackTitle.includes(query)) return 70;
+      if (haystackType.includes(query)) return 40;
+      if (haystackDescription.includes(query)) return 25;
+      return -1;
+    };
+
+    const getMatches = (value) => {
+      const query = value.trim().toLowerCase();
+      if (!query) return [];
+
+      return entries
+        .map((entry) => ({ entry, score: scoreEntry(entry, query) }))
+        .filter((item) => item.score >= 0)
+        .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title))
+        .slice(0, 6)
+        .map((item) => item.entry);
+    };
+
+    const closeResults = () => {
+      activeIndex = -1;
+      searchResults.hidden = true;
+      searchEmpty.hidden = true;
+      searchList.innerHTML = "";
+      searchRoot.classList.remove("is-open");
+    };
+
+    const renderResults = (matches) => {
+      searchList.innerHTML = matches
+        .map(
+          (match, index) => `
+            <li>
+              <a class="header-search-link" href="${match.href}" data-index="${index}">
+                <span class="header-search-type">${escapeHtml(match.type)}</span>
+                <span class="header-search-title">${escapeHtml(match.title)}</span>
+                <span class="header-search-description">${escapeHtml(match.description || "")}</span>
+              </a>
+            </li>
+          `
+        )
+        .join("");
+    };
+
+    const updateActiveState = () => {
+      const links = [...searchList.querySelectorAll(".header-search-link")];
+      links.forEach((link, index) => {
+        link.classList.toggle("is-active", index === activeIndex);
+      });
+    };
+
+    const updateSearch = () => {
+      const value = searchInput.value.trim();
+      clearButton.hidden = !value;
+
+      if (!value) {
+        closeResults();
+        return;
+      }
+
+      const matches = getMatches(value);
+      activeIndex = matches.length ? 0 : -1;
+      renderResults(matches);
+      searchResults.hidden = false;
+      searchRoot.classList.add("is-open");
+      searchEmpty.hidden = matches.length > 0;
+      updateActiveState();
+    };
+
+    searchInput.addEventListener("input", updateSearch);
+
+    searchInput.addEventListener("keydown", (event) => {
+      const links = [...searchList.querySelectorAll(".header-search-link")];
+      if (!links.length && event.key !== "Escape") return;
+
+      if (event.key === "ArrowDown") {
+        event.preventDefault();
+        activeIndex = activeIndex < links.length - 1 ? activeIndex + 1 : 0;
+        updateActiveState();
+      }
+
+      if (event.key === "ArrowUp") {
+        event.preventDefault();
+        activeIndex = activeIndex > 0 ? activeIndex - 1 : links.length - 1;
+        updateActiveState();
+      }
+
+      if (event.key === "Enter") {
+        const activeLink = links[activeIndex] || links[0];
+        if (activeLink) {
+          event.preventDefault();
+          window.location.href = activeLink.getAttribute("href");
+        }
+      }
+
+      if (event.key === "Escape") {
+        closeResults();
+        searchInput.blur();
+      }
+    });
+
+    clearButton.addEventListener("click", () => {
+      searchInput.value = "";
+      clearButton.hidden = true;
+      closeResults();
+      searchInput.focus();
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!searchRoot.contains(event.target)) {
+        closeResults();
+      }
+    });
+
+    searchInput.addEventListener("focus", () => {
+      if (searchInput.value.trim()) {
+        updateSearch();
+      }
+    });
+  }
+</script>
