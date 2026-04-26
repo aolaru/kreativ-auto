@@ -18,22 +18,24 @@ const [cars, problems, bestPages] = await Promise.all([
   getCollection("best")
 ]);
 
+const getEntryPath = (entry: { id: string; slug?: string }) => entry.slug ?? entry.id.replace(/\.(md|mdx)$/i, "");
+
 const searchIndex = [
   ...cars.map((entry) => ({
     title: entry.data.title,
-    href: `/cars/${entry.slug}/`,
+    href: `/cars/${getEntryPath(entry)}/`,
     description: entry.data.metaDescription,
     type: "Car"
   })),
   ...problems.map((entry) => ({
     title: entry.data.title,
-    href: `/problems/${entry.slug}/`,
+    href: `/problems/${getEntryPath(entry)}/`,
     description: entry.data.metaDescription,
     type: "Problem guide"
   })),
   ...bestPages.map((entry) => ({
     title: entry.data.title,
-    href: `/best/${entry.slug}/`,
+    href: `/best/${getEntryPath(entry)}/`,
     description: entry.data.metaDescription,
     type: "Best parts"
   })),
