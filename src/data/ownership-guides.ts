@@ -10,6 +10,36 @@ export interface OwnershipGuide {
 
 export const ownershipGuides: OwnershipGuide[] = [
   {
+    title: "VW Tiguan II facelift reliability scorecard",
+    href: "/guides/vw-tiguan-ii-facelift-reliability-scorecard/",
+    description:
+      "A used-buyer reliability scorecard for the facelift Tiguan, focused on what the SUV does well, where the ownership risk really sits, and which complaints are manageable versus annoying.",
+    eyebrow: "Reliability guide",
+    image: "/images/photos/cars/vw-tiguan-2020.webp",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "Toyota RAV4 XA50 reliability scorecard",
+    href: "/guides/toyota-rav4-xa50-reliability-scorecard/",
+    description:
+      "A used-buyer reliability scorecard for the XA50 RAV4, focused on where the platform is genuinely strong, where everyday ownership still needs discipline, and which complaints are usually low-drama.",
+    eyebrow: "Reliability guide",
+    image: "/images/photos/cars/toyota-rav4-2021.webp",
+    relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
+    relatedGenerations: ["toyota-rav4-xa50-2019-2021"]
+  },
+  {
+    title: "Honda Civic 10th gen facelift reliability scorecard",
+    href: "/guides/honda-civic-10th-gen-facelift-reliability-scorecard/",
+    description:
+      "A used-buyer reliability scorecard for the facelift Civic, focused on what is genuinely easy to live with, which weak points deserve real attention, and where the platform reputation hides nuance.",
+    eyebrow: "Reliability guide",
+    image: "/images/photos/cars/honda-civic-2019.webp",
+    relatedCars: ["honda-civic-2019"],
+    relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
     title: "VW Tiguan II facelift common problems",
     href: "/guides/vw-tiguan-ii-facelift-common-problems/",
     description:

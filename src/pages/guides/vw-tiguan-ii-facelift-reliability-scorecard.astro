@@ -1,0 +1,105 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "VW Tiguan II facelift reliability scorecard";
+const description =
+  "A used-buyer reliability scorecard for the VW Tiguan II facelift, focused on what is manageable, what is annoying, and where the platform deserves more caution than the badge suggests.";
+const intro =
+  "The facelift Tiguan is not unreliable in the lazy internet sense, but it is also not a car you should buy on general Volkswagen optimism alone. The ownership pattern is more specific than that. Front-brake refinement, small coolant loss, ignition-side drivability complaints, short-trip battery weakness, and the occasional water-intrusion annoyance define the score more than any one catastrophic failure. This guide is here to turn that pattern into a clean used-buyer read.";
+const modifiedTime = new Date("2026-04-25");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/vw-tiguan-ii-facelift-reliability-scorecard/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/epc-light-comes-on-under-acceleration/", title: "EPC light comes on under acceleration", description: "Open this if the reliability question is really about load-related drivability and ignition discipline.", eyebrow: "Problem guide" },
+  { href: "/problems/coolant-level-drops-with-no-visible-leak/", title: "Coolant level drops with no visible leak", description: "Use this when the score drops because the cooling-system story is already starting to drift.", eyebrow: "Problem guide" },
+  { href: "/problems/water-leaks-into-cabin-after-heavy-rain/", title: "Water leaks into cabin after heavy rain", description: "Worth reading if the Tiguan looks fine mechanically but is already feeling older through damp interior issues.", eyebrow: "Problem guide" }
+];
+
+const relatedGuides = [
+  { href: "/guides/vw-tiguan-ii-facelift-common-problems/", title: "VW Tiguan II facelift common problems", description: "The deeper ownership-problem guide if the scorecard already points you toward the repeat trouble pattern.", eyebrow: "Ownership guide" },
+  { href: "/guides/vw-tiguan-ii-facelift-maintenance-costs-and-weak-points/", title: "VW Tiguan II facelift maintenance costs and weak points", description: "Use this when the next question is not whether the Tiguan is reliable enough, but what it usually costs to keep one sorted.", eyebrow: "Maintenance guide" },
+  { href: "/guides/vw-tiguan-ii-facelift-what-to-avoid/", title: "VW Tiguan II facelift: what to avoid", description: "Open this if the used example in front of you is already raising red-flag questions beyond the general scorecard.", eyebrow: "Avoid guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/vw-tiguan-2020.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a used-buyer reliability summary for the facelift Tiguan, separating manageable ownership patterns from the complaints that deserve more caution."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Reliability guide", "Generation-specific", "Used-buyer focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not just what can go wrong, but whether the facelift Tiguan is worth trusting as a used SUV if you want a clean ownership experience."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the facelift Tiguan reliability story in plain language.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The facelift Tiguan is usually manageable if the maintenance baseline is clean and the known complaint areas were not ignored too long.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Its score falls most through refinement and diagnosis mistakes, not through one dominant catastrophic-failure pattern.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Best on-ramp: buy a well-kept example with a boring service story, not one with vague coolant, EPC, or water-intrusion excuses.</li>
+    </ul>
+  </Section>
+
+  <Section title="Reliability scorecard" intro="This is the practical used-buyer read, not a forum drama score.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Daily usability</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Strong when sorted</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The facelift Tiguan is easy to live with when the routine stuff is actually handled. It feels worse faster than some rivals once the smaller complaints start stacking.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Major failure risk</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Moderate, not catastrophic-first</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The bigger risk story is usually not one huge mechanical cliff. It is a series of medium-cost problems diagnosed badly or left to drift.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Refinement risk</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Higher than the reputation admits</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Brake feel, water intrusion, battery reserve, and front-end noises can make the SUV feel used-up before it is actually a bad ownership bet.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Used-buyer verdict</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Buy selectively</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A documented, boring Tiguan facelift can still be a reasonable buy. A vague one with active warning-light or coolant excuses is the wrong place to be optimistic.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Where the score drops" intro="These are the areas that matter most to the real reliability read.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">EPC and hesitation complaints that never got a clean ignition-side diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Slow coolant loss treated like normal aging instead of a real ownership flag.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Water intrusion and cabin-damp issues that were dried instead of traced properly.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Short-trip battery complaints on cars that mostly live easy urban duty.</li>
+    </ul>
+  </Section>
+
+  <Section title="What still counts as a good buy" intro="Not every Tiguan complaint should scare you away. These are the manageable versions of the story.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A car with documented routine service and only modest brake or battery refinement complaints.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A Tiguan where a known problem was already diagnosed specifically instead of hand-waved away.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">An example that still feels tight, dry inside, and electrically boring in ordinary use.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this scorecard" intro="Open these when the reliability score drops because one repeat complaint is already active." items={relatedProblems} />
+  <RelatedLinks title="Deeper ownership guides linked from this scorecard" intro="Use these when you want to go from summary judgment to the fuller ownership picture." items={relatedGuides} />
+</ContentLayout>

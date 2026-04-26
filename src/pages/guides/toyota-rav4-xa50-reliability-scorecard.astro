@@ -1,0 +1,105 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota RAV4 XA50 reliability scorecard";
+const description =
+  "A used-buyer reliability scorecard for the Toyota RAV4 XA50, focused on what is genuinely low-drama, where everyday ownership still needs discipline, and which complaints are usually manageable.";
+const intro =
+  "The XA50 RAV4 earns its reputation more honestly than most vehicles in this segment, but that does not mean every used example deserves blind trust. The reliability story is strong mostly because the weak points are ordinary: battery reserve on short-trip cars, brake refinement, smaller suspension wear, and tire or wheel-end diagnosis. That is a good story, but only if the car in front of you was not maintained casually. This guide is here to make that distinction cleaner.";
+const modifiedTime = new Date("2026-04-25");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/toyota-rav4-xa50-reliability-scorecard/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/battery-goes-dead-after-sitting/", title: "Battery goes dead after sitting", description: "Open this if the reliability question is already shifting toward reserve capacity and parked-use behavior.", eyebrow: "Problem guide" },
+  { href: "/problems/rear-brakes-squeak-after-rain/", title: "Rear brakes squeak after rain", description: "Use this when the scorecard concern is refinement and pad behavior, not a bigger brake-system failure.", eyebrow: "Problem guide" },
+  { href: "/problems/steering-wheel-vibrates-at-highway-speed/", title: "Steering wheel vibrates at highway speed", description: "Worth reading if the used-buyer hesitation is really about tires, wheels, or hub diagnosis.", eyebrow: "Problem guide" }
+];
+
+const relatedGuides = [
+  { href: "/guides/toyota-rav4-xa50-common-problems/", title: "Toyota RAV4 XA50 common problems", description: "The deeper ownership-problem guide if the scorecard already points you toward the repeat complaint pattern.", eyebrow: "Ownership guide" },
+  { href: "/guides/toyota-rav4-xa50-maintenance-costs-and-weak-points/", title: "Toyota RAV4 XA50 maintenance costs and weak points", description: "Use this when the next question is what the platform usually costs to keep boring and dependable.", eyebrow: "Maintenance guide" },
+  { href: "/guides/toyota-rav4-xa50-what-to-avoid/", title: "Toyota RAV4 XA50: what to avoid", description: "Open this if the specific RAV4 example in front of you is already raising used-buyer red flags.", eyebrow: "Avoid guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-rav4-2021.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a used-buyer reliability summary for the XA50 RAV4, separating the platform’s genuinely strong fundamentals from the ordinary weaknesses that still deserve attention."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Reliability guide", "Generation-specific", "Used-buyer focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not whether the XA50 RAV4 is generally good, but whether it is still the right used buy for someone who wants low-drama ownership."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the XA50 reliability story in plain language.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The XA50 RAV4 is genuinely one of the safer used-crossover bets here, especially when the service history is boring and consistent.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Its weak points are usually refinement and normal wear-item issues, not a dominant catastrophic-failure pattern.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Best on-ramp: buy the clean, ordinary example with normal maintenance, not the one already carrying unresolved vibration, brake, or battery stories.</li>
+    </ul>
+  </Section>
+
+  <Section title="Reliability scorecard" intro="This is the practical used-buyer version of the RAV4 reputation.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Daily usability</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Very strong</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The XA50 is easy to live with when maintained normally. It does not need much drama to stay useful and calm in daily service.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Major failure risk</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Low to moderate</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The bigger reliability story is still better than average. Most used-buyer risk comes from neglected routine complaints, not a single scary mechanical pattern.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Refinement risk</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Moderate</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Brake noise, highway vibration, and battery reserve are the things most likely to make a good RAV4 feel average instead of strong.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Used-buyer verdict</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Buy with confidence, but not lazily</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A clean XA50 is still one of the safer bets on the site. The mistake is paying RAV4 confidence money for a car with obvious unresolved small complaints.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Where the score drops" intro="These are the normal weak spots that matter most to the real reliability read.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery reserve issues on short-trip or lightly used cars.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake refinement complaints that were never solved cleanly the first time.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Small front or rear link wear that makes the crossover feel looser and older than it should.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Vibration or hum stories where the tires, wheels, and wheel ends were never separated properly.</li>
+    </ul>
+  </Section>
+
+  <Section title="What still counts as a good buy" intro="These are the manageable versions of the XA50 story.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A RAV4 with ordinary battery, brake, or tire maintenance needs but no vague bigger-failure story behind them.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">An example with documented normal service and a generally quiet, tight daily feel.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A car whose weak area still clearly lives in the wear-item tier rather than the mystery-diagnosis tier.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this scorecard" intro="Open these when the reliability read is being shaped by one visible ownership complaint." items={relatedProblems} />
+  <RelatedLinks title="Deeper ownership guides linked from this scorecard" intro="Use these when you want to move from the summary judgment into the fuller ownership pattern." items={relatedGuides} />
+</ContentLayout>

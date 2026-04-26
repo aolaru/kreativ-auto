@@ -1,0 +1,105 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Honda Civic 10th gen facelift reliability scorecard";
+const description =
+  "A used-buyer reliability scorecard for the Honda Civic 10th gen facelift, focused on what is genuinely easy to live with, which weak points deserve attention, and where the reputation hides nuance.";
+const intro =
+  "The facelift Civic is one of the easiest cars on this site to trust too quickly. That trust is mostly earned, but it still hides some nuance. Idle A/C complaints, battery reserve on short-trip cars, smaller front-end noises, and trim or engine-specific tradeoffs matter more than the usual broad Civic reputation allows. This guide is about whether the facelift Civic is a good used buy once that nuance is admitted properly.";
+const modifiedTime = new Date("2026-04-25");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/honda-civic-10th-gen-facelift-reliability-scorecard/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/air-conditioner-blows-warm-at-idle/", title: "Air conditioner blows warm at idle", description: "Open this if the used-buyer confidence drops because the car already shows the common idle-cooling complaint.", eyebrow: "Problem guide" },
+  { href: "/problems/battery-light-flickers-at-idle/", title: "Battery light flickers at idle", description: "Use this when the score is being pulled down by reserve-capacity or charging-margin behavior.", eyebrow: "Problem guide" },
+  { href: "/problems/front-suspension-rattles-over-small-bumps/", title: "Front suspension rattles over small bumps", description: "Worth reading if the Civic already feels slightly loose or noisier than its reputation should allow.", eyebrow: "Problem guide" }
+];
+
+const relatedGuides = [
+  { href: "/guides/honda-civic-10th-gen-facelift-common-problems/", title: "Honda Civic 10th gen facelift common problems", description: "The deeper ownership-problem guide if the scorecard is already pointing you toward the repeat weak spots.", eyebrow: "Ownership guide" },
+  { href: "/guides/honda-civic-10th-gen-facelift-what-to-avoid/", title: "Honda Civic 10th gen facelift: what to avoid", description: "Open this if the specific Civic in front of you is already showing the wrong kind of used-buyer shortcuts.", eyebrow: "Avoid guide" },
+  { href: "/guides/honda-civic-10th-gen-facelift-trims-and-engines-which-one-to-buy/", title: "Honda Civic 10th gen facelift trims and engines: which one to buy", description: "Use this when the reliability read depends partly on which engine or trim you actually want to live with.", eyebrow: "Trim guide" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/honda-civic-2019.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide is written as a used-buyer reliability summary for the facelift Civic, separating the platform’s genuinely strong baseline from the weaker examples that trade too heavily on reputation."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Reliability guide", "Generation-specific", "Used-buyer focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not whether the facelift Civic is generally respected, but whether it is still the right used-car buy once the real weak points are admitted."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the facelift Civic reliability story in plain language.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The facelift Civic is still one of the safer used-car bets here when the service history is clean and the usual weak areas are not ignored.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Its reliability risk is less about catastrophic failure and more about how casually the seller treated known commuter-grade complaints.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Best on-ramp: buy the Civic that feels boring and honest, not the one relying on brand trust to excuse active A/C, battery, or front-end issues.</li>
+    </ul>
+  </Section>
+
+  <Section title="Reliability scorecard" intro="This is the practical used-buyer version of the Civic reputation.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Daily usability</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Very strong</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A clean facelift Civic is easy to live with and usually inexpensive to keep civilized in ordinary commuter use.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Major failure risk</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Low to moderate</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The bigger risk story is still calmer than many used cars in this range. The trouble usually starts when known weak points were ignored instead of handled early.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Refinement risk</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Moderate</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Idle A/C performance, short-trip battery reserve, and smaller front-end noises are the issues most likely to make a good Civic feel less impressive.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Used-buyer verdict</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Buy confidently, but verify the weak spots</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The facelift Civic is still a strong used buy, but the wrong example is the one hiding behind the reputation while already showing the usual complaint pattern.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Where the score drops" intro="These are the areas that matter most to the real reliability read.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Idle A/C weakness that the seller treats as normal or minor.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery or charging behavior that is already drifting on a short-trip commuter car.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front-end rattles that make the car feel cheaper or looser than a good Civic should.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Buying without caring whether the 1.5T and 2.0 ownership tradeoffs actually suit you.</li>
+    </ul>
+  </Section>
+
+  <Section title="What still counts as a good buy" intro="These are the manageable versions of the Civic story.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A Civic with ordinary maintenance history and only minor known-issue planning left to do.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">An example that still feels tight, electrically boring, and correctly cooled in everyday use.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A car where the one weak area is already understood specifically instead of hand-waved away.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this scorecard" intro="Open these when the reliability score is already being pulled down by a known repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Deeper ownership guides linked from this scorecard" intro="Use these when you want to move from the summary judgment into the fuller Civic ownership picture." items={relatedGuides} />
+</ContentLayout>
