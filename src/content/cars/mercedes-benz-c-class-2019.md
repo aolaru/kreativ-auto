@@ -14,7 +14,7 @@ metaTitle: Mercedes-Benz C-Class 2019 Common Problems, Maintenance Tips, and Bes
 metaDescription: Explore common Mercedes-Benz C-Class 2019 issues, useful maintenance advice, and the parts worth checking first.
 excerpt: What to watch on a 2019 Mercedes-Benz C-Class if you want to keep it smooth, quiet, and worth the premium badge.
 heroImage: /images/photos/cars/mercedes-benz-c-class-2019.webp
-updatedAt: 2026-04-16
+updatedAt: 2026-04-28
 commonProblems:
   - Brake squeal or vibration that shows up quickly when pad and rotor quality is not right
   - Front suspension noises that make the sedan feel less composed over broken pavement
@@ -48,8 +48,10 @@ relatedProblems:
   - "rear-suspension-clunk-over-bumps"
   - "front-brakes-squeal-at-low-speed"
   - "front-brakes-squeal-at-low-speed-mercedes-benz-c-class-2019"
+  - "engine-hesitates-under-acceleration-mercedes-benz-c-class-2019"
 relatedBest:
   - "best-front-brake-pads-for-mercedes-benz-c-class-2019"
+  - "best-spark-plugs-for-mercedes-benz-c-class-2019"
 ---
 
 The C-Class is not a car that hides neglect well. The better the car is supposed to feel, the more obvious small brake, suspension, or drivability issues become.
