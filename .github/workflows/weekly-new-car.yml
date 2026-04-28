@@ -16,6 +16,7 @@ concurrency:
 jobs:
   add-car:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
 
     steps:
       - name: Checkout repository
@@ -28,18 +29,39 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Add next backlog cluster
         run: npm run autopilot:add-next-car
 
+      - name: Detect generated changes
+        id: changes
+        run: |
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Weekly cluster draft"
+              echo
+              echo "No new backlog cluster was generated, so no build or PR was created."
+            } >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            {
+              echo "## Weekly cluster draft"
+              echo
+              echo "A new backlog cluster was generated and the workflow will build the site and open or update the review PR."
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
       - name: Build Astro site
+        if: steps.changes.outputs.changed == 'true'
         env:
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: npm run build
 
       - name: Create pull request
+        if: steps.changes.outputs.changed == 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           branch: codex/weekly-new-car

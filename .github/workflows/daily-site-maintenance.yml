@@ -15,6 +15,7 @@ concurrency:
 jobs:
   maintain:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
 
     steps:
       - name: Checkout repository
@@ -27,9 +28,9 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Apply one daily maintenance fix
+      - name: Apply bounded daily maintenance fixes
         run: npm run autopilot:daily-maintenance
 
       - name: Detect maintenance changes
@@ -66,3 +67,7 @@ jobs:
           git add -A
           git commit -m "Apply daily site maintenance fix"
           git push origin main
+          {
+            echo
+            echo "Build passed and maintenance changes were pushed directly to main."
+          } >> "$GITHUB_STEP_SUMMARY"

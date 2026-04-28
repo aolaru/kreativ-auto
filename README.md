@@ -51,6 +51,7 @@ What it does:
   - one matching best-parts guide in `src/content/best/`
 - runs `npm run build`
 - opens or updates a review PR from `codex/weekly-new-car`
+- skips the PR cleanly when the curated backlog has no new cluster to add
 
 Useful local commands:
 
@@ -68,6 +69,7 @@ Scheduling note:
 
 - the workflow is scheduled weekly on Monday at `06:15 UTC`
 - GitHub Actions cron is UTC-only, so local Europe/Bucharest run time shifts with daylight saving time
+- it now uses `npm ci` for deterministic installs and only builds/opens a PR when files actually changed
 
 ## Daily maintenance autopilot
 
@@ -88,6 +90,7 @@ What it does:
   - refreshing the current month in `Updates` with a bounded automation note when it is still missing
 - runs `npm run build`
 - commits and pushes directly to `main` when there is a real fix
+- uses `npm ci` for deterministic installs and a short workflow timeout guard
 
 Useful local commands:
 
