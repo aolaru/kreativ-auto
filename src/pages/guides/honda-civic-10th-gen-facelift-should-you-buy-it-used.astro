@@ -1,0 +1,98 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Should you buy a used Honda Civic 10th gen facelift?";
+const description =
+  "A final used-buyer verdict on the facelift Honda Civic, including who it suits best, who should skip it, the ownership tradeoffs that matter, and the trim and engine choices that make the most sense.";
+const image = "/images/photos/cars/honda-civic-2019.webp";
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  image={image}
+  publishedTime={new Date("2026-04-28")}
+  modifiedTime={new Date("2026-04-28")}
+  author={editorialTeam.name}
+  reviewer={editorialTeam.name}
+  reviewLabel="Used-buyer verdict"
+  editorialBadges={["Used-buyer guide", "Generation-specific", "Decision summary"]}
+>
+  <Section title="The short version" eyebrow="Verdict">
+    <p>
+      Yes, a used 10th gen facelift Civic is still one of the easiest small-car recommendations on the site if your goal is smart commuter ownership with enough polish to still feel current. The main caution is not that the car is unreliable. The caution is that buyers often flatten the nuance between engine, trim, and maintenance history because the Civic name feels automatically safe.
+    </p>
+  </Section>
+
+  <Section title="Who should buy it" eyebrow="Best fit">
+    <ul>
+      <li>You want a daily driver that is easy to live with, efficient to run, and still pleasant enough to care about.</li>
+      <li>You value predictable maintenance and sensible parts access more than badge prestige.</li>
+      <li>You are willing to choose the right trim and engine for your use instead of buying on reputation alone.</li>
+    </ul>
+  </Section>
+
+  <Section title="Who should skip it" eyebrow="Skip if">
+    <ul>
+      <li>You are shopping the roughest or cheapest examples because you assume the Civic badge guarantees a free pass.</li>
+      <li>You want a used car with zero need for suspension, A/C, battery, or ignition attention once mileage builds.</li>
+      <li>You have not thought through whether the trim and engine you are buying actually match your daily use.</li>
+    </ul>
+  </Section>
+
+  <Section title="Best used-buyer bets" eyebrow="Smarter picks">
+    <ul>
+      <li>Buy the cleanest ownership-history example you can verify, even if it is not the absolute cheapest ad.</li>
+      <li>Choose the trim and engine that suit your daily use rather than assuming more equipment always means a better Civic.</li>
+      <li>Prioritize calm A/C behavior, stable battery and charging behavior, and a quiet front end over cosmetic upgrades.</li>
+    </ul>
+  </Section>
+
+  <Section title="Main ownership tradeoffs" eyebrow="Tradeoffs">
+    <p>
+      The Civic gives you a strong balance of everyday value, ease of ownership, and decent polish, but the platform is not magically immune to the commuter-grade wear items owners most often ignore. The tradeoff is simple: you get a genuinely good used small car, but only if you still pay attention to condition and trim fit instead of buying the badge alone.
+    </p>
+  </Section>
+
+  <Section title="Final verdict" eyebrow="Bottom line">
+    <p>
+      Buy one if you want a used car that still feels like one of the smartest daily-driver decisions on the site and you are willing to stay selective about history and trim. Skip it if you are treating the Civic reputation as a substitute for inspection discipline. The facelift Civic is a strong used buy, but only when you buy the right one.
+    </p>
+  </Section>
+
+  <RelatedLinks
+    title="Read next"
+    items={[
+      {
+        href: "/guides/honda-civic-10th-gen-facelift-common-problems/",
+        title: "Honda Civic 10th gen facelift common problems",
+        description: "The broader ownership pattern before you narrow down to one symptom or one trim.",
+        image: "/images/photos/cars/honda-civic-2019.webp"
+      },
+      {
+        href: "/guides/honda-civic-10th-gen-facelift-what-to-check-before-buying/",
+        title: "Honda Civic 10th gen facelift what to check before buying",
+        description: "Use this if you are actively comparing listings or walking around one in person.",
+        image: "/images/photos/cars/honda-civic-2019.webp"
+      },
+      {
+        href: "/guides/honda-civic-10th-gen-facelift-reliability-scorecard/",
+        title: "Honda Civic 10th gen facelift reliability scorecard",
+        description: "The cleaner reliability summary behind this final used-buyer decision.",
+        image: "/images/photos/cars/honda-civic-2019.webp"
+      }
+    ]}
+  />
+
+  <TrustBlock
+    title="Why this verdict is framed this way"
+    points={[
+      ...carTrustPoints,
+      "This used-buyer verdict is based on the broader Civic guide stack rather than one isolated repair page."
+    ]}
+  />
+</ContentLayout>

@@ -10,6 +10,36 @@ export interface OwnershipGuide {
 
 export const ownershipGuides: OwnershipGuide[] = [
   {
+    title: "Should you buy a used VW Tiguan II facelift?",
+    href: "/guides/vw-tiguan-ii-facelift-should-you-buy-it-used/",
+    description:
+      "A final used-buyer verdict on the facelift Tiguan, focused on who it suits, who should skip it, and which ownership tradeoffs matter most before money changes hands.",
+    eyebrow: "Used buyer guide",
+    image: "/images/photos/cars/vw-tiguan-2020.webp",
+    relatedCars: ["vw-tiguan-2020"],
+    relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
+  },
+  {
+    title: "Should you buy a used Toyota RAV4 XA50?",
+    href: "/guides/toyota-rav4-xa50-should-you-buy-it-used/",
+    description:
+      "A final used-buyer verdict on the XA50 RAV4, focused on who it suits, who should skip it, and where reputation and real ownership value stop being the same thing.",
+    eyebrow: "Used buyer guide",
+    image: "/images/photos/cars/toyota-rav4-2021.webp",
+    relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
+    relatedGenerations: ["toyota-rav4-xa50-2019-2021"]
+  },
+  {
+    title: "Should you buy a used Honda Civic 10th gen facelift?",
+    href: "/guides/honda-civic-10th-gen-facelift-should-you-buy-it-used/",
+    description:
+      "A final used-buyer verdict on the facelift Civic, focused on who it suits, who should skip it, and why trim and maintenance nuance still matter on a safe-looking used buy.",
+    eyebrow: "Used buyer guide",
+    image: "/images/photos/cars/honda-civic-2019.webp",
+    relatedCars: ["honda-civic-2019"],
+    relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
     title: "VW Tiguan II facelift reliability scorecard",
     href: "/guides/vw-tiguan-ii-facelift-reliability-scorecard/",
     description:

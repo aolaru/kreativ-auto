@@ -1,0 +1,98 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Should you buy a used Toyota RAV4 XA50?";
+const description =
+  "A final used-buyer verdict on the Toyota RAV4 XA50, including who it suits best, who should skip it, the ownership tradeoffs that matter, and the trims that make the most sense.";
+const image = "/images/photos/cars/toyota-rav4-2021.webp";
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  image={image}
+  publishedTime={new Date("2026-04-28")}
+  modifiedTime={new Date("2026-04-28")}
+  author={editorialTeam.name}
+  reviewer={editorialTeam.name}
+  reviewLabel="Used-buyer verdict"
+  editorialBadges={["Used-buyer guide", "Generation-specific", "Decision summary"]}
+>
+  <Section title="The short version" eyebrow="Verdict">
+    <p>
+      Yes, a used RAV4 XA50 is still one of the easiest recommendations here if your goal is sensible everyday ownership, strong resale behavior, and low-drama maintenance. The caution is not that the platform is bad. The caution is that buyers often pay so much for the reputation that they stop being disciplined about trim, condition, and actual use case.
+    </p>
+  </Section>
+
+  <Section title="Who should buy it" eyebrow="Best fit">
+    <ul>
+      <li>You want a practical compact SUV with a strong reputation and fewer premium-brand ownership traps.</li>
+      <li>You value everyday usability, resale confidence, and easy long-term service planning more than cabin drama or badge appeal.</li>
+      <li>You want a used SUV that still makes sense for high-mileage daily use.</li>
+    </ul>
+  </Section>
+
+  <Section title="Who should skip it" eyebrow="Skip if">
+    <ul>
+      <li>You are paying a major premium for one with average history just because the model name feels safe.</li>
+      <li>You want the quietest, most refined ride in the class and will be annoyed by ordinary tire, brake, or suspension noise once mileage builds.</li>
+      <li>You are buying an example with obvious deferred maintenance because you assume the platform reputation will carry it anyway.</li>
+    </ul>
+  </Section>
+
+  <Section title="Best used-buyer bets" eyebrow="Smarter picks">
+    <ul>
+      <li>Buy the cleanest ownership-history example you can verify, not just the lowest-mileage one.</li>
+      <li>Choose the trim and powertrain that fit your use case instead of automatically paying up for the one people talk about most.</li>
+      <li>Prioritize boring signs of good upkeep: tires, brakes, battery behavior, and suspension tightness.</li>
+    </ul>
+  </Section>
+
+  <Section title="Main ownership tradeoffs" eyebrow="Tradeoffs">
+    <p>
+      The RAV4 is easy to recommend because it usually keeps the ownership story straightforward, but that same reputation can make buyers lazy. The tradeoff is simple: you get one of the safer used-SUV bets here, but you still need to avoid overpaying for average condition and you still need to buy the right trim for your actual use.
+    </p>
+  </Section>
+
+  <Section title="Final verdict" eyebrow="Bottom line">
+    <p>
+      Buy one if you want the safest mainstream compact-SUV decision on the site and you are willing to stay disciplined on price and condition. Skip it if you are stretching the budget purely for reputation or if you want something more interesting than the ownership experience it actually delivers. The RAV4 XA50 is a strong used buy, but only when the example makes sense.
+    </p>
+  </Section>
+
+  <RelatedLinks
+    title="Read next"
+    items={[
+      {
+        href: "/guides/toyota-rav4-xa50-common-problems/",
+        title: "Toyota RAV4 XA50 common problems",
+        description: "The broader complaint pattern before you narrow down to one issue or one trim.",
+        image: "/images/photos/cars/toyota-rav4-2021.webp"
+      },
+      {
+        href: "/guides/toyota-rav4-xa50-what-to-check-before-buying/",
+        title: "Toyota RAV4 XA50 what to check before buying",
+        description: "Use this if you are actively inspecting listings or test-driving one.",
+        image: "/images/photos/cars/toyota-rav4-2021.webp"
+      },
+      {
+        href: "/guides/toyota-rav4-xa50-reliability-scorecard/",
+        title: "Toyota RAV4 XA50 reliability scorecard",
+        description: "The cleaner reliability summary behind this final used-buyer decision.",
+        image: "/images/photos/cars/toyota-rav4-2021.webp"
+      }
+    ]}
+  />
+
+  <TrustBlock
+    title="Why this verdict is framed this way"
+    points={[
+      ...carTrustPoints,
+      "This used-buyer verdict is based on the broader RAV4 guide stack rather than one isolated repair page."
+    ]}
+  />
+</ContentLayout>

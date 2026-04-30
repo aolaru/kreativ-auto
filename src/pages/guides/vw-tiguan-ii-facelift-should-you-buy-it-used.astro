@@ -1,0 +1,98 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Should you buy a used VW Tiguan II facelift?";
+const description =
+  "A final used-buyer verdict on the facelift VW Tiguan, including who it suits best, who should skip it, the ownership tradeoffs that matter, and the trims that make the most sense.";
+const image = "/images/photos/cars/vw-tiguan-2020.webp";
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  image={image}
+  publishedTime={new Date("2026-04-28")}
+  modifiedTime={new Date("2026-04-28")}
+  author={editorialTeam.name}
+  reviewer={editorialTeam.name}
+  reviewLabel="Used-buyer verdict"
+  editorialBadges={["Used-buyer guide", "Generation-specific", "Decision summary"]}
+>
+  <Section title="The short version" eyebrow="Verdict">
+    <p>
+      Yes, a used Tiguan II facelift can still be a smart buy if you want a comfortable, modern-feeling compact SUV and you are prepared to be selective about history, coolant-system condition, and trim choice. No, it is not the right used SUV if you want the absolute lowest-drama ownership path or you tend to normalize warning-light and cooling complaints until they become expensive.
+    </p>
+  </Section>
+
+  <Section title="Who should buy it" eyebrow="Best fit">
+    <ul>
+      <li>You want a compact SUV that still feels more grown-up and refined than many mainstream rivals.</li>
+      <li>You are willing to pay closer attention to maintenance quality than you would on a simpler appliance crossover.</li>
+      <li>You prefer the facelift-era cabin, late-cycle updates, and cleaner parts-and-trim research path.</li>
+    </ul>
+  </Section>
+
+  <Section title="Who should skip it" eyebrow="Skip if">
+    <ul>
+      <li>You want the lowest possible ownership drama and would rather trade away some refinement to get it.</li>
+      <li>You are shopping on the tightest budget and cannot leave margin for cooling, ignition, or driveline upkeep if the car was not maintained perfectly.</li>
+      <li>You tend to buy the cheapest example first and ask questions later.</li>
+    </ul>
+  </Section>
+
+  <Section title="Best used-buyer bets" eyebrow="Smarter picks">
+    <ul>
+      <li>Choose a car with a clean maintenance record, stable coolant behavior, and no unresolved EPC or drivability complaints.</li>
+      <li>Favor trims and equipment levels you actually need, rather than stretching for a more expensive example with shakier history.</li>
+      <li>Buy the tidiest late-cycle owner-maintained example you can verify rather than chasing the cheapest facelift badge.</li>
+    </ul>
+  </Section>
+
+  <Section title="Main ownership tradeoffs" eyebrow="Tradeoffs">
+    <p>
+      The Tiguan gives you a more premium day-to-day feel than a lot of ordinary compact SUVs, but it asks for more discipline in return. The tradeoff is simple: when it is maintained well, it feels worth owning; when cooling, ignition, or drivability issues are ignored, the ownership value drops quickly.
+    </p>
+  </Section>
+
+  <Section title="Final verdict" eyebrow="Bottom line">
+    <p>
+      Buy one if you want the late-cycle Tiguan experience and can filter hard for maintenance quality. Skip it if you want a used SUV you can maintain casually and still expect mainstream-level tolerance for neglect. The facelift Tiguan is good when sorted, but it is not the crossover to buy lazily.
+    </p>
+  </Section>
+
+  <RelatedLinks
+    title="Read next"
+    items={[
+      {
+        href: "/guides/vw-tiguan-ii-facelift-common-problems/",
+        title: "VW Tiguan II facelift common problems",
+        description: "The fastest way to understand the complaint pattern before you buy.",
+        image: "/images/photos/cars/vw-tiguan-2020.webp"
+      },
+      {
+        href: "/guides/vw-tiguan-ii-facelift-what-to-check-before-buying/",
+        title: "VW Tiguan II facelift what to check before buying",
+        description: "Use this if you are inspecting one in person or reading an ad critically.",
+        image: "/images/photos/cars/vw-tiguan-2020.webp"
+      },
+      {
+        href: "/guides/vw-tiguan-ii-facelift-reliability-scorecard/",
+        title: "VW Tiguan II facelift reliability scorecard",
+        description: "The cleaner reliability summary behind this final used-buyer decision.",
+        image: "/images/photos/cars/vw-tiguan-2020.webp"
+      }
+    ]}
+  />
+
+  <TrustBlock
+    title="Why this verdict is framed this way"
+    points={[
+      ...carTrustPoints,
+      "This used-buyer verdict is based on the broader Tiguan guide stack rather than one isolated repair page."
+    ]}
+  />
+</ContentLayout>
