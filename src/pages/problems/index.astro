@@ -154,7 +154,7 @@ const problemFilters = [
       </div>
 
       <div class="mt-6">
-        <FilterToolbar filters={problemFilters} />
+        <FilterToolbar filters={problemFilters} searchPlaceholder="Search problem guides by symptom, cause, or car" />
       </div>
 
       <div class="mt-8 grid gap-6">
@@ -166,6 +166,7 @@ const problemFilters = [
             data-filter-item
             data-filter-cluster={getProblemCluster(problem)}
             data-filter-area={getProblemArea(problem)}
+            data-filter-search-text={`${problem.data.title} ${problem.data.excerpt ?? ""} ${problem.data.symptoms.join(" ")} ${problem.data.causes.join(" ")}`}
           >
             <div class="mb-4 flex items-center gap-3">
               <CardIcon kind="problem" />

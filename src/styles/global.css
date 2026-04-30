@@ -189,6 +189,10 @@ a {
   @apply flex flex-col gap-2;
 }
 
+.filter-field-search {
+  @apply md:col-span-2 xl:col-span-2;
+}
+
 .filter-label {
   @apply text-xs font-semibold uppercase tracking-[0.2em] text-steel;
 }
@@ -197,8 +201,20 @@ a {
   @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink shadow-sm outline-none transition;
 }
 
+.filter-search-input {
+  @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-ink shadow-sm outline-none transition;
+}
+
 .filter-select:focus {
   @apply border-orange-300 ring-2 ring-orange-200/70;
+}
+
+.filter-search-input:focus {
+  @apply border-orange-300 ring-2 ring-orange-200/70;
+}
+
+.filter-search-input::placeholder {
+  color: #64748b;
 }
 
 .header-search {

@@ -177,7 +177,7 @@ const featuredCategories = [
       </div>
 
       <div class="mt-6">
-        <FilterToolbar filters={bestFilters} />
+        <FilterToolbar filters={bestFilters} searchPlaceholder="Search best-parts guides by car, part, or problem" />
       </div>
 
       <div class="mt-8 grid gap-6">
@@ -189,6 +189,7 @@ const featuredCategories = [
             data-filter-item
             data-filter-cluster={getBestCluster(entry)}
             data-filter-category={entry.data.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}
+            data-filter-search-text={`${entry.data.title} ${entry.data.car_model} ${entry.data.category} ${entry.data.excerpt ?? ""}`}
           >
             <div class="mb-4 flex items-center gap-3">
               <CardIcon kind="parts" />

@@ -12,12 +12,24 @@ interface FilterDefinition {
 
 interface Props {
   filters: FilterDefinition[];
+  searchPlaceholder?: string;
 }
 
-const { filters } = Astro.props;
+const { filters, searchPlaceholder = "Search this section" } = Astro.props;
 ---
 
 <div class="filter-toolbar" data-filter-controls>
+  <label class="filter-field filter-field-search">
+    <span class="filter-label">Search</span>
+    <input
+      class="filter-search-input"
+      type="search"
+      placeholder={searchPlaceholder}
+      autocomplete="off"
+      spellcheck="false"
+      data-filter-search
+    />
+  </label>
   {filters.map((filter) => (
     <label class="filter-field">
       <span class="filter-label">{filter.label}</span>
@@ -39,15 +51,17 @@ const { filters } = Astro.props;
     root.dataset.filterInitialized = "true";
 
     const controls = Array.from(root.querySelectorAll("[data-filter-name]"));
+    const searchControl = root.querySelector("[data-filter-search]");
     const items = Array.from(root.querySelectorAll("[data-filter-item]"));
     const count = root.querySelector("[data-filter-count]");
     const emptyState = root.querySelector("[data-empty-state]");
 
     const applyFilters = () => {
       let visible = 0;
+      const query = searchControl?.value.trim().toLowerCase() ?? "";
 
       for (const item of items) {
-        const matches = controls.every((control) => {
+        const matchesSelects = controls.every((control) => {
           const name = control.getAttribute("data-filter-name");
           const activeValue = control.value;
 
@@ -61,6 +75,10 @@ const { filters } = Astro.props;
 
           return values.includes(activeValue);
         });
+
+        const searchHaystack = (item.getAttribute("data-filter-search-text") ?? "").toLowerCase();
+        const matchesSearch = !query || searchHaystack.includes(query);
+        const matches = matchesSelects && matchesSearch;
 
         item.hidden = !matches;
 
@@ -79,6 +97,8 @@ const { filters } = Astro.props;
     for (const control of controls) {
       control.addEventListener("change", applyFilters);
     }
+
+    searchControl?.addEventListener("input", applyFilters);
 
     applyFilters();
   }

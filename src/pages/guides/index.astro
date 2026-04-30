@@ -308,7 +308,7 @@ const guideFilters = [
       </div>
 
       <div class="mt-6">
-        <FilterToolbar filters={guideFilters} />
+        <FilterToolbar filters={guideFilters} searchPlaceholder="Search guides by title, vehicle, or topic" />
       </div>
 
       <div class="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -319,6 +319,7 @@ const guideFilters = [
             data-filter-item
             data-filter-cluster={guide.cluster}
             data-filter-type={guide.type}
+            data-filter-search-text={`${guide.title} ${guide.description} ${guide.eyebrow}`}
           >
             {
               guide.image && (
