@@ -1,15 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect x="8" y="8" width="112" height="112" rx="32" fill="#111827" />
-  <text
-    x="64"
-    y="74"
-    text-anchor="middle"
-    font-family="'IBM Plex Sans', Arial, sans-serif"
-    font-size="44"
-    font-weight="700"
-    letter-spacing="6"
-    fill="#F8FAFC"
-  >
-    KA
-  </text>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="12" x2="108" y2="116" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="1" stop-color="#111827" />
+    </linearGradient>
+    <linearGradient id="accent" x1="20" y1="24" x2="108" y2="24" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f59e0b" />
+      <stop offset="1" stop-color="#ea580c" />
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="30" fill="url(#bg)" />
+  <rect x="8" y="8" width="112" height="112" rx="30" fill="none" stroke="#ffffff" stroke-opacity=".08" />
+  <path d="M25 28h78" stroke="url(#accent)" stroke-width="8" stroke-linecap="round" />
+  <path d="M34 41h11v46H34z" fill="#f8fafc" />
+  <path d="M46 62l20-21h14L58 64l23 23H66L46 67z" fill="#f8fafc" />
+  <path d="M83 87l12-46h10l12 46h-11l-2.3-9H91.3L89 87z" fill="#f8fafc" />
+  <path d="M94.2 69h6.6L97.5 55z" fill="url(#bg)" />
+  <path d="M92.9 74.5h12.8v7H92.9z" fill="url(#bg)" />
 </svg>
