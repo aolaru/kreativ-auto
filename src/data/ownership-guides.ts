@@ -100,6 +100,36 @@ export const ownershipGuides: OwnershipGuide[] = [
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
   },
   {
+    title: "Honda CR-V 2020 common problems and what to check first",
+    href: "/guides/honda-cr-v-2020-common-problems/",
+    description:
+      "A second-tier cornerstone guide for the 2020 CR-V, focused on brake refinement, front-end clunks, battery behavior, and the first checks that keep ownership costs controlled.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/honda-cr-v-2020.webp",
+    relatedCars: ["honda-cr-v-2020"],
+    relatedGenerations: ["honda-cr-v-rw-rt-facelift-2020-2022"]
+  },
+  {
+    title: "Mazda CX-5 2020 common problems and what to check first",
+    href: "/guides/mazda-cx-5-2020-common-problems/",
+    description:
+      "A second-tier cornerstone guide for the 2020 CX-5, focused on brake noise, front-end suspension clunks, road hum, and the checks that preserve the SUV's refinement.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/mazda-cx-5-2020.webp",
+    relatedCars: ["mazda-cx-5-2020"],
+    relatedGenerations: ["mazda-cx-5-kf-2017-2021"]
+  },
+  {
+    title: "Toyota Corolla 2020 common problems and what to check first",
+    href: "/guides/toyota-corolla-2020-common-problems/",
+    description:
+      "A second-tier cornerstone guide for the 2020 Corolla, focused on brake squeal, battery warning behavior, wheel-bearing hum, and the first checks owners should not skip.",
+    eyebrow: "Ownership guide",
+    image: "/images/cars/toyota-corolla-2020.svg",
+    relatedCars: ["toyota-corolla-2020"],
+    relatedGenerations: ["toyota-corolla-e210-2019-2022"]
+  },
+  {
     title: "VW Tiguan II facelift maintenance costs and weak points",
     href: "/guides/vw-tiguan-ii-facelift-maintenance-costs-and-weak-points/",
     description:

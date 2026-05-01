@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Honda HR-V 2020 small crossover illustration</title>
+  <desc id="desc">Editorial illustration for the Honda HR-V 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8eee7"/>
+      <stop offset="1" stop-color="#e3edf1"/>
+    </linearGradient>
+    <linearGradient id="body" x1="190" y1="260" x2="1030" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#26364b"/>
+      <stop offset="1" stop-color="#71819a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M154 486c67-72 149-97 247-75 98 21 201 7 309-43 108-49 202-50 283-2 63 38 98 88 105 151 8 64-15 113-67 148H169c-82-44-87-104-15-179z" fill="#ffffff" opacity=".36"/>
+  <path d="M190 515c24-81 88-132 192-152l116-78c40-27 86-40 139-40h115c56 0 103 21 141 62l78 84c59 17 95 52 108 106l13 49H158l32-31z" fill="url(#body)"/>
+  <path d="M424 346l86-59c31-21 71-32 120-32h53v135H347l77-44z" fill="#f7fbfb" opacity=".88"/>
+  <path d="M713 255h49c47 0 84 18 112 55l62 80H713V255z" fill="#f7fbfb" opacity=".82"/>
+  <path d="M193 513h872l-30 55H160l33-55z" fill="#111827"/>
+  <circle cx="349" cy="565" r="80" fill="#111827"/>
+  <circle cx="349" cy="565" r="36" fill="#e8edf0"/>
+  <circle cx="875" cy="565" r="80" fill="#111827"/>
+  <circle cx="875" cy="565" r="36" fill="#e8edf0"/>
+  <rect x="790" y="436" width="88" height="11" rx="6" fill="#d84a20"/>
+  <text x="92" y="116" fill="#d84a20" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">HONDA HR-V</text>
+  <text x="92" y="164" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 urban crossover</text>
+  <text x="92" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Front-end clunks, short-trip starts, and quiet brakes.</text>
+</svg>

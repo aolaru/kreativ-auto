@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mazda CX-30 2020 compact crossover illustration</title>
+  <desc id="desc">Editorial illustration for the Mazda CX-30 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fbf0e3"/>
+      <stop offset="1" stop-color="#e4edf1"/>
+    </linearGradient>
+    <linearGradient id="body" x1="190" y1="260" x2="1020" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3a1110"/>
+      <stop offset="1" stop-color="#a33b25"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M75 448c97-76 206-92 328-47 122 46 243 35 363-33 119-68 222-68 309 1 70 56 88 123 55 201H70c-40-39-39-80 5-122z" fill="#ffffff" opacity=".38"/>
+  <path d="M198 514c24-73 91-119 202-136l112-70c40-25 86-38 139-38h117c58 0 106 19 144 56l64 63c70 12 112 48 126 109l12 48H163l35-32z" fill="url(#body)"/>
+  <path d="M438 358l86-54c32-20 71-30 118-30h47v123H361l77-39z" fill="#fff7ef" opacity=".86"/>
+  <path d="M721 274h54c49 0 87 18 115 54l52 69H721V274z" fill="#fff7ef" opacity=".82"/>
+  <path d="M193 512h884l-30 54H159l34-54z" fill="#120d0d"/>
+  <circle cx="348" cy="562" r="78" fill="#111827"/>
+  <circle cx="348" cy="562" r="35" fill="#e5edf0"/>
+  <circle cx="879" cy="562" r="78" fill="#111827"/>
+  <circle cx="879" cy="562" r="35" fill="#e5edf0"/>
+  <rect x="789" y="440" width="88" height="11" rx="6" fill="#f6b35f"/>
+  <text x="92" y="116" fill="#bd3b18" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">MAZDA CX-30</text>
+  <text x="92" y="164" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 compact crossover</text>
+  <text x="92" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Front-end clunks, brake squeal, and tire noise.</text>
+</svg>

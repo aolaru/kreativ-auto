@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Toyota Highlander 2020 family SUV illustration</title>
+  <desc id="desc">Editorial illustration for the Toyota Highlander 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7efe5"/>
+      <stop offset="1" stop-color="#d7e3df"/>
+    </linearGradient>
+    <linearGradient id="body" x1="200" y1="250" x2="990" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#213a4d"/>
+      <stop offset="1" stop-color="#416475"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <circle cx="1030" cy="146" r="122" fill="#f4b15f" opacity=".22"/>
+  <circle cx="180" cy="650" r="170" fill="#ffffff" opacity=".38"/>
+  <path d="M210 502c22-88 92-142 208-162l124-74c48-28 104-42 168-42h122c63 0 113 22 150 65l78 92c44 16 72 49 84 100l10 51H170l40-30z" fill="url(#body)"/>
+  <path d="M430 335l96-55c36-20 78-30 126-30h70v128H356l74-43z" fill="#ecf4f3" opacity=".88"/>
+  <path d="M750 250h78c46 0 84 18 113 54l56 70H750V250z" fill="#ecf4f3" opacity=".82"/>
+  <path d="M210 502h894l-30 56H183l27-56z" fill="#10202d"/>
+  <circle cx="360" cy="560" r="86" fill="#0d1620"/>
+  <circle cx="360" cy="560" r="42" fill="#e7eef0"/>
+  <circle cx="898" cy="560" r="86" fill="#0d1620"/>
+  <circle cx="898" cy="560" r="42" fill="#e7eef0"/>
+  <rect x="784" y="438" width="96" height="12" rx="6" fill="#f4b15f"/>
+  <text x="96" y="118" fill="#cc3d10" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">TOYOTA HIGHLANDER</text>
+  <text x="96" y="166" fill="#10202d" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 family SUV</text>
+  <text x="96" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake refinement, tire noise, and battery checks.</text>
+</svg>

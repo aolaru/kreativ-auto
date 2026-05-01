@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Toyota Tacoma 2020 pickup illustration</title>
+  <desc id="desc">Editorial illustration for the Toyota Tacoma 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f5ead8"/>
+      <stop offset="1" stop-color="#d9e5df"/>
+    </linearGradient>
+    <linearGradient id="body" x1="160" y1="260" x2="1080" y2="570" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#31402e"/>
+      <stop offset="1" stop-color="#7c6b45"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M904 114c76 22 132 72 166 151s26 148-24 208c-50 61-119 80-208 57-88-22-146-70-173-145-27-74-15-142 36-202 51-59 119-83 203-69z" fill="#ffffff" opacity=".34"/>
+  <path d="M155 520l34-104c12-38 45-62 98-72l202-35c38-7 73 2 105 28l84 69h361c39 0 67 19 83 57l23 54-26 49H149l6-46z" fill="url(#body)"/>
+  <path d="M437 358l70-22c29-9 57-2 84 22l55 49H377l60-49z" fill="#eef5f1" opacity=".88"/>
+  <path d="M724 409h314l-20 55H724v-55z" fill="#5e5138" opacity=".9"/>
+  <path d="M174 515h940l-32 56H145l29-56z" fill="#151b18"/>
+  <circle cx="352" cy="570" r="90" fill="#111827"/>
+  <circle cx="352" cy="570" r="41" fill="#dfe8e5"/>
+  <circle cx="902" cy="570" r="90" fill="#111827"/>
+  <circle cx="902" cy="570" r="41" fill="#dfe8e5"/>
+  <rect x="823" y="441" width="100" height="12" rx="6" fill="#efad55"/>
+  <text x="92" y="116" fill="#b64b1f" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">TOYOTA TACOMA</text>
+  <text x="92" y="164" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 midsize truck</text>
+  <text x="92" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Tire shake, wheel-end checks, and rough-road wear.</text>
+</svg>

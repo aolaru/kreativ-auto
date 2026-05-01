@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mazda 6 2020 sedan illustration</title>
+  <desc id="desc">Editorial illustration for the Mazda 6 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7e8df"/>
+      <stop offset="1" stop-color="#e2edf0"/>
+    </linearGradient>
+    <linearGradient id="body" x1="170" y1="260" x2="1070" y2="550" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3e1115"/>
+      <stop offset="1" stop-color="#b8432d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M84 500c91-70 190-93 299-69 108 23 213 5 315-55 102-59 207-66 316-19 69 30 105 78 108 144 3 66-26 115-88 147H115c-69-33-79-82-31-148z" fill="#ffffff" opacity=".36"/>
+  <path d="M163 518c35-71 111-117 228-139l145-75c44-23 92-35 145-35h99c58 0 107 19 148 56l79 72c61 14 98 47 112 100l13 46H138l25-25z" fill="url(#body)"/>
+  <path d="M455 357l100-51c33-17 74-25 121-25h58v116H364l91-40z" fill="#fff7f0" opacity=".88"/>
+  <path d="M763 281h40c47 0 88 16 122 49l68 67H763V281z" fill="#fff7f0" opacity=".82"/>
+  <path d="M171 513h920l-34 56H141l30-56z" fill="#130d0e"/>
+  <circle cx="347" cy="564" r="78" fill="#111827"/>
+  <circle cx="347" cy="564" r="35" fill="#e9eff0"/>
+  <circle cx="884" cy="564" r="78" fill="#111827"/>
+  <circle cx="884" cy="564" r="35" fill="#e9eff0"/>
+  <rect x="793" y="435" width="92" height="11" rx="6" fill="#f5b05f"/>
+  <text x="92" y="116" fill="#ba3d1f" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">MAZDA 6</text>
+  <text x="92" y="164" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 refined sedan</text>
+  <text x="92" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake noise, highway shake, and suspension feel.</text>
+</svg>

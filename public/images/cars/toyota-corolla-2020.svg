@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Toyota Corolla 2020 sedan illustration</title>
+  <desc id="desc">Editorial illustration for the Toyota Corolla 2020 ownership pages.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f7efe5"/>
+      <stop offset="1" stop-color="#e4eef0"/>
+    </linearGradient>
+    <linearGradient id="body" x1="175" y1="270" x2="1055" y2="550" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1f2b38"/>
+      <stop offset="1" stop-color="#6b7f8e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M90 506c82-70 178-94 288-73 110 22 213 6 309-47 96-52 199-58 309-18 73 27 113 73 120 138 7 66-21 115-83 148H126c-69-34-81-83-36-148z" fill="#fff" opacity=".38"/>
+  <path d="M166 518c32-73 104-119 217-139l139-71c43-22 91-33 145-33h92c58 0 106 18 145 53l87 77c62 13 101 45 116 96l13 43H140l26-26z" fill="url(#body)"/>
+  <path d="M448 358l95-49c34-17 75-26 122-26h57v114H360l88-39z" fill="#f8fbfb" opacity=".88"/>
+  <path d="M752 283h43c47 0 87 16 121 47l70 67H752V283z" fill="#f8fbfb" opacity=".82"/>
+  <path d="M173 513h914l-32 56H143l30-56z" fill="#111827"/>
+  <circle cx="348" cy="565" r="78" fill="#111827"/>
+  <circle cx="348" cy="565" r="35" fill="#e7eef0"/>
+  <circle cx="880" cy="565" r="78" fill="#111827"/>
+  <circle cx="880" cy="565" r="35" fill="#e7eef0"/>
+  <rect x="792" y="436" width="92" height="11" rx="6" fill="#d9481e"/>
+  <text x="92" y="116" fill="#d9481e" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">TOYOTA COROLLA</text>
+  <text x="92" y="164" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 E210 sedan</text>
+  <text x="92" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake squeal, battery warnings, and wheel-end hum.</text>
+</svg>

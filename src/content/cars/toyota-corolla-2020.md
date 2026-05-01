@@ -7,11 +7,11 @@ generation: "Twelfth Generation"
 generationCode: "E210"
 generationYears: "2019-2022"
 description: "The 2020 Toyota Corolla is usually easy to live with, but brake noise, early hub noise, and small suspension knocks are the complaints owners tend to notice first once the miles start building."
-image: "/images/photos/cars/toyota-camry-2020.webp"
+image: "/images/cars/toyota-corolla-2020.svg"
 metaTitle: "Toyota Corolla 2020 Common Problems, Maintenance Tips, and Best Parts"
 metaDescription: "Research common Toyota Corolla 2020 issues, practical maintenance advice, and recommended brake and wheel-end parts."
 excerpt: "The main 2020 Corolla issues worth watching, plus the maintenance and replacement parts that usually matter first."
-heroImage: "/images/photos/cars/toyota-camry-2020.webp"
+heroImage: "/images/cars/toyota-corolla-2020.svg"
 updatedAt: 2026-04-28
 relatedProblems:
   - "brake-squeal-at-low-speed-toyota-corolla-2020"

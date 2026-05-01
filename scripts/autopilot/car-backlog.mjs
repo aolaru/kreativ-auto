@@ -1647,6 +1647,7 @@ const queuedCarSeeds = [
     generation: "Fourth Generation",
     generationCode: "XU70",
     generationYears: "2020-2023",
+    image: "/images/cars/toyota-highlander-2020.svg",
     kind: "brakePads",
     carDescription:
       "The 2020 Toyota Highlander is usually a sensible family SUV to live with, but brake refinement, tire noise, and battery reserve complaints are the ownership issues most likely to show up first.",
@@ -1673,6 +1674,7 @@ const queuedCarSeeds = [
     generation: "Third Generation",
     generationCode: "YF6",
     generationYears: "2016-2022",
+    image: "/images/cars/honda-pilot-2020.svg",
     kind: "batteries",
     carDescription:
       "The 2020 Honda Pilot stays broadly practical, but weak-start behavior, short-trip battery complaints, and the occasional brake or tire refinement issue are the things owners usually end up chasing first.",
@@ -1699,6 +1701,7 @@ const queuedCarSeeds = [
     generation: "First Generation",
     generationCode: "DM",
     generationYears: "2020-2023",
+    image: "/images/cars/mazda-cx-30-2020.svg",
     kind: "swayBarLinks",
     carDescription:
       "The 2020 Mazda CX-30 feels polished for the class, but smaller front-end suspension noises, brake refinement complaints, and tire-related road noise are still the ownership issues most likely to show up first.",
@@ -1725,6 +1728,7 @@ const queuedCarSeeds = [
     generation: "Third Generation",
     generationCode: "N300",
     generationYears: "2016-2023",
+    image: "/images/cars/toyota-tacoma-2020.svg",
     kind: "tires",
     carDescription:
       "The 2020 Toyota Tacoma is usually straightforward to own, but highway vibration, tire wear, and front-end harshness are the complaints owners most often end up trying to decode first.",
@@ -1751,6 +1755,7 @@ const queuedCarSeeds = [
     generation: "Fifth Generation",
     generationCode: "RC1",
     generationYears: "2018-2022",
+    image: "/images/cars/honda-odyssey-2020.svg",
     kind: "acCondensers",
     carDescription:
       "The 2020 Honda Odyssey is usually a practical family hauler, but weak A/C performance in traffic, battery complaints, and brake refinement issues are the kinds of ownership frustrations that show up first.",
@@ -1777,6 +1782,7 @@ const queuedCarSeeds = [
     generation: "Fifth Generation",
     generationCode: "SK",
     generationYears: "2019-2021",
+    image: "/images/cars/subaru-forester-2020.svg",
     kind: "wheelBearings",
     carDescription:
       "The 2020 Subaru Forester is usually easy to live with, but wheel-end hum, tire noise confusion, and battery reserve complaints are the kinds of ownership issues that tend to get noticed first.",
@@ -1803,6 +1809,7 @@ const queuedCarSeeds = [
     generation: "Fourth Generation",
     generationCode: "XW50",
     generationYears: "2016-2022",
+    image: "/images/cars/toyota-prius-2020.svg",
     kind: "batteries",
     carDescription:
       "The 2020 Toyota Prius is generally a low-drama commuter, but 12-volt battery weakness, brake feel confusion, and tire-noise complaints are still the kinds of things owners end up checking first.",
@@ -1829,6 +1836,7 @@ const queuedCarSeeds = [
     generation: "First Generation Facelift",
     generationCode: "RU",
     generationYears: "2019-2022",
+    image: "/images/cars/honda-hr-v-2020.svg",
     kind: "swayBarLinks",
     carDescription:
       "The 2020 Honda HR-V is usually an easy urban crossover to own, but front-end suspension noise, battery complaints, and brake refinement issues are the patterns owners most often start with.",
@@ -1855,6 +1863,7 @@ const queuedCarSeeds = [
     generation: "Third Generation Refresh",
     generationCode: "GL",
     generationYears: "2018-2021",
+    image: "/images/cars/mazda-6-2020.svg",
     kind: "brakePads",
     carDescription:
       "The 2020 Mazda 6 still feels more polished than many family sedans, but brake noise, highway tire refinement, and small suspension complaints are the ownership issues most likely to show up first.",
@@ -1881,6 +1890,7 @@ const queuedCarSeeds = [
     generation: "Fourth Generation Facelift",
     generationCode: "AL20",
     generationYears: "2020-2022",
+    image: "/images/cars/lexus-rx-2020.svg",
     kind: "brakePads",
     carDescription:
       "The 2020 Lexus RX is usually a comfortable premium SUV to live with, but brake refinement, tire noise, and battery reserve complaints are still the kinds of practical ownership issues that show up first.",
