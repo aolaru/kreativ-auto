@@ -127,6 +127,16 @@ a {
   background: rgba(255, 255, 255, 0.06);
 }
 
+.stat-link {
+  @apply outline-none;
+}
+
+.stat-link:hover,
+.stat-link:focus-visible {
+  @apply -translate-y-0.5 border-orange-300;
+  background: rgba(255, 255, 255, 0.11);
+}
+
 .editorial-grid {
   @apply grid gap-6 lg:grid-cols-2;
 }
