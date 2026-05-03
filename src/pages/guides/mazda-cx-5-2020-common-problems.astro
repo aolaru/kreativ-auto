@@ -1,7 +1,10 @@
 ---
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import GuideAtAGlance from "../../components/GuideAtAGlance.astro";
+import GuideChecklist from "../../components/GuideChecklist.astro";
+import GuideIssueGrid from "../../components/GuideIssueGrid.astro";
+import GuideNextReads from "../../components/GuideNextReads.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
-import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
 
@@ -91,6 +94,61 @@ const relatedBest = [
     eyebrow: "Brake Pads"
   }
 ];
+
+const atAGlancePoints = [
+  "The 2020 CX-5 is not a high-drama ownership story, but it is sensitive to brake noise, tire quality, and small front-end wear because the baseline refinement is high.",
+  "The expensive mistake is replacing parts by category instead of matching the symptom to the first likely wear point.",
+  "Most useful fixes start with brake hardware, sway bar links, tire condition, or a clean road-speed noise diagnosis."
+];
+
+const troubleAreas = [
+  {
+    eyebrow: "1. Brake noise",
+    title: "A quiet SUV makes squeal feel more serious",
+    description:
+      "Start with pad compound, rotor surface, and hardware service before treating light squeal like a complete brake-system failure."
+  },
+  {
+    eyebrow: "2. Front clunks",
+    title: "Small links can age the whole front end",
+    description:
+      "Sway bar links and small suspension wear points are the right first suspects when the noise appears over small bumps."
+  },
+  {
+    eyebrow: "3. Road hum",
+    title: "Tires should lose before wheel bearings",
+    description:
+      "Road-speed hum needs a tire, rotation, and surface check before a hub or bearing becomes the main suspect."
+  }
+];
+
+const firstChecks = [
+  "If the brakes squeal, inspect pad condition, rotor finish, and hardware contact points before buying pads alone.",
+  "If the front end clunks, check sway bar links and visible front suspension wear before assuming the whole strut or control-arm story.",
+  "If road hum changes with speed, rotate and inspect tires before diagnosing a wheel bearing by sound alone.",
+  "If the SUV feels less refined overall, solve the brake, tire, and front-end basics before chasing vague ride-quality theories."
+];
+
+const nextReads = [
+  {
+    href: "/generations/mazda-cx-5-kf-2017-2021/",
+    eyebrow: "Generation hub",
+    title: "Mazda CX-5 KF 2017-2021",
+    description: "Use the generation hub when you want the wider CX-5 ownership picture first."
+  },
+  {
+    href: "/cars/mazda-cx-5-2020/",
+    eyebrow: "Car hub",
+    title: "Mazda CX-5 2020",
+    description: "Use the model-year page for the car overview and the existing linked repair pages."
+  },
+  {
+    href: "/best/best-front-sway-bar-links-for-mazda-cx-5-2020/",
+    eyebrow: "Parts path",
+    title: "Front sway bar links",
+    description: "The practical next page when the main symptom is a small front-end clunk."
+  }
+];
 ---
 
 <ContentLayout
@@ -115,80 +173,31 @@ const relatedBest = [
     points={carTrustPoints}
   />
 
-  <section class="surface surface-dark hero-frame p-6 sm:p-8">
-    <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-      <div>
-        <p class="editorial-kicker">At a glance</p>
-        <h2 class="mt-4 text-3xl font-semibold text-ink">The short version</h2>
-        <ul class="mt-6 grid gap-3 text-sm leading-6 text-steel">
-          <li class="stat-tile">The 2020 CX-5 is not a high-drama ownership story, but it is sensitive to brake noise, tire quality, and small front-end wear because the baseline refinement is high.</li>
-          <li class="stat-tile">The expensive mistake is replacing parts by category instead of matching the symptom to the first likely wear point.</li>
-          <li class="stat-tile">Most useful fixes start with brake hardware, sway bar links, tire condition, or a clean road-speed noise diagnosis.</li>
-        </ul>
-      </div>
-      <div class="accent-panel p-6">
-        <p class="eyebrow">Ownership pattern</p>
-        <div class="mt-4 grid gap-4">
-          <div class="soft-panel p-4">
-            <p class="text-2xl font-semibold text-ink">3</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Main weak spots</p>
-          </div>
-          <div class="soft-panel p-4">
-            <p class="text-sm leading-6 text-steel">A CX-5 can still be reliable while feeling worn if brake and suspension refinement are ignored.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <GuideAtAGlance
+    points={atAGlancePoints}
+    statValue="3"
+    statLabel="Main weak spots"
+    statText="A CX-5 can still be reliable while feeling worn if brake and suspension refinement are ignored."
+  />
 
-  <Section title="The trouble areas worth knowing" intro="These are the checks that keep the CX-5 diagnosis grounded.">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <article class="mesh-card p-6">
-        <p class="eyebrow">1. Brake noise</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">A quiet SUV makes squeal feel more serious</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Start with pad compound, rotor surface, and hardware service before treating light squeal like a complete brake-system failure.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">2. Front clunks</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Small links can age the whole front end</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Sway bar links and small suspension wear points are the right first suspects when the noise appears over small bumps.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">3. Road hum</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Tires should lose before wheel bearings</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Road-speed hum needs a tire, rotation, and surface check before a hub or bearing becomes the main suspect.</p>
-      </article>
-    </div>
-  </Section>
+  <GuideIssueGrid
+    title="The trouble areas worth knowing"
+    intro="These are the checks that keep the CX-5 diagnosis grounded."
+    issues={troubleAreas}
+    columns={3}
+  />
 
-  <Section title="What to check first" intro="This order keeps the CX-5 from becoming a parts-guessing exercise.">
-    <ul class="space-y-3 text-sm leading-6 text-steel">
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the brakes squeal, inspect pad condition, rotor finish, and hardware contact points before buying pads alone.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the front end clunks, check sway bar links and visible front suspension wear before assuming the whole strut or control-arm story.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If road hum changes with speed, rotate and inspect tires before diagnosing a wheel bearing by sound alone.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the SUV feels less refined overall, solve the brake, tire, and front-end basics before chasing vague ride-quality theories.</li>
-    </ul>
-  </Section>
+  <GuideChecklist
+    title="What to check first"
+    intro="This order keeps the CX-5 from becoming a parts-guessing exercise."
+    items={firstChecks}
+  />
 
-  <Section title="Best next reads" intro="Open these once the CX-5 symptom is narrowed.">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/mazda-cx-5-kf-2017-2021/">
-        <p class="eyebrow">Generation hub</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Mazda CX-5 KF 2017-2021</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub when you want the wider CX-5 ownership picture first.</p>
-      </a>
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/cars/mazda-cx-5-2020/">
-        <p class="eyebrow">Car hub</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Mazda CX-5 2020</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the model-year page for the car overview and the existing linked repair pages.</p>
-      </a>
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/best/best-front-sway-bar-links-for-mazda-cx-5-2020/">
-        <p class="eyebrow">Parts path</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Front sway bar links</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The practical next page when the main symptom is a small front-end clunk.</p>
-      </a>
-    </div>
-  </Section>
+  <GuideNextReads
+    title="Best next reads"
+    intro="Open these once the CX-5 symptom is narrowed."
+    items={nextReads}
+  />
 
   <RelatedLinks title="Problem guides linked from this page" intro="These pages narrow the CX-5 complaint after the broad ownership pattern is clear." items={relatedProblems} />
   <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening after the diagnosis points at the right repair area." items={relatedBest} />

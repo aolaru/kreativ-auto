@@ -1,0 +1,33 @@
+---
+import Section from "./Section.astro";
+
+interface GuideIssue {
+  description: string;
+  eyebrow: string;
+  title: string;
+}
+
+interface Props {
+  columns?: 2 | 3;
+  intro: string;
+  issues: GuideIssue[];
+  title: string;
+}
+
+const { columns = 2, intro, issues, title } = Astro.props;
+const gridClass = columns === 3 ? "grid gap-6 lg:grid-cols-3" : "grid gap-6 lg:grid-cols-2";
+---
+
+<Section title={title} intro={intro}>
+  <div class={gridClass}>
+    {
+      issues.map((issue) => (
+        <article class="mesh-card p-6">
+          <p class="eyebrow">{issue.eyebrow}</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">{issue.title}</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">{issue.description}</p>
+        </article>
+      ))
+    }
+  </div>
+</Section>

@@ -1,0 +1,45 @@
+---
+interface Props {
+  points: string[];
+  statLabel?: string;
+  statText?: string;
+  statValue?: number | string;
+  subtitle?: string;
+  title?: string;
+}
+
+const {
+  points,
+  statLabel = "Key checks",
+  statText,
+  statValue = points.length,
+  subtitle = "The short version",
+  title = "At a glance"
+} = Astro.props;
+---
+
+<section class="surface surface-dark hero-frame p-6 sm:p-8">
+  <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+    <div>
+      <p class="editorial-kicker">{title}</p>
+      <h2 class="mt-4 text-3xl font-semibold text-ink">{subtitle}</h2>
+      <ul class="mt-6 grid gap-3 text-sm leading-6 text-steel">
+        {points.map((point) => <li class="stat-tile">{point}</li>)}
+      </ul>
+    </div>
+    <div class="accent-panel p-6">
+      <p class="eyebrow">Ownership pattern</p>
+      <div class="mt-4 grid gap-4">
+        <div class="soft-panel p-4">
+          <p class="text-2xl font-semibold text-ink">{statValue}</p>
+          <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{statLabel}</p>
+        </div>
+        {statText && (
+          <div class="soft-panel p-4">
+            <p class="text-sm leading-6 text-steel">{statText}</p>
+          </div>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

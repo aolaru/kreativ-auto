@@ -1,7 +1,10 @@
 ---
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import GuideAtAGlance from "../../components/GuideAtAGlance.astro";
+import GuideChecklist from "../../components/GuideChecklist.astro";
+import GuideIssueGrid from "../../components/GuideIssueGrid.astro";
+import GuideNextReads from "../../components/GuideNextReads.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
-import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
 
@@ -97,6 +100,67 @@ const relatedBest = [
     eyebrow: "Front Brake Pads"
   }
 ];
+
+const atAGlancePoints = [
+  "The 2020 CR-V is broadly low-drama, but brake noise, front-end clunks, battery reserve, and road hum are the complaints that change how refined it feels.",
+  "The biggest waste of money is treating every small clunk like a full suspension job or every weak start like a complicated electrical failure.",
+  "Most first checks stay in normal wear-item territory when the symptom is isolated before parts are ordered."
+];
+
+const troubleAreas = [
+  {
+    eyebrow: "1. Front-end clunks",
+    title: "Small suspension wear can sound bigger than it is",
+    description:
+      "Sway bar links, bushings, and visible front-end wear should lose before the diagnosis moves toward larger suspension work."
+  },
+  {
+    eyebrow: "2. Brake refinement",
+    title: "Low-speed squeal usually starts with pads and hardware",
+    description:
+      "The first brake question is whether the CR-V stops normally but sounds cheap. If yes, treat it like a refinement issue first."
+  },
+  {
+    eyebrow: "3. Battery behavior",
+    title: "Short trips expose weak reserve early",
+    description:
+      "A CR-V used for short errands can look like it has a bigger electrical issue when the first check should still be battery health and usage pattern."
+  },
+  {
+    eyebrow: "4. Road hum",
+    title: "Tires and wheel-end noise get confused fast",
+    description:
+      "Rotate, inspect, and isolate tire noise before assuming a hub or bearing is the source of every speed-linked hum."
+  }
+];
+
+const firstChecks = [
+  "For front-end clunks, check sway bar links, loose hardware, bushings, and visible play before pricing larger suspension work.",
+  "For brake squeal, inspect pad condition, rotor surface, and hardware service before replacing parts blindly.",
+  "For weak starts, test battery reserve and short-trip use before assuming the charging system is the problem.",
+  "For road hum, make tire condition and rotation history lose before moving to wheel bearings."
+];
+
+const nextReads = [
+  {
+    href: "/generations/honda-cr-v-rw-rt-facelift-2020-2022/",
+    eyebrow: "Generation hub",
+    title: "Honda CR-V RW/RT facelift",
+    description: "Use the generation hub when you want the broader CR-V context before opening a narrow repair page."
+  },
+  {
+    href: "/cars/honda-cr-v-2020/",
+    eyebrow: "Car hub",
+    title: "Honda CR-V 2020",
+    description: "Use the model-year page when you want the car overview plus its linked problem and best-parts pages."
+  },
+  {
+    href: "/best/best-front-brake-pads-for-honda-cr-v-2020/",
+    eyebrow: "Parts path",
+    title: "Quiet front brake pads",
+    description: "The better next click when the problem is brake refinement, not a vague safety concern."
+  }
+];
 ---
 
 <ContentLayout
@@ -121,85 +185,30 @@ const relatedBest = [
     points={carTrustPoints}
   />
 
-  <section class="surface surface-dark hero-frame p-6 sm:p-8">
-    <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-      <div>
-        <p class="editorial-kicker">At a glance</p>
-        <h2 class="mt-4 text-3xl font-semibold text-ink">The short version</h2>
-        <ul class="mt-6 grid gap-3 text-sm leading-6 text-steel">
-          <li class="stat-tile">The 2020 CR-V is broadly low-drama, but brake noise, front-end clunks, battery reserve, and road hum are the complaints that change how refined it feels.</li>
-          <li class="stat-tile">The biggest waste of money is treating every small clunk like a full suspension job or every weak start like a complicated electrical failure.</li>
-          <li class="stat-tile">Most first checks stay in normal wear-item territory when the symptom is isolated before parts are ordered.</li>
-        </ul>
-      </div>
-      <div class="accent-panel p-6">
-        <p class="eyebrow">Ownership pattern</p>
-        <div class="mt-4 grid gap-4">
-          <div class="soft-panel p-4">
-            <p class="text-2xl font-semibold text-ink">4</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Core checks</p>
-          </div>
-          <div class="soft-panel p-4">
-            <p class="text-sm leading-6 text-steel">Brake refinement and front-end noise are the two areas that most quickly make a good CR-V feel older than it is.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <GuideAtAGlance
+    points={atAGlancePoints}
+    statValue="4"
+    statLabel="Core checks"
+    statText="Brake refinement and front-end noise are the two areas that most quickly make a good CR-V feel older than it is."
+  />
 
-  <Section title="The trouble areas worth knowing" intro="These are the repeat CR-V themes that deserve a narrow first check before the repair story grows.">
-    <div class="grid gap-6 lg:grid-cols-2">
-      <article class="mesh-card p-6">
-        <p class="eyebrow">1. Front-end clunks</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Small suspension wear can sound bigger than it is</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Sway bar links, bushings, and visible front-end wear should lose before the diagnosis moves toward larger suspension work.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">2. Brake refinement</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Low-speed squeal usually starts with pads and hardware</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The first brake question is whether the CR-V stops normally but sounds cheap. If yes, treat it like a refinement issue first.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">3. Battery behavior</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Short trips expose weak reserve early</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">A CR-V used for short errands can look like it has a bigger electrical issue when the first check should still be battery health and usage pattern.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">4. Road hum</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Tires and wheel-end noise get confused fast</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Rotate, inspect, and isolate tire noise before assuming a hub or bearing is the source of every speed-linked hum.</p>
-      </article>
-    </div>
-  </Section>
+  <GuideIssueGrid
+    title="The trouble areas worth knowing"
+    intro="These are the repeat CR-V themes that deserve a narrow first check before the repair story grows."
+    issues={troubleAreas}
+  />
 
-  <Section title="What to check first" intro="Use this order before spending money on a 2020 CR-V complaint.">
-    <ul class="space-y-3 text-sm leading-6 text-steel">
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">For front-end clunks, check sway bar links, loose hardware, bushings, and visible play before pricing larger suspension work.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">For brake squeal, inspect pad condition, rotor surface, and hardware service before replacing parts blindly.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">For weak starts, test battery reserve and short-trip use before assuming the charging system is the problem.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">For road hum, make tire condition and rotation history lose before moving to wheel bearings.</li>
-    </ul>
-  </Section>
+  <GuideChecklist
+    title="What to check first"
+    intro="Use this order before spending money on a 2020 CR-V complaint."
+    items={firstChecks}
+  />
 
-  <Section title="Best next reads" intro="Open these once you know which CR-V complaint bucket you are actually in.">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/honda-cr-v-rw-rt-facelift-2020-2022/">
-        <p class="eyebrow">Generation hub</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Honda CR-V RW/RT facelift</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub when you want the broader CR-V context before opening a narrow repair page.</p>
-      </a>
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/cars/honda-cr-v-2020/">
-        <p class="eyebrow">Car hub</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Honda CR-V 2020</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the model-year page when you want the car overview plus its linked problem and best-parts pages.</p>
-      </a>
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/best/best-front-brake-pads-for-honda-cr-v-2020/">
-        <p class="eyebrow">Parts path</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Quiet front brake pads</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The better next click when the problem is brake refinement, not a vague safety concern.</p>
-      </a>
-    </div>
-  </Section>
+  <GuideNextReads
+    title="Best next reads"
+    intro="Open these once you know which CR-V complaint bucket you are actually in."
+    items={nextReads}
+  />
 
   <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the CR-V symptom is narrowed." items={relatedProblems} />
   <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening after the diagnosis points at the right repair area." items={relatedBest} />

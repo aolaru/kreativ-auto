@@ -1,0 +1,32 @@
+---
+import Section from "./Section.astro";
+
+interface NextRead {
+  description: string;
+  eyebrow: string;
+  href: string;
+  title: string;
+}
+
+interface Props {
+  intro: string;
+  items: NextRead[];
+  title: string;
+}
+
+const { intro, items, title } = Astro.props;
+---
+
+<Section title={title} intro={intro}>
+  <div class="grid gap-6 lg:grid-cols-3">
+    {
+      items.map((item) => (
+        <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={item.href}>
+          <p class="eyebrow">{item.eyebrow}</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">{item.title}</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+        </a>
+      ))
+    }
+  </div>
+</Section>

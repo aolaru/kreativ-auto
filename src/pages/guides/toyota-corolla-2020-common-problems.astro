@@ -1,7 +1,10 @@
 ---
 import ContentLayout from "../../layouts/ContentLayout.astro";
+import GuideAtAGlance from "../../components/GuideAtAGlance.astro";
+import GuideChecklist from "../../components/GuideChecklist.astro";
+import GuideIssueGrid from "../../components/GuideIssueGrid.astro";
+import GuideNextReads from "../../components/GuideNextReads.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
-import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
 
@@ -97,6 +100,61 @@ const relatedBest = [
     eyebrow: "Wheel Bearings"
   }
 ];
+
+const atAGlancePoints = [
+  "The 2020 Corolla is still a sensible commuter, but brake squeal, battery warning behavior, and road-speed hum are the issues most likely to create owner confusion.",
+  "The biggest mistake is assuming the Corolla reputation means every complaint can wait indefinitely.",
+  "The right first checks are simple: brake hardware, battery and charging basics, tire condition, and wheel-end noise isolation."
+];
+
+const troubleAreas = [
+  {
+    eyebrow: "1. Brake squeal",
+    title: "Low-speed noise is often a refinement issue first",
+    description:
+      "Pad compound, glazing, dirty contact points, and hardware service should be checked before assuming every squeal means a full brake overhaul."
+  },
+  {
+    eyebrow: "2. Battery warning behavior",
+    title: "A flicker at idle needs basic tests before theories",
+    description:
+      "Battery condition, terminals, belt condition, and charging output should be verified before the warning gets treated like a mystery electrical problem."
+  },
+  {
+    eyebrow: "3. Road-speed hum",
+    title: "Tire noise and wheel bearings need separation",
+    description:
+      "A hum that follows speed can be tire wear or a hub starting to fail. Rotation and listening for load changes help narrow it before parts are bought."
+  }
+];
+
+const firstChecks = [
+  "If brakes squeal at low speed, inspect pads, rotor surface, and hardware contact points before buying a full brake setup.",
+  "If the battery light flickers at idle, test battery health, connections, belt condition, and alternator output before guessing.",
+  "If a hum gets louder with speed, inspect and rotate tires before assuming the wheel bearing is already confirmed.",
+  "If the car is mainly used for short trips, treat battery reserve as a maintenance item, not as a surprise failure."
+];
+
+const nextReads = [
+  {
+    href: "/generations/toyota-corolla-e210-2019-2022/",
+    eyebrow: "Generation hub",
+    title: "Toyota Corolla E210",
+    description: "Use the generation hub when you want the broader E210 ownership map."
+  },
+  {
+    href: "/cars/toyota-corolla-2020/",
+    eyebrow: "Car hub",
+    title: "Toyota Corolla 2020",
+    description: "Use the model-year hub for the car overview and its linked problem and parts pages."
+  },
+  {
+    href: "/best/best-wheel-bearings-for-toyota-corolla-2020/",
+    eyebrow: "Parts path",
+    title: "Wheel-bearing shortlist",
+    description: "The right next page after tire noise has been ruled out and the hum still follows speed."
+  }
+];
 ---
 
 <ContentLayout
@@ -121,80 +179,31 @@ const relatedBest = [
     points={carTrustPoints}
   />
 
-  <section class="surface surface-dark hero-frame p-6 sm:p-8">
-    <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-      <div>
-        <p class="editorial-kicker">At a glance</p>
-        <h2 class="mt-4 text-3xl font-semibold text-ink">The short version</h2>
-        <ul class="mt-6 grid gap-3 text-sm leading-6 text-steel">
-          <li class="stat-tile">The 2020 Corolla is still a sensible commuter, but brake squeal, battery warning behavior, and road-speed hum are the issues most likely to create owner confusion.</li>
-          <li class="stat-tile">The biggest mistake is assuming the Corolla reputation means every complaint can wait indefinitely.</li>
-          <li class="stat-tile">The right first checks are simple: brake hardware, battery and charging basics, tire condition, and wheel-end noise isolation.</li>
-        </ul>
-      </div>
-      <div class="accent-panel p-6">
-        <p class="eyebrow">Ownership pattern</p>
-        <div class="mt-4 grid gap-4">
-          <div class="soft-panel p-4">
-            <p class="text-2xl font-semibold text-ink">3</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Published problem paths</p>
-          </div>
-          <div class="soft-panel p-4">
-            <p class="text-sm leading-6 text-steel">Corolla ownership usually stays cheap when small brake, battery, and wheel-end symptoms are handled early.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <GuideAtAGlance
+    points={atAGlancePoints}
+    statValue="3"
+    statLabel="Published problem paths"
+    statText="Corolla ownership usually stays cheap when small brake, battery, and wheel-end symptoms are handled early."
+  />
 
-  <Section title="The trouble areas worth knowing" intro="These are the Corolla checks that prevent a small commuter complaint from becoming a vague parts hunt.">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <article class="mesh-card p-6">
-        <p class="eyebrow">1. Brake squeal</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Low-speed noise is often a refinement issue first</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Pad compound, glazing, dirty contact points, and hardware service should be checked before assuming every squeal means a full brake overhaul.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">2. Battery warning behavior</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">A flicker at idle needs basic tests before theories</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Battery condition, terminals, belt condition, and charging output should be verified before the warning gets treated like a mystery electrical problem.</p>
-      </article>
-      <article class="mesh-card p-6">
-        <p class="eyebrow">3. Road-speed hum</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Tire noise and wheel bearings need separation</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">A hum that follows speed can be tire wear or a hub starting to fail. Rotation and listening for load changes help narrow it before parts are bought.</p>
-      </article>
-    </div>
-  </Section>
+  <GuideIssueGrid
+    title="The trouble areas worth knowing"
+    intro="These are the Corolla checks that prevent a small commuter complaint from becoming a vague parts hunt."
+    issues={troubleAreas}
+    columns={3}
+  />
 
-  <Section title="What to check first" intro="This order keeps the Corolla diagnosis cheap and disciplined.">
-    <ul class="space-y-3 text-sm leading-6 text-steel">
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If brakes squeal at low speed, inspect pads, rotor surface, and hardware contact points before buying a full brake setup.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the battery light flickers at idle, test battery health, connections, belt condition, and alternator output before guessing.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If a hum gets louder with speed, inspect and rotate tires before assuming the wheel bearing is already confirmed.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">If the car is mainly used for short trips, treat battery reserve as a maintenance item, not as a surprise failure.</li>
-    </ul>
-  </Section>
+  <GuideChecklist
+    title="What to check first"
+    intro="This order keeps the Corolla diagnosis cheap and disciplined."
+    items={firstChecks}
+  />
 
-  <Section title="Best next reads" intro="Open these once the Corolla symptom is narrowed.">
-    <div class="grid gap-6 lg:grid-cols-3">
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/toyota-corolla-e210-2019-2022/">
-        <p class="eyebrow">Generation hub</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota Corolla E210</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub when you want the broader E210 ownership map.</p>
-      </a>
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/cars/toyota-corolla-2020/">
-        <p class="eyebrow">Car hub</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Toyota Corolla 2020</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the model-year hub for the car overview and its linked problem and parts pages.</p>
-      </a>
-      <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/best/best-wheel-bearings-for-toyota-corolla-2020/">
-        <p class="eyebrow">Parts path</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Wheel-bearing shortlist</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The right next page after tire noise has been ruled out and the hum still follows speed.</p>
-      </a>
-    </div>
-  </Section>
+  <GuideNextReads
+    title="Best next reads"
+    intro="Open these once the Corolla symptom is narrowed."
+    items={nextReads}
+  />
 
   <RelatedLinks title="Problem guides linked from this page" intro="These pages narrow the Corolla complaint after the broad ownership pattern is clear." items={relatedProblems} />
   <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening after the diagnosis points at the right repair area." items={relatedBest} />
