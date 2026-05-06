@@ -117,15 +117,15 @@ const comparisonCards = comparisonGuides.slice(0, 3);
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
-          <a class="stat-tile stat-link block" href="/cars/" aria-label={`Browse ${cars.length} car hubs`}>
+          <a class="stat-tile stat-link block" href="/cars/" aria-label={`Browse ${cars.length} car hubs`} data-ka-event="homepage_stat_click" data-ka-label="Car hubs" data-ka-section="hero_stats">
             <p class="text-2xl font-semibold text-ink">{cars.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Car hubs</p>
           </a>
-          <a class="stat-tile stat-link block" href="/problems/" aria-label={`Browse ${problems.length} problem guides`}>
+          <a class="stat-tile stat-link block" href="/problems/" aria-label={`Browse ${problems.length} problem guides`} data-ka-event="homepage_stat_click" data-ka-label="Problems" data-ka-section="hero_stats">
             <p class="text-2xl font-semibold text-ink">{problems.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Problems</p>
           </a>
-          <a class="stat-tile stat-link block" href="/best/" aria-label={`Browse ${bestPages.length} parts guides`}>
+          <a class="stat-tile stat-link block" href="/best/" aria-label={`Browse ${bestPages.length} parts guides`} data-ka-event="homepage_stat_click" data-ka-label="Parts guides" data-ka-section="hero_stats">
             <p class="text-2xl font-semibold text-ink">{bestPages.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Parts guides</p>
           </a>
@@ -146,7 +146,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
       <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {
           quickPaths.map((path) => (
-            <a class="mesh-card flex h-full flex-col p-6 transition hover:-translate-y-0.5 hover:bg-white" href={path.href}>
+            <a class="mesh-card flex h-full flex-col p-6 transition hover:-translate-y-0.5 hover:bg-white" href={path.href} data-ka-event="homepage_cta_click" data-ka-label={path.title} data-ka-section="quick_paths">
               <CardIcon kind={path.kind} />
               <h3 class="mt-5 text-2xl font-semibold text-ink">{path.title}</h3>
               <p class="mt-3 flex-1 text-sm leading-6 text-steel">{path.description}</p>
@@ -165,14 +165,14 @@ const comparisonCards = comparisonGuides.slice(0, 3);
           <p class="eyebrow">Best Starting Points</p>
           <h2 class="mt-3 text-3xl font-semibold text-ink">The strongest vehicle clusters</h2>
         </div>
-        <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/guides/">
+        <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/guides/" data-ka-event="homepage_cta_click" data-ka-label="See all guides" data-ka-section="strong_clusters">
           See all guides
         </a>
       </div>
       <div class="mt-6 grid gap-6 lg:grid-cols-3">
         {
           strongClusters.map((cluster) => (
-            <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={cluster.href}>
+            <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={cluster.href} data-ka-event="homepage_cta_click" data-ka-label={cluster.title} data-ka-section="strong_clusters">
               <div class="image-frame image-frame-card">
                 <img
                   src={toThumbnail(cluster.image)}
@@ -203,14 +203,14 @@ const comparisonCards = comparisonGuides.slice(0, 3);
             <p class="eyebrow">Useful Now</p>
             <h2 class="mt-3 text-3xl font-semibold text-ink">Latest practical pages</h2>
           </div>
-          <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/updates/">
+          <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/updates/" data-ka-event="homepage_cta_click" data-ka-label="See updates" data-ka-section="latest_pages">
             See updates
           </a>
         </div>
         <div class="mt-6 grid gap-4 md:grid-cols-2">
           {
             latestPages.map((page) => (
-              <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={page.href}>
+              <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={page.href} data-ka-event="homepage_cta_click" data-ka-label={page.title} data-ka-section="latest_pages">
                 <div class="flex items-start gap-4">
                   <CardIcon kind={page.kind} />
                   <div>
@@ -231,7 +231,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
         <div class="mt-6 grid gap-4">
           {
             comparisonCards.map((guide) => (
-              <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href}>
+              <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href} data-ka-event="homepage_cta_click" data-ka-label={guide.title} data-ka-section="comparisons">
                 <p class="eyebrow">{guide.eyebrow}</p>
                 <h3 class="mt-2 text-lg font-semibold text-ink">{guide.title}</h3>
                 <p class="mt-2 text-sm leading-6 text-steel">{guide.description}</p>
@@ -251,10 +251,10 @@ const comparisonCards = comparisonGuides.slice(0, 3);
           <h2 class="mt-3 text-3xl font-semibold text-ink">Use the full index pages when you need the database view</h2>
         </div>
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/brands/">Brands</a>
-          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/models/">Models</a>
-          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/generations/">Generations</a>
-          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/categories/">Categories</a>
+          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/brands/" data-ka-event="homepage_cta_click" data-ka-label="Brands" data-ka-section="browse_indexes">Brands</a>
+          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/models/" data-ka-event="homepage_cta_click" data-ka-label="Models" data-ka-section="browse_indexes">Models</a>
+          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/generations/" data-ka-event="homepage_cta_click" data-ka-label="Generations" data-ka-section="browse_indexes">Generations</a>
+          <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/categories/" data-ka-event="homepage_cta_click" data-ka-label="Categories" data-ka-section="browse_indexes">Categories</a>
         </div>
       </div>
     </div>

@@ -77,6 +77,28 @@ const gaMeasurementId = "G-4NXQLN1J2R";
             gtag('js', new Date());
             gtag('config', gaMeasurementId);
           `}</script>
+          <script is:inline>
+            window.kaTrackEvent = function (eventName, params) {
+              if (typeof window.gtag !== "function") return;
+              window.gtag("event", eventName, {
+                event_category: "site_interaction",
+                ...params
+              });
+            };
+
+            document.addEventListener("click", (event) => {
+              const target = event.target instanceof Element ? event.target.closest("[data-ka-event]") : null;
+              if (!target) return;
+              const eventName = target.getAttribute("data-ka-event");
+              if (!eventName) return;
+
+              window.kaTrackEvent(eventName, {
+                event_label: target.getAttribute("data-ka-label") || target.textContent?.trim() || undefined,
+                link_url: target.getAttribute("href") || undefined,
+                section: target.getAttribute("data-ka-section") || undefined
+              });
+            });
+          </script>
         </>
       )
     }

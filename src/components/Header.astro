@@ -58,7 +58,7 @@ const searchIndex = [
   <div class="container-shell py-4">
     <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
       <div class="flex min-w-0 items-center gap-3 text-ink">
-        <a href="/" class="flex min-w-0 items-center gap-3 text-ink">
+        <a href="/" class="flex min-w-0 items-center gap-3 text-ink" data-ka-event="brand_click" data-ka-label="Kreativ Auto" data-ka-section="header">
           <span class="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-2xl ring-1 ring-black/6 shadow-[0_10px_24px_rgba(15,23,42,0.12)]">
             <img src="/images/logo-mark.svg" alt="Kreativ Auto" class="h-full w-full" width="44" height="44" />
           </span>
@@ -108,7 +108,7 @@ const searchIndex = [
             {
               navItems.map((item) => (
                 <li>
-                  <a class="transition hover:text-accent" href={item.href}>
+                  <a class="transition hover:text-accent" href={item.href} data-ka-event="nav_click" data-ka-label={item.label} data-ka-section="header">
                     {item.label}
                   </a>
                 </li>
@@ -133,6 +133,7 @@ const searchIndex = [
   if (searchIndexNode && searchInput && searchRoot && searchResults && searchList && searchEmpty && clearButton) {
     const entries = JSON.parse(searchIndexNode.textContent || "[]");
     let activeIndex = -1;
+    let searchStartTracked = false;
 
     const escapeHtml = (value) =>
       value
@@ -180,7 +181,7 @@ const searchIndex = [
         .map(
           (match, index) => `
             <li>
-              <a class="header-search-link" href="${match.href}" data-index="${index}">
+              <a class="header-search-link" href="${match.href}" data-index="${index}" data-ka-event="search_result_click" data-ka-label="${escapeHtml(match.title)}" data-ka-section="header_search">
                 <span class="header-search-type">${escapeHtml(match.type)}</span>
                 <span class="header-search-title">${escapeHtml(match.title)}</span>
                 <span class="header-search-description">${escapeHtml(match.description || "")}</span>
@@ -218,6 +219,20 @@ const searchIndex = [
 
     searchInput.addEventListener("input", updateSearch);
 
+    searchInput.addEventListener(
+      "input",
+      () => {
+        if (!searchStartTracked && searchInput.value.trim().length >= 2) {
+          searchStartTracked = true;
+          window.kaTrackEvent?.("search_start", {
+            event_label: "header search",
+            search_length: searchInput.value.trim().length,
+            section: "header_search"
+          });
+        }
+      }
+    );
+
     searchInput.addEventListener("keydown", (event) => {
       const links = [...searchList.querySelectorAll(".header-search-link")];
       if (!links.length && event.key !== "Escape") return;
@@ -240,6 +255,11 @@ const searchIndex = [
           event.preventDefault();
           const href = activeLink.getAttribute("href");
           if (href) {
+            window.kaTrackEvent?.("search_result_click", {
+              event_label: activeLink.querySelector(".header-search-title")?.textContent?.trim(),
+              link_url: href,
+              section: "header_search_keyboard"
+            });
             window.location.href = href;
           }
         }

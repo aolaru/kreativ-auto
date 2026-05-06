@@ -101,6 +101,36 @@ const relatedOwnershipGuides = uniqueByHref(
     }))
 );
 
+const generationHref = `/generations/${getGenerationSlug(car.data)}/`;
+const carStartPaths = [
+  {
+    eyebrow: "Symptoms",
+    title: "Start with common problems",
+    description: "Use this first when the car is making noise, warning you, leaking, vibrating, or behaving differently.",
+    href: "#common-problems"
+  },
+  {
+    eyebrow: "Parts",
+    title: "Compare the parts that matter",
+    description: relatedBest.length
+      ? "Open the linked best-parts guides when the diagnosis already points at one repair area."
+      : "Use the recommended-parts section when this vehicle cluster does not yet have a deeper parts guide.",
+    href: relatedBest[0]?.href ?? "#recommended-parts"
+  },
+  {
+    eyebrow: "Ownership",
+    title: "Check maintenance habits",
+    description: "Use this when the goal is preventing repeat complaints instead of fixing one immediate symptom.",
+    href: "#maintenance-tips"
+  },
+  {
+    eyebrow: "Fitment",
+    title: "Open the generation view",
+    description: "Use the generation page when trim, phase, or platform differences matter before buying parts.",
+    href: generationHref
+  }
+];
+
 const seoTitle = car.data.metaTitle ?? car.data.title;
 const seoDescription = car.data.metaDescription ?? car.data.description;
 const socialImage = car.data.heroImage ?? car.data.image;
@@ -156,6 +186,36 @@ const schemas = [
     checkedLabel={car.data.updatedAt ? `Checked ${car.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
     points={carTrustPoints}
   />
+
+  <section class="container-shell py-6">
+    <div class="accent-panel p-6 sm:p-8">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Start Here</p>
+        <h2 class="mt-3 text-3xl font-semibold text-ink">Pick the path that matches the job</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          Use these shortcuts before scrolling the full page. They point to the most useful next step for this specific car hub.
+        </p>
+      </div>
+      <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        {
+          carStartPaths.map((path) => (
+            <a
+              class="flex h-full flex-col rounded-3xl border border-orange-200/70 bg-white p-5 transition hover:-translate-y-0.5 hover:border-orange-300"
+              href={path.href}
+              data-ka-event="car_start_path_click"
+              data-ka-label={path.title}
+              data-ka-section={car.id}
+            >
+              <p class="eyebrow">{path.eyebrow}</p>
+              <h3 class="mt-3 text-xl font-semibold text-ink">{path.title}</h3>
+              <p class="mt-3 flex-1 text-sm leading-6 text-steel">{path.description}</p>
+              <p class="mt-5 text-sm font-semibold text-accent">Open path</p>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 
   <Section
     id="overview"
