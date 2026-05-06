@@ -1,0 +1,215 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import GuideAtAGlance from "../../components/GuideAtAGlance.astro";
+import GuideChecklist from "../../components/GuideChecklist.astro";
+import GuideIssueGrid from "../../components/GuideIssueGrid.astro";
+import GuideNextReads from "../../components/GuideNextReads.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota Camry 2020 common problems and what to check first";
+const description =
+  "The 2020 Toyota Camry problems worth checking first, including brake squeal, highway vibration, battery behavior, and road-noise diagnosis.";
+const intro =
+  "The 2020 Camry is a sensible midsize sedan, but normal ownership complaints can still waste money when the first check is too broad. Brake squeal, highway steering vibration, tire condition, battery reserve, and small suspension wear are the patterns worth isolating first.";
+const modifiedTime = new Date("2026-05-06");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the 2020 Toyota Camry generally reliable?",
+    answer:
+      "Yes. The useful caveat is that brake refinement, tires, battery reserve, and highway vibration still need normal diagnosis instead of being ignored because the car is reliable overall."
+  },
+  {
+    question: "What should I check first if a Camry vibrates at highway speed?",
+    answer:
+      "Start with tire condition, balance, wheel damage, and alignment before replacing suspension or wheel-end parts."
+  },
+  {
+    question: "What Camry problem should not be ignored?",
+    answer:
+      "Grinding brakes, vibration that gets worse quickly, warning lights, or steering changes should be checked promptly rather than treated as normal sedan wear."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: { "@type": "Organization", name: editorialTeam.name },
+    publisher: { "@type": "Organization", name: editorialTeam.publisher }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/brake-squeal-at-low-speed-toyota-camry-2020/",
+    title: "Brake squeal at low speed on Toyota Camry 2020",
+    description: "Use this when the main complaint is brake refinement and low-speed noise.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/steering-wheel-vibrates-at-highway-speed-toyota-camry-2020/",
+    title: "Steering wheel vibrates at highway speed on Toyota Camry 2020",
+    description: "Open this when the car feels unsettled at speed and tires or wheels need to be ruled out first.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/battery-struggles-after-short-trips/",
+    title: "Battery struggles after short trips",
+    description: "Useful when the Camry sits, runs short errands, then starts acting weak.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/humming-noise-that-gets-louder-with-speed/",
+    title: "Humming noise that gets louder with speed",
+    description: "Start here when tire noise and wheel-end noise need to be separated.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-brake-pads-for-toyota-camry-2020/",
+    title: "Best brake pads for Toyota Camry 2020",
+    description: "Open this when quiet daily braking is the real goal.",
+    eyebrow: "Brake Pads"
+  },
+  {
+    href: "/best/best-tires-for-toyota-camry-2020-highway-vibration/",
+    title: "Best tires for Toyota Camry 2020 highway vibration",
+    description: "Use this when the highway-vibration diagnosis still points at tires.",
+    eyebrow: "Tires"
+  }
+];
+
+const atAGlancePoints = [
+  "The 2020 Camry is broadly dependable, but brake squeal, highway vibration, tire quality, and battery reserve are the complaints that shape everyday ownership feel.",
+  "The biggest waste of money is replacing suspension or wheel-end parts before tires, balance, brake hardware, and battery basics have lost.",
+  "Most first checks stay ordinary when the symptom is isolated instead of treated like a vague sedan problem."
+];
+
+const troubleAreas = [
+  {
+    eyebrow: "1. Brake squeal",
+    title: "Low-speed noise is often a refinement issue first",
+    description:
+      "Pad compound, rotor surface, hardware service, and contact points should be checked before assuming the brake system needs broad replacement."
+  },
+  {
+    eyebrow: "2. Highway vibration",
+    title: "Tires and wheels need to lose before bigger theories",
+    description:
+      "Balance, tire condition, wheel damage, and alignment are the correct first checks when the steering wheel shakes at speed."
+  },
+  {
+    eyebrow: "3. Battery reserve",
+    title: "Short trips can expose weak voltage early",
+    description:
+      "A marginal battery can make a low-drama Camry feel inconsistent before a larger charging or electronics issue is present."
+  },
+  {
+    eyebrow: "4. Road hum",
+    title: "Tire noise and wheel-end noise get confused",
+    description:
+      "Rotate and inspect tires before assuming every speed-linked hum is a bearing or hub problem."
+  }
+];
+
+const firstChecks = [
+  "For brake squeal, inspect pad condition, rotor surface, and hardware contact points before buying parts.",
+  "For highway vibration, check tire balance, tire wear, wheel damage, and alignment before replacing suspension parts.",
+  "For weak starts, test battery reserve, terminals, and charging basics before chasing electronics.",
+  "For road hum, rotate and inspect tires before assuming a wheel bearing is confirmed."
+];
+
+const nextReads = [
+  {
+    href: "/cars/toyota-camry-2020/",
+    eyebrow: "Car hub",
+    title: "Toyota Camry 2020",
+    description: "Use the model-year page for the Camry overview and linked problem and parts pages."
+  },
+  {
+    href: "/generations/toyota-camry-xv70-2018-2020/",
+    eyebrow: "Generation hub",
+    title: "Toyota Camry XV70",
+    description: "Use the generation hub when you want the broader XV70 ownership map."
+  },
+  {
+    href: "/best/best-tires-for-toyota-camry-2020-highway-vibration/",
+    eyebrow: "Parts path",
+    title: "Highway-vibration tire shortlist",
+    description: "The better next page when vibration still points toward tires after first checks."
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-camry-2020.webp"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schemas={schemas}
+  editorialSummary="This guide turns the Camry cluster into a broader ownership entry point by connecting brake, vibration, battery, and road-noise complaints into one first-check path."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when a 2020 Camry is still a sensible car overall, but brake, tire, vibration, or battery complaints need a disciplined first check."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <GuideAtAGlance
+    points={atAGlancePoints}
+    statValue="4"
+    statLabel="Core checks"
+    statText="The Camry usually stays cheap to own when brake refinement and highway-vibration diagnosis are kept narrow."
+  />
+
+  <GuideIssueGrid
+    title="The trouble areas worth knowing"
+    intro="These are the Camry complaints most likely to turn into wasted parts if the first check is too broad."
+    issues={troubleAreas}
+  />
+
+  <GuideChecklist
+    title="What to check first"
+    intro="Use this order before spending money on a 2020 Camry complaint."
+    items={firstChecks}
+  />
+
+  <GuideNextReads
+    title="Best next reads"
+    intro="Open these once the Camry symptom is narrowed."
+    items={nextReads}
+  />
+
+  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the Camry symptom is clear." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
+</ContentLayout>

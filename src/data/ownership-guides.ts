@@ -130,6 +130,36 @@ export const ownershipGuides: OwnershipGuide[] = [
     relatedGenerations: ["toyota-corolla-e210-2019-2022"]
   },
   {
+    title: "Honda Accord 2020 common problems and what to check first",
+    href: "/guides/honda-accord-2020-common-problems/",
+    description:
+      "A second-tier cornerstone guide for the 2020 Accord, focused on weak A/C at idle, brake vibration, battery behavior, and front-end noise.",
+    eyebrow: "Ownership guide",
+    image: "/images/cars/honda-accord-2020.svg",
+    relatedCars: ["honda-accord-2020"],
+    relatedGenerations: ["honda-accord-cv1-cv2-2018-2022"]
+  },
+  {
+    title: "Mazda 3 2020 common problems and what to check first",
+    href: "/guides/mazda-3-2020-common-problems/",
+    description:
+      "A second-tier cornerstone guide for the 2020 Mazda 3, focused on front-end clunks, brake noise, road hum, and short-trip battery behavior.",
+    eyebrow: "Ownership guide",
+    image: "/images/cars/mazda-3-2020.svg",
+    relatedCars: ["mazda-3-2020"],
+    relatedGenerations: ["mazda-mazda-3-bp-2019-2023"]
+  },
+  {
+    title: "Toyota Camry 2020 common problems and what to check first",
+    href: "/guides/toyota-camry-2020-common-problems/",
+    description:
+      "A second-tier cornerstone guide for the 2020 Camry, focused on brake squeal, highway vibration, battery behavior, and road-noise diagnosis.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/toyota-camry-2020.webp",
+    relatedCars: ["toyota-camry-2020"],
+    relatedGenerations: ["toyota-camry-xv70-2018-2020"]
+  },
+  {
     title: "VW Tiguan II facelift maintenance costs and weak points",
     href: "/guides/vw-tiguan-ii-facelift-maintenance-costs-and-weak-points/",
     description:
@@ -158,6 +188,36 @@ export const ownershipGuides: OwnershipGuide[] = [
     image: "/images/photos/cars/honda-civic-2019.webp",
     relatedCars: ["honda-civic-2019"],
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
+  },
+  {
+    title: "Toyota Corolla 2020 maintenance costs and weak points",
+    href: "/guides/toyota-corolla-2020-maintenance-costs-and-weak-points/",
+    description:
+      "A maintenance-focused guide to 2020 Corolla ownership costs, ordinary weak points, and the service areas most likely to shape the budget first.",
+    eyebrow: "Maintenance guide",
+    image: "/images/cars/toyota-corolla-2020.svg",
+    relatedCars: ["toyota-corolla-2020"],
+    relatedGenerations: ["toyota-corolla-e210-2019-2022"]
+  },
+  {
+    title: "Honda Accord 2020 maintenance costs and weak points",
+    href: "/guides/honda-accord-2020-maintenance-costs-and-weak-points/",
+    description:
+      "A maintenance-focused guide to 2020 Accord ownership costs, ordinary weak points, and the service areas most likely to shape the budget first.",
+    eyebrow: "Maintenance guide",
+    image: "/images/cars/honda-accord-2020.svg",
+    relatedCars: ["honda-accord-2020"],
+    relatedGenerations: ["honda-accord-cv1-cv2-2018-2022"]
+  },
+  {
+    title: "Mazda 3 2020 maintenance costs and weak points",
+    href: "/guides/mazda-3-2020-maintenance-costs-and-weak-points/",
+    description:
+      "A maintenance-focused guide to 2020 Mazda 3 ownership costs, ordinary weak points, and the refinement items most likely to shape the budget first.",
+    eyebrow: "Maintenance guide",
+    image: "/images/cars/mazda-3-2020.svg",
+    relatedCars: ["mazda-3-2020"],
+    relatedGenerations: ["mazda-mazda-3-bp-2019-2023"]
   },
   {
     title: "VW Tiguan II facelift service schedule and intervals",

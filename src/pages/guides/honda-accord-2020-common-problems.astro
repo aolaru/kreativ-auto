@@ -1,0 +1,215 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import GuideAtAGlance from "../../components/GuideAtAGlance.astro";
+import GuideChecklist from "../../components/GuideChecklist.astro";
+import GuideIssueGrid from "../../components/GuideIssueGrid.astro";
+import GuideNextReads from "../../components/GuideNextReads.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Honda Accord 2020 common problems and what to check first";
+const description =
+  "The 2020 Honda Accord problems worth checking first, including weak A/C at idle, brake vibration, battery behavior, and front-end noise.";
+const intro =
+  "The 2020 Accord is a strong daily sedan, but the repeat ownership pattern is not random. Weak A/C cooling at idle, brake vibration or low-speed noise, battery reserve, and smaller front-end noises are the complaints that most often shape the first repair decision.";
+const modifiedTime = new Date("2026-05-06");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the 2020 Honda Accord generally reliable?",
+    answer:
+      "Yes. Most repeat complaints are still ordinary brake, A/C, battery, and front-end wear checks rather than a sign that the car is a risky used buy."
+  },
+  {
+    question: "What should I check first on a 2020 Accord with weak A/C?",
+    answer:
+      "Start with the cooling pattern. If it cools better while moving than at idle, condenser condition, airflow, fans, and system charge are better first checks than random part replacement."
+  },
+  {
+    question: "What Accord problem should not be ignored?",
+    answer:
+      "Brake vibration, grinding, warning lights, or a front-end noise that comes with loose steering feel should be checked promptly instead of treated as normal refinement."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: { "@type": "Organization", name: editorialTeam.name },
+    publisher: { "@type": "Organization", name: editorialTeam.publisher }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/air-conditioner-blows-warm-at-idle-honda-accord-2020/",
+    title: "Air conditioner blows warm at idle on Honda Accord 2020",
+    description: "Use this when the Accord cools poorly in traffic but improves once airflow and road speed increase.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/car-shakes-when-braking/",
+    title: "Car shakes when braking",
+    description: "Open this when brake vibration or light pulsation is the main complaint.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/battery-struggles-after-short-trips/",
+    title: "Battery struggles after short trips",
+    description: "Useful when the Accord sees short errands and starts acting weak or inconsistent.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/front-end-clunk-over-bumps/",
+    title: "Front-end clunk over bumps",
+    description: "Start here when small bumps or driveway entries make the front end sound loose.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-ac-condensers-for-honda-accord-2020/",
+    title: "Best A/C condensers for Honda Accord 2020",
+    description: "Open this after the A/C diagnosis points toward condenser replacement rather than a vague cooling complaint.",
+    eyebrow: "A/C Condensers"
+  },
+  {
+    href: "/best/best-front-brake-pads-for-honda-civic-2019/",
+    title: "Best front brake pads for Honda Civic 2019",
+    description: "A useful OE-style Honda brake reference when the Accord-specific brake shortlist is not yet built.",
+    eyebrow: "Brake Pads"
+  }
+];
+
+const atAGlancePoints = [
+  "The 2020 Accord is generally low-drama, but A/C performance, brake refinement, battery reserve, and small front-end noises are the complaints that deserve a narrow first check.",
+  "The biggest mistake is treating a comfort or refinement complaint like a random major failure before basic checks have lost.",
+  "Most first repairs stay manageable when the symptom is separated clearly: cooling, braking, starting, or front-end noise."
+];
+
+const troubleAreas = [
+  {
+    eyebrow: "1. A/C cooling",
+    title: "Weak idle cooling needs a controlled first check",
+    description:
+      "If cooling improves once the car is moving, airflow, condenser condition, fans, and charge level should be checked before parts are ordered."
+  },
+  {
+    eyebrow: "2. Brake vibration",
+    title: "Light pulsation often starts as a refinement issue",
+    description:
+      "Pad transfer, rotor condition, hardware service, and driving pattern should be checked before assuming the whole brake system is failing."
+  },
+  {
+    eyebrow: "3. Battery reserve",
+    title: "Short-trip use can expose weak voltage early",
+    description:
+      "A weak battery can make the Accord feel more complicated than it is. Test reserve and connections before chasing larger electrical theories."
+  },
+  {
+    eyebrow: "4. Front-end noise",
+    title: "Small suspension wear can sound expensive",
+    description:
+      "Links, bushings, loose hardware, and visible play should be checked before the diagnosis jumps to larger suspension components."
+  }
+];
+
+const firstChecks = [
+  "For weak A/C at idle, compare cooling at idle versus road speed, then inspect condenser condition, fans, airflow, and system charge.",
+  "For brake vibration, inspect pad condition, rotor surface, and wheel/tire condition before replacing broad brake hardware.",
+  "For weak starts or battery warnings, test battery reserve, terminals, and charging basics before assuming a control-module problem.",
+  "For front-end clunks, check small links, bushings, and loose hardware before pricing larger suspension work."
+];
+
+const nextReads = [
+  {
+    href: "/cars/honda-accord-2020/",
+    eyebrow: "Car hub",
+    title: "Honda Accord 2020",
+    description: "Use the model-year page for the Accord overview plus linked problem and parts pages."
+  },
+  {
+    href: "/generations/honda-accord-cv1-cv2-2018-2022/",
+    eyebrow: "Generation hub",
+    title: "Honda Accord CV1/CV2",
+    description: "Use the generation hub when you want the broader tenth-generation Accord context."
+  },
+  {
+    href: "/best/best-ac-condensers-for-honda-accord-2020/",
+    eyebrow: "Parts path",
+    title: "A/C condenser shortlist",
+    description: "The better next click when weak idle cooling is already narrowed toward the condenser path."
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/cars/honda-accord-2020.svg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schemas={schemas}
+  editorialSummary="This guide turns the Accord scaffold into a real ownership entry point by connecting A/C, brake, battery, and front-end complaints into one first-check path."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when a 2020 Accord is still a sensible car overall, but one comfort, brake, battery, or front-end complaint needs a disciplined first check."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <GuideAtAGlance
+    points={atAGlancePoints}
+    statValue="4"
+    statLabel="Common checks"
+    statText="The Accord ownership story stays simple when A/C, brake, battery, and front-end complaints are not blended into one vague diagnosis."
+  />
+
+  <GuideIssueGrid
+    title="The trouble areas worth knowing"
+    intro="These are the Accord complaints most likely to shape the first repair decision."
+    issues={troubleAreas}
+  />
+
+  <GuideChecklist
+    title="What to check first"
+    intro="Use this order before spending money on a 2020 Accord complaint."
+    items={firstChecks}
+  />
+
+  <GuideNextReads
+    title="Best next reads"
+    intro="Open these once the Accord symptom is narrowed."
+    items={nextReads}
+  />
+
+  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the Accord symptom is clear." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
+</ContentLayout>

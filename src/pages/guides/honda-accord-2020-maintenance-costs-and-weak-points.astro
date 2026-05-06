@@ -1,0 +1,172 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Honda Accord 2020 maintenance costs and weak points";
+const description =
+  "What usually costs money first on a Honda Accord 2020, which weak points matter, and where owners tend to overspend.";
+const intro =
+  "The 2020 Accord is still a sensible sedan to run, but its ownership budget has a pattern. A/C performance, brake vibration or noise, battery reserve, tire condition, and small front-end wear are the areas most likely to create the first real spend.";
+const modifiedTime = new Date("2026-05-06");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the 2020 Honda Accord expensive to maintain?",
+    answer:
+      "Usually no. Costs rise mostly when A/C, brake, battery, or front-end complaints are diagnosed loosely or delayed until several wear items stack up."
+  },
+  {
+    question: "What usually costs money first on a 2020 Accord?",
+    answer:
+      "A/C diagnosis, brake refinement work, battery replacement on short-trip cars, tires, and small suspension wear are the common early budget items."
+  },
+  {
+    question: "What is the biggest maintenance mistake on this Accord?",
+    answer:
+      "Treating comfort or refinement complaints as random major failures before the basic wear items, airflow checks, and voltage checks have lost."
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/air-conditioner-blows-warm-at-idle-honda-accord-2020/",
+    title: "Air conditioner blows warm at idle on Honda Accord 2020",
+    description: "Open this when A/C performance is becoming the next real maintenance spend.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/car-shakes-when-braking/",
+    title: "Car shakes when braking",
+    description: "Useful when the budget question is brake vibration, rotor condition, or front brake refinement.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/battery-struggles-after-short-trips/",
+    title: "Battery struggles after short trips",
+    description: "Use this when short-trip use and battery reserve are starting to shape the ownership cost.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-ac-condensers-for-honda-accord-2020/",
+    title: "Best A/C condensers for Honda Accord 2020",
+    description: "Use this after the A/C diagnosis clearly points toward the condenser path.",
+    eyebrow: "A/C Condensers"
+  },
+  {
+    href: "/best/best-front-brake-pads-for-honda-civic-2019/",
+    title: "Best front brake pads for Honda Civic 2019",
+    description: "A useful Honda brake reference while the Accord-specific brake shortlist is still being built.",
+    eyebrow: "Front Brake Pads"
+  }
+];
+
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: { "@type": "Organization", name: editorialTeam.name },
+    publisher: { "@type": "Organization", name: editorialTeam.publisher }
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/cars/honda-accord-2020.svg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schemas={schemas}
+  editorialSummary="This guide is written as a maintenance and running-cost overview for the 2020 Accord, focused on the weak points that shape ordinary ownership cost first."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Maintenance guide", "Model-year specific", "Cost-focused"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when the question is not just what can go wrong on a 2020 Accord, but what usually costs money first and where owners turn ordinary complaints into larger repair bills."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <Section title="The short version" intro="If you only need the fast read, this is the Accord running-cost pattern in plain language.">
+    <ul class="grid gap-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Routine Accord ownership is reasonable, but A/C cooling, brake refinement, battery reserve, and tires are the areas that shape cost first.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The first meaningful spend is often comfort or refinement, not a catastrophic mechanical failure.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The costliest habit is replacing parts before the cooling pattern, brake condition, tire condition, and battery reserve are checked in order.</li>
+    </ul>
+  </Section>
+
+  <Section title="Where the money usually goes first" intro="These are the repair buckets most likely to shape the real ownership budget on a 2020 Accord.">
+    <div class="grid gap-6 lg:grid-cols-2">
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Climate system</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">A/C diagnosis and condenser-path repairs</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Weak idle cooling can turn into a real comfort cost, especially if airflow and condenser condition are not checked early.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Brake refinement</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Brake vibration, noise, and pad choice</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The brake budget is usually about keeping the sedan smooth and quiet, not chasing a dramatic brake-system failure.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Electrical reserve</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Battery replacement on short-trip use</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">A marginal battery can make the Accord feel inconsistent before a larger electrical problem is present.</p>
+      </article>
+      <article class="rounded-3xl border border-slate-200 bg-white p-6">
+        <p class="eyebrow">Ride quality</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Tires and small front-end wear</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">The sedan stays refined when tires, links, bushings, and alignment basics are handled before noises stack together.</p>
+      </article>
+    </div>
+  </Section>
+
+  <Section title="Weak points worth budgeting for" intro="These are not dramatic failures. They are simply the areas most likely to shape the ownership budget first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A/C cooling performance deserves attention before summer driving turns a small complaint into a priority repair.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake vibration and low-speed noise should stay in the normal maintenance budget instead of being ignored.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery reserve matters more on short-trip cars than owners usually expect.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Tires and small front-end wear are what keep the Accord feeling like a composed sedan instead of an older commuter.</li>
+    </ul>
+  </Section>
+
+  <Section title="How owners overspend" intro="The costliest Accord habits are usually diagnostic shortcuts, not surprise failures.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Buying A/C parts before airflow, fans, condenser condition, and charge level are checked.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Replacing brake parts broadly when the complaint is still vibration, pad transfer, or hardware refinement.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Treating weak starts like a complex electrical problem before battery reserve and terminals are tested.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Letting tires and small front-end wear stack until the car feels more expensive to sort than it should.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the ownership budget is clearly being driven by one repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
+</ContentLayout>

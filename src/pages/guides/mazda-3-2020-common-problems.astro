@@ -1,0 +1,215 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import GuideAtAGlance from "../../components/GuideAtAGlance.astro";
+import GuideChecklist from "../../components/GuideChecklist.astro";
+import GuideIssueGrid from "../../components/GuideIssueGrid.astro";
+import GuideNextReads from "../../components/GuideNextReads.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Mazda 3 2020 common problems and what to check first";
+const description =
+  "The 2020 Mazda 3 problems worth checking first, including front-end clunks, brake noise, road hum, and battery behavior.";
+const intro =
+  "The 2020 Mazda 3 feels more premium than the average compact car, so small noises stand out quickly. Front-end clunks, low-speed brake squeal, tire or wheel-end hum, and short-trip battery weakness are the areas where a narrow first check prevents wasted parts.";
+const modifiedTime = new Date("2026-05-06");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+const faqs = [
+  {
+    question: "Is the 2020 Mazda 3 generally reliable?",
+    answer:
+      "Yes. The useful caveat is that brake, suspension, tire, and battery complaints can make the car feel less refined even when the platform is not failing dramatically."
+  },
+  {
+    question: "What usually causes front-end clunks on a 2020 Mazda 3?",
+    answer:
+      "Small suspension hardware such as sway bar links is a sensible first check, especially when the noise appears over small bumps or driveway entries."
+  },
+  {
+    question: "Should I replace wheel bearings for road hum right away?",
+    answer:
+      "No. Tire condition, rotation history, and road-surface behavior should be checked before wheel bearings become the main suspect."
+  }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.label,
+      item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
+    }))
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    mainEntityOfPage: Astro.url.href,
+    dateModified: modifiedTime.toISOString(),
+    author: { "@type": "Organization", name: editorialTeam.name },
+    publisher: { "@type": "Organization", name: editorialTeam.publisher }
+  }
+];
+
+const relatedProblems = [
+  {
+    href: "/problems/front-end-clunk-over-bumps-mazda-3-2020/",
+    title: "Front-end clunk over bumps on Mazda 3 2020",
+    description: "Use this when the front end sounds loose over small bumps, rough pavement, or driveway entries.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/brake-squeal-at-low-speed/",
+    title: "Brake squeal at low speed",
+    description: "Start here when the Mazda 3 stops normally but sounds rough or cheap at low speed.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/humming-noise-that-gets-louder-with-speed/",
+    title: "Humming noise that gets louder with speed",
+    description: "Open this when tire noise and wheel-end noise need to be separated.",
+    eyebrow: "Problem guide"
+  },
+  {
+    href: "/problems/battery-struggles-after-short-trips/",
+    title: "Battery struggles after short trips",
+    description: "Useful when short commutes and sitting time make starting behavior inconsistent.",
+    eyebrow: "Problem guide"
+  }
+];
+
+const relatedBest = [
+  {
+    href: "/best/best-front-sway-bar-links-for-mazda-3-2020/",
+    title: "Best front sway bar links for Mazda 3 2020",
+    description: "Open this after the clunk pattern points toward normal front-end link wear.",
+    eyebrow: "Front Sway Bar Links"
+  },
+  {
+    href: "/best/best-brake-pads-for-mazda-cx-5-2020/",
+    title: "Best brake pads for Mazda CX-5 2020",
+    description: "A useful Mazda brake-reference page while the Mazda 3-specific brake shortlist is still being built.",
+    eyebrow: "Brake Pads"
+  }
+];
+
+const atAGlancePoints = [
+  "The 2020 Mazda 3 is not a high-risk ownership story, but brake noise, small front-end clunks, road hum, and battery reserve can quickly reduce the premium feel.",
+  "The most expensive mistake is treating refinement complaints like broad mechanical failures before small wear items and tires have lost.",
+  "The right first checks stay practical: links and bushings, brake hardware, tire condition, and battery health."
+];
+
+const troubleAreas = [
+  {
+    eyebrow: "1. Front-end clunks",
+    title: "Small hardware can make the whole car feel loose",
+    description:
+      "Sway bar links, bushings, and visible front-end wear should be inspected before assuming larger suspension parts are needed."
+  },
+  {
+    eyebrow: "2. Brake noise",
+    title: "Low-speed squeal is often a refinement problem first",
+    description:
+      "Pad compound, rotor surface, and hardware service are the useful first checks when the car still brakes normally."
+  },
+  {
+    eyebrow: "3. Road hum",
+    title: "Tires should lose before wheel bearings",
+    description:
+      "A speed-linked hum can come from tire wear, balance, road surface, or a hub. Rotation and inspection keep the diagnosis honest."
+  },
+  {
+    eyebrow: "4. Battery behavior",
+    title: "Short trips expose weak reserve",
+    description:
+      "A battery that is marginal can make a modern compact feel inconsistent before any larger electrical fault is present."
+  }
+];
+
+const firstChecks = [
+  "For clunks, inspect sway bar links, bushings, loose hardware, and visible play before pricing larger suspension work.",
+  "For brake squeal, inspect pad condition, rotor surface, and hardware contact points before replacing parts blindly.",
+  "For road hum, rotate and inspect tires before assuming a wheel bearing is confirmed.",
+  "For weak starts, test battery reserve and charging basics before chasing electronics."
+];
+
+const nextReads = [
+  {
+    href: "/cars/mazda-3-2020/",
+    eyebrow: "Car hub",
+    title: "Mazda 3 2020",
+    description: "Use the model-year page for the car overview and its linked problem and parts pages."
+  },
+  {
+    href: "/generations/mazda-mazda-3-bp-2019-2023/",
+    eyebrow: "Generation hub",
+    title: "Mazda 3 BP generation",
+    description: "Use the generation hub when you want the broader BP-era ownership map."
+  },
+  {
+    href: "/best/best-front-sway-bar-links-for-mazda-3-2020/",
+    eyebrow: "Parts path",
+    title: "Front sway bar links",
+    description: "The better next page when the main symptom is a small front-end clunk."
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/cars/mazda-3-2020.svg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  faqs={faqs}
+  schemas={schemas}
+  editorialSummary="This guide turns the Mazda 3 cluster into a clearer ownership entry point instead of leaving it split between one problem page and one parts page."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+>
+  <TrustBlock
+    title="How to use this guide"
+    summary="Use this page when a 2020 Mazda 3 still feels like a good car overall, but brake, front-end, road-noise, or battery complaints need a cleaner first check."
+    byline={`By ${editorialTeam.name}`}
+    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+    points={carTrustPoints}
+  />
+
+  <GuideAtAGlance
+    points={atAGlancePoints}
+    statValue="4"
+    statLabel="Core checks"
+    statText="The Mazda 3's refined baseline makes small brake, tire, and front-end issues more noticeable than they might be in a cheaper-feeling compact."
+  />
+
+  <GuideIssueGrid
+    title="The trouble areas worth knowing"
+    intro="These are the Mazda 3 complaints most likely to turn into wasted parts if the first check is too broad."
+    issues={troubleAreas}
+  />
+
+  <GuideChecklist
+    title="What to check first"
+    intro="Use this order before spending money on a 2020 Mazda 3 complaint."
+    items={firstChecks}
+  />
+
+  <GuideNextReads
+    title="Best next reads"
+    intro="Open these once the Mazda 3 symptom is narrowed."
+    items={nextReads}
+  />
+
+  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the Mazda 3 symptom is clear." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
+</ContentLayout>
