@@ -98,6 +98,15 @@ a {
   @apply rounded-3xl border border-slate-200 bg-slate-50/85;
 }
 
+.snapshot-card {
+  @apply block rounded-3xl border border-slate-200 bg-slate-50/85 outline-none transition;
+}
+
+.snapshot-card:hover,
+.snapshot-card:focus-visible {
+  @apply -translate-y-0.5 border-orange-300 bg-white ring-2 ring-orange-200/60;
+}
+
 .accent-panel {
   background: linear-gradient(180deg, rgba(194, 65, 12, 0.08), rgba(255, 255, 255, 0.96));
   @apply rounded-3xl border border-orange-200/70;

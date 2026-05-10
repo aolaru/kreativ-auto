@@ -55,14 +55,14 @@ const comparisonFilters = [
         <div class="accent-panel p-6">
           <p class="eyebrow">What this section does</p>
           <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            <div class="soft-panel p-4">
+            <a class="snapshot-card p-4" href="#browse-all-comparisons" data-ka-event="comparisons_snapshot_click" data-ka-section="comparisons_snapshot" data-ka-label="Comparison guides">
               <p class="text-2xl font-semibold text-ink">{comparisonGuides.length}</p>
               <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Comparison guides</p>
-            </div>
-            <div class="soft-panel p-4">
+            </a>
+            <a class="snapshot-card p-4" href="/generations/" data-ka-event="comparisons_snapshot_click" data-ka-section="comparisons_snapshot" data-ka-label="Strong clusters">
               <p class="text-2xl font-semibold text-ink">3</p>
               <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Strong clusters</p>
-            </div>
+            </a>
             <div class="soft-panel p-4 sm:col-span-2">
               <p class="text-sm leading-6 text-steel">
                 These pages exist to stop the common mistake of treating every version of the same car like the ownership story is identical.
@@ -110,7 +110,7 @@ const comparisonFilters = [
       </div>
     </section>
 
-    <section class="mt-10 surface p-6 sm:p-8" data-filter-root>
+    <section id="browse-all-comparisons" class="mt-10 surface p-6 sm:p-8" data-filter-root>
       <div class="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p class="eyebrow">Browse all</p>

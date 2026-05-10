@@ -28,12 +28,12 @@ const comparisonCards = comparisonGuides.slice(0, 3).map((guide) => ({
 }));
 
 const snapshot = [
-  { label: "Car hubs", value: cars.length },
-  { label: "Problem guides", value: problems.length },
-  { label: "Best-parts guides", value: bestPages.length },
-  { label: "Ownership guides", value: ownershipGuides.length },
-  { label: "Comparison guides", value: comparisonGuides.length },
-  { label: "Strong clusters", value: 3 }
+  { label: "Car hubs", value: cars.length, href: "/cars/" },
+  { label: "Problem guides", value: problems.length, href: "/problems/" },
+  { label: "Best-parts guides", value: bestPages.length, href: "/best/" },
+  { label: "Ownership guides", value: ownershipGuides.length, href: "/guides/" },
+  { label: "Comparison guides", value: comparisonGuides.length, href: "/comparisons/" },
+  { label: "Strong clusters", value: 3, href: "/generations/" }
 ];
 ---
 
@@ -58,10 +58,16 @@ const snapshot = [
           <p class="eyebrow">Current snapshot</p>
           <div class="mt-4 grid gap-4 sm:grid-cols-2">
             {snapshot.map((item) => (
-              <div class="soft-panel p-4">
+              <a
+                class="snapshot-card p-4"
+                href={item.href}
+                data-ka-event="updates_snapshot_click"
+                data-ka-section="updates_snapshot"
+                data-ka-label={item.label}
+              >
                 <p class="text-2xl font-semibold text-ink">{item.value}</p>
                 <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{item.label}</p>
-              </div>
+              </a>
             ))}
           </div>
         </div>

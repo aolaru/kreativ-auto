@@ -1,6 +1,7 @@
 ---
 interface Props {
   points: string[];
+  statHref?: string;
   statLabel?: string;
   statText?: string;
   statValue?: number | string;
@@ -10,6 +11,7 @@ interface Props {
 
 const {
   points,
+  statHref,
   statLabel = "Key checks",
   statText,
   statValue = points.length,
@@ -30,10 +32,25 @@ const {
     <div class="accent-panel p-6">
       <p class="eyebrow">Ownership pattern</p>
       <div class="mt-4 grid gap-4">
-        <div class="soft-panel p-4">
-          <p class="text-2xl font-semibold text-ink">{statValue}</p>
-          <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{statLabel}</p>
-        </div>
+        {
+          statHref ? (
+            <a
+              class="snapshot-card p-4"
+              href={statHref}
+              data-ka-event="guide_stat_click"
+              data-ka-section="guide_at_a_glance"
+              data-ka-label={statLabel}
+            >
+              <p class="text-2xl font-semibold text-ink">{statValue}</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{statLabel}</p>
+            </a>
+          ) : (
+            <div class="soft-panel p-4">
+              <p class="text-2xl font-semibold text-ink">{statValue}</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{statLabel}</p>
+            </div>
+          )
+        }
         {statText && (
           <div class="soft-panel p-4">
             <p class="text-sm leading-6 text-steel">{statText}</p>
