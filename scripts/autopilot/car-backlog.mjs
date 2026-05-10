@@ -2168,6 +2168,114 @@ const queuedCarSeeds = [
       { question: "What shows up first on a Passport ownership cycle?", answer: "Brake and highway refinement complaints are some of the earliest practical annoyances." },
       { question: "Is the Passport still a sensible used SUV?", answer: "Yes, especially if the basic brake, tire, and battery picture was not ignored." }
     ]
+  },
+  {
+    slug: "toyota-avalon-2020",
+    brand: "Toyota",
+    modelDisplay: "Toyota Avalon",
+    year: 2020,
+    generation: "Fifth Generation",
+    generationCode: "XX50",
+    generationYears: "2019-2022",
+    image: "/images/cars/toyota-avalon-2020.svg",
+    kind: "brakePads",
+    carDescription:
+      "The 2020 Toyota Avalon is usually a calm highway sedan to own, but brake refinement, tire noise, and battery reserve complaints are the practical issues owners tend to notice first.",
+    commonProblems: [
+      "Brake squeal or light pulsation that hurts the Avalon’s comfort-focused feel quickly",
+      "Highway tire noise or vibration that makes the sedan feel less premium than expected",
+      "Weak-start behavior after sitting or repeated shorter-trip use"
+    ],
+    maintenanceTips: [
+      "Brake refinement matters on an Avalon because small noise complaints stand out faster than on a rougher vehicle.",
+      "Use tire choices that preserve cabin quietness instead of chasing the cheapest replacement.",
+      "Test the battery early if the car sits often or starts feeling inconsistent."
+    ],
+    carFaqs: [
+      { question: "What complaint makes an Avalon feel older first?", answer: "Brake and highway refinement complaints are some of the first practical ownership issues owners notice." },
+      { question: "Is the 2020 Avalon expensive to keep comfortable?", answer: "Usually no, if the normal brake, tire, and battery basics are handled before they spread." }
+    ]
+  },
+  {
+    slug: "honda-ridgeline-2020",
+    brand: "Honda",
+    modelDisplay: "Honda Ridgeline",
+    year: 2020,
+    generation: "Second Generation Refresh",
+    generationCode: "YK2",
+    generationYears: "2017-2020",
+    image: "/images/cars/honda-ridgeline-2020.svg",
+    kind: "tires",
+    carDescription:
+      "The 2020 Honda Ridgeline is usually an easy truck to live with, but highway vibration, tire wear, and brake refinement complaints are the issues owners most often end up sorting first.",
+    commonProblems: [
+      "Steering-wheel vibration at highway speed from tire or balance issues",
+      "Road-noise and wear complaints that make the truck feel rougher than its car-like reputation suggests",
+      "Brake feel or front-end refinement complaints once mileage builds"
+    ],
+    maintenanceTips: [
+      "Treat highway shake early because a Ridgeline can hide tire issues until comfort drops sharply.",
+      "Rotate and inspect tires consistently so the truck keeps its calmer on-road feel.",
+      "Do not assume every highway vibration means a larger suspension problem."
+    ],
+    carFaqs: [
+      { question: "What practical complaint shows up first on a Ridgeline?", answer: "Highway tire and vibration complaints are one of the first ownership issues many drivers notice." },
+      { question: "Is the 2020 Ridgeline expensive to keep refined?", answer: "Usually no, if tire, brake, and wheel-end basics are handled before the diagnosis gets bigger." }
+    ]
+  },
+  {
+    slug: "mazda-cx-9-2020",
+    brand: "Mazda",
+    modelDisplay: "Mazda CX-9",
+    year: 2020,
+    generation: "Second Generation Refresh",
+    generationCode: "TC",
+    generationYears: "2016-2023",
+    image: "/images/cars/mazda-cx-9-2020.svg",
+    kind: "brakePads",
+    carDescription:
+      "The 2020 Mazda CX-9 still feels more polished than many three-row SUVs, but brake refinement, tire noise, and battery reserve complaints are the practical issues owners usually start with.",
+    commonProblems: [
+      "Brake squeal or light pulsation that makes the SUV feel heavier and less premium than it should",
+      "Highway road-noise and tire complaints that flatten the CX-9’s refinement advantage",
+      "Weak-start behavior after sitting or repeated short family trips"
+    ],
+    maintenanceTips: [
+      "Stay ahead of brake service so the CX-9 keeps the refinement owners bought it for.",
+      "Use tire choices that preserve quietness instead of making the cabin busier.",
+      "Short-trip family use is hard on the battery, so test it before chasing stranger electrical stories."
+    ],
+    carFaqs: [
+      { question: "What complaint hurts CX-9 ownership feel first?", answer: "Brake and tire refinement complaints often show up before anything larger feels wrong." },
+      { question: "Is the 2020 CX-9 expensive to keep comfortable?", answer: "Usually not, as long as the common wear-item complaints are handled early." }
+    ]
+  },
+  {
+    slug: "subaru-ascent-2020",
+    brand: "Subaru",
+    modelDisplay: "Subaru Ascent",
+    year: 2020,
+    generation: "First Generation",
+    generationCode: "WM",
+    generationYears: "2019-2022",
+    image: "/images/cars/subaru-ascent-2020.svg",
+    kind: "batteries",
+    carDescription:
+      "The 2020 Subaru Ascent is usually a practical family SUV, but battery reserve complaints, tire-noise confusion, and brake refinement issues are the ownership patterns most likely to show up first.",
+    commonProblems: [
+      "Weak-start behavior after sitting or repeated short-trip family use",
+      "Road noise or mild vibration that owners flatten into generic tire drama too early",
+      "Brake feel and refinement complaints that make the SUV feel larger and older than it is"
+    ],
+    maintenanceTips: [
+      "Treat repeated weak starts like a battery-and-usage-pattern issue before turning it into a larger electrical story.",
+      "Separate tire noise from wheel-end or road-surface complaints before buying parts.",
+      "Stay ahead of brake wear if the Ascent spends a lot of time carrying family weight and cargo."
+    ],
+    carFaqs: [
+      { question: "What ownership complaint shows up first on many Ascents?", answer: "Battery reserve complaints and everyday refinement issues are common first-step problems." },
+      { question: "Is the 2020 Ascent expensive to keep sorted?", answer: "Usually no, if the battery, brake, and tire basics are handled calmly and early." }
+    ]
   }
 ];
 

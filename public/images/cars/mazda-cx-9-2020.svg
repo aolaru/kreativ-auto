@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mazda CX-9 2020 three-row SUV illustration</title>
+  <desc id="desc">Editorial illustration for the Mazda CX-9 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8efe7"/>
+      <stop offset="1" stop-color="#d7e4df"/>
+    </linearGradient>
+    <linearGradient id="body" x1="200" y1="245" x2="1000" y2="575" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#192a39"/>
+      <stop offset="1" stop-color="#596d7c"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <circle cx="1034" cy="146" r="120" fill="#f1b86a" opacity=".2"/>
+  <circle cx="176" cy="638" r="166" fill="#ffffff" opacity=".34"/>
+  <path d="M196 508c20-85 90-139 210-160l124-78c46-30 104-45 172-45h140c64 0 114 23 150 68l74 91c43 17 70 52 81 104l10 46H170l26-26z" fill="url(#body)"/>
+  <path d="M434 328l92-56c34-21 76-32 126-32h82v133H350l84-45z" fill="#eef6f4" opacity=".88"/>
+  <path d="M764 240h86c46 0 85 18 115 54l52 69H764V240z" fill="#eef6f4" opacity=".83"/>
+  <path d="M196 508h918l-30 54H170l26-54z" fill="#0f1d2a"/>
+  <circle cx="352" cy="566" r="86" fill="#0f1d2a"/>
+  <circle cx="352" cy="566" r="41" fill="#e3ecee"/>
+  <circle cx="900" cy="566" r="86" fill="#0f1d2a"/>
+  <circle cx="900" cy="566" r="41" fill="#e3ecee"/>
+  <rect x="790" y="438" width="96" height="12" rx="6" fill="#d54f26"/>
+  <text x="96" y="118" fill="#d54f26" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">MAZDA CX-9</text>
+  <text x="96" y="166" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 three-row SUV</text>
+  <text x="96" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake refinement, road noise, and battery reserve.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Toyota Avalon 2020 sedan illustration</title>
+  <desc id="desc">Editorial illustration for the Toyota Avalon 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f6efe8"/>
+      <stop offset="1" stop-color="#d8e1e6"/>
+    </linearGradient>
+    <linearGradient id="body" x1="180" y1="280" x2="1030" y2="560" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#142536"/>
+      <stop offset="1" stop-color="#465f77"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <circle cx="1016" cy="160" r="126" fill="#f0b567" opacity=".22"/>
+  <path d="M174 500c24-78 88-126 194-145l148-92c42-26 93-39 154-39h161c60 0 109 20 146 59l81 84c42 17 69 51 82 101l9 44H154l20-12z" fill="url(#body)"/>
+  <path d="M454 326l86-56c31-20 69-30 116-30h169v136H348l106-50z" fill="#eef5f7" opacity=".88"/>
+  <path d="M817 240h66c44 0 82 18 112 53l48 62H817V240z" fill="#eef5f7" opacity=".82"/>
+  <path d="M174 500h942l-28 50H156l18-50z" fill="#0f172a"/>
+  <circle cx="356" cy="556" r="82" fill="#0f172a"/>
+  <circle cx="356" cy="556" r="39" fill="#dde6ea"/>
+  <circle cx="904" cy="556" r="82" fill="#0f172a"/>
+  <circle cx="904" cy="556" r="39" fill="#dde6ea"/>
+  <rect x="792" y="432" width="96" height="12" rx="6" fill="#c94b22"/>
+  <text x="94" y="118" fill="#c94b22" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">TOYOTA AVALON</text>
+  <text x="94" y="166" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 highway sedan</text>
+  <text x="94" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake refinement, quiet tires, and battery reserve.</text>
+</svg>

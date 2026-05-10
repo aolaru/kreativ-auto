@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Subaru Ascent 2020 family SUV illustration</title>
+  <desc id="desc">Editorial illustration for the Subaru Ascent 2020 weekly car queue page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf2f5"/>
+      <stop offset="1" stop-color="#f6e5d8"/>
+    </linearGradient>
+    <linearGradient id="body" x1="180" y1="250" x2="1020" y2="580" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#183047"/>
+      <stop offset="1" stop-color="#5d7282"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M934 100c88 32 145 89 171 171 26 82 9 151-50 207-60 55-136 72-227 50-92-22-146-77-163-166-16-89 3-164 59-223 56-59 126-72 210-39z" fill="#ffffff" opacity=".28"/>
+  <path d="M192 510c18-86 89-141 213-165l121-76c47-30 103-45 169-45h140c63 0 112 22 147 67l76 93c43 17 70 52 81 104l9 46H168l24-24z" fill="url(#body)"/>
+  <path d="M436 330l94-58c33-21 74-32 122-32h84v134H354l82-44z" fill="#edf6f4" opacity=".88"/>
+  <path d="M768 240h80c45 0 83 18 113 54l53 70H768V240z" fill="#edf6f4" opacity=".82"/>
+  <path d="M192 510h918l-30 54H166l26-54z" fill="#0f1a28"/>
+  <circle cx="352" cy="568" r="86" fill="#0f1a28"/>
+  <circle cx="352" cy="568" r="40" fill="#dde8eb"/>
+  <circle cx="900" cy="568" r="86" fill="#0f1a28"/>
+  <circle cx="900" cy="568" r="40" fill="#dde8eb"/>
+  <rect x="792" y="440" width="96" height="12" rx="6" fill="#db5a2b"/>
+  <text x="96" y="118" fill="#db5a2b" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">SUBARU ASCENT</text>
+  <text x="96" y="166" fill="#0f172a" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 family SUV</text>
+  <text x="96" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Battery reserve, road noise, and brake refinement.</text>
+</svg>
