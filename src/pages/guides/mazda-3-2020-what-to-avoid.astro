@@ -1,0 +1,72 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Mazda 3 2020: what to avoid";
+const description =
+  "What to avoid on a Mazda 3 2020, including front-end clunks, brake noise, road hum, and short-trip battery complaints.";
+const intro =
+  "The 2020 Mazda 3 feels upscale for the class, so small refinement problems stand out quickly. Avoid examples where the seller leans on the premium feel while ignoring front-end clunks, brake squeal, road hum, or weak battery behavior.";
+const modifiedTime = new Date("2026-05-13");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/front-end-clunk-over-bumps-mazda-3-2020/", title: "Front-end clunk over bumps on Mazda 3 2020", description: "Use this when the suspension noise is already visible on the test drive.", eyebrow: "Problem guide" },
+  { href: "/problems/brake-squeal-at-low-speed/", title: "Brake squeal at low speed", description: "Useful when the noise is being dismissed as harmless without inspection.", eyebrow: "Problem guide" },
+  { href: "/problems/humming-noise-that-gets-louder-with-speed/", title: "Humming noise that gets louder with speed", description: "Open this before accepting a generic tire-noise explanation.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-front-sway-bar-links-for-mazda-3-2020/", title: "Best front sway bar links for Mazda 3 2020", description: "Use this after the front-end clunk points toward sway bar link wear.", eyebrow: "Sway Bar Links" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/mazda-3-2020.svg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide focuses on Mazda 3 examples where refinement issues are already visible before purchase."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Avoid guide", "Model-year specific", "Buying-focused"]}
+>
+  <TrustBlock title="How to use this guide" summary="Use this page when a Mazda 3 looks clean, but the noise and refinement checks tell a less polished story." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
+
+  <Section title="The short version" intro="These are the Mazda 3 examples to avoid first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid obvious front-end clunks over small bumps unless the price already reflects diagnosis and repair.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid cars with brake squeal plus rough pedal feel, vibration, or neglected hardware.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid road hum that changes with speed until tires and wheel-end condition are checked separately.</li>
+    </ul>
+  </Section>
+
+  <Section title="Walk-away patterns" intro="The risky examples usually have small symptoms stacked together.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front-end clunk is present on both rough pavement and driveway entries.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake noise is paired with visible rotor wear, vibration, or uneven feel.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The seller blames every hum on tires without rotation history or tread inspection.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Short-trip battery weakness appears together with other deferred maintenance.</li>
+    </ul>
+  </Section>
+
+  <Section title="What is still negotiable" intro="Some issues are manageable when the car is otherwise clean and priced honestly.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A narrow sway-bar-link noise with no larger steering or suspension symptoms.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake squeal that still looks like pad compound, glazing, or hardware service.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Road noise that follows tire wear and improves after rotation or tire replacement.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the Mazda 3 already shows one of the symptoms above." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use this when the car is still worth buying but front-end wear needs a realistic parts path." items={relatedBest} />
+</ContentLayout>

@@ -1,0 +1,72 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Honda Accord 2020: what to avoid";
+const description =
+  "What to avoid on a Honda Accord 2020, including weak A/C stories, brake vibration, battery issues, and vague front-end noise.";
+const intro =
+  "The 2020 Accord is a strong used sedan when the basics are honest. The weak examples usually have the same pattern: idle A/C problems with no clear diagnosis, brake vibration treated as normal, battery behavior dismissed as random, or small front-end noise hidden behind a clean-looking car.";
+const modifiedTime = new Date("2026-05-13");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/air-conditioner-blows-warm-at-idle-honda-accord-2020/", title: "Air conditioner blows warm at idle on Honda Accord 2020", description: "Use this when idle cooling is the concern that makes the car risky.", eyebrow: "Problem guide" },
+  { href: "/problems/car-shakes-when-braking/", title: "Car shakes when braking", description: "Open this if brake vibration is already part of the test-drive story.", eyebrow: "Problem guide" },
+  { href: "/problems/battery-struggles-after-short-trips/", title: "Battery struggles after short trips", description: "Useful when weak-start behavior is being explained away too casually.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-ac-condensers-for-honda-accord-2020/", title: "Best A/C condensers for Honda Accord 2020", description: "Use this only after the cooling diagnosis points clearly toward the condenser path.", eyebrow: "A/C Condensers" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/honda-accord-2020.svg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide focuses on the Accord examples and ownership shortcuts that are most likely to create regret."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Avoid guide", "Model-year specific", "Buying-focused"]}
+>
+  <TrustBlock title="How to use this guide" summary="Use this page when a 2020 Accord looks clean, but the first-drive details do not fully line up." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
+
+  <Section title="The short version" intro="These are the Accord examples to be careful with first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid cars with weak idle A/C and no clear airflow, charge, or condenser diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid brake vibration that is dismissed as normal wear without a repair plan or price adjustment.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid weak-start behavior if the seller cannot show recent battery or charging checks.</li>
+    </ul>
+  </Section>
+
+  <Section title="Walk-away patterns" intro="The weak examples usually show more than one small warning at once.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A/C cools on the highway but fades in traffic, while the seller calls it normal.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front brake vibration is already present during normal stops.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery warning signs appear after sitting, short trips, or repeated starts.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Front-end noise is obvious over small bumps, but no one has checked links, bushings, or tires in order.</li>
+    </ul>
+  </Section>
+
+  <Section title="What is still negotiable" intro="Some Accord issues are manageable if the car is otherwise strong and the price reflects the work.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A/C weakness with a narrow, documented diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake refinement issues that still look like pads, rotors, or hardware rather than neglect.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A tired battery with clean terminals, stable charging, and no broader electrical symptoms.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the Accord already shows one of the risk patterns above." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use this when the car is still worth buying but the A/C path needs realistic pricing." items={relatedBest} />
+</ContentLayout>

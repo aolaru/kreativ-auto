@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Mazda 3 2020 hatchback illustration</title>
+  <desc id="desc">Editorial illustration for the Mazda 3 2020 ownership pages.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8eadf"/>
+      <stop offset="1" stop-color="#e3edf0"/>
+    </linearGradient>
+    <linearGradient id="body" x1="165" y1="260" x2="1065" y2="555" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3d1016"/>
+      <stop offset="1" stop-color="#c1452a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M91 506c82-69 177-93 284-72 108 21 210 5 307-48 98-54 204-62 318-24 75 25 116 70 124 135 9 67-18 118-82 153H123c-70-33-81-81-32-144z" fill="#fff" opacity=".38"/>
+  <path d="M151 521c32-72 103-118 213-138l134-79c43-25 92-38 146-38h116c58 0 108 18 150 53l112 92c55 17 88 49 100 96l11 39H129l22-25z" fill="url(#body)"/>
+  <path d="M429 361l92-53c33-19 73-28 120-28h72v118H340l89-37z" fill="#fff7f0" opacity=".88"/>
+  <path d="M744 280h39c49 0 93 16 132 48l83 70H744V280z" fill="#fff7f0" opacity=".78"/>
+  <path d="M164 516h922l-32 56H135l29-56z" fill="#130d0e"/>
+  <circle cx="344" cy="565" r="78" fill="#111827"/>
+  <circle cx="344" cy="565" r="35" fill="#e9eff0"/>
+  <circle cx="878" cy="565" r="78" fill="#111827"/>
+  <circle cx="878" cy="565" r="35" fill="#e9eff0"/>
+  <rect x="784" y="436" width="92" height="11" rx="6" fill="#f5b05f"/>
+  <text x="92" y="116" fill="#ba3d1f" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">MAZDA 3</text>
+  <text x="92" y="164" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 BP compact</text>
+  <text x="92" y="708" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake noise, front-end clunks, and road hum.</text>
+</svg>

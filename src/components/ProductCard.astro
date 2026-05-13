@@ -7,6 +7,7 @@ interface Product {
   rating: number;
   affiliate_url: string;
   summary?: string;
+  image?: string;
 }
 
 interface Props {
@@ -50,6 +51,9 @@ const productUrl = withAffiliateTag(product.affiliate_url);
       href={productUrl}
       rel="nofollow sponsored"
       target="_blank"
+      data-ka-event="product_click"
+      data-ka-section="product_card"
+      data-ka-label={product.name}
     >
       View product
     </a>

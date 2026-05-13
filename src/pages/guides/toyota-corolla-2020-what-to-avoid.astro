@@ -1,0 +1,73 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import TrustBlock from "../../components/TrustBlock.astro";
+import { editorialTeam, carTrustPoints } from "../../data/editorial";
+
+const title = "Toyota Corolla 2020: what to avoid";
+const description =
+  "What to avoid on a Toyota Corolla 2020, including brake noise, battery warnings, wheel-end hum, and overpaying for reputation.";
+const intro =
+  "The 2020 Corolla is easy to recommend, but that reputation can make weak examples look safer than they are. Avoid cars where basic brake, battery, tire, or wheel-end issues are already visible and the price still assumes perfect Toyota ownership.";
+const modifiedTime = new Date("2026-05-13");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+
+const relatedProblems = [
+  { href: "/problems/brake-squeal-at-low-speed-toyota-corolla-2020/", title: "Brake squeal at low speed on Toyota Corolla 2020", description: "Use this when brake noise is the first warning sign.", eyebrow: "Problem guide" },
+  { href: "/problems/battery-light-flickers-at-idle-toyota-corolla-2020/", title: "Battery light flickers at idle on Toyota Corolla 2020", description: "Open this when weak voltage behavior is part of the story.", eyebrow: "Problem guide" },
+  { href: "/problems/humming-noise-that-gets-louder-with-speed-toyota-corolla-2020/", title: "Humming noise that gets louder with speed on Toyota Corolla 2020", description: "Use this before accepting a vague tire-noise explanation.", eyebrow: "Problem guide" }
+];
+
+const relatedBest = [
+  { href: "/best/best-brake-pads-for-toyota-corolla-2020/", title: "Best brake pads for Toyota Corolla 2020", description: "Use this if brake refinement is the only weak area on an otherwise strong car.", eyebrow: "Brake Pads" },
+  { href: "/best/best-wheel-bearings-for-toyota-corolla-2020/", title: "Best wheel bearings for Toyota Corolla 2020", description: "Use this only after tire checks fail to explain the road-speed hum.", eyebrow: "Wheel Bearings" }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro={intro}
+  image="/images/photos/cars/toyota-corolla-2020.svg"
+  modifiedTime={modifiedTime}
+  breadcrumbs={breadcrumbs}
+  editorialSummary="This guide focuses on the Corolla examples where a strong reputation hides ordinary but real ownership costs."
+  editorialByline={`By ${editorialTeam.name}`}
+  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
+  editorialBadges={["Avoid guide", "Model-year specific", "Buying-focused"]}
+>
+  <TrustBlock title="How to use this guide" summary="Use this page when a Corolla looks like the safe choice, but the condition does not support the price." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
+
+  <Section title="The short version" intro="These are the 2020 Corolla examples to avoid first.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid paying Toyota-reputation money for a car with obvious brake noise, battery warnings, or road-speed hum.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid vague wheel-bearing stories until tires, rotation history, and road-surface behavior are checked.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Avoid neglected cars where several cheap issues have been allowed to stack together.</li>
+    </ul>
+  </Section>
+
+  <Section title="Walk-away patterns" intro="The weak Corolla examples usually look cheap to own until the first few small repairs arrive together.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake squeal is joined by vibration, grinding, or poor service history.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery-light behavior appears during idle or short-trip use and has never been checked.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Road hum rises with speed, but tire condition and rotation history are unknown.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The car is priced as a clean Corolla while the inspection reads like deferred maintenance.</li>
+    </ul>
+  </Section>
+
+  <Section title="What is still negotiable" intro="Some Corolla issues are acceptable if they are narrow, documented, and priced in.">
+    <ul class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Brake squeal that still points to pad compound, glazing, or hardware service.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A tired battery with no broader charging or electrical symptoms.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Road hum that clearly follows tire wear and not wheel-end play.</li>
+    </ul>
+  </Section>
+
+  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the Corolla already shows one of the symptoms above." items={relatedProblems} />
+  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area needs a realistic parts path." items={relatedBest} />
+</ContentLayout>

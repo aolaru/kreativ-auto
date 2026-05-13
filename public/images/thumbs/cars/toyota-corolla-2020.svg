@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Toyota Corolla 2020 thumbnail</title>
+  <desc id="desc">Thumbnail illustration for the Toyota Corolla 2020 ownership pages.</desc>
+  <rect width="1200" height="800" rx="72" fill="#f7efe5"/>
+  <path d="M166 518c32-73 104-119 217-139l139-71c43-22 91-33 145-33h92c58 0 106 18 145 53l87 77c62 13 101 45 116 96l13 43H140l26-26z" fill="#596f80"/>
+  <path d="M448 358l95-49c34-17 75-26 122-26h57v114H360l88-39z" fill="#f8fbfb" opacity=".88"/>
+  <path d="M752 283h43c47 0 87 16 121 47l70 67H752V283z" fill="#f8fbfb" opacity=".82"/>
+  <path d="M173 513h914l-32 56H143l30-56z" fill="#111827"/>
+  <circle cx="348" cy="565" r="78" fill="#111827"/>
+  <circle cx="348" cy="565" r="35" fill="#e7eef0"/>
+  <circle cx="880" cy="565" r="78" fill="#111827"/>
+  <circle cx="880" cy="565" r="35" fill="#e7eef0"/>
+</svg>
