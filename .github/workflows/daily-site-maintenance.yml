@@ -31,6 +31,9 @@ jobs:
       - name: Apply bounded daily maintenance fixes
         run: npm run autopilot:daily-maintenance
 
+      - name: Run repo health checks
+        run: npm run repo:health
+
       - name: Detect maintenance changes
         id: changes
         run: |
@@ -56,6 +59,10 @@ jobs:
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
         run: npm run build
+
+      - name: Run post-build repo health checks
+        if: steps.changes.outputs.changed == 'true'
+        run: npm run repo:health
 
       - name: Commit and push maintenance fix
         if: steps.changes.outputs.changed == 'true'

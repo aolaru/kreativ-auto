@@ -156,6 +156,9 @@ const schemas = [
     <ProblemTriageBlock
       quickVerdict={triageVerdict}
       firstCheck={triageFirstCheck}
+      canYouDrive={problem.data.canYouDrive}
+      estimatedCost={problem.data.estimatedCost}
+      diyDifficulty={problem.data.diyDifficulty}
       confusedWith={triageConfusedWith}
       stopDrivingIf={triageStopDrivingIf}
     />

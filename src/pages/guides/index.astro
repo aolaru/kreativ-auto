@@ -4,6 +4,7 @@ import FilterToolbar from "../../components/FilterToolbar.astro";
 import { ownershipGuides } from "../../data/ownership-guides";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { toThumbnail } from "../../utils/images";
+import { getGuideCluster } from "../../utils/relationships";
 
 const commonProblemGuides = ownershipGuides.filter((guide) => guide.title.toLowerCase().includes("common problems"));
 const usedBuyerGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Used buyer guide");
@@ -13,13 +14,6 @@ const serviceGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Servi
 const buyingGuides = ownershipGuides.filter((guide) => guide.title.toLowerCase().includes("what to check before buying"));
 const trimGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Trim guide");
 const avoidGuides = ownershipGuides.filter((guide) => guide.eyebrow === "Avoid guide");
-
-const getGuideCluster = (guide: { relatedCars?: string[] }) => {
-  if (guide.relatedCars?.includes("honda-civic-2019")) return "civic";
-  if (guide.relatedCars?.includes("toyota-rav4-2020") || guide.relatedCars?.includes("toyota-rav4-2021")) return "rav4";
-  if (guide.relatedCars?.includes("vw-tiguan-2020")) return "tiguan";
-  return "other";
-};
 
 const getGuideType = (guide: { eyebrow: string }) => {
   if (guide.eyebrow === "Ownership guide") return "common-problems";

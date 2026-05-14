@@ -45,6 +45,29 @@ if (fs.existsSync(path.join(cwd, ".git", "refs"))) {
   });
 }
 
+const ownershipGuidesPath = path.join(cwd, "src", "data", "ownership-guides.ts");
+const quickOwnershipGuidesPath = path.join(cwd, "src", "data", "quick-ownership-guides.ts");
+const guidesDir = path.join(cwd, "src", "pages", "guides");
+
+if (fs.existsSync(ownershipGuidesPath) && fs.existsSync(guidesDir)) {
+  const ownershipSource = fs.readFileSync(ownershipGuidesPath, "utf8");
+  const quickSource = fs.existsSync(quickOwnershipGuidesPath) ? fs.readFileSync(quickOwnershipGuidesPath, "utf8") : "";
+  const dynamicGuideSlugs = new Set([...quickSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]));
+  const staticGuideSlugs = new Set(
+    fs
+      .readdirSync(guidesDir)
+      .filter((fileName) => fileName.endsWith(".astro") && !fileName.startsWith("[") && fileName !== "index.astro")
+      .map((fileName) => fileName.replace(/\.astro$/, ""))
+  );
+
+  for (const match of ownershipSource.matchAll(/href:\s*"\/guides\/([^"]+)\/"/g)) {
+    const slug = match[1];
+    if (!staticGuideSlugs.has(slug) && !dynamicGuideSlugs.has(slug)) {
+      problems.push(`src/data/ownership-guides.ts references missing guide /guides/${slug}/`);
+    }
+  }
+}
+
 if (problems.length) {
   console.error(problems.join("\n"));
   process.exit(1);

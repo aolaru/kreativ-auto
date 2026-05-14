@@ -10,6 +10,7 @@ import { carTrustPoints, editorialTeam } from "../../data/editorial";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { ownershipGuides } from "../../data/ownership-guides";
 import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
+import { guideMatchesCar } from "../../utils/relationships";
 
 export async function getStaticPaths() {
   const cars = await getCollection("cars");
@@ -72,13 +73,10 @@ const relatedBest = uniqueByHref(
 
 const relatedComparisons = uniqueByHref(
   comparisonGuides
-    .filter((guide) => {
-      return (
-        guide.relatedCars?.includes(car.id) ||
-        guide.relatedModels?.some((model) => includesPhrase(model, `${car.data.brand} ${car.data.model}`)) ||
-        guide.relatedGenerations?.includes(getGenerationSlug(car.data))
-      );
-    })
+    .filter((guide) =>
+      guideMatchesCar(guide, { id: car.id, generationSlug: getGenerationSlug(car.data) }) ||
+      guide.relatedModels?.some((model) => includesPhrase(model, `${car.data.brand} ${car.data.model}`))
+    )
     .map((guide) => ({
       href: guide.href,
       title: guide.title,
@@ -89,9 +87,7 @@ const relatedComparisons = uniqueByHref(
 );
 const relatedOwnershipGuides = uniqueByHref(
   ownershipGuides
-    .filter((guide) => {
-      return guide.relatedCars?.includes(car.id) || guide.relatedGenerations?.includes(getGenerationSlug(car.data));
-    })
+    .filter((guide) => guideMatchesCar(guide, { id: car.id, generationSlug: getGenerationSlug(car.data) }))
     .map((guide) => ({
       href: guide.href,
       title: guide.title,

@@ -7,11 +7,11 @@ generation: "Tenth Generation"
 generationCode: "CV1/CV2"
 generationYears: "2018-2022"
 description: "The 2020 Honda Accord is generally a strong daily driver, but front brake vibration, weak A/C cooling at idle, and battery-related voltage complaints are the issues owners most often end up troubleshooting."
-image: "/images/cars/honda-accord-2020.svg"
+image: "/images/cars/honda-accord-2020.jpg"
 metaTitle: "Honda Accord 2020 Common Problems, Maintenance Tips, and Best Parts"
 metaDescription: "Research common Honda Accord 2020 issues, practical maintenance advice, and recommended brake and A/C-related parts."
 excerpt: "The 2020 Accord problems, service habits, and replacement parts that matter most once mileage starts adding up."
-heroImage: "/images/cars/honda-accord-2020.svg"
+heroImage: "/images/cars/honda-accord-2020.jpg"
 updatedAt: 2026-04-20
 relatedProblems:
   - "air-conditioner-blows-warm-at-idle-honda-accord-2020"
