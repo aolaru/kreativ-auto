@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 XA50 what to check before buying";
+const quality = rav4GuideQuality["toyota-rav4-xa50-what-to-check-before-buying"];
 const description = "What to inspect on a Toyota RAV4 XA50 before buying, which weak points deserve the closest look, and what should not scare you too fast.";
 const intro = "An XA50 RAV4 can still be one of the easier used crossovers to buy, but only if the inspection stays disciplined. The useful checks are battery condition, brake refinement, suspension noise, tire and highway-feel issues, and whether hybrid-versus-gas advice is being mixed together lazily. This guide is here to keep the viewing practical.";
 const modifiedTime = new Date("2026-04-11");
@@ -50,6 +54,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Viewing decision path" intro="Use this during a listing review or test drive before reputation starts doing too much work." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, these are the checks that matter most.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

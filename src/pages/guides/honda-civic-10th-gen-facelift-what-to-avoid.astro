@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 
 const title = "Honda Civic 10th gen facelift: what to avoid";
+const quality = hondaCivicGuideQuality["honda-civic-10th-gen-facelift-what-to-avoid"];
 const description =
   "What to avoid on a Honda Civic 10th gen facelift, which ownership shortcuts create the most regret, and which examples deserve more caution than the reputation suggests.";
 const intro =
@@ -51,6 +55,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Avoidance decision path" intro="Use this when a Civic looks safe on paper but the specific example has weak ownership clues." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, these are the facelift Civic mistakes to avoid first.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

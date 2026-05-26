@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 XA50 common problems";
+const quality = rav4GuideQuality["toyota-rav4-xa50-common-problems"];
 const description =
   "The most common Toyota RAV4 XA50 problems to know before buying parts, chasing noises, or assuming every issue is bigger than it is.";
 const intro =
@@ -159,6 +163,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="RAV4 diagnosis path" intro="Use this before turning a normal XA50 complaint into a bigger repair theory." steps={quality.decisionPath} />
 
   <section class="surface surface-dark hero-frame p-6 sm:p-8">
     <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

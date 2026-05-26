@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 XA50 maintenance costs and weak points";
+const quality = rav4GuideQuality["toyota-rav4-xa50-maintenance-costs-and-weak-points"];
 const description =
   "What it usually costs to keep a Toyota RAV4 XA50 sorted, which weak points matter most, and where owners tend to overspend.";
 const intro =
@@ -72,6 +76,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Cost-control decision path" intro="Use this to keep normal RAV4 maintenance from turning into avoidable overspending." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, this is the XA50 RAV4 running-cost pattern in plain language.">
     <ul class="grid gap-3 text-sm leading-6 text-steel">

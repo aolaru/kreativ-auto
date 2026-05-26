@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 
 const title = "Honda Civic 10th gen facelift reliability scorecard";
+const quality = hondaCivicGuideQuality["honda-civic-10th-gen-facelift-reliability-scorecard"];
 const description =
   "A used-buyer reliability scorecard for the Honda Civic 10th gen facelift, focused on what is genuinely easy to live with, which weak points deserve attention, and where the reputation hides nuance.";
 const intro =
@@ -49,6 +53,9 @@ const relatedGuides = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Used-buyer reliability path" intro="Use this to decide whether a specific Civic deserves the platform's good reputation." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, this is the facelift Civic reliability story in plain language.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

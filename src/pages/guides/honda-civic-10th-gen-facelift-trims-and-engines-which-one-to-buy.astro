@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 
 const title = "Honda Civic 10th gen facelift trims and engines: which one to buy";
+const quality = hondaCivicGuideQuality["honda-civic-10th-gen-facelift-trims-and-engines-which-one-to-buy"];
 const description =
   "Which Honda Civic 10th gen facelift trim or engine to buy, where the value is strongest, and how to separate the 1.5T and 2.0 choices properly.";
 const intro =
@@ -51,6 +55,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Trim and engine decision path" intro="Use this to keep powertrain fit and condition ahead of Civic reputation shopping." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, this is the trim and engine logic in plain language.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

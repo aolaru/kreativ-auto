@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 XA50 trims: which one to buy";
+const quality = rav4GuideQuality["toyota-rav4-xa50-trims-which-one-to-buy"];
 const description =
   "Which Toyota RAV4 XA50 trim to buy, where the value is strongest, and which versions need a more careful read before you pay the premium.";
 const intro =
@@ -51,6 +55,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Trim decision path" intro="Use this to keep condition and powertrain fit ahead of trim-label shopping." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, this is the trim logic in plain language.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

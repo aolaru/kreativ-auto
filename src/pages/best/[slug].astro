@@ -7,8 +7,12 @@ import Section from "../../components/Section.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
 import BestDecisionBlock from "../../components/BestDecisionBlock.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import { bestMethodologyPoints, editorialTeam } from "../../data/editorial";
+import { hondaCivicBestQuality } from "../../data/honda-civic-quality";
+import { rav4BestQuality } from "../../data/toyota-rav4-quality";
 import { withAffiliateTag } from "../../utils/affiliate";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
@@ -77,6 +81,7 @@ const quickVerdict = entry.data.quickVerdict ?? entry.data.excerpt;
 const bestFor = entry.data.bestFor.length > 0 ? entry.data.bestFor : entry.data.products.slice(0, 2).map((product) => product.summary ?? product.name).filter(Boolean);
 const avoidIf = entry.data.avoidIf;
 const buyingTiers = entry.data.buyingTiers;
+const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id];
 const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??
   entry.data.fitment.phaseDifferences[0] ??
@@ -160,6 +165,8 @@ const schemas = [
     points={bestMethodologyPoints}
   />
 
+  {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
+
   <Section id="decision-block" title="Quick decision" intro="Use this section if you want the shortlist logic before digging through the full comparison.">
     <BestDecisionBlock
       quickVerdict={quickVerdict}
@@ -170,6 +177,8 @@ const schemas = [
       fitmentCaveat={fitmentCaveat}
     />
   </Section>
+
+  {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro="Use this vehicle-specific path before treating the product shortlist as the diagnosis." steps={vehicleQuality.decisionPath} />}
 
   <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
     <ComparisonTable products={entry.data.products} />

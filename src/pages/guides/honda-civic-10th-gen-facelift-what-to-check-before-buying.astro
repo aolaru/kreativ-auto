@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 
 const title = "Honda Civic 10th gen facelift what to check before buying";
+const quality = hondaCivicGuideQuality["honda-civic-10th-gen-facelift-what-to-check-before-buying"];
 const description = "What to inspect on a Honda Civic 10th gen facelift before buying, which weak points deserve the closest look, and what should not scare you too fast.";
 const intro = "A facelift Civic can still be one of the easiest used daily drivers to buy, but only if the inspection stays practical. The useful checks are idle A/C performance, battery reserve, brake noise, front-end rattles, and whether the seller is mixing 1.5T and 2.0 advice like it all means the same thing. This guide keeps the purchase decision grounded.";
 const modifiedTime = new Date("2026-04-11");
@@ -50,6 +54,9 @@ const relatedComparisons = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Viewing decision path" intro="Use this during a listing review or test drive before reputation starts doing too much work." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, these are the checks that matter most.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

@@ -3,9 +3,13 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 XA50 service schedule and intervals";
+const quality = rav4GuideQuality["toyota-rav4-xa50-service-schedule-and-intervals"];
 const description =
   "A practical service-interval guide to the Toyota RAV4 XA50, including where normal use, hybrid versus gas, and short-trip ownership change the maintenance rhythm.";
 const intro =
@@ -73,6 +77,9 @@ const relatedGuides = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Service timing decision path" intro="Use this when mileage alone is not enough to decide what the RAV4 needs next." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, start here.">
     <ul class="grid gap-3 text-sm leading-6 text-steel">

@@ -3,12 +3,16 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 
 const title = "Should you buy a used Honda Civic 10th gen facelift?";
 const description =
   "A final used-buyer verdict on the facelift Honda Civic, including who it suits best, who should skip it, the ownership tradeoffs that matter, and the trim and engine choices that make the most sense.";
 const image = "/images/photos/cars/honda-civic-2019.webp";
+const quality = hondaCivicGuideQuality["honda-civic-10th-gen-facelift-should-you-buy-it-used"];
 ---
 
 <ContentLayout
@@ -27,6 +31,9 @@ const image = "/images/photos/cars/honda-civic-2019.webp";
       Yes, a used 10th gen facelift Civic is still one of the easiest small-car recommendations on the site if your goal is smart commuter ownership with enough polish to still feel current. The main caution is not that the car is unreliable. The caution is that buyers often flatten the nuance between engine, trim, and maintenance history because the Civic name feels automatically safe.
     </p>
   </Section>
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Final used-buyer decision path" intro="Use this before deciding that the Civic name alone is enough to justify the car or the price." steps={quality.decisionPath} />
 
   <Section title="Who should buy it" eyebrow="Best fit">
     <ul>

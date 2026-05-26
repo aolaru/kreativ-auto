@@ -10,6 +10,7 @@ interface Props {
   canonical?: string;
   image?: string;
   noindex?: boolean;
+  enableAds?: boolean;
   publishedTime?: Date;
   modifiedTime?: Date;
   schemas?: Record<string, unknown>[];
@@ -21,6 +22,7 @@ const {
   canonical,
   image = "/og-default.svg",
   noindex = false,
+  enableAds = true,
   publishedTime,
   modifiedTime,
   schemas = []
@@ -28,7 +30,31 @@ const {
 const resolvedCanonical = canonical ? new URL(canonical, Astro.site).toString() : Astro.url.href;
 const pageTitle = `${title} | Kreativ Auto`;
 const searchConsoleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
+const rawAdsenseClient = import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT ?? "ca-pub-4706844277814411";
+const adsenseClient = rawAdsenseClient.startsWith("pub-") ? `ca-${rawAdsenseClient}` : rawAdsenseClient;
+const shouldLoadAdsense = enableAds && !noindex && Boolean(adsenseClient);
 const gaMeasurementId = "G-4NXQLN1J2R";
+const baseSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Kreativ Auto",
+    url: new URL("/", Astro.site).toString(),
+    logo: new URL("/images/logo-mark.svg", Astro.site).toString(),
+    email: "hello@kreativauto.com"
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Kreativ Auto",
+    url: new URL("/", Astro.site).toString(),
+    publisher: {
+      "@type": "Organization",
+      name: "Kreativ Auto"
+    }
+  }
+];
+const schemaItems = [...baseSchemas, ...schemas];
 ---
 
 <!doctype html>
@@ -57,13 +83,23 @@ const gaMeasurementId = "G-4NXQLN1J2R";
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site).toString()} />
     {searchConsoleVerification && <meta name="google-site-verification" content={searchConsoleVerification} />}
+    {shouldLoadAdsense && <meta name="google-adsense-account" content={adsenseClient} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <StructuredData items={schemas} />
+    <StructuredData items={schemaItems} />
+    {
+      shouldLoadAdsense && (
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+          crossorigin="anonymous"
+        ></script>
+      )
+    }
     {
       gaMeasurementId && (
         <>

@@ -6,6 +6,14 @@ const ignoredDirs = new Set([".git", "node_modules", "dist"]);
 const sourceExts = new Set([".astro", ".md", ".ts", ".js", ".mjs"]);
 const imageRefPattern = /(["'`])(\/images\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|svg))\1/g;
 const problems = [];
+const requiredStaticFiles = [
+  "public/ads.txt",
+  "src/pages/about.astro",
+  "src/pages/contact.astro",
+  "src/pages/editorial-policy.astro",
+  "src/pages/affiliate-disclosure.astro",
+  "src/pages/privacy-policy.astro"
+];
 
 function walk(dir, visitor) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -36,6 +44,36 @@ walk(cwd, (filePath) => {
     }
   }
 });
+
+for (const relativePath of requiredStaticFiles) {
+  if (!fs.existsSync(path.join(cwd, relativePath))) {
+    problems.push(`Required trust or ads file is missing: ${relativePath}`);
+  }
+}
+
+const adsTxtPath = path.join(cwd, "public", "ads.txt");
+if (fs.existsSync(adsTxtPath)) {
+  const adsTxt = fs.readFileSync(adsTxtPath, "utf8");
+  if (!/google\.com,\s*pub-\d+,\s*DIRECT,\s*f08c47fec0942fa0/.test(adsTxt)) {
+    problems.push("public/ads.txt does not include a valid Google AdSense DIRECT seller entry.");
+  }
+}
+
+const baseLayoutPath = path.join(cwd, "src", "layouts", "BaseLayout.astro");
+if (fs.existsSync(baseLayoutPath)) {
+  const baseLayout = fs.readFileSync(baseLayoutPath, "utf8");
+  if (!baseLayout.includes("google-adsense-account") || !baseLayout.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")) {
+    problems.push("BaseLayout.astro is missing the AdSense account meta tag or AdSense script loader.");
+  }
+}
+
+const footerPath = path.join(cwd, "src", "components", "Footer.astro");
+if (fs.existsSync(footerPath)) {
+  const footer = fs.readFileSync(footerPath, "utf8");
+  if (!footer.includes("/privacy-policy/")) {
+    problems.push("Footer.astro does not link to the privacy policy.");
+  }
+}
 
 if (fs.existsSync(path.join(cwd, ".git", "refs"))) {
   walk(path.join(cwd, ".git", "refs"), (filePath) => {

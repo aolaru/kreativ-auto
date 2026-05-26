@@ -1,0 +1,113 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const updatedAt = new Date("2026-05-25T00:00:00Z");
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Read how Kreativ Auto handles analytics, advertising cookies, affiliate links, and visitor privacy."
+  modifiedTime={updatedAt}
+  enableAds={false}
+>
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
+        <div>
+          <p class="eyebrow">Privacy Policy</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">How privacy works on Kreativ Auto</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+            Kreativ Auto publishes automotive guides and uses standard website tools to understand traffic, maintain the site, and support advertising or affiliate revenue.
+          </p>
+          <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
+            Last updated May 25, 2026.
+          </p>
+        </div>
+        <div class="accent-panel p-6">
+          <p class="eyebrow">Short version</p>
+          <div class="mt-4 grid gap-4">
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">No account system</p>
+              <p class="mt-2 text-sm leading-6 text-steel">The site does not ask readers to create an account or submit payment details.</p>
+            </div>
+            <div class="soft-panel p-4">
+              <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Cookies and ads</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Analytics and advertising partners may use cookies or similar technologies where allowed by law.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Information collected</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">What may be processed</h2>
+      <div class="mt-6 grid gap-4">
+        <div class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Basic usage data</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">
+            Analytics tools may process information such as page views, referring pages, approximate location, browser type, device type, and events like clicking navigation or search results.
+          </p>
+        </div>
+        <div class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Email you send voluntarily</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">
+            If you email Kreativ Auto, the message, email address, and any details you include are used to read and respond to that message.
+          </p>
+        </div>
+        <div class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Affiliate link activity</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">
+            Affiliate partners may receive information when you click an outbound retailer or product link, including information needed to attribute a qualifying purchase.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Advertising cookies</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Google AdSense and advertising partners</h2>
+      <div class="mt-6 space-y-4 text-sm leading-6 text-steel">
+        <p>
+          Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites.
+        </p>
+        <p>
+          Google's use of advertising cookies enables Google and its partners to serve ads to visitors based on visits to this site and other sites on the Internet.
+        </p>
+        <p>
+          Users may opt out of personalized advertising by visiting <a class="font-semibold text-accent hover:text-ink" href="https://www.google.com/settings/ads" rel="nofollow noopener">Google Ads Settings</a>.
+          Users can also learn about broader advertising opt-out options at <a class="font-semibold text-accent hover:text-ink" href="https://www.aboutads.info/" rel="nofollow noopener">aboutads.info</a>.
+        </p>
+        <p>
+          If other ad networks or advertising vendors are used on the site, their cookies or similar technologies may also be used for ad serving, reporting, fraud prevention, and personalization where permitted.
+        </p>
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Analytics</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Google Analytics</h2>
+      <p class="mt-6 text-sm leading-6 text-steel">
+        Kreativ Auto uses Google Analytics to understand which pages are useful, how readers move through the site, and where technical or editorial improvements are needed. Analytics data is used in aggregate and is not used to provide one-to-one repair advice.
+      </p>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Choices</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">How readers can manage privacy choices</h2>
+      <ul class="mt-6 space-y-3 text-sm leading-6 text-steel">
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">Browser settings can block, delete, or limit cookies.</li>
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">Google Ads Settings can be used to manage personalized advertising preferences.</li>
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">Readers in regions that require consent should use the consent controls shown on the site or in the relevant Google privacy message.</li>
+      </ul>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Contact</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Privacy questions</h2>
+      <p class="mt-6 text-sm leading-6 text-steel">
+        For privacy questions or correction requests, contact <a class="font-semibold text-accent hover:text-ink" href="mailto:hello@kreativauto.com">hello@kreativauto.com</a>.
+      </p>
+    </section>
+  </div>
+</BaseLayout>

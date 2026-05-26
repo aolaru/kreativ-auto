@@ -3,12 +3,16 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Should you buy a used Toyota RAV4 XA50?";
 const description =
   "A final used-buyer verdict on the Toyota RAV4 XA50, including who it suits best, who should skip it, the ownership tradeoffs that matter, and the trims that make the most sense.";
 const image = "/images/photos/cars/toyota-rav4-2021.webp";
+const quality = rav4GuideQuality["toyota-rav4-xa50-should-you-buy-it-used"];
 ---
 
 <ContentLayout
@@ -27,6 +31,9 @@ const image = "/images/photos/cars/toyota-rav4-2021.webp";
       Yes, a used RAV4 XA50 is still one of the easiest recommendations here if your goal is sensible everyday ownership, strong resale behavior, and low-drama maintenance. The caution is not that the platform is bad. The caution is that buyers often pay so much for the reputation that they stop being disciplined about trim, condition, and actual use case.
     </p>
   </Section>
+
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Final used-buyer decision path" intro="Use this before deciding that the RAV4 name alone is enough to justify the car or the price." steps={quality.decisionPath} />
 
   <Section title="Who should buy it" eyebrow="Best fit">
     <ul>

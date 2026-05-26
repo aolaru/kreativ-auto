@@ -6,9 +6,13 @@ import Section from "../../components/Section.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { carTrustPoints, editorialTeam } from "../../data/editorial";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { ownershipGuides } from "../../data/ownership-guides";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 import { guideMatchesCar } from "../../utils/relationships";
 
@@ -130,6 +134,13 @@ const carStartPaths = [
 const seoTitle = car.data.metaTitle ?? car.data.title;
 const seoDescription = car.data.metaDescription ?? car.data.description;
 const socialImage = car.data.heroImage ?? car.data.image;
+const rav4Quality = car.id === "toyota-rav4-2020" || car.id === "toyota-rav4-2021"
+  ? rav4GuideQuality["toyota-rav4-xa50-common-problems"]
+  : undefined;
+const civicQuality = car.id === "honda-civic-2019"
+  ? hondaCivicGuideQuality["honda-civic-10th-gen-facelift-common-problems"]
+  : undefined;
+const vehicleQuality = rav4Quality ?? civicQuality;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Cars", href: "/cars/" },
@@ -182,6 +193,9 @@ const schemas = [
     checkedLabel={car.data.updatedAt ? `Checked ${car.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
     points={carTrustPoints}
   />
+
+  {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
+  {vehicleQuality && <DecisionPathBlock title="Ownership decision path" intro="Use this before turning a symptom into a parts order or a broad repair theory." steps={vehicleQuality.decisionPath} />}
 
   <section class="container-shell py-6">
     <div class="accent-panel p-6 sm:p-8">

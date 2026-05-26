@@ -1,0 +1,70 @@
+---
+interface SourceLink {
+  label: string;
+  href: string;
+}
+
+interface Props {
+  title?: string;
+  summary: string;
+  basedOn: string[];
+  appliesTo: string[];
+  doesNotCover: string[];
+  sourceLinks?: SourceLink[];
+}
+
+const {
+  title = "Evidence and limits",
+  summary,
+  basedOn,
+  appliesTo,
+  doesNotCover,
+  sourceLinks = []
+} = Astro.props;
+---
+
+<section class="surface p-6 sm:p-8" id="evidence-and-limits">
+  <div class="max-w-3xl">
+    <p class="eyebrow">Quality check</p>
+    <h2 class="mt-3 text-2xl font-semibold tracking-tight text-ink sm:text-3xl">{title}</h2>
+    <p class="mt-3 text-base leading-7 text-steel">{summary}</p>
+  </div>
+
+  <div class="mt-6 grid gap-4 lg:grid-cols-3">
+    <div class="rounded-3xl bg-slate-50 p-5">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-ink">Based on</h3>
+      <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+        {basedOn.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="rounded-3xl bg-slate-50 p-5">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-ink">Applies to</h3>
+      <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+        {appliesTo.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="rounded-3xl bg-slate-50 p-5">
+      <h3 class="text-sm font-semibold uppercase tracking-[0.18em] text-ink">Does not cover</h3>
+      <ul class="mt-4 space-y-3 text-sm leading-6 text-steel">
+        {doesNotCover.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </div>
+
+  {
+    sourceLinks.length > 0 && (
+      <div class="mt-5 flex flex-wrap gap-3">
+        {sourceLinks.map((source) => (
+          <a
+            class="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-steel transition hover:border-accent hover:text-accent"
+            href={source.href}
+            rel="nofollow noopener"
+            target="_blank"
+          >
+            {source.label}
+          </a>
+        ))}
+      </div>
+    )
+  }
+</section>

@@ -7,7 +7,11 @@ import Section from "../../components/Section.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
 import ProblemTriageBlock from "../../components/ProblemTriageBlock.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+import { hondaCivicProblemQuality } from "../../data/honda-civic-quality";
+import { rav4ProblemQuality } from "../../data/toyota-rav4-quality";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -82,6 +86,7 @@ const triageFirstCheck = problem.data.firstCheck ?? problem.data.solutions[0];
 const triageConfusedWith = problem.data.confusedWith;
 const triageStopDrivingIf =
   problem.data.stopDrivingIf.length > 0 ? problem.data.stopDrivingIf : problem.data.whenToSeeMechanic.slice(0, 2);
+const vehicleQuality = rav4ProblemQuality[problem.id] ?? hondaCivicProblemQuality[problem.id];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Problems", href: "/problems/" },
@@ -139,6 +144,8 @@ const schemas = [
     points={problemTrustPoints}
   />
 
+  {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
+
   <Section id="quick-answer" title="What to know first" intro="This is the short version if you want to decide how serious the problem is before digging deeper.">
     <div class="grid gap-4 md:grid-cols-2">
       {
@@ -163,6 +170,8 @@ const schemas = [
       stopDrivingIf={triageStopDrivingIf}
     />
   </Section>
+
+  {vehicleQuality && <DecisionPathBlock title="Vehicle-specific decision path" intro="Use this to keep the diagnosis focused before buying parts or escalating the repair." steps={vehicleQuality.decisionPath} />}
 
   <Section id="symptoms" title="Symptoms" intro="These are the signs drivers usually notice before the real cause is confirmed.">
     <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
