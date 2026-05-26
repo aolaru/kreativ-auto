@@ -4,8 +4,9 @@ import path from "node:path";
 const cwd = process.cwd();
 const ignoredDirs = new Set([".git", "node_modules", "dist"]);
 const sourceExts = new Set([".astro", ".md", ".ts", ".js", ".mjs"]);
-const imageRefPattern = /(["'`])(\/images\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|svg))\1/g;
+const imageRefPattern = /\/images\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|svg)/g;
 const problems = [];
+const checkedImages = new Set();
 const requiredStaticFiles = [
   "public/ads.txt",
   "src/pages/about.astro",
@@ -33,15 +34,31 @@ function walk(dir, visitor) {
   }
 }
 
+function checkImageReference(filePath, imageRef, context = "references") {
+  const key = `${filePath}:${imageRef}`;
+  if (checkedImages.has(key)) return;
+  checkedImages.add(key);
+
+  const imagePath = path.join(cwd, "public", imageRef.slice(1));
+  if (!fs.existsSync(imagePath)) {
+    problems.push(`${path.relative(cwd, filePath)} ${context} missing image ${imageRef}`);
+  }
+
+  if (imageRef.startsWith("/images/photos/")) {
+    const thumbnailRef = imageRef.replace("/images/photos/", "/images/thumbs/");
+    const thumbnailPath = path.join(cwd, "public", thumbnailRef.slice(1));
+    if (!fs.existsSync(thumbnailPath)) {
+      problems.push(`${path.relative(cwd, filePath)} derives missing thumbnail ${thumbnailRef} from ${imageRef}`);
+    }
+  }
+}
+
 walk(cwd, (filePath) => {
   if (!sourceExts.has(path.extname(filePath))) return;
 
   const source = fs.readFileSync(filePath, "utf8");
   for (const match of source.matchAll(imageRefPattern)) {
-    const imagePath = path.join(cwd, "public", match[2].slice(1));
-    if (!fs.existsSync(imagePath)) {
-      problems.push(`${path.relative(cwd, filePath)} references missing image ${match[2]}`);
-    }
+    checkImageReference(filePath, match[0]);
   }
 });
 

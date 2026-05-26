@@ -127,7 +127,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A second-tier cornerstone guide for the 2020 Corolla, focused on brake squeal, battery warning behavior, wheel-bearing hum, and the first checks owners should not skip.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/toyota-corolla-2020.jpg",
+    image: "/images/photos/cars/toyota-corolla-2020.webp",
     relatedCars: ["toyota-corolla-2020"],
     relatedGenerations: ["toyota-corolla-e210-2019-2022"]
   },
@@ -137,7 +137,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A second-tier cornerstone guide for the 2020 Accord, focused on weak A/C at idle, brake vibration, battery behavior, and front-end noise.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/honda-accord-2020.jpg",
+    image: "/images/photos/cars/honda-accord-2020.webp",
     relatedCars: ["honda-accord-2020"],
     relatedGenerations: ["honda-accord-cv1-cv2-2018-2022"]
   },
@@ -147,7 +147,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A second-tier cornerstone guide for the 2020 Mazda 3, focused on front-end clunks, brake noise, road hum, and short-trip battery behavior.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/mazda-3-2020.jpg",
+    image: "/images/photos/cars/mazda-3-2020.webp",
     relatedCars: ["mazda-3-2020"],
     relatedGenerations: ["mazda-mazda-3-bp-2019-2023"]
   },
@@ -197,7 +197,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A maintenance-focused guide to 2020 Corolla ownership costs, ordinary weak points, and the service areas most likely to shape the budget first.",
     eyebrow: "Maintenance guide",
-    image: "/images/photos/cars/toyota-corolla-2020.jpg",
+    image: "/images/photos/cars/toyota-corolla-2020.webp",
     relatedCars: ["toyota-corolla-2020"],
     relatedGenerations: ["toyota-corolla-e210-2019-2022"]
   },
@@ -207,7 +207,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A maintenance-focused guide to 2020 Accord ownership costs, ordinary weak points, and the service areas most likely to shape the budget first.",
     eyebrow: "Maintenance guide",
-    image: "/images/photos/cars/honda-accord-2020.jpg",
+    image: "/images/photos/cars/honda-accord-2020.webp",
     relatedCars: ["honda-accord-2020"],
     relatedGenerations: ["honda-accord-cv1-cv2-2018-2022"]
   },
@@ -217,7 +217,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "A maintenance-focused guide to 2020 Mazda 3 ownership costs, ordinary weak points, and the refinement items most likely to shape the budget first.",
     eyebrow: "Maintenance guide",
-    image: "/images/photos/cars/mazda-3-2020.jpg",
+    image: "/images/photos/cars/mazda-3-2020.webp",
     relatedCars: ["mazda-3-2020"],
     relatedGenerations: ["mazda-mazda-3-bp-2019-2023"]
   },
@@ -227,7 +227,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "An ownership guide to the 2020 Accord examples, shortcuts, and weak-condition patterns that create the most regret.",
     eyebrow: "Avoid guide",
-    image: "/images/photos/cars/honda-accord-2020.jpg",
+    image: "/images/photos/cars/honda-accord-2020.webp",
     relatedCars: ["honda-accord-2020"],
     relatedGenerations: ["honda-accord-cv1-cv2-2018-2022"]
   },
@@ -237,7 +237,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "An ownership guide to the 2020 Mazda 3 examples where front-end noise, brake refinement, road hum, or battery behavior should change the buying decision.",
     eyebrow: "Avoid guide",
-    image: "/images/photos/cars/mazda-3-2020.jpg",
+    image: "/images/photos/cars/mazda-3-2020.webp",
     relatedCars: ["mazda-3-2020"],
     relatedGenerations: ["mazda-mazda-3-bp-2019-2023"]
   },
@@ -247,7 +247,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     description:
       "An ownership guide to the 2020 Corolla examples where reputation hides brake, battery, tire, or wheel-end costs that should be priced in.",
     eyebrow: "Avoid guide",
-    image: "/images/photos/cars/toyota-corolla-2020.jpg",
+    image: "/images/photos/cars/toyota-corolla-2020.webp",
     relatedCars: ["toyota-corolla-2020"],
     relatedGenerations: ["toyota-corolla-e210-2019-2022"]
   },
