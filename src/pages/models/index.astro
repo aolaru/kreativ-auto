@@ -37,7 +37,7 @@ const allModels = [...models].sort((a, b) => a.model.localeCompare(b.model));
 const featuredGuides = ownershipGuides.slice(0, 3);
 ---
 
-<BaseLayout
+<BaseLayout enableAds={false}
   title="Models"
   description="Browse car hub content by make and model."
 >

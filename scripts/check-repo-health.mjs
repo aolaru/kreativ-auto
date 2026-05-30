@@ -7,6 +7,7 @@ const sourceExts = new Set([".astro", ".md", ".ts", ".js", ".mjs"]);
 const imageRefPattern = /\/images\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|svg)/g;
 const problems = [];
 const checkedImages = new Set();
+const minimumAdsenseContentWords = 450;
 const requiredStaticFiles = [
   "public/ads.txt",
   "src/pages/about.astro",
@@ -98,6 +99,42 @@ if (fs.existsSync(path.join(cwd, ".git", "refs"))) {
       problems.push(`Conflicted Git ref found: ${path.relative(cwd, filePath)}`);
     }
   });
+}
+
+const distDir = path.join(cwd, "dist");
+if (fs.existsSync(distDir)) {
+  const renderedPages = [];
+
+  walk(distDir, (filePath) => {
+    if (path.extname(filePath) === ".html") {
+      renderedPages.push(filePath);
+    }
+  });
+
+  for (const filePath of renderedPages) {
+    const html = fs.readFileSync(filePath, "utf8");
+    const hasAdsense = html.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
+    const robots = html.match(/<meta name="robots" content="([^"]+)"/i)?.[1] ?? "";
+
+    if (!hasAdsense || !robots.includes("index")) continue;
+
+    const visibleText = html
+      .replace(/<script[\s\S]*?<\/script>/gi, " ")
+      .replace(/<style[\s\S]*?<\/style>/gi, " ")
+      .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&[a-z0-9#]+;/gi, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+    const wordCount = visibleText ? visibleText.split(/\s+/).length : 0;
+
+    if (wordCount < minimumAdsenseContentWords) {
+      const route = `/${path.relative(distDir, filePath).replace(/index\.html$/, "").replace(/\.html$/, "")}`;
+      problems.push(
+        `${route} has AdSense enabled with only ${wordCount} rendered words; keep ads off thin archive/navigation pages.`
+      );
+    }
+  }
 }
 
 const ownershipGuidesPath = path.join(cwd, "src", "data", "ownership-guides.ts");

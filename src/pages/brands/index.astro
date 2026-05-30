@@ -37,7 +37,7 @@ const allBrands = [...brands].sort((a, b) => a.brand.localeCompare(b.brand));
 const featuredGuides = ownershipGuides.slice(0, 3);
 ---
 
-<BaseLayout
+<BaseLayout enableAds={false}
   title="Brands"
   description="Browse the site by vehicle brand, with the strongest generation hubs and best starting points surfaced first."
 >
