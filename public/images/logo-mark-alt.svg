@@ -6,27 +6,37 @@
       <stop offset=".58" stop-color="#0f172a" />
       <stop offset="1" stop-color="#111827" />
     </linearGradient>
-    <linearGradient id="ka-alt-accent" x1="22" y1="30" x2="108" y2="98" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ka-alt-accent" x1="28" y1="24" x2="100" y2="104" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#fbbf24" />
-      <stop offset=".45" stop-color="#f97316" />
+      <stop offset=".48" stop-color="#f97316" />
       <stop offset="1" stop-color="#ea580c" />
-    </linearGradient>
-    <linearGradient id="ka-alt-road" x1="38" y1="92" x2="98" y2="36" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#f8fafc" />
-      <stop offset="1" stop-color="#cbd5e1" />
     </linearGradient>
   </defs>
 
   <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#ka-alt-bg)" />
   <rect x="8" y="8" width="112" height="112" rx="28" fill="none" stroke="#ffffff" stroke-opacity=".1" />
 
-  <path d="M28 34h58c10.5 0 18 7.2 18 17.1 0 7.5-4.6 13.4-11.7 15.8L106 94H91.6L79.2 69.7H63.4L48.7 94H34.2l18.2-29.9L35.3 34z" fill="url(#ka-alt-accent)" />
-  <path d="M52.5 45.3h31.7c4.8 0 7.8 2.9 7.8 6.7 0 4.2-3 6.8-7.8 6.8H60.7L52.5 45.3z" fill="url(#ka-alt-bg)" />
+  <path d="M34 29h60" stroke="url(#ka-alt-accent)" stroke-width="7" stroke-linecap="round" />
+  <path d="M34 99h60" stroke="url(#ka-alt-accent)" stroke-width="7" stroke-linecap="round" />
 
-  <path d="M28 92h17.7l35-58H64.2L28 92z" fill="url(#ka-alt-road)" />
-  <path d="M68.8 92h17.5L56.9 34H40.4L68.8 92z" fill="#f8fafc" />
-
-  <path d="M30 101h68" stroke="url(#ka-alt-accent)" stroke-width="6" stroke-linecap="round" />
-  <path d="M45 74h12" stroke="#0f172a" stroke-width="4" stroke-linecap="round" opacity=".72" />
-  <path d="M61 61h9" stroke="#0f172a" stroke-width="4" stroke-linecap="round" opacity=".72" />
+  <text
+    x="64"
+    y="62"
+    fill="#f8fafc"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="42"
+    font-weight="800"
+    text-anchor="middle"
+    dominant-baseline="central"
+  >KA</text>
+  <text
+    x="64"
+    y="85"
+    fill="url(#ka-alt-accent)"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="10"
+    font-weight="800"
+    text-anchor="middle"
+    dominant-baseline="central"
+  >AUTO</text>
 </svg>
