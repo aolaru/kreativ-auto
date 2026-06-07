@@ -106,13 +106,13 @@ const schemaItems = [...baseSchemas, ...schemas];
           <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
           <script
             is:inline
-            define:vars={{ gaMeasurementId }}
-          >{`
+            set:html={`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', gaMeasurementId);
-          `}</script>
+            gtag('config', '${gaMeasurementId}');
+          `}
+          />
           <script is:inline>
             window.kaTrackEvent = function (eventName, params) {
               if (typeof window.gtag !== "function") return;
