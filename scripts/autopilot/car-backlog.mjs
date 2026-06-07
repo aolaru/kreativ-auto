@@ -1526,6 +1526,7 @@ function buildQueueEntry(seed) {
   const problemSlug = `${cfg.problemSlugBase}-${carSlug}`;
   const bestSlug = `best-${cfg.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-for-${carSlug}`;
   const carTitle = `${seed.modelDisplay} ${seed.year}`;
+  const modelName = seed.model ?? seed.modelDisplay.replace(new RegExp(`^${seed.brand}\\s+`, "i"), "");
   const image = seed.image ?? imageFallbacks[seed.brand];
 
   return {
@@ -1533,7 +1534,7 @@ function buildQueueEntry(seed) {
       slug: carSlug,
       title: carTitle,
       brand: seed.brand,
-      model: seed.modelDisplay,
+      model: modelName,
       year: seed.year,
       generation: seed.generation,
       generationCode: seed.generationCode,
@@ -1555,7 +1556,7 @@ function buildQueueEntry(seed) {
       recommendedParts: products.slice(0, 2),
       body: [
         `${seed.modelDisplay} ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.`,
-        `This queue entry is designed to give ${seed.modelDisplay} a credible base page first, then support the matching problem guide and best-parts page that make the cluster actually useful.`
+        `This page gives ${seed.modelDisplay} a credible base entry first, then supports the matching problem guide and best-parts page that make the cluster actually useful.`
       ]
     },
     problem: {
@@ -1781,8 +1782,8 @@ const queuedCarSeeds = [
     year: 2020,
     generation: "Fifth Generation",
     generationCode: "SK",
-    generationYears: "2019-2021",
-    image: "/images/cars/subaru-forester-2020.svg",
+    generationYears: "2019-2024",
+    image: "/images/photos/cars/subaru-forester-2020.svg",
     kind: "wheelBearings",
     carDescription:
       "The 2020 Subaru Forester is usually easy to live with, but wheel-end hum, tire noise confusion, and battery reserve complaints are the kinds of ownership issues that tend to get noticed first.",
@@ -1969,6 +1970,7 @@ const queuedCarSeeds = [
     generation: "Fourth Generation",
     generationCode: "T1XX",
     generationYears: "2019-2024",
+    image: "/images/photos/cars/chevrolet-silverado-1500-2020.svg",
     kind: "tires",
     carDescription:
       "The 2020 Chevrolet Silverado 1500 is usually a practical full-size truck, but highway vibration, tire wear, and brake refinement complaints are the things owners most often start trying to sort out first.",
@@ -2040,6 +2042,33 @@ const queuedCarSeeds = [
     ]
   },
   {
+    slug: "nissan-rogue-2021",
+    brand: "Nissan",
+    modelDisplay: "Nissan Rogue",
+    year: 2021,
+    generation: "Third Generation",
+    generationCode: "T33",
+    generationYears: "2021-2025",
+    image: "/images/photos/cars/nissan-rogue-2021.svg",
+    kind: "batteries",
+    carDescription:
+      "The 2021 Nissan Rogue is a useful small SUV to cover because it starts a newer Rogue generation, but the everyday ownership issues are still practical: short-trip battery weakness, brake refinement, and tire or wheel-end noise that chips away at comfort.",
+    commonProblems: [
+      "Battery reserve complaints after sitting or repeated short-trip use",
+      "Brake noise or feel that makes the Rogue seem older than it is",
+      "Tire wear, road hum, or vibration that owners may confuse with a larger driveline issue"
+    ],
+    maintenanceTips: [
+      "Treat repeated weak starts like a battery-and-usage-pattern issue before turning it into a larger electrical story.",
+      "Keep brake and tire condition clean because the Rogue depends on basic refinement to feel pleasant day to day.",
+      "Separate tire noise from hub noise before ordering parts, especially if the hum rises with road speed."
+    ],
+    carFaqs: [
+      { question: "What is the first practical complaint to check on a 2021 Rogue?", answer: "Battery weakness after short-trip use is one of the first ownership patterns worth checking." },
+      { question: "Is the 2021 Rogue expensive to keep comfortable?", answer: "Usually no, if the basic battery, brake, and tire issues are handled before the diagnosis gets larger." }
+    ]
+  },
+  {
     slug: "nissan-rogue-2020",
     brand: "Nissan",
     modelDisplay: "Nissan Rogue",
@@ -2073,6 +2102,7 @@ const queuedCarSeeds = [
     generation: "Third Generation Facelift",
     generationCode: "TL",
     generationYears: "2019-2021",
+    image: "/images/photos/cars/hyundai-tucson-2020.svg",
     kind: "brakePads",
     carDescription:
       "The 2020 Hyundai Tucson is usually simple to live with, but brake noise, tire refinement, and battery complaints are the practical ownership issues most likely to show up first.",

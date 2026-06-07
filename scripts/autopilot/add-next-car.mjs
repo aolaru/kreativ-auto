@@ -9,6 +9,7 @@ const problemsDir = path.join(cwd, "src/content/problems");
 const bestDir = path.join(cwd, "src/content/best");
 const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
+const selectedSlug = [...args].find((arg) => arg.startsWith("--slug="))?.slice("--slug=".length);
 const today = new Date().toISOString().slice(0, 10);
 
 function quote(value) {
@@ -234,13 +235,22 @@ const [carSlugs, problemSlugs, bestSlugs] = await Promise.all([
   existingSlugs(bestDir)
 ]);
 
-const nextEntry = carBacklog.find(
+const backlogCandidates = selectedSlug
+  ? carBacklog.filter(({ car }) => car.slug === selectedSlug)
+  : carBacklog;
+
+if (selectedSlug && backlogCandidates.length === 0) {
+  console.error(`No backlog entry found for slug: ${selectedSlug}`);
+  process.exit(1);
+}
+
+const nextEntry = backlogCandidates.find(
   ({ car, problem, best }) =>
     !carSlugs.has(car.slug) && !problemSlugs.has(problem.slug) && !bestSlugs.has(best.slug)
 );
 
 if (!nextEntry) {
-  console.log("No backlog entries left to add.");
+  console.log(selectedSlug ? `No missing backlog entry left to add for ${selectedSlug}.` : "No backlog entries left to add.");
   process.exit(0);
 }
 

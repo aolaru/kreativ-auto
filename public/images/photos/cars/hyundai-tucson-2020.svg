@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Hyundai Tucson 2020 compact SUV illustration</title>
+  <desc id="desc">Editorial illustration for the Hyundai Tucson 2020 ownership page.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#edf6f7"/>
+      <stop offset="1" stop-color="#f6eadb"/>
+    </linearGradient>
+    <linearGradient id="body" x1="170" y1="260" x2="1080" y2="570" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#164a63"/>
+      <stop offset="1" stop-color="#4f8a7a"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" rx="72" fill="url(#bg)"/>
+  <path d="M118 515c83-78 181-100 294-65 112 35 214 24 306-33 93-57 194-61 304-12 65 30 98 78 98 145 0 57-28 102-83 134H132c-72-40-77-97-14-169z" fill="#fff" opacity=".44"/>
+  <path d="M151 518c31-84 103-136 216-156l111-81c42-31 95-47 159-47h144c68 0 122 25 163 76l72 91c55 15 89 51 102 107l10 39H124l27-29z" fill="url(#body)"/>
+  <path d="M410 341l89-64c34-24 78-36 132-36h58v142H330l80-42z" fill="#f4fbfb" opacity=".9"/>
+  <path d="M720 241h65c51 0 92 20 123 60l61 82H720V241z" fill="#f4fbfb" opacity=".84"/>
+  <path d="M157 520h948l-33 57H126l31-57z" fill="#111827"/>
+  <circle cx="348" cy="573" r="82" fill="#111827"/>
+  <circle cx="348" cy="573" r="37" fill="#e7eef0"/>
+  <circle cx="889" cy="573" r="82" fill="#111827"/>
+  <circle cx="889" cy="573" r="37" fill="#e7eef0"/>
+  <rect x="820" y="435" width="100" height="12" rx="6" fill="#f2b04c"/>
+  <text x="92" y="116" fill="#19677b" font-family="Georgia, 'Times New Roman', serif" font-size="32" font-weight="700" letter-spacing="5">HYUNDAI TUCSON</text>
+  <text x="92" y="166" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="54" font-weight="700">2020 compact SUV</text>
+  <text x="92" y="710" fill="#334155" font-family="Arial, sans-serif" font-size="26">Brake noise, tire comfort, and short-trip battery checks.</text>
+</svg>
