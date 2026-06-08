@@ -119,6 +119,8 @@ const featuredProblems = hubContent?.featuredProblems?.length
 const featuredBest = hubContent?.featuredBest?.length
   ? linkedBest.filter((item) => hubContent.featuredBest?.some((slug) => item.href === `/best/${slug}/`))
   : linkedBest;
+const linkedCoverageCount = linkedProblems.length + linkedBest.length + relatedOwnershipGuides.length + relatedComparisons.length;
+const shouldNoindex = !hubContent && generationCars.length < 2 && linkedCoverageCount < 4;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Generations", href: "/generations/" },
@@ -127,6 +129,7 @@ const breadcrumbs = [
 ---
 
 <BaseLayout enableAds={false}
+  noindex={shouldNoindex}
   title={`${generationLabel} Guides`}
   description={
     hubContent?.intro ?? `Browse ${generationLabel} pages, grouped by generation range and facelift phase.`

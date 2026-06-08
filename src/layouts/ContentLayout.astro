@@ -23,6 +23,8 @@ interface Props {
   modifiedTime?: Date;
   breadcrumbs?: BreadcrumbItem[];
   schemas?: Record<string, unknown>[];
+  enableAds?: boolean;
+  noindex?: boolean;
   editorialSummary?: string;
   editorialByline?: string;
   editorialReviewedLabel?: string;
@@ -38,6 +40,8 @@ const {
   modifiedTime,
   breadcrumbs = [],
   schemas = [],
+  enableAds = true,
+  noindex = false,
   editorialSummary,
   editorialByline,
   editorialReviewedLabel,
@@ -45,7 +49,7 @@ const {
 } = Astro.props;
 ---
 
-<BaseLayout title={title} description={description} image={image} modifiedTime={modifiedTime} schemas={schemas}>
+<BaseLayout title={title} description={description} image={image} modifiedTime={modifiedTime} schemas={schemas} enableAds={enableAds} noindex={noindex}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface hero-frame overflow-hidden p-8 sm:p-10">

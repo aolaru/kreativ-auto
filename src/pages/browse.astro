@@ -1,0 +1,165 @@
+---
+import { getCollection } from "astro:content";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Section from "../components/Section.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getGenerationKey, getGenerationLabel, getGenerationRange, getGenerationSlug, slugify } from "../utils/taxonomy";
+import { toThumbnail } from "../utils/images";
+
+const [cars, bestPages] = await Promise.all([
+  getCollection("cars"),
+  getCollection("best")
+]);
+
+const brands = Array.from(new Set(cars.map((car) => car.data.brand))).sort((a, b) => a.localeCompare(b));
+const models = Array.from(new Set(cars.map((car) => `${car.data.brand} ${car.data.model}`))).sort((a, b) => a.localeCompare(b));
+const categories = Array.from(new Set(bestPages.map((entry) => entry.data.category))).sort((a, b) => a.localeCompare(b));
+
+const generationGroups = Array.from(
+  cars.reduce((map, car) => {
+    const key = getGenerationKey(car.data);
+    const current = map.get(key) ?? [];
+    current.push(car);
+    map.set(key, current);
+    return map;
+  }, new Map<string, typeof cars>())
+)
+  .map(([, entries]) => {
+    const lead = entries[0];
+
+    return {
+      lead,
+      label: getGenerationLabel(lead.data),
+      range: getGenerationRange(lead.data),
+      slug: getGenerationSlug(lead.data),
+      count: entries.length,
+      coverage: entries.reduce((total, car) => total + car.data.relatedProblems.length + car.data.relatedBest.length, 0)
+    };
+  })
+  .sort((a, b) => b.coverage - a.coverage || a.label.localeCompare(b.label));
+
+const featuredCars = [...cars]
+  .map((car) => ({
+    car,
+    coverage: car.data.relatedProblems.length + car.data.relatedBest.length
+  }))
+  .sort((a, b) => b.coverage - a.coverage || a.car.data.title.localeCompare(b.car.data.title))
+  .slice(0, 6);
+
+const browseStats = [
+  { label: "Car hubs", value: cars.length, href: "/cars/" },
+  { label: "Brands", value: brands.length, href: "/brands/" },
+  { label: "Models", value: models.length, href: "/models/" },
+  { label: "Generations", value: generationGroups.length, href: "/generations/" },
+  { label: "Parts categories", value: categories.length, href: "/categories/" }
+];
+
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Browse" }
+];
+---
+
+<BaseLayout
+  enableAds={false}
+  title="Browse Kreativ Auto"
+  description="Browse Kreativ Auto by car, brand, model, generation, and parts category when you need the full index view."
+>
+  <div class="container-shell py-12 sm:py-16">
+    <Breadcrumbs items={breadcrumbs} />
+
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
+        <div>
+          <p class="eyebrow">Browse</p>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Find the right Kreativ Auto page</h1>
+          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+            Use this index when you already know the brand, model, generation, or parts category you want. For a symptom or buying decision, the diagnose and buying-guide paths are usually faster.
+          </p>
+        </div>
+        <div class="grid gap-3 sm:grid-cols-2">
+          {browseStats.map((stat) => (
+            <a class="stat-tile stat-link block" href={stat.href} data-ka-event="browse_stat_click" data-ka-label={stat.label} data-ka-section="browse_hero">
+              <p class="text-2xl font-semibold text-ink">{stat.value}</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{stat.label}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-10 space-y-8">
+      <Section title="Best starting car hubs" intro="These are the car hubs with the most direct links into problem guides and parts comparisons.">
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {featuredCars.map(({ car, coverage }) => (
+            <a class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={`/cars/${car.id}/`}>
+              {
+                (car.data.heroImage ?? car.data.image) && (
+                  <div class="image-frame image-frame-card">
+                    <img
+                      src={toThumbnail(car.data.heroImage ?? car.data.image)}
+                      alt={car.data.title}
+                      loading="lazy"
+                      decoding="async"
+                      width="960"
+                      height="640"
+                    />
+                  </div>
+                )
+              }
+              <div class="p-5">
+                <p class="eyebrow">{coverage} linked guide{coverage === 1 ? "" : "s"}</p>
+                <h2 class="mt-2 text-2xl font-semibold text-ink">{car.data.title}</h2>
+                <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.metaDescription ?? car.data.description}</p>
+              </div>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Browse by brand" intro="Open a brand hub when you want to see the published model and generation coverage for one automaker.">
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {brands.map((brand) => (
+            <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-white" href={`/brands/${slugify(brand)}/`}>
+              {brand}
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Browse by model" intro="Use model hubs when the same nameplate has several years or generation paths published.">
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {models.map((model) => (
+            <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-white" href={`/models/${slugify(model)}/`}>
+              {model}
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Browse by generation" intro="Generation hubs are useful when trim, facelift, or platform differences matter more than one exact model year.">
+        <div class="grid gap-4 md:grid-cols-2">
+          {generationGroups.map((generation) => (
+            <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent/40 hover:bg-white" href={`/generations/${generation.slug}/`}>
+              <p class="eyebrow">{generation.range}</p>
+              <h2 class="mt-2 text-lg font-semibold text-ink">{generation.label}</h2>
+              <p class="mt-2 text-sm leading-6 text-steel">
+                {generation.count} car hub{generation.count === 1 ? "" : "s"} and {generation.coverage} direct supporting guide{generation.coverage === 1 ? "" : "s"}.
+              </p>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Browse by parts category" intro="Category hubs group best-parts comparisons when the repair area is clear and you only need the right shortlist.">
+        <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {categories.map((category) => (
+            <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-white" href={`/categories/${slugify(category)}/`}>
+              {category}
+            </a>
+          ))}
+        </div>
+      </Section>
+    </div>
+  </div>
+</BaseLayout>

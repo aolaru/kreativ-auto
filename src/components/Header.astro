@@ -4,12 +4,12 @@ import { comparisonGuides } from "../data/comparison-guides";
 import { ownershipGuides } from "../data/ownership-guides";
 
 const navItems = [
+  { href: "/problems/", label: "Diagnose" },
   { href: "/cars/", label: "Cars" },
-  { href: "/problems/", label: "Problems" },
-  { href: "/best/", label: "Best Parts" },
-  { href: "/guides/", label: "Guides" },
+  { href: "/best/", label: "Parts" },
+  { href: "/guides/", label: "Buying Guides" },
   { href: "/comparisons/", label: "Comparisons" },
-  { href: "/updates/", label: "Updates" }
+  { href: "/browse/", label: "Browse" }
 ];
 
 const [cars, problems, bestPages] = await Promise.all([
@@ -64,7 +64,7 @@ const searchIndex = [
           </span>
           <span class="min-w-0">
             <span class="block text-lg font-semibold">Kreativ Auto</span>
-            <span class="block truncate text-sm text-steel">Automotive guides, diagnostics, and affiliate picks</span>
+            <span class="block truncate text-sm text-steel">Diagnostics, ownership guides, and parts that fit the job</span>
           </span>
         </a>
       </div>
@@ -90,7 +90,7 @@ const searchIndex = [
               id="site-search"
               class="header-search-input"
               type="search"
-              placeholder="Search cars, guides, problems, and parts"
+              placeholder="Search by car, symptom, or part"
               autocomplete="off"
               spellcheck="false"
             />

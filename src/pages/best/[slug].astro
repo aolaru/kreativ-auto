@@ -86,6 +86,44 @@ const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??
   entry.data.fitment.phaseDifferences[0] ??
   entry.data.fitment.powertrainDifferences[0];
+const topProduct = entry.data.products[0];
+const mainRelatedProblem = relatedProblems[0];
+const beforeBuyingChecks = [
+  {
+    label: "Confirm the symptom",
+    description: mainRelatedProblem
+      ? `If the car still has an unclear symptom, open ${mainRelatedProblem.title} before treating this ${entry.data.category.toLowerCase()} shortlist as the fix.`
+      : `Make sure the problem really points at ${entry.data.category.toLowerCase()} before replacing parts. Similar symptoms can come from adjacent systems.`
+  },
+  {
+    label: "Check exact fitment",
+    description: fitmentCaveat
+      ? `Do not order until this note is resolved: ${fitmentCaveat}`
+      : `Match the vehicle year, trim, engine, and generation notes before choosing between the options for ${entry.data.car_model}.`
+  },
+  {
+    label: "Choose for the job",
+    description: topProduct
+      ? `${topProduct.name} is the first shortlist option, but the right pick still depends on driving style, budget, and how long you plan to keep the car.`
+      : "The best choice depends on driving style, budget, and how long you plan to keep the car."
+  }
+];
+const overbuyingCards = [
+  {
+    title: "Do not upgrade to hide a diagnosis",
+    description: `A more expensive ${entry.data.category.toLowerCase()} choice will not fix a wrong diagnosis, worn neighboring part, or installation issue.`
+  },
+  {
+    title: "Match normal use first",
+    description: bestFor[0]
+      ? `Start with the option that supports ${bestFor[0].toLowerCase()} before paying for a more aggressive spec.`
+      : "Start with the option that supports normal daily use before paying for a more aggressive spec."
+  },
+  {
+    title: "Keep a return path",
+    description: "Buy from a source with clear fitment confirmation, return terms, and enough product detail to verify that the part in the box matches the car."
+  }
+];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Best Parts", href: "/best/" },
@@ -178,6 +216,19 @@ const schemas = [
     />
   </Section>
 
+  <Section id="before-you-buy" title="Before you buy" intro="Use these checks before moving from a shortlist to a cart. They keep the page focused on solving the right problem, not just picking a product.">
+    <div class="grid gap-4 lg:grid-cols-3">
+      {
+        beforeBuyingChecks.map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="eyebrow">{item.label}</p>
+            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
   {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro="Use this vehicle-specific path before treating the product shortlist as the diagnosis." steps={vehicleQuality.decisionPath} />}
 
   <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
@@ -194,6 +245,19 @@ const schemas = [
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {entry.data.buyingAdvice.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
+  </Section>
+
+  <Section id="choose-without-overbuying" title="Choose without overbuying" intro="Use these checks when several options look close and the most expensive one is not automatically the smartest choice.">
+    <div class="grid gap-4 lg:grid-cols-3">
+      {
+        overbuyingCards.map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </Section>
 
   {

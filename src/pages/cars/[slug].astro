@@ -100,6 +100,46 @@ const relatedOwnershipGuides = uniqueByHref(
       image: guide.image
     }))
 );
+const directClusterLinks = car.data.relatedProblems.length + car.data.relatedBest.length;
+const carAdsEnabled = directClusterLinks >= 3;
+const coverageTitle = directClusterLinks >= 5
+  ? "Deep coverage for this car"
+  : directClusterLinks >= 3
+    ? "Growing coverage for this car"
+    : "Starter coverage for this car";
+const coverageIntro = carAdsEnabled
+  ? "This hub has enough direct support to move from the overview into more specific diagnosis, fitment, and parts decisions."
+  : "This hub is a focused starting point. Use the linked pages below first, and treat broader advice as generation-level context until more vehicle-specific guides are published.";
+const coverageCards = [
+  {
+    label: "Problem guides",
+    value: relatedProblems.length,
+    description: relatedProblems.length
+      ? "Direct symptom and diagnosis pages connected to this car."
+      : "No dedicated problem page is linked yet, so start with the common-problems checklist."
+  },
+  {
+    label: "Parts guides",
+    value: relatedBest.length,
+    description: relatedBest.length
+      ? "Parts comparisons that match this vehicle cluster."
+      : "No dedicated parts comparison is linked yet, so use the recommended-parts section carefully."
+  },
+  {
+    label: "Ownership guides",
+    value: relatedOwnershipGuides.length,
+    description: relatedOwnershipGuides.length
+      ? "Longer buyer and maintenance pages for the platform."
+      : "Generation and model context is still being built for this vehicle."
+  },
+  {
+    label: "Comparison guides",
+    value: relatedComparisons.length,
+    description: relatedComparisons.length
+      ? "Trim, powertrain, or platform comparisons that help keep advice specific."
+      : "No comparison guide is linked yet for this car."
+  }
+];
 
 const generationHref = `/generations/${getGenerationSlug(car.data)}/`;
 const carStartPaths = [
@@ -186,6 +226,7 @@ const schemas = [
   modifiedTime={car.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
+  enableAds={carAdsEnabled}
 >
   <TrustBlock
     summary="This ownership guide is written for drivers who want the main problem areas, the parts that usually matter, and the maintenance moves worth doing before a small issue grows."
@@ -226,6 +267,20 @@ const schemas = [
       </div>
     </div>
   </section>
+
+  <Section id="coverage-depth" title={coverageTitle} intro={coverageIntro}>
+    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      {
+        coverageCards.map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="eyebrow">{item.label}</p>
+            <p class="mt-3 text-3xl font-semibold text-ink">{item.value}</p>
+            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
 
   <Section
     id="overview"

@@ -115,6 +115,8 @@ const modelGroups = Array.from(
   .sort((a, b) => b.entries.length - a.entries.length || a.model.localeCompare(b.model));
 
 const startHere = featuredGenerations[0];
+const linkedCoverageCount = linkedProblems.length + linkedBest.length + linkedOwnershipGuides.length;
+const shouldNoindex = brandCars.length < 2 && linkedCoverageCount < 4;
 
 const breadcrumbs = [
   { label: "Home", href: "/" },
@@ -123,7 +125,7 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout enableAds={false} title={`${brand} Cars`} description={`Browse ${brand} car hub pages, linked problems, and best-parts comparisons.`}>
+<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${brand} Cars`} description={`Browse ${brand} car hub pages, linked problems, and best-parts comparisons.`}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">

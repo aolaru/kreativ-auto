@@ -20,6 +20,44 @@ if (!guide) {
   throw new Error(`Quick ownership guide not found for slug: ${slug}`);
 }
 
+const primaryBestFor = guide.bestFor[0] ?? "the ownership use case described in this guide";
+const primaryAvoidIf = guide.avoidIf[0] ?? "the inspection shows repeated warning signs";
+const primaryRedFlag = guide.redFlags[0] ?? "the seller cannot explain recent maintenance or the first-check item";
+const firstNextRead = guide.nextReads[0];
+const decisionCards = [
+  {
+    label: "Good match",
+    title: "Continue when the use case fits",
+    description: `This car makes the most sense when ${primaryBestFor.toLowerCase()}. The next step is confirming that the first check does not expose a bigger ownership problem.`
+  },
+  {
+    label: "Slow down",
+    title: "Diagnose before deciding",
+    description: `Pause the buying or repair decision when ${primaryAvoidIf.toLowerCase()}. A lower price does not help if the condition issue becomes the first major expense.`
+  },
+  {
+    label: "Walk away",
+    title: "Respect the red flags",
+    description: `Treat ${primaryRedFlag.toLowerCase()} as a reason to ask for records, inspect again, or move to another example before spending money.`
+  }
+];
+const nextStepCards = [
+  {
+    title: "Use the first check as the filter",
+    description: guide.firstCheck
+  },
+  {
+    title: "Match symptoms to deeper pages",
+    description: firstNextRead
+      ? `If the first check points at a specific fault area, open ${firstNextRead.title} before buying replacement parts.`
+      : "If the first check points at a specific fault area, move from the overview into a dedicated symptom guide before buying replacement parts."
+  },
+  {
+    title: "Keep condition ahead of reputation",
+    description: "A strong model reputation still depends on maintenance history, inspection results, and whether the example in front of you matches the use case this guide describes."
+  }
+];
+
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Guides", href: "/guides/" },
@@ -108,6 +146,33 @@ const schemas = [
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {guide.redFlags.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
+  </Section>
+
+  <Section id="decision-checklist" title="Decision checklist" intro="Use this section to turn the ownership notes into a clearer buy, diagnose, or walk-away decision.">
+    <div class="grid gap-4 lg:grid-cols-3">
+      {
+        decisionCards.map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+            <p class="eyebrow">{item.label}</p>
+            <h3 class="mt-3 text-lg font-semibold text-ink">{item.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
+  </Section>
+
+  <Section id="how-to-use" title="How to use this guide" intro="The goal is to reduce uncertainty before a listing, inspection, or repair turns into a parts order.">
+    <div class="grid gap-4 lg:grid-cols-3">
+      {
+        nextStepCards.map((item) => (
+          <div class="rounded-2xl border border-slate-200 bg-white p-5">
+            <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+          </div>
+        ))
+      }
+    </div>
   </Section>
 
   <RelatedLinks

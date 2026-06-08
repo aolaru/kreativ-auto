@@ -112,9 +112,11 @@ const featuredGenerationGroups = [...generationGroups].sort(
     b.relatedProblems.length + b.relatedBest.length - (a.relatedProblems.length + a.relatedBest.length)
 );
 const startHere = featuredGenerationGroups[0];
+const linkedCoverageCount = linkedProblems.length + linkedBest.length + linkedOwnershipGuides.length;
+const shouldNoindex = modelCars.length < 2 && linkedCoverageCount < 4;
 ---
 
-<BaseLayout enableAds={false} title={`${model} Guides`} description={`Browse ${model} car hubs, problem pages, and best-parts content.`}>
+<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${model} Guides`} description={`Browse ${model} car hubs, problem pages, and best-parts content.`}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">
