@@ -15,8 +15,10 @@ heroImage: "/images/photos/cars/hyundai-tucson-2020.svg"
 updatedAt: 2026-06-07
 relatedProblems:
   - "brake-squeal-at-low-speed-hyundai-tucson-2020"
+  - "battery-struggles-after-short-trips-hyundai-tucson-2020"
 relatedBest:
   - "best-brake-pads-for-hyundai-tucson-2020"
+  - "best-batteries-for-hyundai-tucson-2020"
 commonProblems:
   - "Low-speed brake squeal or front brake feel complaints"
   - "Highway noise and tire wear that drag down comfort"

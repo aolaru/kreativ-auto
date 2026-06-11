@@ -15,8 +15,10 @@ heroImage: "/images/photos/cars/nissan-rogue-2021.svg"
 updatedAt: 2026-06-07
 relatedProblems:
   - "battery-goes-dead-after-sitting-nissan-rogue-2021"
+  - "front-brakes-squeal-at-low-speed-nissan-rogue-2021"
 relatedBest:
   - "best-batteries-for-nissan-rogue-2021"
+  - "best-brake-pads-for-nissan-rogue-2021"
 commonProblems:
   - "Battery reserve complaints after sitting or repeated short-trip use"
   - "Brake noise or feel that makes the Rogue seem older than it is"

@@ -303,5 +303,323 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
         eyebrow: "Best parts"
       }
     ]
+  },
+  {
+    slug: "chevrolet-silverado-1500-2020-common-problems",
+    title: "Chevrolet Silverado 1500 2020 common problems and weak points",
+    href: "/guides/chevrolet-silverado-1500-2020-common-problems/",
+    description:
+      "A practical ownership guide for the 2020 Silverado 1500, focused on highway vibration, brake pulsation, tire wear, and the checks that matter before replacing parts.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/chevrolet-silverado-1500-2020.svg",
+    relatedCars: ["chevrolet-silverado-1500-2020"],
+    relatedGenerations: ["chevrolet-silverado-1500-t1xx-2019-2024"],
+    quickVerdict:
+      "The 2020 Silverado 1500 is easiest to own when tire, wheel, and brake complaints are diagnosed separately instead of being treated as one vague truck vibration.",
+    bestFor: [
+      "Owners who want a useful daily truck and are willing to inspect tires, brakes, and wheel-end basics before buying parts.",
+      "Buyers who can verify highway refinement and brake feel on a real test drive, not only in a parking lot."
+    ],
+    avoidIf: [
+      "The truck already shakes at highway speed or pulses through the pedal and the seller treats it as normal full-size-truck behavior.",
+      "Tires are mismatched, worn unevenly, or old enough that brake and suspension diagnosis will be noisy from the start."
+    ],
+    firstCheck: "Drive at highway speed, then inspect tire age, balance evidence, pad condition, rotor surface, and wheel torque before pricing larger repairs.",
+    keyChecks: [
+      "Check tire age, brand match, tread wear, and visible damage before blaming hubs or suspension.",
+      "Feel for brake pedal pulsation during several medium stops after the brakes are warm.",
+      "Look for towing or hauling use, then compare that story with brake wear and service records.",
+      "Listen for road-speed hum separately from engine or transmission load."
+    ],
+    redFlags: [
+      "The truck has heavy-use accessories but no matching tire, brake, or fluid-service history.",
+      "Highway shake remains after obvious tire pressure, tire condition, and wheel-balance clues are checked.",
+      "Brake pulsation is present on a test drive but priced like a cosmetic complaint."
+    ],
+    nextReads: [
+      {
+        href: "/problems/steering-wheel-vibrates-at-highway-speed-chevrolet-silverado-1500-2020/",
+        title: "Steering wheel vibrates at highway speed on Chevrolet Silverado 1500 2020",
+        description: "Start here when the main complaint is highway shake or steering-wheel vibration.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/problems/brake-pedal-pulsates-when-slowing-chevrolet-silverado-1500-2020/",
+        title: "Brake pedal pulsates when slowing on Chevrolet Silverado 1500 2020",
+        description: "Use this when the vibration follows braking force more than road speed.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/best/best-brake-pads-for-chevrolet-silverado-1500-2020/",
+        title: "Best brake pads for Chevrolet Silverado 1500 2020",
+        description: "Open this after the brake inspection points toward pad replacement instead of tire or hub diagnosis.",
+        eyebrow: "Best parts"
+      }
+    ]
+  },
+  {
+    slug: "hyundai-tucson-2020-common-problems",
+    title: "Hyundai Tucson 2020 common problems and weak points",
+    href: "/guides/hyundai-tucson-2020-common-problems/",
+    description:
+      "A practical ownership guide for the 2020 Tucson, focused on brake noise, battery reserve, tire comfort, and simple checks that keep the diagnosis useful.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/hyundai-tucson-2020.svg",
+    relatedCars: ["hyundai-tucson-2020"],
+    relatedGenerations: ["hyundai-tucson-tl-2019-2021"],
+    quickVerdict:
+      "The 2020 Tucson is usually a low-drama compact SUV, but brake noise and weak-start behavior should be checked early because they quickly make the car feel neglected.",
+    bestFor: [
+      "Owners who want simple commuter-SUV ownership and will stay ahead of normal brake, tire, and battery wear.",
+      "Buyers comparing practical SUVs where condition and service history matter more than trim badges."
+    ],
+    avoidIf: [
+      "Low-speed brake squeal, weak starts, or tire noise is already obvious and the seller has no service explanation.",
+      "The Tucson has short-trip use, an older battery, and inconsistent starting behavior that has not been tested."
+    ],
+    firstCheck: "Test battery reserve and charging basics, then inspect brake pads, hardware, rotors, tire condition, and recent service history.",
+    keyChecks: [
+      "Listen for brake squeal during gentle city stops and after the vehicle has sat.",
+      "Test battery health if the SUV mainly sees short errands or longer parked periods.",
+      "Inspect tire wear and pressure before treating road noise as a suspension issue.",
+      "Confirm brake service records include hardware condition, not just pad replacement."
+    ],
+    redFlags: [
+      "A weak battery is repeatedly boosted without any load test or charging-system check.",
+      "Brake noise is dismissed as normal while the pads, rotors, or hardware show visible neglect.",
+      "Tires are mismatched or unevenly worn on a car being sold as an easy commuter."
+    ],
+    nextReads: [
+      {
+        href: "/problems/brake-squeal-at-low-speed-hyundai-tucson-2020/",
+        title: "Brake squeal at low speed on Hyundai Tucson 2020",
+        description: "Use this when brake noise is the first issue making the Tucson feel rough.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/problems/battery-struggles-after-short-trips-hyundai-tucson-2020/",
+        title: "Battery struggles after short trips on Hyundai Tucson 2020",
+        description: "Open this when starting behavior changes after errands, sitting, or colder weather.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/best/best-batteries-for-hyundai-tucson-2020/",
+        title: "Best batteries for Hyundai Tucson 2020",
+        description: "Use this after the battery test confirms weak reserve rather than a random electrical concern.",
+        eyebrow: "Best parts"
+      }
+    ]
+  },
+  {
+    slug: "nissan-rogue-2021-common-problems",
+    title: "Nissan Rogue 2021 common problems and weak points",
+    href: "/guides/nissan-rogue-2021-common-problems/",
+    description:
+      "A practical ownership guide for the 2021 Rogue, focused on battery reserve, front brake noise, tire comfort, and the first checks that keep a newer SUV from feeling prematurely worn.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/nissan-rogue-2021.svg",
+    relatedCars: ["nissan-rogue-2021"],
+    relatedGenerations: ["nissan-rogue-t33-2021-2025"],
+    quickVerdict:
+      "The 2021 Rogue is strongest when the basic battery, brake, and tire picture is clean; small refinement problems matter because they are the first ownership clues on this newer generation.",
+    bestFor: [
+      "Families and commuters who want a newer compact SUV and will verify everyday refinement before buying.",
+      "Owners who separate battery, brake, and tire complaints before spending money on larger theories."
+    ],
+    avoidIf: [
+      "The SUV has weak starts after sitting, brake squeal in normal stops, or road hum that no one has narrowed down.",
+      "The seller relies on low mileage alone while service history and tire condition tell a less careful story."
+    ],
+    firstCheck: "Start with battery testing, then use a quiet low-speed drive and a highway run to separate brake noise, tire hum, and wheel-end concerns.",
+    keyChecks: [
+      "Load-test the battery if the Rogue has short-trip use or longer parked intervals.",
+      "Check front brake noise at low speed after several normal stops.",
+      "Inspect tire wear, rotation history, and balance clues before chasing wheel-end parts.",
+      "Confirm maintenance records match the newer-generation asking price."
+    ],
+    redFlags: [
+      "Repeated no-start or weak-start behavior is treated as a one-off without battery test results.",
+      "Front brake noise appears during the test drive but the vehicle is presented as needing nothing.",
+      "Road hum changes with speed and the tire history is unknown."
+    ],
+    nextReads: [
+      {
+        href: "/problems/battery-goes-dead-after-sitting-nissan-rogue-2021/",
+        title: "Battery goes dead after sitting on Nissan Rogue 2021",
+        description: "Use this when the Rogue starts weakly after parking instead of after normal use.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/problems/front-brakes-squeal-at-low-speed-nissan-rogue-2021/",
+        title: "Front brakes squeal at low speed on Nissan Rogue 2021",
+        description: "Open this when the main symptom is brake refinement rather than stopping power.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/best/best-brake-pads-for-nissan-rogue-2021/",
+        title: "Best brake pads for Nissan Rogue 2021",
+        description: "Use this when the front brake diagnosis points toward pads and hardware.",
+        eyebrow: "Best parts"
+      }
+    ]
+  },
+  {
+    slug: "subaru-forester-2020-common-problems",
+    title: "Subaru Forester 2020 common problems and weak points",
+    href: "/guides/subaru-forester-2020-common-problems/",
+    description:
+      "A practical ownership guide for the 2020 Forester, focused on road-speed hum, battery reserve, tire matching, and the AWD checks that matter before replacing parts.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/subaru-forester-2020.svg",
+    relatedCars: ["subaru-forester-2020"],
+    relatedGenerations: ["subaru-forester-sk-2019-2024"],
+    quickVerdict:
+      "The 2020 Forester is best when tire matching, battery health, and wheel-end noise are kept simple and verified before the AWD system gets blamed.",
+    bestFor: [
+      "Owners who want an easy all-weather SUV and will keep tires matched, rotated, and inspected.",
+      "Buyers who can listen for speed-linked hum and check battery health before deciding the car is clean."
+    ],
+    avoidIf: [
+      "The Forester has mismatched tires, a road-speed hum, or weak starts and those issues are explained away without evidence.",
+      "The seller cannot show tire rotation, battery, or wheel-end service history on an AWD vehicle."
+    ],
+    firstCheck: "Check all four tires for match and wear depth, test battery reserve, then listen for hum that follows road speed instead of engine load.",
+    keyChecks: [
+      "Confirm tire brand, size, and wear are consistent across all four corners.",
+      "Listen for humming that rises with speed and does not track engine rpm.",
+      "Test battery reserve if the Forester does short trips or sits in cold weather.",
+      "Inspect brake and suspension condition only after tire and battery basics are clean."
+    ],
+    redFlags: [
+      "Mismatched tires are treated as harmless on an AWD Forester.",
+      "Wheel-bearing hum is assumed before tire condition and rotation history are checked.",
+      "Battery weakness is boosted repeatedly instead of tested."
+    ],
+    nextReads: [
+      {
+        href: "/problems/humming-noise-that-gets-louder-with-speed-subaru-forester-2020/",
+        title: "Humming noise that gets louder with speed on Subaru Forester 2020",
+        description: "Start here when the Forester sounds louder as road speed rises.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/problems/battery-struggles-after-short-trips-subaru-forester-2020/",
+        title: "Battery struggles after short trips on Subaru Forester 2020",
+        description: "Use this when the symptom is weak reserve rather than wheel or tire noise.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/best/best-batteries-for-subaru-forester-2020/",
+        title: "Best batteries for Subaru Forester 2020",
+        description: "Open this after battery testing confirms the replacement path.",
+        eyebrow: "Best parts"
+      }
+    ]
+  },
+  {
+    slug: "honda-accord-2020-brake-and-ac-checks",
+    title: "Honda Accord 2020 brake and A/C checks before buying",
+    href: "/guides/honda-accord-2020-brake-and-ac-checks/",
+    description:
+      "A focused 2020 Accord guide for brake vibration, weak idle A/C, and the quick checks that separate a sensible used sedan from an expensive first month.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/honda-accord-2020.webp",
+    relatedCars: ["honda-accord-2020"],
+    relatedGenerations: ["honda-accord-cv1-cv2-2018-2022"],
+    quickVerdict:
+      "The 2020 Accord is still a strong used sedan, but brake shake and idle A/C weakness should be priced and diagnosed before the purchase feels safe.",
+    bestFor: [
+      "Buyers who want a practical sedan and are willing to test braking and cabin cooling carefully.",
+      "Owners deciding whether a brake or A/C complaint is a small maintenance item or the next serious repair."
+    ],
+    avoidIf: [
+      "The Accord shakes during braking or cools poorly in traffic and the seller has no recent repair evidence.",
+      "A/C performance, brake vibration, and battery behavior are all vague at once."
+    ],
+    firstCheck: "Test A/C at idle and at road speed, then make several medium brake stops and inspect pad, rotor, condenser, fan, and service-record clues.",
+    keyChecks: [
+      "Compare cabin cooling in traffic with cooling at road speed.",
+      "Feel for steering-wheel shake, seat vibration, or pedal pulsation during normal braking.",
+      "Inspect condenser condition and fan behavior before buying A/C parts.",
+      "Check battery voltage and service records if electrical symptoms appear alongside A/C or brake complaints."
+    ],
+    redFlags: [
+      "Weak idle cooling is sold as normal summer behavior without a condenser, fan, or charge check.",
+      "Brake vibration is obvious but the car has fresh pads with no rotor or hardware explanation.",
+      "Multiple comfort and refinement complaints appear on a short test drive."
+    ],
+    nextReads: [
+      {
+        href: "/guides/honda-accord-2020-common-problems/",
+        title: "Honda Accord 2020 common problems and what to check first",
+        description: "Use this for the broader Accord ownership map before narrowing to one repair area.",
+        eyebrow: "Ownership guide"
+      },
+      {
+        href: "/problems/car-shakes-when-braking-honda-accord-2020/",
+        title: "Car shakes when braking on Honda Accord 2020",
+        description: "Start here when the main symptom is brake vibration or pedal pulsation.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/best/best-brake-rotors-for-honda-accord-2020/",
+        title: "Best brake rotors for Honda Accord 2020",
+        description: "Open this after the brake diagnosis points clearly toward rotor replacement.",
+        eyebrow: "Best parts"
+      }
+    ]
+  },
+  {
+    slug: "mazda-3-2020-brake-and-suspension-checks",
+    title: "Mazda 3 2020 brake and suspension checks before buying",
+    href: "/guides/mazda-3-2020-brake-and-suspension-checks/",
+    description:
+      "A focused 2020 Mazda 3 guide for low-speed brake squeal, front-end clunks, road hum, and the checks that protect the car's refinement.",
+    eyebrow: "Ownership guide",
+    image: "/images/photos/cars/mazda-3-2020.webp",
+    relatedCars: ["mazda-3-2020"],
+    relatedGenerations: ["mazda-mazda-3-bp-2019-2023"],
+    quickVerdict:
+      "The 2020 Mazda 3 is appealing when it still feels tight and quiet; brake squeal, clunks, and road hum should be separated before they become a parts list.",
+    bestFor: [
+      "Drivers who care about compact-car refinement and will inspect small noises instead of ignoring them.",
+      "Buyers comparing used Mazda 3 examples where brake, tire, and suspension condition can change the deal."
+    ],
+    avoidIf: [
+      "The car squeals at low speed, clunks over small bumps, or hums at road speed and the seller calls it normal.",
+      "The tires, brake hardware, and front-end service story do not match the clean-cabin impression."
+    ],
+    firstCheck: "Drive over small bumps, make several gentle low-speed stops, then inspect tires, pad condition, rotor surface, links, and bushings.",
+    keyChecks: [
+      "Listen for clunks over small bumps, driveway entries, and broken pavement.",
+      "Check brake squeal during gentle stops after the brakes are lightly warm.",
+      "Inspect tire wear and rotation history before treating road hum as a confirmed hub issue.",
+      "Look at sway bar links, bushings, and loose hardware before pricing larger suspension work."
+    ],
+    redFlags: [
+      "A refined compact already sounds loose or cheap during normal city driving.",
+      "Brake squeal returns after a recent pad job with no hardware or rotor explanation.",
+      "Road hum is present and the tires show uneven wear or unknown age."
+    ],
+    nextReads: [
+      {
+        href: "/guides/mazda-3-2020-common-problems/",
+        title: "Mazda 3 2020 common problems and what to check first",
+        description: "Use this for the broader Mazda 3 ownership map before narrowing the repair.",
+        eyebrow: "Ownership guide"
+      },
+      {
+        href: "/problems/brake-squeal-at-low-speed-mazda-3-2020/",
+        title: "Brake squeal at low speed on Mazda 3 2020",
+        description: "Start here when the main symptom is brake noise during normal city stops.",
+        eyebrow: "Problem guide"
+      },
+      {
+        href: "/best/best-brake-pads-for-mazda-3-2020/",
+        title: "Best brake pads for Mazda 3 2020",
+        description: "Open this after the brake inspection confirms pads and hardware are the right path.",
+        eyebrow: "Best parts"
+      }
+    ]
   }
 ];

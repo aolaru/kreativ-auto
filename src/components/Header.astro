@@ -116,6 +116,26 @@ const searchIndex = [
             }
           </ul>
         </nav>
+
+        <nav aria-label="Mobile primary" class="md:hidden">
+          <ul class="grid grid-cols-2 gap-2 text-sm font-semibold text-ink">
+            {
+              navItems.map((item) => (
+                <li>
+                  <a
+                    class="block rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center transition hover:border-accent/40 hover:text-accent"
+                    href={item.href}
+                    data-ka-event="mobile_nav_click"
+                    data-ka-label={item.label}
+                    data-ka-section="header"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
       </div>
     </div>
   </div>

@@ -15,8 +15,10 @@ heroImage: "/images/photos/cars/chevrolet-silverado-1500-2020.svg"
 updatedAt: 2026-06-07
 relatedProblems:
   - "steering-wheel-vibrates-at-highway-speed-chevrolet-silverado-1500-2020"
+  - "brake-pedal-pulsates-when-slowing-chevrolet-silverado-1500-2020"
 relatedBest:
   - "best-tires-for-chevrolet-silverado-1500-2020"
+  - "best-brake-pads-for-chevrolet-silverado-1500-2020"
 commonProblems:
   - "Highway shake tied to tire condition or balance"
   - "Road-noise and wear complaints that make the truck feel rougher than it should"

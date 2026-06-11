@@ -15,8 +15,10 @@ heroImage: "/images/photos/cars/subaru-forester-2020.svg"
 updatedAt: 2026-06-07
 relatedProblems:
   - "humming-noise-that-gets-louder-with-speed-subaru-forester-2020"
+  - "battery-struggles-after-short-trips-subaru-forester-2020"
 relatedBest:
   - "best-wheel-bearings-for-subaru-forester-2020"
+  - "best-batteries-for-subaru-forester-2020"
 commonProblems:
   - "Road-speed hum that gets blamed on tires before hub wear is confirmed"
   - "Battery complaints after colder-weather starts or shorter-trip use"

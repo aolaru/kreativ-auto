@@ -51,10 +51,23 @@ const breadcrumbs = [
   { label: "Categories", href: "/categories/" },
   { label: category }
 ];
-const shouldNoindex = categoryPages.length < 3 && linkedCars.length + linkedProblems.length < 4;
+const categoryDecisionCards = [
+  {
+    title: "Confirm the repair area first",
+    description: `Use these ${category.toLowerCase()} comparisons after the symptom already points at this part family, not as a shortcut around diagnosis.`
+  },
+  {
+    title: "Start from the matching vehicle",
+    description: "Open the car-specific guide first when trim, year, or powertrain differences can change the right shortlist."
+  },
+  {
+    title: "Check linked problems before buying",
+    description: "If a related problem guide exists, use it to confirm the cause before turning a comparison page into a parts order."
+  }
+];
 ---
 
-<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${category} Guides`} description={`Browse ${category.toLowerCase()} comparison pages and related vehicle content.`}>
+<BaseLayout enableAds={false} noindex={true} title={`${category} Guides`} description={`Browse ${category.toLowerCase()} comparison pages and related vehicle content.`}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">
@@ -90,6 +103,27 @@ const shouldNoindex = categoryPages.length < 3 && linkedCars.length + linkedProb
           </a>
         ))
       }
+    </div>
+
+    <div class="mt-8">
+      <section class="surface p-6 sm:p-8">
+        <div class="max-w-3xl">
+          <h2 class="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">How to use this category</h2>
+          <p class="mt-3 text-base leading-7 text-steel">
+            Category pages are a navigation layer, not the final diagnosis. Use them to compare the right family of parts after the vehicle and symptom pages have narrowed the job.
+          </p>
+        </div>
+        <div class="mt-6 grid gap-4 lg:grid-cols-3">
+          {
+            categoryDecisionCards.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
+                <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
     </div>
 
     <div class="mt-8 space-y-8">

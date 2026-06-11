@@ -115,8 +115,7 @@ const modelGroups = Array.from(
   .sort((a, b) => b.entries.length - a.entries.length || a.model.localeCompare(b.model));
 
 const startHere = featuredGenerations[0];
-const linkedCoverageCount = linkedProblems.length + linkedBest.length + linkedOwnershipGuides.length;
-const shouldNoindex = brandCars.length < 2 && linkedCoverageCount < 4;
+const shouldNoindex = !featuredGenerations.some((group) => group.hasEditorialHub);
 
 const breadcrumbs = [
   { label: "Home", href: "/" },

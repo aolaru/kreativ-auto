@@ -135,6 +135,27 @@ if (fs.existsSync(distDir)) {
       );
     }
   }
+
+  const sitemapPath = path.join(distDir, "sitemap.xml");
+  if (fs.existsSync(sitemapPath)) {
+    const sitemap = fs.readFileSync(sitemapPath, "utf8");
+    const sitemapLocs = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map((match) => match[1]);
+
+    for (const loc of sitemapLocs) {
+      const pathname = new URL(loc).pathname;
+      const htmlPath =
+        pathname === "/"
+          ? path.join(distDir, "index.html")
+          : path.join(distDir, pathname.replace(/^\/+/, ""), "index.html");
+
+      if (!fs.existsSync(htmlPath)) continue;
+
+      const html = fs.readFileSync(htmlPath, "utf8");
+      if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) {
+        problems.push(`${pathname} is noindex but still appears in dist/sitemap.xml.`);
+      }
+    }
+  }
 }
 
 const ownershipGuidesPath = path.join(cwd, "src", "data", "ownership-guides.ts");

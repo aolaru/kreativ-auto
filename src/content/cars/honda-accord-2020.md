@@ -15,8 +15,10 @@ heroImage: "/images/photos/cars/honda-accord-2020.webp"
 updatedAt: 2026-04-20
 relatedProblems:
   - "air-conditioner-blows-warm-at-idle-honda-accord-2020"
+  - "car-shakes-when-braking-honda-accord-2020"
 relatedBest:
   - "best-ac-condensers-for-honda-accord-2020"
+  - "best-brake-rotors-for-honda-accord-2020"
 commonProblems:
   - "Brake vibration during light-to-medium stops from uneven pad or rotor wear"
   - "Air conditioning that cools weakly at idle or in traffic"
