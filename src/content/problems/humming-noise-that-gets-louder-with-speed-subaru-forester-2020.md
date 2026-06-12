@@ -64,7 +64,7 @@ fitment:
   doesNotApplyTo:
     - "Do not assume every special trim, package, or non-US variant reacts exactly the same without confirming the actual hardware."
   phaseDifferences:
-    - "Use this SK-era guide as a baseline and refine exact trim differences later."
+    - "This SK-era guide covers the normal ownership pattern, but exact part choice still needs trim, package, and market confirmation."
   powertrainDifferences:
     - "The broad diagnosis still applies, but exact part choice can change by powertrain and package."
 ---

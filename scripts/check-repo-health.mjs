@@ -7,7 +7,29 @@ const sourceExts = new Set([".astro", ".md", ".ts", ".js", ".mjs"]);
 const imageRefPattern = /\/images\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|svg)/g;
 const problems = [];
 const checkedImages = new Set();
-const minimumAdsenseContentWords = 450;
+const minimumAdsenseContentWords = 900;
+const lowValueContentRoots = [
+  path.join(cwd, "src", "content"),
+  path.join(cwd, "src", "pages"),
+  path.join(cwd, "src", "data")
+];
+const prohibitedLowValuePhrases = [
+  "starter page",
+  "starter coverage",
+  "weekly scaffold",
+  "first scaffold",
+  "scaffold",
+  "credible base entry",
+  "next content passes",
+  "cluster starts filling out",
+  "cluster gets deeper",
+  "still being built",
+  "refine trim-level differences later",
+  "refine exact trim differences later",
+  "refine specific hardware differences later",
+  "should be refined later",
+  "confirm part splits later"
+];
 const requiredStaticFiles = [
   "public/ads.txt",
   "src/pages/about.astro",
@@ -54,10 +76,26 @@ function checkImageReference(filePath, imageRef, context = "references") {
   }
 }
 
+function isPolicySensitiveSource(filePath) {
+  return lowValueContentRoots.some((root) => {
+    const relativePath = path.relative(root, filePath);
+    return relativePath && !relativePath.startsWith("..") && !path.isAbsolute(relativePath);
+  });
+}
+
 walk(cwd, (filePath) => {
   if (!sourceExts.has(path.extname(filePath))) return;
 
   const source = fs.readFileSync(filePath, "utf8");
+  if (isPolicySensitiveSource(filePath)) {
+    const lowerSource = source.toLowerCase();
+    for (const phrase of prohibitedLowValuePhrases) {
+      if (lowerSource.includes(phrase)) {
+        problems.push(`${path.relative(cwd, filePath)} contains low-value placeholder phrase "${phrase}".`);
+      }
+    }
+  }
+
   for (const match of source.matchAll(imageRefPattern)) {
     checkImageReference(filePath, match[0]);
   }

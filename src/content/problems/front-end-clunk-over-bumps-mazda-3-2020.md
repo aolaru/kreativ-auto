@@ -58,7 +58,7 @@ fitment:
   doesNotApplyTo:
     - "Do not assume all AWD or performance-oriented setups react exactly the same without checking the actual front suspension listing."
   phaseDifferences:
-    - "Use this BP-era guide as a baseline and refine specific hardware differences later."
+    - "This BP-era guide covers the normal ownership pattern, but exact hardware choice still needs body style, drivetrain, and package confirmation."
   powertrainDifferences:
     - "The broad front-end diagnosis still applies across the normal Mazda 3 lineup."
 ---

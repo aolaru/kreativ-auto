@@ -49,12 +49,12 @@ fitment:
   appliesTo:
     - "Most 2020 Subaru Forester daily-driver trims in this generation."
   doesNotApplyTo:
-    - "Do not treat this starter page as final fitment guidance for special trims, performance variants, or non-US market splits."
+    - "Do not use this as final fitment guidance for special trims, market-specific variants, or modified suspension setups without confirming the actual hardware."
   phaseDifferences:
-    - "Use this page as the SK-era baseline and refine trim-level differences later as the cluster gets deeper."
+    - "This page keeps the SK-era Forester ownership pattern grouped while still requiring trim and package confirmation before parts are ordered."
   powertrainDifferences:
-    - "The broad ownership logic still applies, but exact diagnosis and part choice can diverge once this model gets deeper powertrain-specific coverage."
+    - "The broad ownership logic still applies, but exact diagnosis and part choice can change with drivetrain, wheel size, and package differences."
 ---
 Subaru Forester ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.
 
-This page gives the Forester a credible base entry first, then supports the matching problem guide and best-parts page that make the cluster actually useful.
+Use this page as the model-year hub: start with road-speed hum, tire wear, brake noise, or ride symptoms, then move into the linked problem and parts sections for a narrower repair path.

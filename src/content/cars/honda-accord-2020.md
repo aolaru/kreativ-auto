@@ -50,12 +50,12 @@ fitment:
   appliesTo:
     - "Most 2020 Accord daily-driver trims in the tenth-generation gas lineup."
   doesNotApplyTo:
-    - "Do not treat this scaffold as direct fitment proof for hybrid, 2.0T-specific, or non-US variants."
+    - "Do not use this as direct fitment proof for hybrid, 2.0T-specific, or non-US variants without checking the exact catalog listing."
   phaseDifferences:
-    - "Use this page as the tenth-generation Accord baseline and refine trim-level differences later."
+    - "This page keeps the tenth-generation Accord context together while still requiring trim and engine confirmation before parts are ordered."
   powertrainDifferences:
-    - "The broad brake, battery, and HVAC logic still applies, but powertrain-specific diagnosis can diverge once the cluster gets deeper."
+    - "Brake, battery, and HVAC logic overlaps across the lineup, but hybrid and 2.0T diagnosis can change once engine, accessory, or electrical layout matters."
 ---
 The Accord is one of those cars where ownership quality comes down to how quickly you deal with the first signs of brake, HVAC, or voltage trouble. Catch those early and the car usually stays cheap and easy to live with.
 
-This weekly scaffold gives the Accord a solid base entry. The next content layer can split those platform complaints into proper problem guides and best-parts pages once the cluster starts filling out.
+Use this page as the model-year hub: start by separating brake, HVAC, battery, and front-end symptoms, then open the linked problem or parts guide that matches the confirmed complaint.

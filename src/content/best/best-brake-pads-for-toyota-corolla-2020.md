@@ -65,7 +65,7 @@ fitment:
   doesNotApplyTo:
     - "Do not assume hatch, sport-oriented, or non-US package differences are identical without checking fitment."
   phaseDifferences:
-    - "This guide uses the E210-era Corolla as the baseline and should be refined later if the platform gets deeper trim-level coverage."
+    - "This guide uses the E210-era Corolla as the ownership group, while exact pad fitment still needs trim and package confirmation before ordering."
   powertrainDifferences:
     - "Hybrid regenerative feel can change the subjective brake feel, but the quieter ceramic pad logic still holds for normal daily driving."
 ---

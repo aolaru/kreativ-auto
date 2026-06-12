@@ -105,39 +105,39 @@ const carAdsEnabled = directClusterLinks >= 3;
 const coverageTitle = directClusterLinks >= 5
   ? "Deep coverage for this car"
   : directClusterLinks >= 3
-    ? "Growing coverage for this car"
-    : "Starter coverage for this car";
+    ? "Connected ownership hub"
+    : "Focused vehicle overview";
 const coverageIntro = carAdsEnabled
   ? "This hub has enough direct support to move from the overview into more specific diagnosis, fitment, and parts decisions."
-  : "This hub is a focused starting point. Use the linked pages below first, and treat broader advice as generation-level context until more vehicle-specific guides are published.";
+  : "This hub is a focused overview for the published vehicle facts on this site. Use the linked sections below before moving into broader generation context.";
 const coverageCards = [
   {
     label: "Problem guides",
     value: relatedProblems.length,
     description: relatedProblems.length
       ? "Direct symptom and diagnosis pages connected to this car."
-      : "No dedicated problem page is linked yet, so start with the common-problems checklist."
+      : "Use the common-problems checklist to narrow the first symptom area."
   },
   {
     label: "Parts guides",
     value: relatedBest.length,
     description: relatedBest.length
       ? "Parts comparisons that match this vehicle cluster."
-      : "No dedicated parts comparison is linked yet, so use the recommended-parts section carefully."
+      : "Use the recommended-parts section only after the symptom points at that repair area."
   },
   {
     label: "Ownership guides",
     value: relatedOwnershipGuides.length,
     description: relatedOwnershipGuides.length
       ? "Longer buyer and maintenance pages for the platform."
-      : "Generation and model context is still being built for this vehicle."
+      : "Use the maintenance and fitment notes on this page before moving into broader model context."
   },
   {
     label: "Comparison guides",
     value: relatedComparisons.length,
     description: relatedComparisons.length
       ? "Trim, powertrain, or platform comparisons that help keep advice specific."
-      : "No comparison guide is linked yet for this car."
+      : "Confirm trim, powertrain, and package differences before ordering parts."
   }
 ];
 
@@ -154,7 +154,7 @@ const carStartPaths = [
     title: "Compare the parts that matter",
     description: relatedBest.length
       ? "Open the linked best-parts guides when the diagnosis already points at one repair area."
-      : "Use the recommended-parts section when this vehicle cluster does not yet have a deeper parts guide.",
+      : "Use the recommended-parts section only after the diagnosis points at one repair area.",
     href: relatedBest[0]?.href ?? "#recommended-parts"
   },
   {
