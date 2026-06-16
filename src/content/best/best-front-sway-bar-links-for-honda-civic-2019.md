@@ -48,7 +48,7 @@ fitment:
     - "Earlier Civic X years overlap in broad diagnosis, but staying in the facelift group keeps later-year fitment cleaner."
   powertrainDifferences:
     - "Front sway bar link choice is driven more by trim and chassis hardware than by 2.0 versus 1.5T engine differences."
-    - "Hybrid-specific fitment is outside the scope of this page."
+    - "Hybrid-specific fitment is outside the scope of this guide."
 quickVerdict: "The right Civic front link is the one that quiets the small-bump rattle and stays quiet, not the one that is cheapest this week."
 bestFor:
   - "Owners chasing a sharp front-end rattle over cracked city pavement or small bumps."

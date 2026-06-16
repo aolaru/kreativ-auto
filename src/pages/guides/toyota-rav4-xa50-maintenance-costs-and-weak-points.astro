@@ -64,14 +64,14 @@ const relatedComparisons = [
   modifiedTime={modifiedTime}
   breadcrumbs={breadcrumbs}
   faqs={faqs}
-  editorialSummary="This guide is written as a maintenance and running-cost overview for the XA50 RAV4, focusing on the weak points that shape ownership cost first."
+  editorialSummary="A maintenance and running-cost overview for the XA50 RAV4, focusing on the weak points that shape ownership cost first."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Maintenance guide", "Generation-specific", "Cost-focused"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when the question is not just what can go wrong, but what usually costs money first and where owners turn simple XA50 complaints into bigger expenses than they need to be."
+    summary="Use this guide when the question is not just what can go wrong, but what usually costs money first and where owners turn simple XA50 complaints into bigger expenses than they need to be."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -131,7 +131,7 @@ const relatedComparisons = [
     </ul>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the ownership budget is clearly being shaped by one repeat complaint." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
-  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the cost story changes with the powertrain." items={relatedComparisons} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the ownership budget is clearly being shaped by one repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
+  <RelatedLinks title="Related comparison guides" intro="Use these when the cost story changes with the powertrain." items={relatedComparisons} />
 </ContentLayout>

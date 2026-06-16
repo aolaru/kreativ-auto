@@ -131,7 +131,7 @@ const breadcrumbs = [
   noindex={shouldNoindex}
   title={`${generationLabel} Guides`}
   description={
-    hubContent?.intro ?? `Browse ${generationLabel} pages, grouped by generation range and facelift phase.`
+    hubContent?.intro ?? `Browse ${generationLabel} model years, grouped by generation range and facelift phase.`
   }
   image={leadCar.data.heroImage ?? leadCar.data.image}
 >
@@ -140,12 +140,12 @@ const breadcrumbs = [
     <div class="surface hero-frame p-8 sm:p-10">
       <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
         <div>
-          <p class:list={[hubContent ? "editorial-kicker" : "eyebrow"]}>{hubContent?.eyebrow ?? "Generation Hub"}</p>
+          <p class:list={[hubContent ? "editorial-kicker" : "eyebrow"]}>{hubContent?.eyebrow ?? "Generation"}</p>
           <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{generationLabel}</h1>
           <p class="mt-4 text-sm font-semibold uppercase tracking-[0.18em] text-steel">{generationRange}</p>
           <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
             {hubContent?.intro ??
-              "This page groups model-year guides that share the same generation or facelift window, which is usually the level where problems and parts overlap the most."}
+              "Use this generation when model years share the same facelift window, parts behavior, and common ownership patterns."}
           </p>
         </div>
         {
@@ -172,7 +172,7 @@ const breadcrumbs = [
             hubContent.startHere && hubContent.startHere.length > 0 && (
               <Section
                 title="Start here"
-                intro="If this is your first stop on the generation, use these paths to get to the most useful problem, parts, and comparison pages faster."
+                intro="If this is your first stop on the generation, begin with the most useful problem, parts, and comparison checks."
               >
                 <div class="grid gap-4 md:grid-cols-3">
                   {hubContent.startHere.map((item) => (
@@ -223,7 +223,7 @@ const breadcrumbs = [
 
           <Section
             title="Why this generation matters"
-            intro="These are the ownership patterns that repeat often enough to make the generation hub more useful than a single model-year page."
+            intro="These ownership patterns repeat across enough years that one exact model year can be too narrow."
           >
             <ul class="space-y-3 text-sm leading-6 text-steel">
               {hubContent.overview.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
@@ -329,12 +329,12 @@ const breadcrumbs = [
       />
       <RelatedLinks
         title="Best-parts guides for this generation"
-        intro="These parts pages are the fastest way to narrow the shortlist once you know the repair area."
+        intro="These parts comparisons are the fastest way to narrow the shortlist once you know the repair area."
         items={featuredBest}
       />
       <RelatedLinks
         title="Ownership guides for this generation"
-        intro="Use these flagship guides when you want the broader repeat-pattern view before dropping into a single symptom or parts page."
+        intro="Use these flagship guides when you want the broader repeat-pattern view before narrowing into a single symptom or part."
         items={relatedOwnershipGuides}
       />
       <RelatedLinks

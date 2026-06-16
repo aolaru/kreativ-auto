@@ -70,13 +70,13 @@ fitment:
     - Built around the North American 2020 Tiguan II facelift range with the 2.0T gas engine, including common front-wheel-drive and 4MOTION family trims.
     - The brake, coolant, and EPC notes are most relevant to the regular street-driven Tiguan rather than a stripped export-spec or diesel-market variant.
   doesNotApplyTo:
-    - Do not assume this page covers European diesel, plug-in hybrid, or long-wheelbase market variants that use different engines, cooling parts, or electronics.
+    - Do not apply these notes to European diesel, plug-in hybrid, or long-wheelbase market variants that use different engines, cooling parts, or electronics.
     - Trim-specific wheel and brake package changes can alter rotor, pad, and tire fitment, so confirm the axle setup before ordering.
   phaseDifferences:
     - Pre-facelift 2016-2019 Tiguan II cars overlap in some wear items, but the 2020-2024 facelift grouping is cleaner for electronics, trim packaging, and some parts supersessions.
     - If you are working on an earlier Mk2 Tiguan, use the facelift notes as a guide, not as proof that every hose, module, or front-end part number stayed the same.
   powertrainDifferences:
-    - This page assumes the 2.0T gas Tiguan. If your market has diesel or hybrid-adjacent alternatives, cooling and drivability diagnosis can branch quickly.
+    - Use these notes for the 2.0T gas Tiguan. If your market has diesel or hybrid-adjacent alternatives, cooling and drivability diagnosis can branch quickly.
     - 4MOTION does not rewrite the common front-end complaints, but it can change tire rotation patterns, drivetrain load, and some maintenance priorities.
 ---
 

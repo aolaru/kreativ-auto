@@ -68,7 +68,7 @@ fitment:
     - The brake-noise, hub-hum, and rear-clunk notes are aimed at normal daily-driver use rather than off-road builds or heavy accessory setups.
   doesNotApplyTo:
     - Adventure, TRD Off-Road, and other trim packages with different wheel-and-tire combinations can shift the noise picture enough that you should verify parts before ordering.
-    - This page is not meant to cover older XA40-generation RAV4 fitment or region-specific powertrains outside the 2019-2021 XA50 family.
+    - The 2020 guide does not cover older XA40-generation RAV4 fitment or region-specific powertrains outside the 2019-2021 XA50 family.
   phaseDifferences:
     - 2020 and 2021 XA50 cars are close enough to group together for most brake, hub, and suspension advice, but trim and supplier changes can still alter exact part numbers.
     - Pre-XA50 RAV4 generations do not share enough platform detail to treat the same noise diagnosis as a one-click parts match.

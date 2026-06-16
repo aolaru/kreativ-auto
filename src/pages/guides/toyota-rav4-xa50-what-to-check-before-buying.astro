@@ -42,14 +42,14 @@ const relatedComparisons = [
   image="/images/photos/cars/toyota-rav4-2021.webp"
   modifiedTime={modifiedTime}
   breadcrumbs={breadcrumbs}
-  editorialSummary="This guide is written as a buyer-focused checklist for the XA50 RAV4, concentrating on the weak points and viewing checks that matter most."
+  editorialSummary="A buyer-focused checklist for the XA50 RAV4, concentrating on the weak points and viewing checks that matter most."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Buying guide", "Generation-specific", "Inspection-focused"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page before a viewing or test drive. The goal is to separate normal XA50 wear from the signs that the price or the car itself needs more caution."
+    summary="Use this guide before a viewing or test drive. The goal is to separate normal XA50 wear from the signs that the price or the car itself needs more caution."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -93,7 +93,7 @@ const relatedComparisons = [
     </ul>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the viewing or test drive already points at a repeat complaint." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but the weak point needs a realistic repair plan." items={relatedBest} />
-  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the buying advice changes with the powertrain." items={relatedComparisons} />
+  <RelatedLinks title="Related problem guides" intro="Open these if the viewing or test drive already points at a repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the car is still worth buying but the weak point needs a realistic repair plan." items={relatedBest} />
+  <RelatedLinks title="Related comparison guides" intro="Use these when the buying advice changes with the powertrain." items={relatedComparisons} />
 </ContentLayout>

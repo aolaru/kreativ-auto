@@ -71,4 +71,4 @@ fitment:
 
 A Silverado steering wheel that vibrates at highway speed usually needs tire, balance, and wheel-end checks before broader suspension parts enter the conversation.
 
-The goal of this page is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.
+The goal is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.

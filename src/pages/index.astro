@@ -46,11 +46,11 @@ const quickPaths = [
   }
 ] as const;
 
-const strongClusters = [
+const featuredVehicles = [
   {
-    eyebrow: "Deepest cluster",
+    eyebrow: "Best first stop",
     title: "VW Tiguan II facelift",
-    description: "Common problems, weak points, service intervals, buying advice, comparisons, and parts paths for the facelift-era Tiguan.",
+    description: "Common problems, weak points, service intervals, buying advice, comparisons, and part checks for the facelift-era Tiguan.",
     href: "/guides/vw-tiguan-ii-facelift-common-problems/",
     image: "/images/photos/cars/vw-tiguan-2020.webp"
   },
@@ -62,7 +62,7 @@ const strongClusters = [
     image: "/images/photos/cars/toyota-rav4-2021.webp"
   },
   {
-    eyebrow: "Commuter cluster",
+    eyebrow: "Daily-driver focus",
     title: "Honda Civic 10th gen facelift",
     description: "A practical entry point for Civic brake, A/C, battery, engine, trim, and used-buyer questions.",
     href: "/guides/honda-civic-10th-gen-facelift-common-problems/",
@@ -102,7 +102,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
 
 <BaseLayout enableAds={false}
   title="Car Problems, Best Parts, and Maintenance Guides"
-  description="Kreativ Auto helps drivers diagnose car problems, compare useful replacement parts, and understand used-car ownership costs without digging through a content maze."
+  description="Kreativ Auto helps drivers diagnose car problems, compare useful replacement parts, and understand used-car ownership costs."
 >
   <section class="container-shell py-12 sm:py-16">
     <div class="surface surface-dark hero-frame p-8 sm:p-12">
@@ -113,13 +113,13 @@ const comparisonCards = comparisonGuides.slice(0, 3);
             Get to the right car answer faster.
           </h1>
           <p class="mt-6 max-w-3xl text-lg leading-8 text-steel">
-            Start with what you are trying to decide: buying a used car, diagnosing a symptom, choosing a part, or understanding ownership costs. The site is organized around those jobs, not around making you browse every section first.
+            Start with what you are trying to decide: buying a used car, diagnosing a symptom, choosing a part, or understanding ownership costs. Each path goes straight to the checks that matter before money changes hands.
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
-          <a class="stat-tile stat-link block" href="/cars/" aria-label={`Browse ${cars.length} car hubs`} data-ka-event="homepage_stat_click" data-ka-label="Car hubs" data-ka-section="hero_stats">
+          <a class="stat-tile stat-link block" href="/cars/" aria-label={`Browse ${cars.length} cars`} data-ka-event="homepage_stat_click" data-ka-label="Cars" data-ka-section="hero_stats">
             <p class="text-2xl font-semibold text-ink">{cars.length}</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Car hubs</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Cars</p>
           </a>
           <a class="stat-tile stat-link block" href="/problems/" aria-label={`Browse ${problems.length} problem guides`} data-ka-event="homepage_stat_click" data-ka-label="Problems" data-ka-section="hero_stats">
             <p class="text-2xl font-semibold text-ink">{problems.length}</p>
@@ -140,7 +140,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
         <p class="eyebrow">Start Here</p>
         <h2 class="mt-3 text-3xl font-semibold text-ink">Choose the path that matches the job</h2>
         <p class="mt-3 text-base leading-7 text-steel">
-          These four paths cover most visits. Secondary browse pages like brands, models, generations, and categories still exist, but they should not be the first decision.
+          These four paths cover most visits. Brand, model, generation, and category browsing is there when you already know exactly what you need.
         </p>
       </div>
       <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -163,7 +163,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
       <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p class="eyebrow">Best Starting Points</p>
-          <h2 class="mt-3 text-3xl font-semibold text-ink">The strongest vehicle clusters</h2>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">Start with these vehicles</h2>
         </div>
         <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/guides/" data-ka-event="homepage_cta_click" data-ka-label="See all guides" data-ka-section="strong_clusters">
           See all guides
@@ -171,12 +171,12 @@ const comparisonCards = comparisonGuides.slice(0, 3);
       </div>
       <div class="mt-6 grid gap-6 lg:grid-cols-3">
         {
-          strongClusters.map((cluster) => (
-            <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={cluster.href} data-ka-event="homepage_cta_click" data-ka-label={cluster.title} data-ka-section="strong_clusters">
+          featuredVehicles.map((vehicle) => (
+            <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={vehicle.href} data-ka-event="homepage_cta_click" data-ka-label={vehicle.title} data-ka-section="strong_clusters">
               <div class="image-frame image-frame-card">
                 <img
-                  src={toThumbnail(cluster.image)}
-                  alt={cluster.title}
+                  src={toThumbnail(vehicle.image)}
+                  alt={vehicle.title}
                   loading="lazy"
                   decoding="async"
                   width="960"
@@ -184,9 +184,9 @@ const comparisonCards = comparisonGuides.slice(0, 3);
                 />
               </div>
               <div class="p-5">
-                <p class="eyebrow">{cluster.eyebrow}</p>
-                <h3 class="mt-2 text-2xl font-semibold text-ink">{cluster.title}</h3>
-                <p class="mt-3 text-sm leading-6 text-steel">{cluster.description}</p>
+                <p class="eyebrow">{vehicle.eyebrow}</p>
+                <h3 class="mt-2 text-2xl font-semibold text-ink">{vehicle.title}</h3>
+                <p class="mt-3 text-sm leading-6 text-steel">{vehicle.description}</p>
               </div>
             </a>
           ))
@@ -201,7 +201,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
         <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div>
             <p class="eyebrow">Useful Now</p>
-            <h2 class="mt-3 text-3xl font-semibold text-ink">Latest practical pages</h2>
+            <h2 class="mt-3 text-3xl font-semibold text-ink">Newest practical checks</h2>
           </div>
           <a class="text-sm font-semibold text-accent underline decoration-accent/30 underline-offset-4" href="/updates/" data-ka-event="homepage_cta_click" data-ka-label="See updates" data-ka-section="latest_pages">
             See updates
@@ -248,7 +248,7 @@ const comparisonCards = comparisonGuides.slice(0, 3);
       <div class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
         <div>
           <p class="eyebrow">Still Want To Browse?</p>
-          <h2 class="mt-3 text-3xl font-semibold text-ink">Use the browse hub when you need the database view</h2>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">Browse when you already know the vehicle or part</h2>
         </div>
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
           <a class="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:-translate-y-0.5 hover:text-accent" href="/browse/" data-ka-event="homepage_cta_click" data-ka-label="Browse" data-ka-section="browse_indexes">Browse</a>

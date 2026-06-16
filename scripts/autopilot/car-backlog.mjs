@@ -45,13 +45,13 @@ const curatedCarBacklog = [
           "Most 2020 Corolla sedan trims with the normal daily-driver brake and wheel-end setup."
         ],
         doesNotApplyTo: [
-          "This starter page should not be treated as a fitment guide for GR, hatch-only, or non-US market variants."
+          "Do not use this as fitment proof for GR, hatch-only, hybrid-specific, or non-US market variants without confirming the exact catalog listing."
         ],
         phaseDifferences: [
-          "Use this page as the clean E210 baseline, then verify trim-specific differences when the platform gets deeper problem and parts coverage."
+          "Treat the E210 Corolla as the working ownership group, while still requiring trim and package confirmation before parts are ordered."
         ],
         powertrainDifferences: [
-          "Hybrid-specific battery and brake feel differences are not the focus of this first scaffold."
+          "Hybrid versions can change brake feel and battery diagnosis, so confirm the exact powertrain before applying the gas-car repair path."
         ]
       },
       recommendedParts: [
@@ -74,7 +74,7 @@ const curatedCarBacklog = [
       ],
       body: [
         "The Corolla still earns its reputation for easy ownership, but that does not mean owners never hear noises or chase small wear-item problems. The most useful approach is to stay ahead of brake service, hub noise, and smaller suspension knocks before they turn into a longer parts hunt.",
-        "This starter page is meant to give the platform a clean baseline. From here, the next content passes can branch into problem guides, best-parts pages, and generation-level ownership guides once the model earns enough internal depth."
+        "Use this model-year guide: start with the symptom, confirm whether the issue is brake, battery, hub, or suspension related, then move into the linked problem and parts guides for the narrower repair path."
       ]
     },
     problem: {
@@ -272,7 +272,7 @@ const curatedCarBacklog = [
           "Do not assume hatch, sport-oriented, or non-US package differences are identical without checking fitment."
         ],
         phaseDifferences: [
-          "This guide uses the E210-era Corolla as the baseline and should be refined later if the platform gets deeper trim-level coverage."
+          "This guide uses the E210-era Corolla as the ownership group, while exact pad fitment still needs trim and package confirmation before ordering."
         ],
         powertrainDifferences: [
           "Hybrid regenerative feel can change the subjective brake feel, but the quieter ceramic pad logic still holds for normal daily driving."
@@ -329,13 +329,13 @@ const curatedCarBacklog = [
           "Most 2020 Accord daily-driver trims in the tenth-generation gas lineup."
         ],
         doesNotApplyTo: [
-          "Do not treat this scaffold as direct fitment proof for hybrid, 2.0T-specific, or non-US variants."
+          "Do not use this as direct fitment proof for hybrid, 2.0T-specific, or non-US variants without checking the exact catalog listing."
         ],
         phaseDifferences: [
-          "Use this page as the tenth-generation Accord baseline and refine trim-level differences later."
+          "Keep the tenth-generation Accord context together while still requiring trim and engine confirmation before parts are ordered."
         ],
         powertrainDifferences: [
-          "The broad brake, battery, and HVAC logic still applies, but powertrain-specific diagnosis can diverge once the cluster gets deeper."
+          "Brake, battery, and HVAC logic overlaps across the lineup, but hybrid and 2.0T diagnosis can change once engine, accessory, or electrical layout matters."
         ]
       },
       recommendedParts: [
@@ -358,7 +358,7 @@ const curatedCarBacklog = [
       ],
       body: [
         "The Accord is one of those cars where ownership quality comes down to how quickly you deal with the first signs of brake, HVAC, or voltage trouble. Catch those early and the car usually stays cheap and easy to live with.",
-        "This weekly scaffold gives the Accord a solid base entry. The next content layer can split those platform complaints into proper problem guides and best-parts pages once the cluster starts filling out."
+        "Use this model-year guide: start by separating brake, HVAC, battery, and front-end symptoms, then open the linked problem or parts guide that matches the confirmed complaint."
       ]
     },
     problem: {
@@ -439,7 +439,7 @@ const curatedCarBacklog = [
           "Most 2020 Accord gas trims where the cooling complaint is clearly worse at idle than at speed."
         ],
         doesNotApplyTo: [
-          "This page is not direct fitment proof for hybrid-specific HVAC hardware differences."
+          "Do not treat this as direct fitment proof for hybrid-specific HVAC hardware differences."
         ],
         phaseDifferences: [
           "Treat this as a tenth-generation Accord baseline and confirm exact parts by VIN once the platform gets deeper HVAC coverage."
@@ -539,13 +539,13 @@ const curatedCarBacklog = [
           "Most 2020 Accord trims where the goal is restoring calm, dependable daily-driver cooling."
         ],
         doesNotApplyTo: [
-          "Do not order from this page without checking trim and engine-specific listings first."
+          "Do not order without checking trim and engine-specific listings first."
         ],
         phaseDifferences: [
           "Use the tenth-generation Accord as the baseline and then verify exact catalog splits."
         ],
         powertrainDifferences: [
-          "Hybrid-specific HVAC hardware can differ, so confirm that before treating this page as final fitment."
+          "Hybrid-specific HVAC hardware can differ, so confirm that before treating this as final fitment."
         ]
       },
       body: [
@@ -599,10 +599,10 @@ const curatedCarBacklog = [
           "Most 2020 Mazda 3 sedan and hatchback daily-driver trims in the BP generation."
         ],
         doesNotApplyTo: [
-          "This page is not a final fitment guide for turbo, AWD-specific, or non-US variants."
+          "Do not treat this as a final fitment guide for turbo, AWD-specific, or non-US variants."
         ],
         phaseDifferences: [
-          "Use this BP-era page as the platform baseline and confirm part splits later as the cluster deepens."
+          "This BP-era page keeps the ownership pattern grouped while still requiring body style, drivetrain, and trim confirmation before ordering parts."
         ],
         powertrainDifferences: [
           "Broad brake and suspension logic still applies, but exact battery and engine behavior can vary by powertrain."
@@ -628,7 +628,7 @@ const curatedCarBacklog = [
       ],
       body: [
         "The Mazda 3 generally stays pleasant to own when owners react early to noise rather than waiting for it to get obvious. Brake squeal, front-end knocks, and tire-versus-hub confusion are the usual places where a small annoyance becomes wasted time and money.",
-        "This page gives the model a credible base entry without pretending the whole cluster is already deep. It is meant to support the later problem and best-parts pages that make the platform genuinely useful."
+        "Use this model-year guide: start by separating brake noise, front-end clunk, road hum, and battery behavior, then move into the linked problem and parts guides for the exact symptom."
       ]
     },
     problem: {
@@ -711,7 +711,7 @@ const curatedCarBacklog = [
           "Do not assume all AWD or performance-oriented setups react exactly the same without checking the actual front suspension listing."
         ],
         phaseDifferences: [
-          "Use this BP-era guide as a baseline and refine specific hardware differences later."
+          "This BP-era guide covers the normal ownership pattern, but exact hardware choice still needs body style, drivetrain, and package confirmation."
         ],
         powertrainDifferences: [
           "The broad front-end diagnosis still applies across the normal Mazda 3 lineup."
@@ -795,7 +795,7 @@ const curatedCarBacklog = [
           "Most 2020 Mazda 3 trims using the normal daily-driver front suspension layout."
         ],
         doesNotApplyTo: [
-          "Do not order from this page without checking the exact trim and suspension listing."
+          "Do not order without checking the exact trim and suspension listing."
         ],
         phaseDifferences: [
           "Use this BP-era page as a baseline and confirm any exact supplier split when ordering."
@@ -1549,14 +1549,14 @@ function buildQueueEntry(seed) {
       faqs: seed.carFaqs,
       fitment: {
         appliesTo: [`Most ${seed.year} ${seed.modelDisplay} daily-driver trims in this generation.`],
-        doesNotApplyTo: [`Do not treat this starter page as final fitment guidance for special trims, performance variants, or non-US market splits.`],
-        phaseDifferences: [`Use this page as the ${seed.generationCode}-era baseline and refine trim-level differences later as the cluster gets deeper.`],
-        powertrainDifferences: [`The broad ownership logic still applies, but exact diagnosis and part choice can diverge once this model gets deeper powertrain-specific coverage.`]
+        doesNotApplyTo: [`Do not use this as final fitment guidance for special trims, performance variants, or non-US market splits without confirming the actual hardware.`],
+        phaseDifferences: [`Keep the ${seed.generationCode}-era ownership pattern grouped while still requiring trim and package confirmation before parts are ordered.`],
+        powertrainDifferences: [`The broad ownership logic still applies, but exact diagnosis and part choice can change by engine, drivetrain, and package.`]
       },
       recommendedParts: products.slice(0, 2),
       body: [
         `${seed.modelDisplay} ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.`,
-        `This page gives ${seed.modelDisplay} a credible base entry first, then supports the matching problem guide and best-parts page that make the cluster actually useful.`
+        `Use this model-year guide: start with the most obvious symptom, then move into the linked problem and parts sections for a narrower repair path.`
       ]
     },
     problem: {
@@ -1593,12 +1593,12 @@ function buildQueueEntry(seed) {
       fitment: {
         appliesTo: [`Most ${seed.year} ${seed.modelDisplay} daily-driver trims where this complaint still matches the normal ownership pattern.`],
         doesNotApplyTo: [`Do not assume every special trim, package, or non-US variant reacts exactly the same without confirming the actual hardware.`],
-        phaseDifferences: [`Use this ${seed.generationCode}-era guide as a baseline and refine exact trim differences later.`],
+        phaseDifferences: [`This ${seed.generationCode}-era guide covers the normal ownership pattern, but exact part choice still needs trim, package, and market confirmation.`],
         powertrainDifferences: [`The broad diagnosis still applies, but exact part choice can change by powertrain and package.`]
       },
       body: [
         `${cfg.problemTitle} makes ${seed.modelDisplay} feel worse than it usually is, which is why the real value is starting with the simplest likely failure point first.`,
-        `The goal of this page is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.`
+        `The goal is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.`
       ]
     },
     best: {
@@ -1628,7 +1628,7 @@ function buildQueueEntry(seed) {
       ],
       fitment: {
         appliesTo: [`Most ${seed.year} ${seed.modelDisplay} trims where a normal daily-driver parts choice is the right goal.`],
-        doesNotApplyTo: [`Do not order from this page without confirming trim, package, and exact fitment split first.`],
+        doesNotApplyTo: [`Do not order without confirming trim, package, and exact fitment split first.`],
         phaseDifferences: [`Use this ${seed.generationCode}-era page as the baseline and confirm supplier splits when ordering.`],
         powertrainDifferences: [`The broad shortlist logic still applies, but exact compatibility can vary by powertrain and package.`]
       },

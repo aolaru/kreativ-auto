@@ -47,7 +47,7 @@ const featuredCars = [...cars]
   .slice(0, 6);
 
 const browseStats = [
-  { label: "Car hubs", value: cars.length, href: "/cars/" },
+  { label: "Cars", value: cars.length, href: "/cars/" },
   { label: "Brands", value: brands.length, href: "/brands/" },
   { label: "Models", value: models.length, href: "/models/" },
   { label: "Generations", value: generationGroups.length, href: "/generations/" },
@@ -63,7 +63,7 @@ const breadcrumbs = [
 <BaseLayout
   enableAds={false}
   title="Browse Kreativ Auto"
-  description="Browse Kreativ Auto by car, brand, model, generation, and parts category when you need the full index view."
+  description="Browse Kreativ Auto by car, brand, model, generation, and parts category."
 >
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
@@ -72,9 +72,9 @@ const breadcrumbs = [
       <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
         <div>
           <p class="eyebrow">Browse</p>
-          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Find the right Kreativ Auto page</h1>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Find by vehicle, brand, model, or part type</h1>
           <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-            Use this index when you already know the brand, model, generation, or parts category you want. For a symptom or buying decision, the diagnose and buying-guide paths are usually faster.
+            Use this view when you already know the brand, model, generation, or parts category you want. For a symptom or buying decision, the diagnose and buying-guide paths are usually faster.
           </p>
         </div>
         <div class="grid gap-3 sm:grid-cols-2">
@@ -89,7 +89,7 @@ const breadcrumbs = [
     </div>
 
     <div class="mt-10 space-y-8">
-      <Section title="Best starting car hubs" intro="These are the car hubs with the most direct links into problem guides and parts comparisons.">
+      <Section title="Best starting vehicles" intro="These vehicles have the clearest path from symptoms to part decisions.">
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {featuredCars.map(({ car, coverage }) => (
             <a class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={`/cars/${car.id}/`}>
@@ -108,7 +108,7 @@ const breadcrumbs = [
                 )
               }
               <div class="p-5">
-                <p class="eyebrow">{coverage} linked guide{coverage === 1 ? "" : "s"}</p>
+                <p class="eyebrow">{coverage} related check{coverage === 1 ? "" : "s"}</p>
                 <h2 class="mt-2 text-2xl font-semibold text-ink">{car.data.title}</h2>
                 <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.metaDescription ?? car.data.description}</p>
               </div>
@@ -117,7 +117,7 @@ const breadcrumbs = [
         </div>
       </Section>
 
-      <Section title="Browse by brand" intro="Open a brand hub when you want to see the published model and generation coverage for one automaker.">
+      <Section title="Browse by brand" intro="Open a brand when you want to compare models from one automaker.">
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {brands.map((brand) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-white" href={`/brands/${slugify(brand)}/`}>
@@ -127,7 +127,7 @@ const breadcrumbs = [
         </div>
       </Section>
 
-      <Section title="Browse by model" intro="Use model hubs when the same nameplate has several years or generation paths published.">
+      <Section title="Browse by model" intro="Use models when the same nameplate has several years or generations to compare.">
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {models.map((model) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-white" href={`/models/${slugify(model)}/`}>
@@ -137,21 +137,21 @@ const breadcrumbs = [
         </div>
       </Section>
 
-      <Section title="Browse by generation" intro="Generation hubs are useful when trim, facelift, or platform differences matter more than one exact model year.">
+      <Section title="Browse by generation" intro="Generations are useful when trim, facelift, or platform differences matter more than one exact model year.">
         <div class="grid gap-4 md:grid-cols-2">
           {generationGroups.map((generation) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent/40 hover:bg-white" href={`/generations/${generation.slug}/`}>
               <p class="eyebrow">{generation.range}</p>
               <h2 class="mt-2 text-lg font-semibold text-ink">{generation.label}</h2>
               <p class="mt-2 text-sm leading-6 text-steel">
-                {generation.count} car hub{generation.count === 1 ? "" : "s"} and {generation.coverage} direct supporting guide{generation.coverage === 1 ? "" : "s"}.
+                {generation.count} model year{generation.count === 1 ? "" : "s"} and {generation.coverage} related check{generation.coverage === 1 ? "" : "s"}.
               </p>
             </a>
           ))}
         </div>
       </Section>
 
-      <Section title="Browse by parts category" intro="Category hubs group best-parts comparisons when the repair area is clear and you only need the right shortlist.">
+      <Section title="Browse by parts category" intro="Part categories group comparisons when the repair area is clear and you only need the right shortlist.">
         <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {categories.map((category) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:bg-white" href={`/categories/${slugify(category)}/`}>

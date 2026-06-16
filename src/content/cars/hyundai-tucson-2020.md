@@ -51,10 +51,10 @@ fitment:
   doesNotApplyTo:
     - "Do not use this as final fitment guidance for special trims, fleet packages, or non-US market splits without confirming the actual hardware."
   phaseDifferences:
-    - "This page keeps the TL-era Tucson ownership pattern grouped while still requiring trim and package confirmation before parts are ordered."
+    - "Keep the TL-era Tucson ownership pattern grouped while still requiring trim and package confirmation before parts are ordered."
   powertrainDifferences:
     - "The broad ownership logic still applies, but exact diagnosis and part choice can change by engine, drivetrain, and package."
 ---
 Hyundai Tucson ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.
 
-Use this page as the model-year hub: start with brake noise, battery behavior, tire wear, or ride comfort symptoms, then move into the linked problem and parts sections for a narrower repair path.
+Use this model-year guide: start with brake noise, battery behavior, tire wear, or ride comfort symptoms, then move into the linked problem and parts sections for a narrower repair path.

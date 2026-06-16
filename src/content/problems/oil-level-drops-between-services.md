@@ -47,7 +47,7 @@ fitment:
   doesNotApplyTo:
     - Not written for diesel-market Tiguans or unrelated VW engines that use different oil specs and consumption patterns.
   phaseDifferences:
-    - Earlier Mk2 Tiguans can show similar consumption behavior, but this page is grouped around the facelift-era service pattern and parts shopping path.
+    - Earlier Mk2 Tiguans can show similar consumption behavior, but the guidance is grouped around the facelift-era service pattern and parts shopping path.
   powertrainDifferences:
     - This guide assumes the normal gas 2.0T layout. Hybrid and diesel ownership patterns are outside scope.
 recommendedParts:

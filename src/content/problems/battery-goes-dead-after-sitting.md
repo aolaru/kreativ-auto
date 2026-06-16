@@ -23,7 +23,7 @@ symptoms:
   - Slow cranking, clicking, or a weak start after the car sits
   - Battery warning history or repeated jump starts despite no obvious accessory left on
 causes:
-  - Aging battery that has lost reserve capacity
+  - Aging battery that has been ruled out reserve capacity
   - Charging issue that leaves the battery undercharged after short trips
   - Parasitic draw from an accessory, module, or add-on device
 solutions:

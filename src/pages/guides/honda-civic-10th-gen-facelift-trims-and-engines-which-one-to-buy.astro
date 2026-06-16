@@ -43,14 +43,14 @@ const relatedComparisons = [
   image="/images/photos/cars/honda-civic-2019.webp"
   modifiedTime={modifiedTime}
   breadcrumbs={breadcrumbs}
-  editorialSummary="This guide is written as a trim-and-engine buying page for the facelift Civic range, focusing on where the value and ownership balance is strongest."
+  editorialSummary="A trim-and-engine buying page for the facelift Civic range, focusing on where the value and ownership balance is strongest."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Trim guide", "Generation-specific", "Buying-focused"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when the main question is which facelift Civic version makes the most sense for your use, not whether the Civic line is good overall."
+    summary="Use this guide when the main question is which facelift Civic version makes the most sense for your use, not whether the Civic line is good overall."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -103,7 +103,7 @@ const relatedComparisons = [
     </ul>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these if the trim you are considering already shows the repeat complaints that matter most." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area needs a practical repair plan." items={relatedBest} />
-  <RelatedLinks title="Comparison guides linked from this page" intro="Use these when the buying decision is really about 1.5T versus 2.0." items={relatedComparisons} />
+  <RelatedLinks title="Related problem guides" intro="Open these if the trim you are considering already shows the repeat complaints that matter most." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the car is still worth buying but one weak area needs a practical repair plan." items={relatedBest} />
+  <RelatedLinks title="Related comparison guides" intro="Use these when the buying decision is really about 1.5T versus 2.0." items={relatedComparisons} />
 </ContentLayout>

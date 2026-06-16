@@ -63,7 +63,7 @@ fitment:
   appliesTo:
     - "Most 2021 Nissan Rogue trims where a normal daily-driver parts choice is the right goal."
   doesNotApplyTo:
-    - "Do not order from this page without confirming trim, package, and exact fitment split first."
+    - "Do not order without confirming trim, package, and exact fitment split first."
   phaseDifferences:
     - "Use this T33-era page as the baseline and confirm supplier splits when ordering."
   powertrainDifferences:

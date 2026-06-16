@@ -64,7 +64,7 @@ fitment:
   appliesTo:
     - Aimed at 2021 XA50 RAV4 gas and hybrid owners shopping for the standard 12-volt replacement battery.
   doesNotApplyTo:
-    - This page does not cover the hybrid traction battery or a plug-in system battery pack.
+    - Hybrid traction batteries and plug-in system battery packs are outside this shortlist.
     - Always verify group size, venting, and terminal layout by trim before ordering.
   phaseDifferences:
     - 2020 and 2021 XA50 battery shopping is close enough to compare together, but supplier listings still split by build date often enough that VIN confirmation is worth doing.

@@ -40,14 +40,14 @@ const featuredGuides = ownershipGuides.slice(0, 3);
 <BaseLayout enableAds={false}
   noindex={true}
   title="Models"
-  description="Browse car hub content by make and model."
+  description="Browse Kreativ Auto by make, model, generation, and model year."
 >
   <div class="container-shell py-12 sm:py-16">
     <div class="surface p-8 sm:p-10">
       <p class="eyebrow">Models</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by model</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        The strongest model pages now lead with the generation hubs that already have real depth, then break the coverage down by year where that still helps.
+        Pick a model first when you need to compare model years, generations, weak points, or parts that change over time.
       </p>
     </div>
 
@@ -55,13 +55,13 @@ const featuredGuides = ownershipGuides.slice(0, 3);
       featuredModels.length > 0 && (
         <div class="mt-10">
           <Section
-            title="Start with the deepest model clusters"
-            intro="These models already have stronger generation-level coverage, so they are the best place to start if you want more than a single model-year page."
+            title="Start with the most complete models"
+            intro="These models have multiple years or generations, so they are useful when one model year is too narrow."
           >
             <div class="grid gap-6 lg:grid-cols-3">
               {featuredModels.map((item) => (
                 <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/models/${slugify(item.model)}/`}>
-                  <p class="eyebrow">Model hub</p>
+                  <p class="eyebrow">Model</p>
                   <h2 class="mt-3 text-2xl font-semibold text-ink">{item.model}</h2>
                   {
                     (item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image) && (
@@ -79,11 +79,11 @@ const featuredGuides = ownershipGuides.slice(0, 3);
                     )
                   }
                   <p class="mt-3 text-sm leading-6 text-steel">
-                    {item.entries.length} year-specific page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+                    {item.entries.length} model year{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
                   </p>
                   {item.featuredGeneration && (
                     <p class="mt-4 text-sm font-semibold text-accent">
-                      Featured generation hub available
+                      Featured generation available
                     </p>
                   )}
                 </a>
@@ -99,7 +99,7 @@ const featuredGuides = ownershipGuides.slice(0, 3);
         <div class="mt-10">
           <Section
             title="Flagship ownership guides"
-            intro="Use these first if your next question is bigger than one model-year page and you want the strongest guide-level entry points."
+            intro="Use these first when your next question is bigger than one model year."
           >
             <div class="grid gap-6 lg:grid-cols-3">
               {featuredGuides.map((guide) => (
@@ -152,9 +152,9 @@ const featuredGuides = ownershipGuides.slice(0, 3);
               )
             }
             <p class="mt-3 text-sm leading-6 text-steel">
-              {item.entries.length} published year-specific hub page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+              {item.entries.length} model year{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
             </p>
-            {item.featuredGeneration && <p class="mt-4 text-sm font-semibold text-accent">Generation hub available</p>}
+            {item.featuredGeneration && <p class="mt-4 text-sm font-semibold text-accent">Featured generation available</p>}
           </a>
         ))
       }

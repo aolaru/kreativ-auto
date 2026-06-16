@@ -28,30 +28,30 @@ const comparisonCards = comparisonGuides.slice(0, 3).map((guide) => ({
 }));
 
 const snapshot = [
-  { label: "Car hubs", value: cars.length, href: "/cars/" },
+  { label: "Cars", value: cars.length, href: "/cars/" },
   { label: "Problem guides", value: problems.length, href: "/problems/" },
   { label: "Best-parts guides", value: bestPages.length, href: "/best/" },
   { label: "Ownership guides", value: ownershipGuides.length, href: "/guides/" },
   { label: "Comparison guides", value: comparisonGuides.length, href: "/comparisons/" },
-  { label: "Strong clusters", value: 3, href: "/generations/" }
+  { label: "Core vehicles", value: 3, href: "/generations/" }
 ];
 ---
 
 <BaseLayout enableAds={false}
   title="Updates"
-  description="Recent updates to Kreativ Auto, including new ownership guides, better browsing, stronger fitment notes, and site-wide quality improvements."
+  description="Recent Kreativ Auto improvements, including new ownership guides, better browsing, stronger fitment notes, and clearer repair checks."
 >
   <div class="container-shell py-12 sm:py-16">
     <div class="surface hero-frame p-8 sm:p-10">
       <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
         <div>
           <p class="eyebrow">Updates</p>
-          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">What changed and where the site is getting stronger</h1>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Recent Kreativ Auto improvements</h1>
           <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-            This page tracks the bigger editorial and structural improvements on Kreativ Auto, not every tiny patch. The goal is to make it obvious how the site is getting deeper, clearer, and more useful over time.
+            A simple record of meaningful changes: new ownership checks, better diagnosis flow, improved part comparisons, and cleaner navigation.
           </p>
           <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
-            If you want the best current entry points, start with the flagship ownership guides, the comparison hub, and the stronger generation pages for Civic, RAV4, and Tiguan.
+            For the best current starting points, use the ownership guides, comparison guides, and generation views for Civic, RAV4, and Tiguan.
           </p>
         </div>
         <div class="accent-panel p-6">
@@ -78,24 +78,24 @@ const snapshot = [
       <div class="grid gap-8 xl:grid-cols-[1.05fr_0.95fr]">
         <div>
           <p class="eyebrow">Start Here</p>
-          <h2 class="mt-3 text-3xl font-semibold text-ink">Most important additions from the current site phase</h2>
+          <h2 class="mt-3 text-3xl font-semibold text-ink">Most useful recent improvements</h2>
           <div class="mt-6 grid gap-4">
             <div class="editorial-card">
-              <h3 class="text-xl font-semibold text-ink">Flagship guide layer</h3>
+              <h3 class="text-xl font-semibold text-ink">More ownership checks</h3>
               <p class="mt-3 text-sm leading-6 text-steel">
-                The site now has real ownership guide coverage for the strongest clusters: common problems, maintenance costs and weak points, what to check before buying, what to avoid, and trim-buying guides.
+                Added common-problem, maintenance-cost, pre-purchase, what-to-avoid, and trim-choice guidance for the most researched vehicles.
               </p>
             </div>
             <div class="editorial-card">
-              <h3 class="text-xl font-semibold text-ink">Better browse flow</h3>
+              <h3 class="text-xl font-semibold text-ink">Faster browsing</h3>
               <p class="mt-3 text-sm leading-6 text-steel">
-                Guides, best-parts pages, problem guides, and comparisons now have stronger hub pages, filters, and clearer internal paths instead of relying on flat listing pages alone.
+                Filters and clearer navigation make it easier to move by vehicle, symptom, part category, or powertrain.
               </p>
             </div>
             <div class="editorial-card">
-              <h3 class="text-xl font-semibold text-ink">Stronger commercial and editorial quality</h3>
+              <h3 class="text-xl font-semibold text-ink">Better buying signals</h3>
               <p class="mt-3 text-sm leading-6 text-steel">
-                Core money pages now have tighter product links, clearer buying tiers, better imagery, and stronger quick-decision blocks. The strongest problem pages also have more useful first-check and stop-driving guidance.
+                Part guides now have tighter product links, clearer buying tiers, better imagery, and stronger first-check guidance before a repair turns into a parts order.
               </p>
             </div>
           </div>
@@ -103,19 +103,19 @@ const snapshot = [
 
         <div class="grid gap-4">
           <a class="mesh-card p-5 transition hover:-translate-y-0.5" href="/guides/">
-            <p class="eyebrow">Flagship layer</p>
-            <h3 class="mt-2 text-xl font-semibold text-ink">Open the guides hub</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">See the full ownership guide layer for the strongest clusters in one place.</p>
+            <p class="eyebrow">Ownership</p>
+            <h3 class="mt-2 text-xl font-semibold text-ink">Open ownership guides</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">Start with broader ownership, maintenance, and buying checks before narrowing into a single repair.</p>
           </a>
           <a class="mesh-card p-5 transition hover:-translate-y-0.5" href="/comparisons/">
             <p class="eyebrow">Comparisons</p>
-            <h3 class="mt-2 text-xl font-semibold text-ink">Open the comparisons hub</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">Use drivetrain, engine, hybrid, and facelift comparisons where one symptom or one part page is too narrow.</p>
+            <h3 class="mt-2 text-xl font-semibold text-ink">Open comparison guides</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">Use drivetrain, engine, hybrid, and facelift comparisons where one symptom or one part is too narrow.</p>
           </a>
           <a class="mesh-card p-5 transition hover:-translate-y-0.5" href="/generations/volkswagen-tiguan-tiguan-ii-facelift-2020-2024/">
-            <p class="eyebrow">Generation hub</p>
-            <h3 class="mt-2 text-xl font-semibold text-ink">See the strongest generation example</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">The Tiguan II facelift hub is the clearest example of how the site now handles generation-level ownership guidance.</p>
+            <p class="eyebrow">Generation</p>
+            <h3 class="mt-2 text-xl font-semibold text-ink">Open the Tiguan generation</h3>
+            <p class="mt-3 text-sm leading-6 text-steel">Use the Tiguan II facelift view when year, trim, and drivetrain details change the repair or buying advice.</p>
           </a>
         </div>
       </div>
@@ -123,7 +123,7 @@ const snapshot = [
 
     <section class="mt-10 surface p-6 sm:p-8">
       <p class="eyebrow">Flagship Guides</p>
-      <h2 class="mt-3 text-3xl font-semibold text-ink">Cornerstone pages added in the current phase</h2>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Cornerstone guides added recently</h2>
       <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {flagshipCards.map((card) => (
           <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={card.href}>
@@ -151,7 +151,7 @@ const snapshot = [
 
     <section class="mt-10 surface p-6 sm:p-8">
       <p class="eyebrow">Comparison Guides</p>
-      <h2 class="mt-3 text-3xl font-semibold text-ink">High-value split guides added to the site</h2>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">High-value version guides</h2>
       <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {comparisonCards.map((card) => (
           <a class="mesh-card overflow-hidden p-0 transition hover:-translate-y-0.5 hover:bg-white" href={card.href}>
@@ -180,42 +180,42 @@ const snapshot = [
     <div class="mt-10 space-y-6">
       <article class="surface p-6 sm:p-8">
         <p class="eyebrow">May 2026</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Second-tier clusters got deeper</h2>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">More models received practical checks</h2>
         <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-steel marker:text-accent">
-          <li>Refreshed the 2020 Honda Accord, 2020 Mazda 3, and 2020 Toyota Corolla car hubs so those second-tier models now have cleaner imagery and stronger paths into problem, parts, and ownership pages.</li>
+          <li>Refreshed the 2020 Honda Accord, 2020 Mazda 3, and 2020 Toyota Corolla vehicle guides with cleaner imagery and clearer links into problem, parts, and ownership checks.</li>
           <li>Added a 2020 Honda Accord common-problems cornerstone guide covering weak A/C at idle, brake vibration, battery behavior, and front-end noise.</li>
           <li>Added a 2020 Mazda 3 common-problems cornerstone guide covering front-end clunks, brake noise, road hum, and short-trip battery behavior.</li>
-          <li>Added a 2020 Toyota Corolla maintenance-costs and weak-points guide to connect the Corolla problem and best-parts pages into a clearer ownership-cost path.</li>
-          <li>Added maintenance-costs and weak-points guides for the 2020 Honda Accord and 2020 Mazda 3 to make those second-tier clusters more useful for ownership research.</li>
+          <li>Added a 2020 Toyota Corolla maintenance-costs and weak-points guide to tie Corolla repair examples to ownership-cost planning.</li>
+          <li>Added maintenance-costs and weak-points guides for the 2020 Honda Accord and 2020 Mazda 3.</li>
           <li>Added a 2020 Toyota Camry common-problems cornerstone guide covering brake squeal, highway vibration, battery behavior, and road-noise diagnosis.</li>
-          <li>Carried the second-tier cluster work further with stronger common-problems coverage for the 2020 Honda CR-V and 2020 Mazda CX-5, so more mainstream used-car hubs now feel connected instead of thin.</li>
-          <li>Added what-to-avoid guides for the 2020 Honda Accord, 2020 Mazda 3, and 2020 Toyota Corolla so those second-tier clusters now have clearer red-flag buying paths.</li>
+          <li>Added common-problems coverage for the 2020 Honda CR-V and 2020 Mazda CX-5, including battery, brake, suspension, and road-noise checks.</li>
+          <li>Added what-to-avoid guides for the 2020 Honda Accord, 2020 Mazda 3, and 2020 Toyota Corolla.</li>
           <li>Improved second-tier guide imagery for Accord, Mazda 3, and Corolla, and added a repo health check for Dropbox conflict files and broken image references.</li>
-          <li>Added first-pass ownership-guide coverage for Audi Q5, BMW 3 Series, Ford F-150, Mercedes-Benz C-Class, Subaru Outback, and VW Golf GTI so the guide layer no longer drops to zero on those car hubs.</li>
-          <li>Replaced the remaining SVG car-page visuals for Accord, Mazda 3, and Corolla with raster JPEG assets and matching thumbnails so visible hub and guide cards feel more consistent.</li>
+          <li>Added first-pass ownership checks for Audi Q5, BMW 3 Series, Ford F-150, Mercedes-Benz C-Class, Subaru Outback, and VW Golf GTI.</li>
+          <li>Replaced the remaining SVG vehicle visuals for Accord, Mazda 3, and Corolla with raster JPEG assets and matching thumbnails.</li>
           <li>Strengthened problem-page triage blocks with can-you-drive, cost-range, and DIY-difficulty decision cards across all problem guides.</li>
           <li>Hardened the manual daily maintenance workflow with repo health checks before direct pushes.</li>
-          <li>Registered the new pages in the ownership-guide layer so guide hubs, car hubs, and generation pages can surface them naturally.</li>
-          <li>Added weekly and daily automation lanes so the site can keep drafting new content clusters and filling bounded content-quality gaps without hand-editing every pass.</li>
+          <li>Connected the new guides to the matching vehicles, generations, and repair topics.</li>
+          <li>Added weekly planning and daily maintenance checks to catch missing images, stale dates, broken references, and thin draft language earlier.</li>
         </ul>
       </article>
 
       <article class="surface p-6 sm:p-8">
         <p class="eyebrow">April 2026</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">From structured site to real editorial property</h2>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Ownership and comparison guidance expanded</h2>
         <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-steel marker:text-accent">
-          <li>Expanded the Civic, RAV4, and Tiguan clusters with more problem guides, more best-parts guides, and stronger internal linking between diagnosis, parts, and ownership pages.</li>
-          <li>Built a real ownership-guide layer with common-problems, maintenance, pre-purchase, what-to-avoid, and trim-buying guides for the strongest three clusters.</li>
-          <li>Turned the strongest generation pages into better starting points with common trouble spots, first parts to check, trim and year caveats, visual highlights, and clearer next-read paths.</li>
-          <li>Moved comparisons into a dedicated public section, upgraded the comparison hub, and kept the old tools paths as redirects.</li>
+          <li>Expanded Civic, RAV4, and Tiguan with more problem guides, best-parts guides, and clearer links between diagnosis, parts, and ownership checks.</li>
+          <li>Added common-problems, maintenance, pre-purchase, what-to-avoid, and trim-buying guides for the three core vehicles.</li>
+          <li>Improved generation views with common trouble spots, first parts to check, trim and year caveats, visual highlights, and clearer next-read paths.</li>
+          <li>Moved comparisons into a dedicated public section and kept the old tools paths as redirects.</li>
           <li>Improved the strongest problem guides with quick verdicts, first checks, confusion points, and clearer signs that a car should not keep being driven.</li>
-          <li>Improved the strongest best-parts pages with clearer buying tiers, stronger “best for” and “avoid if” logic, and tighter product-link quality.</li>
+          <li>Improved the strongest best-parts guides with clearer buying tiers, stronger “best for” and “avoid if” logic, and tighter product-link quality.</li>
           <li>Added more branded and better-matched part imagery, generated thumbnails for faster browsing, and converted heavier hero images to lighter web formats.</li>
-          <li>Improved the design system with stronger flagship-page treatment, denser image coverage, better typography, and more editorial hierarchy across the homepage, guides, and generation hubs.</li>
-          <li>Added browse filters to the main hub pages so visitors can narrow the site faster by cluster, guide type, category, and symptom area.</li>
-          <li>Refreshed trust pages, added a favicon, cleaned up public navigation, and kept the updates log aligned with the site’s stronger editorial direction.</li>
-          <li>Added weekly and daily automation lanes so the site can keep drafting new content clusters and filling bounded content-quality gaps without hand-editing every pass.</li>
-          <li>Expanded the second-tier content layer with new common-problems cornerstone guides for the 2020 Honda CR-V, 2020 Mazda CX-5, and 2020 Toyota Corolla.</li>
+          <li>Improved the design system with stronger guide treatment, denser image coverage, better typography, and clearer editorial hierarchy.</li>
+          <li>Added browse filters so visitors can narrow by vehicle, guide type, category, and symptom area.</li>
+          <li>Refreshed trust pages, added a favicon, and cleaned up public navigation.</li>
+          <li>Added weekly planning and daily maintenance checks to catch missing images, stale dates, broken references, and thin draft language earlier.</li>
+          <li>Added common-problems cornerstone guides for the 2020 Honda CR-V, 2020 Mazda CX-5, and 2020 Toyota Corolla.</li>
         </ul>
       </article>
 
@@ -223,14 +223,14 @@ const snapshot = [
         <p class="eyebrow">March 2026</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Launch version</h2>
         <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-steel marker:text-accent">
-          <li>Launched the first public version of Kreativ Auto with car pages, problem guides, and best-parts pages for common maintenance and repair decisions.</li>
-          <li>Added browsing pages for brands, models, generations, and part categories so it is easier to jump from one vehicle or repair topic to the next.</li>
+          <li>Launched the first public version of Kreativ Auto with vehicle guides, problem guides, and best-parts guides for common maintenance and repair decisions.</li>
+          <li>Added browse paths for brands, models, generations, and part categories so it is easier to jump from one vehicle or repair topic to the next.</li>
           <li>Expanded the homepage with featured cars, common problems, and parts guides to help visitors reach useful pages faster.</li>
-          <li>Reworked the writing across the site to make problem symptoms, likely causes, and repair options clearer and easier to scan.</li>
-          <li>Added real car and parts photos across key pages to make the site more visual and easier to browse.</li>
+          <li>Reworked the writing to make problem symptoms, likely causes, and repair options clearer and easier to scan.</li>
+          <li>Added real car and parts photos across key guides to make Kreativ Auto more visual and easier to browse.</li>
           <li>Published About, Affiliate Disclosure, Editorial Policy, and Contact pages so readers can better understand how recommendations are made.</li>
           <li>Improved search visibility with sitemap support, crawl guidance, breadcrumbs, and structured data.</li>
-          <li>Brought the site live on its public domain.</li>
+          <li>Brought Kreativ Auto live on its public domain.</li>
         </ul>
       </article>
     </div>

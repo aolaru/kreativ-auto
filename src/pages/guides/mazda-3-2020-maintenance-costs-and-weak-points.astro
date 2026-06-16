@@ -103,14 +103,14 @@ const schemas = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide is written as a maintenance and running-cost overview for the 2020 Mazda 3, focused on the weak points that affect ownership feel and budget first."
+  editorialSummary="A maintenance and running-cost overview for the 2020 Mazda 3, focused on the weak points that affect ownership feel and budget first."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Maintenance guide", "Model-year specific", "Cost-focused"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 Mazda 3 is still fundamentally a good car, but brake, tire, battery, or front-end refinement is starting to affect the cost story."
+    summary="Use this guide when a 2020 Mazda 3 is still fundamentally a good car, but brake, tire, battery, or front-end refinement is starting to affect the cost story."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -120,7 +120,7 @@ const schemas = [
     <ul class="grid gap-3 text-sm leading-6 text-steel">
       <li class="rounded-2xl bg-slate-50 px-4 py-3">The Mazda 3 is usually reasonable to maintain, but small refinement items affect how expensive the car feels.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">The most common first money buckets are brake-noise cleanup, front-end links, tire quality, road-hum diagnosis, and battery reserve.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">The biggest cost mistake is treating a small clunk or hum like a broad suspension or wheel-end failure before the simple checks lose.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The biggest cost mistake is treating a small clunk or hum like a broad suspension or wheel-end failure before the simple checks are ruled out.</li>
     </ul>
   </Section>
 
@@ -173,6 +173,6 @@ const schemas = [
     </p>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the ownership budget is clearly being driven by one repeat complaint." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the ownership budget is clearly being driven by one repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
 </ContentLayout>

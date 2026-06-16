@@ -48,7 +48,7 @@ const relatedCars = uniqueByHref(
     href: `/cars/${entry.id}/`,
     title: entry.data.title,
     description: entry.data.excerpt ?? entry.data.metaDescription ?? entry.data.description,
-    eyebrow: "Car hub"
+    eyebrow: "Car"
   }))
 );
 
@@ -225,8 +225,8 @@ const schemas = [
   </Section>
 
   <RelatedLinks
-    title="Related car pages"
-    intro="These vehicle pages give you more context if the same symptom shows up on a specific model."
+    title="Related cars"
+    intro="These vehicle guides give you more context if the same symptom shows up on a specific model."
     items={relatedCars}
   />
 

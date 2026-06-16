@@ -103,7 +103,7 @@ const relatedBest = [
 
 const atAGlancePoints = [
   "The 2020 Accord is generally low-drama, but A/C performance, brake refinement, battery reserve, and small front-end noises are the complaints that deserve a narrow first check.",
-  "The biggest mistake is treating a comfort or refinement complaint like a random major failure before basic checks have lost.",
+  "The biggest mistake is treating a comfort or refinement complaint like a random major failure before basic checks are ruled out.",
   "Most first repairs stay manageable when the symptom is separated clearly: cooling, braking, starting, or front-end noise."
 ];
 
@@ -144,15 +144,15 @@ const firstChecks = [
 const nextReads = [
   {
     href: "/cars/honda-accord-2020/",
-    eyebrow: "Car hub",
+    eyebrow: "Car",
     title: "Honda Accord 2020",
-    description: "Use the model-year page for the Accord overview plus linked problem and parts pages."
+    description: "Use the model-year guide for the Accord overview plus linked problem and parts guides."
   },
   {
     href: "/generations/honda-accord-cv1-cv2-2018-2022/",
-    eyebrow: "Generation hub",
+    eyebrow: "Generation",
     title: "Honda Accord CV1/CV2",
-    description: "Use the generation hub when you want the broader tenth-generation Accord context."
+    description: "Use the generation view when you want the broader tenth-generation Accord context."
   },
   {
     href: "/best/best-ac-condensers-for-honda-accord-2020/",
@@ -175,11 +175,11 @@ const nextReads = [
   editorialSummary="This guide gives Accord owners a practical first-check path by connecting A/C, brake, battery, and front-end complaints in one place."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 Accord is still a sensible car overall, but one comfort, brake, battery, or front-end complaint needs a disciplined first check."
+    summary="Use this guide when a 2020 Accord is still a sensible car overall, but one comfort, brake, battery, or front-end complaint needs a disciplined first check."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -212,6 +212,6 @@ const nextReads = [
     items={nextReads}
   />
 
-  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the Accord symptom is clear." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="These are the pages that matter most once the Accord symptom is clear." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
 </ContentLayout>

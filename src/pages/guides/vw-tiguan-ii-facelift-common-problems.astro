@@ -147,14 +147,14 @@ const relatedComparisons = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide is written as a flagship ownership page for the facelift Tiguan, pulling the repeat complaints and best next reads into one place."
+  editorialSummary="A flagship ownership page for the facelift Tiguan, pulling the repeat complaints and best next reads into one place."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Generation-specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Generation-specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when the Tiguan still feels broadly fine, but not quite right. The goal is to sort the symptom into the right repeat pattern before money disappears into the wrong repair theory."
+    summary="Use this guide when the Tiguan still feels broadly fine, but not quite right. The goal is to sort the symptom into the right repeat pattern before money disappears into the wrong repair theory."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -169,7 +169,7 @@ const relatedComparisons = [
           If you only need the fast read, this is the facelift Tiguan ownership pattern in plain language.
         </p>
         <ul class="mt-6 grid gap-3 text-sm leading-6 text-steel">
-          <li class="stat-tile">Most Tiguan II facelift complaints are not random. They cluster around the front brakes, coolant seepage, ignition-side drivability, battery reserve, and smaller front-end wear.</li>
+          <li class="stat-tile">Most Tiguan II facelift complaints are not random. They usually involve the front brakes, coolant seepage, ignition-side drivability, battery reserve, and smaller front-end wear.</li>
           <li class="stat-tile">The expensive mistakes usually come from diagnosing too loosely: buying broad parts listings, ignoring fluid spec, or assuming every noise means a major chassis failure.</li>
           <li class="stat-tile">If the repair path stays disciplined, the facelift Tiguan is easier to live with than its reputation suggests.</li>
         </ul>
@@ -186,7 +186,7 @@ const relatedComparisons = [
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Useful comparison guides</p>
           </a>
           <div class="soft-panel p-4">
-            <p class="text-sm leading-6 text-steel">Most wasted money in this cluster comes from brake overdiagnosis, vague EPC theories, and treating slow coolant loss like normal aging.</p>
+            <p class="text-sm leading-6 text-steel">Most wasted money here comes from brake overdiagnosis, vague EPC theories, and treating slow coolant loss like normal aging.</p>
           </div>
         </div>
       </div>
@@ -312,7 +312,7 @@ const relatedComparisons = [
       </article>
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
         <h2 class="text-2xl font-semibold text-ink">Noise gets mistaken for big-dollar suspension work</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">This platform can sound rougher than it really is. Smaller wear items and basic tire issues need to lose first before the large repair estimate earns the right to exist.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">This platform can sound rougher than it really is. Smaller wear items and basic tire issues need to be ruled out first before the large repair estimate earns the right to exist.</p>
       </article>
     </div>
   </Section>
@@ -360,13 +360,13 @@ const relatedComparisons = [
 
   <Section
     title="Best next reads"
-    intro="These are the pages worth opening once you know which Tiguan complaint bucket you are actually in."
+    intro="These are the guides worth opening once you know which Tiguan complaint bucket you are actually in."
   >
     <div class="grid gap-6 lg:grid-cols-3">
       <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/volkswagen-tiguan-tiguan-ii-facelift-2020-2024/">
-        <p class="eyebrow">Generation hub</p>
+        <p class="eyebrow">Generation</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">VW Tiguan II facelift 2020-2024</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub if you want the broader ownership map before jumping into a narrower repair page.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">Use the generation view if you want the broader ownership map before jumping into a narrower repair page.</p>
       </a>
       <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/comparisons/vw-tiguan-pre-facelift-vs-facelift/">
         <p class="eyebrow">Generation guide</p>
@@ -382,20 +382,20 @@ const relatedComparisons = [
   </Section>
 
   <RelatedLinks
-    title="Problem guides linked from this page"
-    intro="These are the problem pages that matter most once the facelift Tiguan starts showing the same repeat complaints."
+    title="Related problem guides"
+    intro="These are the problem guides that matter most once the facelift Tiguan starts showing the same repeat complaints."
     items={relatedProblems}
   />
 
   <RelatedLinks
-    title="Best-parts guides linked from this page"
-    intro="These are the parts pages worth opening when the diagnosis is already pointing at the right repair area."
+    title="Related best-parts guides"
+    intro="These are the parts guides worth opening when the diagnosis is already pointing at the right repair area."
     items={relatedBest}
   />
 
   <RelatedLinks
-    title="Comparison guides linked from this page"
-    intro="These are the comparison pages that keep the Tiguan advice from drifting across the wrong phase or drivetrain."
+    title="Related comparison guides"
+    intro="These are the comparison guides that keep the Tiguan advice from drifting across the wrong phase or drivetrain."
     items={relatedComparisons}
   />
 </ContentLayout>

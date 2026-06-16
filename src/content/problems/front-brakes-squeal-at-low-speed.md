@@ -62,7 +62,7 @@ fitment:
     - Earlier Civic X years can use similar pad logic, but facelift-year listings are cleaner if you keep 2019-2021 together.
   powertrainDifferences:
     - Pad choice here is more about brake package and trim than whether the car is a 2.0 or a 1.5T.
-    - Hybrid-specific brake-system differences are outside the scope of this page.
+    - Hybrid-specific brake-system differences are outside the scope of this guide.
 ---
 
 Front brake squeal is usually a parts-choice problem before it is a serious brake problem. The goal is to get the Civic quiet again without buying something that is harsher than the car actually needs.

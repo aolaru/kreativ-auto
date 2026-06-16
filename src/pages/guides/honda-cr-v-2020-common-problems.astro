@@ -10,7 +10,7 @@ import { editorialTeam, carTrustPoints } from "../../data/editorial";
 
 const title = "Honda CR-V 2020 common problems and what to check first";
 const description =
-  "The 2020 Honda CR-V problems worth checking first, including brake noise, front-end clunks, battery behavior, and the parts pages that make sense once the symptom is clear.";
+  "The 2020 Honda CR-V problems worth checking first, including brake noise, front-end clunks, battery behavior, and the parts guides that make sense once the symptom is clear.";
 const intro =
   "The 2020 CR-V is a practical compact SUV, but it still has a repeat ownership pattern: brake refinement complaints, front-end clunks, short-trip battery weakness, and tire or road-hum confusion. This guide keeps those issues in one place so the first check stays narrow instead of turning into a broad parts hunt.";
 const modifiedTime = new Date("2026-05-01");
@@ -112,7 +112,7 @@ const troubleAreas = [
     eyebrow: "1. Front-end clunks",
     title: "Small suspension wear can sound bigger than it is",
     description:
-      "Sway bar links, bushings, and visible front-end wear should lose before the diagnosis moves toward larger suspension work."
+      "Sway bar links, bushings, and visible front-end wear should be ruled out before the diagnosis moves toward larger suspension work."
   },
   {
     eyebrow: "2. Brake refinement",
@@ -144,15 +144,15 @@ const firstChecks = [
 const nextReads = [
   {
     href: "/generations/honda-cr-v-rw-rt-facelift-2020-2022/",
-    eyebrow: "Generation hub",
+    eyebrow: "Generation",
     title: "Honda CR-V RW/RT facelift",
-    description: "Use the generation hub when you want the broader CR-V context before opening a narrow repair page."
+    description: "Use the generation view when you want the broader CR-V context before opening a narrow repair page."
   },
   {
     href: "/cars/honda-cr-v-2020/",
-    eyebrow: "Car hub",
+    eyebrow: "Car",
     title: "Honda CR-V 2020",
-    description: "Use the model-year page when you want the car overview plus its linked problem and best-parts pages."
+    description: "Use the model-year guide when you want the car overview plus its linked problem and best-parts guides."
   },
   {
     href: "/best/best-front-brake-pads-for-honda-cr-v-2020/",
@@ -172,14 +172,14 @@ const nextReads = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide turns the CR-V cluster into a broader ownership entry point instead of leaving the model split across individual problem and parts pages."
+  editorialSummary="A first-check path for 2020 CR-V brake noise, front-end clunks, battery behavior, and road-noise complaints."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 CR-V still looks like a sensible buy overall, but brake, front-end, battery, or road-noise complaints need a disciplined first check."
+    summary="Use this guide when a 2020 CR-V still looks like a sensible buy overall, but brake, front-end, battery, or road-noise complaints need a disciplined first check."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -212,6 +212,6 @@ const nextReads = [
     items={nextReads}
   />
 
-  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the CR-V symptom is narrowed." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening after the diagnosis points at the right repair area." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="These are the pages that matter most once the CR-V symptom is narrowed." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the parts guides worth opening after the diagnosis points at the right repair area." items={relatedBest} />
 </ContentLayout>

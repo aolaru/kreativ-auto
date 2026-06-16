@@ -116,7 +116,7 @@ const troubleAreas = [
   },
   {
     eyebrow: "3. Road hum",
-    title: "Tires should lose before wheel bearings",
+    title: "Tires should be ruled out before wheel bearings",
     description:
       "Road-speed hum needs a tire, rotation, and surface check before a hub or bearing becomes the main suspect."
   }
@@ -126,21 +126,22 @@ const firstChecks = [
   "If the brakes squeal, inspect pad condition, rotor finish, and hardware contact points before buying pads alone.",
   "If the front end clunks, check sway bar links and visible front suspension wear before assuming the whole strut or control-arm story.",
   "If road hum changes with speed, rotate and inspect tires before diagnosing a wheel bearing by sound alone.",
-  "If the SUV feels less refined overall, solve the brake, tire, and front-end basics before chasing vague ride-quality theories."
+  "If the SUV feels less refined overall, solve the brake, tire, and front-end basics before chasing vague ride-quality theories.",
+  "If two symptoms appear together, check whether one worn tire, loose link, or brake hardware issue is making the whole SUV feel older."
 ];
 
 const nextReads = [
   {
     href: "/generations/mazda-cx-5-kf-2017-2021/",
-    eyebrow: "Generation hub",
+    eyebrow: "Generation",
     title: "Mazda CX-5 KF 2017-2021",
-    description: "Use the generation hub when you want the wider CX-5 ownership picture first."
+    description: "Use the generation view when you want the wider CX-5 ownership picture first."
   },
   {
     href: "/cars/mazda-cx-5-2020/",
-    eyebrow: "Car hub",
+    eyebrow: "Car",
     title: "Mazda CX-5 2020",
-    description: "Use the model-year page for the car overview and the existing linked repair pages."
+    description: "Use the model-year guide for the car overview and the existing linked repair pages."
   },
   {
     href: "/best/best-front-sway-bar-links-for-mazda-cx-5-2020/",
@@ -160,14 +161,14 @@ const nextReads = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide gives the CX-5 cluster a broad ownership entry point and links the existing problem and best-parts pages into one practical path."
+  editorialSummary="A first-check path for 2020 CX-5 brake noise, front-end clunks, road hum, and related parts decisions."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 CX-5 feels mostly right, but brake noise, front-end clunks, or road hum are starting to reduce the polished feel."
+    summary="Use this guide when a 2020 CX-5 feels mostly right, but brake noise, front-end clunks, or road hum are starting to reduce the polished feel."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -201,6 +202,6 @@ const nextReads = [
     items={nextReads}
   />
 
-  <RelatedLinks title="Problem guides linked from this page" intro="These pages narrow the CX-5 complaint after the broad ownership pattern is clear." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening after the diagnosis points at the right repair area." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="These guides narrow the CX-5 complaint after the broad ownership pattern is clear." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the parts guides worth opening after the diagnosis points at the right repair area." items={relatedBest} />
 </ContentLayout>

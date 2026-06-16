@@ -68,10 +68,10 @@ fitment:
     - Most of the parts guidance assumes a standard daily-driven crossover on stock-size wheels or close to it.
   doesNotApplyTo:
     - Prime and specialty trims can introduce different battery, brake, or wheel package considerations, so confirm the exact configuration before ordering.
-    - This page should not be treated as direct fitment proof for earlier-generation RAV4 models.
+    - Do not treat the 2021 guide as direct fitment proof for earlier-generation RAV4 models.
   phaseDifferences:
     - The 2021 model sits in the same XA50 run as 2020, so the broad diagnosis pattern stays similar, but part revisions and trim mixes still changed over time.
-    - If you are comparing this page with a later refreshed XA50, use it as a baseline and then verify any part that depends on trim or supplier changes.
+    - If you are comparing a later refreshed XA50, use these notes as a baseline and then verify any part that depends on trim or supplier changes.
   powertrainDifferences:
     - Hybrid RAV4s can mask brake feel differently because regenerative braking changes how owners describe pedal feel and noise.
     - Gas RAV4s are usually more straightforward for 12-volt battery complaints, while hybrid owners should separate the small battery issue from the traction-battery system.

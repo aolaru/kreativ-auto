@@ -51,10 +51,10 @@ fitment:
   doesNotApplyTo:
     - "Do not use this as final fitment guidance for special trims, heavy-duty models, or non-US market splits without confirming the actual hardware."
   phaseDifferences:
-    - "This page keeps the T1XX-era Silverado 1500 ownership pattern grouped while still requiring trim, cab, bed, and package confirmation before parts are ordered."
+    - "Keep the T1XX-era Silverado 1500 ownership pattern grouped while still requiring trim, cab, bed, and package confirmation before parts are ordered."
   powertrainDifferences:
     - "The broad ownership logic still applies, but exact diagnosis and part choice can change by engine, drivetrain, wheel size, and towing package."
 ---
 Chevrolet Silverado 1500 ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.
 
-Use this page as the model-year hub: start with vibration, tire, brake, or wheel-end symptoms, then move into the linked problem and parts sections for a narrower repair path.
+Use this model-year guide: start with vibration, tire, brake, or wheel-end symptoms, then move into the linked problem and parts sections for a narrower repair path.

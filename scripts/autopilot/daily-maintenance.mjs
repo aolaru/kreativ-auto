@@ -517,7 +517,7 @@ async function tryUpdatesRefresh() {
     return { changed: false };
   }
 
-  if (/automation/i.test(source) && /daily maintenance|weekly content autopilot/i.test(source)) {
+  if (/maintenance workflow/i.test(source) && /weekly planning/i.test(source)) {
     return { changed: false };
   }
 
@@ -530,13 +530,13 @@ async function tryUpdatesRefresh() {
   }
 
   const addition =
-    "\n          <li>Added weekly and daily automation lanes so the site can keep drafting new content clusters and filling bounded content-quality gaps without hand-editing every pass.</li>";
+    "\n          <li>Added a weekly planning pass and a daily maintenance pass to catch missing images, stale dates, broken references, and thin draft language earlier.</li>";
   const next = source.replace(sectionRegex, (full, listContent) => full.replace(listContent, `${listContent.trimEnd()}${addition}\n        `));
 
   return {
     changed: true,
     filePath: updatesPath,
-    reason: "Refresh the Updates page with the new automation layer",
+    reason: "Refresh the Updates page with maintenance workflow notes",
     content: next
   };
 }

@@ -59,10 +59,10 @@ fitment:
   doesNotApplyTo:
     - Do not treat this as a direct fitment guide for Type R, Si, or non-US-market Civic variants with different condenser packaging or HVAC hardware.
   phaseDifferences:
-    - Earlier 2016-2018 Civic X cars can show similar A/C behavior, but this page is grouped around the facelift years where owners most often compare the same replacement paths.
+    - Earlier 2016-2018 Civic X cars can show similar A/C behavior, but the guidance is grouped around the facelift years where owners most often compare the same replacement paths.
   powertrainDifferences:
     - The symptom can show on both 2.0 and 1.5T gas cars, but the 1.5T owners tend to notice heat-soak and fan behavior more quickly in stop-and-go use.
-    - Hybrid-specific Civic HVAC differences are outside the scope of this page.
+    - Hybrid-specific Civic HVAC differences are outside the scope of this guide.
 ---
 
 When the A/C gets warm at idle but improves once you are moving, the system is telling you something useful. It usually means the problem shows up where airflow and condenser efficiency matter most, not necessarily where the loudest part lives.

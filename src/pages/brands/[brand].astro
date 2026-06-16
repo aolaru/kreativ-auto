@@ -124,14 +124,14 @@ const breadcrumbs = [
 ];
 ---
 
-<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${brand} Cars`} description={`Browse ${brand} car hub pages, linked problems, and best-parts comparisons.`}>
+<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${brand} Cars`} description={`Browse ${brand} cars, linked problems, and best-parts comparisons.`}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Brand Hub</p>
+      <p class="eyebrow">Brand</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{brand}</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Start with the strongest generation hub for {brand}, then drill into the model years, problem guides, and parts pages that already have the best coverage.
+        Start with the most relevant generation for {brand}, then narrow into model years, symptoms, and part decisions.
       </p>
     </div>
 
@@ -140,11 +140,11 @@ const breadcrumbs = [
         <div class="mt-10">
           <Section
             title={`Start here with ${getGenerationLabel(startHere.lead.data)}`}
-            intro={`This is the clearest way into the strongest ${brand} coverage currently on the site.`}
+            intro={`This is the clearest first stop for ${brand} ownership questions.`}
           >
             <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
               <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/generations/${startHere.generationSlug}/`}>
-                <p class="eyebrow">Featured generation hub</p>
+                <p class="eyebrow">Featured generation</p>
                 <h3 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(startHere.lead.data)}</h3>
                 {
                   (startHere.lead.data.heroImage ?? startHere.lead.data.image) && (
@@ -162,9 +162,9 @@ const breadcrumbs = [
                   )
                 }
                 <p class="mt-3 text-sm leading-6 text-steel">
-                  Covers the {getGenerationRange(startHere.lead.data)} window with linked year pages, common problems, and best-parts guides.
+                  Covers the {getGenerationRange(startHere.lead.data)} window with model years, common problems, and best-parts guides.
                 </p>
-                <p class="mt-4 text-sm font-semibold text-accent">Open generation hub</p>
+                <p class="mt-4 text-sm font-semibold text-accent">Open generation</p>
               </a>
               <div class="grid gap-4">
                 {startHere.relatedProblems.slice(0, 2).map((item) => (
@@ -183,13 +183,13 @@ const breadcrumbs = [
 
     <div class="mt-10 space-y-8">
       <Section
-        title="Best generation hubs in this brand"
-        intro={`These are the ${brand} generation clusters with the clearest path into deeper troubleshooting and parts content.`}
+        title="Best generations in this brand"
+        intro={`These ${brand} generations are useful when ownership patterns or parts overlap across several years.`}
       >
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {featuredGenerations.map((group) => (
             <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/generations/${group.generationSlug}/`}>
-              <p class="eyebrow">Generation hub</p>
+              <p class="eyebrow">Generation</p>
               <h3 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(group.lead.data)}</h3>
               {
                 (group.lead.data.heroImage ?? group.lead.data.image) && (
@@ -207,18 +207,18 @@ const breadcrumbs = [
                 )
               }
               <p class="mt-3 text-sm leading-6 text-steel">
-                {getGenerationRange(group.lead.data)} with {group.relatedProblems.length} problem guide{group.relatedProblems.length === 1 ? "" : "s"} and {group.relatedBest.length} parts page{group.relatedBest.length === 1 ? "" : "s"}.
+                {getGenerationRange(group.lead.data)} with {group.relatedProblems.length} problem guide{group.relatedProblems.length === 1 ? "" : "s"} and {group.relatedBest.length} parts comparison{group.relatedBest.length === 1 ? "" : "s"}.
               </p>
             </a>
           ))}
         </div>
       </Section>
 
-      <Section title="Models in this brand" intro="Use the model hubs if you want the full year-by-year picture before narrowing down to a generation.">
+      <Section title="Models in this brand" intro="Use the model list if you want the full year-by-year picture before narrowing down to a generation.">
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {modelGroups.map((group) => (
             <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/models/${slugify(`${brand} ${group.model}`)}/`}>
-              <p class="eyebrow">Model hub</p>
+              <p class="eyebrow">Model</p>
               <h3 class="mt-3 text-2xl font-semibold text-ink">{brand} {group.model}</h3>
               {
                 (group.featuredGeneration?.lead.data.heroImage ?? group.featuredGeneration?.lead.data.image) && (
@@ -236,7 +236,7 @@ const breadcrumbs = [
                 )
               }
               <p class="mt-3 text-sm leading-6 text-steel">
-                {group.entries.length} year-specific hub page{group.entries.length === 1 ? "" : "s"} published.
+                {group.entries.length} model year{group.entries.length === 1 ? "" : "s"}.
               </p>
               {group.featuredGeneration && (
                 <p class="mt-4 text-sm font-semibold text-accent">
@@ -248,12 +248,12 @@ const breadcrumbs = [
         </div>
       </Section>
 
-      <Section title="Published car hubs" intro="These are the individual model-year pages currently available for this brand.">
+      <Section title="Model years" intro="These are the individual model years for this brand.">
         <div class="grid gap-6">
           {
             brandCars.map((car) => (
               <a class="rounded-3xl border border-slate-200 bg-white p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
-                <p class="eyebrow">Car hub</p>
+                <p class="eyebrow">Car</p>
                 <h2 class="mt-3 text-2xl font-semibold text-ink">{car.data.title}</h2>
                 {
                   (car.data.heroImage ?? car.data.image) && (
@@ -279,9 +279,9 @@ const breadcrumbs = [
     </div>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Flagship guides for this brand" intro={`Use these if you want the strongest ${brand} ownership and buying guides before dropping into one symptom or parts page.`} items={linkedOwnershipGuides} />
-      <RelatedLinks title="Related problem guides" intro={`These are the most relevant ${brand} problem pages already connected to the published car hubs.`} items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" intro={`These are the current ${brand} parts-comparison pages linked from the model and generation hubs.`} items={linkedBest} />
+      <RelatedLinks title="Flagship guides for this brand" intro={`Use these if you want the broader ${brand} ownership and buying picture before narrowing into one symptom or part.`} items={linkedOwnershipGuides} />
+      <RelatedLinks title="Related problem guides" intro={`These ${brand} checks cover symptoms that come up often in the listed vehicles.`} items={linkedProblems} />
+      <RelatedLinks title="Related best-parts guides" intro={`These ${brand} part comparisons help once the repair area is clear.`} items={linkedBest} />
     </div>
   </div>
 </BaseLayout>

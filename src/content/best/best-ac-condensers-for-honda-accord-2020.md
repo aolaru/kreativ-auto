@@ -60,11 +60,11 @@ fitment:
   appliesTo:
     - "Most 2020 Accord trims where the goal is restoring calm, dependable daily-driver cooling."
   doesNotApplyTo:
-    - "Do not order from this page without checking trim and engine-specific listings first."
+    - "Do not order without checking trim and engine-specific listings first."
   phaseDifferences:
     - "Use the tenth-generation Accord as the baseline and then verify exact catalog splits."
   powertrainDifferences:
-    - "Hybrid-specific HVAC hardware can differ, so confirm that before treating this page as final fitment."
+    - "Hybrid-specific HVAC hardware can differ, so confirm that before treating this as final fitment."
 ---
 
 Most Accord owners are not shopping condensers for fun. They want the car cold again, especially at idle and in traffic, and they want to do the job once. That is the standard used for these picks.

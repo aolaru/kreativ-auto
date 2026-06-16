@@ -49,7 +49,7 @@ fitment:
   doesNotApplyTo:
     - "Not meant for salvage-repair vehicles or cars with obvious prior body damage that can create unrelated leak paths."
   phaseDifferences:
-    - "Earlier Mk2 Tiguans can leak in similar ways, but this page is grouped around the facelift-era ownership window."
+    - "Earlier Mk2 Tiguans can leak in similar ways, but the guidance is grouped around the facelift-era ownership window."
   powertrainDifferences:
     - "Powertrain does not change the diagnosis much here. Trim, roof setup, and body sealing details matter more."
 recommendedParts:

@@ -71,4 +71,4 @@ fitment:
 
 A Rogue battery that goes dead after sitting usually points to reserve capacity, charging health, or usage pattern before it becomes a larger electrical story.
 
-The goal of this page is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.
+The goal is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.

@@ -71,4 +71,4 @@ fitment:
 
 A Forester hum that grows with road speed usually needs a tire-versus-hub check before owners order wheel-end parts.
 
-The goal of this page is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.
+The goal is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.

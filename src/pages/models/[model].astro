@@ -115,14 +115,14 @@ const startHere = featuredGenerationGroups[0];
 const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditorialHub);
 ---
 
-<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${model} Guides`} description={`Browse ${model} car hubs, problem pages, and best-parts content.`}>
+<BaseLayout enableAds={false} noindex={shouldNoindex} title={`${model} Guides`} description={`Browse ${model} model years, problem guides, and best-parts comparisons.`}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">
-      <p class="eyebrow">Model Hub</p>
+      <p class="eyebrow">Model</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">{model}</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Start with the strongest generation hub for {model}, then use the year-specific pages and supporting guides when you need something narrower.
+        Start with the most relevant generation for {model}, then use the model-year and repair guides when you need something narrower.
       </p>
     </div>
 
@@ -131,11 +131,11 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
         <div class="mt-10">
           <Section
             title={`Start here with ${getGenerationLabel(startHere.lead.data)}`}
-            intro={`This is the clearest entry point into the published ${model} coverage right now.`}
+            intro={`This is the clearest first stop for ${model} ownership questions.`}
           >
             <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
               <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/generations/${startHere.generationSlug}/`}>
-                <p class="eyebrow">Featured generation hub</p>
+                <p class="eyebrow">Featured generation</p>
                 <h2 class="mt-3 text-2xl font-semibold text-ink">{getGenerationLabel(startHere.lead.data)}</h2>
                 {
                   (startHere.lead.data.heroImage ?? startHere.lead.data.image) && (
@@ -153,9 +153,9 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
                   )
                 }
                 <p class="mt-3 text-sm leading-6 text-steel">
-                  Covers the {getGenerationRange(startHere.lead.data)} window with linked problems, parts guides, and year-specific car hubs.
+                  Covers the {getGenerationRange(startHere.lead.data)} window with linked problems, parts guides, and model years.
                 </p>
-                <p class="mt-4 text-sm font-semibold text-accent">Open generation hub</p>
+                <p class="mt-4 text-sm font-semibold text-accent">Open generation</p>
               </a>
               <div class="grid gap-4">
                 {startHere.relatedProblems.slice(0, 2).map((item) => (
@@ -174,8 +174,8 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
 
     <div class="mt-10 space-y-8">
       <Section
-        title="Generation hubs"
-        intro="Use the generation hubs first when the ownership pattern or parts overlap matters more than the exact model year."
+        title="Generations"
+        intro="Use generations first when the ownership pattern or parts overlap matters more than the exact model year."
       >
         <div class="grid gap-6">
           {featuredGenerationGroups.map((group) => (
@@ -189,7 +189,7 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
                   </p>
                 </div>
                 <a class="text-sm font-semibold text-accent" href={`/generations/${group.generationSlug}/`}>
-                  View generation hub
+                  View generation
                 </a>
               </div>
 
@@ -239,7 +239,7 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
                   </p>
                 </div>
                 <a class="text-sm font-semibold text-accent" href={`/generations/${getGenerationSlug(lead.data)}/`}>
-                  View generation hub
+                  View generation
                 </a>
               </div>
 
@@ -276,8 +276,8 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
 
     <div class="mt-8 space-y-8">
       <RelatedLinks title="Flagship guides for this model" intro={`Use these if you want the bigger ${model} ownership picture before narrowing down to one specific symptom or part.`} items={linkedOwnershipGuides} />
-      <RelatedLinks title="Related problem guides" intro={`These are the problem pages currently connected to the published ${model} coverage.`} items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" intro={`These are the parts-comparison pages already linked into the ${model} hub and generation pages.`} items={linkedBest} />
+      <RelatedLinks title="Related problem guides" intro={`These checks cover symptoms that come up often on the listed ${model} years.`} items={linkedProblems} />
+      <RelatedLinks title="Related best-parts guides" intro={`These part comparisons help once the repair area is clear for this ${model}.`} items={linkedBest} />
     </div>
   </div>
 </BaseLayout>

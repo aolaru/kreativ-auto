@@ -51,7 +51,7 @@ fitment:
   appliesTo:
     - "Most 2020 Mazda 3 trims using the normal daily-driver front suspension layout."
   doesNotApplyTo:
-    - "Do not order from this page without checking the exact trim and suspension listing."
+    - "Do not order without checking the exact trim and suspension listing."
   phaseDifferences:
     - "Use this BP-era page as a baseline and confirm any exact supplier split when ordering."
   powertrainDifferences:

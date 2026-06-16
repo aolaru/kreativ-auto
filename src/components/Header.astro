@@ -71,7 +71,7 @@ const searchIndex = [
 
       <div class="flex flex-col gap-4 lg:min-w-[42rem] lg:flex-1 lg:items-end">
         <div class="header-search w-full lg:max-w-xl">
-          <label class="sr-only" for="site-search">Search the site</label>
+          <label class="sr-only" for="site-search">Search Kreativ Auto</label>
           <div class="header-search-shell">
             <svg
               aria-hidden="true"
@@ -97,7 +97,7 @@ const searchIndex = [
             <button class="header-search-clear" type="button" aria-label="Clear search" hidden>Clear</button>
           </div>
           <div class="header-search-results" hidden>
-            <p class="header-search-empty" hidden>No matching pages found.</p>
+            <p class="header-search-empty" hidden>No matching results found.</p>
             <ul class="header-search-list"></ul>
           </div>
           <script id="site-search-index" type="application/json" set:html={JSON.stringify(searchIndex)}></script>

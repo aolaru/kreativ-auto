@@ -40,14 +40,14 @@ const featuredGuides = ownershipGuides.slice(0, 3);
 <BaseLayout enableAds={false}
   noindex={true}
   title="Brands"
-  description="Browse the site by vehicle brand, with the strongest generation hubs and best starting points surfaced first."
+  description="Browse Kreativ Auto by vehicle brand, generation, and model year."
 >
   <div class="container-shell py-12 sm:py-16">
     <div class="surface p-8 sm:p-10">
       <p class="eyebrow">Brands</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by brand</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Start with the brands where the site already has real depth, then drill into the models and generation hubs that have the strongest ownership coverage.
+        Start with a brand, then narrow into the model, generation, or year that matches the car you are researching.
       </p>
     </div>
 
@@ -55,13 +55,13 @@ const featuredGuides = ownershipGuides.slice(0, 3);
       featuredBrands.length > 0 && (
         <div class="mt-10">
           <Section
-            title="Start with the strongest brand hubs"
-            intro="These brands already have clearer generation-level coverage and are the fastest way into the deepest parts of the site."
+            title="Start with the most complete brands"
+            intro="These brands have several model-year and generation choices, which makes comparison easier."
           >
             <div class="grid gap-6 lg:grid-cols-3">
               {featuredBrands.map((item) => (
                 <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href={`/brands/${slugify(item.brand)}/`}>
-                  <p class="eyebrow">Brand hub</p>
+                  <p class="eyebrow">Brand</p>
                   <h2 class="mt-3 text-2xl font-semibold text-ink">{item.brand}</h2>
                   {
                     (item.featuredGeneration?.data.heroImage ?? item.featuredGeneration?.data.image) && (
@@ -79,7 +79,7 @@ const featuredGuides = ownershipGuides.slice(0, 3);
                     )
                   }
                   <p class="mt-3 text-sm leading-6 text-steel">
-                    {item.entries.length} car hub page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+                    {item.entries.length} model year{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
                   </p>
                   {item.featuredGeneration && (
                     <p class="mt-4 text-sm font-semibold text-accent">
@@ -99,7 +99,7 @@ const featuredGuides = ownershipGuides.slice(0, 3);
         <div class="mt-10">
           <Section
             title="Flagship ownership guides"
-            intro="Use these if you want the bigger picture first, then work down into one brand, generation, or repair page."
+            intro="Use these if you want the bigger ownership picture before narrowing into one brand, generation, or repair."
           >
             <div class="grid gap-6 lg:grid-cols-3">
               {featuredGuides.map((guide) => (
@@ -152,7 +152,7 @@ const featuredGuides = ownershipGuides.slice(0, 3);
               )
             }
             <p class="mt-3 text-sm leading-6 text-steel">
-              {item.entries.length} car hub page{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
+              {item.entries.length} model year{item.entries.length === 1 ? "" : "s"} across {item.generationCount} generation group{item.generationCount === 1 ? "" : "s"}.
             </p>
             {item.featuredGeneration && (
               <p class="mt-4 text-sm font-semibold text-accent">

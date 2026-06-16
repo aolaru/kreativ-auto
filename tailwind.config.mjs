@@ -6,8 +6,9 @@ export default {
       colors: {
         ink: "#0f1720",
         steel: "#334155",
-        sand: "#f5efe7",
+        sand: "#eef2f7",
         accent: "#c2410c",
+        signal: "#0f766e",
         chrome: "#e2e8f0"
       },
       boxShadow: {

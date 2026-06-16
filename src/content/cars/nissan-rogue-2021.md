@@ -51,10 +51,10 @@ fitment:
   doesNotApplyTo:
     - "Do not use this as final fitment guidance for special trims, non-US market splits, or parts affected by package differences without confirming the actual hardware."
   phaseDifferences:
-    - "This page keeps the T33-era Rogue ownership pattern grouped while still requiring trim and package confirmation before parts are ordered."
+    - "Keep the T33-era Rogue ownership pattern grouped while still requiring trim and package confirmation before parts are ordered."
   powertrainDifferences:
     - "The broad ownership logic still applies, but exact diagnosis and part choice can change by engine, drivetrain, battery specification, and package."
 ---
 Nissan Rogue ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.
 
-Use this page as the model-year hub: start with battery, brake, tire, or comfort symptoms, then move into the linked problem and parts sections for a narrower repair path.
+Use this model-year guide: start with battery, brake, tire, or comfort symptoms, then move into the linked problem and parts sections for a narrower repair path.

@@ -47,7 +47,7 @@ fitment:
   doesNotApplyTo:
     - Not meant as a guide to diagnose unrelated charging-system faults with active warning lights or major electronic faults.
   phaseDifferences:
-    - Earlier Mk2 Tiguans can show the same short-trip battery pattern, but this page is grouped around the facelift-era daily-use profile.
+    - Earlier Mk2 Tiguans can show the same short-trip battery pattern, but the guidance is grouped around the facelift-era daily-use profile.
   powertrainDifferences:
     - This guide assumes the regular gas Tiguan. Alternative market powertrains can change battery and charging behavior enough to require a different checklist.
 recommendedParts:

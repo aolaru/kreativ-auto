@@ -109,14 +109,14 @@ const schemas = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide is written as a maintenance and running-cost overview for the 2020 Corolla, focused on the weak points that shape ordinary ownership cost first."
+  editorialSummary="A maintenance and running-cost overview for the 2020 Corolla, focused on the weak points that shape ordinary ownership cost first."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Maintenance guide", "Model-year specific", "Cost-focused"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when the question is not whether the Corolla is reliable, but what usually costs money first and where a cheap commuter can still waste budget."
+    summary="Use this guide when the question is not whether the Corolla is reliable, but what usually costs money first and where a cheap commuter can still waste budget."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -125,7 +125,7 @@ const schemas = [
   <Section title="The short version" intro="If you only need the fast read, this is the Corolla running-cost pattern in plain language.">
     <ul class="grid gap-3 text-sm leading-6 text-steel">
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Routine maintenance is usually inexpensive, but brake, battery, tire, and wheel-end complaints still decide how cheap the car feels to run.</li>
-      <li class="rounded-2xl bg-slate-50 px-4 py-3">The most common first money buckets are brake-noise cleanup, battery reserve on short-trip use, tire quality, and wheel-bearing diagnosis after tire checks lose.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">The most common first money buckets are brake-noise cleanup, battery reserve on short-trip use, tire quality, and wheel-bearing diagnosis after tire checks are done.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">The biggest cost mistake is delaying small maintenance because the Corolla has a strong reliability reputation.</li>
     </ul>
   </Section>
@@ -161,6 +161,7 @@ const schemas = [
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Battery reserve matters more on short-trip cars than the Corolla reputation suggests.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Tire quality and rotation history can explain road hum before a wheel bearing is blamed.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Basic fluid and inspection discipline is still what keeps the car feeling cheap to own.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">A clean maintenance record matters more than a long accessory list when the goal is low running cost.</li>
     </ul>
   </Section>
 
@@ -170,9 +171,10 @@ const schemas = [
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Buying a battery without checking terminals, usage pattern, and charging basics.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Replacing wheel bearings before tire wear, rotation history, and road-surface behavior are ruled out.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">Letting several small issues stack because the car is assumed to be maintenance-proof.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3">Ignoring uneven tire wear until it hides the real source of noise or vibration.</li>
     </ul>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the ownership budget is clearly being driven by one repeat complaint." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the ownership budget is clearly being driven by one repeat complaint." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the next step is turning the budget into the right shortlist." items={relatedBest} />
 </ContentLayout>

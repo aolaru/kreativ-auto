@@ -10,7 +10,7 @@ import { editorialTeam, carTrustPoints } from "../../data/editorial";
 
 const title = "Toyota Corolla 2020 common problems and what to check first";
 const description =
-  "The 2020 Toyota Corolla problems worth checking first, including brake squeal, battery light behavior, wheel-bearing hum, and the parts pages that matter next.";
+  "The 2020 Toyota Corolla problems worth checking first, including brake squeal, battery light behavior, wheel-bearing hum, and the parts guides that matter next.";
 const intro =
   "The 2020 Corolla is a low-drama commuter, but that reputation can make owners dismiss the small complaints too long. Brake squeal, battery warning behavior, wheel-end hum, and light suspension noises are the patterns that deserve a calm first check before the repair turns into guesswork.";
 const modifiedTime = new Date("2026-05-01");
@@ -138,15 +138,15 @@ const firstChecks = [
 const nextReads = [
   {
     href: "/generations/toyota-corolla-e210-2019-2022/",
-    eyebrow: "Generation hub",
+    eyebrow: "Generation",
     title: "Toyota Corolla E210",
-    description: "Use the generation hub when you want the broader E210 ownership map."
+    description: "Use the generation view when you want the broader E210 ownership map."
   },
   {
     href: "/cars/toyota-corolla-2020/",
-    eyebrow: "Car hub",
+    eyebrow: "Car",
     title: "Toyota Corolla 2020",
-    description: "Use the model-year hub for the car overview and its linked problem and parts pages."
+    description: "Use the model-year guide for the car overview and its linked problem and parts guides."
   },
   {
     href: "/best/best-wheel-bearings-for-toyota-corolla-2020/",
@@ -166,14 +166,14 @@ const nextReads = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide gives the Corolla cluster a broad ownership entry point and connects its existing problem and parts pages into one clear path."
+  editorialSummary="A first-check path for 2020 Corolla brake squeal, battery behavior, road-speed hum, and related parts decisions."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 Corolla has a small repeat complaint and you want the first check before buying parts or overreading the symptom."
+    summary="Use this guide when a 2020 Corolla has a small repeat complaint and you want the first check before buying parts or overreading the symptom."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -206,6 +206,6 @@ const nextReads = [
     items={nextReads}
   />
 
-  <RelatedLinks id="linked-problem-guides" title="Problem guides linked from this page" intro="These pages narrow the Corolla complaint after the broad ownership pattern is clear." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening after the diagnosis points at the right repair area." items={relatedBest} />
+  <RelatedLinks id="linked-problem-guides" title="Related problem guides" intro="These guides narrow the Corolla complaint after the broad ownership pattern is clear." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the parts guides worth opening after the diagnosis points at the right repair area." items={relatedBest} />
 </ContentLayout>

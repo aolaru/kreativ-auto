@@ -32,11 +32,11 @@ const categoryUseCases = [
   },
   {
     title: "When several vehicles share a repair family",
-    description: "Open a category to compare how the same part type is handled across different car hubs and ownership patterns."
+    description: "Open a category to compare how the same part type is handled across different vehicles and ownership patterns."
   },
   {
     title: "When you need fitment reminders",
-    description: "Every comparison still needs year, trim, engine, and package checks before ordering. Category pages are only the starting map."
+    description: "Every comparison still needs year, trim, engine, and package checks before ordering. Use the category as the starting map."
   }
 ];
 ---
@@ -51,7 +51,7 @@ const categoryUseCases = [
       <p class="eyebrow">Taxonomy</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse by part category</h1>
       <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-        Category hubs group the parts guides that solve the same repair area, so it is easier to compare the right options without jumping between unrelated cars.
+        Part categories group comparisons for the same repair area, so it is easier to compare the right options without jumping between unrelated cars.
       </p>
     </div>
 
@@ -76,7 +76,7 @@ const categoryUseCases = [
                 </div>
               )
             }
-            <p class="mt-3 text-sm leading-6 text-steel">{entries.length} comparison page{entries.length === 1 ? "" : "s"} available.</p>
+            <p class="mt-3 text-sm leading-6 text-steel">{entries.length} comparison{entries.length === 1 ? "" : "s"}.</p>
           </a>
         ))
       }
@@ -87,7 +87,7 @@ const categoryUseCases = [
         <p class="eyebrow">Use Categories Carefully</p>
         <h2 class="mt-3 text-3xl font-semibold text-ink">Categories are for narrowing the shortlist, not skipping diagnosis</h2>
         <p class="mt-3 text-base leading-7 text-steel">
-          A category page is useful only after the car and symptom pages have pointed at the right repair area. This keeps the site simpler for readers and avoids turning parts pages into thin product directories.
+          A category is useful after the vehicle and symptom checks point at the right repair area. That keeps parts shopping tied to a real problem instead of a generic product list.
         </p>
       </div>
       <div class="mt-6 grid gap-4 lg:grid-cols-3">
@@ -105,16 +105,16 @@ const categoryUseCases = [
     <section class="mt-10 surface p-6 sm:p-8">
       <div class="max-w-3xl">
         <p class="eyebrow">Strongest Categories</p>
-        <h2 class="mt-3 text-3xl font-semibold text-ink">Start with the categories that have the most supporting pages</h2>
+        <h2 class="mt-3 text-3xl font-semibold text-ink">Start with the most useful part families</h2>
       </div>
       <div class="mt-6 grid gap-4 md:grid-cols-2">
         {
           completeCategories.map((item) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent/40 hover:bg-white" href={`/categories/${slugify(item.category)}/`}>
-              <p class="eyebrow">{item.entries.length} comparison page{item.entries.length === 1 ? "" : "s"}</p>
+              <p class="eyebrow">{item.entries.length} comparison{item.entries.length === 1 ? "" : "s"}</p>
               <h3 class="mt-2 text-xl font-semibold text-ink">{item.category}</h3>
               <p class="mt-3 text-sm leading-6 text-steel">
-                Covers {item.vehicleCount} vehicle hub{item.vehicleCount === 1 ? "" : "s"} and {item.problemCount} related problem guide{item.problemCount === 1 ? "" : "s"}.
+                Covers {item.vehicleCount} vehicle{item.vehicleCount === 1 ? "" : "s"} and {item.problemCount} related problem guide{item.problemCount === 1 ? "" : "s"}.
               </p>
             </a>
           ))

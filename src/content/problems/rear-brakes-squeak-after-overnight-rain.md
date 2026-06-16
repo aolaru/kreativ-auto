@@ -62,7 +62,7 @@ fitment:
     - Earlier Civic X years can behave similarly, but the facelift group is the cleaner split for later-year pad and hardware shopping.
   powertrainDifferences:
     - This symptom is not strongly divided by 2.0 versus 1.5T. Trim and brake package matter more than engine choice here.
-    - Hybrid-specific brake-system differences are outside the scope of this page.
+    - Hybrid-specific brake-system differences are outside the scope of this guide.
 ---
 
 Rear brake squeak after rain is annoying, but it is usually not a panic moment. The job is to separate harmless moisture noise from a setup that is too noisy, too dry, or starting to wear unevenly.

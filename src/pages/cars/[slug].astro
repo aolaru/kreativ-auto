@@ -100,16 +100,16 @@ const relatedOwnershipGuides = uniqueByHref(
       image: guide.image
     }))
 );
-const directClusterLinks = car.data.relatedProblems.length + car.data.relatedBest.length;
-const carAdsEnabled = directClusterLinks >= 3;
-const coverageTitle = directClusterLinks >= 5
-  ? "Deep coverage for this car"
-  : directClusterLinks >= 3
-    ? "Connected ownership hub"
+const directRelatedLinks = car.data.relatedProblems.length + car.data.relatedBest.length;
+const carAdsEnabled = directRelatedLinks >= 3;
+const coverageTitle = directRelatedLinks >= 5
+  ? "Detailed checks for this car"
+  : directRelatedLinks >= 3
+    ? "Connected ownership guide"
     : "Focused vehicle overview";
 const coverageIntro = carAdsEnabled
-  ? "This hub has enough direct support to move from the overview into more specific diagnosis, fitment, and parts decisions."
-  : "This hub is a focused overview for the published vehicle facts on this site. Use the linked sections below before moving into broader generation context.";
+  ? "Use the overview first, then move into more specific diagnosis, fitment, and parts decisions."
+  : "Use this focused overview for the vehicle basics, then check the linked sections before moving into broader generation checks.";
 const coverageCards = [
   {
     label: "Problem guides",
@@ -122,7 +122,7 @@ const coverageCards = [
     label: "Parts guides",
     value: relatedBest.length,
     description: relatedBest.length
-      ? "Parts comparisons that match this vehicle cluster."
+      ? "Parts comparisons that match this vehicle."
       : "Use the recommended-parts section only after the symptom points at that repair area."
   },
   {
@@ -130,7 +130,7 @@ const coverageCards = [
     value: relatedOwnershipGuides.length,
     description: relatedOwnershipGuides.length
       ? "Longer buyer and maintenance pages for the platform."
-      : "Use the maintenance and fitment notes on this page before moving into broader model context."
+      : "Use the maintenance and fitment notes on this guide before moving into broader model context."
   },
   {
     label: "Comparison guides",
@@ -244,7 +244,7 @@ const schemas = [
         <p class="eyebrow">Start Here</p>
         <h2 class="mt-3 text-3xl font-semibold text-ink">Pick the path that matches the job</h2>
         <p class="mt-3 text-sm leading-6 text-steel">
-          Use these shortcuts before scrolling the full page. They point to the most useful next step for this specific car hub.
+          Use these shortcuts before scrolling the full guide. They point to the most useful next step for this car.
         </p>
       </div>
       <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">

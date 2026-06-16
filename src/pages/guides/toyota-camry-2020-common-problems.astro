@@ -103,7 +103,7 @@ const relatedBest = [
 
 const atAGlancePoints = [
   "The 2020 Camry is broadly dependable, but brake squeal, highway vibration, tire quality, and battery reserve are the complaints that shape everyday ownership feel.",
-  "The biggest waste of money is replacing suspension or wheel-end parts before tires, balance, brake hardware, and battery basics have lost.",
+  "The biggest waste of money is replacing suspension or wheel-end parts before tires, balance, brake hardware, and battery basics are ruled out.",
   "Most first checks stay ordinary when the symptom is isolated instead of treated like a vague sedan problem."
 ];
 
@@ -116,7 +116,7 @@ const troubleAreas = [
   },
   {
     eyebrow: "2. Highway vibration",
-    title: "Tires and wheels need to lose before bigger theories",
+    title: "Tires and wheels need to be ruled out before bigger theories",
     description:
       "Balance, tire condition, wheel damage, and alignment are the correct first checks when the steering wheel shakes at speed."
   },
@@ -138,21 +138,22 @@ const firstChecks = [
   "For brake squeal, inspect pad condition, rotor surface, and hardware contact points before buying parts.",
   "For highway vibration, check tire balance, tire wear, wheel damage, and alignment before replacing suspension parts.",
   "For weak starts, test battery reserve, terminals, and charging basics before chasing electronics.",
-  "For road hum, rotate and inspect tires before assuming a wheel bearing is confirmed."
+  "For road hum, rotate and inspect tires before assuming a wheel bearing is confirmed.",
+  "If the Camry has several small complaints at once, separate tire, brake, and battery basics before approving a broad repair estimate."
 ];
 
 const nextReads = [
   {
     href: "/cars/toyota-camry-2020/",
-    eyebrow: "Car hub",
+    eyebrow: "Car",
     title: "Toyota Camry 2020",
-    description: "Use the model-year page for the Camry overview and linked problem and parts pages."
+    description: "Use the model-year guide for the Camry overview and linked problem and parts guides."
   },
   {
     href: "/generations/toyota-camry-xv70-2018-2020/",
-    eyebrow: "Generation hub",
+    eyebrow: "Generation",
     title: "Toyota Camry XV70",
-    description: "Use the generation hub when you want the broader XV70 ownership map."
+    description: "Use the generation view when you want the broader XV70 ownership map."
   },
   {
     href: "/best/best-tires-for-toyota-camry-2020-highway-vibration/",
@@ -172,14 +173,14 @@ const nextReads = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide turns the Camry cluster into a broader ownership entry point by connecting brake, vibration, battery, and road-noise complaints into one first-check path."
+  editorialSummary="A first-check path for 2020 Camry brake noise, highway vibration, battery behavior, and road-noise complaints."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 Camry is still a sensible car overall, but brake, tire, vibration, or battery complaints need a disciplined first check."
+    summary="Use this guide when a 2020 Camry is still a sensible car overall, but brake, tire, vibration, or battery complaints need a disciplined first check."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -212,6 +213,6 @@ const nextReads = [
     items={nextReads}
   />
 
-  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the Camry symptom is clear." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="These are the pages that matter most once the Camry symptom is clear." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
 </ContentLayout>

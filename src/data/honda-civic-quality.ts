@@ -40,7 +40,7 @@ const civicSourceLinks: SourceLink[] = [
 
 const commonCivicEvidence = {
   basedOn: [
-    "Internal cross-check of the Civic car hub, facelift ownership guides, problem guides, best-parts pages, and generation hub.",
+    "Internal cross-check of Civic ownership guides, problem guides, best-parts comparisons, and generation notes.",
     "Official Honda owner maintenance and warranty material for 2019 Honda vehicles.",
     "NHTSA recall records used as a safety and campaign check, not as proof that every ownership complaint is a recall."
   ],
@@ -121,7 +121,7 @@ export const hondaCivicGuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonCivicEvidence,
       summary:
-        "This page is meant to separate the facelift Civic's repeat ownership pattern from generic Civic confidence. It uses the site's Civic cluster, official Honda material, and recall checks as guardrails, then keeps the advice focused on buyer-visible issues."
+        "This guide separates the facelift Civic's repeat ownership pattern from generic Civic confidence. It uses official Honda material, recall checks, and buyer-visible symptoms as guardrails."
     },
     decisionPath: ownershipDecisionPath
   },
@@ -129,7 +129,7 @@ export const hondaCivicGuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonCivicEvidence,
       summary:
-        "This page treats Civic cost as a maintenance and diagnosis problem first. The goal is to show where ordinary commuter use usually spends money before small issues become larger repair theories."
+        "Civic cost is treated as a maintenance and diagnosis problem first, showing where ordinary commuter use usually spends money before small issues become larger repair theories."
     },
     decisionPath: maintenanceDecisionPath
   },
@@ -177,7 +177,7 @@ export const hondaCivicGuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonCivicEvidence,
       summary:
-        "This final verdict is based on the full Civic guide stack, not a single repair page. It is strongest for buyers deciding whether a specific used facelift Civic is worth the premium."
+        "This final verdict weighs the main Civic ownership checks together instead of relying on one isolated repair concern."
     },
     decisionPath: usedBuyerDecisionPath
   }
@@ -207,7 +207,7 @@ export const hondaCivicProblemQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonCivicEvidence,
       summary:
-        "This page keeps Civic idle battery-light complaints grounded in battery health, charging voltage, and usage pattern before assuming a larger electrical fault."
+        "Civic idle battery-light complaints stay grounded in battery health, charging voltage, and usage pattern before assuming a larger electrical fault."
     },
     decisionPath: [
       {
@@ -311,7 +311,7 @@ export const hondaCivicProblemQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonCivicEvidence,
       summary:
-        "Turning clicks are treated as CV-joint diagnosis first, but this page keeps side confirmation and boot inspection ahead of parts ordering."
+        "Turning clicks are treated as CV-joint diagnosis first, with side confirmation and boot inspection ahead of parts ordering."
     },
     decisionPath: [
       {

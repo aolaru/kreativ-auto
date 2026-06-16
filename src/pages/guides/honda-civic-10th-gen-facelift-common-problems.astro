@@ -151,14 +151,14 @@ const relatedComparisons = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide is written as a flagship ownership page for the facelift Civic, pulling the repeat complaints and best next reads into one place."
+  editorialSummary="A flagship ownership page for the facelift Civic, pulling the repeat complaints and best next reads into one place."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Generation-specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Generation-specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when the facelift Civic still feels like a fundamentally solid commuter, but the usual annoyance patterns are starting to show up often enough to shape ownership."
+    summary="Use this guide when the facelift Civic still feels like a fundamentally solid commuter, but the usual annoyance patterns are starting to show up often enough to shape ownership."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -193,7 +193,7 @@ const relatedComparisons = [
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Useful comparison guide</p>
           </a>
           <div class="soft-panel p-4">
-            <p class="text-sm leading-6 text-steel">Most wasted money in this cluster comes from treating commuter-grade A/C, brake, and battery complaints like bigger system failures than they really are.</p>
+            <p class="text-sm leading-6 text-steel">Most wasted money here comes from treating commuter-grade A/C, brake, and battery complaints like bigger system failures than they really are.</p>
           </div>
         </div>
       </div>
@@ -298,12 +298,12 @@ const relatedComparisons = [
     </ul>
   </Section>
 
-  <Section title="Best next reads" intro="These are the pages worth opening once you know which facelift Civic complaint bucket you are actually in.">
+  <Section title="Best next reads" intro="These are the guides worth opening once you know which facelift Civic complaint bucket you are actually in.">
     <div class="grid gap-6 lg:grid-cols-3">
       <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/generations/honda-civic-fc-fk-facelift-2019-2021/">
-        <p class="eyebrow">Generation hub</p>
+        <p class="eyebrow">Generation</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic FC/FK facelift 2019-2021</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the generation hub if you want the broader ownership map before jumping into a narrower repair page.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">Use the generation view if you want the broader ownership map before jumping into a narrower repair page.</p>
       </a>
       <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/comparisons/honda-civic-1-5t-vs-2-0/">
         <p class="eyebrow">Powertrain guide</p>
@@ -311,14 +311,14 @@ const relatedComparisons = [
         <p class="mt-3 text-sm leading-6 text-steel">Open this if the real issue is whether the advice changes with the engine, not just the facelift window.</p>
       </a>
       <a class="rounded-3xl border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-0.5 hover:bg-white" href="/cars/honda-civic-2019/">
-        <p class="eyebrow">Car hub</p>
+        <p class="eyebrow">Car</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic 2019</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Use the model-year page if the next step is narrowing from the generation pattern into one published year hub.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">Use the model-year guide if the next step is narrowing from the generation pattern into one specific model year.</p>
       </a>
     </div>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="These are the problem pages that matter most once the facelift Civic starts showing the same repeat complaints." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the parts pages worth opening when the diagnosis is already pointing at the right repair area." items={relatedBest} />
-  <RelatedLinks title="Comparison guides linked from this page" intro="These are the comparison pages that keep the Civic advice from drifting across the wrong engine assumptions." items={relatedComparisons} />
+  <RelatedLinks title="Related problem guides" intro="These are the problem guides that matter most once the facelift Civic starts showing the same repeat complaints." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the parts guides worth opening when the diagnosis is already pointing at the right repair area." items={relatedBest} />
+  <RelatedLinks title="Related comparison guides" intro="These are the comparison guides that keep the Civic advice from drifting across the wrong engine assumptions." items={relatedComparisons} />
 </ContentLayout>

@@ -71,4 +71,4 @@ fitment:
 
 Brake squeal on a newer Rogue can feel more annoying than serious, but it still deserves a basic inspection. The important split is whether the noise is harmless surface behavior or a pad, hardware, and rotor condition issue.
 
-This page keeps the first check practical so owners do not buy pads before confirming what the front brakes actually need.
+Keep the first check practical so owners do not buy pads before confirming what the front brakes actually need.

@@ -41,7 +41,7 @@ const relatedBest = [
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Avoid guide", "Model-year specific", "Buying-focused"]}
 >
-  <TrustBlock title="How to use this guide" summary="Use this page when a 2020 Accord looks clean, but the first-drive details do not fully line up." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
+  <TrustBlock title="How to use this guide" summary="Use this guide when a 2020 Accord looks clean, but the first-drive details do not fully line up." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
 
   <Section title="The short version" intro="These are the Accord examples to be careful with first.">
     <ul class="space-y-3 text-sm leading-6 text-steel">
@@ -94,6 +94,6 @@ const relatedBest = [
     </p>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the Accord already shows one of the risk patterns above." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use this when the car is still worth buying but the A/C path needs realistic pricing." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the Accord already shows one of the risk patterns above." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use this when the car is still worth buying but the A/C path needs realistic pricing." items={relatedBest} />
 </ContentLayout>

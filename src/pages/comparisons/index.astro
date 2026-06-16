@@ -21,7 +21,7 @@ const getComparisonType = (guide: (typeof comparisonGuides)[number]) => {
 const comparisonFilters = [
   {
     name: "cluster",
-    label: "Cluster",
+    label: "Vehicle",
     options: [
       { value: "civic", label: "Honda Civic" },
       { value: "rav4", label: "Toyota RAV4" },
@@ -41,7 +41,7 @@ const comparisonFilters = [
 ];
 ---
 
-<BaseLayout enableAds={false} title="Comparisons" description="Trim, powertrain, drivetrain, and generation comparison guides for the strongest vehicle clusters on the site.">
+<BaseLayout enableAds={false} title="Comparisons" description="Trim, powertrain, drivetrain, and generation comparison guides for used-car decisions.">
   <div class="container-shell py-12 sm:py-16">
     <div class="surface hero-frame p-8 sm:p-10">
       <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
@@ -59,9 +59,9 @@ const comparisonFilters = [
               <p class="text-2xl font-semibold text-ink">{comparisonGuides.length}</p>
               <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Comparison guides</p>
             </a>
-            <a class="snapshot-card p-4" href="/generations/" data-ka-event="comparisons_snapshot_click" data-ka-section="comparisons_snapshot" data-ka-label="Strong clusters">
+            <a class="snapshot-card p-4" href="/generations/" data-ka-event="comparisons_snapshot_click" data-ka-section="comparisons_snapshot" data-ka-label="Core vehicles">
               <p class="text-2xl font-semibold text-ink">3</p>
-              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Strong clusters</p>
+              <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Core vehicles</p>
             </a>
             <div class="soft-panel p-4 sm:col-span-2">
               <p class="text-sm leading-6 text-steel">
@@ -116,7 +116,7 @@ const comparisonFilters = [
           <p class="eyebrow">Browse all</p>
           <h2 class="mt-3 text-3xl font-semibold text-ink">Filter every comparison guide</h2>
           <p class="mt-3 max-w-3xl text-sm leading-6 text-steel">
-            Use the filters when you already know the cluster and want the version split that matters most for diagnosis, buying, or maintenance.
+            Use the filters when you already know the vehicle and want the version split that matters most for diagnosis, buying, or maintenance.
           </p>
         </div>
         <p class="text-sm text-steel">

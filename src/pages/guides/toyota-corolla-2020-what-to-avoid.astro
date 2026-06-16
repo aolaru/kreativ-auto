@@ -41,7 +41,7 @@ const relatedBest = [
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Avoid guide", "Model-year specific", "Buying-focused"]}
 >
-  <TrustBlock title="How to use this guide" summary="Use this page when a Corolla looks like the safe choice, but the condition does not support the price." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
+  <TrustBlock title="How to use this guide" summary="Use this guide when a Corolla looks like the safe choice, but the condition does not support the price." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
 
   <Section title="The short version" intro="These are the 2020 Corolla examples to avoid first.">
     <ul class="space-y-3 text-sm leading-6 text-steel">
@@ -94,6 +94,6 @@ const relatedBest = [
     </p>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the Corolla already shows one of the symptoms above." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the car is still worth buying but one weak area needs a realistic parts path." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the Corolla already shows one of the symptoms above." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the car is still worth buying but one weak area needs a realistic parts path." items={relatedBest} />
 </ContentLayout>

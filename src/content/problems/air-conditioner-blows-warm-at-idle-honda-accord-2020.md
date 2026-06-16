@@ -56,7 +56,7 @@ fitment:
   appliesTo:
     - "Most 2020 Accord gas trims where the cooling complaint is clearly worse at idle than at speed."
   doesNotApplyTo:
-    - "This page is not direct fitment proof for hybrid-specific HVAC hardware differences."
+    - "Do not treat this as direct fitment proof for hybrid-specific HVAC hardware differences."
   phaseDifferences:
     - "Treat this as a tenth-generation Accord baseline and confirm exact parts by VIN once the platform gets deeper HVAC coverage."
   powertrainDifferences:

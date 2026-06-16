@@ -117,11 +117,11 @@ const relatedBest = [
   editorialSummary="This comparison is written to separate the ownership differences that actually change fitment, diagnosis, and buying decisions from the ones people overstate."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Comparison guide", "Powertrain context checked", "Related pages reviewed"]}
+  editorialBadges={["Comparison guide", "Powertrain context checked", "Related checks reviewed"]}
 >
   <TrustBlock
     title="Why this comparison matters"
-    summary="This page is written to separate the ownership differences that actually change buying and maintenance decisions from the ones people overstate online."
+    summary="This comparison separates the ownership differences that actually change buying and maintenance decisions from the ones people overstate online."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={problemTrustPoints}
@@ -257,33 +257,33 @@ const relatedBest = [
   >
     <div class="grid gap-6 lg:grid-cols-2">
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <p class="eyebrow">Start with the car hub</p>
+        <p class="eyebrow">Start with the car guide</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic 2019 ownership guide</h2>
         <p class="mt-3 text-sm leading-6 text-steel">
-          Use the main Civic hub if you want the year-specific overview first and then want to branch into the generation, problem, and parts pages from there.
+          Use the main Civic guide if you want the year-specific overview first and then want to branch into the generation, problem, and parts guides from there.
         </p>
-        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/cars/honda-civic-2019/">Open Civic hub</a>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/cars/honda-civic-2019/">Open Civic</a>
       </article>
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <p class="eyebrow">Use the generation hub</p>
+        <p class="eyebrow">Use the generation view</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Honda Civic FC/FK facelift 2019-2021</h2>
         <p class="mt-3 text-sm leading-6 text-steel">
-          Use the generation page if you want the broader ownership pattern for the facelifted Civic X, not just one model year.
+          Use the generation view if you want the broader ownership pattern for the facelifted Civic X, not just one model year.
         </p>
-        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/honda-civic-fc-fk-facelift-2019-2021/">Open generation hub</a>
+        <a class="mt-4 inline-flex text-sm font-semibold text-accent" href="/generations/honda-civic-fc-fk-facelift-2019-2021/">Open generation</a>
       </article>
     </div>
   </Section>
 
   <RelatedLinks
     title="Related problem guides"
-    intro="These are the next problem pages worth reading if the 1.5T vs 2.0 question turns into a real diagnosis decision."
+    intro="These are the next problem guides worth reading if the 1.5T vs 2.0 question turns into a real diagnosis decision."
     items={relatedProblems}
   />
 
   <RelatedLinks
     title="Related best-parts guides"
-    intro="These are the best-parts pages that matter once the comparison points you toward the actual repair area."
+    intro="These are the best-parts guides that matter once the comparison points you toward the actual repair area."
     items={relatedBest}
   />
 </ContentLayout>

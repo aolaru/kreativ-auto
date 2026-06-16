@@ -61,14 +61,14 @@ const relatedGuides = [
   modifiedTime={modifiedTime}
   breadcrumbs={breadcrumbs}
   faqs={faqs}
-  editorialSummary="This guide is written as a practical service-interval and maintenance timing overview for the facelift Tiguan, with emphasis on the jobs that actually shape ownership quality."
+  editorialSummary="A practical service-interval and maintenance timing overview for the facelift Tiguan, with emphasis on the jobs that actually shape ownership quality."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Service guide", "Generation-specific", "Interval-focused"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when the real question is not just what breaks, but how to keep a facelift Tiguan from sliding into the same predictable complaints in the first place."
+    summary="Use this guide when the real question is not just what breaks, but how to keep a facelift Tiguan from sliding into the same predictable complaints in the first place."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -124,7 +124,7 @@ const relatedGuides = [
     </ul>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the service timing question has already become a real complaint." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use these when the next step is turning interval timing into a practical parts shortlist." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the service timing question has already become a real complaint." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use these when the next step is turning interval timing into a practical parts shortlist." items={relatedBest} />
   <RelatedLinks title="Related ownership guides" intro="Open these when the service schedule is only one part of the broader Tiguan ownership picture." items={relatedGuides} />
 </ContentLayout>

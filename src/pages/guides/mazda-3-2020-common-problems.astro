@@ -103,7 +103,7 @@ const relatedBest = [
 
 const atAGlancePoints = [
   "The 2020 Mazda 3 is not a high-risk ownership story, but brake noise, small front-end clunks, road hum, and battery reserve can quickly reduce the premium feel.",
-  "The most expensive mistake is treating refinement complaints like broad mechanical failures before small wear items and tires have lost.",
+  "The most expensive mistake is treating refinement complaints like broad mechanical failures before small wear items and tires are ruled out.",
   "The right first checks stay practical: links and bushings, brake hardware, tire condition, and battery health."
 ];
 
@@ -122,7 +122,7 @@ const troubleAreas = [
   },
   {
     eyebrow: "3. Road hum",
-    title: "Tires should lose before wheel bearings",
+    title: "Tires should be ruled out before wheel bearings",
     description:
       "A speed-linked hum can come from tire wear, balance, road surface, or a hub. Rotation and inspection keep the diagnosis honest."
   },
@@ -144,15 +144,15 @@ const firstChecks = [
 const nextReads = [
   {
     href: "/cars/mazda-3-2020/",
-    eyebrow: "Car hub",
+    eyebrow: "Car",
     title: "Mazda 3 2020",
-    description: "Use the model-year page for the car overview and its linked problem and parts pages."
+    description: "Use the model-year guide for the car overview and its linked problem and parts guides."
   },
   {
     href: "/generations/mazda-mazda-3-bp-2019-2023/",
-    eyebrow: "Generation hub",
+    eyebrow: "Generation",
     title: "Mazda 3 BP generation",
-    description: "Use the generation hub when you want the broader BP-era ownership map."
+    description: "Use the generation view when you want the broader BP-era ownership map."
   },
   {
     href: "/best/best-front-sway-bar-links-for-mazda-3-2020/",
@@ -172,14 +172,14 @@ const nextReads = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="This guide turns the Mazda 3 cluster into a clearer ownership entry point instead of leaving it split between one problem page and one parts page."
+  editorialSummary="A first-check path for 2020 Mazda 3 brake noise, front-end clunks, road hum, and short-trip battery behavior."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Model-year specific", "Related pages reviewed"]}
+  editorialBadges={["Ownership guide", "Model-year specific", "Related checks reviewed"]}
 >
   <TrustBlock
     title="How to use this guide"
-    summary="Use this page when a 2020 Mazda 3 still feels like a good car overall, but brake, front-end, road-noise, or battery complaints need a cleaner first check."
+    summary="Use this guide when a 2020 Mazda 3 still feels like a good car overall, but brake, front-end, road-noise, or battery complaints need a cleaner first check."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
@@ -212,6 +212,6 @@ const nextReads = [
     items={nextReads}
   />
 
-  <RelatedLinks title="Problem guides linked from this page" intro="These are the pages that matter most once the Mazda 3 symptom is clear." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="These are the pages that matter most once the Mazda 3 symptom is clear." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="These are the current parts paths worth opening after diagnosis." items={relatedBest} />
 </ContentLayout>

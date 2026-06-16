@@ -72,4 +72,4 @@ fitment:
 
 Low-speed brake squeal on a Tucson usually points to pad compound, hardware service, or rotor surface condition before it becomes a larger brake-system problem.
 
-The goal of this page is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.
+The goal is to keep the diagnosis narrow and practical so owners do not waste money chasing a bigger story than the symptom supports.

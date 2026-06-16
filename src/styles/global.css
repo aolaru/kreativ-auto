@@ -3,13 +3,14 @@
 @theme {
   --color-ink: #0f1720;
   --color-steel: #334155;
-  --color-sand: #f5efe7;
+  --color-sand: #eef2f7;
   --color-accent: #c2410c;
   --color-accent-deep: #8f2f09;
+  --color-signal: #0f766e;
   --color-night: #111827;
   --color-chrome: #e2e8f0;
-  --shadow-panel: 0 18px 40px rgba(15, 23, 32, 0.08);
-  --shadow-deep: 0 24px 60px rgba(15, 23, 32, 0.18);
+  --shadow-panel: 0 16px 36px rgba(15, 23, 32, 0.07);
+  --shadow-deep: 0 24px 60px rgba(15, 23, 32, 0.16);
 }
 
 :root {
@@ -22,10 +23,7 @@ html {
 
 body {
   font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
-  background:
-    radial-gradient(circle at top left, rgba(194, 65, 12, 0.12), transparent 24%),
-    radial-gradient(circle at top right, rgba(15, 23, 32, 0.05), transparent 20%),
-    linear-gradient(180deg, #fcfaf7 0%, #f4efe7 100%);
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 48%, #f8fafc 100%);
   color: #0f1720;
 }
 
@@ -42,7 +40,7 @@ h4 {
 }
 
 .surface {
-  @apply rounded-3xl border border-white/70 bg-white/90 shadow-panel backdrop-blur;
+  @apply rounded-3xl border border-slate-200/80 bg-white/95 shadow-panel backdrop-blur;
 }
 
 .eyebrow {
@@ -55,8 +53,8 @@ a {
 
 .surface-dark {
   background:
-    linear-gradient(145deg, rgba(17, 24, 39, 0.98), rgba(15, 23, 32, 0.95)),
-    linear-gradient(180deg, rgba(194, 65, 12, 0.18), transparent 60%);
+    linear-gradient(145deg, rgba(17, 24, 39, 0.98), rgba(15, 23, 32, 0.96)),
+    linear-gradient(180deg, rgba(15, 118, 110, 0.16), transparent 62%);
   color: #f8fafc;
   box-shadow: var(--shadow-deep);
 }
@@ -81,8 +79,8 @@ a {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(135deg, rgba(194, 65, 12, 0.1), transparent 35%),
-    linear-gradient(180deg, transparent, rgba(15, 23, 32, 0.04));
+    linear-gradient(135deg, rgba(15, 118, 110, 0.08), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.18), rgba(15, 23, 32, 0.035));
 }
 
 .hero-frame > * {
@@ -108,14 +106,16 @@ a {
 }
 
 .accent-panel {
-  background: linear-gradient(180deg, rgba(194, 65, 12, 0.08), rgba(255, 255, 255, 0.96));
-  @apply rounded-3xl border border-orange-200/70;
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.08), transparent 46%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.96));
+  @apply rounded-3xl border border-slate-200/90;
 }
 
 .mesh-card {
   background:
-    radial-gradient(circle at top right, rgba(194, 65, 12, 0.16), transparent 36%),
-    linear-gradient(180deg, rgba(255, 251, 245, 0.98), rgba(241, 245, 249, 0.94));
+    linear-gradient(135deg, rgba(15, 118, 110, 0.075), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(241, 245, 249, 0.94));
   @apply rounded-3xl border border-slate-200;
 }
 
@@ -157,10 +157,10 @@ a {
 }
 
 .editorial-card-accent {
-  @apply rounded-3xl border border-orange-200/80 p-6;
+  @apply rounded-3xl border border-slate-200 p-6;
   background:
-    radial-gradient(circle at top right, rgba(194, 65, 12, 0.14), transparent 40%),
-    linear-gradient(180deg, rgba(255, 247, 237, 0.98), rgba(255, 255, 255, 0.94));
+    linear-gradient(135deg, rgba(15, 118, 110, 0.08), transparent 44%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94));
 }
 
 .image-frame {

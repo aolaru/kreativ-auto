@@ -75,7 +75,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     title: "VW Tiguan II facelift common problems",
     href: "/guides/vw-tiguan-ii-facelift-common-problems/",
     description:
-      "A flagship ownership guide to the repeat Tiguan facelift trouble spots, what to check first, and which pages to open next when the car starts feeling less sorted.",
+      "A flagship ownership guide to the repeat Tiguan facelift trouble spots, what to check first, and which guide to open next when the car starts feeling less sorted.",
     eyebrow: "Ownership guide",
     image: "/images/photos/cars/vw-tiguan-2020.webp",
     relatedCars: ["vw-tiguan-2020"],
@@ -85,7 +85,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     title: "Toyota RAV4 XA50 common problems",
     href: "/guides/toyota-rav4-xa50-common-problems/",
     description:
-      "A flagship ownership guide to the repeat RAV4 XA50 complaints, where owners waste money first, and which problem or parts pages are worth opening next.",
+      "A flagship ownership guide to the repeat RAV4 XA50 complaints, where owners waste money first, and which problem or parts guide is worth opening next.",
     eyebrow: "Ownership guide",
     image: "/images/photos/cars/toyota-rav4-2021.webp",
     relatedCars: ["toyota-rav4-2020", "toyota-rav4-2021"],
@@ -95,7 +95,7 @@ export const ownershipGuides: OwnershipGuide[] = [
     title: "Honda Civic 10th gen facelift common problems",
     href: "/guides/honda-civic-10th-gen-facelift-common-problems/",
     description:
-      "A flagship ownership guide to the repeat Civic facelift issues, what to check first, and which pages to open next before routine commuter problems get overdiagnosed.",
+      "A flagship ownership guide to the repeat Civic facelift issues, what to check first, and which guide to open next before routine commuter problems get overdiagnosed.",
     eyebrow: "Ownership guide",
     image: "/images/photos/cars/honda-civic-2019.webp",
     relatedCars: ["honda-civic-2019"],

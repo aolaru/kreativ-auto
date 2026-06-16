@@ -52,10 +52,10 @@ fitment:
   doesNotApplyTo:
     - "Do not use this as direct fitment proof for hybrid, 2.0T-specific, or non-US variants without checking the exact catalog listing."
   phaseDifferences:
-    - "This page keeps the tenth-generation Accord context together while still requiring trim and engine confirmation before parts are ordered."
+    - "Keep the tenth-generation Accord context together while still requiring trim and engine confirmation before parts are ordered."
   powertrainDifferences:
     - "Brake, battery, and HVAC logic overlaps across the lineup, but hybrid and 2.0T diagnosis can change once engine, accessory, or electrical layout matters."
 ---
 The Accord is one of those cars where ownership quality comes down to how quickly you deal with the first signs of brake, HVAC, or voltage trouble. Catch those early and the car usually stays cheap and easy to live with.
 
-Use this page as the model-year hub: start by separating brake, HVAC, battery, and front-end symptoms, then open the linked problem or parts guide that matches the confirmed complaint.
+Use this model-year guide: start by separating brake, HVAC, battery, and front-end symptoms, then open the linked problem or parts guide that matches the confirmed complaint.

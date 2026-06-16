@@ -34,7 +34,7 @@ export interface GenerationHubContent {
 
 export const generationHubContent: Record<string, GenerationHubContent> = {
   "honda-civic-fc-fk-facelift-2019-2021": {
-    eyebrow: "Generation Hub",
+    eyebrow: "Generation",
     intro:
       "The facelifted tenth-generation Civic is the version a lot of owners expect to be almost trouble-free, and broadly it is. The repeat pattern is still easy to spot though: ignition-related drivability issues when maintenance slips, A/C performance complaints in traffic, and the smaller chassis noises that make the car feel more worn than it really is.",
     overview: [
@@ -43,7 +43,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       "If you stay disciplined on spark plugs, charging health, front-end inspection, and common A/C weak points, these Civics usually stay cheap and easy to live with."
     ],
     painPoints: [
-      "Idle misfires, cold-start roughness, and light hesitation still cluster around overdue ignition maintenance more than owners want to believe.",
+      "Idle misfires, cold-start roughness, and light hesitation often trace back to overdue ignition maintenance more than owners want to believe.",
       "A/C complaints are often most obvious at idle or in traffic, where condenser efficiency and fan behavior show their weakness fastest.",
       "Small front-end rattles and driveway-entry clunks are easy to overdiagnose unless sway-bar links, axle condition, and brake hardware get checked in the right order.",
       "Brake squeal on these cars is often more about compound choice and hardware condition than some serious brake-system failure."
@@ -67,7 +67,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     ],
     phaseNotes: [
       "The 2019 facelift does not transform the chassis, but it is still the right split for keeping condenser, trim, and later-year fitment guidance cleaner.",
-      "Earlier 2016-2018 Civic X cars overlap in broad ownership logic, but mixing them blindly into the facelift cluster makes parts and trim guidance sloppier."
+      "Earlier 2016-2018 Civic X cars overlap in broad ownership logic, but mixing them blindly into the facelift years makes parts and trim guidance sloppier."
     ],
     startHere: [
       {
@@ -82,7 +82,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       },
       {
         title: "If the car feels worn in traffic",
-        description: "The A/C, front-end noise, and rear-brake refinement pages are where this generation usually shows age first.",
+        description: "The A/C, front-end noise, and rear-brake refinement guides cover where this generation usually shows age first.",
         href: "/problems/air-conditioner-blows-warm-at-idle/"
       }
     ],
@@ -124,9 +124,9 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     ]
   },
   "toyota-rav4-xa50-2019-2021": {
-    eyebrow: "Generation Hub",
+    eyebrow: "Generation",
     intro:
-      "The XA50 RAV4 is the version most owners expect to be simple, quiet, and low-drama. That is mostly true, but the repeat ownership pattern is still clear: brake noise, road hum, rear suspension knocks, and 12-volt battery complaints show up often enough that the generation is better understood as a cluster, not as isolated model years.",
+      "The XA50 RAV4 is the version most owners expect to be simple, quiet, and low-drama. That is mostly true, but the repeat ownership pattern is still clear: brake noise, road hum, rear suspension knocks, and 12-volt battery complaints show up often enough that the generation matters more than one isolated model year.",
     overview: [
       "The 2019-2021 XA50 window is where the current RAV4 ownership pattern settles in, especially around brake refinement, wheel-bearing noise, tire-related hum, and light rear suspension wear.",
       "A lot of wasted money on these SUVs comes from misdiagnosing tire noise as hubs, replacing bigger suspension parts before checking links and bushings, or ordering parts without paying attention to trim and hybrid differences.",
@@ -147,7 +147,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     cautionNotes: [
       "Gas and hybrid versions share some complaints, but battery, brake-use pattern, and ownership advice do not transfer perfectly.",
       "Trim and wheel-package differences matter more here than owners expect, especially once brake and suspension fitment enter the picture.",
-      "This XA50 hub is strongest for the normal North American ownership pattern. Earlier RAV4 generations should stay separate instead of being flattened into the same advice."
+      "This XA50 guidance fits the normal North American ownership pattern best. Earlier RAV4 generations should stay separate instead of being flattened into the same advice."
     ],
     ownershipNotes: [
       "Do not buy hub assemblies before ruling out tire noise. On the XA50, bad tire wear and bad diagnosis travel together.",
@@ -212,7 +212,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     ]
   },
   "volkswagen-tiguan-tiguan-ii-facelift-2020-2024": {
-    eyebrow: "Generation Hub",
+    eyebrow: "Generation",
     intro:
       "The Tiguan II facelift is the version most owners end up cross-shopping or keeping long enough to run into the same repeat complaints: front brake vibration, cooling-system seepage, intermittent EPC behavior, and the small suspension noises that make the SUV feel older than it is.",
     overview: [
@@ -235,7 +235,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     cautionNotes: [
       "Do not flatten pre-facelift and facelift Tiguans together if the page is supposed to help with parts buying. The overlap is real, but the trim and supplier differences still matter.",
       "FWD and 4MOTION ownership logic overlaps until tires, driveline behavior, and chassis diagnosis enter the picture. Then the split matters quickly.",
-      "This hub assumes the mainstream 2.0T facelift ownership pattern. Market-specific diesel or hybrid variants should not inherit the same parts and cooling advice blindly."
+      "These notes assume the mainstream 2.0T facelift ownership pattern. Market-specific diesel or hybrid variants should not inherit the same parts and cooling advice blindly."
     ],
     ownershipNotes: [
       "Check trim, axle setup, and wheel size before ordering brake parts because Tiguan fitment gets messy fast when listings are too broad.",

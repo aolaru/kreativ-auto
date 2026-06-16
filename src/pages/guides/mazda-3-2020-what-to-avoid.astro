@@ -41,7 +41,7 @@ const relatedBest = [
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
   editorialBadges={["Avoid guide", "Model-year specific", "Buying-focused"]}
 >
-  <TrustBlock title="How to use this guide" summary="Use this page when a Mazda 3 looks clean, but the noise and refinement checks tell a less polished story." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
+  <TrustBlock title="How to use this guide" summary="Use this guide when a Mazda 3 looks clean, but the noise and refinement checks tell a less polished story." byline={`By ${editorialTeam.name}`} checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`} points={carTrustPoints} />
 
   <Section title="The short version" intro="These are the Mazda 3 examples to avoid first.">
     <ul class="space-y-3 text-sm leading-6 text-steel">
@@ -94,6 +94,6 @@ const relatedBest = [
     </p>
   </Section>
 
-  <RelatedLinks title="Problem guides linked from this page" intro="Open these when the Mazda 3 already shows one of the symptoms above." items={relatedProblems} />
-  <RelatedLinks title="Best-parts guides linked from this page" intro="Use this when the car is still worth buying but front-end wear needs a realistic parts path." items={relatedBest} />
+  <RelatedLinks title="Related problem guides" intro="Open these when the Mazda 3 already shows one of the symptoms above." items={relatedProblems} />
+  <RelatedLinks title="Related best-parts guides" intro="Use this when the car is still worth buying but front-end wear needs a realistic parts path." items={relatedBest} />
 </ContentLayout>

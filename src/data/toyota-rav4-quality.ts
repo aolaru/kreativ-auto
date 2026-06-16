@@ -40,12 +40,12 @@ const rav4SourceLinks: SourceLink[] = [
 
 const commonRav4Evidence = {
   basedOn: [
-    "Internal cross-check of the RAV4 car hubs, problem guides, best-parts pages, and generation hub.",
+    "Internal cross-check of RAV4 ownership guides, problem guides, best-parts comparisons, and generation notes.",
     "Official Toyota owner, warranty, and maintenance material for the 2021 RAV4 family.",
     "NHTSA recall records used as a safety and campaign check, not as proof that every ownership complaint is a recall."
   ],
   appliesTo: [
-    "2019-2021 Toyota RAV4 XA50 gas and hybrid ownership patterns, with the strongest fit for 2020-2021 pages already in this site.",
+    "2019-2021 Toyota RAV4 XA50 gas and hybrid ownership patterns, with the strongest fit for 2020-2021 vehicles.",
     "Normal used-buyer, commuter, and family-crossover use cases where refinement, maintenance, and fitment discipline matter.",
     "North American-style ownership assumptions unless a page says otherwise."
   ],
@@ -75,7 +75,7 @@ const ownershipDecisionPath: DecisionStep[] = [
   },
   {
     trigger: "The steering wheel vibrates or the RAV4 hums at highway speed.",
-    check: "Make tire condition, balance, wheel damage, and rotation history lose before buying hubs or bigger chassis parts.",
+    check: "Rule out tire condition, balance, wheel damage, and rotation history before buying hubs or bigger chassis parts.",
     nextStep: "Only move toward wheel-bearing or suspension parts after the tire/wheel evidence is clean."
   }
 ];
@@ -121,7 +121,7 @@ export const rav4GuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "This page is meant to separate the repeat XA50 ownership pattern from generic Toyota confidence. It uses the site's RAV4 cluster, official Toyota documents, and recall checks as guardrails, then keeps the advice focused on buyer-visible issues."
+        "This guide separates the repeat XA50 ownership pattern from generic Toyota confidence. It uses official Toyota documents, recall checks, and buyer-visible symptoms as guardrails."
     },
     decisionPath: ownershipDecisionPath
   },
@@ -129,7 +129,7 @@ export const rav4GuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "This page treats cost as a maintenance and diagnosis problem first. The goal is to show where normal RAV4 ownership usually spends money before small issues are turned into larger repair theories."
+        "RAV4 cost is treated as a maintenance and diagnosis problem first, showing where normal ownership usually spends money before small issues are turned into larger repair theories."
     },
     decisionPath: maintenanceDecisionPath
   },
@@ -177,7 +177,7 @@ export const rav4GuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "This final verdict is based on the full RAV4 guide stack, not a single repair page. It is strongest for buyers deciding whether a specific used XA50 is worth the premium."
+        "This final verdict weighs the main RAV4 ownership checks together instead of relying on one isolated repair concern."
     },
     decisionPath: usedBuyerDecisionPath
   }
@@ -188,7 +188,7 @@ export const rav4ProblemQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "For the XA50 RAV4, this symptom is treated as a 12-volt battery and use-pattern problem first. Hybrid traction-battery diagnosis is intentionally outside this page."
+        "For the XA50 RAV4, this symptom is treated as a 12-volt battery and use-pattern problem first. Hybrid traction-battery diagnosis is intentionally outside this guide."
     },
     decisionPath: [
       {
@@ -231,7 +231,7 @@ export const rav4ProblemQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "This page keeps RAV4 driveway-entry clunks in the small-parts-first lane unless inspection shows a larger suspension problem."
+        "RAV4 driveway-entry clunks stay in the small-parts-first lane unless inspection shows a larger suspension problem."
     },
     decisionPath: [
       {

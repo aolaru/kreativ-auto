@@ -11,7 +11,8 @@ const minimumAdsenseContentWords = 900;
 const lowValueContentRoots = [
   path.join(cwd, "src", "content"),
   path.join(cwd, "src", "pages"),
-  path.join(cwd, "src", "data")
+  path.join(cwd, "src", "data"),
+  path.join(cwd, "scripts", "autopilot")
 ];
 const prohibitedLowValuePhrases = [
   "starter page",
@@ -28,7 +29,37 @@ const prohibitedLowValuePhrases = [
   "refine exact trim differences later",
   "refine specific hardware differences later",
   "should be refined later",
-  "confirm part splits later"
+  "confirm part splits later",
+  "where the site",
+  "site already has",
+  "content maze",
+  "content layer",
+  "guide layer",
+  "flat listing",
+  "database view",
+  "published car hubs",
+  "car hub page",
+  "vehicle cluster",
+  "strongest vehicle clusters",
+  "deepest cluster",
+  "supporting pages",
+  "generation context",
+  "automation lanes",
+  "content-quality gaps",
+  "cluster work",
+  "cluster into",
+  "guide stack",
+  "pages already available",
+  "linked from this page",
+  "model-year hub",
+  "generation hub",
+  "car hub",
+  "this page is written",
+  "this page treats",
+  "this page keeps",
+  "use this page as",
+  "the site is",
+  "on the site"
 ];
 const requiredStaticFiles = [
   "public/ads.txt",
