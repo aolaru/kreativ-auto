@@ -62,7 +62,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without checking AWD, package, and market-specific brake listings."
   phaseDifferences:
-    - "Use this BP-era shortlist as the baseline and verify exact catalog splits."
+    - "Treat the BP-era shortlist as the baseline and verify exact catalog splits."
   powertrainDifferences:
     - "AWD and trim package differences can change exact brake hardware."
 ---

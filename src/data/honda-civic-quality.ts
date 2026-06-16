@@ -121,7 +121,7 @@ export const hondaCivicGuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonCivicEvidence,
       summary:
-        "This guide separates the facelift Civic's repeat ownership pattern from generic Civic confidence. It uses official Honda material, recall checks, and buyer-visible symptoms as guardrails."
+        "Separate the facelift Civic repeat ownership pattern from generic Civic confidence. It uses official Honda material, recall checks, and buyer-visible symptoms as guardrails."
     },
     decisionPath: ownershipDecisionPath
   },

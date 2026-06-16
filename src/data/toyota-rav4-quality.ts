@@ -121,7 +121,7 @@ export const rav4GuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "This guide separates the repeat XA50 ownership pattern from generic Toyota confidence. It uses official Toyota documents, recall checks, and buyer-visible symptoms as guardrails."
+        "Separate the repeat XA50 ownership pattern from generic Toyota confidence. It uses official Toyota documents, recall checks, and buyer-visible symptoms as guardrails."
     },
     decisionPath: ownershipDecisionPath
   },
@@ -188,7 +188,7 @@ export const rav4ProblemQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "For the XA50 RAV4, this symptom is treated as a 12-volt battery and use-pattern problem first. Hybrid traction-battery diagnosis is intentionally outside this guide."
+        "For the XA50 RAV4, this symptom starts as a 12-volt battery and use-pattern problem. Hybrid traction-battery diagnosis is intentionally outside this scope."
     },
     decisionPath: [
       {

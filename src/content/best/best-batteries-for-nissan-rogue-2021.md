@@ -65,7 +65,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without confirming trim, package, and exact fitment split first."
   phaseDifferences:
-    - "Use this T33-era page as the baseline and confirm supplier splits when ordering."
+    - "Treat the T33-era notes as the baseline and confirm supplier splits when ordering."
   powertrainDifferences:
     - "The broad shortlist logic still applies, but exact compatibility can vary by powertrain and package."
 ---

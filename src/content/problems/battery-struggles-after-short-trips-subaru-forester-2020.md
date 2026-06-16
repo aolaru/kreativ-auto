@@ -64,7 +64,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without confirming group size, terminal layout, and market-specific requirements."
   phaseDifferences:
-    - "Use this SK-era guide as the baseline and confirm exact battery listing before purchase."
+    - "Treat the SK-era notes as the baseline and confirm exact battery listing before purchase."
   powertrainDifferences:
     - "Accessory load and market equipment can change the right battery choice."
 ---

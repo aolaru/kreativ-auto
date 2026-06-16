@@ -53,7 +53,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without checking the exact trim and suspension listing."
   phaseDifferences:
-    - "Use this BP-era page as a baseline and confirm any exact supplier split when ordering."
+    - "Treat the BP-era notes as the baseline and confirm any exact supplier split when ordering."
   powertrainDifferences:
     - "The broad link-choice logic still applies across the normal Mazda 3 range."
 ---

@@ -64,7 +64,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without confirming battery group size, terminal layout, and trim-specific requirements."
   phaseDifferences:
-    - "Use this TL-era guide as the baseline and verify exact battery listing before purchase."
+    - "Treat the TL-era notes as the baseline and verify exact battery listing before purchase."
   powertrainDifferences:
     - "Accessory load and exact battery requirements can vary by engine, package, and market."
 ---

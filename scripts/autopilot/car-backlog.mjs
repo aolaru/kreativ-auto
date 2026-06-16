@@ -45,7 +45,7 @@ const curatedCarBacklog = [
           "Most 2020 Corolla sedan trims with the normal daily-driver brake and wheel-end setup."
         ],
         doesNotApplyTo: [
-          "Do not use this as fitment proof for GR, hatch-only, hybrid-specific, or non-US market variants without confirming the exact catalog listing."
+          "Do not treat these notes as fitment proof for GR, hatch-only, hybrid-specific, or non-US market variants without confirming the exact catalog listing."
         ],
         phaseDifferences: [
           "Treat the E210 Corolla as the working ownership group, while still requiring trim and package confirmation before parts are ordered."
@@ -74,7 +74,7 @@ const curatedCarBacklog = [
       ],
       body: [
         "The Corolla still earns its reputation for easy ownership, but that does not mean owners never hear noises or chase small wear-item problems. The most useful approach is to stay ahead of brake service, hub noise, and smaller suspension knocks before they turn into a longer parts hunt.",
-        "Use this model-year guide: start with the symptom, confirm whether the issue is brake, battery, hub, or suspension related, then move into the linked problem and parts guides for the narrower repair path."
+        "Start with the symptom, confirm whether the issue is brake, battery, hub, or suspension related, then narrow the repair path with the matching symptom or parts guide."
       ]
     },
     problem: {
@@ -167,7 +167,7 @@ const curatedCarBacklog = [
           "Do not treat this as the final word for performance-oriented or non-US brake packages."
         ],
         phaseDifferences: [
-          "This guide is for the E210-era Corolla baseline and may need trim-specific confirmation as the platform coverage grows."
+          "The E210-era Corolla baseline applies here, with trim-specific confirmation still required before ordering."
         ],
         powertrainDifferences: [
           "Hybrid regenerative feel can change how owners describe noise and pedal behavior, even when the mechanical brake hardware is similar."
@@ -272,7 +272,7 @@ const curatedCarBacklog = [
           "Do not assume hatch, sport-oriented, or non-US package differences are identical without checking fitment."
         ],
         phaseDifferences: [
-          "This guide uses the E210-era Corolla as the ownership group, while exact pad fitment still needs trim and package confirmation before ordering."
+          "The E210-era Corolla is the ownership group, while exact pad fitment still needs trim and package confirmation before ordering."
         ],
         powertrainDifferences: [
           "Hybrid regenerative feel can change the subjective brake feel, but the quieter ceramic pad logic still holds for normal daily driving."
@@ -329,7 +329,7 @@ const curatedCarBacklog = [
           "Most 2020 Accord daily-driver trims in the tenth-generation gas lineup."
         ],
         doesNotApplyTo: [
-          "Do not use this as direct fitment proof for hybrid, 2.0T-specific, or non-US variants without checking the exact catalog listing."
+          "Do not treat these notes as direct fitment proof for hybrid, 2.0T-specific, or non-US variants without checking the exact catalog listing."
         ],
         phaseDifferences: [
           "Keep the tenth-generation Accord context together while still requiring trim and engine confirmation before parts are ordered."
@@ -358,7 +358,7 @@ const curatedCarBacklog = [
       ],
       body: [
         "The Accord is one of those cars where ownership quality comes down to how quickly you deal with the first signs of brake, HVAC, or voltage trouble. Catch those early and the car usually stays cheap and easy to live with.",
-        "Use this model-year guide: start by separating brake, HVAC, battery, and front-end symptoms, then open the linked problem or parts guide that matches the confirmed complaint."
+        "Start by separating brake, HVAC, battery, and front-end symptoms, then open the symptom or parts guide that matches the confirmed complaint."
       ]
     },
     problem: {
@@ -442,7 +442,7 @@ const curatedCarBacklog = [
           "Do not treat this as direct fitment proof for hybrid-specific HVAC hardware differences."
         ],
         phaseDifferences: [
-          "Treat this as a tenth-generation Accord baseline and confirm exact parts by VIN once the platform gets deeper HVAC coverage."
+          "Treat these as tenth-generation Accord notes and confirm exact parts by VIN before ordering HVAC components."
         ],
         powertrainDifferences: [
           "The broad idle-cooling logic still applies, but hybrid HVAC hardware and diagnosis can diverge."
@@ -628,7 +628,7 @@ const curatedCarBacklog = [
       ],
       body: [
         "The Mazda 3 generally stays pleasant to own when owners react early to noise rather than waiting for it to get obvious. Brake squeal, front-end knocks, and tire-versus-hub confusion are the usual places where a small annoyance becomes wasted time and money.",
-        "Use this model-year guide: start by separating brake noise, front-end clunk, road hum, and battery behavior, then move into the linked problem and parts guides for the exact symptom."
+        "Start by separating brake noise, front-end clunk, road hum, and battery behavior, then narrow the repair path with the matching symptom or parts guide."
       ]
     },
     problem: {
@@ -798,7 +798,7 @@ const curatedCarBacklog = [
           "Do not order without checking the exact trim and suspension listing."
         ],
         phaseDifferences: [
-          "Use this BP-era page as a baseline and confirm any exact supplier split when ordering."
+          "Treat the BP-era notes as the baseline and confirm any exact supplier split when ordering."
         ],
         powertrainDifferences: [
           "The broad link-choice logic still applies across the normal Mazda 3 range."
@@ -1549,14 +1549,14 @@ function buildQueueEntry(seed) {
       faqs: seed.carFaqs,
       fitment: {
         appliesTo: [`Most ${seed.year} ${seed.modelDisplay} daily-driver trims in this generation.`],
-        doesNotApplyTo: [`Do not use this as final fitment guidance for special trims, performance variants, or non-US market splits without confirming the actual hardware.`],
+        doesNotApplyTo: [`Do not treat these notes as final fitment guidance for special trims, performance variants, or non-US market splits without confirming the actual hardware.`],
         phaseDifferences: [`Keep the ${seed.generationCode}-era ownership pattern grouped while still requiring trim and package confirmation before parts are ordered.`],
         powertrainDifferences: [`The broad ownership logic still applies, but exact diagnosis and part choice can change by engine, drivetrain, and package.`]
       },
       recommendedParts: products.slice(0, 2),
       body: [
         `${seed.modelDisplay} ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.`,
-        `Use this model-year guide: start with the most obvious symptom, then move into the linked problem and parts sections for a narrower repair path.`
+        `Start with the most obvious symptom, then narrow the repair path with the matching symptom or parts guide.`
       ]
     },
     problem: {
@@ -1629,7 +1629,7 @@ function buildQueueEntry(seed) {
       fitment: {
         appliesTo: [`Most ${seed.year} ${seed.modelDisplay} trims where a normal daily-driver parts choice is the right goal.`],
         doesNotApplyTo: [`Do not order without confirming trim, package, and exact fitment split first.`],
-        phaseDifferences: [`Use this ${seed.generationCode}-era page as the baseline and confirm supplier splits when ordering.`],
+        phaseDifferences: [`Treat the ${seed.generationCode}-era notes as the baseline and confirm supplier splits when ordering.`],
         powertrainDifferences: [`The broad shortlist logic still applies, but exact compatibility can vary by powertrain and package.`]
       },
       body: [
@@ -1825,7 +1825,7 @@ const queuedCarSeeds = [
       "Battery reserve matters more than owners expect when the car sits."
     ],
     carFaqs: [
-      { question: "Does Prius battery content mean the hybrid battery?", answer: "Not here. The first recurring ownership complaint is often the normal 12-volt battery." },
+      { question: "Does Prius battery advice mean the hybrid battery?", answer: "Not here. The first recurring ownership complaint is often the normal 12-volt battery." },
       { question: "Is the 2020 Prius still cheap to own?", answer: "Usually yes, especially when 12-volt and tire-related complaints are handled calmly." }
     ]
   },

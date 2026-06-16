@@ -42,7 +42,7 @@ fitment:
   phaseDifferences:
     - Earlier Mk2 Tiguans may overlap in plug choice, but facelift-era service and parts shopping are the focus here.
   powertrainDifferences:
-    - This shortlist assumes the regular gas engine. Alternative powertrains fall outside scope.
+    - This shortlist assumes the regular gas engine. Alternative powertrains fall outside this scope.
 quickVerdict: If the Tiguan is hesitating or setting up EPC behavior under load, a confirmed-fitment plug is worth more than the cheapest option in the catalog.
 bestFor:
   - Owners chasing hesitation, load-related misfires, or overdue ignition service on the 2.0T.

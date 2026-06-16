@@ -75,7 +75,7 @@ fitment:
     - Do not treat this as a fitment guide for older pre-2019 Civic X trims sold in other markets with different engines or equipment packages.
   phaseDifferences:
     - The 2019 facelift does not rewrite the Civic mechanically, but some trim packaging and Honda part supersessions changed, so confirm by VIN when ordering HVAC or electrical parts.
-    - Earlier 2016-2018 cars share a lot with this guide, but facelift-year condenser and trim references are cleaner if you keep 2019-2021 grouped together.
+    - Earlier 2016-2018 cars share much of the same ownership pattern, but facelift-year condenser and trim references are cleaner if you keep 2019-2021 grouped together.
   powertrainDifferences:
     - The 1.5T cars are more likely to have owners thinking about drivability, boost, and plug condition sooner, while the 2.0 cars are usually simpler around intake and turbo-related diagnosis.
     - Hybrid differences are not covered here because the mainstream 2019 Civic fitment picture in this market is centered on the regular gas lineup.

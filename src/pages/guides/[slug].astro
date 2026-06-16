@@ -20,7 +20,7 @@ if (!guide) {
   throw new Error(`Quick ownership guide not found for slug: ${slug}`);
 }
 
-const primaryBestFor = guide.bestFor[0] ?? "the ownership use case described in this guide";
+const primaryBestFor = guide.bestFor[0] ?? "the intended ownership use case";
 const primaryAvoidIf = guide.avoidIf[0] ?? "the inspection shows repeated warning signs";
 const primaryRedFlag = guide.redFlags[0] ?? "the seller cannot explain recent maintenance or the first-check item";
 const firstNextRead = guide.nextReads[0];
@@ -44,7 +44,7 @@ const decisionCards = [
 ];
 const nextStepCards = [
   {
-    title: "Use the first check as the filter",
+    title: "Let the first check act as the filter",
     description: guide.firstCheck
   },
   {
@@ -55,13 +55,13 @@ const nextStepCards = [
   },
   {
     title: "Keep condition ahead of reputation",
-    description: "A strong model reputation still depends on maintenance history, inspection results, and whether the example in front of you matches the use case this guide describes."
+    description: "A strong model reputation still depends on maintenance history, inspection results, and whether the example in front of you matches the right ownership profile."
   }
 ];
 const spendingCheckCards = [
   {
     title: "Confirm the condition before price",
-    description: `Use the first check as the gate before negotiating. If the car fails that check, the price needs to reflect diagnosis time, parts, and the chance that the first visible symptom is only part of the repair.`
+    description: `Let the first check act as the gate before negotiating. If the car fails that check, the price needs to reflect diagnosis time, parts, and the chance that the first visible symptom is only part of the repair.`
   },
   {
     title: "Separate normal wear from neglect",
@@ -114,16 +114,16 @@ const schemas = [
 <ContentLayout
   title={guide.title}
   description={guide.description}
-  intro="Use this guide as the first ownership pass for the vehicle: what it suits, what to avoid, and which checks should happen before buying parts or buying the car."
+  intro="Start with the broad ownership fit: what the vehicle suits, what to avoid, and which checks should happen before buying parts or buying the car."
   image={guide.image}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary="These ownership guides prioritize practical buyer and owner decisions: symptoms to respect, first checks to run, and the next pages worth opening."
+  editorialSummary="Practical buyer and owner decisions come first: symptoms to respect, first checks to run, and the repair areas worth checking next."
   editorialByline={`By ${editorialTeam.name}`}
   editorialBadges={["Ownership guide", "Buyer checks", "Related repairs"]}
 >
   <TrustBlock
-    summary="This guide gives the model a practical ownership starting point, then points to the symptom and parts checks that matter next."
+    summary="Start with the model's practical ownership fit, then narrow the decision with the symptom and parts checks that matter next."
     byline={`By ${editorialTeam.name}`}
     points={carTrustPoints}
   />
@@ -165,7 +165,7 @@ const schemas = [
     </ul>
   </Section>
 
-  <Section id="decision-checklist" title="Decision checklist" intro="Use this section to turn the ownership notes into a clearer buy, diagnose, or walk-away decision.">
+  <Section id="decision-checklist" title="Decision checklist" intro="Turn the ownership notes into a clearer buy, diagnose, or walk-away decision.">
     <div class="grid gap-4 lg:grid-cols-3">
       {
         decisionCards.map((item) => (
@@ -179,7 +179,7 @@ const schemas = [
     </div>
   </Section>
 
-  <Section id="how-to-use" title="How to use this guide" intro="The goal is to reduce uncertainty before a listing, inspection, or repair turns into a parts order.">
+  <Section id="next-steps" title="Next steps" intro="Reduce uncertainty before a listing, inspection, or repair turns into a parts order.">
     <div class="grid gap-4 lg:grid-cols-3">
       {
         nextStepCards.map((item) => (
@@ -192,7 +192,7 @@ const schemas = [
     </div>
   </Section>
 
-  <Section id="before-spending" title="Before spending money" intro="Use this final pass before buying the car, approving work, or ordering parts from a shortlist.">
+  <Section id="before-spending" title="Before spending money" intro="Make one final pass before buying the car, approving work, or ordering parts from a shortlist.">
     <div class="grid gap-4 lg:grid-cols-3">
       {
         spendingCheckCards.map((item) => (
@@ -207,7 +207,7 @@ const schemas = [
 
   <RelatedLinks
     title="Open next"
-    intro="Use these pages when the quick ownership check points toward a specific symptom or repair area."
+    intro="Open the matching symptom or repair area when the quick ownership check points in that direction."
     items={guide.nextReads}
   />
 </ContentLayout>

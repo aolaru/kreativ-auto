@@ -126,19 +126,19 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro="Use this guide to figure out what the symptom usually means, how urgent it is, and what to check before buying parts or booking the repair."
+  intro="Start with what the symptom usually means, how urgent it is, and what to check before buying parts or booking the repair."
   faqs={problem.data.faqs}
   image={socialImage}
   modifiedTime={problem.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary="These problem guides are written to help drivers identify the most likely cause, make a sensible first check, and avoid wasting money on the wrong repair."
+  editorialSummary="Good diagnosis starts with the most likely cause, a sensible first check, and restraint before money goes into the wrong repair."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={problem.data.updatedAt ? `Reviewed ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
   editorialBadges={["Problem guide", "Fitment notes checked", "Parts links reviewed"]}
 >
   <TrustBlock
-    summary="Problem guides here are built to help a driver decide what is most likely, how urgent it is, and which repairs are worth checking before money goes in the wrong direction."
+    summary="Start with the likely cause, urgency, and repair checks that matter before money goes in the wrong direction."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={problem.data.updatedAt ? `Checked ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
     points={problemTrustPoints}
@@ -146,7 +146,7 @@ const schemas = [
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
-  <Section id="quick-answer" title="What to know first" intro="This is the short version if you want to decide how serious the problem is before digging deeper.">
+  <Section id="quick-answer" title="What to know first" intro="The short version helps judge seriousness before digging deeper.">
     <div class="grid gap-4 md:grid-cols-2">
       {
         quickFacts.map((item) => (
@@ -159,7 +159,7 @@ const schemas = [
     </div>
   </Section>
 
-  <Section id="triage" title="Quick triage" intro="Use this section if you want the shortest path from symptom to the first sensible check.">
+  <Section id="triage" title="Quick triage" intro="The shortest path from symptom to the first sensible check.">
     <ProblemTriageBlock
       quickVerdict={triageVerdict}
       firstCheck={triageFirstCheck}
@@ -171,7 +171,7 @@ const schemas = [
     />
   </Section>
 
-  {vehicleQuality && <DecisionPathBlock title="Vehicle-specific decision path" intro="Use this to keep the diagnosis focused before buying parts or escalating the repair." steps={vehicleQuality.decisionPath} />}
+  {vehicleQuality && <DecisionPathBlock title="Vehicle-specific decision path" intro="Keep the diagnosis focused before buying parts or escalating the repair." steps={vehicleQuality.decisionPath} />}
 
   <Section id="symptoms" title="Symptoms" intro="These are the signs drivers usually notice before the real cause is confirmed.">
     <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">

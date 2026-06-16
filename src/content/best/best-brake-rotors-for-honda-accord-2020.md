@@ -62,7 +62,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without checking hybrid, 2.0T, and package-specific splits."
   phaseDifferences:
-    - "Use this tenth-generation Accord shortlist as the baseline and verify catalog details."
+    - "Treat the tenth-generation Accord shortlist as the baseline and verify catalog details."
   powertrainDifferences:
     - "Hybrid and 2.0T hardware can differ enough to require extra fitment checking."
 ---

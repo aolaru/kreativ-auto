@@ -49,7 +49,7 @@ fitment:
   phaseDifferences:
     - Earlier Mk2 Tiguans can show similar consumption behavior, but the guidance is grouped around the facelift-era service pattern and parts shopping path.
   powertrainDifferences:
-    - This guide assumes the normal gas 2.0T layout. Hybrid and diesel ownership patterns are outside scope.
+    - The normal gas 2.0T layout applies here. Hybrid and diesel ownership patterns are outside this scope.
 recommendedParts:
   - name: Liqui Moly Special Tec LL 5W-30
     price: "$49"

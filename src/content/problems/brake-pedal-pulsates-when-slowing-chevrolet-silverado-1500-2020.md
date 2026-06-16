@@ -64,11 +64,11 @@ fitment:
   doesNotApplyTo:
     - "Do not treat this as final fitment proof for heavy-duty, performance, or non-US brake packages."
   phaseDifferences:
-    - "Use this as a T1XX-era baseline and confirm exact brake package before ordering."
+    - "Treat these as T1XX-era baseline notes and confirm exact brake package before ordering."
   powertrainDifferences:
     - "Brake package, towing package, and wheel size can change the right parts even when the symptom pattern is similar."
 ---
 
 Brake pulsation on a full-size truck is easy to misread because tire, rotor, pad, and hub complaints can overlap. The useful first step is to separate vibration while cruising from vibration that appears only under brake pressure.
 
-This guide keeps the Silverado diagnosis grounded in braking load, truck use, and inspection order so owners do not buy the first heavy-duty pad set before confirming the actual cause.
+Keep the Silverado diagnosis grounded in braking load, truck use, and inspection order so owners do not buy the first heavy-duty pad set before confirming the actual cause.

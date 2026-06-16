@@ -64,7 +64,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without checking trim, engine, and brake package fitment."
   phaseDifferences:
-    - "Use this tenth-generation Accord guide as the baseline and verify exact catalog splits."
+    - "Treat the tenth-generation Accord notes as the baseline and verify exact catalog splits."
   powertrainDifferences:
     - "Hybrid and 2.0T brake package details can differ enough to require extra fitment checking."
 ---

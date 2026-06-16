@@ -184,13 +184,13 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro="This guide is here to help you compare the strongest options quickly, understand the tradeoffs, and choose the part that makes the most sense for your car."
+  intro="Compare the strongest options quickly, understand the tradeoffs, and choose the part that makes the most sense for your car."
   faqs={entry.data.faqs}
   image={socialImage}
   modifiedTime={entry.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary="These best-parts guides prioritize fitment confidence, normal daily use, and parts that make sense for real ownership instead of inflated spec-sheet hype."
+  editorialSummary="Best-parts recommendations prioritize fitment confidence, normal daily use, and parts that make sense for real ownership instead of inflated spec-sheet hype."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={entry.data.updatedAt ? `Reviewed ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
   editorialBadges={["Comparison guide", "Methodology applied", "Fitment notes checked"]}
@@ -205,7 +205,7 @@ const schemas = [
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
-  <Section id="decision-block" title="Quick decision" intro="Use this section if you want the shortlist logic before digging through the full comparison.">
+  <Section id="decision-block" title="Quick decision" intro="Start with the shortlist logic before digging through the full comparison.">
     <BestDecisionBlock
       quickVerdict={quickVerdict}
       bestFor={bestFor}
@@ -216,7 +216,7 @@ const schemas = [
     />
   </Section>
 
-  <Section id="before-you-buy" title="Before you buy" intro="Use these checks before moving from a shortlist to a cart. They keep the page focused on solving the right problem, not just picking a product.">
+  <Section id="before-you-buy" title="Before you buy" intro="Run these checks before moving from a shortlist to a cart. The priority is solving the right problem, not just picking a product.">
     <div class="grid gap-4 lg:grid-cols-3">
       {
         beforeBuyingChecks.map((item) => (
@@ -229,7 +229,7 @@ const schemas = [
     </div>
   </Section>
 
-  {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro="Use this vehicle-specific path before treating the product shortlist as the diagnosis." steps={vehicleQuality.decisionPath} />}
+  {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro="Confirm the vehicle-specific path before treating the product shortlist as the diagnosis." steps={vehicleQuality.decisionPath} />}
 
   <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
     <ComparisonTable products={entry.data.products} />
@@ -247,7 +247,7 @@ const schemas = [
     </ul>
   </Section>
 
-  <Section id="choose-without-overbuying" title="Choose without overbuying" intro="Use these checks when several options look close and the most expensive one is not automatically the smartest choice.">
+  <Section id="choose-without-overbuying" title="Choose without overbuying" intro="When several options look close, the most expensive one is not automatically the smartest choice.">
     <div class="grid gap-4 lg:grid-cols-3">
       {
         overbuyingCards.map((item) => (

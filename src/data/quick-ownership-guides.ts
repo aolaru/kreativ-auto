@@ -58,7 +58,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/oil-level-drops-between-services-audi-q5-2020/",
         title: "Oil level drops between services on Audi Q5 2020",
-        description: "Use this when the Q5 ownership question is really about whether oil use has become a pattern.",
+        description: "Best when the Q5 ownership question is really about whether oil use has become a pattern.",
         eyebrow: "Problem guide"
       },
       {
@@ -105,7 +105,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/engine-hesitates-under-acceleration-bmw-3-series-2019/",
         title: "Engine hesitates under acceleration on BMW 3 Series 2019",
-        description: "Use this when the test drive exposes hesitation instead of clean pull.",
+        description: "Best when the test drive exposes hesitation instead of clean pull.",
         eyebrow: "Problem guide"
       },
       {
@@ -158,7 +158,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/best/best-wheel-bearings-for-ford-f-150-2020/",
         title: "Best wheel bearings for Ford F-150 2020",
-        description: "Use this only after tires and basic wheel checks no longer explain the hum.",
+        description: "Only after tires and basic wheel checks no longer explain the hum.",
         eyebrow: "Best parts"
       }
     ]
@@ -199,7 +199,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/engine-hesitates-under-acceleration-mercedes-benz-c-class-2019/",
         title: "Engine hesitates under acceleration on Mercedes-Benz C-Class 2019",
-        description: "Use this when the premium-sedan test drive does not feel smooth under load.",
+        description: "Best when the premium-sedan test drive does not feel smooth under load.",
         eyebrow: "Problem guide"
       },
       {
@@ -246,7 +246,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/humming-noise-that-gets-louder-with-speed-subaru-outback-2020/",
         title: "Humming noise that gets louder with speed on Subaru Outback 2020",
-        description: "Use this before replacing tires or hubs without a clean diagnosis.",
+        description: "Best before replacing tires or hubs without a clean diagnosis.",
         eyebrow: "Problem guide"
       },
       {
@@ -346,7 +346,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/brake-pedal-pulsates-when-slowing-chevrolet-silverado-1500-2020/",
         title: "Brake pedal pulsates when slowing on Chevrolet Silverado 1500 2020",
-        description: "Use this when the vibration follows braking force more than road speed.",
+        description: "Best when the vibration follows braking force more than road speed.",
         eyebrow: "Problem guide"
       },
       {
@@ -393,7 +393,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/brake-squeal-at-low-speed-hyundai-tucson-2020/",
         title: "Brake squeal at low speed on Hyundai Tucson 2020",
-        description: "Use this when brake noise is the first issue making the Tucson feel rough.",
+        description: "Best when brake noise is the first issue making the Tucson feel rough.",
         eyebrow: "Problem guide"
       },
       {
@@ -405,7 +405,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/best/best-batteries-for-hyundai-tucson-2020/",
         title: "Best batteries for Hyundai Tucson 2020",
-        description: "Use this after the battery test confirms weak reserve rather than a random electrical concern.",
+        description: "Best after the battery test confirms weak reserve rather than a random electrical concern.",
         eyebrow: "Best parts"
       }
     ]
@@ -446,7 +446,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/battery-goes-dead-after-sitting-nissan-rogue-2021/",
         title: "Battery goes dead after sitting on Nissan Rogue 2021",
-        description: "Use this when the Rogue starts weakly after parking instead of after normal use.",
+        description: "Best when the Rogue starts weakly after parking instead of after normal use.",
         eyebrow: "Problem guide"
       },
       {
@@ -458,7 +458,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/best/best-brake-pads-for-nissan-rogue-2021/",
         title: "Best brake pads for Nissan Rogue 2021",
-        description: "Use this when the front brake diagnosis points toward pads and hardware.",
+        description: "Best when the front brake diagnosis points toward pads and hardware.",
         eyebrow: "Best parts"
       }
     ]
@@ -505,7 +505,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/problems/battery-struggles-after-short-trips-subaru-forester-2020/",
         title: "Battery struggles after short trips on Subaru Forester 2020",
-        description: "Use this when the symptom is weak reserve rather than wheel or tire noise.",
+        description: "Best when the symptom is weak reserve rather than wheel or tire noise.",
         eyebrow: "Problem guide"
       },
       {
@@ -552,7 +552,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/guides/honda-accord-2020-common-problems/",
         title: "Honda Accord 2020 common problems and what to check first",
-        description: "Use this for the broader Accord ownership map before narrowing to one repair area.",
+        description: "Start with the broader Accord ownership map before narrowing to one repair area.",
         eyebrow: "Ownership guide"
       },
       {
@@ -605,7 +605,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
       {
         href: "/guides/mazda-3-2020-common-problems/",
         title: "Mazda 3 2020 common problems and what to check first",
-        description: "Use this for the broader Mazda 3 ownership map before narrowing the repair.",
+        description: "Start with the broader Mazda 3 ownership map before narrowing the repair.",
         eyebrow: "Ownership guide"
       },
       {

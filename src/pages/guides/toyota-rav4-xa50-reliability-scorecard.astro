@@ -13,7 +13,7 @@ const quality = rav4GuideQuality["toyota-rav4-xa50-reliability-scorecard"];
 const description =
   "A used-buyer reliability scorecard for the Toyota RAV4 XA50, focused on what is genuinely low-drama, where everyday ownership still needs discipline, and which complaints are usually manageable.";
 const intro =
-  "The XA50 RAV4 earns its reputation more honestly than most vehicles in this segment, but that does not mean every used example deserves blind trust. The reliability story is strong mostly because the weak points are ordinary: battery reserve on short-trip cars, brake refinement, smaller suspension wear, and tire or wheel-end diagnosis. That is a good story, but only if the car in front of you was not maintained casually. This guide is here to make that distinction cleaner.";
+  "The XA50 RAV4 earns its reputation more honestly than most vehicles in this segment, but that does not mean every used example deserves blind trust. The reliability story is strong mostly because the weak points are ordinary: battery reserve on short-trip cars, brake refinement, smaller suspension wear, and tire or wheel-end diagnosis. That is a good story, but only if the car in front of you was not maintained casually. That distinction matters before trusting the car or the price.";
 const modifiedTime = new Date("2026-04-25");
 const breadcrumbs = [
   { label: "Home", href: "/" },
@@ -23,13 +23,13 @@ const breadcrumbs = [
 
 const relatedProblems = [
   { href: "/problems/battery-goes-dead-after-sitting/", title: "Battery goes dead after sitting", description: "Open this if the reliability question is already shifting toward reserve capacity and parked-use behavior.", eyebrow: "Problem guide" },
-  { href: "/problems/rear-brakes-squeak-after-rain/", title: "Rear brakes squeak after rain", description: "Use this when the scorecard concern is refinement and pad behavior, not a bigger brake-system failure.", eyebrow: "Problem guide" },
+  { href: "/problems/rear-brakes-squeak-after-rain/", title: "Rear brakes squeak after rain", description: "Best when the scorecard concern is refinement and pad behavior, not a bigger brake-system failure.", eyebrow: "Problem guide" },
   { href: "/problems/steering-wheel-vibrates-at-highway-speed/", title: "Steering wheel vibrates at highway speed", description: "Worth reading if the used-buyer hesitation is really about tires, wheels, or hub diagnosis.", eyebrow: "Problem guide" }
 ];
 
 const relatedGuides = [
   { href: "/guides/toyota-rav4-xa50-common-problems/", title: "Toyota RAV4 XA50 common problems", description: "The deeper ownership-problem guide if the scorecard already points you toward the repeat complaint pattern.", eyebrow: "Ownership guide" },
-  { href: "/guides/toyota-rav4-xa50-maintenance-costs-and-weak-points/", title: "Toyota RAV4 XA50 maintenance costs and weak points", description: "Use this when the next question is what the platform usually costs to keep boring and dependable.", eyebrow: "Maintenance guide" },
+  { href: "/guides/toyota-rav4-xa50-maintenance-costs-and-weak-points/", title: "Toyota RAV4 XA50 maintenance costs and weak points", description: "Best when the next question is what the platform usually costs to keep boring and dependable.", eyebrow: "Maintenance guide" },
   { href: "/guides/toyota-rav4-xa50-what-to-avoid/", title: "Toyota RAV4 XA50: what to avoid", description: "Open this if the specific RAV4 example in front of you is already raising used-buyer red flags.", eyebrow: "Avoid guide" }
 ];
 ---
@@ -47,15 +47,15 @@ const relatedGuides = [
   editorialBadges={["Reliability guide", "Generation-specific", "Used-buyer focused"]}
 >
   <TrustBlock
-    title="How to use this guide"
-    summary="Use this guide when the question is not whether the XA50 RAV4 is generally good, but whether it is still the right used buy for someone who wants low-drama ownership."
+    title="Best starting point"
+    summary="Start here when the question is not whether the XA50 RAV4 is generally good, but whether it is still the right used buy for someone who wants low-drama ownership."
     byline={`By ${editorialTeam.name}`}
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={carTrustPoints}
   />
 
   <EvidenceLimitsBlock {...quality.evidence} />
-  <DecisionPathBlock title="Used-buyer reliability path" intro="Use this to decide whether a specific RAV4 deserves the platform's good reputation." steps={quality.decisionPath} />
+  <DecisionPathBlock title="Used-buyer reliability path" intro="Decide whether a specific RAV4 deserves the platform's good reputation." steps={quality.decisionPath} />
 
   <Section title="The short version" intro="If you only need the fast read, this is the XA50 reliability story in plain language.">
     <ul class="space-y-3 text-sm leading-6 text-steel">

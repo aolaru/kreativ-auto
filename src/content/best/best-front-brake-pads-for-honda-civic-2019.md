@@ -48,7 +48,7 @@ fitment:
     - Earlier 2016-2018 Civic X cars can overlap in broad pad logic, but facelift-year listings are cleaner if you keep the later cars grouped together.
   powertrainDifferences:
     - Front pad choice here is mostly a brake-package question, not a 2.0 versus 1.5T question.
-    - Hybrid-specific brake-system differences are outside the scope of this guide.
+    - Hybrid-specific brake-system differences are outside this fitment scope.
 quickVerdict: Most Civic owners will be happier with a quiet street pad than with anything that trades refinement for a little extra bite they do not really need.
 bestFor:
   - Commuter Civics where quiet stops, low dust, and predictable street feel matter more than aggressive initial bite.

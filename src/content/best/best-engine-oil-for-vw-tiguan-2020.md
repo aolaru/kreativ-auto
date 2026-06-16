@@ -43,7 +43,7 @@ fitment:
     - Earlier Mk2 Tiguans may share similar oil requirements, but this shortlist is framed around facelift-era ownership and service shopping.
   powertrainDifferences:
     - Gas-engine Tiguan owners should focus on the right approval and service discipline.
-    - Alternative powertrains can use different service logic and are outside the scope of this guide.
+    - Alternative powertrains can use different service logic and are outside this fitment scope.
 quickVerdict: The best Tiguan oil is the one with the right approval that you use consistently, not the bottle with the loudest reputation.
 bestFor:
   - Owners resetting the service baseline or topping up a Tiguan that needs the correct VW-friendly spec.

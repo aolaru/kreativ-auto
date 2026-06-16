@@ -58,7 +58,7 @@ fitment:
   doesNotApplyTo:
     - "Do not treat this as direct fitment proof for hybrid-specific HVAC hardware differences."
   phaseDifferences:
-    - "Treat this as a tenth-generation Accord baseline and confirm exact parts by VIN once the platform gets deeper HVAC coverage."
+    - "Treat these as tenth-generation Accord notes and confirm exact parts by VIN before ordering HVAC components."
   powertrainDifferences:
     - "The broad idle-cooling logic still applies, but hybrid HVAC hardware and diagnosis can diverge."
 ---

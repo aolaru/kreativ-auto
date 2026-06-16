@@ -62,7 +62,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without confirming the exact battery listing for the vehicle."
   phaseDifferences:
-    - "Use this TL-era shortlist as the baseline and verify catalog splits."
+    - "Treat the TL-era shortlist as the baseline and verify catalog splits."
   powertrainDifferences:
     - "Engine and package differences can change battery requirements."
 ---

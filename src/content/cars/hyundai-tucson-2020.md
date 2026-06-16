@@ -49,7 +49,7 @@ fitment:
   appliesTo:
     - "Most 2020 Hyundai Tucson daily-driver trims in this generation."
   doesNotApplyTo:
-    - "Do not use this as final fitment guidance for special trims, fleet packages, or non-US market splits without confirming the actual hardware."
+    - "Do not treat these notes as final fitment guidance for special trims, fleet packages, or non-US market splits without confirming the actual hardware."
   phaseDifferences:
     - "Keep the TL-era Tucson ownership pattern grouped while still requiring trim and package confirmation before parts are ordered."
   powertrainDifferences:
@@ -57,4 +57,4 @@ fitment:
 ---
 Hyundai Tucson ownership usually stays straightforward when the first recurring complaints are handled early instead of being allowed to turn into a vague parts hunt.
 
-Use this model-year guide: start with brake noise, battery behavior, tire wear, or ride comfort symptoms, then move into the linked problem and parts sections for a narrower repair path.
+Start with brake noise, battery behavior, tire wear, or ride comfort symptoms, then narrow the repair path with the matching symptom or parts guide.

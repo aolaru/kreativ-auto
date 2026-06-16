@@ -61,13 +61,13 @@ const categoryDecisionCards = [
     description: "Open the car-specific guide first when trim, year, or powertrain differences can change the right shortlist."
   },
   {
-    title: "Check linked problems before buying",
+    title: "Check symptoms before buying",
     description: "If a related problem guide exists, use it to confirm the cause before turning a comparison page into a parts order."
   }
 ];
 ---
 
-<BaseLayout enableAds={false} noindex={true} title={`${category} Guides`} description={`Browse ${category.toLowerCase()} comparison pages and related vehicle content.`}>
+<BaseLayout enableAds={false} noindex={true} title={`${category} Guides`} description={`Browse ${category.toLowerCase()} comparison pages and related vehicle guides.`}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface p-8 sm:p-10">
@@ -108,9 +108,9 @@ const categoryDecisionCards = [
     <div class="mt-8">
       <section class="surface p-6 sm:p-8">
         <div class="max-w-3xl">
-          <h2 class="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">How to use this category</h2>
+          <h2 class="text-2xl font-semibold tracking-tight text-ink sm:text-3xl">Part category checklist</h2>
           <p class="mt-3 text-base leading-7 text-steel">
-            Use this category to compare the right family of parts after the vehicle and symptom checks have narrowed the job.
+            Compare compare the right family of parts after the vehicle and symptom checks have narrowed the job.
           </p>
         </div>
         <div class="mt-6 grid gap-4 lg:grid-cols-3">

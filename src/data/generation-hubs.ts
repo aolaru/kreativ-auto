@@ -250,7 +250,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
     startHere: [
       {
         title: "Start with facelift versus pre-facelift",
-        description: "Use this first if you are still mixing older Mk2 advice into the facelift-era ownership pattern.",
+        description: "Start here if you are still mixing older Mk2 advice into the facelift-era ownership pattern.",
         href: "/comparisons/vw-tiguan-pre-facelift-vs-facelift/"
       },
       {

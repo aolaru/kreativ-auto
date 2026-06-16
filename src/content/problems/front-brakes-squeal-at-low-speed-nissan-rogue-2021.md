@@ -62,9 +62,9 @@ fitment:
   appliesTo:
     - "Most 2021 Rogue daily-driver trims where front brake squeal is the main complaint."
   doesNotApplyTo:
-    - "Do not use this as final fitment proof without confirming brake package and trim."
+    - "Do not treat these notes as final fitment proof without confirming brake package and trim."
   phaseDifferences:
-    - "Use this T33-era guide as the baseline and verify exact parts by catalog or VIN."
+    - "Treat the T33-era notes as the baseline and verify exact parts by catalog or VIN."
   powertrainDifferences:
     - "Exact brake hardware can vary by package even when the noise pattern is similar."
 ---

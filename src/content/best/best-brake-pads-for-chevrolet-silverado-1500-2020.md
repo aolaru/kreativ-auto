@@ -62,7 +62,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without checking wheel size, trim, brake package, and market-specific listing."
   phaseDifferences:
-    - "Use this T1XX-era shortlist as the baseline and verify exact catalog splits."
+    - "Treat the T1XX-era shortlist as the baseline and verify exact catalog splits."
   powertrainDifferences:
     - "Towing package, axle, and wheel setup can matter more than engine alone for brake choice."
 ---

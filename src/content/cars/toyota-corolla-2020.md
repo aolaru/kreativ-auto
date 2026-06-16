@@ -52,7 +52,7 @@ fitment:
   appliesTo:
     - "Most 2020 Corolla sedan trims with the normal daily-driver brake and wheel-end setup."
   doesNotApplyTo:
-    - "Do not use this as fitment proof for GR, hatch-only, hybrid-specific, or non-US market variants without confirming the exact catalog listing."
+    - "Do not treat these notes as fitment proof for GR, hatch-only, hybrid-specific, or non-US market variants without confirming the exact catalog listing."
   phaseDifferences:
     - "Treat the E210 Corolla as the working ownership group, while still requiring trim and package confirmation before parts are ordered."
   powertrainDifferences:
@@ -60,4 +60,4 @@ fitment:
 ---
 The Corolla still earns its reputation for easy ownership, but that does not mean owners never hear noises or chase small wear-item problems. The most useful approach is to stay ahead of brake service, hub noise, and smaller suspension knocks before they turn into a longer parts hunt.
 
-Use this model-year guide: start with the symptom, confirm whether the issue is brake, battery, hub, or suspension related, then move into the linked problem and parts guides for the narrower repair path.
+Start with the symptom, confirm whether the issue is brake, battery, hub, or suspension related, then narrow the repair path with the matching symptom or parts guide.

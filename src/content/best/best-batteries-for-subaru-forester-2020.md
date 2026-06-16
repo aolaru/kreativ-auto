@@ -62,7 +62,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without confirming market and trim-specific battery requirements."
   phaseDifferences:
-    - "Use this SK-era shortlist as the baseline and verify exact catalog splits."
+    - "Treat the SK-era shortlist as the baseline and verify exact catalog splits."
   powertrainDifferences:
     - "Accessory load and market equipment can change the right battery choice."
 ---

@@ -62,7 +62,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without checking trim, market, and brake hardware fitment."
   phaseDifferences:
-    - "Use this T33-era shortlist as the baseline and verify catalog splits."
+    - "Treat the T33-era shortlist as the baseline and verify catalog splits."
   powertrainDifferences:
     - "Package and market differences can change exact brake listings."
 ---

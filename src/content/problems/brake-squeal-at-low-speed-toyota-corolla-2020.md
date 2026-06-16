@@ -65,7 +65,7 @@ fitment:
   doesNotApplyTo:
     - "Do not treat this as the final word for performance-oriented or non-US brake packages."
   phaseDifferences:
-    - "This guide is for the E210-era Corolla baseline and may need trim-specific confirmation as the platform coverage grows."
+    - "The E210-era Corolla baseline applies here, with trim-specific confirmation still required before ordering."
   powertrainDifferences:
     - "Hybrid regenerative feel can change how owners describe noise and pedal behavior, even when the mechanical brake hardware is similar."
 ---

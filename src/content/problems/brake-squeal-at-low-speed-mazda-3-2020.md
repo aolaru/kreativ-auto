@@ -64,7 +64,7 @@ fitment:
   doesNotApplyTo:
     - "Do not order without confirming trim, drivetrain, and brake package fitment."
   phaseDifferences:
-    - "Use this BP-era guide as the baseline and confirm exact part splits before purchase."
+    - "Treat the BP-era notes as the baseline and confirm exact part splits before purchase."
   powertrainDifferences:
     - "AWD and package differences can change exact brake listings even when diagnosis is similar."
 ---

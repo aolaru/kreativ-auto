@@ -62,7 +62,7 @@ fitment:
     - The broader Civic X platform can show the same symptom before 2019, but the facelift range is the cleaner grouping for later-year trim and parts guidance.
   powertrainDifferences:
     - The noise pattern itself is not very different between the 2.0 and 1.5T gas cars. The bigger fitment difference is trim and body-style hardware, not engine choice.
-    - Hybrid-specific fitment is outside the scope of this guide.
+    - Hybrid-specific fitment is outside this fitment scope.
 ---
 
 This is one of those Civic noises that sounds worse than it usually is. The key is checking the smaller wear items first so you do not turn a simple front-end rattle into an expensive guessing game.

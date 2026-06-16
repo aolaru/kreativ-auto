@@ -64,8 +64,8 @@ fitment:
   phaseDifferences:
     - Earlier 2016-2018 Civic X cars can use a similar diagnosis path, but condenser listings and trim packaging are cleaner if you stay in the facelift group.
   powertrainDifferences:
-    - Both the 2.0 and 1.5T gas Civics can use this shortlist, but always verify the exact condenser listing by engine and body style before ordering.
-    - Hybrid-specific HVAC fitment is outside the scope of this guide.
+    - Both the 2.0 and 1.5T gas Civics can follow this shortlist, but always verify the exact condenser listing by engine and body style before ordering.
+    - Hybrid-specific HVAC fitment is outside this fitment scope.
 ---
 
 If the Civic’s A/C gets weak in traffic but improves on the move, condenser quality matters more than people expect. This is one of those repairs where buying the right part the first time saves a lot of repeat frustration.
