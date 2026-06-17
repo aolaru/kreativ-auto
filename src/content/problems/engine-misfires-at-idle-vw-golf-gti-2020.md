@@ -3,7 +3,7 @@ title: "Engine misfires at idle on VW Golf GTI 2020"
 metaTitle: "VW Golf GTI 2020 Engine Misfires at Idle: Causes and Fixes"
 metaDescription: "Diagnose a 2020 VW Golf GTI idle misfire by checking spark plugs, ignition coils, and service history before overcalling a larger turbo or fueling problem."
 excerpt: "A GTI idle misfire usually needs a clean ignition baseline first, not a dramatic guess."
-heroImage: "/images/photos/parts/ngk-spark-plugs.png"
+heroImage: "/images/photos/parts/ngk-spark-plugs.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "vw-golf-gti-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://ngksparkplugs.com/en/products/ignition-parts/spark-plugs/ruthenium-spark-plugs"
     summary: "A strong plug choice when the GTI is idling rough and needs a clean ignition baseline again."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
 faqs:
   - question: "Can old spark plugs cause idle-only misfire first?"
     answer: "Yes. Idle roughness is often one of the first signs that the ignition baseline is slipping."

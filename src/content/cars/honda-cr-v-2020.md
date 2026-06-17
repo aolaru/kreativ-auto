@@ -25,13 +25,13 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/quietcast-premium-disc-brake-pads1
     summary: Strong everyday brake pad option if the priority is low noise and easy daily use.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
   - name: MOOG Sway Bar Link Kit
     price: "$46"
     rating: 4.5
     affiliate_url: https://www.moogparts.com/parts/suspension/sway-bar-links.html
     summary: Worth checking first when the front end starts clunking over small bumps.
-    image: /images/photos/parts/moog-sway-bar-links.png
+    image: /images/photos/parts/moog-sway-bar-links.webp
 maintenanceTips:
   - Rotate tires consistently because road noise and uneven wear can change how refined the CR-V feels.
   - Inspect brake hardware during service instead of focusing only on the pad material.

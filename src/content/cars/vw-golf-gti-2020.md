@@ -25,13 +25,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-evolution-brake-pads/
     summary: Good street brake option if you want cleaner wheels and a bit more bite without going overboard.
-    image: /images/photos/parts/power-stop-z23.jpg
+    image: /images/photos/parts/power-stop-z23.webp
   - name: Delphi Ignition Coil Pack Set
     price: "$132"
     rating: 4.7
     affiliate_url: https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils
     summary: Useful ignition upgrade path when the car starts stumbling or idling unevenly.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
 maintenanceTips:
   - Treat plugs and coils as real maintenance items if the car sees spirited driving or frequent short trips.
   - Choose brake parts for how the car is actually used, not for the most aggressive marketing claim.

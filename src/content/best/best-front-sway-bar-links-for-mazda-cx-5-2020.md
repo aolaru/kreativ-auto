@@ -5,7 +5,7 @@ car_model: "Mazda CX-5 2020"
 metaTitle: "Best Front Sway Bar Links for Mazda CX-5 2020"
 metaDescription: "Compare the best front sway bar link options for the Mazda CX-5 2020 if front-end clunks show up over small bumps or driveway entries."
 excerpt: "The right CX-5 front sway bar link is the one that solves the clunk cleanly instead of sending you back into the same repair soon after."
-heroImage: "/images/photos/parts/moog-sway-bar-links.png"
+heroImage: "/images/photos/parts/moog-sway-bar-links.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "mazda-cx-5-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/"
     summary: "Best overall choice if you want a straightforward repair for the classic front-end clunk."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Delphi Front Stabilizer Link"
     price: "$41"
     rating: 4.5
     affiliate_url: "https://www.delphiautoparts.com/en-gb/products-technologies/steering-suspension/"
     summary: "Good value option for daily-driven CX-5s that need a clean front-link refresh."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Genuine Mazda Front Stabilizer Link"
     price: "$69"
     rating: 4.8
     affiliate_url: "https://www.mazdaparts.org/mazda-cx5-stabilizer-link.html"
     summary: "Safest OE-style route if you want the most conservative fitment call."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
 buyingAdvice:
   - "Inspect both links and surrounding bushings before ordering parts."
   - "Cheap links are a false economy if the repair has to be reopened soon after."

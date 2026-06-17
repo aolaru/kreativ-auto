@@ -3,7 +3,7 @@ title: "Front brakes squeal at low speed on Mercedes-Benz C-Class 2019"
 metaTitle: "Mercedes-Benz C-Class 2019 Front Brakes Squeal at Low Speed"
 metaDescription: "Diagnose 2019 Mercedes-Benz C-Class low-speed front-brake squeal by checking pad compound, hardware, and rotor condition before replacing the wrong brake parts."
 excerpt: "A C-Class front-brake squeal at low speed is usually a pad-and-hardware refinement problem before it is anything dramatic."
-heroImage: "/images/photos/parts/bosch-quietcast-pads.jpg"
+heroImage: "/images/photos/parts/bosch-quietcast-pads.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "mercedes-benz-c-class-2019"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "A quieter front-pad option if the goal is to make the C-Class feel more refined in daily use."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 faqs:
   - question: "Is low-speed front-brake squeal dangerous?"
     answer: "Usually no, as long as braking feel is normal and the pads and rotors are still in good condition."

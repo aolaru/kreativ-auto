@@ -3,7 +3,7 @@ title: "Front-end clunk over bumps on Mazda CX-5 2020"
 metaTitle: "Mazda CX-5 2020 Front-End Clunk Over Bumps: Causes and Fixes"
 metaDescription: "Diagnose a 2020 Mazda CX-5 front-end clunk over bumps by checking sway bar links, bushings, and front hardware before replacing larger suspension parts."
 excerpt: "A CX-5 front-end clunk over smaller bumps usually points to stabilizer or hardware wear before it points to the expensive stuff."
-heroImage: "/images/photos/parts/moog-sway-bar-links.png"
+heroImage: "/images/photos/parts/moog-sway-bar-links.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "mazda-cx-5-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/"
     summary: "One of the first parts worth checking when the CX-5 starts knocking over small bumps."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
 faqs:
   - question: "Why is the clunk most obvious at low speed?"
     answer: "That is when uneven bump movement makes small stabilizer and bushing play easier to hear."

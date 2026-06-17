@@ -3,7 +3,7 @@ title: "Battery goes dead after sitting on Nissan Rogue 2021"
 metaTitle: "Nissan Rogue 2021 Battery goes dead after sitting: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose a battery that goes dead after sitting by checking reserve capacity, charging health, and usage pattern before buying parts."
 excerpt: "A battery that keeps going flat after sitting is usually about reserve capacity, short-trip use, or charging health before it is something stranger."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-06-07
 relatedCars:
   - "nissan-rogue-2021"
@@ -46,13 +46,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Best overall battery replacement if short trips and sitting time are part of the ownership pattern."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM choice for stronger reserve capacity and daily reliability."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 faqs:
   - question: "What usually causes a Nissan Rogue battery to go dead after sitting?"
     answer: "Weak reserve capacity, repeated short-trip use, charging inconsistency, or parasitic draw are the first areas to check."

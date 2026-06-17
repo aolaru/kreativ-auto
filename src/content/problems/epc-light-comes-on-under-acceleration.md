@@ -3,7 +3,7 @@ title: EPC light comes on under acceleration
 metaTitle: "EPC Light Comes On Under Acceleration: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose an EPC light that shows up under acceleration by checking ignition, boost-control, and throttle-related causes before replacing the wrong parts.
 excerpt: An EPC warning under load usually means the engine management system is seeing something it does not like once boost and throttle demand rise.
-heroImage: /images/photos/parts/delphi-ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.webp
 updatedAt: 2026-04-07
 quickVerdict: If the EPC light appears only under load, ignition parts are still one of the first places to look before blaming expensive sensors or throttle hardware.
 firstCheck: Pull scan data before clearing anything, then look at misfire counts and the condition of the plugs and coils.
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.europaparts.com/ignition-coil-pack-06l905110h.html
     summary: Strong OE-style coil option when the EPC warning traces back to ignition breakdown under load.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: NGK Ruthenium HX Spark Plugs
     price: "$62"
     rating: 4.8
     affiliate_url: https://ngksparkplugs.com/en/products/ignition-parts/spark-plugs/ruthenium-spark-plugs
     summary: Smart plug choice when the car is due for ignition service and misfire counts rise under boost.
-    image: /images/photos/parts/ngk-spark-plugs.png
+    image: /images/photos/parts/ngk-spark-plugs.webp
 faqs:
   - question: Does an EPC light always mean the throttle body is bad?
     answer: No. Ignition and boost-related faults can trigger EPC behavior too, especially when the issue only shows up under acceleration.

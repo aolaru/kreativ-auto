@@ -5,7 +5,7 @@ car_model: "Mercedes-Benz C-Class 2019"
 metaTitle: "Best Front Brake Pads for Mercedes-Benz C-Class 2019"
 metaDescription: "Compare the best front brake pad options for the Mercedes-Benz C-Class 2019 if low-speed squeal is getting annoying and you want a calmer daily-driver setup."
 excerpt: "The best C-Class front brake pads are the ones that keep the car quiet and refined in daily traffic, not the ones with the loudest performance marketing."
-heroImage: "/images/photos/parts/bosch-quietcast-pads.jpg"
+heroImage: "/images/photos/parts/bosch-quietcast-pads.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "mercedes-benz-c-class-2019"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Best overall for daily-driven C-Class sedans where quiet stops and low dust matter more than aggressive bite."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Akebono Euro Ceramic Front Brake Pads"
     price: "$96"
     rating: 4.7
     affiliate_url: "https://www.akebonobrakes.com/euro"
     summary: "Strong OE-style street choice if you want smooth bite and a clean noise profile."
-    image: "/images/photos/parts/akebono-euro.png"
+    image: "/images/photos/parts/akebono-euro.webp"
   - name: "Power Stop Z23 Front Brake Pads"
     price: "$84"
     rating: 4.6
     affiliate_url: "https://www.powerstop.com/product/power-stop-z23-evolution-brake-pads/"
     summary: "Good option if you want a little more initial bite without giving up daily usability."
-    image: "/images/photos/parts/power-stop-z23.jpg"
+    image: "/images/photos/parts/power-stop-z23.webp"
 buyingAdvice:
   - "Buy a quiet street pad unless the car is driven harder than a normal commuter."
   - "Hardware condition and bedding matter almost as much as the pad itself."

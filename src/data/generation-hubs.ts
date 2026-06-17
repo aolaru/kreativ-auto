@@ -106,19 +106,19 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Ignition upkeep matters early",
         description: "The facelift Civic gets rough around the edges fastest when plugs and coils are left alone too long.",
-        image: "/images/photos/parts/ngk-spark-plugs.png",
+        image: "/images/photos/parts/ngk-spark-plugs.webp",
         href: "/best/best-spark-plugs-for-honda-civic-2019/"
       },
       {
         title: "Traffic exposes the A/C weak point",
         description: "Warm-idle A/C complaints are one of the easiest ways this generation starts feeling older than it should.",
-        image: "/images/photos/parts/denso-condenser.jpeg",
+        image: "/images/photos/parts/denso-condenser.webp",
         href: "/problems/air-conditioner-blows-warm-at-idle/"
       },
       {
         title: "Small front-end noises add up",
         description: "A light rattle over broken pavement usually points to smaller wear items before anything dramatic in the chassis.",
-        image: "/images/photos/parts/moog-sway-bar-links.png",
+        image: "/images/photos/parts/moog-sway-bar-links.webp",
         href: "/problems/front-suspension-rattles-over-small-bumps/"
       }
     ]
@@ -194,7 +194,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Brake refinement is a real theme",
         description: "Pad choice and hardware condition do more to shape daily RAV4 feel than most owners expect.",
-        image: "/images/photos/parts/akebono-proact.png",
+        image: "/images/photos/parts/akebono-proact.webp",
         href: "/best/best-brake-pads-for-toyota-rav4-2021/"
       },
       {
@@ -206,7 +206,7 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Short-trip battery complaints are common",
         description: "The 12-volt battery story is one of the main ownership differences that keeps coming up across gas and hybrid use.",
-        image: "/images/photos/parts/car-battery.jpg",
+        image: "/images/photos/parts/car-battery.webp",
         href: "/problems/battery-goes-dead-after-sitting/"
       }
     ]
@@ -282,19 +282,19 @@ export const generationHubContent: Record<string, GenerationHubContent> = {
       {
         title: "Brake quality changes the whole car",
         description: "On the facelift Tiguan, weak pad and rotor choices are one of the fastest ways to make the SUV feel older than it is.",
-        image: "/images/photos/parts/bosch-quietcast-pads.jpg",
+        image: "/images/photos/parts/bosch-quietcast-pads.webp",
         href: "/best/best-brake-pads-for-vw-tiguan-2020/"
       },
       {
         title: "Coolant issues often start small",
         description: "This platform is much easier to live with when the first trace of coolant drift gets treated as a diagnosis, not a topping-up habit.",
-        image: "/images/photos/parts/pentosin-coolant.jpg",
+        image: "/images/photos/parts/pentosin-coolant.webp",
         href: "/problems/coolant-level-drops-with-no-visible-leak/"
       },
       {
         title: "Ignition-side drivability is a repeat pattern",
         description: "EPC and hesitation complaints feel electronic, but the first useful look is often still the spark and coil side.",
-        image: "/images/photos/parts/delphi-ignition-coil.jpg",
+        image: "/images/photos/parts/delphi-ignition-coil.webp",
         href: "/problems/epc-light-comes-on-under-acceleration/"
       }
     ]

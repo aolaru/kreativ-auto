@@ -5,7 +5,7 @@ car_model: "Honda Civic 2019"
 metaTitle: "Best Front Sway Bar Links for Honda Civic 2019"
 metaDescription: "Compare the best front sway bar link options for the Honda Civic 2019 if the front end rattles over small bumps or sounds loose on rough city pavement."
 excerpt: "The right Civic front sway bar links are the ones that quiet the small-bump rattle without turning a simple repair into another guess."
-heroImage: "/images/photos/parts/moog-sway-bar-links.png"
+heroImage: "/images/photos/parts/moog-sway-bar-links.webp"
 updatedAt: "2026-04-23"
 relatedCars:
   - "honda-civic-2019"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.moogparts.com/parts/suspension/sway-bar-links.html"
     summary: "Best overall option if you want a proven aftermarket link kit for small-bump front-end noise."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Sankei 555 Front Stabilizer Links"
     price: "$56"
     rating: 4.6
     affiliate_url: "https://www.rockauto.com/en/moreinfo.php?pk=12873489"
     summary: "Strong fit if you want a cleaner OE-style feel rather than the cheapest link on the shelf."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Genuine Honda Front Stabilizer Link"
     price: "$78"
     rating: 4.8
     affiliate_url: "https://dreamshop.honda.com/s/category/honda/0ZG6g0000004HolGAE"
     summary: "Best conservative choice for owners who want to stay close to factory fit and hardware quality."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
 buyingAdvice:
   - "Confirm the noise is actually in the links before ordering parts."
   - "Avoid the absolute cheapest links if the goal is to keep the front end quiet for more than a few months."

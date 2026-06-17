@@ -3,7 +3,7 @@ title: Front-end clunk when pulling into driveways
 metaTitle: "Front-End Clunk When Pulling Into Driveways: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a RAV4 front-end clunk on driveway entries by checking sway bar links, bushings, and front hardware before replacing bigger suspension parts.
 excerpt: A front-end clunk on driveway entries usually points to small suspension movement, which is why links and bushings deserve attention before the expensive parts do.
-heroImage: /images/photos/parts/moog-sway-bar-links.png
+heroImage: /images/photos/parts/moog-sway-bar-links.webp
 updatedAt: 2026-04-07
 relatedCars:
   - toyota-rav4-2020
@@ -57,7 +57,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/
     summary: One of the first parts worth checking when the front end knocks over driveway entries and small uneven bumps.
-    image: /images/photos/parts/moog-sway-bar-links.png
+    image: /images/photos/parts/moog-sway-bar-links.webp
 faqs:
   - question: Why is the clunk louder when entering a driveway at an angle?
     answer: That kind of entry loads the suspension unevenly, which makes link, bushing, and mount play easier to hear.

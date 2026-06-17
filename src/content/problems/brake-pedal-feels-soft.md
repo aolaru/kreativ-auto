@@ -3,7 +3,7 @@ title: Brake pedal feels soft
 metaTitle: "Brake Pedal Feels Soft: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a soft brake pedal by checking fluid, air, leaks, and brake hardware before assuming the master cylinder is bad.
 excerpt: A soft brake pedal is not something to ignore, but it also does not always mean a major failure if you diagnose it properly.
-heroImage: /images/photos/parts/brake-pads.jpg
+heroImage: /images/photos/parts/brake-pads.webp
 updatedAt: 2026-03-31
 relatedCars:
   - vw-tiguan-2020
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Useful once the hydraulic issue is solved and you are refreshing worn front brake hardware.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
   - name: Power Stop Z23 Evolution Sport
     price: "$89"
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-brake-kit/
     summary: Good follow-up brake option if you are already rebuilding confidence in pedal feel and front stopping hardware.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/brake-pads.webp
 faqs:
   - question: Does a soft brake pedal always mean air in the lines?
     answer: Not always. Air is common, but old fluid, leaks, bad hoses, or hydraulic component wear can create the same general feeling.

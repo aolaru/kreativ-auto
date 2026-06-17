@@ -5,7 +5,7 @@ car_model: "Subaru Outback 2020"
 metaTitle: "Best Rear Brake Pads for Subaru Outback 2020"
 metaDescription: "Compare the best rear brake pad options for the Subaru Outback 2020 if you are trying to quiet rear-brake noise and keep the wagon refined in daily use."
 excerpt: "The right Outback rear brake pad is the one that stays quiet, behaves well in normal use, and does not turn a small rear-brake complaint into a repeating chore."
-heroImage: "/images/photos/parts/wagner-oex.png"
+heroImage: "/images/photos/parts/wagner-oex.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "subaru-outback-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Best overall choice if rear brake noise control and clean daily use matter more than aggressive bite claims."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
   - name: "Akebono ProACT Rear Ceramic Brake Pads"
     price: "$61"
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Strong alternative if you want a cleaner ceramic rear setup with a refined noise profile."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Genuine Subaru Rear Brake Pads"
     price: "$76"
     rating: 4.8
     affiliate_url: "https://parts.subaru.com/"
     summary: "Best OE-style route for owners who want the most conservative fitment and feel match."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 buyingAdvice:
   - "Rear brake noise is usually more about pad and hardware behavior than about chasing the most aggressive pad compound."
   - "Confirm the rear-axle listing before ordering because front and rear pad kits are easy to confuse."

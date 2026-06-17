@@ -3,7 +3,7 @@ title: Coolant level drops with no visible leak
 metaTitle: "Coolant Level Drops With No Visible Leak: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a falling coolant level when no obvious leak is visible by checking common pressure-loss points, water pump seepage, and cooling-system weak spots.
 excerpt: A falling coolant level without a puddle usually means the system is losing pressure somewhere small before it becomes obvious.
-heroImage: /images/photos/parts/pentosin-coolant.jpg
+heroImage: /images/photos/parts/pentosin-coolant.webp
 updatedAt: 2026-04-07
 quickVerdict: A slow coolant drop with no obvious puddle is usually a small pressure leak or weak cap problem, not a mystery that gets better on its own.
 firstCheck: Inspect the reservoir, cap, water pump area, and hose connections for dried coolant residue before you top up again.
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://pentosin.com.mx/2020/06/08/anticongelante-libre-de-fosfatos-pentofrost-e/
     summary: Correct-spec coolant option for topping up or refilling the system once the leak source is confirmed.
-    image: /images/photos/parts/pentosin-coolant.jpg
+    image: /images/photos/parts/pentosin-coolant.webp
   - name: Rein Expansion Tank Cap
     price: "$18"
     rating: 4.5
     affiliate_url: https://www.fcpeuro.com/products/audi-vw-coolant-expansion-tank-cap-rein-3b0121321
     summary: Useful if testing points to a weak cap rather than a larger coolant-system failure.
-    image: /images/photos/parts/pentosin-coolant.jpg
+    image: /images/photos/parts/pentosin-coolant.webp
 faqs:
   - question: Can coolant disappear without leaving a puddle?
     answer: Yes. Small pressure leaks can evaporate on hot engine parts or only seep while the system is fully warmed up.

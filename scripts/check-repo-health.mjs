@@ -97,6 +97,14 @@ const requiredStaticFiles = [
   "src/pages/affiliate-disclosure.astro",
   "src/pages/privacy-policy.astro"
 ];
+const maxReferencedPhotoBytes = 500 * 1024;
+const maxDerivedThumbnailBytes = 140 * 1024;
+const knownCarPhotoPlaceholders = new Set([
+  "/images/photos/cars/chevrolet-silverado-1500-2020.svg",
+  "/images/photos/cars/hyundai-tucson-2020.svg",
+  "/images/photos/cars/nissan-rogue-2021.svg",
+  "/images/photos/cars/subaru-forester-2020.svg"
+]);
 
 function walk(dir, visitor) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -124,6 +132,26 @@ function checkImageReference(filePath, imageRef, context = "references") {
   const imagePath = path.join(cwd, "public", imageRef.slice(1));
   if (!fs.existsSync(imagePath)) {
     problems.push(`${path.relative(cwd, filePath)} ${context} missing image ${imageRef}`);
+    return;
+  }
+
+  if (
+    imageRef.startsWith("/images/photos/cars/") &&
+    imageRef.endsWith(".svg") &&
+    !knownCarPhotoPlaceholders.has(imageRef)
+  ) {
+    problems.push(`${path.relative(cwd, filePath)} references car SVG placeholder ${imageRef}; use a real WebP photo.`);
+  }
+
+  if (imageRef.startsWith("/images/photos/parts/") && /\.(?:png|jpe?g)$/i.test(imageRef)) {
+    problems.push(`${path.relative(cwd, filePath)} references unoptimized part photo ${imageRef}; use WebP.`);
+  }
+
+  if (imageRef.startsWith("/images/photos/") && !imageRef.endsWith(".svg")) {
+    const imageBytes = fs.statSync(imagePath).size;
+    if (imageBytes > maxReferencedPhotoBytes) {
+      problems.push(`${path.relative(cwd, filePath)} references oversized photo ${imageRef} (${Math.round(imageBytes / 1024)} KB).`);
+    }
   }
 
   if (imageRef.startsWith("/images/photos/")) {
@@ -131,6 +159,11 @@ function checkImageReference(filePath, imageRef, context = "references") {
     const thumbnailPath = path.join(cwd, "public", thumbnailRef.slice(1));
     if (!fs.existsSync(thumbnailPath)) {
       problems.push(`${path.relative(cwd, filePath)} derives missing thumbnail ${thumbnailRef} from ${imageRef}`);
+    } else {
+      const thumbnailBytes = fs.statSync(thumbnailPath).size;
+      if (thumbnailBytes > maxDerivedThumbnailBytes) {
+        problems.push(`${path.relative(cwd, filePath)} derives oversized thumbnail ${thumbnailRef} (${Math.round(thumbnailBytes / 1024)} KB).`);
+      }
     }
   }
 }

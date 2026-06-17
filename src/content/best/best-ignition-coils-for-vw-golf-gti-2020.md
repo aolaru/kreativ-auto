@@ -5,7 +5,7 @@ car_model: "VW Golf GTI 2020"
 metaTitle: "Best Ignition Coils for VW Golf GTI 2020"
 metaDescription: "Compare the best ignition coil options for the VW Golf GTI 2020 if you are chasing hesitation, weak power delivery, or early misfire behavior."
 excerpt: "The right GTI ignition coil is the one that restores clean load response without sending you back into the same diagnosis next week."
-heroImage: "/images/photos/parts/delphi-ignition-coil.jpg"
+heroImage: "/images/photos/parts/delphi-ignition-coil.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "vw-golf-gti-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils"
     summary: "Best overall choice if you want a credible coil for restoring clean load response and stable daily drivability."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
   - name: "Bosch Ignition Coil"
     price: "$141"
     rating: 4.7
     affiliate_url: "https://www.boschautoparts.com/g/ignition-coils"
     summary: "Strong premium alternative if you want a familiar brand with broad availability and good OE-style reputation."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
   - name: "Genuine Volkswagen Ignition Coil"
     price: "$158"
     rating: 4.8
     affiliate_url: "https://parts.vw.com/"
     summary: "Best OE-style route if you want the most conservative fitment and feel match."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
 buyingAdvice:
   - "If the car hesitates under load, coils and plugs should be evaluated together instead of separately."
   - "Cheap coil sets can create the exact repeat problem this repair is supposed to solve."

@@ -3,7 +3,7 @@ title: Clicking noise when turning
 metaTitle: "Clicking Noise When Turning: Causes, Fixes, and Parts to Check"
 metaDescription: Learn what usually causes a clicking noise when turning and how to confirm whether the CV axle is really the problem.
 excerpt: Clicking in turns usually points to the axle, but it still pays to confirm before ordering parts.
-heroImage: /images/photos/parts/cv-axle.jpg
+heroImage: /images/photos/parts/cv-axle.webp
 updatedAt: 2026-03-30
 relatedCars:
   - honda-civic-2019
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.5
     affiliate_url: https://www.gspnorthamerica.com/cv-axles/
     summary: Budget-friendly axle assembly for addressing turning-click complaints on daily drivers.
-    image: /images/photos/parts/cv-axle.jpg
+    image: /images/photos/parts/cv-axle.webp
   - name: Dorman CV Boot Clamp Kit
     price: "$18"
     rating: 4.3
     affiliate_url: https://www.dormanproducts.com/cv-joint-and-axle/
     summary: Useful hardware set when servicing boots or supporting an axle replacement job.
-    image: /images/photos/parts/cv-axle.jpg
+    image: /images/photos/parts/cv-axle.webp
 faqs:
   - question: Is clicking while turning always a bad CV axle?
     answer: Most of the time it points to an outer CV joint, but inspection still matters because loose hardware or suspension wear can mimic the sound.

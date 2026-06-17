@@ -3,7 +3,7 @@ title: "Battery light flickers at idle on Toyota Corolla 2020"
 metaTitle: "Toyota Corolla 2020 Battery Light Flickers at Idle: Causes and Fixes"
 metaDescription: "Diagnose a 2020 Toyota Corolla battery light that flickers at idle by checking battery reserve, charging voltage, and ground quality before replacing the wrong part."
 excerpt: "A Corolla battery light that flickers mostly at idle usually means the charging margin is getting thin, not that the whole car is about to quit immediately."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "toyota-corolla-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "A stronger battery option when testing shows the original unit is no longer buffering voltage well."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 faqs:
   - question: "Can a weak battery make the warning light flicker only at idle?"
     answer: "Yes. A tired battery can make low-speed charging behavior look worse than it should."

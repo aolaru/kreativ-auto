@@ -5,7 +5,7 @@ car_model: "Hyundai Tucson 2020"
 metaTitle: "Best Brake Pads for Hyundai Tucson 2020"
 metaDescription: "Compare the best brake pad options if your priority is quiet, clean, everyday braking."
 excerpt: "These brake pad picks are for drivers who want a quiet daily-driver setup, not an overbuilt parts list."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-06-07
 relatedCars:
   - "hyundai-tucson-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Quiet ceramic pad option for daily-driver brake refinement."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style street pad if you want stock-like noise control and feel."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Wagner OEX Ceramic Brake Pad Set"
     price: "$77"
     rating: 4.5
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Strong value ceramic option for normal commuter use."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 buyingAdvice:
   - "For a daily-driven vehicle, ceramic pads are usually the best default because they stay quiet and clean."
   - "If squeal has been persistent, service the hardware properly instead of swapping friction material alone."

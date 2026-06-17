@@ -5,7 +5,7 @@ car_model: "Toyota Corolla 2020"
 metaTitle: "Best Batteries for Toyota Corolla 2020"
 metaDescription: "Compare the best battery options for a Toyota Corolla 2020 if idle-voltage behavior is getting weaker and you want more reliable daily starts."
 excerpt: "The best Corolla battery is the one that matches short-trip use and voltage stability needs, not the one with the loudest label."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "toyota-corolla-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Best overall choice if the Corolla sees short trips, idle-heavy use, or weak-start complaints."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$229"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Strong premium alternative for owners who want dependable starts and better reserve capacity."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "Optima YellowTop Battery"
     price: "$249"
     rating: 4.5
     affiliate_url: "https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries"
     summary: "Good fit when the car sees heavier accessory use or a tougher stop-start pattern than normal commuting."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 buyingAdvice:
   - "Confirm the correct group size and terminal layout before ordering."
   - "If the battery light is flickering, test charging voltage and grounds too."

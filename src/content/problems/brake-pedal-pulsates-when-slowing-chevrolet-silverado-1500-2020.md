@@ -3,7 +3,7 @@ title: "Brake pedal pulsates when slowing on Chevrolet Silverado 1500 2020"
 metaTitle: "Chevrolet Silverado 1500 2020 Brake Pedal Pulsates: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose a 2020 Silverado 1500 brake pedal pulsation by checking pad wear, rotor condition, wheel torque, and towing use before buying parts."
 excerpt: "Brake pulsation on a Silverado usually needs a rotor, pad, and use-pattern check before owners blame the whole front end."
-heroImage: "/images/photos/parts/power-stop-z36.jpg"
+heroImage: "/images/photos/parts/power-stop-z36.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "chevrolet-silverado-1500-2020"
@@ -46,13 +46,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.powerstop.com/products/#y=2020&mk=CHEVROLET&mo=SILVERADO%201500"
     summary: "Truck-focused pad option when the Silverado sees hauling, towing, or heavier daily use."
-    image: "/images/photos/parts/power-stop-z36.jpg"
+    image: "/images/photos/parts/power-stop-z36.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$82"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style street pad for owners who want calm daily braking more than an aggressive tow pad."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 faqs:
   - question: "Does brake pedal pulsation always mean the Silverado needs rotors?"
     answer: "No. Rotor condition matters, but pad transfer, hardware, wheel torque, and tire condition should be checked before assuming one part is the whole fix."

@@ -5,7 +5,7 @@ car_model: "Mazda CX-5 2020"
 metaTitle: "Best Brake Pads for Mazda CX-5 2020"
 metaDescription: "Compare the best brake pad options for the Mazda CX-5 2020 if low-speed squeal, dust, or rough daily-driver brake feel is getting old."
 excerpt: "The right CX-5 brake pad keeps the SUV quiet and predictable in traffic instead of making every stop feel rougher than it should."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "mazda-cx-5-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Best overall choice if you want a quieter, cleaner daily-driver brake setup."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$81"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Strong alternative if you want broad availability and a low-noise street bias."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Genuine Mazda Brake Pads"
     price: "$142"
     rating: 4.8
     affiliate_url: "https://www.mazdaparts.org/"
     summary: "Best OE-style route if factory-like brake feel matters more than price."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
 buyingAdvice:
   - "Choose a quiet street-oriented pad unless the CX-5 is driven far harder than normal daily use."
   - "Hardware condition and bedding matter almost as much as the pad itself."

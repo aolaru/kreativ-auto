@@ -5,7 +5,7 @@ car_model: Toyota RAV4 2021
 metaTitle: Best Batteries for Toyota RAV4 2021
 metaDescription: Compare the best battery options for the Toyota RAV4 2021 if you want a reliable replacement instead of another weak start after the car sits.
 excerpt: The right RAV4 battery is the one that handles short trips, sitting time, and normal accessory load without turning into a repeat no-start problem.
-heroImage: /images/photos/parts/car-battery.jpg
+heroImage: /images/photos/parts/car-battery.webp
 updatedAt: 2026-04-12
 quickVerdict: An AGM battery makes the most sense when the RAV4 sees short trips, sitting time, or voltage-sensitive use. The real mistake is replacing the battery without checking the charging picture first.
 bestFor:
@@ -38,19 +38,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Best overall choice if you want stronger reserve capacity for short-trip use and longer sits.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
   - name: DieHard Platinum AGM Battery
     price: "$239"
     rating: 4.7
     affiliate_url: https://shop.advanceautoparts.com/brands/diehard-platinum-agm
     summary: Strong premium option for owners who want durable daily reliability and good cold-start confidence.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
   - name: Optima YellowTop Battery
     price: "$264"
     rating: 4.5
     affiliate_url: https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries
     summary: Good fit if the vehicle sees frequent accessory load, short trips, or more severe use.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
 buyingAdvice:
   - Confirm battery group size and terminal layout before ordering.
   - If the old battery died from charging or parasitic-draw issues, solve that first or the new battery will suffer too.

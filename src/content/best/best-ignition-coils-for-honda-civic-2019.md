@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best Ignition Coils for Honda Civic 2019
 metaDescription: Compare the best ignition coil options for the Honda Civic 2019 if you want to fix a misfire without buying junk.
 excerpt: The ignition coil picks here are for Civic owners who want a proper repair, not the cheapest box they can click on.
-heroImage: /images/photos/parts/delphi-ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.webp
 updatedAt: 2026-04-17
 relatedCars:
   - honda-civic-2019
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Balanced OE-style replacement set for restoring idle quality and throttle response.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: Denso Direct Ignition Coil
     price: "$142"
     rating: 4.8
     affiliate_url: https://www.densoautoparts.com/direct-ignition-coils-cop/
     summary: Premium brand choice for owners who want factory-like reliability and fitment.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: Hitachi Ignition Coil Set
     price: "$136"
     rating: 4.6
     affiliate_url: https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils
     summary: Good mid-range option with strong daily-driver durability and clean fitment.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
 buyingAdvice:
   - If one coil has failed on a higher-mileage Civic, replacing the full set can reduce repeat diagnostics and labor.
   - Confirm engine and trim compatibility before ordering because coil part numbers can vary by configuration.

@@ -3,7 +3,7 @@ title: Grinding noise when braking
 metaTitle: "Grinding Noise When Braking: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a grinding noise when braking by checking pad wear, rotor damage, and brake hardware before driving any farther than necessary.
 excerpt: Grinding brakes are usually a warning that the friction material is already gone or something in the brake system is badly wrong.
-heroImage: /images/photos/parts/akebono-proact.png
+heroImage: /images/photos/parts/akebono-proact.webp
 updatedAt: 2026-03-31
 relatedCars:
   - toyota-rav4-2021
@@ -48,13 +48,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quality replacement pad option once the worn hardware is diagnosed correctly.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
   - name: Bosch QuietCast Premium
     price: "$81"
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-rotors
     summary: Good alternative if the goal is quiet daily-driver braking after the damaged parts are replaced.
-    image: /images/photos/parts/brake-pads.jpg
+    image: /images/photos/parts/brake-pads.webp
 faqs:
   - question: Do grinding brakes always mean the pads are gone?
     answer: Often yes, but trapped debris or badly damaged hardware can also create a grinding sound, so an inspection still matters.

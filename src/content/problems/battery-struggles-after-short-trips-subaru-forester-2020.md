@@ -3,7 +3,7 @@ title: "Battery struggles after short trips on Subaru Forester 2020"
 metaTitle: "Subaru Forester 2020 Battery Struggles After Short Trips: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose weak starts after short trips on a 2020 Subaru Forester by checking battery reserve, charging behavior, and cold-start use."
 excerpt: "Forester battery weakness after short trips is usually about reserve capacity, cold use, and charging time before it becomes a larger electrical issue."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "subaru-forester-2020"
@@ -46,13 +46,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Strong all-around replacement when the Forester sees cold starts, sitting time, or short trips."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM option for owners who want stronger reserve capacity."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 faqs:
   - question: "Why does my Forester battery feel weak after short trips?"
     answer: "Short trips and cold starts can keep the battery from recovering fully, especially once reserve capacity has aged."

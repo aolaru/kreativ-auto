@@ -3,7 +3,7 @@ title: "Car shakes when braking on Honda Accord 2020"
 metaTitle: "Honda Accord 2020 Shakes When Braking: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose a 2020 Honda Accord that shakes when braking by checking rotor condition, pad transfer, wheel torque, and front-end basics first."
 excerpt: "An Accord that shakes under braking usually needs a rotor, pad, and hardware check before the complaint becomes a broad front-end diagnosis."
-heroImage: "/images/photos/parts/power-stop-z23.jpg"
+heroImage: "/images/photos/parts/power-stop-z23.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "honda-accord-2020"
@@ -46,13 +46,13 @@ recommendedParts:
     rating: 4.6
     affiliate_url: "https://www.powerstop.com/products/"
     summary: "Useful pad-and-rotor route when the Accord needs a full front brake refresh."
-    image: "/images/photos/parts/power-stop-z23.jpg"
+    image: "/images/photos/parts/power-stop-z23.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Quiet OE-style pad option if inspection shows pads are the main wear item."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 faqs:
   - question: "Why does my Accord shake only when braking?"
     answer: "That pattern often points to brake rotor surface variation, pad transfer, or brake hardware rather than a general wheel-balance issue."

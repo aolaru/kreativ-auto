@@ -30,13 +30,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.densoautoparts.com/condensers/"
     summary: "OEM-trusted condenser option when idle cooling starts fading."
-    image: "/images/photos/parts/denso-condenser.jpeg"
+    image: "/images/photos/parts/denso-condenser.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style brake pad option for cutting dust and keeping the front end quieter."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 maintenanceTips:
   - "Do not ignore light brake pulsation because early rotor or pad issues are cheaper to correct before heat spots get worse."
   - "Inspect condenser and cooling airflow if the car cools well on the highway but struggles in traffic."

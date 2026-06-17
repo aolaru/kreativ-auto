@@ -5,7 +5,7 @@ car_model: "Mercedes-Benz C-Class 2019"
 metaTitle: "Best Spark Plugs for Mercedes-Benz C-Class 2019"
 metaDescription: "Compare the best spark plug options for the Mercedes-Benz C-Class 2019 if you are chasing hesitation, rough idle, or overdue ignition service."
 excerpt: "The right C-Class spark plug is the one that restores clean idle and stable load response instead of creating another round of diagnosis."
-heroImage: "/images/photos/parts/ngk-spark-plugs.png"
+heroImage: "/images/photos/parts/ngk-spark-plugs.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "mercedes-benz-c-class-2019"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.ngkntk.com/products/spark-plugs/"
     summary: "Best overall choice if you want clean drivability and a strong OE-style maintenance baseline."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
   - name: "Bosch Double Iridium Spark Plugs"
     price: "$64"
     rating: 4.7
     affiliate_url: "https://www.boschautoparts.com/g/double-iridium-spark-plugs"
     summary: "Strong alternative if you want broad availability and a familiar premium brand."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
   - name: "Genuine Mercedes-Benz Spark Plugs"
     price: "$79"
     rating: 4.8
     affiliate_url: "https://parts.mbusa.com/"
     summary: "Best OE-style route if you want the most conservative fitment and drivability answer."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
 buyingAdvice:
   - "If the car is hesitating or idling rough, evaluate coils and plugs together instead of guessing which side is guilty."
   - "Avoid bargain plugs that create the same drivability problem again a few weeks later."

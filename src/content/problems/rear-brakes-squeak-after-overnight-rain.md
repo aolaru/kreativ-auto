@@ -3,7 +3,7 @@ title: Rear brakes squeak after overnight rain
 metaTitle: "Rear Brakes Squeak After Overnight Rain: Causes, Checks, and Fixes"
 metaDescription: Diagnose rear brake squeak after overnight rain by checking pad compound, brake hardware, and light surface rust before replacing the wrong Civic brake parts.
 excerpt: A brief rear-brake squeak after damp weather is often a pad and hardware issue, not a serious brake failure.
-heroImage: /images/photos/parts/akebono-proact.png
+heroImage: /images/photos/parts/akebono-proact.webp
 updatedAt: 2026-04-07
 relatedCars:
   - honda-civic-2019
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: A quieter ceramic pad option that suits daily-driven Civic use where clean operation matters more than aggressive bite.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
 faqs:
   - question: Is it normal for rear brakes to squeak after rain?
     answer: A brief squeak can be normal from light rust or damp pad contact, but repeat noise usually means pad compound or hardware condition is part of the story.

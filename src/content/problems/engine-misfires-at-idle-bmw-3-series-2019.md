@@ -3,7 +3,7 @@ title: "Engine misfires at idle on BMW 3 Series 2019"
 metaTitle: "BMW 3 Series 2019 Engine Misfires at Idle"
 metaDescription: "Diagnose a 2019 BMW 3 Series idle misfire by checking spark plugs, ignition coils, and service history before chasing bigger turbo or fuel-system theories."
 excerpt: "A 3 Series idle misfire usually needs a clean ignition baseline first, not a dramatic premium-car parts guess."
-heroImage: "/images/photos/parts/ngk-spark-plugs.png"
+heroImage: "/images/photos/parts/ngk-spark-plugs.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "bmw-3-series-2019"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.ngkntk.com/products/spark-plugs/"
     summary: "A strong plug choice when the 3 Series is idling rough and needs a clean ignition baseline again."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
 faqs:
   - question: "Can old spark plugs cause idle-only misfire first?"
     answer: "Yes. Idle roughness is often one of the first signs that the ignition baseline is slipping."

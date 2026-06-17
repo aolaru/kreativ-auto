@@ -3,7 +3,7 @@ title: Rear suspension clunk over bumps
 metaTitle: "Rear Suspension Clunk Over Bumps: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a rear suspension clunk over bumps by checking sway bar links, shock mounts, and loose cargo-area hardware before replacing the wrong parts.
 excerpt: A rear clunk over bumps often sounds worse than it is, but it still helps to narrow the noise to the right link, mount, or hardware point.
-heroImage: /images/photos/parts/moog-sway-bar-links.png
+heroImage: /images/photos/parts/moog-sway-bar-links.webp
 updatedAt: 2026-04-07
 relatedCars:
   - toyota-rav4-2020
@@ -48,7 +48,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/
     summary: One of the first rear suspension parts worth checking when the RAV4 starts knocking over sharper bumps.
-    image: /images/photos/parts/moog-sway-bar-links.png
+    image: /images/photos/parts/moog-sway-bar-links.webp
 faqs:
   - question: Can rear cargo-area hardware sound like suspension noise?
     answer: Yes. Loose spare-tire hardware or trim can mimic a rear suspension clunk surprisingly well.

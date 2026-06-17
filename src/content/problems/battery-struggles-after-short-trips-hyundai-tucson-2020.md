@@ -3,7 +3,7 @@ title: "Battery struggles after short trips on Hyundai Tucson 2020"
 metaTitle: "Hyundai Tucson 2020 Battery Struggles After Short Trips: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose weak starts after short trips on a 2020 Hyundai Tucson by checking battery health, charging behavior, and use pattern first."
 excerpt: "Short-trip battery weakness on a Tucson is usually about reserve capacity and charging time before it becomes a larger electrical story."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "hyundai-tucson-2020"
@@ -46,13 +46,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Strong replacement option when short-trip use and sitting time are part of the Tucson's normal life."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM option for owners who want more reserve capacity and less repeat weak-start drama."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 faqs:
   - question: "Why does my Tucson battery struggle after short trips?"
     answer: "Short trips can keep the battery below full charge, especially once age has reduced reserve capacity."

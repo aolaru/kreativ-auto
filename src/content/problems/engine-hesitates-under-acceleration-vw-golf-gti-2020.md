@@ -3,7 +3,7 @@ title: "Engine hesitates under acceleration on VW Golf GTI 2020"
 metaTitle: "VW Golf GTI 2020 Engine Hesitates Under Acceleration"
 metaDescription: "Diagnose a 2020 VW Golf GTI hesitation under acceleration by checking ignition service, plugs, and coils before assuming a larger turbo or fuel-system failure."
 excerpt: "A GTI that hesitates under acceleration often needs a disciplined ignition diagnosis before it needs dramatic parts guesses."
-heroImage: "/images/photos/parts/delphi-ignition-coil.jpg"
+heroImage: "/images/photos/parts/delphi-ignition-coil.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "vw-golf-gti-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils"
     summary: "A credible ignition part choice if the GTI is beginning to stumble or hesitate under load."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
 faqs:
   - question: "Can weak coils cause hesitation without a constant misfire?"
     answer: "Yes. Load-related hesitation often shows up before the problem becomes an obvious steady misfire."

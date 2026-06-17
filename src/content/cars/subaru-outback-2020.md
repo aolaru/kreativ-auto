@@ -23,7 +23,7 @@ recommendedParts:
     rating: 4.5
     affiliate_url: https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html
     summary: Good everyday brake pad choice if you want clean, quiet braking.
-    image: /images/photos/parts/wagner-oex.png
+    image: /images/photos/parts/wagner-oex.webp
   - name: Timken Wheel Bearing Hub Assembly
     price: "$171"
     rating: 4.7

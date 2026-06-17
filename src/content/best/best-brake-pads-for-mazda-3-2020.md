@@ -5,7 +5,7 @@ car_model: "Mazda 3 2020"
 metaTitle: "Best Brake Pads for Mazda 3 2020"
 metaDescription: "Compare brake pad options for a 2020 Mazda 3 when low-speed squeal, clean daily braking, and quiet refinement matter most."
 excerpt: "These Mazda 3 brake pad picks focus on quiet commuter behavior and proper hardware service, not aggressive performance claims."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "mazda-3-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Best quiet ceramic option for daily Mazda 3 use."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style pad for owners who want predictable low-noise street behavior."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Wagner OEX Ceramic Brake Pad Set"
     price: "$77"
     rating: 4.5
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Value ceramic option for a clean daily-driver refresh."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 quickVerdict: "A quiet ceramic pad is the best default for a Mazda 3 with low-speed squeal, as long as the hardware and rotor surface are serviced too."
 bestFor:
   - "Owners trying to reduce low-speed squeal without making the car feel harsher."

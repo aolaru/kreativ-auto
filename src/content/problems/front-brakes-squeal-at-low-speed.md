@@ -3,7 +3,7 @@ title: Front brakes squeal at low speed
 metaTitle: "Front Brakes Squeal at Low Speed: Causes, Checks, and Fixes"
 metaDescription: Diagnose front brake squeal at low speed by checking pad compound, hardware condition, and light glazing before replacing the wrong Civic brake parts.
 excerpt: Low-speed front-brake squeal usually points to pad choice or hardware condition before it points to a serious brake-system problem.
-heroImage: /images/photos/parts/bosch-quietcast-pads.jpg
+heroImage: /images/photos/parts/bosch-quietcast-pads.webp
 updatedAt: 2026-04-07
 quickVerdict: If the Civic squeals lightly at low speed but still brakes normally, the usual answer is pad compound or hardware condition, not a major brake failure.
 firstCheck: Inspect pad thickness and the front brake hardware before ordering anything more aggressive or more expensive.
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: A quiet daily-driver pad choice when refinement matters more than chasing a sportier bite profile.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
 faqs:
   - question: Can good pads really make a Civic quieter?
     answer: Yes. Pad compound choice makes a real difference on street cars that spend most of their life in stop-and-go driving.

@@ -35,7 +35,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.skf.com/us/products/vehicle-aftermarket/wheel-end"
     summary: "Premium alternative if you want a bearing supplier with a strong OE reputation."
-    image: "/images/photos/parts/wheel-hub.jpg"
+    image: "/images/photos/parts/wheel-hub.webp"
 maintenanceTips:
   - "Separate tire noise from hub noise cleanly before ordering parts."
   - "Treat battery weakness early because cold-weather ownership makes the complaint more obvious fast."

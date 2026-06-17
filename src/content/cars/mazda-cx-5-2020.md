@@ -23,13 +23,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Good daily-driver brake pad choice if the goal is quiet braking, low dust, and predictable feel.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
   - name: MOOG Sway Bar Link Kit
     price: "$49"
     rating: 4.5
     affiliate_url: https://www.moogparts.com/parts/suspension/sway-bar-links.html
     summary: Sensible first part to check when the front suspension starts clunking over rough roads.
-    image: /images/photos/parts/moog-sway-bar-links.png
+    image: /images/photos/parts/moog-sway-bar-links.webp
 maintenanceTips:
   - Inspect brake pad wear and rotor condition together so a minor brake complaint does not turn into vibration and unnecessary repeat work.
   - Pay attention to small suspension noises early because worn links and bushings are cheaper to deal with before they start affecting ride quality.

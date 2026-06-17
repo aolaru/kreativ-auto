@@ -3,7 +3,7 @@ title: Battery goes dead after sitting
 metaTitle: "Battery Goes Dead After Sitting: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a battery that dies after the car sits by checking battery health, charging voltage, and parasitic draw before replacing parts blindly.
 excerpt: A battery that dies after sitting is often worn out or undercharged, but testing it first keeps you from chasing the wrong electrical problem.
-heroImage: /images/photos/parts/car-battery.jpg
+heroImage: /images/photos/parts/car-battery.webp
 updatedAt: 2026-04-11
 quickVerdict: Start with battery health and charging voltage. Most sit-and-die complaints are caused by an aging battery, short-trip undercharging, or a simple draw that only shows up after the car is parked.
 firstCheck: Load-test the battery, then confirm charging voltage with the engine running before you start looking for a parasitic draw or replacing parts.
@@ -48,7 +48,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Strong replacement choice if testing shows the existing battery has simply reached the end of its useful life.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
 faqs:
   - question: Can short trips cause a battery to keep going flat?
     answer: Yes. If the battery never fully recovers from repeated short-trip starts, it can feel weak even when no major fault is present.

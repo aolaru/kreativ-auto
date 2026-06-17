@@ -23,7 +23,7 @@ products:
     rating: 4.7
     affiliate_url: "https://www.skf.com/us/products/vehicle-aftermarket/wheel-end"
     summary: "Premium alternative if you want a bearing supplier with a strong OE reputation."
-    image: "/images/photos/parts/wheel-hub.jpg"
+    image: "/images/photos/parts/wheel-hub.webp"
 buyingAdvice:
   - "Do not order a hub until you have separated the noise cleanly from the tire."
   - "Once the diagnosis is clear, an OE-style hub is usually the right answer for a daily-driven vehicle."

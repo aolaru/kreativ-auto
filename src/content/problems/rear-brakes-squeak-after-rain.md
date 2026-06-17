@@ -3,7 +3,7 @@ title: Rear brakes squeak after rain
 metaTitle: "Rear Brakes Squeak After Rain: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose rear brake squeak after rain on a RAV4 by checking pad compound, rotor surface condition, and brake hardware before replacing the wrong parts.
 excerpt: Rear brake squeak after rain is usually a refinement issue first, but it still helps to sort the pad and hardware setup before it becomes a repeat complaint.
-heroImage: /images/photos/parts/akebono-proact.png
+heroImage: /images/photos/parts/akebono-proact.webp
 updatedAt: 2026-04-07
 relatedCars:
   - toyota-rav4-2020
@@ -57,7 +57,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Quiet rear pad option if the goal is to reduce moisture-related squeak without creating a dust-heavy setup.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
 faqs:
   - question: Is rear brake squeak after rain always a bad sign?
     answer: Not always. Light moisture-related brake noise can be normal, but repeated squeak still points to a pad or hardware setup worth checking.

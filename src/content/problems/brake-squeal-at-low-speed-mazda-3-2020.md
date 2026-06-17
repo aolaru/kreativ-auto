@@ -3,7 +3,7 @@ title: "Brake squeal at low speed on Mazda 3 2020"
 metaTitle: "Mazda 3 2020 Brake Squeal at Low Speed: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose low-speed brake squeal on a 2020 Mazda 3 by checking pad compound, hardware service, and rotor surface before buying parts."
 excerpt: "Low-speed brake squeal on a Mazda 3 is usually a pad, hardware, or rotor surface issue before it becomes a full brake-system problem."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "mazda-3-2020"
@@ -46,13 +46,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Quiet ceramic pad choice for keeping the Mazda 3 calm in daily use."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style street pad if the goal is low noise and predictable pedal feel."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 faqs:
   - question: "Why do Mazda 3 brakes squeal at low speed?"
     answer: "Pad compound, dry hardware, glazing, and rotor surface condition are the most useful first checks."

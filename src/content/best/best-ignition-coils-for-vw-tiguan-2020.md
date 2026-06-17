@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Ignition Coils for VW Tiguan 2020
 metaDescription: Compare the best ignition coil options for the VW Tiguan 2020 if you are chasing misfire counts, EPC warnings, or weak performance under load.
 excerpt: The right Tiguan ignition coil is the one that restores clean power under load without sending you back into diagnosis next week.
-heroImage: /images/photos/parts/delphi-ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.webp
 updatedAt: 2026-04-17
 relatedCars:
   - vw-tiguan-2020
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.europaparts.com/ignition-coil-pack-06l905110h.html
     summary: Best overall choice if you want an OE-style coil set with strong reputation on modern VW applications.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: Bremi Ignition Coil
     price: "$149"
     rating: 4.6
     affiliate_url: https://www.rmeuropean.com/Products/06L905110K-MFG18.aspx
     summary: Good alternative if you want a European-brand coil option with clean fitment and solid drivability.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: Delphi Ignition Coil
     price: "$136"
     rating: 4.5
     affiliate_url: https://www.rmeuropean.com/Products/06L905110K-MFG292-V12684.aspx
     summary: Value-minded option for drivers refreshing worn coils without paying the highest premium.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
 buyingAdvice:
   - If the car misfires under load, coils and plugs should be evaluated together instead of separately.
   - Cheap coil sets can create the exact repeat problem this repair is supposed to solve.

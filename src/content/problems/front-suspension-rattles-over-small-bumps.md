@@ -3,7 +3,7 @@ title: Front suspension rattles over small bumps
 metaTitle: "Front Suspension Rattles Over Small Bumps: Causes, Checks, and Fixes"
 metaDescription: Diagnose a Civic front suspension rattle over small bumps by checking sway bar links, brake hardware, and worn front-end components before replacing bigger parts.
 excerpt: A light front-end rattle over patched roads or small bumps is usually a wear item, not a major suspension failure.
-heroImage: /images/photos/parts/moog-sway-bar-links.png
+heroImage: /images/photos/parts/moog-sway-bar-links.webp
 updatedAt: 2026-04-03
 relatedCars:
   - honda-civic-2019
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: https://www.moogparts.com/parts/suspension/sway-bar-links.html
     summary: A solid first-choice link kit when the front end sounds loose over small bumps and the hardware is showing wear.
-    image: /images/photos/parts/moog-sway-bar-links.png
+    image: /images/photos/parts/moog-sway-bar-links.webp
 faqs:
   - question: Can sway bar links really make that much noise on a Civic?
     answer: Yes. On small bumps they can make a surprisingly sharp rattle long before the rest of the suspension feels bad.

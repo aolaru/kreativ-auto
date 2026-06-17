@@ -5,7 +5,7 @@ car_model: "Nissan Rogue 2021"
 metaTitle: "Best Brake Pads for Nissan Rogue 2021"
 metaDescription: "Compare brake pad options for a 2021 Nissan Rogue when quiet low-speed braking and daily-driver feel matter most."
 excerpt: "These Rogue brake pad picks focus on quiet commuter behavior, hardware service, and avoiding an aggressive pad the SUV does not need."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "nissan-rogue-2021"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Best overall quiet ceramic option for normal Rogue commuter use."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style street pad for predictable feel and low noise."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Wagner OEX Ceramic Brake Pad Set"
     price: "$77"
     rating: 4.5
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Value ceramic pick for a Rogue that needs a clean daily-driver refresh."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 quickVerdict: "The best Rogue brake pad is a quiet ceramic set installed with clean hardware, not the most aggressive pad on the shelf."
 bestFor:
   - "Owners trying to calm low-speed front brake squeal."

@@ -3,7 +3,7 @@ title: "Rear brakes squeak after rain on Subaru Outback 2020"
 metaTitle: "Subaru Outback 2020 Rear Brakes Squeak After Rain"
 metaDescription: "Diagnose 2020 Subaru Outback rear brake squeak after rain by checking pad compound, rear hardware, and rotor surface condition before overcalling a bigger brake problem."
 excerpt: "An Outback rear brake squeak after rain is usually a refinement problem first, not an emergency."
-heroImage: "/images/photos/parts/wagner-oex.png"
+heroImage: "/images/photos/parts/wagner-oex.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "subaru-outback-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "A quieter rear-pad choice if damp-weather squeak is making the Outback feel less refined than it should."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 faqs:
   - question: "Is rear brake squeak after rain dangerous?"
     answer: "Usually no, as long as braking feel is normal and the brakes are not dragging."

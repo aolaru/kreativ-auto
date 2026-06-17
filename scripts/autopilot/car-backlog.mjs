@@ -61,7 +61,7 @@ const curatedCarBacklog = [
           rating: 4.8,
           affiliate_url: "https://www.akebonobrakes.com/pro-act",
           summary: "Quiet ceramic pad option for keeping daily-driver brake noise under control.",
-          image: "/images/photos/parts/akebono-proact.png"
+          image: "/images/photos/parts/akebono-proact.webp"
         },
         {
           name: "Timken Premium Wheel Hub Unit",
@@ -85,7 +85,7 @@ const curatedCarBacklog = [
         "Diagnose Toyota Corolla 2020 brake squeal at low speed by checking pad compound, hardware, and rotor condition before buying parts.",
       excerpt:
         "Low-speed Corolla brake squeal is usually a pad-and-hardware issue before it becomes a full brake-system problem.",
-      heroImage: "/images/photos/parts/akebono-proact.png",
+      heroImage: "/images/photos/parts/akebono-proact.webp",
       symptoms: [
         "High-pitched squeal during light braking in traffic or parking lots",
         "Noise fades during harder stops or at higher speeds",
@@ -136,7 +136,7 @@ const curatedCarBacklog = [
           rating: 4.8,
           affiliate_url: "https://www.akebonobrakes.com/pro-act",
           summary: "Quiet ceramic pad option designed for daily drivers who want low dust and less squeal.",
-          image: "/images/photos/parts/akebono-proact.png"
+          image: "/images/photos/parts/akebono-proact.webp"
         },
         {
           name: "Bosch QuietCast Premium Brake Pads",
@@ -144,7 +144,7 @@ const curatedCarBacklog = [
           rating: 4.6,
           affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads",
           summary: "OE-style pad alternative if you want a calmer, stock-like street setup.",
-          image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+          image: "/images/photos/parts/bosch-quietcast-pads.webp"
         }
       ],
       faqs: [
@@ -188,7 +188,7 @@ const curatedCarBacklog = [
         "Compare the best brake pad options for the Toyota Corolla 2020 if your priority is quiet, clean, everyday braking.",
       excerpt:
         "These Corolla brake pad picks are for drivers who want a quiet daily-driver setup, not an overbuilt parts list.",
-      heroImage: "/images/photos/parts/akebono-proact.png",
+      heroImage: "/images/photos/parts/akebono-proact.webp",
       products: [
         {
           name: "Akebono ProACT Ceramic Brake Pads",
@@ -196,7 +196,7 @@ const curatedCarBacklog = [
           rating: 4.8,
           affiliate_url: "https://www.akebonobrakes.com/pro-act",
           summary: "Best overall pick for quiet operation, low dust, and daily-driver smoothness.",
-          image: "/images/photos/parts/akebono-proact.png"
+          image: "/images/photos/parts/akebono-proact.webp"
         },
         {
           name: "Bosch QuietCast Premium Brake Pads",
@@ -204,7 +204,7 @@ const curatedCarBacklog = [
           rating: 4.6,
           affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads",
           summary: "Great OE-style alternative if you want a refined, stock-like pedal feel.",
-          image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+          image: "/images/photos/parts/bosch-quietcast-pads.webp"
         },
         {
           name: "Wagner OEX Ceramic Brake Pad Set",
@@ -212,7 +212,7 @@ const curatedCarBacklog = [
           rating: 4.5,
           affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html",
           summary: "Strong value option for commuters who want stable braking with low dust.",
-          image: "/images/photos/parts/wagner-oex.png"
+          image: "/images/photos/parts/wagner-oex.webp"
         }
       ],
       buyingAdvice: [
@@ -345,7 +345,7 @@ const curatedCarBacklog = [
           rating: 4.7,
           affiliate_url: "https://www.densoautoparts.com/condensers/",
           summary: "OEM-trusted condenser option when idle cooling starts fading.",
-          image: "/images/photos/parts/denso-condenser.jpeg"
+          image: "/images/photos/parts/denso-condenser.webp"
         },
         {
           name: "Bosch QuietCast Premium Brake Pads",
@@ -353,7 +353,7 @@ const curatedCarBacklog = [
           rating: 4.6,
           affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads",
           summary: "OE-style brake pad option for cutting dust and keeping the front end quieter.",
-          image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+          image: "/images/photos/parts/bosch-quietcast-pads.webp"
         }
       ],
       body: [
@@ -369,7 +369,7 @@ const curatedCarBacklog = [
         "Diagnose a Honda Accord 2020 that blows warm air at idle by checking condenser health, airflow, and system condition before buying parts.",
       excerpt:
         "Warm A/C at idle on an Accord is usually about airflow, condenser condition, or system health before it becomes a bigger HVAC job.",
-      heroImage: "/images/photos/parts/denso-condenser.jpeg",
+      heroImage: "/images/photos/parts/denso-condenser.webp",
       symptoms: [
         "Cold enough on the highway but weak in traffic",
         "Vent temperature rises when the car sits at a light",
@@ -419,7 +419,7 @@ const curatedCarBacklog = [
           rating: 4.7,
           affiliate_url: "https://www.densoautoparts.com/condensers/",
           summary: "OEM-trusted condenser choice when inspection points toward weak heat exchange or physical damage.",
-          image: "/images/photos/parts/denso-condenser.jpeg"
+          image: "/images/photos/parts/denso-condenser.webp"
         }
       ],
       faqs: [
@@ -463,7 +463,7 @@ const curatedCarBacklog = [
         "Compare the best A/C condenser options for the Honda Accord 2020 if your priority is restoring dependable idle cooling.",
       excerpt:
         "These Accord condenser picks are aimed at restoring dependable daily-driver cooling, not chasing the cheapest possible part.",
-      heroImage: "/images/photos/parts/denso-condenser.jpeg",
+      heroImage: "/images/photos/parts/denso-condenser.webp",
       products: [
         {
           name: "Denso A/C Condenser",
@@ -471,7 +471,7 @@ const curatedCarBacklog = [
           rating: 4.7,
           affiliate_url: "https://www.densoautoparts.com/condensers/",
           summary: "Best overall choice for OE-style fit, cooling performance, and long-term confidence.",
-          image: "/images/photos/parts/denso-condenser.jpeg"
+          image: "/images/photos/parts/denso-condenser.webp"
         },
         {
           name: "TYC A/C Condenser",
@@ -479,7 +479,7 @@ const curatedCarBacklog = [
           rating: 4.4,
           affiliate_url: "https://www.tycusa.com/Products/Cooling/Condensers",
           summary: "Budget-friendly condenser option if you need a cleaner price without dropping to unknown-brand parts.",
-          image: "/images/photos/parts/denso-condenser.jpeg"
+          image: "/images/photos/parts/denso-condenser.webp"
         },
         {
           name: "Genuine Honda Condenser",
@@ -487,7 +487,7 @@ const curatedCarBacklog = [
           rating: 4.8,
           affiliate_url: "https://www.hondapartsnow.com/parts-list/2020-honda-accord--4dr_sport_hcm_eng_hdm_cvt-ka_cvt/body_air_conditioning/a_c_air_conditioner_condenser.html",
           summary: "Best OE-style route if staying close to original Honda parts support matters more than price.",
-          image: "/images/photos/parts/denso-condenser.jpeg"
+          image: "/images/photos/parts/denso-condenser.webp"
         }
       ],
       buyingAdvice: [
@@ -615,7 +615,7 @@ const curatedCarBacklog = [
           rating: 4.8,
           affiliate_url: "https://www.akebonobrakes.com/pro-act",
           summary: "Quiet, low-dust pad option for a daily-driven compact sedan or hatchback.",
-          image: "/images/photos/parts/akebono-proact.png"
+          image: "/images/photos/parts/akebono-proact.webp"
         },
         {
           name: "MOOG Sway Bar Links",
@@ -623,7 +623,7 @@ const curatedCarBacklog = [
           rating: 4.5,
           affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/",
           summary: "Common first replacement when smaller front-end clunks start showing up.",
-          image: "/images/photos/parts/moog-sway-bar-links.png"
+          image: "/images/photos/parts/moog-sway-bar-links.webp"
         }
       ],
       body: [
@@ -639,7 +639,7 @@ const curatedCarBacklog = [
         "Diagnose a Mazda 3 2020 front-end clunk over bumps by checking sway bar links, hardware, and smaller suspension wear points first.",
       excerpt:
         "A front-end clunk on a Mazda 3 usually points to smaller suspension hardware before it turns into a broader front-end rebuild.",
-      heroImage: "/images/photos/parts/moog-sway-bar-links.png",
+      heroImage: "/images/photos/parts/moog-sway-bar-links.webp",
       symptoms: [
         "Clunk or knock over small bumps and broken pavement",
         "Noise is more obvious at low speed than at highway speed",
@@ -688,7 +688,7 @@ const curatedCarBacklog = [
           rating: 4.5,
           affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/",
           summary: "Useful OE-style link replacement when the first front-end clunk points back to stabilizer hardware.",
-          image: "/images/photos/parts/moog-sway-bar-links.png"
+          image: "/images/photos/parts/moog-sway-bar-links.webp"
         }
       ],
       faqs: [
@@ -732,7 +732,7 @@ const curatedCarBacklog = [
         "Compare the best front sway bar link options for the Mazda 3 2020 if your priority is cleaning up front-end clunks without overcomplicating the repair.",
       excerpt:
         "These Mazda 3 sway bar link picks are for owners who want a quiet, OE-style front end rather than a random suspension gamble.",
-      heroImage: "/images/photos/parts/moog-sway-bar-links.png",
+      heroImage: "/images/photos/parts/moog-sway-bar-links.webp",
       products: [
         {
           name: "MOOG Sway Bar Links",
@@ -740,7 +740,7 @@ const curatedCarBacklog = [
           rating: 4.5,
           affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/",
           summary: "Best overall pick for restoring a calm, OE-style front end without overthinking the job.",
-          image: "/images/photos/parts/moog-sway-bar-links.png"
+          image: "/images/photos/parts/moog-sway-bar-links.webp"
         },
         {
           name: "Delphi Stabilizer Link",
@@ -748,7 +748,7 @@ const curatedCarBacklog = [
           rating: 4.4,
           affiliate_url: "https://www.delphiautoparts.com/en-gb/products-technologies/steering-suspension/",
           summary: "Budget-friendly OE-style option when the goal is a clean repair at a sensible price.",
-          image: "/images/photos/parts/moog-sway-bar-links.png"
+          image: "/images/photos/parts/moog-sway-bar-links.webp"
         }
       ],
       buyingAdvice: [
@@ -819,7 +819,7 @@ const productCatalog = {
       rating: 4.8,
       affiliate_url: "https://www.akebonobrakes.com/pro-act",
       summary: "Quiet ceramic pad option for daily-driver brake refinement.",
-      image: "/images/photos/parts/akebono-proact.png"
+      image: "/images/photos/parts/akebono-proact.webp"
     },
     {
       name: "Bosch QuietCast Premium Brake Pads",
@@ -827,7 +827,7 @@ const productCatalog = {
       rating: 4.6,
       affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads",
       summary: "OE-style street pad if you want stock-like noise control and feel.",
-      image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+      image: "/images/photos/parts/bosch-quietcast-pads.webp"
     },
     {
       name: "Wagner OEX Ceramic Brake Pad Set",
@@ -835,7 +835,7 @@ const productCatalog = {
       rating: 4.5,
       affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html",
       summary: "Strong value ceramic option for normal commuter use.",
-      image: "/images/photos/parts/wagner-oex.png"
+      image: "/images/photos/parts/wagner-oex.webp"
     }
   ],
   batteries: [
@@ -845,7 +845,7 @@ const productCatalog = {
       rating: 4.7,
       affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx",
       summary: "Best overall battery replacement if short trips and sitting time are part of the ownership pattern.",
-      image: "/images/photos/parts/car-battery.jpg"
+      image: "/images/photos/parts/car-battery.webp"
     },
     {
       name: "DieHard Platinum AGM Battery",
@@ -853,7 +853,7 @@ const productCatalog = {
       rating: 4.7,
       affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm",
       summary: "Premium AGM choice for stronger reserve capacity and daily reliability.",
-      image: "/images/photos/parts/car-battery.jpg"
+      image: "/images/photos/parts/car-battery.webp"
     },
     {
       name: "Optima YellowTop Battery",
@@ -861,7 +861,7 @@ const productCatalog = {
       rating: 4.5,
       affiliate_url: "https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries",
       summary: "Alternative pick if the vehicle sees heavier accessory use or longer sits.",
-      image: "/images/photos/parts/car-battery.jpg"
+      image: "/images/photos/parts/car-battery.webp"
     }
   ],
   swayBarLinks: [
@@ -871,7 +871,7 @@ const productCatalog = {
       rating: 4.5,
       affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/",
       summary: "Best overall OE-style link choice when smaller front-end clunks start showing up.",
-      image: "/images/photos/parts/moog-sway-bar-links.png"
+      image: "/images/photos/parts/moog-sway-bar-links.webp"
     },
     {
       name: "Delphi Stabilizer Link",
@@ -879,7 +879,7 @@ const productCatalog = {
       rating: 4.4,
       affiliate_url: "https://www.delphiautoparts.com/en-gb/products-technologies/steering-suspension/",
       summary: "Budget-friendly OE-style alternative for restoring a quieter front end.",
-      image: "/images/photos/parts/moog-sway-bar-links.png"
+      image: "/images/photos/parts/moog-sway-bar-links.webp"
     }
   ],
   tires: [
@@ -915,7 +915,7 @@ const productCatalog = {
       rating: 4.7,
       affiliate_url: "https://www.skf.com/us/products/vehicle-aftermarket/wheel-end",
       summary: "Premium alternative if you want a bearing supplier with a strong OE reputation.",
-      image: "/images/photos/parts/wheel-hub.jpg"
+      image: "/images/photos/parts/wheel-hub.webp"
     }
   ],
   acCondensers: [
@@ -925,7 +925,7 @@ const productCatalog = {
       rating: 4.7,
       affiliate_url: "https://www.densoautoparts.com/condensers/",
       summary: "OE-trusted condenser choice when idle cooling starts fading in traffic.",
-      image: "/images/photos/parts/denso-condenser.jpeg"
+      image: "/images/photos/parts/denso-condenser.webp"
     },
     {
       name: "TYC A/C Condenser",
@@ -933,7 +933,7 @@ const productCatalog = {
       rating: 4.4,
       affiliate_url: "https://www.tycproducts.com/products/air-conditioning/condensers/",
       summary: "Lower-cost replacement path if you want to stay sensible on an everyday family vehicle.",
-      image: "/images/photos/parts/denso-condenser.jpeg"
+      image: "/images/photos/parts/denso-condenser.webp"
     }
   ],
   engineOil: [
@@ -951,7 +951,7 @@ const productCatalog = {
       rating: 4.7,
       affiliate_url: "https://www.mobil.com/en/lubricants/for-personal-vehicles/our-products/mobil-1",
       summary: "Value-minded full synthetic option that still makes sense for normal late-model ownership.",
-      image: "/images/photos/parts/liqui-moly-engine-oil.jpg"
+      image: "/images/photos/parts/liqui-moly-engine-oil.webp"
     }
   ]
 };
@@ -1024,7 +1024,7 @@ function categoryConfig(kind) {
         "Diagnose low-speed brake squeal by checking pad compound, hardware, and rotor condition before buying parts.",
       problemExcerpt:
         "Low-speed brake squeal is usually a pad-and-hardware issue before it becomes a full brake-system problem.",
-      problemHero: "/images/photos/parts/akebono-proact.png",
+      problemHero: "/images/photos/parts/akebono-proact.webp",
       symptoms: [
         "High-pitched squeal during light braking in traffic or parking lots",
         "Noise fades during harder stops or at higher speeds",
@@ -1096,7 +1096,7 @@ function categoryConfig(kind) {
         "Diagnose a battery that goes dead after sitting by checking reserve capacity, charging health, and usage pattern before buying parts.",
       problemExcerpt:
         "A battery that keeps going flat after sitting is usually about reserve capacity, short-trip use, or charging health before it is something stranger.",
-      problemHero: "/images/photos/parts/car-battery.jpg",
+      problemHero: "/images/photos/parts/car-battery.webp",
       symptoms: [
         "Weak or no-start condition after the vehicle sits overnight or for a few days",
         "Battery seems fine after a long drive but weak again after short-trip use",
@@ -1167,7 +1167,7 @@ function categoryConfig(kind) {
         "Diagnose a front-end clunk over bumps by checking sway bar links, hardware, and smaller suspension wear points first.",
       problemExcerpt:
         "A front-end clunk is usually a smaller suspension-hardware problem before it becomes a broader front-end rebuild.",
-      problemHero: "/images/photos/parts/moog-sway-bar-links.png",
+      problemHero: "/images/photos/parts/moog-sway-bar-links.webp",
       symptoms: [
         "Clunk or knock over small bumps and broken pavement",
         "Noise is more obvious at low speed than at highway speed",
@@ -1380,7 +1380,7 @@ function categoryConfig(kind) {
         "Diagnose warm A/C at idle by checking condenser condition, airflow, and system health before buying parts.",
       problemExcerpt:
         "Warm A/C at idle is usually about airflow, condenser condition, or system health before it becomes a bigger HVAC job.",
-      problemHero: "/images/photos/parts/denso-condenser.jpeg",
+      problemHero: "/images/photos/parts/denso-condenser.webp",
       symptoms: [
         "Cold enough on the highway but weak in traffic",
         "Vent temperature rises when the vehicle sits at a light",

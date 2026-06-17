@@ -5,7 +5,7 @@ car_model: "BMW 3 Series 2019"
 metaTitle: "Best Ignition Coils for BMW 3 Series 2019"
 metaDescription: "Compare the best ignition coil options for the BMW 3 Series 2019 if you are chasing hesitation, weak power delivery, or early misfire behavior."
 excerpt: "The right 3 Series ignition coil is the one that restores clean load response without sending you back into the same diagnosis next week."
-heroImage: "/images/photos/parts/delphi-ignition-coil.jpg"
+heroImage: "/images/photos/parts/delphi-ignition-coil.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "bmw-3-series-2019"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils"
     summary: "Best overall choice if you want a credible coil for restoring clean load response and stable daily drivability."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
   - name: "Bosch Ignition Coil"
     price: "$148"
     rating: 4.7
     affiliate_url: "https://www.boschautoparts.com/g/ignition-coils"
     summary: "Strong premium alternative if you want a familiar brand with broad availability and good OE-style reputation."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
   - name: "Eldor Ignition Coil"
     price: "$156"
     rating: 4.8
     affiliate_url: "https://www.fcpeuro.com/products/bmw-direct-ignition-coil-eldor-12138657273"
     summary: "Best OE-style route if you want the most conservative fitment and feel match."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
 buyingAdvice:
   - "If the car hesitates under load, coils and plugs should be evaluated together instead of separately."
   - "Cheap coil sets can create the exact repeat problem this repair is supposed to solve."

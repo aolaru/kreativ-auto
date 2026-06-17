@@ -5,7 +5,7 @@ car_model: "BMW 3 Series 2019"
 metaTitle: "Best Spark Plugs for BMW 3 Series 2019"
 metaDescription: "Compare the best spark plug options for the BMW 3 Series 2019 if you are chasing idle misfire, hesitation, or overdue ignition service."
 excerpt: "The right 3 Series spark plug is the one that restores clean idle and stable load response instead of creating another round of diagnosis."
-heroImage: "/images/photos/parts/ngk-spark-plugs.png"
+heroImage: "/images/photos/parts/ngk-spark-plugs.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "bmw-3-series-2019"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.ngkntk.com/products/spark-plugs/"
     summary: "Best overall choice if you want clean idle behavior and strong OE-style drivability."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
   - name: "Bosch Double Iridium Spark Plugs"
     price: "$63"
     rating: 4.7
     affiliate_url: "https://www.boschautoparts.com/g/double-iridium-spark-plugs"
     summary: "Strong alternative if you want broad availability and a familiar premium brand."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
   - name: "Genuine BMW Spark Plugs"
     price: "$76"
     rating: 4.8
     affiliate_url: "https://parts.bmwusa.com/"
     summary: "Best OE-style route if you want the most conservative fitment-first answer."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
 buyingAdvice:
   - "If the car is misfiring or hesitating, evaluate coils and plugs together instead of guessing which side is guilty."
   - "Avoid bargain plugs that create the same drivability problem again a few weeks later."

@@ -5,7 +5,7 @@ car_model: "Chevrolet Silverado 1500 2020"
 metaTitle: "Best Brake Pads for Chevrolet Silverado 1500 2020"
 metaDescription: "Compare brake pad options for a 2020 Silverado 1500 when daily driving, hauling, towing, and brake pulsation are part of the decision."
 excerpt: "These Silverado brake pad picks focus on truck use, calm stopping, and avoiding an overbuilt parts choice when the diagnosis is still unclear."
-heroImage: "/images/photos/parts/power-stop-z36.jpg"
+heroImage: "/images/photos/parts/power-stop-z36.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "chevrolet-silverado-1500-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.powerstop.com/products/#y=2020&mk=CHEVROLET&mo=SILVERADO%201500"
     summary: "Best fit for Silverado owners who tow, haul, or want a pad built around truck heat and weight."
-    image: "/images/photos/parts/power-stop-z36.jpg"
+    image: "/images/photos/parts/power-stop-z36.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$82"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Best OE-style daily pad if the truck mostly sees commuting and light-duty use."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Wagner OEX Ceramic Brake Pad Set"
     price: "$79"
     rating: 4.5
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Good value route for normal street use when hardware and rotor condition are already sorted."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 quickVerdict: "The best Silverado pad depends on use: truck-and-tow pads make sense for load, while OE-style pads are usually better for quiet daily driving."
 bestFor:
   - "Owners who have confirmed the brake system is the source of the pulsation or noise."

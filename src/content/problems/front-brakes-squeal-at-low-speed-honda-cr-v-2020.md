@@ -3,7 +3,7 @@ title: "Front brakes squeal at low speed on Honda CR-V 2020"
 metaTitle: "Honda CR-V 2020 Front Brakes Squeal at Low Speed"
 metaDescription: "Diagnose 2020 Honda CR-V low-speed front-brake squeal by checking pad compound, hardware, and rotor condition before replacing the wrong brake parts."
 excerpt: "A CR-V front-brake squeal at low speed is usually a pad-and-hardware refinement issue before it is anything dramatic."
-heroImage: "/images/photos/parts/bosch-quietcast-pads.jpg"
+heroImage: "/images/photos/parts/bosch-quietcast-pads.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "honda-cr-v-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "A quieter front-pad option if the goal is to make the CR-V calmer in daily use."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 faqs:
   - question: "Is low-speed front-brake squeal dangerous on a CR-V?"
     answer: "Usually no, as long as braking feel is normal and the pads and rotors are still in good condition."

@@ -5,7 +5,7 @@ car_model: "Toyota Corolla 2020"
 metaTitle: "Best Brake Pads for Toyota Corolla 2020"
 metaDescription: "Compare the best brake pad options for the Toyota Corolla 2020 if your priority is quiet, clean, everyday braking."
 excerpt: "These Corolla brake pad picks are for drivers who want a quiet daily-driver setup, not an overbuilt parts list."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-04-14
 relatedCars:
   - "toyota-corolla-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Best overall pick for quiet operation, low dust, and daily-driver smoothness."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Great OE-style alternative if you want a refined, stock-like pedal feel."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Wagner OEX Ceramic Brake Pad Set"
     price: "$77"
     rating: 4.5
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Strong value option for commuters who want stable braking with low dust."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 buyingAdvice:
   - "For a daily-driven Corolla, ceramic pads are usually the best default because they stay quiet and clean."
   - "If squeal has been persistent, service the hardware properly instead of swapping friction material alone."

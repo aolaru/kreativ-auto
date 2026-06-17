@@ -3,7 +3,7 @@ title: "Engine hesitates under acceleration on Mercedes-Benz C-Class 2019"
 metaTitle: "Mercedes-Benz C-Class 2019 Engine Hesitates Under Acceleration"
 metaDescription: "Diagnose a 2019 Mercedes-Benz C-Class hesitation under acceleration by checking ignition service, spark plugs, and baseline drivability before assuming a larger turbo or fuel-system failure."
 excerpt: "A C-Class that hesitates under acceleration usually needs disciplined ignition diagnosis before it needs dramatic premium-sedan theories."
-heroImage: "/images/photos/parts/ngk-spark-plugs.png"
+heroImage: "/images/photos/parts/ngk-spark-plugs.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "mercedes-benz-c-class-2019"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.ngkntk.com/products/spark-plugs/"
     summary: "A credible ignition maintenance part choice if the car is beginning to stumble or hesitate under load."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
 faqs:
   - question: "Can weak plugs cause hesitation without a constant misfire?"
     answer: "Yes. Load-related weakness often shows up before the problem becomes an obvious steady misfire."

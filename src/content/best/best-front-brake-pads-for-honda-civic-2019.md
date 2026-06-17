@@ -5,7 +5,7 @@ car_model: Honda Civic 2019
 metaTitle: Best Front Brake Pads for Honda Civic 2019
 metaDescription: Compare the best front brake pad options for the Honda Civic 2019 if low-speed squeal is getting annoying and you want a quieter street setup.
 excerpt: The best Civic front brake pads are the ones that keep the car quiet and predictable in everyday traffic, not the ones with the loudest marketing.
-heroImage: /images/photos/parts/bosch-quietcast-pads.jpg
+heroImage: /images/photos/parts/bosch-quietcast-pads.webp
 updatedAt: 2026-04-12
 relatedCars:
   - honda-civic-2019
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Best overall for daily-driven Civics where quiet stops and low dust matter more than aggressive bite.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
   - name: Akebono ProACT Ceramic Front Brake Pads
     price: "$69"
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Strong street-focused choice if you want smooth bite and a very clean noise profile.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
   - name: Power Stop Z23 Front Brake Pads
     price: "$58"
     rating: 4.6
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-evolution-brake-pads/
     summary: Good option if you want a little more initial bite without jumping to a full performance-focused pad.
-    image: /images/photos/parts/power-stop-z23.jpg
+    image: /images/photos/parts/power-stop-z23.webp
 buyingAdvice:
   - Buy a quiet street pad unless the car is driven harder than a normal commuter.
   - Hardware condition and bedding matter almost as much as the pad itself.

@@ -5,7 +5,7 @@ car_model: "Honda CR-V 2020"
 metaTitle: "Best Front Sway Bar Links for Honda CR-V 2020"
 metaDescription: "Compare the best front sway bar link options for the Honda CR-V 2020 if front-end clunks show up over small bumps, driveway entries, or rough pavement."
 excerpt: "The right CR-V front sway bar link is the one that solves the clunk cleanly without turning a small suspension repair into a repeat job."
-heroImage: "/images/photos/parts/moog-sway-bar-links.png"
+heroImage: "/images/photos/parts/moog-sway-bar-links.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "honda-cr-v-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/"
     summary: "Best overall choice if you want a straightforward repair for the classic front-end clunk."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Delphi Front Stabilizer Link"
     price: "$39"
     rating: 4.5
     affiliate_url: "https://www.delphiautoparts.com/en-gb/products-technologies/steering-suspension/"
     summary: "Good value option for daily-driven CR-Vs that need a clean, simple front-link refresh."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Genuine Honda Front Stabilizer Link"
     price: "$67"
     rating: 4.8
     affiliate_url: "https://www.hondapartsnow.com/parts-list/2020-honda-cr_v--5dr_ex_2wd-ka_cvt/chassis/front_stabilizer.html"
     summary: "Safest OE-style pick if you want the most conservative fitment route."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
 buyingAdvice:
   - "If the front end clunks over small bumps, inspect both links and surrounding bushings before ordering parts."
   - "Cheap links are a false economy if the repair has to be reopened soon after."

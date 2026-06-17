@@ -5,7 +5,7 @@ car_model: Toyota RAV4 2021
 metaTitle: Best Rear Brake Pads for Toyota RAV4 2021
 metaDescription: Compare the best rear brake pad options for the Toyota RAV4 2021 if you are trying to quiet rear-end brake noise and keep daily braking refined.
 excerpt: The right rear brake pad for a RAV4 is the one that stays quiet, behaves well in normal use, and does not turn a small rear-brake complaint into a repeating chore.
-heroImage: /images/photos/parts/akebono-proact.png
+heroImage: /images/photos/parts/akebono-proact.webp
 updatedAt: 2026-04-17
 relatedCars:
   - toyota-rav4-2020
@@ -18,19 +18,19 @@ products:
     rating: 4.8
     affiliate_url: https://www.akebonobrakes.com/pro-act
     summary: Best overall choice if rear brake noise control and clean daily use matter more than aggressive bite claims.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
   - name: Wagner OEX Rear Brake Pads
     price: "$57"
     rating: 4.6
     affiliate_url: https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html
     summary: Good option if you want a quiet rear setup with solid everyday feel and dependable hardware quality.
-    image: /images/photos/parts/wagner-oex.png
+    image: /images/photos/parts/wagner-oex.webp
   - name: Genuine Toyota Rear Brake Pads
     price: "$74"
     rating: 4.8
     affiliate_url: https://autoparts.toyota.com/products/product/rr-brake-pad-04466az215
     summary: Best OE-style route for owners who want the most conservative fitment and feel match.
-    image: /images/photos/parts/akebono-proact.png
+    image: /images/photos/parts/akebono-proact.webp
 buyingAdvice:
   - Rear brake noise is usually more about pad and hardware behavior than about chasing the most aggressive pad compound.
   - Confirm the rear-axle listing before ordering because front and rear pad kits are easy to confuse.

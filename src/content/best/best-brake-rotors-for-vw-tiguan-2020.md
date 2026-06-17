@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Brake Rotors for VW Tiguan 2020
 metaDescription: Compare the best brake rotors for the VW Tiguan 2020 if you are trying to fix vibration, improve pedal feel, or avoid cheap rotor headaches.
 excerpt: The right Tiguan rotor is the one that stays smooth, resists corrosion, and works with the kind of everyday braking this SUV actually sees.
-heroImage: /images/photos/parts/bosch-quietcast-pads.jpg
+heroImage: /images/photos/parts/bosch-quietcast-pads.webp
 updatedAt: 2026-04-17
 relatedCars:
   - vw-tiguan-2020
@@ -18,19 +18,19 @@ products:
     rating: 4.6
     affiliate_url: https://www.allrotors.com/vehicle/2020/volkswagen/tiguan/
     summary: Best overall option for a daily-driven Tiguan that needs smooth braking and solid corrosion resistance.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
   - name: Power Stop Evolution Geomet Coated Rotor
     price: "$104"
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/evolution-coated-rotors/
     summary: Good fit if you want coated rotors with stable street performance and clean pairing with modern pads.
-    image: /images/photos/parts/power-stop-z23.jpg
+    image: /images/photos/parts/power-stop-z23.webp
   - name: Bosch QuietCast Premium Rotor
     price: "$96"
     rating: 4.5
     affiliate_url: https://www.boschautoparts.com/g/quietcast-premium-disc-brake-rotors
     summary: Strong alternative for drivers who want refined daily braking without chasing the sportiest setup.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
 buyingAdvice:
   - If the car already shakes when braking, inspect pad deposits and hardware too instead of blaming only the rotor.
   - Coated rotors usually make more sense on a daily SUV because they hold up better against corrosion.

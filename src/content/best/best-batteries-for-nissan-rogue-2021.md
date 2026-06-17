@@ -5,7 +5,7 @@ car_model: "Nissan Rogue 2021"
 metaTitle: "Best Batteries for Nissan Rogue 2021"
 metaDescription: "Compare the best battery options if you want a reliable replacement instead of another weak start after the Nissan Rogue sits."
 excerpt: "The right battery is the one that handles short trips, sitting time, and normal accessory load without turning into a repeat no-start problem."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-06-07
 relatedCars:
   - "nissan-rogue-2021"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Best overall battery replacement if short trips and sitting time are part of the ownership pattern."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM choice for stronger reserve capacity and daily reliability."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "Optima YellowTop Battery"
     price: "$264"
     rating: 4.5
     affiliate_url: "https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries"
     summary: "Alternative pick if the vehicle sees heavier accessory use or longer sits."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 buyingAdvice:
   - "Confirm group size and terminal layout before ordering."
   - "If the old battery died from charging or parasitic-draw issues, solve that first or the new battery will suffer too."

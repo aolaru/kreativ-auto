@@ -29,13 +29,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Quiet ceramic pad option for daily-driver brake refinement."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style street pad if you want stock-like noise control and feel."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 maintenanceTips:
   - "Stay ahead of brake service so the Tucson keeps its calm commuter feel."
   - "Rotate tires regularly because a compact SUV’s refinement drops quickly when the tires are neglected."

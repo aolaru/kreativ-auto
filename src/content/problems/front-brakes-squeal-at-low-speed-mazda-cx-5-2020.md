@@ -3,7 +3,7 @@ title: "Front brakes squeal at low speed on Mazda CX-5 2020"
 metaTitle: "Mazda CX-5 2020 Front Brakes Squeal at Low Speed"
 metaDescription: "Diagnose 2020 Mazda CX-5 low-speed front-brake squeal by checking pad compound, hardware, and rotor condition before replacing the wrong brake parts."
 excerpt: "A CX-5 front-brake squeal at low speed is usually a pad-and-hardware refinement issue before it is anything dramatic."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "mazda-cx-5-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "A quieter front-pad option if the goal is to make the CX-5 calmer in daily use."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
 faqs:
   - question: "Is low-speed front-brake squeal dangerous on a CX-5?"
     answer: "Usually no, as long as braking feel is normal and the pads and rotors are still in good condition."

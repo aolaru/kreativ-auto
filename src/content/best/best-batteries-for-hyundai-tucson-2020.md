@@ -5,7 +5,7 @@ car_model: "Hyundai Tucson 2020"
 metaTitle: "Best Batteries for Hyundai Tucson 2020"
 metaDescription: "Compare battery options for a 2020 Hyundai Tucson when short trips, weak starts, and reserve capacity are the main concerns."
 excerpt: "These Tucson battery picks focus on weak-start prevention, reserve capacity, and fitment confidence for normal commuter use."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "hyundai-tucson-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Best overall replacement when short trips and sitting time are part of the Tucson's normal use."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM option if you want stronger reserve capacity and less weak-start risk."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "Optima YellowTop Battery"
     price: "$264"
     rating: 4.5
     affiliate_url: "https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries"
     summary: "Alternative for heavier accessory use, longer sits, or owners who want extra reserve margin."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 quickVerdict: "An AGM battery is the safer Tucson choice when short trips and sitting time are what exposed the weak-start problem."
 bestFor:
   - "Owners dealing with weak starts after short errands or sitting."

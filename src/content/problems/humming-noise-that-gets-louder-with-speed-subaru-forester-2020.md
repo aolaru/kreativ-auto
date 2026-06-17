@@ -52,7 +52,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.skf.com/us/products/vehicle-aftermarket/wheel-end"
     summary: "Premium alternative if you want a bearing supplier with a strong OE reputation."
-    image: "/images/photos/parts/wheel-hub.jpg"
+    image: "/images/photos/parts/wheel-hub.webp"
 faqs:
   - question: "What usually causes a speed-related humming noise on a Subaru Forester?"
     answer: "Wheel-bearing or hub wear is a common cause, but tire noise and uneven wear should be separated first."

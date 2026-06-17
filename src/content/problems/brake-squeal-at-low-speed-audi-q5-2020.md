@@ -3,7 +3,7 @@ title: "Brake squeal at low speed on Audi Q5 2020"
 metaTitle: "Audi Q5 2020 Brake Squeal at Low Speed"
 metaDescription: "Diagnose 2020 Audi Q5 low-speed brake squeal by checking pad compound, hardware, and rotor condition before replacing the wrong premium-crossover brake parts."
 excerpt: "A Q5 that squeals at low speed usually needs a calmer brake setup and cleaner hardware service, not a dramatic diagnosis."
-heroImage: "/images/photos/parts/akebono-euro.png"
+heroImage: "/images/photos/parts/akebono-euro.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "audi-q5-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.akebonobrakes.com/euro"
     summary: "A quieter premium-crossover brake pad choice when the priority is daily refinement."
-    image: "/images/photos/parts/akebono-euro.png"
+    image: "/images/photos/parts/akebono-euro.webp"
 faqs:
   - question: "Is low-speed brake squeal on an Audi Q5 dangerous?"
     answer: "Usually no, as long as braking feel is normal and the pads and rotors are still in good condition."

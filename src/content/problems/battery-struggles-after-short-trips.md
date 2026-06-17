@@ -3,7 +3,7 @@ title: Battery struggles after short trips
 metaTitle: "Battery Struggles After Short Trips: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose a Tiguan battery that feels weak after short-trip use by checking battery health, charging recovery, and parasitic drain before replacing the wrong part.
 excerpt: A Tiguan that mostly does short trips can make a weak battery feel like a bigger electrical problem than it really is.
-heroImage: /images/photos/parts/car-battery.jpg
+heroImage: /images/photos/parts/car-battery.webp
 updatedAt: 2026-04-07
 relatedCars:
   - vw-tiguan-2020
@@ -56,7 +56,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Strong replacement route if the SUV sees short-trip driving and the current battery no longer has reserve capacity.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
 faqs:
   - question: Can short trips really make a healthy battery feel weak?
     answer: Yes. A battery that never gets enough drive time to recover can feel worse than the rest of the system actually is.

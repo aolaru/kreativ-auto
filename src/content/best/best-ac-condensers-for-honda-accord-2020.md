@@ -5,7 +5,7 @@ car_model: "Honda Accord 2020"
 metaTitle: "Best A/C Condensers for Honda Accord 2020"
 metaDescription: "Compare the best A/C condenser options for the Honda Accord 2020 if your priority is restoring dependable idle cooling."
 excerpt: "These Accord condenser picks are aimed at restoring dependable daily-driver cooling, not chasing the cheapest possible part."
-heroImage: "/images/photos/parts/denso-condenser.jpeg"
+heroImage: "/images/photos/parts/denso-condenser.webp"
 updatedAt: 2026-04-20
 relatedCars:
   - "honda-accord-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.densoautoparts.com/condensers/"
     summary: "Best overall choice for OE-style fit, cooling performance, and long-term confidence."
-    image: "/images/photos/parts/denso-condenser.jpeg"
+    image: "/images/photos/parts/denso-condenser.webp"
   - name: "TYC A/C Condenser"
     price: "$118"
     rating: 4.4
     affiliate_url: "https://www.tycusa.com/Products/Cooling/Condensers"
     summary: "Budget-friendly condenser option if you need a cleaner price without dropping to unknown-brand parts."
-    image: "/images/photos/parts/denso-condenser.jpeg"
+    image: "/images/photos/parts/denso-condenser.webp"
   - name: "Genuine Honda Condenser"
     price: "$198"
     rating: 4.8
     affiliate_url: "https://www.hondapartsnow.com/parts-list/2020-honda-accord--4dr_sport_hcm_eng_hdm_cvt-ka_cvt/body_air_conditioning/a_c_air_conditioner_condenser.html"
     summary: "Best OE-style route if staying close to original Honda parts support matters more than price."
-    image: "/images/photos/parts/denso-condenser.jpeg"
+    image: "/images/photos/parts/denso-condenser.webp"
 buyingAdvice:
   - "Pick condenser quality based on how long you plan to keep the Accord and how much idle cooling consistency matters to you."
   - "A weak condenser job is not the place to save the last small amount of money if the car is otherwise worth keeping."

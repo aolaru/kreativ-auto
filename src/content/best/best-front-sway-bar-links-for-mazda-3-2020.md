@@ -5,7 +5,7 @@ car_model: "Mazda 3 2020"
 metaTitle: "Best Front Sway Bar Links for Mazda 3 2020"
 metaDescription: "Compare the best front sway bar link options for the Mazda 3 2020 if your priority is cleaning up front-end clunks without overcomplicating the repair."
 excerpt: "These Mazda 3 sway bar link picks are for owners who want a quiet, OE-style front end rather than a random suspension gamble."
-heroImage: "/images/photos/parts/moog-sway-bar-links.png"
+heroImage: "/images/photos/parts/moog-sway-bar-links.webp"
 updatedAt: 2026-04-27
 relatedCars:
   - "mazda-3-2020"
@@ -17,13 +17,13 @@ products:
     rating: 4.5
     affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/"
     summary: "Best overall pick for restoring a calm, OE-style front end without overthinking the job."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
   - name: "Delphi Stabilizer Link"
     price: "$46"
     rating: 4.4
     affiliate_url: "https://www.delphiautoparts.com/en-gb/products-technologies/steering-suspension/"
     summary: "Budget-friendly OE-style option when the goal is a clean repair at a sensible price."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
 buyingAdvice:
   - "A sway bar link is not where you want mystery-brand parts if the goal is getting rid of front-end clunks and keeping them gone."
   - "Confirm you are actually fixing the worn link and not just the first noisy part you guessed at."

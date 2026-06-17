@@ -29,13 +29,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Best overall battery replacement if short trips and sitting time are part of the ownership pattern."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM choice for stronger reserve capacity and daily reliability."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 maintenanceTips:
   - "Treat repeated weak starts like a battery-and-usage-pattern issue before turning it into a larger electrical story."
   - "Keep brake and tire condition clean because the Rogue depends on basic refinement to feel pleasant day to day."

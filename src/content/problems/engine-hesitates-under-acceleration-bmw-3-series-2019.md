@@ -3,7 +3,7 @@ title: "Engine hesitates under acceleration on BMW 3 Series 2019"
 metaTitle: "BMW 3 Series 2019 Engine Hesitates Under Acceleration"
 metaDescription: "Diagnose a 2019 BMW 3 Series hesitation under acceleration by checking ignition service, plugs, and coils before assuming a larger turbo or fuel-system failure."
 excerpt: "A 3 Series that hesitates under acceleration often needs disciplined ignition diagnosis before it needs dramatic parts guesses."
-heroImage: "/images/photos/parts/delphi-ignition-coil.jpg"
+heroImage: "/images/photos/parts/delphi-ignition-coil.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "bmw-3-series-2019"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.delphiautoparts.com/en-us/products-technologies/vehicle-electronics-engine-management/ignition/ignition-coils"
     summary: "A credible ignition part choice if the car is beginning to stumble or hesitate under load."
-    image: "/images/photos/parts/delphi-ignition-coil.jpg"
+    image: "/images/photos/parts/delphi-ignition-coil.webp"
 faqs:
   - question: "Can weak coils cause hesitation before the car idles badly?"
     answer: "Yes. Load-related weakness often shows up before idle quality falls apart."

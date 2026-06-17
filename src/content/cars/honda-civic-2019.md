@@ -50,13 +50,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Reliable replacement coil set for restoring smooth idle and stronger cold starts.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
     affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
     summary: OEM-trusted spark plug option for stable combustion and long service intervals.
-    image: /images/photos/parts/ngk-spark-plugs.png
+    image: /images/photos/parts/ngk-spark-plugs.webp
 maintenanceTips:
   - Replace spark plugs on schedule before a mild idle stumble becomes a recurring misfire complaint.
   - Inspect axle boots during routine service to catch CV joint wear before clicking turns into vibration.

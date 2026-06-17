@@ -3,7 +3,7 @@ title: "Brake squeal at low speed on Toyota Camry 2020"
 metaTitle: "Toyota Camry 2020 Brake Squeal at Low Speed"
 metaDescription: "Diagnose 2020 Toyota Camry low-speed brake squeal by checking pad compound, hardware, and rotor condition before replacing the wrong brake parts."
 excerpt: "A Camry brake squeal at low speed is usually a pad-and-hardware refinement problem before it is anything dramatic."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "toyota-camry-2020"
@@ -47,7 +47,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "A quieter daily-driver brake pad choice when the priority is calm city-stop behavior."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
 faqs:
   - question: "Is low-speed brake squeal on a Camry dangerous?"
     answer: "Usually no, as long as braking feel is normal and the pads and rotors are still in good condition."

@@ -3,7 +3,7 @@ title: "Front-end clunk over bumps on Mazda 3 2020"
 metaTitle: "Mazda 3 2020 Front-End Clunk Over Bumps: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose a Mazda 3 2020 front-end clunk over bumps by checking sway bar links, hardware, and smaller suspension wear points first."
 excerpt: "A front-end clunk on a Mazda 3 usually points to smaller suspension hardware before it turns into a broader front-end rebuild."
-heroImage: "/images/photos/parts/moog-sway-bar-links.png"
+heroImage: "/images/photos/parts/moog-sway-bar-links.webp"
 updatedAt: 2026-04-27
 relatedCars:
   - "mazda-3-2020"
@@ -46,7 +46,7 @@ recommendedParts:
     rating: 4.5
     affiliate_url: "https://www.moogparts.com/content/loc-na/loc-us/fmmp-moog/en_US/parts/suspension/sway-bar-links.html/"
     summary: "Useful OE-style link replacement when the first front-end clunk points back to stabilizer hardware."
-    image: "/images/photos/parts/moog-sway-bar-links.png"
+    image: "/images/photos/parts/moog-sway-bar-links.webp"
 faqs:
   - question: "What usually causes a clunk over bumps in a Mazda 3?"
     answer: "Smaller suspension hardware such as sway bar links is a common first place to look."

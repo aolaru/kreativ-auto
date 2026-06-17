@@ -49,13 +49,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.timken.com/products/timken-engineered-bearings/premium-wheel-hub-units/
     summary: Worth considering if the shake is paired with front-end hum or bearing roughness.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/wheel-hub.webp
   - name: SKF Wheel Bearing and Hub Assembly
     price: "$179"
     rating: 4.8
     affiliate_url: https://vehicleaftermarket.skf.com/us/en/products/wheel-end
     summary: Strong hub option when diagnosis confirms the front bearing is part of the highway-speed vibration.
-    image: /images/photos/parts/wheel-hub.jpg
+    image: /images/photos/parts/wheel-hub.webp
 faqs:
   - question: Is highway-speed steering vibration always a tire balance issue?
     answer: No. Tire balance is the first thing to check, but wheel damage, uneven tread, alignment issues, and bearing wear can all contribute.

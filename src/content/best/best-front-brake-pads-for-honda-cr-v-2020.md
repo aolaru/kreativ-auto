@@ -5,7 +5,7 @@ car_model: "Honda CR-V 2020"
 metaTitle: "Best Front Brake Pads for Honda CR-V 2020"
 metaDescription: "Compare the best front brake pad options for the Honda CR-V 2020 if low-speed squeal is getting annoying and you want a calmer daily-driver setup."
 excerpt: "The best CR-V front brake pads are the ones that keep the SUV quiet and predictable in traffic, not the ones with the loudest performance story."
-heroImage: "/images/photos/parts/bosch-quietcast-pads.jpg"
+heroImage: "/images/photos/parts/bosch-quietcast-pads.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "honda-cr-v-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Best overall for daily-driven CR-Vs where quiet stops and low dust matter more than aggressive bite."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Akebono ProACT Ceramic Front Brake Pads"
     price: "$84"
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Strong OE-style street choice if you want smooth bite and a clean noise profile."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Power Stop Z23 Front Brake Pads"
     price: "$76"
     rating: 4.6
     affiliate_url: "https://www.powerstop.com/product/power-stop-z23-evolution-brake-pads/"
     summary: "Good option if you want a little more initial bite without giving up daily usability."
-    image: "/images/photos/parts/power-stop-z23.jpg"
+    image: "/images/photos/parts/power-stop-z23.webp"
 buyingAdvice:
   - "Buy a quiet street pad unless the CR-V is driven harder than a normal commuter."
   - "Hardware condition and bedding matter almost as much as the pad itself."

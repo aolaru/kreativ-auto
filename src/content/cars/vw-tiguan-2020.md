@@ -49,13 +49,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.powerstop.com/product/power-stop-z23-brake-kit/
     summary: Balanced daily-driving option with low dust pads and coated rotors.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
   - name: Bosch QuietCast Premium Brake Pads
     price: "$74"
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads
     summary: Good fit for owners prioritizing noise control and OEM-like feel.
-    image: /images/photos/parts/bosch-quietcast-pads.jpg
+    image: /images/photos/parts/bosch-quietcast-pads.webp
 maintenanceTips:
   - Inspect front brake pad thickness every 10,000 miles if the vehicle sees mostly stop-and-go driving.
   - Flush brake fluid on schedule to maintain pedal feel and reduce heat-related fade under load.

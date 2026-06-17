@@ -5,7 +5,7 @@ car_model: "Honda Accord 2020"
 metaTitle: "Best Brake Rotors for Honda Accord 2020"
 metaDescription: "Compare brake rotor and pad-refresh options for a 2020 Honda Accord when braking shake or pedal pulsation is the main complaint."
 excerpt: "These Accord rotor picks focus on restoring smooth daily braking after the brake shake diagnosis is confirmed."
-heroImage: "/images/photos/parts/power-stop-z23.jpg"
+heroImage: "/images/photos/parts/power-stop-z23.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "honda-accord-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.6
     affiliate_url: "https://www.powerstop.com/products/"
     summary: "Best full refresh path when the Accord needs pads and rotors together."
-    image: "/images/photos/parts/power-stop-z23.jpg"
+    image: "/images/photos/parts/power-stop-z23.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Useful OE-style pad choice if inspection shows the rotor surface is still serviceable."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Wagner OEX Ceramic Brake Pad Set"
     price: "$77"
     rating: 4.5
     affiliate_url: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html"
     summary: "Value pad option for a smoother daily-driver refresh when rotors are already handled."
-    image: "/images/photos/parts/wagner-oex.png"
+    image: "/images/photos/parts/wagner-oex.webp"
 quickVerdict: "The best Accord brake rotor path is the one that restores smooth braking after confirming the shake really comes from the brake system."
 bestFor:
   - "Owners dealing with brake shake, pedal pulse, or rotor-surface complaints."

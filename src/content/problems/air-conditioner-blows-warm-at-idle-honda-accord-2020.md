@@ -3,7 +3,7 @@ title: "Air conditioner blows warm at idle on Honda Accord 2020"
 metaTitle: "Honda Accord 2020 A/C Blows Warm at Idle: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose a Honda Accord 2020 that blows warm air at idle by checking condenser health, airflow, and system condition before buying parts."
 excerpt: "Warm A/C at idle on an Accord is usually about airflow, condenser condition, or system health before it becomes a bigger HVAC job."
-heroImage: "/images/photos/parts/denso-condenser.jpeg"
+heroImage: "/images/photos/parts/denso-condenser.webp"
 updatedAt: 2026-04-20
 relatedCars:
   - "honda-accord-2020"
@@ -46,7 +46,7 @@ recommendedParts:
     rating: 4.7
     affiliate_url: "https://www.densoautoparts.com/condensers/"
     summary: "OEM-trusted condenser choice when inspection points toward weak heat exchange or physical damage."
-    image: "/images/photos/parts/denso-condenser.jpeg"
+    image: "/images/photos/parts/denso-condenser.webp"
 faqs:
   - question: "Why does my Accord A/C cool better on the highway than at idle?"
     answer: "That pattern often points to airflow or condenser-efficiency issues rather than a simple all-or-nothing system failure."

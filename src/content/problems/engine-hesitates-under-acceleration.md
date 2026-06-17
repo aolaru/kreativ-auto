@@ -3,7 +3,7 @@ title: Engine hesitates under acceleration
 metaTitle: "Engine Hesitates Under Acceleration: Causes, Fixes, and Parts to Check"
 metaDescription: Diagnose acceleration hesitation by checking common ignition, airflow, and fuel causes before replacing expensive parts.
 excerpt: Acceleration hesitation usually comes from ignition, air, or fuel problems, and the wrong first guess can waste a lot of time.
-heroImage: /images/photos/parts/delphi-ignition-coil.jpg
+heroImage: /images/photos/parts/delphi-ignition-coil.webp
 updatedAt: 2026-03-31
 relatedCars:
   - honda-civic-2019
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.7
     affiliate_url: https://www.carparts.com/ignition-coil/delphi/set-delgn10119-4
     summary: Sensible first-look ignition part when hesitation points to weak spark under load.
-    image: /images/photos/parts/delphi-ignition-coil.jpg
+    image: /images/photos/parts/delphi-ignition-coil.webp
   - name: NGK Laser Iridium Spark Plugs
     price: "$58"
     rating: 4.8
     affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
     summary: Worth replacing first if plug mileage is high and acceleration is starting to feel lazy.
-    image: /images/photos/parts/ngk-spark-plugs.png
+    image: /images/photos/parts/ngk-spark-plugs.webp
 faqs:
   - question: Can bad ignition coils cause hesitation under acceleration?
     answer: Yes. Weak coils often show up more clearly under load than at idle because the engine needs a stronger, more consistent spark.

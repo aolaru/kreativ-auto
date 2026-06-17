@@ -5,7 +5,7 @@ car_model: "VW Golf GTI 2020"
 metaTitle: "Best Spark Plugs for VW Golf GTI 2020"
 metaDescription: "Compare the best spark plug options for the VW Golf GTI 2020 if you are chasing idle misfire, hesitation, or overdue ignition service."
 excerpt: "The right GTI spark plug is the one that keeps the turbo four clean at idle and under load instead of creating another round of diagnosis."
-heroImage: "/images/photos/parts/ngk-spark-plugs.png"
+heroImage: "/images/photos/parts/ngk-spark-plugs.webp"
 updatedAt: 2026-04-16
 relatedCars:
   - "vw-golf-gti-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.8
     affiliate_url: "https://ngksparkplugs.com/en/products/ignition-parts/spark-plugs/ruthenium-spark-plugs"
     summary: "Best overall choice if you want a modern plug that handles daily use and load without drama."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
   - name: "Bosch Double Iridium Spark Plugs"
     price: "$58"
     rating: 4.7
     affiliate_url: "https://www.boschautoparts.com/g/double-iridium-spark-plugs"
     summary: "Strong alternative if you want a familiar brand with broad availability and clean drivability."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
   - name: "Genuine Volkswagen Spark Plugs"
     price: "$69"
     rating: 4.8
     affiliate_url: "https://parts.vw.com/"
     summary: "Best OE-style route for owners who want the most conservative fitment call."
-    image: "/images/photos/parts/ngk-spark-plugs.png"
+    image: "/images/photos/parts/ngk-spark-plugs.webp"
 buyingAdvice:
   - "If the car is stumbling at idle or under load, evaluate coils and plugs together instead of guessing which side is guilty."
   - "Avoid bargain plugs that create a repeat misfire problem a few weeks later."

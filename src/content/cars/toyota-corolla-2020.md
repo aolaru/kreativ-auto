@@ -32,7 +32,7 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Quiet ceramic pad option for keeping daily-driver brake noise under control."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Timken Premium Wheel Hub Unit"
     price: "$164"
     rating: 4.7

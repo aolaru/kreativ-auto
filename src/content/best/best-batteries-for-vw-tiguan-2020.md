@@ -5,7 +5,7 @@ car_model: VW Tiguan 2020
 metaTitle: Best Batteries for VW Tiguan 2020
 metaDescription: Compare the best battery options for the VW Tiguan 2020 if short trips, colder starts, or sitting time are exposing a weak battery.
 excerpt: The right Tiguan battery is the one that matches the SUV’s real use pattern instead of barely surviving another season.
-heroImage: /images/photos/parts/car-battery.jpg
+heroImage: /images/photos/parts/car-battery.webp
 updatedAt: 2026-04-12
 relatedCars:
   - vw-tiguan-2020
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: https://www.interstatebatteries.com/car-and-truck-batteries/mtx
     summary: Best overall option if the Tiguan does a lot of short-trip city driving and needs better reserve capacity.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
   - name: DieHard Platinum AGM Battery
     price: "$249"
     rating: 4.7
     affiliate_url: https://shop.advanceautoparts.com/brands/diehard-platinum-agm
     summary: Strong premium option for owners who want good cold-start confidence and longer reserve.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
   - name: Bosch AGM Battery
     price: "$231"
     rating: 4.6
     affiliate_url: https://www.boschautoparts.com/s6-high-performance-agm-batteries
     summary: Good fit if you want a mainstream AGM replacement from a familiar brand.
-    image: /images/photos/parts/car-battery.jpg
+    image: /images/photos/parts/car-battery.webp
 buyingAdvice:
   - Match the battery to the SUV’s actual short-trip or cold-weather use, not just the cheapest listing that fits.
   - Test the old battery and charging recovery before assuming the replacement alone will solve everything.

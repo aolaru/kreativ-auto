@@ -5,7 +5,7 @@ car_model: "Subaru Forester 2020"
 metaTitle: "Best Batteries for Subaru Forester 2020"
 metaDescription: "Compare battery options for a 2020 Subaru Forester when cold starts, short trips, and reserve capacity matter most."
 excerpt: "These Forester battery picks focus on cold-start confidence, short-trip reserve, and fitment discipline."
-heroImage: "/images/photos/parts/car-battery.jpg"
+heroImage: "/images/photos/parts/car-battery.webp"
 updatedAt: 2026-06-10
 relatedCars:
   - "subaru-forester-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.interstatebatteries.com/car-and-truck-batteries/mtx"
     summary: "Best overall replacement for cold starts, sitting time, and short-trip Forester use."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "DieHard Platinum AGM Battery"
     price: "$239"
     rating: 4.7
     affiliate_url: "https://shop.advanceautoparts.com/brands/diehard-platinum-agm"
     summary: "Premium AGM option when stronger reserve capacity matters more than the lowest price."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
   - name: "Optima YellowTop Battery"
     price: "$264"
     rating: 4.5
     affiliate_url: "https://www.interstatebatteries.com/optima-batteries/optima-car-and-truck-batteries"
     summary: "Alternative pick for owners with heavier accessory load or longer sitting periods."
-    image: "/images/photos/parts/car-battery.jpg"
+    image: "/images/photos/parts/car-battery.webp"
 quickVerdict: "The best Forester battery is the one that handles cold starts and short trips without turning every winter morning into a weak-start check."
 bestFor:
   - "Owners seeing weak starts after short trips or colder weather."

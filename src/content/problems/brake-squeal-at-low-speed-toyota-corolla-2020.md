@@ -3,7 +3,7 @@ title: "Brake squeal at low speed on Toyota Corolla 2020"
 metaTitle: "Toyota Corolla 2020 Brake Squeal at Low Speed: Causes, Fixes, and Parts to Check"
 metaDescription: "Diagnose Toyota Corolla 2020 brake squeal at low speed by checking pad compound, hardware, and rotor condition before buying parts."
 excerpt: "Low-speed Corolla brake squeal is usually a pad-and-hardware issue before it becomes a full brake-system problem."
-heroImage: "/images/photos/parts/akebono-proact.png"
+heroImage: "/images/photos/parts/akebono-proact.webp"
 updatedAt: 2026-04-14
 relatedCars:
   - "toyota-corolla-2020"
@@ -47,13 +47,13 @@ recommendedParts:
     rating: 4.8
     affiliate_url: "https://www.akebonobrakes.com/pro-act"
     summary: "Quiet ceramic pad option designed for daily drivers who want low dust and less squeal."
-    image: "/images/photos/parts/akebono-proact.png"
+    image: "/images/photos/parts/akebono-proact.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$74"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "OE-style pad alternative if you want a calmer, stock-like street setup."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
 faqs:
   - question: "Do I need new rotors if my Corolla brakes squeal?"
     answer: "Not always. Squeal can come from pad compound or hardware issues, but the rotors still need to be inspected for wear or glazing."

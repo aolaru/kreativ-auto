@@ -5,7 +5,7 @@ car_model: "Audi Q5 2020"
 metaTitle: "Best Brake Pads for Audi Q5 2020"
 metaDescription: "Compare the best brake pad options for the Audi Q5 2020 if low-speed squeal, dust, or rough premium-crossover brake feel is getting old."
 excerpt: "The right Q5 brake pad keeps the SUV quiet and refined in traffic instead of making every stop feel cheaper than it should."
-heroImage: "/images/photos/parts/akebono-euro.png"
+heroImage: "/images/photos/parts/akebono-euro.webp"
 updatedAt: 2026-04-28
 relatedCars:
   - "audi-q5-2020"
@@ -17,19 +17,19 @@ products:
     rating: 4.7
     affiliate_url: "https://www.akebonobrakes.com/euro"
     summary: "Best overall choice if you want a quieter, more refined daily-driver brake setup."
-    image: "/images/photos/parts/akebono-euro.png"
+    image: "/images/photos/parts/akebono-euro.webp"
   - name: "Bosch QuietCast Premium Brake Pads"
     price: "$89"
     rating: 4.6
     affiliate_url: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads"
     summary: "Strong alternative if you want low noise, broad availability, and an easy daily-use bias."
-    image: "/images/photos/parts/bosch-quietcast-pads.jpg"
+    image: "/images/photos/parts/bosch-quietcast-pads.webp"
   - name: "Genuine Audi Brake Pads"
     price: "$168"
     rating: 4.8
     affiliate_url: "https://parts.audiusa.com/"
     summary: "Best OE-style route if staying as close to factory parts behavior as possible matters most."
-    image: "/images/photos/parts/akebono-euro.png"
+    image: "/images/photos/parts/akebono-euro.webp"
 buyingAdvice:
   - "Choose a quiet street-oriented pad unless the Q5 is driven far harder than a normal daily crossover."
   - "Hardware condition and bedding matter almost as much as the pad itself."
