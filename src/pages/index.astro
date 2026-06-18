@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import CardIcon from "../components/CardIcon.astro";
 import { comparisonGuides } from "../data/comparison-guides";
 import { ownershipGuides } from "../data/ownership-guides";
+import { ownershipTasks } from "../data/ownership-tasks";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { toThumbnail } from "../utils/images";
 
@@ -14,37 +15,6 @@ const [cars, problems, bestPages] = await Promise.all([
 
 const newestProblems = [...problems].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
 const newestBest = [...bestPages].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
-
-const quickPaths = [
-  {
-    title: "I am buying a used car",
-    description: "Start with ownership guides, weak points, trim advice, and what to check before money changes hands.",
-    href: "/guides/",
-    cta: "Open buying guides",
-    kind: "car"
-  },
-  {
-    title: "I have a symptom",
-    description: "Use problem guides when the car is making a noise, warning you, leaking, vibrating, or behaving differently.",
-    href: "/problems/",
-    cta: "Find the symptom",
-    kind: "problem"
-  },
-  {
-    title: "I need the best part",
-    description: "Compare part shortlists once the diagnosis is already pointing at brakes, batteries, suspension, hubs, or service items.",
-    href: "/best/",
-    cta: "Compare parts",
-    kind: "parts"
-  },
-  {
-    title: "I want ownership costs",
-    description: "Use maintenance and reliability guides when the question is long-term cost, not one immediate repair.",
-    href: "/guides/?type=maintenance",
-    cta: "Check costs",
-    kind: "category"
-  }
-] as const;
 
 const featuredVehicles = [
   {
@@ -140,17 +110,17 @@ const comparisonCards = comparisonGuides.slice(0, 3);
         <p class="eyebrow">Start Here</p>
         <h2 class="mt-3 text-3xl font-semibold text-ink">Choose the path that matches the job</h2>
         <p class="mt-3 text-base leading-7 text-steel">
-          These four paths cover most visits. Brand, model, generation, and category browsing is there when you already know exactly what you need.
+          Pick the ownership task first, then narrow by vehicle, symptom, part group, or version.
         </p>
       </div>
-      <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+      <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
         {
-          quickPaths.map((path) => (
-            <a class="mesh-card flex h-full flex-col p-6 transition hover:-translate-y-0.5 hover:bg-white" href={path.href} data-ka-event="homepage_cta_click" data-ka-label={path.title} data-ka-section="quick_paths">
-              <CardIcon kind={path.kind} />
-              <h3 class="mt-5 text-2xl font-semibold text-ink">{path.title}</h3>
-              <p class="mt-3 flex-1 text-sm leading-6 text-steel">{path.description}</p>
-              <p class="mt-5 text-sm font-semibold text-accent">{path.cta}</p>
+          ownershipTasks.map((task) => (
+            <a class="mesh-card flex h-full flex-col p-6 transition hover:-translate-y-0.5 hover:bg-white" href={task.href} data-ka-event="homepage_cta_click" data-ka-label={task.title} data-ka-section="ownership_tasks">
+              <CardIcon kind={task.kind} />
+              <h3 class="mt-5 text-2xl font-semibold text-ink">{task.title}</h3>
+              <p class="mt-3 flex-1 text-sm leading-6 text-steel">{task.description}</p>
+              <p class="mt-5 text-sm font-semibold text-accent">{task.cta}</p>
             </a>
           ))
         }

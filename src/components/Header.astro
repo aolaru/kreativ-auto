@@ -2,15 +2,12 @@
 import { getCollection } from "astro:content";
 import { comparisonGuides } from "../data/comparison-guides";
 import { ownershipGuides } from "../data/ownership-guides";
+import { ownershipTasks } from "../data/ownership-tasks";
 
-const navItems = [
-  { href: "/problems/", label: "Diagnose" },
-  { href: "/cars/", label: "Cars" },
-  { href: "/best/", label: "Parts" },
-  { href: "/guides/", label: "Buying Guides" },
-  { href: "/comparisons/", label: "Comparisons" },
-  { href: "/browse/", label: "Browse" }
-];
+const navItems = ownershipTasks.map((task) => ({
+  href: task.href,
+  label: task.label
+}));
 
 const [cars, problems, bestPages] = await Promise.all([
   getCollection("cars"),
@@ -50,6 +47,12 @@ const searchIndex = [
     href: guide.href,
     description: guide.description,
     type: guide.eyebrow
+  })),
+  ...ownershipTasks.map((task) => ({
+    title: task.title,
+    href: task.href,
+    description: task.description,
+    type: "Ownership task"
   }))
 ].filter((entry) => entry.title && entry.href);
 ---
