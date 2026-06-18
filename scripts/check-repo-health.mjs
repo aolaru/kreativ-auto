@@ -105,6 +105,11 @@ const knownCarPhotoPlaceholders = new Set([
   "/images/photos/cars/nissan-rogue-2021.svg",
   "/images/photos/cars/subaru-forester-2020.svg"
 ]);
+const optimizedPublicImageRoots = [
+  path.join(cwd, "public", "images", "cars"),
+  path.join(cwd, "public", "images", "photos"),
+  path.join(cwd, "public", "images", "thumbs")
+];
 
 function walk(dir, visitor) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -197,6 +202,15 @@ for (const relativePath of requiredStaticFiles) {
   if (!fs.existsSync(path.join(cwd, relativePath))) {
     problems.push(`Required trust or ads file is missing: ${relativePath}`);
   }
+}
+
+for (const imageRoot of optimizedPublicImageRoots) {
+  if (!fs.existsSync(imageRoot)) continue;
+  walk(imageRoot, (filePath) => {
+    if (/\.(?:png|jpe?g)$/i.test(filePath)) {
+      problems.push(`${path.relative(cwd, filePath)} is a legacy raster image; use an optimized WebP asset.`);
+    }
+  });
 }
 
 const adsTxtPath = path.join(cwd, "public", "ads.txt");
