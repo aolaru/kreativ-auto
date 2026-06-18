@@ -311,7 +311,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
     description:
       "A practical ownership guide for the 2020 Silverado 1500, focused on highway vibration, brake pulsation, tire wear, and the checks that matter before replacing parts.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/chevrolet-silverado-1500-2020.svg",
+    image: "/images/photos/cars/chevrolet-silverado-1500-2020.webp",
     relatedCars: ["chevrolet-silverado-1500-2020"],
     relatedGenerations: ["chevrolet-silverado-1500-t1xx-2019-2024"],
     quickVerdict:
@@ -364,7 +364,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
     description:
       "A practical ownership guide for the 2020 Tucson, focused on brake noise, battery reserve, tire comfort, and simple checks that keep the diagnosis useful.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/hyundai-tucson-2020.svg",
+    image: "/images/photos/cars/hyundai-tucson-2020.webp",
     relatedCars: ["hyundai-tucson-2020"],
     relatedGenerations: ["hyundai-tucson-tl-2019-2021"],
     quickVerdict:
@@ -417,7 +417,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
     description:
       "A practical ownership guide for the 2021 Rogue, focused on battery reserve, front brake noise, tire comfort, and the first checks that keep a newer SUV from feeling prematurely worn.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/nissan-rogue-2021.svg",
+    image: "/images/photos/cars/nissan-rogue-2021.webp",
     relatedCars: ["nissan-rogue-2021"],
     relatedGenerations: ["nissan-rogue-t33-2021-2025"],
     quickVerdict:
@@ -470,7 +470,7 @@ export const quickOwnershipGuides: QuickOwnershipGuide[] = [
     description:
       "A practical ownership guide for the 2020 Forester, focused on road-speed hum, battery reserve, tire matching, and the AWD checks that matter before replacing parts.",
     eyebrow: "Ownership guide",
-    image: "/images/photos/cars/subaru-forester-2020.svg",
+    image: "/images/photos/cars/subaru-forester-2020.webp",
     relatedCars: ["subaru-forester-2020"],
     relatedGenerations: ["subaru-forester-sk-2019-2024"],
     quickVerdict:

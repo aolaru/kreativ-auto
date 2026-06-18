@@ -7,11 +7,11 @@ generation: "Fifth Generation"
 generationCode: "SK"
 generationYears: "2019-2024"
 description: "The 2020 Subaru Forester is usually easy to live with, but wheel-end hum, tire noise confusion, and battery reserve complaints are the kinds of ownership issues that tend to get noticed first."
-image: "/images/photos/cars/subaru-forester-2020.svg"
+image: "/images/photos/cars/subaru-forester-2020.webp"
 metaTitle: "Subaru Forester 2020 Common Problems, Maintenance Tips, and Best Parts"
 metaDescription: "Research common Subaru Forester 2020 issues, practical maintenance advice, and wheel-bearing parts worth checking first."
 excerpt: "The main Subaru Forester 2020 ownership issues worth watching, plus the maintenance and replacement parts that usually matter first."
-heroImage: "/images/photos/cars/subaru-forester-2020.svg"
+heroImage: "/images/photos/cars/subaru-forester-2020.webp"
 updatedAt: 2026-06-07
 relatedProblems:
   - "humming-noise-that-gets-louder-with-speed-subaru-forester-2020"

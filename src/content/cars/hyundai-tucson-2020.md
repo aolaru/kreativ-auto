@@ -7,11 +7,11 @@ generation: "Third Generation Facelift"
 generationCode: "TL"
 generationYears: "2019-2021"
 description: "The 2020 Hyundai Tucson is usually simple to live with, but brake noise, tire refinement, and battery complaints are the practical ownership issues most likely to show up first."
-image: "/images/photos/cars/hyundai-tucson-2020.svg"
+image: "/images/photos/cars/hyundai-tucson-2020.webp"
 metaTitle: "Hyundai Tucson 2020 Common Problems, Maintenance Tips, and Best Parts"
 metaDescription: "Research common Hyundai Tucson 2020 issues, practical maintenance advice, and brake parts worth checking first."
 excerpt: "The main Hyundai Tucson 2020 ownership issues worth watching, plus the maintenance and replacement parts that usually matter first."
-heroImage: "/images/photos/cars/hyundai-tucson-2020.svg"
+heroImage: "/images/photos/cars/hyundai-tucson-2020.webp"
 updatedAt: 2026-06-07
 relatedProblems:
   - "brake-squeal-at-low-speed-hyundai-tucson-2020"

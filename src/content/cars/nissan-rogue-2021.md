@@ -7,11 +7,11 @@ generation: "Third Generation"
 generationCode: "T33"
 generationYears: "2021-2025"
 description: "The 2021 Nissan Rogue is a useful small SUV to cover because it starts a newer Rogue generation, but the everyday ownership issues are still practical: short-trip battery weakness, brake refinement, and tire or wheel-end noise that chips away at comfort."
-image: "/images/photos/cars/nissan-rogue-2021.svg"
+image: "/images/photos/cars/nissan-rogue-2021.webp"
 metaTitle: "Nissan Rogue 2021 Common Problems, Maintenance Tips, and Best Parts"
 metaDescription: "Research common Nissan Rogue 2021 issues, practical maintenance advice, and battery-related parts worth checking first."
 excerpt: "The main Nissan Rogue 2021 ownership issues worth watching, plus the maintenance and replacement parts that usually matter first."
-heroImage: "/images/photos/cars/nissan-rogue-2021.svg"
+heroImage: "/images/photos/cars/nissan-rogue-2021.webp"
 updatedAt: 2026-06-07
 relatedProblems:
   - "battery-goes-dead-after-sitting-nissan-rogue-2021"

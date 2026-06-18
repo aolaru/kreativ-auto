@@ -4,27 +4,37 @@ import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { deepOwnershipGuides } from "../../data/deep-ownership-guides";
 import { quickOwnershipGuides } from "../../data/quick-ownership-guides";
 
 export function getStaticPaths() {
-  return quickOwnershipGuides.map((guide) => ({
-    params: { slug: guide.slug },
-    props: { slug: guide.slug }
-  }));
+  return [
+    ...quickOwnershipGuides.map((guide) => ({
+      params: { slug: guide.slug },
+      props: { slug: guide.slug, guideType: "quick" }
+    })),
+    ...deepOwnershipGuides.map((guide) => ({
+      params: { slug: guide.slug },
+      props: { slug: guide.slug, guideType: "deep" }
+    }))
+  ];
 }
 
-const { slug } = Astro.props;
-const guide = quickOwnershipGuides.find((item) => item.slug === slug);
+const { slug, guideType } = Astro.props;
+const quickGuide = guideType === "quick" ? quickOwnershipGuides.find((item) => item.slug === slug) : undefined;
+const deepGuide = guideType === "deep" ? deepOwnershipGuides.find((item) => item.slug === slug) : undefined;
+const currentGuide = quickGuide ?? deepGuide;
 
-if (!guide) {
-  throw new Error(`Quick ownership guide not found for slug: ${slug}`);
+if (!currentGuide) {
+  throw new Error(`Ownership guide not found for slug: ${slug}`);
 }
 
-const primaryBestFor = guide.bestFor[0] ?? "the intended ownership use case";
-const primaryAvoidIf = guide.avoidIf[0] ?? "the inspection shows repeated warning signs";
-const primaryRedFlag = guide.redFlags[0] ?? "the seller cannot explain recent maintenance or the first-check item";
-const firstNextRead = guide.nextReads[0];
-const secondNextRead = guide.nextReads[1];
+const modifiedTime = deepGuide ? new Date(deepGuide.modifiedTime) : undefined;
+const primaryBestFor = quickGuide?.bestFor[0] ?? "the intended ownership use case";
+const primaryAvoidIf = quickGuide?.avoidIf[0] ?? "the inspection shows repeated warning signs";
+const primaryRedFlag = quickGuide?.redFlags[0] ?? "the seller cannot explain recent maintenance or the first-check item";
+const firstNextRead = quickGuide?.nextReads[0];
+const secondNextRead = quickGuide?.nextReads[1];
 const decisionCards = [
   {
     label: "Good match",
@@ -45,7 +55,7 @@ const decisionCards = [
 const nextStepCards = [
   {
     title: "Let the first check act as the filter",
-    description: guide.firstCheck
+    description: quickGuide?.firstCheck ?? "Start with the highest-confidence inspection item before pricing the car or buying parts."
   },
   {
     title: "Match symptoms to deeper pages",
@@ -78,7 +88,7 @@ const spendingCheckCards = [
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Guides", href: "/guides/" },
-  { label: guide.title }
+  { label: currentGuide.title }
 ];
 
 const schemas = [
@@ -95,10 +105,11 @@ const schemas = [
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: guide.title,
-    description: guide.description,
-    image: [new URL(guide.image, Astro.site).toString()],
+    headline: currentGuide.title,
+    description: currentGuide.description,
+    image: [new URL(currentGuide.image, Astro.site).toString()],
     mainEntityOfPage: Astro.url.href,
+    ...(modifiedTime ? { dateModified: modifiedTime.toISOString() } : {}),
     author: {
       "@type": "Organization",
       name: editorialTeam.name
@@ -109,105 +120,192 @@ const schemas = [
     }
   }
 ];
+const reviewedLabel = modifiedTime
+  ? `Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`
+  : undefined;
 ---
 
-<ContentLayout
-  title={guide.title}
-  description={guide.description}
-  intro="Start with the broad ownership fit: what the vehicle suits, what to avoid, and which checks should happen before buying parts or buying the car."
-  image={guide.image}
-  breadcrumbs={breadcrumbs}
-  schemas={schemas}
-  editorialSummary="Practical buyer and owner decisions come first: symptoms to respect, first checks to run, and the repair areas worth checking next."
-  editorialByline={`By ${editorialTeam.name}`}
-  editorialBadges={["Ownership guide", "Buyer checks", "Related repairs"]}
->
-  <TrustBlock
-    summary="Start with the model's practical ownership fit, then narrow the decision with the symptom and parts checks that matter next."
-    byline={`By ${editorialTeam.name}`}
-    points={carTrustPoints}
-  />
+{
+  quickGuide && (
+    <ContentLayout
+      title={quickGuide.title}
+      description={quickGuide.description}
+      intro="Start with the broad ownership fit: what the vehicle suits, what to avoid, and which checks should happen before buying parts or buying the car."
+      image={quickGuide.image}
+      breadcrumbs={breadcrumbs}
+      schemas={schemas}
+      editorialSummary="Practical buyer and owner decisions come first: symptoms to respect, first checks to run, and the repair areas worth checking next."
+      editorialByline={`By ${editorialTeam.name}`}
+      editorialBadges={["Ownership guide", "Buyer checks", "Related repairs"]}
+    >
+      <TrustBlock
+        summary="Start with the model's practical ownership fit, then narrow the decision with the symptom and parts checks that matter next."
+        byline={`By ${editorialTeam.name}`}
+        points={carTrustPoints}
+      />
 
-  <Section id="quick-verdict" title="Quick verdict" intro="Start here if you only need the practical ownership answer.">
-    <div class="grid gap-4 lg:grid-cols-2">
-      <div class="rounded-3xl border border-orange-200/70 bg-orange-50/60 p-6">
-        <p class="eyebrow">Verdict</p>
-        <p class="mt-3 text-sm leading-6 text-ink">{guide.quickVerdict}</p>
-      </div>
-      <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <p class="eyebrow">First check</p>
-        <p class="mt-3 text-sm leading-6 text-ink">{guide.firstCheck}</p>
-      </div>
-    </div>
-  </Section>
-
-  <Section id="best-for" title="Best for" intro="These are the ownership cases where this model makes the most sense.">
-    <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
-      {guide.bestFor.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
-    </ul>
-  </Section>
-
-  <Section id="avoid-if" title="Avoid if" intro="These are the shortcuts or condition issues that should change the buying decision.">
-    <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
-      {guide.avoidIf.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
-    </ul>
-  </Section>
-
-  <Section id="key-checks" title="Key checks" intro="Work through these before accepting a vague explanation or ordering parts.">
-    <ol class="space-y-3 text-sm leading-6 text-steel">
-      {guide.keyChecks.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
-    </ol>
-  </Section>
-
-  <Section id="red-flags" title="Red flags" intro="These patterns usually mean the ownership story is riskier than the listing suggests.">
-    <ul class="space-y-3 text-sm leading-6 text-steel">
-      {guide.redFlags.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
-    </ul>
-  </Section>
-
-  <Section id="decision-checklist" title="Decision checklist" intro="Turn the ownership notes into a clearer buy, diagnose, or walk-away decision.">
-    <div class="grid gap-4 lg:grid-cols-3">
-      {
-        decisionCards.map((item) => (
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <p class="eyebrow">{item.label}</p>
-            <h3 class="mt-3 text-lg font-semibold text-ink">{item.title}</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+      <Section id="quick-verdict" title="Quick verdict" intro="Start here if you only need the practical ownership answer.">
+        <div class="grid gap-4 lg:grid-cols-2">
+          <div class="rounded-3xl border border-orange-200/70 bg-orange-50/60 p-6">
+            <p class="eyebrow">Verdict</p>
+            <p class="mt-3 text-sm leading-6 text-ink">{quickGuide.quickVerdict}</p>
           </div>
+          <div class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+            <p class="eyebrow">First check</p>
+            <p class="mt-3 text-sm leading-6 text-ink">{quickGuide.firstCheck}</p>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="best-for" title="Best for" intro="These are the ownership cases where this model makes the most sense.">
+        <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
+          {quickGuide.bestFor.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+        </ul>
+      </Section>
+
+      <Section id="avoid-if" title="Avoid if" intro="These are the shortcuts or condition issues that should change the buying decision.">
+        <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
+          {quickGuide.avoidIf.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+        </ul>
+      </Section>
+
+      <Section id="key-checks" title="Key checks" intro="Work through these before accepting a vague explanation or ordering parts.">
+        <ol class="space-y-3 text-sm leading-6 text-steel">
+          {quickGuide.keyChecks.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+        </ol>
+      </Section>
+
+      <Section id="red-flags" title="Red flags" intro="These patterns usually mean the ownership story is riskier than the listing suggests.">
+        <ul class="space-y-3 text-sm leading-6 text-steel">
+          {quickGuide.redFlags.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+        </ul>
+      </Section>
+
+      <Section id="decision-checklist" title="Decision checklist" intro="Turn the ownership notes into a clearer buy, diagnose, or walk-away decision.">
+        <div class="grid gap-4 lg:grid-cols-3">
+          {
+            decisionCards.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <p class="eyebrow">{item.label}</p>
+                <h3 class="mt-3 text-lg font-semibold text-ink">{item.title}</h3>
+                <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Section>
+
+      <Section id="next-steps" title="Next steps" intro="Reduce uncertainty before a listing, inspection, or repair turns into a parts order.">
+        <div class="grid gap-4 lg:grid-cols-3">
+          {
+            nextStepCards.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-white p-5">
+                <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
+                <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Section>
+
+      <Section id="before-spending" title="Before spending money" intro="Make one final pass before buying the car, approving work, or ordering parts from a shortlist.">
+        <div class="grid gap-4 lg:grid-cols-3">
+          {
+            spendingCheckCards.map((item) => (
+              <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+                <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
+                <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
+              </div>
+            ))
+          }
+        </div>
+      </Section>
+
+      <RelatedLinks
+        title="Open next"
+        intro="Open the matching symptom or repair area when the quick ownership check points in that direction."
+        items={quickGuide.nextReads}
+      />
+    </ContentLayout>
+  )
+}
+
+{
+  deepGuide && (
+    <ContentLayout
+      title={deepGuide.title}
+      description={deepGuide.description}
+      intro={deepGuide.intro}
+      image={deepGuide.image}
+      modifiedTime={modifiedTime}
+      breadcrumbs={breadcrumbs}
+      faqs={deepGuide.faqs}
+      schemas={schemas}
+      editorialSummary={deepGuide.editorialSummary}
+      editorialByline={`By ${editorialTeam.name}`}
+      editorialReviewedLabel={reviewedLabel}
+      editorialBadges={deepGuide.badges}
+    >
+      <TrustBlock
+        title="Best starting point"
+        summary={deepGuide.trustSummary}
+        byline={`By ${editorialTeam.name}`}
+        checkedLabel={reviewedLabel}
+        points={carTrustPoints}
+      />
+
+      <Section id="short-version" title="The short version" intro="Use these points before the detailed checklist.">
+        <ul class="grid gap-3 text-sm leading-6 text-steel">
+          {deepGuide.summaryPoints.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+        </ul>
+      </Section>
+
+      {
+        deepGuide.sections.map((section) => (
+          <Section id={section.id} title={section.title} intro={section.intro}>
+            {section.cards && (
+              <div class="grid gap-6 lg:grid-cols-2">
+                {section.cards.map((item) => (
+                  <article class="rounded-3xl border border-slate-200 bg-white p-6">
+                    <p class="eyebrow">{item.eyebrow}</p>
+                    <h2 class="mt-3 text-2xl font-semibold text-ink">{item.title}</h2>
+                    <p class="mt-3 text-sm leading-6 text-steel">{item.text}</p>
+                  </article>
+                ))}
+              </div>
+            )}
+
+            {section.list && (
+              <ul class="space-y-3 text-sm leading-6 text-steel">
+                {section.list.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+              </ul>
+            )}
+
+            {section.ordered && (
+              <ol class="space-y-3 text-sm leading-6 text-steel">
+                {section.ordered.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+              </ol>
+            )}
+
+            {section.paragraphs && (
+              <div class="space-y-4 text-sm leading-6 text-steel">
+                {section.paragraphs.map((item) => <p>{item}</p>)}
+              </div>
+            )}
+          </Section>
         ))
       }
-    </div>
-  </Section>
 
-  <Section id="next-steps" title="Next steps" intro="Reduce uncertainty before a listing, inspection, or repair turns into a parts order.">
-    <div class="grid gap-4 lg:grid-cols-3">
-      {
-        nextStepCards.map((item) => (
-          <div class="rounded-2xl border border-slate-200 bg-white p-5">
-            <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </Section>
-
-  <Section id="before-spending" title="Before spending money" intro="Make one final pass before buying the car, approving work, or ordering parts from a shortlist.">
-    <div class="grid gap-4 lg:grid-cols-3">
-      {
-        spendingCheckCards.map((item) => (
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </Section>
-
-  <RelatedLinks
-    title="Open next"
-    intro="Open the matching symptom or repair area when the quick ownership check points in that direction."
-    items={guide.nextReads}
-  />
-</ContentLayout>
+      <RelatedLinks
+        title="Related problem guides"
+        intro="Open these when one symptom is clearly driving the buying or maintenance decision."
+        items={deepGuide.relatedProblems}
+      />
+      <RelatedLinks
+        title="Related best-parts guides"
+        intro="Use these after the diagnosis is narrow enough to choose parts with confidence."
+        items={deepGuide.relatedBest}
+      />
+    </ContentLayout>
+  )
+}

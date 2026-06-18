@@ -1,3 +1,4 @@
+import { deepOwnershipGuides } from "./deep-ownership-guides";
 import { quickOwnershipGuides } from "./quick-ownership-guides";
 
 export interface OwnershipGuide {
@@ -371,6 +372,15 @@ export const ownershipGuides: OwnershipGuide[] = [
     relatedCars: ["honda-civic-2019"],
     relatedGenerations: ["honda-civic-fc-fk-facelift-2019-2021"]
   },
+  ...deepOwnershipGuides.map((guide) => ({
+    title: guide.title,
+    href: guide.href,
+    description: guide.description,
+    eyebrow: guide.eyebrow,
+    image: guide.image,
+    relatedCars: guide.relatedCars,
+    relatedGenerations: guide.relatedGenerations
+  })),
   ...quickOwnershipGuides.map((guide) => ({
     title: guide.title,
     href: guide.href,

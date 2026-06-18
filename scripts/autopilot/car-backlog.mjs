@@ -1783,7 +1783,7 @@ const queuedCarSeeds = [
     generation: "Fifth Generation",
     generationCode: "SK",
     generationYears: "2019-2024",
-    image: "/images/photos/cars/subaru-forester-2020.svg",
+    image: "/images/photos/cars/subaru-forester-2020.webp",
     kind: "wheelBearings",
     carDescription:
       "The 2020 Subaru Forester is usually easy to live with, but wheel-end hum, tire noise confusion, and battery reserve complaints are the kinds of ownership issues that tend to get noticed first.",
@@ -1970,7 +1970,7 @@ const queuedCarSeeds = [
     generation: "Fourth Generation",
     generationCode: "T1XX",
     generationYears: "2019-2024",
-    image: "/images/photos/cars/chevrolet-silverado-1500-2020.svg",
+    image: "/images/photos/cars/chevrolet-silverado-1500-2020.webp",
     kind: "tires",
     carDescription:
       "The 2020 Chevrolet Silverado 1500 is usually a practical full-size truck, but highway vibration, tire wear, and brake refinement complaints are the things owners most often start trying to sort out first.",
@@ -2049,7 +2049,7 @@ const queuedCarSeeds = [
     generation: "Third Generation",
     generationCode: "T33",
     generationYears: "2021-2025",
-    image: "/images/photos/cars/nissan-rogue-2021.svg",
+    image: "/images/photos/cars/nissan-rogue-2021.webp",
     kind: "batteries",
     carDescription:
       "The 2021 Nissan Rogue is a useful small SUV to cover because it starts a newer Rogue generation, but the everyday ownership issues are still practical: short-trip battery weakness, brake refinement, and tire or wheel-end noise that chips away at comfort.",
@@ -2102,7 +2102,7 @@ const queuedCarSeeds = [
     generation: "Third Generation Facelift",
     generationCode: "TL",
     generationYears: "2019-2021",
-    image: "/images/photos/cars/hyundai-tucson-2020.svg",
+    image: "/images/photos/cars/hyundai-tucson-2020.webp",
     kind: "brakePads",
     carDescription:
       "The 2020 Hyundai Tucson is usually simple to live with, but brake noise, tire refinement, and battery complaints are the practical ownership issues most likely to show up first.",

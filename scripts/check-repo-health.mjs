@@ -94,17 +94,13 @@ const requiredStaticFiles = [
   "src/pages/about.astro",
   "src/pages/contact.astro",
   "src/pages/editorial-policy.astro",
+  "src/pages/image-credits.astro",
   "src/pages/affiliate-disclosure.astro",
   "src/pages/privacy-policy.astro"
 ];
 const maxReferencedPhotoBytes = 500 * 1024;
 const maxDerivedThumbnailBytes = 140 * 1024;
-const knownCarPhotoPlaceholders = new Set([
-  "/images/photos/cars/chevrolet-silverado-1500-2020.svg",
-  "/images/photos/cars/hyundai-tucson-2020.svg",
-  "/images/photos/cars/nissan-rogue-2021.svg",
-  "/images/photos/cars/subaru-forester-2020.svg"
-]);
+const knownCarPhotoPlaceholders = new Set();
 const optimizedPublicImageRoots = [
   path.join(cwd, "public", "images", "cars"),
   path.join(cwd, "public", "images", "photos"),
@@ -304,12 +300,16 @@ if (fs.existsSync(distDir)) {
 
 const ownershipGuidesPath = path.join(cwd, "src", "data", "ownership-guides.ts");
 const quickOwnershipGuidesPath = path.join(cwd, "src", "data", "quick-ownership-guides.ts");
+const deepOwnershipGuidesPath = path.join(cwd, "src", "data", "deep-ownership-guides.ts");
 const guidesDir = path.join(cwd, "src", "pages", "guides");
 
 if (fs.existsSync(ownershipGuidesPath) && fs.existsSync(guidesDir)) {
   const ownershipSource = fs.readFileSync(ownershipGuidesPath, "utf8");
   const quickSource = fs.existsSync(quickOwnershipGuidesPath) ? fs.readFileSync(quickOwnershipGuidesPath, "utf8") : "";
-  const dynamicGuideSlugs = new Set([...quickSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1]));
+  const deepSource = fs.existsSync(deepOwnershipGuidesPath) ? fs.readFileSync(deepOwnershipGuidesPath, "utf8") : "";
+  const dynamicGuideSlugs = new Set(
+    [...quickSource.matchAll(/slug:\s*"([^"]+)"/g), ...deepSource.matchAll(/slug:\s*"([^"]+)"/g)].map((match) => match[1])
+  );
   const staticGuideSlugs = new Set(
     fs
       .readdirSync(guidesDir)
