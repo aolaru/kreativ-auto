@@ -1,3 +1,5 @@
+import { additionalDeepOwnershipGuides } from "./deep-ownership-guide-expansions";
+
 export interface DeepGuideLink {
   href: string;
   title: string;
@@ -1163,5 +1165,6 @@ export const deepOwnershipGuides: DeepOwnershipGuide[] = [
         eyebrow: "Batteries"
       }
     ]
-  }
+  },
+  ...additionalDeepOwnershipGuides
 ];

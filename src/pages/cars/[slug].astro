@@ -13,7 +13,7 @@ import { comparisonGuides } from "../../data/comparison-guides";
 import { ownershipGuides } from "../../data/ownership-guides";
 import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
-import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
+import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, slugify, uniqueByHref } from "../../utils/taxonomy";
 import { guideMatchesCar } from "../../utils/relationships";
 
 export async function getStaticPaths() {
@@ -142,32 +142,50 @@ const coverageCards = [
 ];
 
 const generationHref = `/generations/${getGenerationSlug(car.data)}/`;
+const buyingPath = relatedOwnershipGuides.find((guide) => guide.eyebrow === "Used buyer guide" || guide.eyebrow === "Avoid guide");
+const maintenancePath = relatedOwnershipGuides.find((guide) => guide.eyebrow === "Maintenance guide" || guide.eyebrow === "Service guide");
+const primaryCategoryHref = relatedBest[0]?.eyebrow ? `/categories/${slugify(relatedBest[0].eyebrow)}/` : "/categories/";
+const comparisonPath = relatedComparisons[0];
 const carStartPaths = [
   {
-    eyebrow: "Symptoms",
-    title: "Start with common problems",
-    description: "Best first stop when the car is making noise, warning you, leaking, vibrating, or behaving differently.",
-    href: "#common-problems"
+    eyebrow: "Buying used",
+    title: "Check the buying risk",
+    description: buyingPath
+      ? "Start with the ownership page that covers weak examples, records, and the first repair budget."
+      : "Start with the overview, service records, tire condition, and common problems before trusting the listing.",
+    href: buyingPath?.href ?? "#overview"
   },
   {
-    eyebrow: "Parts",
-    title: "Compare the parts that matter",
+    eyebrow: "Diagnosing problems",
+    title: "Match symptoms first",
+    description: relatedProblems.length
+      ? "Go to the symptom pages before a noise, warning light, vibration, or weak start becomes a parts order."
+      : "Start with the common-problems list and narrow the symptom before pricing parts.",
+    href: relatedProblems[0]?.href ?? "#common-problems"
+  },
+  {
+    eyebrow: "Maintenance costs",
+    title: "Price the first service reset",
+    description: maintenancePath
+      ? "Check the longer cost or interval page before deciding whether the car is priced fairly."
+      : "Review maintenance tips and immediate wear items before treating the price as final.",
+    href: maintenancePath?.href ?? "#maintenance-tips"
+  },
+  {
+    eyebrow: "Parts by category",
+    title: "Narrow the repair family",
     description: relatedBest.length
-      ? "Open the linked best-parts guides when the diagnosis already points at one repair area."
-      : "Move to recommended parts only after the diagnosis points at one repair area.",
-    href: relatedBest[0]?.href ?? "#recommended-parts"
+      ? "Open the matching part category after the symptom points toward a specific repair area."
+      : "Browse part categories only after the repair area is clear.",
+    href: primaryCategoryHref
   },
   {
-    eyebrow: "Ownership",
-    title: "Check maintenance habits",
-    description: "Best when the goal is preventing repeat complaints instead of fixing one immediate symptom.",
-    href: "#maintenance-tips"
-  },
-  {
-    eyebrow: "Fitment",
-    title: "Open the generation view",
-    description: "Check the generation view when trim, phase, or platform differences matter before buying parts.",
-    href: generationHref
+    eyebrow: "Model comparisons",
+    title: "Compare the alternative",
+    description: comparisonPath
+      ? "Open the related comparison when the decision depends on another model, trim, drivetrain, or generation."
+      : "Check the generation view when trim, phase, or platform differences matter before buying parts.",
+    href: comparisonPath?.href ?? generationHref
   }
 ];
 
@@ -247,7 +265,7 @@ const schemas = [
           Pick the shortcut that matches the job before scrolling through every section.
         </p>
       </div>
-      <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
         {
           carStartPaths.map((path) => (
             <a

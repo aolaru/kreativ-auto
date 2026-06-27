@@ -1,3 +1,5 @@
+import { comparisonGuideDetails } from "./comparison-guide-details";
+
 export interface ComparisonGuide {
   title: string;
   href: string;
@@ -53,5 +55,15 @@ export const comparisonGuides: ComparisonGuide[] = [
     relatedCars: ["vw-tiguan-2020"],
     relatedModels: ["Volkswagen Tiguan", "VW Tiguan"],
     relatedGenerations: ["volkswagen-tiguan-tiguan-ii-facelift-2020-2024"]
-  }
+  },
+  ...comparisonGuideDetails.map((guide) => ({
+    title: guide.title,
+    href: guide.href,
+    description: guide.description,
+    eyebrow: guide.eyebrow,
+    image: guide.image,
+    relatedCars: guide.relatedCars,
+    relatedModels: guide.relatedModels,
+    relatedGenerations: guide.relatedGenerations
+  }))
 ];
