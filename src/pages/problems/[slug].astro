@@ -9,7 +9,7 @@ import ProblemTriageBlock from "../../components/ProblemTriageBlock.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
-import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+import { editorialTeam } from "../../data/editorial";
 import { hondaCivicProblemQuality } from "../../data/honda-civic-quality";
 import { rav4ProblemQuality } from "../../data/toyota-rav4-quality";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
@@ -70,7 +70,29 @@ const relatedBest = uniqueByHref(
   }))
 );
 
-const seoTitle = problem.data.metaTitle ?? problem.data.title;
+const symptomTitleShortcuts: Record<string, string> = {
+  "brake pedal pulsates when slowing": "Brake pedal pulsation",
+  "front-end clunk when pulling into driveways": "Driveway front-end clunk",
+  "rear brakes squeak after rain": "Rear brake squeak after rain",
+  "steering wheel vibrates at highway speed": "Highway steering vibration"
+};
+const formatSentenceStart = (value: string) => value.charAt(0).toUpperCase() + value.slice(1);
+const compactSymptom = (value: string) => symptomTitleShortcuts[value.toLowerCase()] ?? formatSentenceStart(value);
+const compactProblemTitle = (() => {
+  const [symptom, vehicle] = problem.data.title.split(/\s+on\s+/i);
+  if (vehicle && symptom) {
+    const compactVehicle = vehicle.replace(/\s+20\d{2}$/i, "");
+    const withVehicle = `${vehicle}: ${compactSymptom(symptom)}`;
+    const withCompactVehicle = `${compactVehicle}: ${compactSymptom(symptom)}`;
+
+    return withVehicle.length <= 58 ? withVehicle : withCompactVehicle;
+  }
+
+  const genericTitle = `${compactSymptom(problem.data.title)}: Diagnosis and Fixes`;
+  return genericTitle.length <= 58 ? genericTitle : `${compactSymptom(problem.data.title)}: Fixes`;
+})();
+const rawSeoTitle = problem.data.metaTitle ?? problem.data.title;
+const seoTitle = rawSeoTitle.length <= 58 ? rawSeoTitle : compactProblemTitle;
 const seoDescription =
   problem.data.metaDescription ??
   `Diagnostic guide covering symptoms, likely causes, and repair solutions for: ${problem.data.title.toLowerCase()}.`;
@@ -87,6 +109,19 @@ const triageConfusedWith = problem.data.confusedWith;
 const triageStopDrivingIf =
   problem.data.stopDrivingIf.length > 0 ? problem.data.stopDrivingIf : problem.data.whenToSeeMechanic.slice(0, 2);
 const vehicleQuality = rav4ProblemQuality[problem.id] ?? hondaCivicProblemQuality[problem.id];
+const primaryCause = problem.data.causes[0];
+const primaryRelatedPart = relatedBest[0]?.eyebrow ?? relatedBest[0]?.title;
+const problemTrustPointsForPage = [
+  triageFirstCheck
+    ? `First check: ${triageFirstCheck}`
+    : `${problem.data.title} is checked against the symptom pattern before parts are considered.`,
+  primaryCause
+    ? `Likely cause to rule out early: ${primaryCause}`
+    : "Diagnosis starts with the common causes before moving into less common failures.",
+  primaryRelatedPart
+    ? `${primaryRelatedPart} links are useful only after the diagnosis points in that direction.`
+    : "Parts are treated as the last step after the symptom and first checks line up."
+];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Problems", href: "/problems/" },
@@ -126,27 +161,27 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro="Start with what the symptom usually means, how urgent it is, and what to check before buying parts or booking the repair."
+  intro={`${problem.data.title} needs a calm first check before money goes into parts or a larger repair.`}
   faqs={problem.data.faqs}
   image={socialImage}
   modifiedTime={problem.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary="Good diagnosis starts with the most likely cause, a sensible first check, and restraint before money goes into the wrong repair."
+  editorialSummary={`${problem.data.title} is organized around the complaint, the first check, and the repair path that follows from the evidence.`}
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={problem.data.updatedAt ? `Reviewed ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
   editorialBadges={["Problem guide", "Fitment notes checked", "Parts links reviewed"]}
 >
   <TrustBlock
-    summary="Start with the likely cause, urgency, and repair checks that matter before money goes in the wrong direction."
+    summary={`${problem.data.title} is reviewed as a diagnosis path first and a parts decision second.`}
     byline={`By ${editorialTeam.name}`}
     checkedLabel={problem.data.updatedAt ? `Checked ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-    points={problemTrustPoints}
+    points={problemTrustPointsForPage}
   />
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
-  <Section id="quick-answer" title="What to know first" intro="The short version helps judge seriousness before digging deeper.">
+  <Section id="quick-answer" title={`${problem.data.title}: quick answer`} intro={`Use the quick facts to judge whether ${problem.data.title.toLowerCase()} can wait or needs attention now.`}>
     <div class="grid gap-4 md:grid-cols-2">
       {
         quickFacts.map((item) => (
@@ -159,7 +194,7 @@ const schemas = [
     </div>
   </Section>
 
-  <Section id="triage" title="Quick triage" intro="The shortest path from symptom to the first sensible check.">
+  <Section id="triage" title="First check path" intro={triageFirstCheck ? `Start with ${triageFirstCheck.toLowerCase()}.` : "Start with the checks that can confirm the complaint before parts are ordered."}>
     <ProblemTriageBlock
       quickVerdict={triageVerdict}
       firstCheck={triageFirstCheck}
@@ -171,33 +206,33 @@ const schemas = [
     />
   </Section>
 
-  {vehicleQuality && <DecisionPathBlock title="Vehicle-specific decision path" intro="Keep the diagnosis focused before buying parts or escalating the repair." steps={vehicleQuality.decisionPath} />}
+  {vehicleQuality && <DecisionPathBlock title="Vehicle-specific decision path" intro={`Keep ${problem.data.title.toLowerCase()} tied to checks you can confirm before escalating the repair.`} steps={vehicleQuality.decisionPath} />}
 
-  <Section id="symptoms" title="Symptoms" intro="These are the signs drivers usually notice before the real cause is confirmed.">
+  <Section id="symptoms" title="Symptoms to confirm" intro={`Look for the details that separate ${problem.data.title.toLowerCase()} from nearby complaints.`}>
     <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
       {problem.data.symptoms.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
 
-  <Section id="causes" title="Likely causes" intro="Start with the common causes first so diagnosis stays efficient and the wrong parts do not get ordered too early.">
+  <Section id="causes" title="Likely causes" intro={primaryCause ? `${primaryCause} is the first cause to rule out before moving deeper.` : "Work from the common causes toward the less common ones."}>
     <ol class="space-y-3 text-sm leading-6 text-steel">
       {problem.data.causes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ol>
   </Section>
 
-  <Section id="solutions" title="What usually fixes it" intro="Work through these in order so you can confirm the problem before spending money on parts.">
+  <Section id="solutions" title="What usually fixes it" intro={`Work through these fixes only after the checks match ${problem.data.title.toLowerCase()}.`}>
     <ol class="space-y-3 text-sm leading-6 text-steel">
       {problem.data.solutions.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ol>
   </Section>
 
-  <Section id="when-to-see-mechanic" title="When to involve a mechanic" intro="These are the signs that the problem is moving past a basic driveway diagnosis.">
+  <Section id="when-to-see-mechanic" title="When to involve a mechanic" intro={`Escalate ${problem.data.title.toLowerCase()} when the symptom points beyond a simple inspection.`}>
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {problem.data.whenToSeeMechanic.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
 
-  <Section id="common-mistakes" title="Common mistakes" intro="These are the errors that usually waste time, money, or both.">
+  <Section id="common-mistakes" title="Common mistakes" intro={`Avoid these shortcuts when chasing ${problem.data.title.toLowerCase()}.`}>
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {problem.data.commonMistakes.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
@@ -218,7 +253,7 @@ const schemas = [
     )
   }
 
-  <Section id="recommended-parts" title="Parts worth checking" intro="These are the parts most likely to matter once the diagnosis is pointing in the right direction.">
+  <Section id="recommended-parts" title="Parts worth checking" intro={`These parts make sense only if the checks for ${problem.data.title.toLowerCase()} point here.`}>
     <div class="grid gap-6 md:grid-cols-2">
       {problem.data.recommendedParts.map((product) => <ProductCard product={product} />)}
     </div>
@@ -226,13 +261,13 @@ const schemas = [
 
   <RelatedLinks
     title="Related cars"
-    intro="These vehicle guides give you more context if the same symptom shows up on a specific model."
+    intro={`Open the matching vehicle pages when ${problem.data.title.toLowerCase()} needs model-year context.`}
     items={relatedCars}
   />
 
   <RelatedLinks
     title="Related best-parts guides"
-    intro="If you already know the likely repair area, these guides can help you compare the next parts to look at."
+    intro={`These parts guides are useful once ${problem.data.title.toLowerCase()} has a confirmed repair area.`}
     items={relatedBest}
   />
 </ContentLayout>

@@ -117,7 +117,7 @@ const featuredPaths = [
 
     <div class="mt-10 grid gap-6">
       {
-        newestCars.map((car) => (
+        newestCars.map((car, index) => (
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/cars/${car.id}/`}>
             <div class="mb-4 flex items-center gap-3">
               <CardIcon kind="car" />
@@ -127,7 +127,7 @@ const featuredPaths = [
               </div>
             </div>
             {
-              car.data.image && (
+              car.data.image && index < 6 && (
                 <div class="mb-5 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
                   <img
                     src={toThumbnail(car.data.image)}

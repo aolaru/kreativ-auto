@@ -32,7 +32,9 @@ const pageTitle = `${title} | Kreativ Auto`;
 const searchConsoleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 const rawAdsenseClient = import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT ?? "ca-pub-4706844277814411";
 const adsenseClient = rawAdsenseClient.startsWith("pub-") ? `ca-${rawAdsenseClient}` : rawAdsenseClient;
-const shouldLoadAdsense = enableAds && !noindex && Boolean(adsenseClient);
+const shouldExposeAdsenseAccount = !noindex && Boolean(adsenseClient);
+const shouldLoadAdsense =
+  enableAds && shouldExposeAdsenseAccount && import.meta.env.PUBLIC_GOOGLE_ADSENSE_LOAD_SCRIPT === "true";
 const gaMeasurementId = "G-4NXQLN1J2R";
 const baseSchemas = [
   {
@@ -84,7 +86,7 @@ const schemaItems = [...baseSchemas, ...schemas];
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={new URL(image, Astro.site).toString()} />
     {searchConsoleVerification && <meta name="google-site-verification" content={searchConsoleVerification} />}
-    {shouldLoadAdsense && <meta name="google-adsense-account" content={adsenseClient} />}
+    {shouldExposeAdsenseAccount && <meta name="google-adsense-account" content={adsenseClient} />}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link

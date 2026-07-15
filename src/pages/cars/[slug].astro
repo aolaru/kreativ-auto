@@ -8,7 +8,7 @@ import FitmentNotes from "../../components/FitmentNotes.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
-import { carTrustPoints, editorialTeam } from "../../data/editorial";
+import { editorialTeam } from "../../data/editorial";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { ownershipGuides } from "../../data/ownership-guides";
 import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
@@ -202,6 +202,15 @@ const civicQuality = car.id === "honda-civic-2019"
   ? hondaCivicGuideQuality["honda-civic-10th-gen-facelift-common-problems"]
   : undefined;
 const vehicleQuality = rav4Quality ?? civicQuality;
+const carTrustPointsForPage = [
+  car.data.commonProblems[0]
+    ? `${car.data.title} coverage starts with ${car.data.commonProblems[0].toLowerCase()}.`
+    : `${car.data.title} coverage starts with the model-year ownership basics.`,
+  relatedBest[0]
+    ? `${relatedBest[0].eyebrow} parts are linked after the symptom points toward that repair area.`
+    : "Recommended parts stay secondary to the symptom and maintenance notes.",
+  `${getGenerationLabel(car.data)} notes keep trim, phase, and powertrain differences visible before parts are ordered.`
+];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Cars", href: "/cars/" },
@@ -250,10 +259,10 @@ const schemas = [
   enableAds={carAdsEnabled}
 >
   <TrustBlock
-    summary="Built around the main problem areas, the parts that usually matter, and the maintenance moves worth doing before a small issue grows."
+    summary={`${car.data.title} is tied to its common issues, matching parts, and the generation notes that change the answer.`}
     byline={`By ${editorialTeam.name}`}
     checkedLabel={car.data.updatedAt ? `Checked ${car.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-    points={carTrustPoints}
+    points={carTrustPointsForPage}
   />
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
@@ -319,6 +328,8 @@ const schemas = [
                 class="h-72 w-full object-cover sm:h-80"
                 width="1200"
                 height="800"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           )

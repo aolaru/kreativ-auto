@@ -10,7 +10,7 @@ import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
-import { bestMethodologyPoints, editorialTeam } from "../../data/editorial";
+import { editorialTeam } from "../../data/editorial";
 import { hondaCivicBestQuality } from "../../data/honda-civic-quality";
 import { rav4BestQuality } from "../../data/toyota-rav4-quality";
 import { withAffiliateTag } from "../../utils/affiliate";
@@ -126,6 +126,17 @@ const overbuyingCards = [
     description: "Buy from a source with clear fitment confirmation, return terms, and enough product detail to verify that the part in the box matches the car."
   }
 ];
+const methodologyPointsForPage = [
+  topProduct
+    ? `${topProduct.name} starts the ${vehicleLabel} shortlist because it fits the main daily-use case for ${categoryTerm}.`
+    : `${vehicleLabel} ${categoryTerm} picks are limited to options with enough detail to compare cleanly.`,
+  fitmentCaveat
+    ? `The fitment warning is kept visible before the product notes: ${fitmentCaveat}`
+    : `Year, trim, engine, and generation notes are checked before a ${categoryTerm} option is treated as a match.`,
+  bestFor[0]
+    ? `The final choice should support ${bestFor[0].toLowerCase()}, not just the strongest marketing claim.`
+    : `The final choice should match the car's normal use, the confirmed repair area, and the owner's budget.`
+];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Best Parts", href: "/best/" },
@@ -202,12 +213,12 @@ const schemas = [
     summary={`For ${vehicleLabel}, ${categoryTerm} recommendations are kept to options that match the common use case, have clear fitment paths, and avoid adding duplicate parts just to make the list longer.`}
     byline={`By ${editorialTeam.name}`}
     checkedLabel={entry.data.updatedAt ? `Checked ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-    points={bestMethodologyPoints}
+    points={methodologyPointsForPage}
   />
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
-  <Section id="decision-block" title="Quick decision" intro={`Start with the ${vehicleLabel} use case and the ${categoryTerm} problem you are trying to solve.`}>
+  <Section id="decision-block" title={`${entry.data.category} shortlist`} intro={`Start with the ${vehicleLabel} use case and the ${categoryTerm} problem you are trying to solve.`}>
     <BestDecisionBlock
       quickVerdict={quickVerdict}
       bestFor={bestFor}
@@ -233,7 +244,7 @@ const schemas = [
 
   {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro={`Use the ${vehicleLabel} decision path before treating the shortlist as a confirmed repair.`} steps={vehicleQuality.decisionPath} />}
 
-  <Section id="comparison-table" title="Comparison table" intro={`Use the table to compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
+  <Section id="comparison-table" title={`${entry.data.category} comparison`} intro={`Compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
     <ComparisonTable products={entry.data.products} />
   </Section>
 
@@ -243,13 +254,13 @@ const schemas = [
     </div>
   </Section>
 
-  <Section id="buying-advice" title="Buying advice" intro="The right part depends on how the car is driven, how much refinement you want, and how much compromise you are willing to accept.">
+  <Section id="buying-advice" title={`${entry.data.category} buying notes`} intro={`The right ${categoryTerm} depends on how ${vehicleLabel} is driven, how much refinement matters, and how much compromise is acceptable.`}>
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {entry.data.buyingAdvice.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
 
-  <Section id="choose-without-overbuying" title="Choose without overbuying" intro={`For ${categoryTerm}, the smartest choice is usually the part that matches the car's normal use and confirmed fault.`}>
+  <Section id="choose-without-overbuying" title="Avoid overbuying" intro={`For ${categoryTerm}, the smartest choice is usually the part that matches the car's normal use and confirmed fault.`}>
     <div class="grid gap-4 lg:grid-cols-3">
       {
         overbuyingCards.map((item) => (
@@ -279,11 +290,11 @@ const schemas = [
 
   <Section
     id="methodology"
-    title="Methodology"
+    title={`Why these ${categoryTerm} made the list`}
     intro={`The ${vehicleLabel} shortlist favors fitment clarity, normal ownership use, and brands that make sense for this repair area.`}
   >
     <ul class="space-y-3 text-sm leading-6 text-steel">
-      {bestMethodologyPoints.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
+      {methodologyPointsForPage.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
     </ul>
   </Section>
 

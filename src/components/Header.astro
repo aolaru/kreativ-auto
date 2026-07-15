@@ -1,130 +1,10 @@
 ---
-import { getCollection } from "astro:content";
-import { comparisonGuides } from "../data/comparison-guides";
-import { ownershipGuides } from "../data/ownership-guides";
 import { ownershipTasks } from "../data/ownership-tasks";
-import { getGenerationLabel, getGenerationSlug, slugify } from "../utils/taxonomy";
 
 const navItems = ownershipTasks.map((task) => ({
   href: task.href,
   label: task.label
 }));
-
-const [cars, problems, bestPages] = await Promise.all([
-  getCollection("cars"),
-  getCollection("problems"),
-  getCollection("best")
-]);
-
-const getEntryPath = (entry: { id: string; slug?: string }) => entry.slug ?? entry.id.replace(/\.(md|mdx)$/i, "");
-const uniqueByHref = <T extends { href: string }>(items: T[]) => {
-  const seen = new Set<string>();
-
-  return items.filter((item) => {
-    if (seen.has(item.href)) return false;
-    seen.add(item.href);
-    return true;
-  });
-};
-const brands = [...new Set(cars.map((entry) => entry.data.brand))].sort((a, b) => a.localeCompare(b));
-const models = [...new Set(cars.map((entry) => `${entry.data.brand} ${entry.data.model}`))].sort((a, b) => a.localeCompare(b));
-const generations = uniqueByHref(
-  cars.map((entry) => ({
-    title: getGenerationLabel(entry.data),
-    href: `/generations/${getGenerationSlug(entry.data)}/`,
-    description: `${entry.data.generationYears} ${entry.data.brand} ${entry.data.model} generation notes.`,
-    type: "Generation",
-    keywords: `${entry.data.brand} ${entry.data.model} ${entry.data.generation} ${entry.data.generationCode ?? ""} ${entry.data.generationYears}`,
-    priority: 65
-  }))
-);
-const categories = [...new Set(bestPages.map((entry) => entry.data.category))]
-  .sort((a, b) => a.localeCompare(b))
-  .map((category) => ({
-    title: `${category} guides`,
-    href: `/categories/${slugify(category)}/`,
-    description: `Compare ${category.toLowerCase()} by vehicle and symptom.`,
-    type: "Part category",
-    keywords: category,
-    priority: 58
-  }));
-
-const searchIndex = [
-  ...cars.map((entry) => ({
-    title: entry.data.title,
-    href: `/cars/${getEntryPath(entry)}/`,
-    description: entry.data.metaDescription,
-    type: "Car",
-    keywords: `${entry.data.brand} ${entry.data.model} ${entry.data.year} ${entry.data.generation} ${entry.data.generationCode ?? ""} ${entry.data.generationYears}`,
-    priority: 100
-  })),
-  ...problems.map((entry) => ({
-    title: entry.data.title,
-    href: `/problems/${getEntryPath(entry)}/`,
-    description: entry.data.metaDescription,
-    type: "Problem guide",
-    keywords: `${entry.data.symptoms.join(" ")} ${entry.data.causes.join(" ")} ${entry.data.relatedCars.join(" ")}`,
-    priority: 75
-  })),
-  ...bestPages.map((entry) => ({
-    title: entry.data.title,
-    href: `/best/${getEntryPath(entry)}/`,
-    description: entry.data.metaDescription,
-    type: "Best parts",
-    keywords: `${entry.data.car_model} ${entry.data.category} ${entry.data.relatedCars.join(" ")}`,
-    priority: 50
-  })),
-  ...ownershipGuides.map((guide) => ({
-    title: guide.title,
-    href: guide.href,
-    description: guide.description,
-    type: guide.eyebrow,
-    keywords: `${guide.eyebrow} ${guide.relatedCars?.join(" ") ?? ""} ${guide.relatedModels?.join(" ") ?? ""}`,
-    priority: 85
-  })),
-  ...comparisonGuides.map((guide) => ({
-    title: guide.title,
-    href: guide.href,
-    description: guide.description,
-    type: guide.eyebrow,
-    keywords: `${guide.eyebrow} ${guide.relatedCars?.join(" ") ?? ""} ${guide.relatedModels?.join(" ") ?? ""}`,
-    priority: 70
-  })),
-  ...ownershipTasks.map((task) => ({
-    title: task.title,
-    href: task.href,
-    description: task.description,
-    type: "Ownership task",
-    keywords: task.label,
-    priority: 80
-  })),
-  ...brands.map((brand) => ({
-    title: `${brand} cars`,
-    href: `/brands/${slugify(brand)}/`,
-    description: `Browse ${brand} cars, guides, problems, and parts comparisons.`,
-    type: "Brand",
-    keywords: brand,
-    priority: 60
-  })),
-  ...models.map((model) => ({
-    title: `${model} guides`,
-    href: `/models/${slugify(model)}/`,
-    description: `Open ${model} model-year and ownership pages.`,
-    type: "Model",
-    keywords: model,
-    priority: 90
-  })),
-  ...generations,
-  ...categories,
-  {
-    title: "Browse",
-    href: "/browse/",
-    description: "Browse by car, brand, model, generation, or parts category.",
-    type: "Navigation",
-    keywords: "cars brands models generations categories",
-    priority: 45
-  }
-].filter((entry) => entry.title && entry.href);
 ---
 
 <header class="relative z-40 border-b border-black/5 bg-white/85 backdrop-blur">
@@ -173,7 +53,6 @@ const searchIndex = [
             <p class="header-search-empty" hidden>No matching results found.</p>
             <ul class="header-search-list"></ul>
           </div>
-          <script id="site-search-index" type="application/json" set:html={JSON.stringify(searchIndex)}></script>
         </div>
 
         <nav aria-label="Primary" class="hidden md:block">
@@ -215,7 +94,6 @@ const searchIndex = [
 </header>
 
 <script is:inline>
-  const searchIndexNode = document.getElementById("site-search-index");
   const searchInput = document.getElementById("site-search");
   const searchRoot = searchInput?.closest(".header-search");
   const searchResults = searchRoot?.querySelector(".header-search-results");
@@ -223,10 +101,30 @@ const searchIndex = [
   const searchEmpty = searchRoot?.querySelector(".header-search-empty");
   const clearButton = searchRoot?.querySelector(".header-search-clear");
 
-  if (searchIndexNode && searchInput && searchRoot && searchResults && searchList && searchEmpty && clearButton) {
-    const entries = JSON.parse(searchIndexNode.textContent || "[]");
+  if (searchInput && searchRoot && searchResults && searchList && searchEmpty && clearButton) {
+    let entries = [];
+    let searchIndexPromise;
     let activeIndex = -1;
     let searchStartTracked = false;
+
+    const loadSearchIndex = () => {
+      if (entries.length) return Promise.resolve(entries);
+
+      searchIndexPromise =
+        searchIndexPromise ||
+        fetch("/search-index.json", { headers: { accept: "application/json" } })
+          .then((response) => (response.ok ? response.json() : []))
+          .then((items) => {
+            entries = Array.isArray(items) ? items : [];
+            return entries;
+          })
+          .catch(() => {
+            entries = [];
+            return entries;
+          });
+
+      return searchIndexPromise;
+    };
 
     const scoreEntry = (entry, query) => {
       const haystackTitle = entry.title.toLowerCase();
@@ -273,11 +171,12 @@ const searchIndex = [
       let previousGroup = "";
 
       for (const [index, match] of matches.entries()) {
-        const groupName = match.type.includes("parts")
+        const normalizedType = match.type.toLowerCase();
+        const groupName = normalizedType.includes("parts") || normalizedType.includes("category")
           ? "Parts"
-          : match.type.includes("guide") || match.type.includes("Comparison") || match.type.includes("Reliability") || match.type.includes("Maintenance")
+          : normalizedType.includes("guide") || normalizedType.includes("comparison") || normalizedType.includes("reliability") || normalizedType.includes("maintenance") || normalizedType.includes("buyer") || normalizedType.includes("service")
             ? "Guides"
-            : match.type.includes("Car") || match.type.includes("Model") || match.type.includes("Generation") || match.type.includes("Brand")
+            : normalizedType.includes("car") || normalizedType.includes("model") || normalizedType.includes("generation") || normalizedType.includes("brand")
               ? "Vehicles"
               : "Other";
 
@@ -322,7 +221,7 @@ const searchIndex = [
       });
     };
 
-    const updateSearch = () => {
+    const updateSearch = async () => {
       const value = searchInput.value.trim();
       clearButton.hidden = !value;
 
@@ -330,6 +229,9 @@ const searchIndex = [
         closeResults();
         return;
       }
+
+      await loadSearchIndex();
+      if (searchInput.value.trim() !== value) return;
 
       const matches = getMatches(value);
       activeIndex = matches.length ? 0 : -1;
@@ -340,7 +242,9 @@ const searchIndex = [
       updateActiveState();
     };
 
-    searchInput.addEventListener("input", updateSearch);
+    searchInput.addEventListener("input", () => {
+      void updateSearch();
+    });
 
     searchInput.addEventListener(
       "input",
@@ -408,8 +312,9 @@ const searchIndex = [
     });
 
     searchInput.addEventListener("focus", () => {
+      void loadSearchIndex();
       if (searchInput.value.trim()) {
-        updateSearch();
+        void updateSearch();
       }
     });
   }

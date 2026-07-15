@@ -12,7 +12,7 @@ export const ownershipTasks: OwnershipTask[] = [
     title: "Buying used",
     label: "Buying Used",
     description: "Used-buyer verdicts, red flags, trim choices, and pre-purchase checks before money changes hands.",
-    href: "/guides/#used-buyer-guides",
+    href: "/guides/#browse-all-guides",
     cta: "Open used-car guides",
     kind: "car"
   },
@@ -28,7 +28,7 @@ export const ownershipTasks: OwnershipTask[] = [
     title: "Maintenance costs",
     label: "Maintenance Costs",
     description: "Check weak points, service timing, and the ownership costs most likely to matter first.",
-    href: "/guides/#maintenance-guides",
+    href: "/guides/#browse-all-guides",
     cta: "Check costs",
     kind: "category"
   },
