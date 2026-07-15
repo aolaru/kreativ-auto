@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import { comparisonGuides } from "../data/comparison-guides";
 import { ownershipGuides } from "../data/ownership-guides";
 import { ownershipTasks } from "../data/ownership-tasks";
+import { getGenerationLabel, getGenerationSlug, slugify } from "../utils/taxonomy";
 
 const navItems = ownershipTasks.map((task) => ({
   href: task.href,
@@ -16,44 +17,113 @@ const [cars, problems, bestPages] = await Promise.all([
 ]);
 
 const getEntryPath = (entry: { id: string; slug?: string }) => entry.slug ?? entry.id.replace(/\.(md|mdx)$/i, "");
+const uniqueByHref = <T extends { href: string }>(items: T[]) => {
+  const seen = new Set<string>();
+
+  return items.filter((item) => {
+    if (seen.has(item.href)) return false;
+    seen.add(item.href);
+    return true;
+  });
+};
+const brands = [...new Set(cars.map((entry) => entry.data.brand))].sort((a, b) => a.localeCompare(b));
+const models = [...new Set(cars.map((entry) => `${entry.data.brand} ${entry.data.model}`))].sort((a, b) => a.localeCompare(b));
+const generations = uniqueByHref(
+  cars.map((entry) => ({
+    title: getGenerationLabel(entry.data),
+    href: `/generations/${getGenerationSlug(entry.data)}/`,
+    description: `${entry.data.generationYears} ${entry.data.brand} ${entry.data.model} generation notes.`,
+    type: "Generation",
+    keywords: `${entry.data.brand} ${entry.data.model} ${entry.data.generation} ${entry.data.generationCode ?? ""} ${entry.data.generationYears}`,
+    priority: 65
+  }))
+);
+const categories = [...new Set(bestPages.map((entry) => entry.data.category))]
+  .sort((a, b) => a.localeCompare(b))
+  .map((category) => ({
+    title: `${category} guides`,
+    href: `/categories/${slugify(category)}/`,
+    description: `Compare ${category.toLowerCase()} by vehicle and symptom.`,
+    type: "Part category",
+    keywords: category,
+    priority: 58
+  }));
 
 const searchIndex = [
   ...cars.map((entry) => ({
     title: entry.data.title,
     href: `/cars/${getEntryPath(entry)}/`,
     description: entry.data.metaDescription,
-    type: "Car"
+    type: "Car",
+    keywords: `${entry.data.brand} ${entry.data.model} ${entry.data.year} ${entry.data.generation} ${entry.data.generationCode ?? ""} ${entry.data.generationYears}`,
+    priority: 100
   })),
   ...problems.map((entry) => ({
     title: entry.data.title,
     href: `/problems/${getEntryPath(entry)}/`,
     description: entry.data.metaDescription,
-    type: "Problem guide"
+    type: "Problem guide",
+    keywords: `${entry.data.symptoms.join(" ")} ${entry.data.causes.join(" ")} ${entry.data.relatedCars.join(" ")}`,
+    priority: 75
   })),
   ...bestPages.map((entry) => ({
     title: entry.data.title,
     href: `/best/${getEntryPath(entry)}/`,
     description: entry.data.metaDescription,
-    type: "Best parts"
+    type: "Best parts",
+    keywords: `${entry.data.car_model} ${entry.data.category} ${entry.data.relatedCars.join(" ")}`,
+    priority: 50
   })),
   ...ownershipGuides.map((guide) => ({
     title: guide.title,
     href: guide.href,
     description: guide.description,
-    type: guide.eyebrow
+    type: guide.eyebrow,
+    keywords: `${guide.eyebrow} ${guide.relatedCars?.join(" ") ?? ""} ${guide.relatedModels?.join(" ") ?? ""}`,
+    priority: 85
   })),
   ...comparisonGuides.map((guide) => ({
     title: guide.title,
     href: guide.href,
     description: guide.description,
-    type: guide.eyebrow
+    type: guide.eyebrow,
+    keywords: `${guide.eyebrow} ${guide.relatedCars?.join(" ") ?? ""} ${guide.relatedModels?.join(" ") ?? ""}`,
+    priority: 70
   })),
   ...ownershipTasks.map((task) => ({
     title: task.title,
     href: task.href,
     description: task.description,
-    type: "Ownership task"
-  }))
+    type: "Ownership task",
+    keywords: task.label,
+    priority: 80
+  })),
+  ...brands.map((brand) => ({
+    title: `${brand} cars`,
+    href: `/brands/${slugify(brand)}/`,
+    description: `Browse ${brand} cars, guides, problems, and parts comparisons.`,
+    type: "Brand",
+    keywords: brand,
+    priority: 60
+  })),
+  ...models.map((model) => ({
+    title: `${model} guides`,
+    href: `/models/${slugify(model)}/`,
+    description: `Open ${model} model-year and ownership pages.`,
+    type: "Model",
+    keywords: model,
+    priority: 90
+  })),
+  ...generations,
+  ...categories,
+  {
+    title: "Browse",
+    href: "/browse/",
+    description: "Browse by car, brand, model, generation, or parts category.",
+    type: "Navigation",
+    keywords: "cars brands models generations categories",
+    priority: 45
+  }
 ].filter((entry) => entry.title && entry.href);
 ---
 
@@ -158,24 +228,22 @@ const searchIndex = [
     let activeIndex = -1;
     let searchStartTracked = false;
 
-    const escapeHtml = (value) =>
-      value
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#39;");
-
     const scoreEntry = (entry, query) => {
       const haystackTitle = entry.title.toLowerCase();
       const haystackDescription = (entry.description || "").toLowerCase();
       const haystackType = entry.type.toLowerCase();
+      const haystackKeywords = (entry.keywords || "").toLowerCase();
+      const haystackHref = entry.href.toLowerCase().replaceAll("-", " ");
+      const basePriority = Number(entry.priority || 0);
 
-      if (haystackTitle === query) return 120;
-      if (haystackTitle.startsWith(query)) return 90;
-      if (haystackTitle.includes(query)) return 70;
-      if (haystackType.includes(query)) return 40;
-      if (haystackDescription.includes(query)) return 25;
+      if (haystackTitle === query) return 220 + basePriority;
+      if (haystackTitle.startsWith(query)) return 180 + basePriority;
+      if (haystackKeywords.split(/\s+/).includes(query)) return 155 + basePriority;
+      if (haystackTitle.includes(query)) return 135 + basePriority;
+      if (haystackHref.includes(query)) return 115 + basePriority;
+      if (haystackKeywords.includes(query)) return 105 + basePriority;
+      if (haystackType.includes(query)) return 55 + basePriority;
+      if (haystackDescription.includes(query)) return 35 + basePriority;
       return -1;
     };
 
@@ -187,7 +255,7 @@ const searchIndex = [
         .map((entry) => ({ entry, score: scoreEntry(entry, query) }))
         .filter((item) => item.score >= 0)
         .sort((a, b) => b.score - a.score || a.entry.title.localeCompare(b.entry.title))
-        .slice(0, 6)
+        .slice(0, 8)
         .map((item) => item.entry);
     };
 
@@ -200,19 +268,51 @@ const searchIndex = [
     };
 
     const renderResults = (matches) => {
-      searchList.innerHTML = matches
-        .map(
-          (match, index) => `
-            <li>
-              <a class="header-search-link" href="${match.href}" data-index="${index}" data-ka-event="search_result_click" data-ka-label="${escapeHtml(match.title)}" data-ka-section="header_search">
-                <span class="header-search-type">${escapeHtml(match.type)}</span>
-                <span class="header-search-title">${escapeHtml(match.title)}</span>
-                <span class="header-search-description">${escapeHtml(match.description || "")}</span>
-              </a>
-            </li>
-          `
-        )
-        .join("");
+      searchList.replaceChildren();
+
+      let previousGroup = "";
+
+      for (const [index, match] of matches.entries()) {
+        const groupName = match.type.includes("parts")
+          ? "Parts"
+          : match.type.includes("guide") || match.type.includes("Comparison") || match.type.includes("Reliability") || match.type.includes("Maintenance")
+            ? "Guides"
+            : match.type.includes("Car") || match.type.includes("Model") || match.type.includes("Generation") || match.type.includes("Brand")
+              ? "Vehicles"
+              : "Other";
+
+        if (groupName !== previousGroup) {
+          const groupItem = document.createElement("li");
+          groupItem.className = "header-search-group";
+          groupItem.textContent = groupName;
+          searchList.append(groupItem);
+          previousGroup = groupName;
+        }
+
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        const type = document.createElement("span");
+        const title = document.createElement("span");
+        const description = document.createElement("span");
+
+        link.className = "header-search-link";
+        link.href = match.href;
+        link.dataset.index = `${index}`;
+        link.dataset.kaEvent = "search_result_click";
+        link.dataset.kaLabel = match.title;
+        link.dataset.kaSection = "header_search";
+
+        type.className = "header-search-type";
+        type.textContent = match.type;
+        title.className = "header-search-title";
+        title.textContent = match.title;
+        description.className = "header-search-description";
+        description.textContent = match.description || "";
+
+        link.append(type, title, description);
+        item.append(link);
+        searchList.append(item);
+      }
     };
 
     const updateActiveState = () => {

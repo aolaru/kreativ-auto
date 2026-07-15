@@ -4,7 +4,6 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 import Breadcrumbs from "../../components/Breadcrumbs.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import { getCategoryHub } from "../../data/category-hubs";
-import { toThumbnail } from "../../utils/images";
 import { slugify, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -100,21 +99,6 @@ const categoryDecisionCards = [
           <a class="surface block p-6 transition hover:-translate-y-0.5" href={`/best/${entry.id}/`}>
             <p class="eyebrow">{entry.data.car_model}</p>
             <h2 class="mt-3 text-2xl font-semibold text-ink">{entry.data.title}</h2>
-            {
-              entry.data.heroImage && (
-                <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-slate-50">
-                  <img
-                    src={toThumbnail(entry.data.heroImage)}
-                    alt={entry.data.title}
-                    class="h-52 w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                    width="960"
-                    height="640"
-                  />
-                </div>
-              )
-            }
             <p class="mt-3 text-sm leading-6 text-steel">{entry.data.excerpt ?? entry.data.metaDescription}</p>
           </a>
         ))
@@ -172,8 +156,8 @@ const categoryDecisionCards = [
     </section>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Related cars" items={linkedCars} />
-      <RelatedLinks title="Related problem guides" items={linkedProblems} />
+      <RelatedLinks title="Related cars" items={linkedCars} imageLimit={0} />
+      <RelatedLinks title="Related problem guides" items={linkedProblems} imageLimit={0} />
     </div>
   </div>
 </BaseLayout>

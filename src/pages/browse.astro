@@ -104,6 +104,23 @@ const breadcrumbs = [
         </div>
       </Section>
 
+      <Section title="When browse is the best route" intro="Use the browse indexes when you already know at least one fixed detail and want to avoid scanning unrelated advice.">
+        <div class="grid gap-4 md:grid-cols-3">
+          <article class="editorial-card">
+            <h2 class="text-xl font-semibold text-ink">You know the exact vehicle</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">Open the car or model page first, then move to problems, parts, or comparisons from that context.</p>
+          </article>
+          <article class="editorial-card">
+            <h2 class="text-xl font-semibold text-ink">You know the repair area</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">Open the parts category after the symptom points clearly at brakes, batteries, ignition, tires, suspension, or another system.</p>
+          </article>
+          <article class="editorial-card">
+            <h2 class="text-xl font-semibold text-ink">You are comparing versions</h2>
+            <p class="mt-3 text-sm leading-6 text-steel">Open generations or comparisons when engine, drivetrain, hybrid, facelift, or trim differences change the answer.</p>
+          </article>
+        </div>
+      </Section>
+
       <Section title="Best starting vehicles" intro="These vehicles have the clearest path from symptoms to part decisions.">
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {featuredCars.map(({ car, coverage }) => (

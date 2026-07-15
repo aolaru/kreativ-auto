@@ -9,10 +9,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   enableAds={false}
 >
   <div class="container-shell py-16 sm:py-24">
-    <div class="surface max-w-3xl p-8 sm:p-10">
+    <div class="surface p-8 sm:p-10">
       <p class="eyebrow">404</p>
       <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">That page does not exist</h1>
-      <p class="mt-4 text-lg leading-8 text-steel">
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
         The URL may be outdated, the page may have moved, or the URL is not available yet.
       </p>
       <div class="mt-8 flex flex-wrap gap-4">
@@ -24,5 +24,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </a>
       </div>
     </div>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Find the closest page</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Start from the decision you were trying to make</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <a class="editorial-card block transition hover:-translate-y-0.5 hover:border-orange-300" href="/cars/">
+          <h3 class="text-xl font-semibold text-ink">Vehicle pages</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Open a car first when you need model-year context, common problems, maintenance notes, and related parts.</p>
+        </a>
+        <a class="editorial-card block transition hover:-translate-y-0.5 hover:border-orange-300" href="/problems/">
+          <h3 class="text-xl font-semibold text-ink">Problem guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Start here for brake noise, weak batteries, vibration, coolant loss, A/C behavior, and other symptoms.</p>
+        </a>
+        <a class="editorial-card block transition hover:-translate-y-0.5 hover:border-orange-300" href="/best/">
+          <h3 class="text-xl font-semibold text-ink">Parts guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Use these when the repair area is clear and you need to compare sensible replacement options.</p>
+        </a>
+        <a class="editorial-card block transition hover:-translate-y-0.5 hover:border-orange-300" href="/guides/">
+          <h3 class="text-xl font-semibold text-ink">Ownership guides</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Open broader buying, reliability, maintenance, service, and version guides when one symptom is not enough.</p>
+        </a>
+      </div>
+    </section>
   </div>
 </BaseLayout>

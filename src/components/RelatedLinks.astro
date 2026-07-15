@@ -14,9 +14,10 @@ interface Props {
   title: string;
   intro?: string;
   items: LinkItem[];
+  imageLimit?: number;
 }
 
-const { id, title, intro, items } = Astro.props;
+const { id, title, intro, items, imageLimit = items.length } = Astro.props;
 ---
 
 {
@@ -28,10 +29,10 @@ const { id, title, intro, items } = Astro.props;
       </div>
       <div class="mt-6 grid gap-4 md:grid-cols-2">
         {
-          items.map((item) => (
+          items.map((item, index) => (
             <a class="rounded-2xl border border-slate-200 bg-slate-50 p-5 transition hover:border-accent/40 hover:bg-white" href={item.href}>
               {
-                item.image && (
+                item.image && index < imageLimit && (
                   <div class="image-frame image-frame-card mb-4">
                     <img
                       src={toThumbnail(item.image)}

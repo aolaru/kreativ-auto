@@ -279,9 +279,9 @@ const breadcrumbs = [
     </div>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Flagship guides for this brand" intro={`Use these if you want the broader ${brand} ownership and buying picture before narrowing into one symptom or part.`} items={linkedOwnershipGuides} />
-      <RelatedLinks title="Related problem guides" intro={`These ${brand} checks cover symptoms that come up often in the listed vehicles.`} items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" intro={`These ${brand} part comparisons help once the repair area is clear.`} items={linkedBest} />
+      <RelatedLinks title="Flagship guides for this brand" intro={`Use these if you want the broader ${brand} ownership and buying picture before narrowing into one symptom or part.`} items={linkedOwnershipGuides} imageLimit={1} />
+      <RelatedLinks title="Related problem guides" intro={`These ${brand} checks cover symptoms that come up often in the listed vehicles.`} items={linkedProblems} imageLimit={0} />
+      <RelatedLinks title="Related best-parts guides" intro={`These ${brand} part comparisons help once the repair area is clear.`} items={linkedBest} imageLimit={0} />
     </div>
   </div>
 </BaseLayout>

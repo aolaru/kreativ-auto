@@ -189,7 +189,10 @@ const carStartPaths = [
   }
 ];
 
-const seoTitle = car.data.metaTitle ?? car.data.title;
+const carSeoTitleWithBrand = `${car.data.year} ${car.data.brand} ${car.data.model}: Problems & Maintenance`;
+const carSeoTitleCompact = `${car.data.year} ${car.data.model}: Problems & Maintenance`;
+const computedSeoTitle = carSeoTitleWithBrand.length <= 58 ? carSeoTitleWithBrand : carSeoTitleCompact;
+const seoTitle = car.data.metaTitle && car.data.metaTitle.length <= 58 ? car.data.metaTitle : computedSeoTitle;
 const seoDescription = car.data.metaDescription ?? car.data.description;
 const socialImage = car.data.heroImage ?? car.data.image;
 const rav4Quality = car.id === "toyota-rav4-2020" || car.id === "toyota-rav4-2021"
@@ -415,23 +418,27 @@ const schemas = [
     title="Related problem guides"
     intro="If one of the common issues below sounds familiar, these guides go deeper into what to check and what usually fixes it."
     items={relatedProblems}
+    imageLimit={2}
   />
 
   <RelatedLinks
     title="Related best parts pages"
     intro="These parts guides are useful if you already know the area you are dealing with and want to compare options."
     items={relatedBest}
+    imageLimit={0}
   />
 
   <RelatedLinks
     title="Flagship ownership guides"
     intro="Use these longer guides when you want the repeat-pattern view for the platform before narrowing down to one specific symptom."
     items={relatedOwnershipGuides}
+    imageLimit={1}
   />
 
   <RelatedLinks
     title="Trim and powertrain guides"
     intro="Use these comparison guides when the next question is which version of the car the advice actually applies to."
     items={relatedComparisons}
+    imageLimit={1}
   />
 </ContentLayout>

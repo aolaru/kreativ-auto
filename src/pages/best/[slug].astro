@@ -81,6 +81,8 @@ const quickVerdict = entry.data.quickVerdict ?? entry.data.excerpt;
 const bestFor = entry.data.bestFor.length > 0 ? entry.data.bestFor : entry.data.products.slice(0, 2).map((product) => product.summary ?? product.name).filter(Boolean);
 const avoidIf = entry.data.avoidIf;
 const buyingTiers = entry.data.buyingTiers;
+const categoryTerm = entry.data.category.toLowerCase();
+const vehicleLabel = entry.data.car_model;
 const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id];
 const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??
@@ -92,8 +94,8 @@ const beforeBuyingChecks = [
   {
     label: "Confirm the symptom",
     description: mainRelatedProblem
-      ? `If the car still has an unclear symptom, open ${mainRelatedProblem.title} before treating this ${entry.data.category.toLowerCase()} shortlist as the fix.`
-      : `Make sure the problem really points at ${entry.data.category.toLowerCase()} before replacing parts. Similar symptoms can come from adjacent systems.`
+      ? `If the car still has an unclear symptom, open ${mainRelatedProblem.title} before treating this ${categoryTerm} shortlist as the fix.`
+      : `Make sure the problem really points at ${categoryTerm} before replacing parts. Similar symptoms can come from adjacent systems.`
   },
   {
     label: "Check exact fitment",
@@ -111,7 +113,7 @@ const beforeBuyingChecks = [
 const overbuyingCards = [
   {
     title: "Do not upgrade to hide a diagnosis",
-    description: `A more expensive ${entry.data.category.toLowerCase()} choice will not fix a wrong diagnosis, worn neighboring part, or installation issue.`
+    description: `A more expensive ${categoryTerm} choice will not fix a wrong diagnosis, worn neighboring part, or installation issue.`
   },
   {
     title: "Match normal use first",
@@ -184,20 +186,20 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro="Compare the strongest options quickly, understand the tradeoffs, and choose the part that makes the most sense for your car."
+  intro={`Compare ${categoryTerm} options for ${vehicleLabel}, then choose around the symptom, fitment, and how the car is actually used.`}
   faqs={entry.data.faqs}
   image={socialImage}
   modifiedTime={entry.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary="Best-parts recommendations prioritize fitment confidence, normal daily use, and parts that make sense for real ownership instead of inflated spec-sheet hype."
+  editorialSummary={`${vehicleLabel} ${categoryTerm} picks are filtered for fitment confidence, daily-use value, and repairs that match the actual complaint.`}
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={entry.data.updatedAt ? `Reviewed ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
   editorialBadges={["Comparison guide", "Methodology applied", "Fitment notes checked"]}
 >
   <TrustBlock
     title="How these picks are chosen"
-    summary="These recommendations prioritize fitment confidence, predictable daily use, and brands with a solid aftermarket reputation. The goal is to help narrow the field quickly, not pad the page with parts that do the same job."
+    summary={`For ${vehicleLabel}, ${categoryTerm} recommendations are kept to options that match the common use case, have clear fitment paths, and avoid adding duplicate parts just to make the list longer.`}
     byline={`By ${editorialTeam.name}`}
     checkedLabel={entry.data.updatedAt ? `Checked ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
     points={bestMethodologyPoints}
@@ -205,7 +207,7 @@ const schemas = [
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
-  <Section id="decision-block" title="Quick decision" intro="Start with the shortlist logic before digging through the full comparison.">
+  <Section id="decision-block" title="Quick decision" intro={`Start with the ${vehicleLabel} use case and the ${categoryTerm} problem you are trying to solve.`}>
     <BestDecisionBlock
       quickVerdict={quickVerdict}
       bestFor={bestFor}
@@ -216,7 +218,7 @@ const schemas = [
     />
   </Section>
 
-  <Section id="before-you-buy" title="Before you buy" intro="Run these checks before moving from a shortlist to a cart. The priority is solving the right problem, not just picking a product.">
+  <Section id="before-you-buy" title="Before you buy" intro={`Confirm the symptom, the trim, and the part family before ordering ${categoryTerm} for ${vehicleLabel}.`}>
     <div class="grid gap-4 lg:grid-cols-3">
       {
         beforeBuyingChecks.map((item) => (
@@ -229,13 +231,13 @@ const schemas = [
     </div>
   </Section>
 
-  {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro="Confirm the vehicle-specific path before treating the product shortlist as the diagnosis." steps={vehicleQuality.decisionPath} />}
+  {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro={`Use the ${vehicleLabel} decision path before treating the shortlist as a confirmed repair.`} steps={vehicleQuality.decisionPath} />}
 
-  <Section id="comparison-table" title="Comparison table" intro="Start with the table if you want the fast version before digging into the details.">
+  <Section id="comparison-table" title="Comparison table" intro={`Use the table to compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
     <ComparisonTable products={entry.data.products} />
   </Section>
 
-  <Section id="product-cards" title="Product cards" intro="The cards below give a little more context on where each option makes sense.">
+  <Section id="product-cards" title="Shortlist details" intro={`Each option below is framed around where it makes sense on ${vehicleLabel}.`}>
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
       {entry.data.products.map((product) => <ProductCard product={product} />)}
     </div>
@@ -247,7 +249,7 @@ const schemas = [
     </ul>
   </Section>
 
-  <Section id="choose-without-overbuying" title="Choose without overbuying" intro="When several options look close, the most expensive one is not automatically the smartest choice.">
+  <Section id="choose-without-overbuying" title="Choose without overbuying" intro={`For ${categoryTerm}, the smartest choice is usually the part that matches the car's normal use and confirmed fault.`}>
     <div class="grid gap-4 lg:grid-cols-3">
       {
         overbuyingCards.map((item) => (
@@ -268,7 +270,7 @@ const schemas = [
       <Section
         id="fitment-notes"
         title="Fitment and model notes"
-        intro="Check these notes before ordering so the shortlist matches the trim, generation phase, and powertrain you actually have."
+        intro={`Check these notes before ordering so the ${categoryTerm} shortlist matches the trim, generation phase, and powertrain you actually have.`}
       >
         <FitmentNotes fitment={entry.data.fitment} />
       </Section>
@@ -278,7 +280,7 @@ const schemas = [
   <Section
     id="methodology"
     title="Methodology"
-    intro="The shortlist is built around parts that are easy to recommend to a normal owner, not just the most expensive or most aggressively marketed option."
+    intro={`The ${vehicleLabel} shortlist favors fitment clarity, normal ownership use, and brands that make sense for this repair area.`}
   >
     <ul class="space-y-3 text-sm leading-6 text-steel">
       {bestMethodologyPoints.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
@@ -287,13 +289,15 @@ const schemas = [
 
   <RelatedLinks
     title="Related cars"
-    intro="These vehicle pages help confirm fitment context, common issues, and the maintenance picture around the part."
+    intro={`Open these vehicle pages if the ${categoryTerm} choice depends on year, trim, or platform details.`}
     items={relatedCars}
+    imageLimit={0}
   />
 
   <RelatedLinks
     title="Related problem guides"
-    intro="These guides are useful if you are still confirming the symptom or trying to make sure you are solving the right problem."
+    intro={`Use these diagnostics if the symptom is not clearly solved by ${categoryTerm} yet.`}
     items={relatedProblems}
+    imageLimit={0}
   />
 </ContentLayout>

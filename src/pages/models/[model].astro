@@ -275,9 +275,9 @@ const shouldNoindex = !featuredGenerationGroups.some((group) => group.hasEditori
     </div>
 
     <div class="mt-8 space-y-8">
-      <RelatedLinks title="Flagship guides for this model" intro={`Use these if you want the bigger ${model} ownership picture before narrowing down to one specific symptom or part.`} items={linkedOwnershipGuides} />
-      <RelatedLinks title="Related problem guides" intro={`These checks cover symptoms that come up often on the listed ${model} years.`} items={linkedProblems} />
-      <RelatedLinks title="Related best-parts guides" intro={`These part comparisons help once the repair area is clear for this ${model}.`} items={linkedBest} />
+      <RelatedLinks title="Flagship guides for this model" intro={`Use these if you want the bigger ${model} ownership picture before narrowing down to one specific symptom or part.`} items={linkedOwnershipGuides} imageLimit={1} />
+      <RelatedLinks title="Related problem guides" intro={`These checks cover symptoms that come up often on the listed ${model} years.`} items={linkedProblems} imageLimit={0} />
+      <RelatedLinks title="Related best-parts guides" intro={`These part comparisons help once the repair area is clear for this ${model}.`} items={linkedBest} imageLimit={0} />
     </div>
   </div>
 </BaseLayout>

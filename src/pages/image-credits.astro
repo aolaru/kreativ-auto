@@ -17,6 +17,47 @@ import { imageCredits } from "../data/image-credits";
       </p>
     </div>
 
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Image handling</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">How visual assets are prepared</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-3">
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Source retained</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">
+            Each credited image keeps a source link, author name, license label, and license URL so the origin can be checked later.
+          </p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Web formats</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">
+            Public photos are resized, converted, and paired with thumbnails where needed so list pages do not load oversized source files.
+          </p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Corrections</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">
+            Image-credit corrections can be sent through the contact email with the page URL, image title, source, and the detail that should be changed.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">License notes</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Attribution and removal requests</h2>
+      <div class="mt-6 space-y-4 text-sm leading-6 text-steel">
+        <p>
+          Credited images may be cropped, resized, converted to WebP, or paired with a smaller thumbnail for page speed. The credit list keeps the local file path visible so each public image can be matched back to its source entry.
+        </p>
+        <p>
+          If an author, license holder, or source representative believes a credit is incomplete or an image should be removed, the contact page can be used to send the image title, source URL, and requested correction.
+        </p>
+        <p>
+          Some pages also use product or part images supplied by manufacturers, retailers, or brand media pages. Those are handled separately from the vehicle-photo credits below and should be reviewed against the linked product or manufacturer source when a correction is requested.
+        </p>
+      </div>
+    </section>
+
     <section class="mt-10 grid gap-6">
       {
         imageCredits.map((credit) => (

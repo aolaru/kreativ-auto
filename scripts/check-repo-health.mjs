@@ -90,6 +90,7 @@ const prohibitedLowValuePhrases = [
   "on the site"
 ];
 const requiredStaticFiles = [
+  "public/_headers",
   "public/ads.txt",
   "src/pages/about.astro",
   "src/pages/contact.astro",
@@ -223,6 +224,19 @@ if (fs.existsSync(baseLayoutPath)) {
   if (!baseLayout.includes("google-adsense-account") || !baseLayout.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js")) {
     problems.push("BaseLayout.astro is missing the AdSense account meta tag or AdSense script loader.");
   }
+  if (!baseLayout.includes('name="referrer"') || !baseLayout.includes("strict-origin-when-cross-origin")) {
+    problems.push("BaseLayout.astro is missing the strict referrer policy meta tag.");
+  }
+}
+
+const headersPath = path.join(cwd, "public", "_headers");
+if (fs.existsSync(headersPath)) {
+  const headers = fs.readFileSync(headersPath, "utf8");
+  for (const requiredHeader of ["X-Content-Type-Options", "X-Frame-Options", "Referrer-Policy", "Permissions-Policy", "Strict-Transport-Security"]) {
+    if (!headers.includes(requiredHeader)) {
+      problems.push(`public/_headers is missing ${requiredHeader}.`);
+    }
+  }
 }
 
 const footerPath = path.join(cwd, "src", "components", "Footer.astro");
@@ -255,6 +269,11 @@ if (fs.existsSync(distDir)) {
     const html = fs.readFileSync(filePath, "utf8");
     const hasAdsense = html.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
     const robots = html.match(/<meta name="robots" content="([^"]+)"/i)?.[1] ?? "";
+    const route = `/${path.relative(distDir, filePath).replace(/index\.html$/, "").replace(/\.html$/, "")}`;
+
+    if (/href=["'][^"']*\$\{[^"']*["']/i.test(html) || /href=["'][^"']*%7B/i.test(html)) {
+      problems.push(`${route} contains a raw template placeholder inside an href.`);
+    }
 
     if (!hasAdsense || !robots.includes("index")) continue;
 
@@ -269,7 +288,6 @@ if (fs.existsSync(distDir)) {
     const wordCount = visibleText ? visibleText.split(/\s+/).length : 0;
 
     if (wordCount < minimumAdsenseContentWords) {
-      const route = `/${path.relative(distDir, filePath).replace(/index\.html$/, "").replace(/\.html$/, "")}`;
       problems.push(
         `${route} has AdSense enabled with only ${wordCount} rendered words; keep ads off thin archive/navigation pages.`
       );
