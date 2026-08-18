@@ -36,6 +36,8 @@ const shouldExposeAdsenseAccount = !noindex && Boolean(adsenseClient);
 const shouldLoadAdsense =
   enableAds && shouldExposeAdsenseAccount && import.meta.env.PUBLIC_GOOGLE_ADSENSE_LOAD_SCRIPT === "true";
 const gaMeasurementId = "G-4NXQLN1J2R";
+const cloudflareAnalyticsToken = "0b8eb436f3d9413c9241f9ba54d11cec";
+const shouldLoadCloudflareAnalytics = !noindex && Boolean(cloudflareAnalyticsToken);
 const baseSchemas = [
   {
     "@context": "https://schema.org",
@@ -139,6 +141,16 @@ const schemaItems = [...baseSchemas, ...schemas];
             });
           </script>
         </>
+      )
+    }
+    {
+      shouldLoadCloudflareAnalytics && (
+        <script
+          is:inline
+          type="module"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon={JSON.stringify({ token: cloudflareAnalyticsToken })}
+        ></script>
       )
     }
   </head>
