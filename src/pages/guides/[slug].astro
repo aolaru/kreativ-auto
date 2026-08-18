@@ -6,6 +6,9 @@ import TrustBlock from "../../components/TrustBlock.astro";
 import { editorialTeam, carTrustPoints } from "../../data/editorial";
 import { deepOwnershipGuides } from "../../data/deep-ownership-guides";
 import { quickOwnershipGuides } from "../../data/quick-ownership-guides";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
+import { isReviewReadyGuide } from "../../data/review-readiness";
 
 export function getStaticPaths() {
   return [
@@ -30,6 +33,10 @@ if (!currentGuide) {
 }
 
 const modifiedTime = deepGuide ? new Date(deepGuide.modifiedTime) : undefined;
+const guideQuality = deepGuide
+  ? rav4GuideQuality[deepGuide.slug] ?? hondaCivicGuideQuality[deepGuide.slug]
+  : undefined;
+const reviewReady = Boolean(deepGuide && guideQuality && isReviewReadyGuide(deepGuide.slug));
 const primaryBestFor = quickGuide?.bestFor[0] ?? "the intended ownership use case";
 const primaryAvoidIf = quickGuide?.avoidIf[0] ?? "the inspection shows repeated warning signs";
 const primaryRedFlag = quickGuide?.redFlags[0] ?? "the seller cannot explain recent maintenance or the first-check item";
@@ -137,6 +144,8 @@ const reviewedLabel = modifiedTime
       editorialSummary="Practical buyer and owner decisions come first: symptoms to respect, first checks to run, and the repair areas worth checking next."
       editorialByline={`By ${editorialTeam.name}`}
       editorialBadges={["Ownership guide", "Buyer checks", "Related repairs"]}
+      enableAds={false}
+      noindex={true}
     >
       <TrustBlock
         summary="Start with the model's practical ownership fit, then narrow the decision with the symptom and parts checks that matter next."
@@ -245,6 +254,8 @@ const reviewedLabel = modifiedTime
       editorialByline={`By ${editorialTeam.name}`}
       editorialReviewedLabel={reviewedLabel}
       editorialBadges={deepGuide.badges}
+      enableAds={reviewReady}
+      noindex={!reviewReady}
     >
       <TrustBlock
         title="Best starting point"

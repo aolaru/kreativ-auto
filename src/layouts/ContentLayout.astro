@@ -3,6 +3,8 @@ import BaseLayout from "./BaseLayout.astro";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import FAQBlock from "../components/FAQBlock.astro";
 import EditorialHeader from "../components/EditorialHeader.astro";
+import ArticleReviewEvidence from "../components/ArticleReviewEvidence.astro";
+import { isReviewReadyComparison, isReviewReadyGuide } from "../data/review-readiness";
 
 interface FAQItem {
   question: string;
@@ -47,9 +49,18 @@ const {
   editorialReviewedLabel,
   editorialBadges = []
 } = Astro.props;
+
+const pathParts = Astro.url.pathname.split("/").filter(Boolean);
+const articleSection = pathParts[0];
+const articleSlug = pathParts[1];
+const hasReviewRestriction =
+  (articleSection === "guides" && Boolean(articleSlug) && !isReviewReadyGuide(articleSlug)) ||
+  (articleSection === "comparisons" && Boolean(articleSlug) && !isReviewReadyComparison(articleSlug));
+const resolvedNoindex = noindex || hasReviewRestriction;
+const resolvedEnableAds = enableAds && !resolvedNoindex;
 ---
 
-<BaseLayout title={title} description={description} image={image} modifiedTime={modifiedTime} schemas={schemas} enableAds={enableAds} noindex={noindex}>
+<BaseLayout title={title} description={description} image={image} modifiedTime={modifiedTime} schemas={schemas} enableAds={resolvedEnableAds} noindex={resolvedNoindex}>
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
     <div class="surface hero-frame overflow-hidden p-8 sm:p-10">
@@ -98,6 +109,7 @@ const {
     </div>
 
     <div class="mt-10 space-y-8">
+      <ArticleReviewEvidence />
       <slot />
       <FAQBlock items={faqs} />
     </div>

@@ -13,6 +13,7 @@ import { comparisonGuides } from "../../data/comparison-guides";
 import { ownershipGuides } from "../../data/ownership-guides";
 import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
+import { isReviewReadyCar } from "../../data/review-readiness";
 import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, slugify, uniqueByHref } from "../../utils/taxonomy";
 import { guideMatchesCar } from "../../utils/relationships";
 
@@ -202,6 +203,7 @@ const civicQuality = car.id === "honda-civic-2019"
   ? hondaCivicGuideQuality["honda-civic-10th-gen-facelift-common-problems"]
   : undefined;
 const vehicleQuality = rav4Quality ?? civicQuality;
+const reviewReady = isReviewReadyCar(car.id) && Boolean(vehicleQuality);
 const carTrustPointsForPage = [
   car.data.commonProblems[0]
     ? `${car.data.title} coverage starts with ${car.data.commonProblems[0].toLowerCase()}.`
@@ -256,7 +258,8 @@ const schemas = [
   modifiedTime={car.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  enableAds={carAdsEnabled}
+  enableAds={reviewReady && carAdsEnabled}
+  noindex={!reviewReady}
 >
   <TrustBlock
     summary={`${car.data.title} is tied to its common issues, matching parts, and the generation notes that change the answer.`}

@@ -207,6 +207,8 @@ const schemas = [
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={entry.data.updatedAt ? `Reviewed ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
   editorialBadges={["Comparison guide", "Methodology applied", "Fitment notes checked"]}
+  enableAds={false}
+  noindex={true}
 >
   <TrustBlock
     title="How these picks are chosen"

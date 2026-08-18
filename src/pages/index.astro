@@ -4,6 +4,7 @@ import CardIcon from "../components/CardIcon.astro";
 import { comparisonGuides } from "../data/comparison-guides";
 import { ownershipGuides } from "../data/ownership-guides";
 import { ownershipTasks } from "../data/ownership-tasks";
+import { isReviewReadyBest, isReviewReadyProblem, reviewReadyCarIds } from "../data/review-readiness";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { toThumbnail } from "../utils/images";
 
@@ -13,16 +14,19 @@ const [cars, problems, bestPages] = await Promise.all([
   getCollection("best")
 ]);
 
-const newestProblems = [...problems].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
-const newestBest = [...bestPages].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
+const reviewedCars = cars.filter((car) => reviewReadyCarIds.has(car.id));
+const reviewedProblems = problems.filter((problem) => isReviewReadyProblem(problem.id));
+const reviewedBest = bestPages.filter((entry) => isReviewReadyBest(entry.id));
+const newestProblems = [...reviewedProblems].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
+const newestBest = [...reviewedBest].sort((a, b) => (b.data.updatedAt?.getTime() ?? 0) - (a.data.updatedAt?.getTime() ?? 0));
 
 const featuredVehicles = [
   {
-    eyebrow: "Best first stop",
-    title: "VW Tiguan II facelift",
-    description: "Common problems, weak points, service intervals, buying advice, comparisons, and part checks for the facelift-era Tiguan.",
-    href: "/guides/vw-tiguan-ii-facelift-common-problems/",
-    image: "/images/photos/cars/vw-tiguan-2020.webp"
+    eyebrow: "Used SUV choice",
+    title: "RAV4 hybrid vs gas",
+    description: "The hybrid-versus-gas split matters when powertrain choice changes maintenance questions, brake feel, and ownership fit.",
+    href: "/comparisons/toyota-rav4-hybrid-vs-gas/",
+    image: "/images/photos/cars/toyota-rav4-2021.webp"
   },
   {
     eyebrow: "Hybrid and gas context",
@@ -87,16 +91,16 @@ const comparisonCards = comparisonGuides.slice(0, 3);
           </p>
         </div>
         <div class="grid gap-4 sm:grid-cols-3">
-          <a class="stat-tile stat-link block" href="/cars/" aria-label={`Browse ${cars.length} cars`} data-ka-event="homepage_stat_click" data-ka-label="Cars" data-ka-section="hero_stats">
-            <p class="text-2xl font-semibold text-ink">{cars.length}</p>
+          <a class="stat-tile stat-link block" href="/cars/" aria-label={`Browse ${reviewedCars.length} reviewed cars`} data-ka-event="homepage_stat_click" data-ka-label="Cars" data-ka-section="hero_stats">
+            <p class="text-2xl font-semibold text-ink">{reviewedCars.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Cars</p>
           </a>
-          <a class="stat-tile stat-link block" href="/problems/" aria-label={`Browse ${problems.length} problem guides`} data-ka-event="homepage_stat_click" data-ka-label="Problems" data-ka-section="hero_stats">
-            <p class="text-2xl font-semibold text-ink">{problems.length}</p>
+          <a class="stat-tile stat-link block" href="/problems/" aria-label={`Browse ${reviewedProblems.length} reviewed problem guides`} data-ka-event="homepage_stat_click" data-ka-label="Problems" data-ka-section="hero_stats">
+            <p class="text-2xl font-semibold text-ink">{reviewedProblems.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Problems</p>
           </a>
-          <a class="stat-tile stat-link block" href="/best/" aria-label={`Browse ${bestPages.length} parts guides`} data-ka-event="homepage_stat_click" data-ka-label="Parts guides" data-ka-section="hero_stats">
-            <p class="text-2xl font-semibold text-ink">{bestPages.length}</p>
+          <a class="stat-tile stat-link block" href="/best/" aria-label={`Browse ${reviewedBest.length} reviewed parts guides`} data-ka-event="homepage_stat_click" data-ka-label="Parts guides" data-ka-section="hero_stats">
+            <p class="text-2xl font-semibold text-ink">{reviewedBest.length}</p>
             <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Parts guides</p>
           </a>
         </div>

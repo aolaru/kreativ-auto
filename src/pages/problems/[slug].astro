@@ -12,6 +12,7 @@ import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam } from "../../data/editorial";
 import { hondaCivicProblemQuality } from "../../data/honda-civic-quality";
 import { rav4ProblemQuality } from "../../data/toyota-rav4-quality";
+import { isReviewReadyProblem } from "../../data/review-readiness";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 
 export async function getStaticPaths() {
@@ -109,6 +110,7 @@ const triageConfusedWith = problem.data.confusedWith;
 const triageStopDrivingIf =
   problem.data.stopDrivingIf.length > 0 ? problem.data.stopDrivingIf : problem.data.whenToSeeMechanic.slice(0, 2);
 const vehicleQuality = rav4ProblemQuality[problem.id] ?? hondaCivicProblemQuality[problem.id];
+const reviewReady = isReviewReadyProblem(problem.id) && Boolean(vehicleQuality);
 const primaryCause = problem.data.causes[0];
 const primaryRelatedPart = relatedBest[0]?.eyebrow ?? relatedBest[0]?.title;
 const problemTrustPointsForPage = [
@@ -171,6 +173,8 @@ const schemas = [
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={problem.data.updatedAt ? `Reviewed ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
   editorialBadges={["Problem guide", "Fitment notes checked", "Parts links reviewed"]}
+  enableAds={reviewReady}
+  noindex={!reviewReady}
 >
   <TrustBlock
     summary={`${problem.data.title} is reviewed as a diagnosis path first and a parts decision second.`}

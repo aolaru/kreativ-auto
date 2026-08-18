@@ -1,0 +1,35 @@
+---
+import DecisionPathBlock from "./DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "./EvidenceLimitsBlock.astro";
+import { hondaCivicGuideQuality } from "../data/honda-civic-quality";
+import { rav4GuideQuality } from "../data/toyota-rav4-quality";
+
+const pathParts = Astro.url.pathname.split("/").filter(Boolean);
+const section = pathParts[0];
+const slug = pathParts[1];
+
+const guideQuality = section === "guides" && slug
+  ? rav4GuideQuality[slug] ?? hondaCivicGuideQuality[slug]
+  : undefined;
+const comparisonQuality = section === "comparisons"
+  ? slug === "toyota-rav4-hybrid-vs-gas"
+    ? rav4GuideQuality["toyota-rav4-xa50-should-you-buy-it-used"]
+    : slug === "honda-civic-1-5t-vs-2-0"
+      ? hondaCivicGuideQuality["honda-civic-10th-gen-facelift-trims-and-engines-which-one-to-buy"]
+      : undefined
+  : undefined;
+const quality = guideQuality ?? comparisonQuality;
+---
+
+{
+  quality && (
+    <>
+      <EvidenceLimitsBlock {...quality.evidence} />
+      <DecisionPathBlock
+        title="Decision path"
+        intro="Work through the checks in order before pricing repairs, choosing a part, or treating a reputation as the answer."
+        steps={quality.decisionPath}
+      />
+    </>
+  )
+}
