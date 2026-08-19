@@ -12,9 +12,10 @@ interface Product {
 
 interface Props {
   product: Product;
+  showPrice?: boolean;
 }
 
-const { product } = Astro.props;
+const { product, showPrice = true } = Astro.props;
 const productUrl = withAffiliateTag(product.affiliate_url);
 ---
 
@@ -45,7 +46,9 @@ const productUrl = withAffiliateTag(product.affiliate_url);
   </div>
 
   <div class="mt-6 flex items-center justify-between gap-4 border-t border-slate-200 pt-4">
-    <p class="text-base font-semibold text-ink">{product.price}</p>
+    <p class="text-base font-semibold text-ink">
+      {showPrice ? product.price : "Check current retailer price"}
+    </p>
     <a
       class="rounded-full bg-ink px-4 py-2 text-sm font-semibold text-white transition hover:bg-accent"
       href={productUrl}

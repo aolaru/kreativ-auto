@@ -11,9 +11,10 @@ interface Product {
 
 interface Props {
   products: Product[];
+  showPrice?: boolean;
 }
 
-const { products } = Astro.props;
+const { products, showPrice = true } = Astro.props;
 ---
 
 <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
@@ -22,7 +23,7 @@ const { products } = Astro.props;
       <thead class="bg-slate-50 text-steel">
         <tr>
           <th class="px-4 py-4 font-semibold">Product</th>
-          <th class="px-4 py-4 font-semibold">Price</th>
+          <th class="px-4 py-4 font-semibold">Price status</th>
           <th class="px-4 py-4 font-semibold">Rating</th>
           <th class="px-4 py-4 font-semibold">Why it stands out</th>
           <th class="px-4 py-4 font-semibold">Link</th>
@@ -33,7 +34,9 @@ const { products } = Astro.props;
           products.map((product) => (
             <tr class="align-top">
               <td class="px-4 py-4 font-semibold text-ink">{product.name}</td>
-              <td class="px-4 py-4 text-steel">{product.price}</td>
+              <td class="px-4 py-4 text-steel">
+                {showPrice ? product.price : "Check current retailer price"}
+              </td>
               <td class="px-4 py-4 text-steel">{product.rating.toFixed(1)} / 5</td>
               <td class="px-4 py-4 text-steel">{product.summary ?? "Balanced value and fitment confidence."}</td>
               <td class="px-4 py-4">

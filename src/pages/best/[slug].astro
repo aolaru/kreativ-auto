@@ -84,6 +84,7 @@ const buyingTiers = entry.data.buyingTiers;
 const categoryTerm = entry.data.category.toLowerCase();
 const vehicleLabel = entry.data.car_model;
 const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id];
+const priceIsVerified = Boolean(entry.data.pricingCheckedAt);
 const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??
   entry.data.fitment.phaseDifferences[0] ??
@@ -167,8 +168,12 @@ const schemas = [
         offers: {
           "@type": "Offer",
           url: withAffiliateTag(product.affiliate_url),
-          priceCurrency: "USD",
-          price: product.price.replace(/[^0-9.]/g, "")
+          ...(priceIsVerified
+            ? {
+                priceCurrency: "USD",
+                price: product.price.replace(/[^0-9.]/g, "")
+              }
+            : {})
         }
       }
     })),
@@ -220,6 +225,46 @@ const schemas = [
 
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
+  <Section
+    id="research-notes"
+    title="Research and price status"
+    intro="Fitment and source material come before price. Retailer prices stay hidden until a dated verification is recorded."
+  >
+    <div class="grid gap-4 lg:grid-cols-3">
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <p class="eyebrow">Price status</p>
+        <p class="mt-3 text-sm leading-6 text-steel">
+          {priceIsVerified && entry.data.pricingCheckedAt
+            ? `Prices checked ${entry.data.pricingCheckedAt.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" })}.`
+            : "No current price verification is recorded. Check the retailer directly before treating a listed product as a budget estimate."}
+        </p>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <p class="eyebrow">Selection criteria</p>
+        <ul class="mt-3 space-y-2 text-sm leading-6 text-steel">
+          {(entry.data.selectionCriteria.length > 0 ? entry.data.selectionCriteria : methodologyPointsForPage).map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+      <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+        <p class="eyebrow">Alternatives</p>
+        <ul class="mt-3 space-y-2 text-sm leading-6 text-steel">
+          {(entry.data.alternatives.length > 0 ? entry.data.alternatives : ["Compare the exact OEM specification with at least one equivalent from a catalog that supports your VIN or engine code."]).map((item) => <li>{item}</li>)}
+        </ul>
+      </div>
+    </div>
+    {
+      entry.data.sourceLinks.length > 0 && (
+        <div class="mt-5 flex flex-wrap gap-3">
+          {entry.data.sourceLinks.map((source) => (
+            <a class="rounded-full border border-slate-300 bg-white px-4 py-2 text-xs font-semibold uppercase tracking-[0.16em] text-steel transition hover:border-accent hover:text-accent" href={source.href} rel="nofollow noopener" target="_blank">
+              {source.label}
+            </a>
+          ))}
+        </div>
+      )
+    }
+  </Section>
+
   <Section id="decision-block" title={`${entry.data.category} shortlist`} intro={`Start with the ${vehicleLabel} use case and the ${categoryTerm} problem you are trying to solve.`}>
     <BestDecisionBlock
       quickVerdict={quickVerdict}
@@ -228,6 +273,7 @@ const schemas = [
       buyingTiers={buyingTiers}
       products={entry.data.products}
       fitmentCaveat={fitmentCaveat}
+      showPrice={priceIsVerified}
     />
   </Section>
 
@@ -247,12 +293,12 @@ const schemas = [
   {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro={`Use the ${vehicleLabel} decision path before treating the shortlist as a confirmed repair.`} steps={vehicleQuality.decisionPath} />}
 
   <Section id="comparison-table" title={`${entry.data.category} comparison`} intro={`Compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
-    <ComparisonTable products={entry.data.products} />
+    <ComparisonTable products={entry.data.products} showPrice={priceIsVerified} />
   </Section>
 
   <Section id="product-cards" title="Shortlist details" intro={`Each option below is framed around where it makes sense on ${vehicleLabel}.`}>
     <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {entry.data.products.map((product) => <ProductCard product={product} />)}
+      {entry.data.products.map((product) => <ProductCard product={product} showPrice={priceIsVerified} />)}
     </div>
   </Section>
 

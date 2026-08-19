@@ -18,46 +18,61 @@ products:
     price: "$58"
     rating: 4.8
     affiliate_url: https://www.procivic.com/p/ym/2019/civic/ngk-iridium-spark-plugs-set.html
-    summary: Best overall choice for long service life, stable spark, and factory-style drivability.
+    summary: Check the exact NGK catalog part number against the confirmed Civic engine before treating it as a match.
     image: /images/photos/parts/ngk-spark-plugs.webp
   - name: Denso Iridium TT Spark Plugs
     price: "$52"
     rating: 4.7
     affiliate_url: https://www.densoautoparts.com/es/iridium-tt-es/
-    summary: Strong alternative if you want a trusted brand with crisp startup and good everyday value.
+    summary: Consider only after the Denso catalog confirms the exact engine specification and part number.
     image: /images/photos/parts/ngk-spark-plugs.webp
   - name: Bosch Double Iridium Spark Plugs
     price: "$49"
     rating: 4.5
     affiliate_url: https://www.boschautoparts.com/double-iridium-spark-plugs
-    summary: Good mid-range plug set for drivers refreshing overdue maintenance without overspending.
+    summary: Consider only after the Bosch catalog confirms the exact engine specification and part number.
     image: /images/photos/parts/ngk-spark-plugs.webp
 buyingAdvice:
-  - If cold starts and idle quality are slipping, plugs are one of the first maintenance items to verify.
-  - Stick with iridium plugs on the Civic unless you have a very specific reason to step down in material.
-  - Confirm engine and trim fitment before ordering because plug specs can vary.
-quickVerdict: On a Civic with rough starts or idle misfire complaints, the best plug is usually the one with boringly correct fitment and long-term stability, not the cheapest box in the cart.
+  - Read the Honda maintenance minder first, then use the engine code, VIN, or original plug specification to confirm the exact replacement.
+  - Treat any plug brand name as a starting point, not a fitment verdict; the 1.5T, 2.0, Si, and Type R do not share one universal listing.
+  - If a misfire code, coil fault, or mechanical symptom remains, diagnose it before expecting plugs to solve it.
+selectionCriteria:
+  - Exact engine and ignition-system compatibility confirmed through a Honda or manufacturer catalog.
+  - Correct heat range, gap specification, thread reach, and terminal style for the individual engine.
+  - A published manufacturer specification and a retailer with clear return and fitment support.
+alternatives:
+  - Start with the Honda-specified plug or an equivalent that the plug manufacturer lists for the exact engine.
+  - Compare NGK and Denso catalog listings after the engine and original specification are confirmed.
+  - Do not select a plug by price, brand reputation, or a generic "2019 Civic" listing alone.
+sourceLinks:
+  - label: Honda 2019 Civic maintenance minder
+    href: https://owners.honda.com/utility/download?path=%2Fstatic%2Fpdfs%2F2019%2FCivic%2BSedan%2F2019_Civic_4D_Maintenance_Minder.pdf
+  - label: Honda owners manuals and guides
+    href: https://owners.honda.com/vehicle-information/information/2019/Civic-Sedan/manuals
+  - label: NHTSA recall search
+    href: https://www.nhtsa.gov/recalls
+quickVerdict: For a 2019 Civic, the correct plug is the one that matches the confirmed engine specification and maintenance record. A brand name or a generic year-model listing is not enough.
 bestFor:
-  - Owners cleaning up rough cold starts, mild hesitation, or overdue ignition maintenance on a daily-driven Civic.
-  - Drivers who want factory-like drivability and a plug interval that does not turn into repeat diagnosis.
+  - Owners who have confirmed the engine, service need, and plug specification for a daily-driven Civic.
+  - Drivers comparing exact-fit replacements rather than buying from a year-and-model-only listing.
 avoidIf:
-  - You have not confirmed whether the car is a 2.0, 1.5T, Si, or another brake-package-style parts split that also affects plug listings.
-  - You are replacing plugs while ignoring obvious coil weakness or stored misfire data.
+  - You have not confirmed whether the car is a 2.0, 1.5T, Si, or Type R, or you cannot verify the original plug specification.
+  - You are replacing plugs while ignoring a coil fault, stored misfire data, or another unresolved drivability symptom.
 buyingTiers:
   - label: "Best overall"
     product: "NGK Laser Iridium Spark Plugs"
-    reason: "Best overall choice for long service life, stable spark, and factory-style drivability."
+    reason: "A brand path to check after confirming an NGK part number for the exact Civic engine."
   - label: "Best value"
     product: "Bosch Double Iridium Spark Plugs"
-    reason: "Good mid-range plug set for drivers refreshing overdue maintenance without overspending."
+    reason: "An alternative only when the manufacturer catalog confirms the exact part number and specification."
   - label: "Best alternative"
     product: "Denso Iridium TT Spark Plugs"
-    reason: "Strong alternative if you want a trusted brand with crisp startup and good everyday value."
+    reason: "Another catalog-led option once engine, heat range, and gap specification are confirmed."
 faqs:
   - question: Which spark plugs are best for a 2019 Honda Civic?
-    answer: A high-quality iridium plug from NGK or Denso is usually the safest choice for long life and factory-like drivability.
+    answer: The best choice is the plug specified for the confirmed engine. Honda maintenance material and the plug manufacturer catalog should be checked before choosing an NGK, Denso, or other equivalent.
   - question: Can old spark plugs cause hesitation and rough cold starts?
-    answer: Yes. Worn plugs are one of the most common reasons a Civic starts feeling uneven at startup or under light acceleration.
+    answer: Worn or incorrect plugs can contribute to these symptoms, but stored codes, coils, air leaks, and fuel or mechanical issues can produce similar behavior. Confirm the cause before ordering parts.
 ---
 
-Spark plugs are not the exciting part of the repair, but they are often the part that makes the whole car feel normal again. On a Civic like this, that matters more than people think.
+Spark plugs are a specification-driven maintenance item, not a generic 2019 Civic accessory. Verify the engine, the original part specification, and the maintenance reason before buying. This noindex comparison does not publish a current price until a dated retailer check is recorded.

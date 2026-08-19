@@ -25,16 +25,16 @@ export interface QualityEnhancement {
 
 const rav4SourceLinks: SourceLink[] = [
   {
-    label: "Toyota 2021 manuals",
-    href: "https://www.toyota.com/owners/warranty-owners-manuals/vehicle/rav4/2021/"
+    label: "Toyota 2021 RAV4 warranty and maintenance guide",
+    href: "https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-21RAV4/pdf/T-MMS-21RAV4.pdf"
   },
   {
-    label: "NHTSA 2021 recalls API",
-    href: "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Toyota&model=RAV4&modelYear=2021"
+    label: "Toyota 2021 RAV4 manuals",
+    href: "https://www.toyota.com/owners/warranty-owners-manuals/digital/article/rav4/2021/om0r030u/in02se06/"
   },
   {
-    label: "NHTSA 2020 recalls API",
-    href: "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Toyota&model=RAV4&modelYear=2020"
+    label: "NHTSA RAV4 recall lookup",
+    href: "https://www.nhtsa.gov/recalls"
   }
 ];
 

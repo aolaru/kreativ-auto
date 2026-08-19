@@ -390,6 +390,25 @@ if (fs.existsSync(ownershipGuidesPath) && fs.existsSync(guidesDir)) {
   }
 }
 
+for (const [relativePath, requiredMarkers] of Object.entries({
+  "src/data/toyota-rav4-quality.ts": ["RAV4 warranty and maintenance guide", "NHTSA RAV4 recall lookup"],
+  "src/data/honda-civic-quality.ts": ["Civic maintenance minder", "NHTSA Civic recall lookup"],
+  "src/pages/best/[slug].astro": ["noindex={true}", "enableAds={false}", "pricingCheckedAt"]
+})) {
+  const filePath = path.join(cwd, relativePath);
+  if (!fs.existsSync(filePath)) {
+    problems.push(`Required content-quality file is missing: ${relativePath}`);
+    continue;
+  }
+
+  const source = fs.readFileSync(filePath, "utf8");
+  for (const marker of requiredMarkers) {
+    if (!source.includes(marker)) {
+      problems.push(`${relativePath} is missing required content-quality marker: ${marker}`);
+    }
+  }
+}
+
 if (problems.length) {
   console.error(problems.join("\n"));
   process.exit(1);

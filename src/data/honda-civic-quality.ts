@@ -25,16 +25,16 @@ export interface QualityEnhancement {
 
 const civicSourceLinks: SourceLink[] = [
   {
-    label: "Honda maintenance minder",
+    label: "Honda 2019 Civic maintenance minder",
     href: "https://owners.honda.com/utility/download?path=%2Fstatic%2Fpdfs%2F2019%2FCivic+Sedan%2F2019_Civic_4D_Maintenance_Minder.pdf"
   },
   {
-    label: "Honda warranty guide",
-    href: "https://owners.honda.com/Documentum/Warranty/Handbooks/2019_Honda_Warranty_Basebook_AWL07531_Petrol_Hybrid_PHEV__SIS.pdf"
+    label: "Honda 2019 Civic owners manuals and guides",
+    href: "https://owners.honda.com/vehicle-information/information/2019/Civic-Sedan/manuals"
   },
   {
-    label: "NHTSA 2019 recalls API",
-    href: "https://api.nhtsa.gov/recalls/recallsByVehicle?make=Honda&model=Civic&modelYear=2019"
+    label: "NHTSA Civic recall lookup",
+    href: "https://www.nhtsa.gov/recalls"
   }
 ];
 

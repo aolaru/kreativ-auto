@@ -16,6 +16,11 @@ const buyingTierSchema = z.object({
   reason: z.string()
 });
 
+const sourceLinkSchema = z.object({
+  label: z.string(),
+  href: z.string().url()
+});
+
 const seoFields = {
   metaTitle: z.string().optional(),
   metaDescription: z.string().optional(),
@@ -117,6 +122,10 @@ const best = defineCollection({
     avoidIf: z.array(z.string()).default([]),
     buyingTiers: z.array(buyingTierSchema).default([]),
     buyingAdvice: z.array(z.string()).default([]),
+    selectionCriteria: z.array(z.string()).default([]),
+    alternatives: z.array(z.string()).default([]),
+    sourceLinks: z.array(sourceLinkSchema).default([]),
+    pricingCheckedAt: z.coerce.date().optional(),
     faqs: z
       .array(
         z.object({
