@@ -27,7 +27,8 @@ const {
   modifiedTime,
   schemas = []
 } = Astro.props;
-const resolvedCanonical = canonical ? new URL(canonical, Astro.site).toString() : Astro.url.href;
+// Canonicals must stay on the configured HTTPS origin, regardless of the request URL.
+const resolvedCanonical = new URL(canonical ?? Astro.url.pathname, Astro.site).toString();
 const pageTitle = `${title} | Kreativ Auto`;
 const searchConsoleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 const rawAdsenseClient = import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT ?? "ca-pub-4706844277814411";
@@ -151,14 +152,27 @@ const schemaItems = [...baseSchemas, ...schemas];
 
             document.addEventListener("click", (event) => {
               const target = event.target instanceof Element ? event.target.closest("[data-ka-event]") : null;
-              if (!target) return;
+              const mailtoLink = event.target instanceof Element ? event.target.closest("a[href^='mailto:']") : null;
+
+              if (!target) {
+                if (mailtoLink) {
+                  window.kaTrackEvent("contact_click", {
+                    event_label: "email",
+                    section: "contact"
+                  });
+                }
+                return;
+              }
+
               const eventName = target.getAttribute("data-ka-event");
               if (!eventName) return;
 
               window.kaTrackEvent(eventName, {
                 event_label: target.getAttribute("data-ka-label") || target.textContent?.trim() || undefined,
                 link_url: target.getAttribute("href") || undefined,
-                section: target.getAttribute("data-ka-section") || undefined
+                section: target.getAttribute("data-ka-section") || undefined,
+                result_position: Number(target.getAttribute("data-ka-result-position")) || undefined,
+                result_type: target.getAttribute("data-ka-result-type") || undefined
               });
             });
           </script>

@@ -1,4 +1,4 @@
-import { buildSearchIndex } from "../utils/search-index";
+import { buildSearchIndex } from "../../utils/search-index";
 
 export async function GET() {
   return new Response(JSON.stringify(await buildSearchIndex()), {

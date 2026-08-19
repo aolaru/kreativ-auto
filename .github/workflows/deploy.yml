@@ -42,6 +42,9 @@ jobs:
           PUBLIC_GOOGLE_ADSENSE_LOAD_SCRIPT: "false"
         run: npm run build
 
+      - name: Run repository health checks
+        run: npm run repo:health
+
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

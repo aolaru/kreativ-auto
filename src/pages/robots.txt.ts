@@ -1,6 +1,8 @@
 export function GET() {
   const body = `User-agent: *
 Allow: /
+Disallow: /internal/
+Disallow: /search-index.json
 
 Sitemap: https://kreativauto.com/sitemap.xml
 `;

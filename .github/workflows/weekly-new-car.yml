@@ -1,8 +1,6 @@
 name: Weekly cluster draft
 
 on:
-  schedule:
-    - cron: "15 6 * * 1"
   workflow_dispatch:
 
 permissions:

@@ -115,13 +115,14 @@ const navItems = primaryOwnershipTasks.map((task) => ({
     let activeIndex = -1;
     let searchStartTracked = false;
     let lastNoResultQuery = "";
+    let lastResultsSignature = "";
 
     const loadSearchIndex = () => {
       if (entries.length) return Promise.resolve(entries);
 
       searchIndexPromise =
         searchIndexPromise ||
-        fetch("/search-index.json", { headers: { accept: "application/json" } })
+        fetch("/internal/search.json", { headers: { accept: "application/json" } })
           .then((response) => (response.ok ? response.json() : []))
           .then((items) => {
             entries = Array.isArray(items) ? items : [];
@@ -209,6 +210,8 @@ const navItems = primaryOwnershipTasks.map((task) => ({
         link.dataset.kaEvent = "search_result_click";
         link.dataset.kaLabel = match.title;
         link.dataset.kaSection = "header_search";
+        link.dataset.kaResultPosition = `${index + 1}`;
+        link.dataset.kaResultType = match.type;
 
         type.className = "header-search-type";
         type.textContent = match.type;
@@ -253,6 +256,16 @@ const navItems = primaryOwnershipTasks.map((task) => ({
         });
       }
       if (matches.length) lastNoResultQuery = "";
+      const resultsSignature = `${value.length}:${matches.length}`;
+      if (matches.length && resultsSignature !== lastResultsSignature) {
+        lastResultsSignature = resultsSignature;
+        window.kaTrackEvent?.("search_results_view", {
+          event_label: `${matches.length} results`,
+          query_length: value.length,
+          result_count: matches.length,
+          section: "header_search"
+        });
+      }
       renderResults(matches);
       searchResults.hidden = false;
       searchRoot.classList.add("is-open");

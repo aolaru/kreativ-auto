@@ -5,7 +5,10 @@ const combineKeys = (...records: Array<Record<string, unknown>>) => new Set(reco
 
 // Only pages with vehicle-specific evidence and a decision path are submitted for search and ad review.
 export const reviewReadyGuideIds = combineKeys(rav4GuideQuality, hondaCivicGuideQuality);
-export const reviewReadyProblemIds = combineKeys(rav4ProblemQuality, hondaCivicProblemQuality);
+// Reusable symptom pages can support readers, but they are not a substitute for
+// vehicle-specific research. Keep them out of search until each has dedicated
+// model scope and evidence rather than inheriting a cluster's evidence record.
+export const reviewReadyProblemIds = new Set<string>();
 export const reviewReadyBestIds = combineKeys(rav4BestQuality, hondaCivicBestQuality);
 export const reviewReadyCarIds = new Set(["toyota-rav4-2020", "toyota-rav4-2021", "honda-civic-2019"]);
 export const reviewReadyComparisonIds = new Set(["honda-civic-1-5t-vs-2-0", "toyota-rav4-hybrid-vs-gas"]);

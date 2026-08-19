@@ -8,6 +8,8 @@ const imageRefPattern = /\/images\/[A-Za-z0-9_./-]+\.(?:png|jpe?g|webp|svg)/g;
 const problems = [];
 const checkedImages = new Set();
 const minimumAdsenseContentWords = 900;
+const minimumIndexableArticleWords = 1000;
+const siteOrigin = "https://kreativauto.com";
 const lowValueContentRoots = [
   path.join(cwd, "src", "content"),
   path.join(cwd, "src", "pages"),
@@ -91,6 +93,7 @@ const prohibitedLowValuePhrases = [
   "internal cross-check"
 ];
 const requiredStaticFiles = [
+  "public/CNAME",
   "public/_headers",
   "public/ads.txt",
   "src/pages/about.astro",
@@ -203,6 +206,11 @@ for (const relativePath of requiredStaticFiles) {
   }
 }
 
+const cnamePath = path.join(cwd, "public", "CNAME");
+if (fs.existsSync(cnamePath) && fs.readFileSync(cnamePath, "utf8").trim() !== "kreativauto.com") {
+  problems.push("public/CNAME must contain only kreativauto.com.");
+}
+
 for (const imageRoot of optimizedPublicImageRoots) {
   if (!fs.existsSync(imageRoot)) continue;
   walk(imageRoot, (filePath) => {
@@ -272,12 +280,13 @@ if (fs.existsSync(distDir)) {
     const hasAdsense = html.includes("pagead2.googlesyndication.com/pagead/js/adsbygoogle.js");
     const robots = html.match(/<meta name="robots" content="([^"]+)"/i)?.[1] ?? "";
     const route = `/${path.relative(distDir, filePath).replace(/index\.html$/, "").replace(/\.html$/, "")}`;
+    const isIndexable = robots.includes("index") && !robots.includes("noindex");
+    const canonical = html.match(/<link rel="canonical" href="([^"]+)"/i)?.[1];
+    const expectedCanonical = new URL(route, siteOrigin).toString();
 
     if (/href=["'][^"']*\$\{[^"']*["']/i.test(html) || /href=["'][^"']*%7B/i.test(html)) {
       problems.push(`${route} contains a raw template placeholder inside an href.`);
     }
-
-    if (!hasAdsense || !robots.includes("index")) continue;
 
     const visibleText = html
       .replace(/<script[\s\S]*?<\/script>/gi, " ")
@@ -289,7 +298,20 @@ if (fs.existsSync(distDir)) {
       .trim();
     const wordCount = visibleText ? visibleText.split(/\s+/).length : 0;
 
-    if (wordCount < minimumAdsenseContentWords) {
+    if (isIndexable && canonical !== expectedCanonical) {
+      problems.push(`${route} has canonical ${canonical ?? "missing"}; expected ${expectedCanonical}.`);
+    }
+
+    const isArticleRoute = /^(\/guides\/|\/cars\/|\/comparisons\/|\/problems\/)/.test(route);
+    if (isIndexable && isArticleRoute && wordCount < minimumIndexableArticleWords) {
+      problems.push(`${route} is indexable with only ${wordCount} rendered words; add substantive, original coverage or keep it noindex.`);
+    }
+
+    if (isIndexable && isArticleRoute && !html.includes("Sources and scope")) {
+      problems.push(`${route} is indexable without a visible sources-and-scope section.`);
+    }
+
+    if (hasAdsense && isIndexable && wordCount < minimumAdsenseContentWords) {
       problems.push(
         `${route} has AdSense enabled with only ${wordCount} rendered words; keep ads off thin archive/navigation pages.`
       );
@@ -318,7 +340,7 @@ if (fs.existsSync(distDir)) {
   }
 
   const routeToHtmlPath = (href) => {
-    const pathname = new URL(href, "https://kreativauto.com").pathname;
+    const pathname = new URL(href, siteOrigin).pathname;
     return pathname === "/"
       ? path.join(distDir, "index.html")
       : path.join(distDir, pathname.replace(/^\/+/, ""), "index.html");
@@ -330,22 +352,29 @@ if (fs.existsSync(distDir)) {
     return /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(fs.readFileSync(htmlPath, "utf8"));
   };
 
-  const searchIndexPath = path.join(distDir, "search-index.json");
+  const legacySearchIndexPath = path.join(distDir, "search-index.json");
+  if (fs.existsSync(legacySearchIndexPath)) {
+    problems.push("dist/search-index.json still exists; keep internal search data under /internal/.");
+  }
+
+  const searchIndexPath = path.join(distDir, "internal", "search.json");
   if (fs.existsSync(searchIndexPath)) {
     const searchIndex = JSON.parse(fs.readFileSync(searchIndexPath, "utf8"));
     for (const entry of searchIndex) {
       if (!entry?.href || typeof entry.href !== "string") {
-        problems.push("dist/search-index.json contains an entry without a valid href.");
+        problems.push("dist/internal/search.json contains an entry without a valid href.");
         continue;
       }
 
       const htmlPath = routeToHtmlPath(entry.href);
       if (!fs.existsSync(htmlPath)) {
-        problems.push(`dist/search-index.json links to a missing page: ${entry.href}`);
+        problems.push(`dist/internal/search.json links to a missing page: ${entry.href}`);
       } else if (isNoindexRoute(entry.href)) {
-        problems.push(`dist/search-index.json links to a noindex page: ${entry.href}`);
+        problems.push(`dist/internal/search.json links to a noindex page: ${entry.href}`);
       }
     }
+  } else {
+    problems.push("dist/internal/search.json is missing.");
   }
 
   const homepagePath = path.join(distDir, "index.html");
@@ -393,7 +422,8 @@ if (fs.existsSync(ownershipGuidesPath) && fs.existsSync(guidesDir)) {
 for (const [relativePath, requiredMarkers] of Object.entries({
   "src/data/toyota-rav4-quality.ts": ["RAV4 warranty and maintenance guide", "NHTSA RAV4 recall lookup"],
   "src/data/honda-civic-quality.ts": ["Civic maintenance minder", "NHTSA Civic recall lookup"],
-  "src/pages/best/[slug].astro": ["noindex={true}", "enableAds={false}", "pricingCheckedAt"]
+  "src/pages/best/[slug].astro": ["noindex={true}", "enableAds={false}", "pricingCheckedAt"],
+  "src/pages/internal/search.json.ts": ["buildSearchIndex"]
 })) {
   const filePath = path.join(cwd, relativePath);
   if (!fs.existsSync(filePath)) {
@@ -407,6 +437,10 @@ for (const [relativePath, requiredMarkers] of Object.entries({
       problems.push(`${relativePath} is missing required content-quality marker: ${marker}`);
     }
   }
+}
+
+if (fs.existsSync(path.join(cwd, "src", "pages", "search-index.json.ts"))) {
+  problems.push("Legacy crawlable search-index endpoint still exists.");
 }
 
 if (problems.length) {
