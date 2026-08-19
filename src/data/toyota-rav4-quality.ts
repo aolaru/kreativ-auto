@@ -40,9 +40,9 @@ const rav4SourceLinks: SourceLink[] = [
 
 const commonRav4Evidence = {
   basedOn: [
-    "Internal cross-check of RAV4 ownership guides, problem guides, best-parts comparisons, and generation notes.",
-    "Official Toyota owner, warranty, and maintenance material for the 2021 RAV4 family.",
-    "NHTSA recall records used as a safety and campaign check, not as proof that every ownership complaint is a recall."
+    "Toyota's 2021 RAV4 manuals and maintenance material for service requirements, warning information, and model-specific operating context.",
+    "NHTSA's 2020 and 2021 RAV4 recall records for recall status and campaign context only.",
+    "Editorial diagnosis guidance that separates normal wear patterns from vehicle-specific inspection and repair decisions."
   ],
   appliesTo: [
     "2019-2021 Toyota RAV4 XA50 gas and hybrid ownership patterns, with the strongest fit for 2020-2021 vehicles.",

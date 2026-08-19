@@ -16,7 +16,7 @@ const { summary, byline, reviewedLabel, badges = [] } = Astro.props;
       {summary && <p class="mt-3 text-sm leading-7 text-ink">{summary}</p>}
     </div>
     <div class="flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-steel">
-      <span class="rounded-full bg-white px-3 py-2">{byline}</span>
+      <a class="rounded-full bg-white px-3 py-2 transition hover:text-accent" href="/editorial-review/">{byline}</a>
       {reviewedLabel && <span class="rounded-full bg-white px-3 py-2">{reviewedLabel}</span>}
     </div>
   </div>

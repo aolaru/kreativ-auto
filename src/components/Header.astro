@@ -1,7 +1,7 @@
 ---
-import { ownershipTasks } from "../data/ownership-tasks";
+import { primaryOwnershipTasks } from "../data/ownership-tasks";
 
-const navItems = ownershipTasks.map((task) => ({
+const navItems = primaryOwnershipTasks.map((task) => ({
   href: task.href,
   label: task.label
 }));
@@ -43,7 +43,7 @@ const navItems = ownershipTasks.map((task) => ({
               id="site-search"
               class="header-search-input"
               type="search"
-              placeholder="Search by car, symptom, or part"
+              placeholder="Search reviewed cars, symptoms, or guides"
               autocomplete="off"
               spellcheck="false"
             />
@@ -69,25 +69,33 @@ const navItems = ownershipTasks.map((task) => ({
           </ul>
         </nav>
 
-        <nav aria-label="Mobile primary" class="md:hidden">
-          <ul class="grid grid-cols-2 gap-2 text-sm font-semibold text-ink">
-            {
-              navItems.map((item) => (
-                <li>
-                  <a
-                    class="block rounded-2xl border border-slate-200 bg-white px-4 py-3 text-center transition hover:border-accent/40 hover:text-accent"
-                    href={item.href}
-                    data-ka-event="mobile_nav_click"
-                    data-ka-label={item.label}
-                    data-ka-section="header"
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </nav>
+        <details class="group md:hidden">
+          <summary class="flex cursor-pointer list-none items-center justify-between rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:text-accent [&::-webkit-details-marker]:hidden">
+            Browse topics
+            <svg class="h-4 w-4 transition group-open:rotate-180" aria-hidden="true" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="m3 6 5 5 5-5" />
+            </svg>
+          </summary>
+          <nav aria-label="Mobile primary" class="mt-2">
+            <ul class="grid grid-cols-2 gap-2 text-sm font-semibold text-ink">
+              {
+                navItems.map((item) => (
+                  <li>
+                    <a
+                      class="block rounded-xl border border-slate-200 bg-white px-3 py-3 text-center transition hover:border-accent/40 hover:text-accent"
+                      href={item.href}
+                      data-ka-event="mobile_nav_click"
+                      data-ka-label={item.label}
+                      data-ka-section="header"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </nav>
+        </details>
       </div>
     </div>
   </div>
@@ -106,6 +114,7 @@ const navItems = ownershipTasks.map((task) => ({
     let searchIndexPromise;
     let activeIndex = -1;
     let searchStartTracked = false;
+    let lastNoResultQuery = "";
 
     const loadSearchIndex = () => {
       if (entries.length) return Promise.resolve(entries);
@@ -235,6 +244,15 @@ const navItems = ownershipTasks.map((task) => ({
 
       const matches = getMatches(value);
       activeIndex = matches.length ? 0 : -1;
+      if (!matches.length && value.length >= 2 && value !== lastNoResultQuery) {
+        lastNoResultQuery = value;
+        window.kaTrackEvent?.("search_no_results", {
+          event_label: "header search",
+          search_length: value.length,
+          section: "header_search"
+        });
+      }
+      if (matches.length) lastNoResultQuery = "";
       renderResults(matches);
       searchResults.hidden = false;
       searchRoot.classList.add("is-open");

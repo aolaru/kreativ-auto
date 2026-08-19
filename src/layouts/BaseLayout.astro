@@ -127,6 +127,28 @@ const schemaItems = [...baseSchemas, ...schemas];
               });
             };
 
+            const scrollMilestones = new Set([50, 90]);
+            const recordScrollDepth = () => {
+              const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+              if (documentHeight <= 0) return;
+              const scrollPercent = Math.round((window.scrollY / documentHeight) * 100);
+
+              for (const milestone of [...scrollMilestones]) {
+                if (scrollPercent >= milestone) {
+                  scrollMilestones.delete(milestone);
+                  window.kaTrackEvent("scroll_depth", {
+                    event_label: `${milestone}%`,
+                    percent_scrolled: milestone,
+                    section: "page_engagement"
+                  });
+                }
+              }
+
+              if (!scrollMilestones.size) window.removeEventListener("scroll", recordScrollDepth);
+            };
+
+            window.addEventListener("scroll", recordScrollDepth, { passive: true });
+
             document.addEventListener("click", (event) => {
               const target = event.target instanceof Element ? event.target.closest("[data-ka-event]") : null;
               if (!target) return;

@@ -3,7 +3,9 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 
 const title = "Honda Civic 1.5T vs 2.0";
 const description =
@@ -11,6 +13,7 @@ const description =
 const intro =
   "The Civic 1.5T and 2.0 are close enough that people often shop or maintain them as if they were the same car. They are not. The chassis overlap is real, but the ownership pattern, drivability complaints, and the parts mistakes people make are different enough that it is worth separating them cleanly.";
 const modifiedTime = new Date("2026-04-04");
+const evidence = hondaCivicGuideQuality["honda-civic-10th-gen-facelift-trims-and-engines-which-one-to-buy"].evidence;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Comparisons", href: "/comparisons/" },
@@ -126,6 +129,8 @@ const relatedBest = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={problemTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...evidence} />
 
   <Section
     title="The short version"

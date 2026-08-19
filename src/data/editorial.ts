@@ -1,7 +1,14 @@
 export const editorialTeam = {
-  name: "Kreativ Auto Editorial Team",
+  name: "Andrei Olaru",
   publisher: "Kreativ Auto",
   publisherLogo: "/images/logo-mark.svg"
+};
+
+export const editorialProfile = {
+  name: "Andrei Olaru",
+  role: "Publisher and editor",
+  byline: "By Andrei Olaru, Publisher and editor",
+  href: "/editorial-review/"
 };
 
 export const carTrustPoints = [

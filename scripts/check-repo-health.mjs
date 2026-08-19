@@ -87,13 +87,15 @@ const prohibitedLowValuePhrases = [
   "this page keeps",
   "use this page as",
   "the site is",
-  "on the site"
+  "on the site",
+  "internal cross-check"
 ];
 const requiredStaticFiles = [
   "public/_headers",
   "public/ads.txt",
   "src/pages/about.astro",
   "src/pages/contact.astro",
+  "src/pages/editorial-review.astro",
   "src/pages/editorial-policy.astro",
   "src/pages/image-credits.astro",
   "src/pages/affiliate-disclosure.astro",
@@ -311,6 +313,51 @@ if (fs.existsSync(distDir)) {
       const html = fs.readFileSync(htmlPath, "utf8");
       if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(html)) {
         problems.push(`${pathname} is noindex but still appears in dist/sitemap.xml.`);
+      }
+    }
+  }
+
+  const routeToHtmlPath = (href) => {
+    const pathname = new URL(href, "https://kreativauto.com").pathname;
+    return pathname === "/"
+      ? path.join(distDir, "index.html")
+      : path.join(distDir, pathname.replace(/^\/+/, ""), "index.html");
+  };
+
+  const isNoindexRoute = (href) => {
+    const htmlPath = routeToHtmlPath(href);
+    if (!fs.existsSync(htmlPath)) return false;
+    return /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(fs.readFileSync(htmlPath, "utf8"));
+  };
+
+  const searchIndexPath = path.join(distDir, "search-index.json");
+  if (fs.existsSync(searchIndexPath)) {
+    const searchIndex = JSON.parse(fs.readFileSync(searchIndexPath, "utf8"));
+    for (const entry of searchIndex) {
+      if (!entry?.href || typeof entry.href !== "string") {
+        problems.push("dist/search-index.json contains an entry without a valid href.");
+        continue;
+      }
+
+      const htmlPath = routeToHtmlPath(entry.href);
+      if (!fs.existsSync(htmlPath)) {
+        problems.push(`dist/search-index.json links to a missing page: ${entry.href}`);
+      } else if (isNoindexRoute(entry.href)) {
+        problems.push(`dist/search-index.json links to a noindex page: ${entry.href}`);
+      }
+    }
+  }
+
+  const homepagePath = path.join(distDir, "index.html");
+  if (fs.existsSync(homepagePath)) {
+    const homepage = fs.readFileSync(homepagePath, "utf8");
+    const homepageLinks = [...homepage.matchAll(/href="([^"]+)"/g)]
+      .map((match) => match[1])
+      .filter((href) => href.startsWith("/") && !href.startsWith("//"));
+
+    for (const href of new Set(homepageLinks)) {
+      if (isNoindexRoute(href)) {
+        problems.push(`Homepage links to a noindex page: ${href}`);
       }
     }
   }

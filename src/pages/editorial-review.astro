@@ -1,0 +1,50 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { editorialProfile } from "../data/editorial";
+---
+
+<BaseLayout title="Editorial Review" description="Who publishes Kreativ Auto, how reviewed guides are researched, and how corrections are handled." enableAds={false}>
+  <div class="container-shell py-12 sm:py-16">
+    <div class="surface hero-frame p-8 sm:p-10">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Editorial review</p>
+        <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Who is responsible for the guides</h1>
+        <p class="mt-4 text-lg leading-8 text-steel">
+          {editorialProfile.name} is the publisher and editor of Kreativ Auto and is responsible for the site's editorial direction, source selection, page updates, and corrections process.
+        </p>
+      </div>
+    </div>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Review standard</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">What an indexed guide must show</h2>
+      <div class="mt-6 grid gap-4 md:grid-cols-2">
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Vehicle scope</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">The model year, generation, engine, drivetrain, and market assumptions are stated where they materially change the answer.</p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Traceable sources</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Maintenance, recall, safety, and specification claims are checked against manufacturer or regulator material and linked in the guide's sources and scope section.</p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Useful limits</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">A guide distinguishes published source material from editorial judgment and does not claim workshop testing, vehicle inspection, or personal ownership that did not occur.</p>
+        </article>
+        <article class="editorial-card">
+          <h3 class="text-xl font-semibold text-ink">Commercial restraint</h3>
+          <p class="mt-3 text-sm leading-6 text-steel">Parts pages remain out of search until their fitment, selection criteria, alternatives, source links, and disclosure meet the same standard.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="mt-10 surface p-6 sm:p-8">
+      <p class="eyebrow">Corrections</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">How a correction is handled</h2>
+      <div class="mt-6 space-y-4 text-sm leading-6 text-steel">
+        <p>Send the page URL, the affected statement, and the source or vehicle detail that needs review to <a class="font-semibold text-accent hover:text-ink" href="mailto:hello@kreativauto.com">hello@kreativauto.com</a>.</p>
+        <p>Corrections are checked against the cited source, the page's stated vehicle scope, and related reviewed guidance. Material editorial changes receive an updated review date.</p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

@@ -40,9 +40,9 @@ const civicSourceLinks: SourceLink[] = [
 
 const commonCivicEvidence = {
   basedOn: [
-    "Internal cross-check of Civic ownership guides, problem guides, best-parts comparisons, and generation notes.",
-    "Official Honda owner maintenance and warranty material for 2019 Honda vehicles.",
-    "NHTSA recall records used as a safety and campaign check, not as proof that every ownership complaint is a recall."
+    "Honda's 2019 Civic maintenance minder and warranty material for scheduled maintenance and vehicle-specific coverage context.",
+    "NHTSA's 2019 Civic recall records for recall status and campaign context only.",
+    "Editorial diagnosis guidance that separates ordinary commuter wear from vehicle-specific inspection and repair decisions."
   ],
   appliesTo: [
     "2019-2021 facelifted tenth-generation Honda Civic gas sedan, coupe, and hatchback ownership patterns.",

@@ -37,6 +37,8 @@ jobs:
         env:
           PUBLIC_GA_MEASUREMENT_ID: ${{ vars.PUBLIC_GA_MEASUREMENT_ID }}
           PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.PUBLIC_GOOGLE_SITE_VERIFICATION }}
+          # Keep the AdSense loader disabled until a Google-certified CMP is configured where required.
+          PUBLIC_GOOGLE_ADSENSE_LOAD_SCRIPT: "false"
         run: npm run build
 
       - name: Upload Pages artifact

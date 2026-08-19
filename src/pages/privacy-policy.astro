@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const updatedAt = new Date("2026-06-12T00:00:00Z");
+const updatedAt = new Date("2026-08-19T00:00:00Z");
 ---
 
 <BaseLayout
@@ -20,7 +20,7 @@ const updatedAt = new Date("2026-06-12T00:00:00Z");
             Kreativ Auto publishes automotive guides and uses standard website tools to understand traffic, maintain the service, and support advertising or affiliate revenue.
           </p>
           <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
-            Last updated June 12, 2026.
+            Last updated August 19, 2026.
           </p>
         </div>
         <div class="accent-panel p-6">
@@ -46,7 +46,7 @@ const updatedAt = new Date("2026-06-12T00:00:00Z");
         <div class="editorial-card">
           <h3 class="text-xl font-semibold text-ink">Basic usage data</h3>
           <p class="mt-3 text-sm leading-6 text-steel">
-            Analytics tools may process information such as page views, referring pages, approximate location, browser type, device type, and events like clicking navigation or search results.
+            Google Analytics and Cloudflare Web Analytics may process page views, referring pages, approximate location, browser type, device type, and aggregate interaction events such as navigation, search-result, and guide clicks.
           </p>
         </div>
         <div class="editorial-card">
@@ -89,10 +89,11 @@ const updatedAt = new Date("2026-06-12T00:00:00Z");
 
     <section class="mt-10 surface p-6 sm:p-8">
       <p class="eyebrow">Analytics</p>
-      <h2 class="mt-3 text-3xl font-semibold text-ink">Google Analytics</h2>
-      <p class="mt-6 text-sm leading-6 text-steel">
-        Kreativ Auto uses Google Analytics to understand which pages are useful, how readers move through the site, and where technical or editorial improvements are needed. Analytics data is used in aggregate and is not used to provide one-to-one repair advice.
-      </p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Google Analytics and Cloudflare Web Analytics</h2>
+      <div class="mt-6 space-y-4 text-sm leading-6 text-steel">
+        <p>Kreativ Auto uses Google Analytics and Cloudflare Web Analytics to understand which pages are useful, how readers move through the site, and where technical or editorial improvements are needed. Analytics data is reviewed in aggregate and is not used to provide one-to-one repair advice.</p>
+        <p>Search measurement records result and no-result events without sending the search phrase as an analytics event parameter.</p>
+      </div>
     </section>
 
     <section class="mt-10 surface p-6 sm:p-8">
@@ -101,7 +102,7 @@ const updatedAt = new Date("2026-06-12T00:00:00Z");
       <ul class="mt-6 space-y-3 text-sm leading-6 text-steel">
         <li class="rounded-2xl bg-slate-50 px-4 py-3">Browser settings can block, delete, or limit cookies.</li>
         <li class="rounded-2xl bg-slate-50 px-4 py-3">Google Ads Settings can be used to manage personalized advertising preferences.</li>
-        <li class="rounded-2xl bg-slate-50 px-4 py-3">Readers in regions that require consent should use the consent controls shown by Kreativ Auto or in the relevant Google privacy message.</li>
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">AdSense is not currently enabled on the public site. Before it is enabled, Kreativ Auto will use a Google-certified consent management platform where Google's consent requirements apply, including the EEA, United Kingdom, and Switzerland.</li>
       </ul>
     </section>
 
@@ -113,7 +114,7 @@ const updatedAt = new Date("2026-06-12T00:00:00Z");
           Kreativ Auto links to retailer pages, manufacturer pages, image-source pages, and other external websites. Those sites have their own privacy practices, cookie settings, and terms.
         </p>
         <p>
-          Product links may use affiliate tracking parameters. Analytics and advertising scripts may process browser and device information according to their own policies and the choices available to the reader.
+          Product links may use affiliate tracking parameters. Google Analytics, Cloudflare Web Analytics, and any future advertising scripts may process browser and device information according to their own policies and applicable consent choices.
         </p>
       </div>
     </section>

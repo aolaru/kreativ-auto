@@ -3,7 +3,9 @@ import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import TrustBlock from "../../components/TrustBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam, problemTrustPoints } from "../../data/editorial";
+import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 Hybrid vs gas";
 const description =
@@ -11,6 +13,7 @@ const description =
 const intro =
   "The XA50 RAV4 Hybrid and the gas RAV4 look close enough that people often treat them like the same ownership story with different fuel economy. That is too simplistic. The chassis overlap is real, but brake feel, battery complaints, trim assumptions, and the way owners describe problems can shift enough that the advice needs to be separated.";
 const modifiedTime = new Date("2026-04-04");
+const evidence = rav4GuideQuality["toyota-rav4-xa50-should-you-buy-it-used"].evidence;
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Comparisons", href: "/comparisons/" },
@@ -126,6 +129,8 @@ const relatedBest = [
     checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
     points={problemTrustPoints}
   />
+
+  <EvidenceLimitsBlock {...evidence} />
 
   <Section
     title="The short version"
