@@ -1,239 +1,251 @@
 ---
-import { getCollection } from "astro:content";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { ownershipGuides } from "../data/ownership-guides";
-import { comparisonGuides } from "../data/comparison-guides";
-import { toThumbnail } from "../utils/images";
 
-const [cars, problems, bestPages] = await Promise.all([
-  getCollection("cars"),
-  getCollection("problems"),
-  getCollection("best")
-]);
+type UpdateKind = "NEW" | "UPDATE" | "FIX";
 
-const flagshipCards = ownershipGuides.slice(0, 3).map((guide) => ({
-  href: guide.href,
-  title: guide.title,
-  description: guide.description,
-  eyebrow: guide.eyebrow,
-  image: guide.image
-}));
+interface UpdateEntry {
+  date: string;
+  kind: UpdateKind;
+  title: string;
+  detail: string;
+  href?: string;
+  linkLabel?: string;
+}
 
-const comparisonCards = comparisonGuides.slice(0, 3).map((guide) => ({
-  href: guide.href,
-  title: guide.title,
-  description: guide.description,
-  eyebrow: guide.eyebrow,
-  image: guide.image
-}));
-
-const snapshot = [
-  { label: "Cars", value: cars.length, href: "/cars/" },
-  { label: "Problem guides", value: problems.length, href: "/problems/" },
-  { label: "Best-parts guides", value: bestPages.length, href: "/best/" },
-  { label: "Ownership guides", value: ownershipGuides.length, href: "/guides/" },
-  { label: "Comparison guides", value: comparisonGuides.length, href: "/comparisons/" },
-  { label: "Core vehicles", value: 3, href: "/generations/" }
+const highlights: UpdateEntry[] = [
+  {
+    date: "2026-08-20",
+    kind: "NEW",
+    title: "2020 Toyota Highlander research",
+    detail:
+      "Added a reviewed Highlander vehicle page, a used-buyer inspection, a model-specific brake-noise diagnosis, and a sourced parts shortlist.",
+    href: "/guides/toyota-highlander-xu70-what-to-check-before-buying/",
+    linkLabel: "Read the Highlander buyer guide"
+  },
+  {
+    date: "2026-08-20",
+    kind: "UPDATE",
+    title: "Clearer vehicle discovery",
+    detail:
+      "The homepage and header now lead to reviewed cars more directly, with a vehicle directory available on desktop and mobile.",
+    href: "/browse/",
+    linkLabel: "Browse reviewed cars"
+  },
+  {
+    date: "2026-08-20",
+    kind: "FIX",
+    title: "Stronger publishing controls",
+    detail:
+      "Noindex pages remain crawlable through links, unverified parts prices stay hidden, and reviewed pages now expose their model-specific notes.",
+    href: "/editorial-review/",
+    linkLabel: "Read the editorial review"
+  }
 ];
+
+const recentUpdates: UpdateEntry[] = [
+  {
+    date: "2026-08-20",
+    kind: "UPDATE",
+    title: "Content and discovery review",
+    detail:
+      "Removed repeated template framing from vehicle, diagnosis, and parts pages; refreshed the homepage; made the vehicle directory indexable; and expanded the public editorial accountability record."
+  },
+  {
+    date: "2026-08-20",
+    kind: "NEW",
+    title: "2020 Toyota Highlander coverage",
+    detail:
+      "Added evidence and scope records for the 2020 Highlander, a used-buyer inspection, related vehicle and brake-noise pages, and updated internal search coverage."
+  },
+  {
+    date: "2026-08-20",
+    kind: "UPDATE",
+    title: "New-car publishing workflow",
+    detail:
+      "New vehicle drafts now require an evidence record, stated scope, a decision path, source links, product-selection criteria, alternatives, and optimized vehicle photography before publication."
+  },
+  {
+    date: "2026-08-19",
+    kind: "UPDATE",
+    title: "Search quality and deployment checks",
+    detail:
+      "Improved source-led ownership pages, search discovery, analytics coverage, Pages deployment efficiency, and the local review workflow used before a change is published."
+  },
+  {
+    date: "2026-08-18",
+    kind: "UPDATE",
+    title: "Brand and analytics refresh",
+    detail:
+      "Replaced the header and site-mark logo assets and added Cloudflare Web Analytics alongside the existing site measurement setup."
+  },
+  {
+    date: "2026-07-15",
+    kind: "FIX",
+    title: "Content-quality and AdSense safeguards",
+    detail:
+      "Removed thin or self-referential copy, strengthened source and scope rules, improved page navigation, and kept commercial pages out of search until they provide enough useful detail."
+  },
+  {
+    date: "2026-06-27",
+    kind: "NEW",
+    title: "Ownership guides and task navigation",
+    detail:
+      "Added more buying, maintenance, diagnosis, and comparison entry points so visitors can begin with the job they need to complete."
+  },
+  {
+    date: "2026-06-18",
+    kind: "NEW",
+    title: "More vehicle research and real imagery",
+    detail:
+      "Expanded the vehicle and ownership-guide library, added real car photography, and improved links between model, generation, problem, and parts research."
+  },
+  {
+    date: "2026-06-16",
+    kind: "FIX",
+    title: "Generated-sounding copy cleanup",
+    detail:
+      "Removed language about the publication process, category structure, and internal coverage so pages focus on the vehicle, symptom, or buying decision."
+  },
+  {
+    date: "2026-06-12",
+    kind: "UPDATE",
+    title: "Publishing safeguards",
+    detail:
+      "Added checks for sitemap accuracy, image references, page depth, advertising eligibility, and source-and-scope sections on indexable research pages."
+  },
+  {
+    date: "2026-06-07",
+    kind: "NEW",
+    title: "Four additional vehicle topics",
+    detail:
+      "Added new vehicle, problem, and parts research for additional mainstream used-car decisions, then connected the entries to internal search and browse routes."
+  },
+  {
+    date: "2026-06-07",
+    kind: "FIX",
+    title: "Google Analytics rendering",
+    detail:
+      "Corrected the Google Analytics tag so measurement can load on the published domain."
+  }
+];
+
+const archiveUpdates: UpdateEntry[] = [
+  {
+    date: "2026-05-30",
+    kind: "UPDATE",
+    title: "Early AdSense readiness work",
+    detail:
+      "Added ads.txt, expanded trust and policy information, improved source links, and reduced thin-content risk across the first public guides."
+  },
+  {
+    date: "2026-05-26",
+    kind: "UPDATE",
+    title: "Image and identity refresh",
+    detail:
+      "Added missing optimized car images and refined the Kreativ Auto logo used across the website."
+  },
+  {
+    date: "2026-05-13",
+    kind: "UPDATE",
+    title: "Health checks and second-tier coverage",
+    detail:
+      "Added repository checks for image quality and broken references while expanding useful ownership topics beyond the first core models."
+  },
+  {
+    date: "2026-03-01",
+    kind: "NEW",
+    title: "Kreativ Auto launch",
+    detail:
+      "Published the first vehicle, problem, and parts research; added public navigation, search metadata, trust pages, and the kreativauto.com domain."
+  }
+];
+
+const kindClass: Record<UpdateKind, string> = {
+  NEW: "bg-emerald-100 text-emerald-800",
+  UPDATE: "bg-sky-100 text-sky-800",
+  FIX: "bg-amber-100 text-amber-900"
+};
 ---
 
-<BaseLayout enableAds={false}
-  noindex={true}
+<BaseLayout
+  enableAds={false}
   title="Updates"
-  description="Recent Kreativ Auto improvements, including new ownership guides, better browsing, stronger fitment notes, and clearer repair checks."
+  description="A chronological record of meaningful Kreativ Auto additions, improvements, and fixes."
 >
   <div class="container-shell py-12 sm:py-16">
-    <div class="surface hero-frame p-8 sm:p-10">
-      <div class="grid gap-8 xl:grid-cols-[1.15fr_0.85fr]">
-        <div>
-          <p class="eyebrow">Updates</p>
-          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Recent Kreativ Auto improvements</h1>
-          <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-            A simple record of meaningful changes: new ownership checks, better diagnosis flow, improved part comparisons, and cleaner navigation.
-          </p>
-          <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
-            For the best current starting points, use the ownership guides, comparison guides, and generation views for Civic, RAV4, and Tiguan.
-          </p>
-        </div>
-        <div class="accent-panel p-6">
-          <p class="eyebrow">Current snapshot</p>
-          <div class="mt-4 grid gap-4 sm:grid-cols-2">
-            {snapshot.map((item) => (
-              <a
-                class="snapshot-card p-4"
-                href={item.href}
-                data-ka-event="updates_snapshot_click"
-                data-ka-section="updates_snapshot"
-                data-ka-label={item.label}
-              >
-                <p class="text-2xl font-semibold text-ink">{item.value}</p>
-                <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">{item.label}</p>
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
+    <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Updates" }]} />
 
-    <section class="mt-10 surface hero-frame p-6 sm:p-8">
-      <div class="grid gap-8 xl:grid-cols-[1.05fr_0.95fr]">
-        <div>
-          <p class="eyebrow">Start Here</p>
-          <h2 class="mt-3 text-3xl font-semibold text-ink">Most useful recent improvements</h2>
-          <div class="mt-6 grid gap-4">
-            <div class="editorial-card">
-              <h3 class="text-xl font-semibold text-ink">More ownership checks</h3>
-              <p class="mt-3 text-sm leading-6 text-steel">
-                Added common-problem, maintenance-cost, pre-purchase, what-to-avoid, and trim-choice guidance for the most researched vehicles.
-              </p>
-            </div>
-            <div class="editorial-card">
-              <h3 class="text-xl font-semibold text-ink">Faster browsing</h3>
-              <p class="mt-3 text-sm leading-6 text-steel">
-                Filters and clearer navigation make it easier to move by vehicle, symptom, part category, or powertrain.
-              </p>
-            </div>
-            <div class="editorial-card">
-              <h3 class="text-xl font-semibold text-ink">Better buying signals</h3>
-              <p class="mt-3 text-sm leading-6 text-steel">
-                Part guides now have tighter product links, clearer buying tiers, better imagery, and stronger first-check guidance before a repair turns into a parts order.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="grid gap-4">
-          <a class="mesh-card p-5 transition hover:-translate-y-0.5" href="/guides/">
-            <p class="eyebrow">Ownership</p>
-            <h3 class="mt-2 text-xl font-semibold text-ink">Open ownership guides</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">Start with broader ownership, maintenance, and buying checks before narrowing into a single repair.</p>
-          </a>
-          <a class="mesh-card p-5 transition hover:-translate-y-0.5" href="/comparisons/">
-            <p class="eyebrow">Comparisons</p>
-            <h3 class="mt-2 text-xl font-semibold text-ink">Open comparison guides</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">Use drivetrain, engine, hybrid, and facelift comparisons where one symptom or one part is too narrow.</p>
-          </a>
-          <a class="mesh-card p-5 transition hover:-translate-y-0.5" href="/generations/volkswagen-tiguan-tiguan-ii-facelift-2020-2024/">
-            <p class="eyebrow">Generation</p>
-            <h3 class="mt-2 text-xl font-semibold text-ink">Open the Tiguan generation</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">Open the Tiguan II facelift view when year, trim, and drivetrain details change the repair or buying advice.</p>
-          </a>
-        </div>
+    <section class="surface hero-frame p-8 sm:p-10">
+      <p class="eyebrow">Product updates</p>
+      <h1 class="mt-4 max-w-3xl text-4xl font-semibold text-ink sm:text-5xl">Latest updates</h1>
+      <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
+        A chronological record of meaningful additions, improvements, and fixes. Vehicle research belongs in the car and guide directories; this log explains what changed and when.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3 text-xs font-semibold uppercase tracking-[0.16em]">
+        <span class="rounded-full bg-emerald-100 px-3 py-2 text-emerald-800">NEW: added for the first time</span>
+        <span class="rounded-full bg-sky-100 px-3 py-2 text-sky-800">UPDATE: materially improved</span>
+        <span class="rounded-full bg-amber-100 px-3 py-2 text-amber-900">FIX: corrected or repaired</span>
       </div>
     </section>
 
-    <section class="mt-10 surface p-6 sm:p-8">
-      <p class="eyebrow">Flagship Guides</p>
-      <h2 class="mt-3 text-3xl font-semibold text-ink">Cornerstone guides added recently</h2>
-      <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {flagshipCards.map((card) => (
-          <a class="overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={card.href}>
-            {card.image && (
-              <div class="image-frame image-frame-card">
-                <img
-                  src={toThumbnail(card.image)}
-                  alt={card.title}
-                  loading="lazy"
-                  decoding="async"
-                  width="960"
-                  height="640"
-                />
+    <section class="mt-10 grid gap-5 md:grid-cols-3" aria-label="Recent update highlights">
+      {
+        highlights.map((item) => (
+          <article class="editorial-card flex flex-col p-6">
+            <div class="flex items-center justify-between gap-3">
+              <span class={`rounded-full px-3 py-1 text-xs font-bold tracking-[0.12em] ${kindClass[item.kind]}`}>{item.kind}</span>
+              <time class="text-xs font-semibold text-steel" datetime={item.date}>{item.date}</time>
+            </div>
+            <h2 class="mt-5 text-xl font-semibold text-ink">{item.title}</h2>
+            <p class="mt-3 flex-1 text-sm leading-6 text-steel">{item.detail}</p>
+            {item.href && <a class="mt-5 text-sm font-semibold text-accent hover:text-ink" href={item.href}>{item.linkLabel}</a>}
+          </article>
+        ))
+      }
+    </section>
+
+    <section class="mt-12">
+      <div class="max-w-3xl">
+        <p class="eyebrow">Recent log</p>
+        <h2 class="mt-3 text-3xl font-semibold text-ink">What changed most recently</h2>
+      </div>
+      <ol class="mt-6 divide-y divide-slate-200 border-y border-slate-200">
+        {
+          recentUpdates.map((item) => (
+            <li class="grid gap-4 py-6 sm:grid-cols-[9rem_1fr]">
+              <div class="flex items-center gap-3 sm:block">
+                <time class="block text-sm font-semibold text-ink" datetime={item.date}>{item.date}</time>
+                <span class={`mt-2 inline-flex rounded-full px-3 py-1 text-xs font-bold tracking-[0.12em] ${kindClass[item.kind]}`}>{item.kind}</span>
               </div>
-            )}
-            <div class="p-5">
-              <p class="eyebrow">{card.eyebrow}</p>
-              <h3 class="mt-2 text-xl font-semibold text-ink">{card.title}</h3>
-              <p class="mt-3 text-sm leading-6 text-steel">{card.description}</p>
-            </div>
-          </a>
-        ))}
-      </div>
-    </section>
-
-    <section class="mt-10 surface p-6 sm:p-8">
-      <p class="eyebrow">Comparison Guides</p>
-      <h2 class="mt-3 text-3xl font-semibold text-ink">High-value version guides</h2>
-      <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-        {comparisonCards.map((card) => (
-          <a class="mesh-card overflow-hidden p-0 transition hover:-translate-y-0.5 hover:bg-white" href={card.href}>
-            {card.image && (
-              <div class="image-frame image-frame-card">
-                <img
-                  src={toThumbnail(card.image)}
-                  alt={card.title}
-                  loading="lazy"
-                  decoding="async"
-                  width="960"
-                  height="640"
-                />
+              <div>
+                <h3 class="text-xl font-semibold text-ink">{item.title}</h3>
+                <p class="mt-2 text-sm leading-6 text-steel">{item.detail}</p>
               </div>
-            )}
-            <div class="p-5">
-              <p class="eyebrow">{card.eyebrow}</p>
-              <h3 class="mt-2 text-xl font-semibold text-ink">{card.title}</h3>
-              <p class="mt-3 text-sm leading-6 text-steel">{card.description}</p>
-            </div>
-          </a>
-        ))}
-      </div>
+            </li>
+          ))
+        }
+      </ol>
     </section>
 
-    <div class="mt-10 space-y-6">
-      <article class="surface p-6 sm:p-8">
-        <p class="eyebrow">May 2026</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">More models received practical checks</h2>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-steel marker:text-accent">
-          <li>Refreshed the 2020 Honda Accord, 2020 Mazda 3, and 2020 Toyota Corolla vehicle guides with cleaner imagery and clearer links into problem, parts, and ownership checks.</li>
-          <li>Added a 2020 Honda Accord common-problems cornerstone guide covering weak A/C at idle, brake vibration, battery behavior, and front-end noise.</li>
-          <li>Added a 2020 Mazda 3 common-problems cornerstone guide covering front-end clunks, brake noise, road hum, and short-trip battery behavior.</li>
-          <li>Added a 2020 Toyota Corolla maintenance-costs and weak-points guide to tie Corolla repair examples to ownership-cost planning.</li>
-          <li>Added maintenance-costs and weak-points guides for the 2020 Honda Accord and 2020 Mazda 3.</li>
-          <li>Added a 2020 Toyota Camry common-problems cornerstone guide covering brake squeal, highway vibration, battery behavior, and road-noise diagnosis.</li>
-          <li>Added common-problems guides for the 2020 Honda CR-V and 2020 Mazda CX-5, including battery, brake, suspension, and road-noise checks.</li>
-          <li>Added what-to-avoid guides for the 2020 Honda Accord, 2020 Mazda 3, and 2020 Toyota Corolla.</li>
-          <li>Improved second-tier guide imagery for Accord, Mazda 3, and Corolla, and added a repo health check for Dropbox conflict files and broken image references.</li>
-          <li>Added first-pass ownership checks for Audi Q5, BMW 3 Series, Ford F-150, Mercedes-Benz C-Class, Subaru Outback, and VW Golf GTI.</li>
-          <li>Replaced the remaining SVG vehicle visuals for Accord, Mazda 3, and Corolla with raster JPEG assets and matching thumbnails.</li>
-          <li>Strengthened problem-page triage blocks with can-you-drive, cost-range, and DIY-difficulty decision cards across all problem guides.</li>
-          <li>Added repository health checks to the manual maintenance review so technical changes are verified before publication.</li>
-          <li>Connected the new guides to the matching vehicles, generations, and repair topics.</li>
-          <li>Added weekly planning and daily maintenance checks to catch missing images, stale dates, broken references, and thin draft language earlier.</li>
-        </ul>
-      </article>
-
-      <article class="surface p-6 sm:p-8">
-        <p class="eyebrow">April 2026</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Ownership and comparison guidance expanded</h2>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-steel marker:text-accent">
-          <li>Expanded Civic, RAV4, and Tiguan with more problem guides, best-parts guides, and clearer links between diagnosis, parts, and ownership checks.</li>
-          <li>Added common-problems, maintenance, pre-purchase, what-to-avoid, and trim-buying guides for the three core vehicles.</li>
-          <li>Improved generation views with common trouble spots, first parts to check, trim and year caveats, visual highlights, and clearer next-read paths.</li>
-          <li>Moved comparisons into a dedicated public section and kept the old tools paths as redirects.</li>
-          <li>Improved the strongest problem guides with quick verdicts, first checks, confusion points, and clearer signs that a car should not keep being driven.</li>
-          <li>Improved the strongest best-parts guides with clearer buying tiers, stronger “best for” and “avoid if” logic, and tighter product-link quality.</li>
-          <li>Added more branded and better-matched part imagery, added faster thumbnails, and converted heavier hero images to lighter web formats.</li>
-          <li>Improved the design system with clearer guide layouts, stronger image support, better typography, and clearer editorial hierarchy.</li>
-          <li>Added browse filters so visitors can narrow by vehicle, guide type, category, and symptom area.</li>
-          <li>Refreshed trust pages, added a favicon, and cleaned up public navigation.</li>
-          <li>Added weekly planning and daily maintenance checks to catch missing images, stale dates, broken references, and thin draft language earlier.</li>
-          <li>Added common-problems cornerstone guides for the 2020 Honda CR-V, 2020 Mazda CX-5, and 2020 Toyota Corolla.</li>
-        </ul>
-      </article>
-
-      <article class="surface p-6 sm:p-8">
-        <p class="eyebrow">March 2026</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Launch version</h2>
-        <ul class="mt-4 list-disc space-y-3 pl-5 text-sm leading-6 text-steel marker:text-accent">
-          <li>Launched the first public version of Kreativ Auto with vehicle guides, problem guides, and best-parts guides for common maintenance and repair decisions.</li>
-          <li>Added browse paths for brands, models, generations, and part categories so it is easier to jump from one vehicle or repair topic to the next.</li>
-          <li>Expanded the homepage with featured cars, common problems, and parts guides to help visitors reach useful pages faster.</li>
-          <li>Reworked the writing to make problem symptoms, likely causes, and repair options clearer and easier to scan.</li>
-          <li>Added real car and parts photos across key guides to make Kreativ Auto more visual and easier to browse.</li>
-          <li>Added About, Affiliate Disclosure, Editorial Policy, and Contact pages so readers can better understand how recommendations are made.</li>
-          <li>Improved search visibility with sitemap support, crawl guidance, breadcrumbs, and structured data.</li>
-          <li>Brought Kreativ Auto live on its public domain.</li>
-        </ul>
-      </article>
-    </div>
+    <details class="mt-10 border-y border-slate-200 py-5">
+      <summary class="cursor-pointer text-lg font-semibold text-ink marker:text-accent">Earlier updates</summary>
+      <ol class="mt-4 divide-y divide-slate-200">
+        {
+          archiveUpdates.map((item) => (
+            <li class="grid gap-4 py-6 sm:grid-cols-[9rem_1fr]">
+              <div class="flex items-center gap-3 sm:block">
+                <time class="block text-sm font-semibold text-ink" datetime={item.date}>{item.date}</time>
+                <span class={`mt-2 inline-flex rounded-full px-3 py-1 text-xs font-bold tracking-[0.12em] ${kindClass[item.kind]}`}>{item.kind}</span>
+              </div>
+              <div>
+                <h3 class="text-xl font-semibold text-ink">{item.title}</h3>
+                <p class="mt-2 text-sm leading-6 text-steel">{item.detail}</p>
+              </div>
+            </li>
+          ))
+        }
+      </ol>
+    </details>
   </div>
 </BaseLayout>
