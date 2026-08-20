@@ -12,6 +12,7 @@ import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import { editorialTeam } from "../../data/editorial";
 import { hondaCivicBestQuality } from "../../data/honda-civic-quality";
+import { highlanderBestQuality } from "../../data/toyota-highlander-quality";
 import { rav4BestQuality } from "../../data/toyota-rav4-quality";
 import { withAffiliateTag } from "../../utils/affiliate";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
@@ -83,7 +84,7 @@ const avoidIf = entry.data.avoidIf;
 const buyingTiers = entry.data.buyingTiers;
 const categoryTerm = entry.data.category.toLowerCase();
 const vehicleLabel = entry.data.car_model;
-const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id];
+const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id] ?? highlanderBestQuality[entry.id];
 const priceIsVerified = Boolean(entry.data.pricingCheckedAt);
 const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??

@@ -12,6 +12,7 @@ import { editorialTeam } from "../../data/editorial";
 import { comparisonGuides } from "../../data/comparison-guides";
 import { ownershipGuides } from "../../data/ownership-guides";
 import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
+import { highlanderCarQuality } from "../../data/toyota-highlander-quality";
 import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 import { isReviewReadyCar } from "../../data/review-readiness";
 import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, slugify, uniqueByHref } from "../../utils/taxonomy";
@@ -202,7 +203,7 @@ const rav4Quality = car.id === "toyota-rav4-2020" || car.id === "toyota-rav4-202
 const civicQuality = car.id === "honda-civic-2019"
   ? hondaCivicGuideQuality["honda-civic-10th-gen-facelift-common-problems"]
   : undefined;
-const vehicleQuality = rav4Quality ?? civicQuality;
+const vehicleQuality = rav4Quality ?? civicQuality ?? highlanderCarQuality[car.id];
 const reviewReady = isReviewReadyCar(car.id) && Boolean(vehicleQuality);
 const carTrustPointsForPage = [
   car.data.commonProblems[0]

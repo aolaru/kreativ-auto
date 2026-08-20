@@ -1530,6 +1530,7 @@ function buildQueueEntry(seed) {
   const image = seed.image ?? imageFallbacks[seed.brand];
 
   return {
+    reviewReadiness: seed.reviewReadiness,
     car: {
       slug: carSlug,
       title: carTitle,
@@ -1648,24 +1649,83 @@ const queuedCarSeeds = [
     generation: "Fourth Generation",
     generationCode: "XU70",
     generationYears: "2020-2023",
-    image: "/images/cars/toyota-highlander-2020.svg",
+    image: "/images/photos/cars/toyota-highlander-2020.webp",
     kind: "brakePads",
     carDescription:
-      "The 2020 Toyota Highlander is usually a sensible family SUV to live with, but brake refinement, tire noise, and battery reserve complaints are the ownership issues most likely to show up first.",
+      "For a 2020 Toyota Highlander, start with documented Toyota maintenance, VIN-specific recall status, tire and brake condition, and a 12-volt battery test. Exact repair and parts fitment depend on the trim, drivetrain, axle, and VIN.",
     commonProblems: [
-      "Brake squeal or light front-end pulsation once family-duty mileage builds",
-      "Highway tire noise or shake that makes the SUV feel less refined than it should",
-      "Weak 12-volt battery behavior after repeated short-trip use"
+      "Brake noise, vibration, or a changed pedal feel that needs inspection before pads are selected",
+      "Highway vibration or road noise that should begin with tire, wheel, and alignment checks",
+      "A weak 12-volt battery after short trips or extended parking"
     ],
     maintenanceTips: [
-      "Treat brake refinement complaints early so the rotors and hardware do not get rougher than the fix needs to be.",
-      "Rotate tires consistently because a family SUV hides wear until refinement drops sharply.",
-      "Do not ignore weak battery behavior if the Highlander spends a lot of time on short trips."
+      "Follow the model-year Toyota maintenance guide and retain the service record for a used-buyer review.",
+      "Check tire age, pressure, wear pattern, balance, and alignment history before treating highway noise as a suspension fault.",
+      "Test the 12-volt battery and charging system when weak starting follows short trips or extended parking."
     ],
     carFaqs: [
-      { question: "Is the 2020 Highlander expensive to keep up?", answer: "Usually no. Most common complaints are still wear-item or refinement issues if handled early." },
-      { question: "What ownership issue shows up first most often?", answer: "Brake refinement and tire-related complaints are some of the first patterns owners notice." }
-    ]
+      { question: "Is the 2020 Highlander expensive to keep up?", answer: "The answer depends on maintenance records, tire and brake condition, and the exact trim. Check those before using a general ownership-cost estimate." },
+      { question: "What should I check first on a used 2020 Highlander?", answer: "Start with the Toyota maintenance record, tire age and wear, brake condition, 12-volt battery test, open recalls, and VIN-specific fitment before pricing repairs." }
+    ],
+    reviewReadiness: {
+      evidence: {
+        summary: "This 2020 Highlander coverage uses Toyota's model-year manual and warranty-and-maintenance guide for service context, NHTSA recall records for campaign context, and a symptom-first brake inspection path. It does not assume that an ordinary wear symptom is a model-wide fault.",
+        basedOn: [
+          "Toyota's 2020 Highlander manuals and warranty-and-maintenance guide for model-year maintenance, warning, and operating context.",
+          "NHTSA's recall lookup and the published 2020 Highlander recall record for campaign context only.",
+          "Manufacturer brake-pad information for material and product-selection criteria, with exact vehicle fitment left to the supplier catalog and VIN."
+        ],
+        appliesTo: [
+          "US-market 2020 Toyota Highlander XU70 daily-driver ownership, including gas and hybrid models where a standard 12-volt battery, tire, or friction-brake concern is being assessed.",
+          "Used-buyer and owner checks that can be confirmed through records, inspection, and a road test before parts are ordered."
+        ],
+        doesNotCover: [
+          "VIN-specific recall completion, warranty coverage, or dealer diagnosis.",
+          "Exact brake, wheel, tire, or battery fitment across every trim, drivetrain, wheel package, and market version.",
+          "Hybrid high-voltage system diagnosis, collision damage, flood damage, or modifications."
+        ],
+        sourceLinks: [
+          { label: "Toyota 2020 Highlander manuals and warranties", href: "https://www.toyota.com/owners/warranty-owners-manuals/vehicle/highlander/2020/" },
+          { label: "Toyota 2020 Highlander warranty and maintenance guide", href: "https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-20Highlander/pdf/T-MMS-20Highlander.pdf" },
+          { label: "NHTSA 2020 Toyota Highlander recall record", href: "https://static.nhtsa.gov/odi/rcl/2020/RCMN-20V633-2759.pdf" }
+        ]
+      },
+      decisionPath: [
+        {
+          trigger: "A used Highlander has brake noise at low speed but normal pedal feel and stopping performance.",
+          check: "Inspect pad thickness, rotor surface, pad hardware, and the exact axle and trim before assuming a caliper or a model-wide fault.",
+          nextStep: "Correct the confirmed wear or hardware issue, then confirm the replacement pad listing against the vehicle's exact configuration."
+        },
+        {
+          trigger: "Brake noise arrives with grinding, vibration, pull, warning lights, a soft pedal, or a longer stopping distance.",
+          check: "Treat it as a safety-related brake inspection: check friction material, rotors, caliper movement, hydraulic condition, and stored warnings.",
+          nextStep: "Do not select pads from a noise-only shortlist until the braking fault has been diagnosed and repaired."
+        },
+        {
+          trigger: "The SUV feels noisy or unsettled at highway speed.",
+          check: "Check tire age, wear pattern, pressure, balance, wheel damage, and alignment history before attributing the issue to suspension or bearings.",
+          nextStep: "Resolve tire and wheel evidence first, then escalate only if the symptom remains."
+        }
+      ],
+      parts: {
+        selectionCriteria: [
+          "Confirm the exact 2020 Highlander trim, drivetrain, axle, and supplier fitment listing before ordering.",
+          "Choose friction material and noise-control priorities for normal family-SUV use rather than an aggressive street or towing claim.",
+          "Inspect rotor condition, hardware, and caliper movement because pad selection cannot correct a confirmed brake fault.",
+          "Check the retailer's current price, warranty, and return policy on the exact part number before purchase."
+        ],
+        alternatives: [
+          "Have a qualified shop inspect and service the existing pads, rotors, and hardware when measurements and condition allow.",
+          "Use Toyota Genuine Parts when an owner prefers dealer-confirmed fitment, then compare the exact part number and warranty against aftermarket options."
+        ],
+        sourceLinks: [
+          { label: "Akebono ProACT ceramic brake pads", href: "https://www.akebonobrakes.com/pro-act" },
+          { label: "Bosch QuietCast premium brake pads", href: "https://www.boschautoparts.com/p/quietcast-premium-disc-brake-pads" },
+          { label: "Wagner OEX brake pads", href: "https://www.wagnerbrake.com/products/braking/brake-pads/wagner-oex.html" }
+        ],
+        pricingCheckedAt: "2026-08-20"
+      }
+    }
   },
   {
     slug: "honda-pilot-2020",

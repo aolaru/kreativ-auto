@@ -11,6 +11,16 @@ export interface ImageCredit {
 
 export const imageCredits: ImageCredit[] = [
   {
+    title: "2020 Toyota Highlander XLE AWD",
+    localPath: "/images/photos/cars/toyota-highlander-2020.webp",
+    sourceName: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:2020_Toyota_Highlander_XLE_AWD,_front.jpg",
+    author: "Kevauto",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    modifications: "Converted to WebP and resized for site performance."
+  },
+  {
     title: "2020 Chevrolet Silverado 1500 High Country",
     localPath: "/images/photos/cars/chevrolet-silverado-1500-2020.webp",
     sourceName: "Wikimedia Commons",

@@ -81,7 +81,7 @@ function yamlSourceLinks(items) {
 
   return [
     "sourceLinks:",
-    ...items.map((item) => `  - label: ${quote(item.label)}\n    href: ${quote(item.href)}`).join("\n")
+    items.map((item) => `  - label: ${quote(item.label)}\n    href: ${quote(item.href)}`).join("\n")
   ].join("\n");
 }
 

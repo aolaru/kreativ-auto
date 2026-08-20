@@ -11,6 +11,7 @@ import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam } from "../../data/editorial";
 import { hondaCivicProblemQuality } from "../../data/honda-civic-quality";
+import { highlanderProblemQuality } from "../../data/toyota-highlander-quality";
 import { rav4ProblemQuality } from "../../data/toyota-rav4-quality";
 import { isReviewReadyProblem } from "../../data/review-readiness";
 import { includesPhrase, uniqueByHref } from "../../utils/taxonomy";
@@ -109,7 +110,7 @@ const triageFirstCheck = problem.data.firstCheck ?? problem.data.solutions[0];
 const triageConfusedWith = problem.data.confusedWith;
 const triageStopDrivingIf =
   problem.data.stopDrivingIf.length > 0 ? problem.data.stopDrivingIf : problem.data.whenToSeeMechanic.slice(0, 2);
-const vehicleQuality = rav4ProblemQuality[problem.id] ?? hondaCivicProblemQuality[problem.id];
+const vehicleQuality = rav4ProblemQuality[problem.id] ?? hondaCivicProblemQuality[problem.id] ?? highlanderProblemQuality[problem.id];
 const reviewReady = isReviewReadyProblem(problem.id) && Boolean(vehicleQuality);
 const primaryCause = problem.data.causes[0];
 const primaryRelatedPart = relatedBest[0]?.eyebrow ?? relatedBest[0]?.title;
