@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { mkdir, readdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
@@ -7,6 +8,7 @@ const cwd = process.cwd();
 const carsDir = path.join(cwd, "src/content/cars");
 const problemsDir = path.join(cwd, "src/content/problems");
 const bestDir = path.join(cwd, "src/content/best");
+const publicDir = path.join(cwd, "public");
 const args = new Set(process.argv.slice(2));
 const dryRun = args.has("--dry-run");
 const selectedSlug = [...args].find((arg) => arg.startsWith("--slug="))?.slice("--slug=".length);
@@ -69,6 +71,17 @@ function yamlBuyingTiers(items) {
         `    reason: ${quote(item.reason)}`
       ].join("\n")
     )
+  ].join("\n");
+}
+
+function yamlSourceLinks(items) {
+  if (!items || items.length === 0) {
+    return "sourceLinks: []";
+  }
+
+  return [
+    "sourceLinks:",
+    ...items.map((item) => `  - label: ${quote(item.label)}\n    href: ${quote(item.href)}`).join("\n")
   ].join("\n");
 }
 
@@ -204,6 +217,12 @@ function renderBest(entry, carSlug, problemSlug) {
     yamlProducts(entry.products, "products"),
     "buyingAdvice:",
     yamlList(entry.buyingAdvice, 2),
+    "selectionCriteria:",
+    yamlList(entry.selectionCriteria, 2),
+    "alternatives:",
+    yamlList(entry.alternatives, 2),
+    yamlSourceLinks(entry.sourceLinks),
+    entry.pricingCheckedAt ? `pricingCheckedAt: ${entry.pricingCheckedAt}` : null,
     `quickVerdict: ${quote(entry.quickVerdict)}`,
     "bestFor:",
     yamlList(entry.bestFor, 2),
@@ -219,6 +238,95 @@ function renderBest(entry, carSlug, problemSlug) {
   ].join("\n");
 
   return `${frontmatter.trimEnd()}\n`;
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function hasStringList(value, minimum = 1) {
+  return Array.isArray(value) && value.filter(isNonEmptyString).length >= minimum;
+}
+
+function hasSourceLinks(value, minimum = 2) {
+  return (
+    Array.isArray(value) &&
+    value.filter((item) => isNonEmptyString(item?.label) && isNonEmptyString(item?.href)).length >= minimum
+  );
+}
+
+function validateEditorialReadiness(entry) {
+  const blockers = [];
+  const { car, reviewReadiness } = entry;
+  const image = car.image;
+
+  if (!isNonEmptyString(image) || !image.startsWith("/images/photos/cars/") || !image.endsWith(".webp")) {
+    blockers.push("a real optimized vehicle photo under /images/photos/cars/ (WebP)");
+  } else {
+    const imagePath = path.join(publicDir, image.slice(1));
+    const thumbnail = image.replace("/images/photos/", "/images/thumbs/");
+    const thumbnailPath = path.join(publicDir, thumbnail.slice(1));
+
+    if (!existsSync(imagePath)) blockers.push(`vehicle photo asset ${image}`);
+    if (!existsSync(thumbnailPath)) blockers.push(`derived vehicle thumbnail ${thumbnail}`);
+  }
+
+  if (!reviewReadiness || typeof reviewReadiness !== "object") {
+    blockers.push("editorial review-readiness record");
+    return blockers;
+  }
+
+  const evidence = reviewReadiness.evidence;
+  if (!evidence || typeof evidence !== "object") {
+    blockers.push("evidence-and-scope record");
+  } else {
+    if (!isNonEmptyString(evidence.summary)) blockers.push("evidence summary");
+    if (!hasStringList(evidence.basedOn, 2)) blockers.push("at least two research-basis notes");
+    if (!hasStringList(evidence.appliesTo)) blockers.push("vehicle scope");
+    if (!hasStringList(evidence.doesNotCover)) blockers.push("scope limits");
+    if (!hasSourceLinks(evidence.sourceLinks)) blockers.push("at least two claim-level source links");
+  }
+
+  const decisionPath = reviewReadiness.decisionPath;
+  if (
+    !Array.isArray(decisionPath) ||
+    decisionPath.length < 2 ||
+    decisionPath.some(
+      (step) => !isNonEmptyString(step?.trigger) || !isNonEmptyString(step?.check) || !isNonEmptyString(step?.nextStep)
+    )
+  ) {
+    blockers.push("two evidence-led decision steps");
+  }
+
+  const parts = reviewReadiness.parts;
+  if (!parts || typeof parts !== "object") {
+    blockers.push("parts research record");
+  } else {
+    if (!hasStringList(parts.selectionCriteria, 3)) blockers.push("three parts selection criteria");
+    if (!hasStringList(parts.alternatives, 2)) blockers.push("two parts alternatives");
+    if (!hasSourceLinks(parts.sourceLinks)) blockers.push("at least two product or manufacturer source links");
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(parts.pricingCheckedAt ?? "")) blockers.push("pricing check date");
+  }
+
+  return blockers;
+}
+
+function applyEditorialReadiness(entry) {
+  const { evidence, parts } = entry.reviewReadiness;
+  return {
+    ...entry,
+    best: {
+      ...entry.best,
+      selectionCriteria: parts.selectionCriteria,
+      alternatives: parts.alternatives,
+      sourceLinks: parts.sourceLinks,
+      pricingCheckedAt: parts.pricingCheckedAt
+    },
+    reviewReadiness: {
+      ...entry.reviewReadiness,
+      evidence
+    }
+  };
 }
 
 async function existingSlugs(dir) {
@@ -254,29 +362,41 @@ if (!nextEntry) {
   process.exit(0);
 }
 
+const blockers = validateEditorialReadiness(nextEntry);
+if (blockers.length > 0) {
+  console.log(`Next backlog entry is not ready to generate: ${nextEntry.car.slug}`);
+  console.log("Required before a draft can be created:");
+  for (const blocker of blockers) {
+    console.log(`- ${blocker}`);
+  }
+  process.exit(0);
+}
+
+const readyEntry = applyEditorialReadiness(nextEntry);
+
 const outputs = [
   {
     kind: "car",
-    slug: nextEntry.car.slug,
-    path: path.join(carsDir, `${nextEntry.car.slug}.md`),
-    content: renderCar(nextEntry.car, nextEntry.problem.slug, nextEntry.best.slug)
+    slug: readyEntry.car.slug,
+    path: path.join(carsDir, `${readyEntry.car.slug}.md`),
+    content: renderCar(readyEntry.car, readyEntry.problem.slug, readyEntry.best.slug)
   },
   {
     kind: "problem",
-    slug: nextEntry.problem.slug,
-    path: path.join(problemsDir, `${nextEntry.problem.slug}.md`),
-    content: renderProblem(nextEntry.problem, nextEntry.car.slug, nextEntry.best.slug)
+    slug: readyEntry.problem.slug,
+    path: path.join(problemsDir, `${readyEntry.problem.slug}.md`),
+    content: renderProblem(readyEntry.problem, readyEntry.car.slug, readyEntry.best.slug)
   },
   {
     kind: "best",
-    slug: nextEntry.best.slug,
-    path: path.join(bestDir, `${nextEntry.best.slug}.md`),
-    content: renderBest(nextEntry.best, nextEntry.car.slug, nextEntry.problem.slug)
+    slug: readyEntry.best.slug,
+    path: path.join(bestDir, `${readyEntry.best.slug}.md`),
+    content: renderBest(readyEntry.best, readyEntry.car.slug, readyEntry.problem.slug)
   }
 ];
 
 if (dryRun) {
-  console.log(`Next backlog entry: ${nextEntry.car.slug}`);
+  console.log(`Next publish-ready backlog entry: ${readyEntry.car.slug}`);
   for (const file of outputs) {
     console.log(`\n### ${file.kind}: ${path.relative(cwd, file.path)}\n`);
     console.log(file.content);

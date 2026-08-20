@@ -55,7 +55,7 @@ npm run autopilot:add-next-car:dry
 npm run autopilot:add-next-car
 ```
 
-Before generating a draft, verify that the candidate has a real optimized vehicle image, source-backed evidence, and a review-readiness record. Generated pages stay `noindex` until that review is complete.
+The generator now refuses to create a draft until the next candidate has a real optimized vehicle image and thumbnail, claim-level sources, an evidence-and-scope record, two decision steps, and complete parts-research metadata. Generated pages stay `noindex` until editorial review is complete.
 
 ## Local quality maintenance
 
