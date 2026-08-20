@@ -1,9 +1,9 @@
 ---
 title: "Brake squeal at low speed on Toyota Highlander 2020"
 metaTitle: "Toyota Highlander 2020 Brake squeal at low speed: Causes, Fixes, and Parts to Check"
-metaDescription: "Diagnose low-speed brake squeal by checking pad compound, hardware, and rotor condition before buying parts."
+metaDescription: "Low-speed brake noise on a 2020 Highlander: check pad wear, rotor surface, hardware, and braking performance before ordering parts."
 excerpt: "Low-speed brake squeal is usually a pad-and-hardware issue before it becomes a full brake-system problem."
-heroImage: "/images/photos/parts/akebono-proact.webp"
+heroImage: "/images/photos/cars/toyota-highlander-2020.webp"
 updatedAt: 2026-08-20
 relatedCars:
   - "toyota-highlander-2020"

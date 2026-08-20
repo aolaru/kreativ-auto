@@ -13,6 +13,16 @@ export interface OwnershipGuide {
 
 export const ownershipGuides: OwnershipGuide[] = [
   {
+    title: "Toyota Highlander XU70: what to check before buying",
+    href: "/guides/toyota-highlander-xu70-what-to-check-before-buying/",
+    description:
+      "A used-buyer inspection for a 2020 Highlander, covering records, recalls, tires, brakes, battery condition, and the test-drive evidence that should affect the price.",
+    eyebrow: "Used buyer guide",
+    image: "/images/photos/cars/toyota-highlander-2020.webp",
+    relatedCars: ["toyota-highlander-2020"],
+    relatedGenerations: ["toyota-highlander-xu70-2020-2023"]
+  },
+  {
     title: "Should you buy a used VW Tiguan II facelift?",
     href: "/guides/vw-tiguan-ii-facelift-should-you-buy-it-used/",
     description:

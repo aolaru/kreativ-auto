@@ -1,11 +1,11 @@
 import { hondaCivicBestQuality, hondaCivicGuideQuality } from "./honda-civic-quality";
-import { highlanderBestQuality, highlanderProblemQuality } from "./toyota-highlander-quality";
+import { highlanderBestQuality, highlanderGuideQuality, highlanderProblemQuality } from "./toyota-highlander-quality";
 import { rav4BestQuality, rav4GuideQuality } from "./toyota-rav4-quality";
 
 const combineKeys = (...records: Array<Record<string, unknown>>) => new Set(records.flatMap((record) => Object.keys(record)));
 
 // Only pages with vehicle-specific evidence and a decision path are submitted for search and ad review.
-export const reviewReadyGuideIds = combineKeys(rav4GuideQuality, hondaCivicGuideQuality);
+export const reviewReadyGuideIds = combineKeys(rav4GuideQuality, hondaCivicGuideQuality, highlanderGuideQuality);
 // Reusable symptom pages can support readers, but they are not a substitute for
 // vehicle-specific research. Keep them out of search until each has dedicated
 // model scope and evidence rather than inheriting a cluster's evidence record.

@@ -223,6 +223,7 @@ function renderBest(entry, carSlug, problemSlug) {
     yamlList(entry.alternatives, 2),
     yamlSourceLinks(entry.sourceLinks),
     entry.pricingCheckedAt ? `pricingCheckedAt: ${entry.pricingCheckedAt}` : null,
+    entry.priceVerified === true ? "priceVerified: true" : "priceVerified: false",
     `quickVerdict: ${quote(entry.quickVerdict)}`,
     "bestFor:",
     yamlList(entry.bestFor, 2),
@@ -320,7 +321,8 @@ function applyEditorialReadiness(entry) {
       selectionCriteria: parts.selectionCriteria,
       alternatives: parts.alternatives,
       sourceLinks: parts.sourceLinks,
-      pricingCheckedAt: parts.pricingCheckedAt
+      pricingCheckedAt: parts.pricingCheckedAt,
+      priceVerified: parts.priceVerified === true
     },
     reviewReadiness: {
       ...entry.reviewReadiness,

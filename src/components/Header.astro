@@ -1,10 +1,13 @@
 ---
 import { primaryOwnershipTasks } from "../data/ownership-tasks";
 
-const navItems = primaryOwnershipTasks.map((task) => ({
-  href: task.href,
-  label: task.label
-}));
+const navItems = [
+  { href: "/browse/", label: "Browse cars" },
+  ...primaryOwnershipTasks.map((task) => ({
+    href: task.href,
+    label: task.label
+  }))
+];
 ---
 
 <header class="relative z-40 border-b border-black/5 bg-white/85 backdrop-blur">
@@ -80,7 +83,7 @@ const navItems = primaryOwnershipTasks.map((task) => ({
             <ul class="grid grid-cols-2 gap-2 text-sm font-semibold text-ink">
               {
                 navItems.map((item) => (
-                  <li>
+                  <li class="last:col-span-2">
                     <a
                       class="block rounded-xl border border-slate-200 bg-white px-3 py-3 text-center transition hover:border-accent/40 hover:text-accent"
                       href={item.href}
@@ -135,6 +138,8 @@ const navItems = primaryOwnershipTasks.map((task) => ({
 
       return searchIndexPromise;
     };
+
+    void loadSearchIndex();
 
     const scoreEntry = (entry, query) => {
       const haystackTitle = entry.title.toLowerCase();

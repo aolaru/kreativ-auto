@@ -1,11 +1,10 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
-import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam } from "../../data/editorial";
@@ -15,7 +14,7 @@ import { hondaCivicGuideQuality } from "../../data/honda-civic-quality";
 import { highlanderCarQuality } from "../../data/toyota-highlander-quality";
 import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 import { isReviewReadyCar } from "../../data/review-readiness";
-import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, slugify, uniqueByHref } from "../../utils/taxonomy";
+import { getGenerationLabel, getGenerationRange, getGenerationSlug, includesPhrase, uniqueByHref } from "../../utils/taxonomy";
 import { guideMatchesCar } from "../../utils/relationships";
 
 export async function getStaticPaths() {
@@ -33,6 +32,8 @@ const car = await getEntry("cars", slug);
 if (!car) {
   throw new Error(`Car entry not found for slug: ${slug}`);
 }
+
+const { Content } = await render(car);
 
 const [problemEntries, bestEntries] = await Promise.all([
   getCollection("problems"),
@@ -104,93 +105,6 @@ const relatedOwnershipGuides = uniqueByHref(
 );
 const directRelatedLinks = car.data.relatedProblems.length + car.data.relatedBest.length;
 const carAdsEnabled = directRelatedLinks >= 3;
-const coverageTitle = directRelatedLinks >= 5
-  ? "Detailed checks for this car"
-  : directRelatedLinks >= 3
-    ? "Connected ownership guide"
-    : "Focused vehicle overview";
-const coverageIntro = carAdsEnabled
-  ? "Start with the overview, then move into more specific diagnosis, fitment, and parts decisions."
-  : "Start with the vehicle basics, then check the matching sections before moving into broader generation details.";
-const coverageCards = [
-  {
-    label: "Problem guides",
-    value: relatedProblems.length,
-    description: relatedProblems.length
-      ? "Direct symptom and diagnosis pages connected to this car."
-      : "The common-problems checklist narrows the first symptom area."
-  },
-  {
-    label: "Parts guides",
-    value: relatedBest.length,
-    description: relatedBest.length
-      ? "Parts comparisons that match this vehicle."
-      : "Move to recommended parts only after the symptom points at that repair area."
-  },
-  {
-    label: "Ownership guides",
-    value: relatedOwnershipGuides.length,
-    description: relatedOwnershipGuides.length
-      ? "Longer buyer and maintenance pages for the platform."
-      : "Maintenance and fitment notes come before broader model context."
-  },
-  {
-    label: "Comparison guides",
-    value: relatedComparisons.length,
-    description: relatedComparisons.length
-      ? "Trim, powertrain, or platform comparisons that help keep advice specific."
-      : "Confirm trim, powertrain, and package differences before ordering parts."
-  }
-];
-
-const generationHref = `/generations/${getGenerationSlug(car.data)}/`;
-const buyingPath = relatedOwnershipGuides.find((guide) => guide.eyebrow === "Used buyer guide" || guide.eyebrow === "Avoid guide");
-const maintenancePath = relatedOwnershipGuides.find((guide) => guide.eyebrow === "Maintenance guide" || guide.eyebrow === "Service guide");
-const primaryCategoryHref = relatedBest[0]?.eyebrow ? `/categories/${slugify(relatedBest[0].eyebrow)}/` : "/categories/";
-const comparisonPath = relatedComparisons[0];
-const carStartPaths = [
-  {
-    eyebrow: "Buying used",
-    title: "Check the buying risk",
-    description: buyingPath
-      ? "Start with the ownership page that covers weak examples, records, and the first repair budget."
-      : "Start with the overview, service records, tire condition, and common problems before trusting the listing.",
-    href: buyingPath?.href ?? "#overview"
-  },
-  {
-    eyebrow: "Diagnosing problems",
-    title: "Match symptoms first",
-    description: relatedProblems.length
-      ? "Go to the symptom pages before a noise, warning light, vibration, or weak start becomes a parts order."
-      : "Start with the common-problems list and narrow the symptom before pricing parts.",
-    href: relatedProblems[0]?.href ?? "#common-problems"
-  },
-  {
-    eyebrow: "Maintenance costs",
-    title: "Price the first service reset",
-    description: maintenancePath
-      ? "Check the longer cost or interval page before deciding whether the car is priced fairly."
-      : "Review maintenance tips and immediate wear items before treating the price as final.",
-    href: maintenancePath?.href ?? "#maintenance-tips"
-  },
-  {
-    eyebrow: "Parts by category",
-    title: "Narrow the repair family",
-    description: relatedBest.length
-      ? "Open the matching part category after the symptom points toward a specific repair area."
-      : "Browse part categories only after the repair area is clear.",
-    href: primaryCategoryHref
-  },
-  {
-    eyebrow: "Model comparisons",
-    title: "Compare the alternative",
-    description: comparisonPath
-      ? "Open the related comparison when the decision depends on another model, trim, drivetrain, or generation."
-      : "Check the generation view when trim, phase, or platform differences matter before buying parts.",
-    href: comparisonPath?.href ?? generationHref
-  }
-];
-
 const carSeoTitleWithBrand = `${car.data.year} ${car.data.brand} ${car.data.model}: Problems & Maintenance`;
 const carSeoTitleCompact = `${car.data.year} ${car.data.model}: Problems & Maintenance`;
 const computedSeoTitle = carSeoTitleWithBrand.length <= 58 ? carSeoTitleWithBrand : carSeoTitleCompact;
@@ -205,15 +119,6 @@ const civicQuality = car.id === "honda-civic-2019"
   : undefined;
 const vehicleQuality = rav4Quality ?? civicQuality ?? highlanderCarQuality[car.id];
 const reviewReady = isReviewReadyCar(car.id) && Boolean(vehicleQuality);
-const carTrustPointsForPage = [
-  car.data.commonProblems[0]
-    ? `${car.data.title} coverage starts with ${car.data.commonProblems[0].toLowerCase()}.`
-    : `${car.data.title} coverage starts with the model-year ownership basics.`,
-  relatedBest[0]
-    ? `${relatedBest[0].eyebrow} parts are linked after the symptom points toward that repair area.`
-    : "Recommended parts stay secondary to the symptom and maintenance notes.",
-  `${getGenerationLabel(car.data)} notes keep trim, phase, and powertrain differences visible before parts are ordered.`
-];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Cars", href: "/cars/" },
@@ -253,7 +158,7 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro={`${car.data.brand} ${car.data.model} ${car.data.year} ownership guide with common issues, recommended parts, and maintenance advice.`}
+  intro={car.data.excerpt ?? car.data.description}
   faqs={car.data.faqs}
   image={socialImage}
   modifiedTime={car.data.updatedAt}
@@ -262,84 +167,25 @@ const schemas = [
   enableAds={reviewReady && carAdsEnabled}
   noindex={!reviewReady}
 >
-  <TrustBlock
-    summary={`${car.data.title} is tied to its common issues, matching parts, and the generation notes that change the answer.`}
-    byline={`By ${editorialTeam.name}`}
-    checkedLabel={car.data.updatedAt ? `Checked ${car.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-    points={carTrustPointsForPage}
-  />
-
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
-  {vehicleQuality && <DecisionPathBlock title="Ownership decision path" intro="Keep the symptom tied to evidence before it turns into a parts order or a broad repair theory." steps={vehicleQuality.decisionPath} />}
-
-  <section class="container-shell py-6">
-    <div class="accent-panel p-6 sm:p-8">
-      <div class="max-w-3xl">
-        <p class="eyebrow">Start Here</p>
-        <h2 class="mt-3 text-3xl font-semibold text-ink">Pick the path that matches the job</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">
-          Pick the shortcut that matches the job before scrolling through every section.
-        </p>
-      </div>
-      <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
-        {
-          carStartPaths.map((path) => (
-            <a
-              class="flex h-full flex-col rounded-3xl border border-orange-200/70 bg-white p-5 transition hover:-translate-y-0.5 hover:border-orange-300"
-              href={path.href}
-              data-ka-event="car_start_path_click"
-              data-ka-label={path.title}
-              data-ka-section={car.id}
-            >
-              <p class="eyebrow">{path.eyebrow}</p>
-              <h3 class="mt-3 text-xl font-semibold text-ink">{path.title}</h3>
-              <p class="mt-3 flex-1 text-sm leading-6 text-steel">{path.description}</p>
-              <p class="mt-5 text-sm font-semibold text-accent">Open path</p>
-            </a>
-          ))
-        }
-      </div>
-    </div>
-  </section>
-
-  <Section id="coverage-depth" title={coverageTitle} intro={coverageIntro}>
-    <div class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
-      {
-        coverageCards.map((item) => (
-          <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-            <p class="eyebrow">{item.label}</p>
-            <p class="mt-3 text-3xl font-semibold text-ink">{item.value}</p>
-            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </Section>
+  {vehicleQuality && <DecisionPathBlock title="What to check first" intro="Use the documented vehicle scope and the observed symptom before considering parts." steps={vehicleQuality.decisionPath} />}
 
   <Section
     id="overview"
     title="Overview"
-    intro="A quick view of what owners and shoppers should know before diving into repairs or upgrades."
+    intro="Vehicle details and the stated scope."
   >
     <div class="grid gap-6 md:grid-cols-[1.1fr_0.9fr]">
       <div>
-        {
-          car.data.image && (
-            <div class="mb-5 overflow-hidden rounded-3xl border border-slate-200 bg-slate-50">
-              <img
-                src={car.data.image}
-                alt={car.data.title}
-                class="h-72 w-full object-cover sm:h-80"
-                width="1200"
-                height="800"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          )
-        }
         <div class="max-w-none text-base leading-7 text-steel">
           <p>{car.data.description}</p>
+          {
+            reviewReady && (
+              <div class="mt-4 space-y-4 [&_p]:leading-7">
+                <Content />
+              </div>
+            )
+          }
         </div>
       </div>
       <div class="rounded-3xl bg-slate-50 p-6">
@@ -387,7 +233,7 @@ const schemas = [
   <Section
     id="common-problems"
     title="Common problems"
-    intro="These are the issues owners usually notice first before the repair turns into a bigger annoyance."
+    intro="Each item needs inspection in the stated vehicle context; it is not a diagnosis by itself."
   >
     <ul class="grid gap-3 text-sm leading-6 text-steel sm:grid-cols-2">
       {car.data.commonProblems.map((problem) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{problem}</li>)}
@@ -412,7 +258,7 @@ const schemas = [
   <Section
     id="recommended-parts"
     title="Recommended parts"
-    intro="These are the parts worth looking at first if you are trying to solve a common issue or stay ahead of wear."
+    intro="Confirm the fault and exact fitment before treating any product as a match."
   >
     <div class="grid gap-6 md:grid-cols-2">
       {car.data.recommendedParts.map((product) => <ProductCard product={product} />)}

@@ -4,7 +4,7 @@ import { primaryOwnershipTasks } from "../data/ownership-tasks";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { toThumbnail } from "../utils/images";
 
-const featuredGuides = [
+const reviewedStartingPoints = [
   {
     eyebrow: "Used SUV guide",
     title: "Toyota RAV4 XA50: what to check before buying",
@@ -25,6 +25,13 @@ const featuredGuides = [
     description: "A practical inspection path for engine choice, A/C behavior, maintenance evidence, brakes, and front-end noise.",
     href: "/guides/honda-civic-10th-gen-facelift-what-to-check-before-buying/",
     image: "/images/photos/cars/honda-civic-2019.webp"
+  },
+  {
+    eyebrow: "Used family-SUV guide",
+    title: "Toyota Highlander 2020: what to check first",
+    description: "Check maintenance records, recall status, brake condition, tires, and battery health before pricing a used Highlander.",
+    href: "/cars/toyota-highlander-2020/",
+    image: "/images/photos/cars/toyota-highlander-2020.webp"
   }
 ];
 ---
@@ -32,7 +39,7 @@ const featuredGuides = [
 <BaseLayout
   enableAds={false}
   title="Used-Car Checks, Problem Diagnosis, and Ownership Guides"
-  description="Source-led used-car checks, symptom guides, and ownership research for Toyota RAV4 and Honda Civic buyers."
+  description="Source-led used-car checks, symptom guides, and ownership research for buyers and owners who need a clear next step."
 >
   <section class="container-shell py-12 sm:py-16">
     <div class="surface surface-dark hero-frame p-8 sm:p-12">
@@ -42,8 +49,8 @@ const featuredGuides = [
         <p class="mt-6 max-w-3xl text-lg leading-8 text-steel">
           Search reviewed cars, symptoms, and guides, then follow a practical path for buying used, diagnosing a complaint, planning maintenance, or comparing powertrains.
         </p>
-        <a class="mt-8 inline-flex rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-ink" href="/guides/toyota-rav4-xa50-what-to-check-before-buying/" data-ka-event="homepage_cta_click" data-ka-label="Open RAV4 inspection checklist" data-ka-section="hero">
-          Open the RAV4 inspection checklist
+        <a class="mt-8 inline-flex rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-ink" href="/browse/" data-ka-event="homepage_cta_click" data-ka-label="Browse reviewed cars" data-ka-section="hero">
+          Browse reviewed cars
         </a>
       </div>
     </div>
@@ -73,12 +80,12 @@ const featuredGuides = [
   <section class="container-shell pb-8">
     <div class="surface hero-frame p-6 sm:p-8">
       <div>
-        <p class="eyebrow">Reviewed guides</p>
-        <h2 class="mt-3 text-3xl font-semibold text-ink">Start with a vehicle and a decision</h2>
+        <p class="eyebrow">Reviewed starting points</p>
+        <h2 class="mt-3 text-3xl font-semibold text-ink">Choose a vehicle, then a decision</h2>
       </div>
-      <div class="mt-6 grid gap-6 lg:grid-cols-3">
+      <div class="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {
-          featuredGuides.map((guide) => (
+          reviewedStartingPoints.map((guide) => (
             <a class="overflow-hidden rounded-xl border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={guide.href} data-ka-event="homepage_cta_click" data-ka-label={guide.title} data-ka-section="reviewed_guides">
               <div class="image-frame image-frame-card">
                 <img src={toThumbnail(guide.image)} alt={guide.title} loading="lazy" decoding="async" width="960" height="640" />

@@ -1,9 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
-import CardIcon from "../components/CardIcon.astro";
 import Section from "../components/Section.astro";
-import { ownershipTasks } from "../data/ownership-tasks";
+import { isReviewReadyCar } from "../data/review-readiness";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { getGenerationKey, getGenerationLabel, getGenerationRange, getGenerationSlug, slugify } from "../utils/taxonomy";
 import { toThumbnail } from "../utils/images";
@@ -40,7 +39,8 @@ const generationGroups = Array.from(
   })
   .sort((a, b) => b.coverage - a.coverage || a.label.localeCompare(b.label));
 
-const featuredCars = [...cars]
+const reviewedCars = [...cars]
+  .filter((car) => isReviewReadyCar(car.id))
   .map((car) => ({
     car,
     coverage: car.data.relatedProblems.length + car.data.relatedBest.length
@@ -64,9 +64,8 @@ const breadcrumbs = [
 
 <BaseLayout
   enableAds={false}
-  noindex={true}
   title="Browse Kreativ Auto"
-  description="Browse Kreativ Auto by car, brand, model, generation, and parts category."
+  description="Browse reviewed cars, brands, generations, and repair areas on Kreativ Auto."
 >
   <div class="container-shell py-12 sm:py-16">
     <Breadcrumbs items={breadcrumbs} />
@@ -75,9 +74,9 @@ const breadcrumbs = [
       <div class="grid gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-end">
         <div>
           <p class="eyebrow">Browse</p>
-          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Find by vehicle, brand, model, or part type</h1>
+          <h1 class="mt-4 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Browse vehicles and repair areas</h1>
           <p class="mt-4 max-w-3xl text-lg leading-8 text-steel">
-            Best for jumping straight to a known brand, model, generation, or parts category. For a symptom or buying decision, the diagnose and buying-guide paths are usually faster.
+            Start with a reviewed vehicle when you want purchase or ownership guidance. Use the indexes below when you already know the brand, model, generation, or repair area.
           </p>
         </div>
         <div class="grid gap-3 sm:grid-cols-2">
@@ -92,39 +91,9 @@ const breadcrumbs = [
     </div>
 
     <div class="mt-10 space-y-8">
-      <Section title="Start by ownership task" intro="Choose the job first when a direct brand, model, or category list is not the fastest route.">
-        <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-          {ownershipTasks.map((task) => (
-            <a class="mesh-card flex h-full flex-col p-5 transition hover:-translate-y-0.5 hover:bg-white" href={task.href} data-ka-event="browse_task_click" data-ka-label={task.title} data-ka-section="ownership_tasks">
-              <CardIcon kind={task.kind} />
-              <h2 class="mt-5 text-xl font-semibold text-ink">{task.title}</h2>
-              <p class="mt-3 flex-1 text-sm leading-6 text-steel">{task.description}</p>
-              <p class="mt-5 text-sm font-semibold text-accent">{task.cta}</p>
-            </a>
-          ))}
-        </div>
-      </Section>
-
-      <Section title="When browse is the best route" intro="Use the browse indexes when you already know at least one fixed detail and want to avoid scanning unrelated advice.">
-        <div class="grid gap-4 md:grid-cols-3">
-          <article class="editorial-card">
-            <h2 class="text-xl font-semibold text-ink">You know the exact vehicle</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">Open the car or model page first, then move to problems, parts, or comparisons from that context.</p>
-          </article>
-          <article class="editorial-card">
-            <h2 class="text-xl font-semibold text-ink">You know the repair area</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">Open the parts category after the symptom points clearly at brakes, batteries, ignition, tires, suspension, or another system.</p>
-          </article>
-          <article class="editorial-card">
-            <h2 class="text-xl font-semibold text-ink">You are comparing versions</h2>
-            <p class="mt-3 text-sm leading-6 text-steel">Open generations or comparisons when engine, drivetrain, hybrid, facelift, or trim differences change the answer.</p>
-          </article>
-        </div>
-      </Section>
-
-      <Section title="Best starting vehicles" intro="These vehicles have the clearest path from symptoms to part decisions.">
+      <Section title="Reviewed vehicles" intro="These vehicles have a model-specific evidence and decision path.">
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {featuredCars.map(({ car, coverage }) => (
+          {reviewedCars.map(({ car, coverage }) => (
             <a class="overflow-hidden rounded-3xl border border-slate-200 bg-slate-50 transition hover:-translate-y-0.5 hover:bg-white" href={`/cars/${car.id}/`}>
               {
                 (car.data.heroImage ?? car.data.image) && (
@@ -141,7 +110,7 @@ const breadcrumbs = [
                 )
               }
               <div class="p-5">
-                <p class="eyebrow">{coverage} related check{coverage === 1 ? "" : "s"}</p>
+                <p class="eyebrow">{coverage} related page{coverage === 1 ? "" : "s"}</p>
                 <h2 class="mt-2 text-2xl font-semibold text-ink">{car.data.title}</h2>
                 <p class="mt-3 text-sm leading-6 text-steel">{car.data.excerpt ?? car.data.metaDescription ?? car.data.description}</p>
               </div>

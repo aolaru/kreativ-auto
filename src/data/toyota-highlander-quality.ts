@@ -78,3 +78,14 @@ export const highlanderProblemQuality: Record<string, QualityEnhancement> = {
 export const highlanderBestQuality: Record<string, QualityEnhancement> = {
   "best-brake-pads-for-toyota-highlander-2020": highlanderBrakeQuality
 };
+
+export const highlanderGuideQuality: Record<string, QualityEnhancement> = {
+  "toyota-highlander-xu70-what-to-check-before-buying": {
+    evidence: {
+      ...highlanderEvidence,
+      summary:
+        "The purchase decision is based on Toyota's model-year maintenance material, recall records, a documented service history, and condition found during inspection and a road test. It is not based on a blanket reliability claim."
+    },
+    decisionPath: highlanderBrakeDecisionPath
+  }
+};

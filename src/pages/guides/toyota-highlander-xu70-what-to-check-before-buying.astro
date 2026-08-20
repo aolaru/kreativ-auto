@@ -1,0 +1,128 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
+import { editorialTeam } from "../../data/editorial";
+import { highlanderGuideQuality } from "../../data/toyota-highlander-quality";
+
+const title = "Toyota Highlander XU70: what to check before buying";
+const description =
+  "A source-led used-buyer inspection for the 2020 Toyota Highlander, covering records, recalls, tires, brakes, battery condition, and the road-test evidence that should affect the price.";
+const image = "/images/photos/cars/toyota-highlander-2020.webp";
+const quality = highlanderGuideQuality["toyota-highlander-xu70-what-to-check-before-buying"];
+const publishedTime = new Date("2026-08-20");
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Guides", href: "/guides/" },
+  { label: title }
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    image: [new URL(image, Astro.site).toString()],
+    mainEntityOfPage: Astro.url.href,
+    datePublished: publishedTime.toISOString(),
+    dateModified: publishedTime.toISOString(),
+    author: { "@type": "Organization", name: editorialTeam.name },
+    publisher: { "@type": "Organization", name: editorialTeam.publisher }
+  }
+];
+---
+
+<ContentLayout
+  title={title}
+  description={description}
+  intro="Inspect the individual vehicle before paying for the Highlander name. Records, tire and brake condition, battery health, and recall completion matter more than a clean listing photo."
+  image={image}
+  publishedTime={publishedTime}
+  modifiedTime={publishedTime}
+  breadcrumbs={breadcrumbs}
+  schemas={schemas}
+  enableAds={false}
+>
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Start with the evidence" intro="Move from records to a cold inspection and road test. Do not make a parts or repair decision from a listing description alone." steps={quality.decisionPath} />
+
+  <Section title="Before arranging a viewing" eyebrow="Records first">
+    <p>
+      Ask for the VIN, current mileage, trim, powertrain, title status, and service invoices before travelling. The VIN is needed to check open recalls and to confirm that the vehicle description matches the vehicle in front of you. A seller's statement that the Highlander has been "maintained" is not a service history. Look for dated invoices, the servicing dealer or workshop, mileage at each visit, and the work performed.
+    </p>
+    <p class="mt-4">
+      Compare the invoices with Toyota's <a class="font-semibold text-accent hover:underline" href="https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-20Highlander/pdf/T-MMS-20Highlander.pdf" rel="noopener" target="_blank">2020 warranty and maintenance guide</a>. The goal is not to reject a car for one late routine item. It is to see whether the owner followed a consistent maintenance pattern and addressed work when it was due. Missing history does not prove a fault, but it should lower confidence and leave room in the price for a full baseline service.
+    </p>
+  </Section>
+
+  <Section title="Check recalls by VIN" eyebrow="Campaign status">
+    <p>
+      Recall information is vehicle-specific. Look up the VIN through the manufacturer or NHTSA and ask for evidence that any applicable campaign was completed. The published <a class="font-semibold text-accent hover:underline" href="https://static.nhtsa.gov/odi/rcl/2020/RCMN-20V633-2759.pdf" rel="noopener" target="_blank">NHTSA recall record for the 2020 Highlander</a> explains campaign context, but it cannot tell you whether the individual SUV received the repair. A completed recall is normal maintenance of an ownership obligation, not a reason by itself to pay more.
+    </p>
+    <p class="mt-4">
+      Match the VIN on the report to the VIN plate and registration documents. If the seller cannot provide it before the viewing, make the recall check part of the first conversation at the car. Do not assume that a dealer advertisement has already resolved every campaign.
+    </p>
+  </Section>
+
+  <Section title="Cold inspection" eyebrow="Condition before cosmetics">
+    <p>
+      Arrive early enough to see the vehicle before it has been warmed up. Start outside: inspect panel gaps, paint variation, lamps, windshield condition, underbody scrapes, and evidence of fluid leaks. A family SUV can have honest parking marks, but fresh paintwork, mismatched fasteners, uneven tire wear, or a wet area under the engine bay deserve a clear explanation and, where appropriate, an independent inspection.
+    </p>
+    <p class="mt-4">
+      Tires are a useful ownership record in physical form. Check that all four match in size and type, read the date code, look for shoulder or inner-edge wear, and compare tread depth across the axle. Uneven wear can point to alignment, suspension, or prior-impact questions; four tired tires can turn an apparently fair price into an immediate expense. Confirm the spare, jack, locking-wheel key, and basic cargo-area equipment as well.
+    </p>
+  </Section>
+
+  <Section title="Brake and wheel checks" eyebrow="Safety and running cost">
+    <p>
+      Look through the wheels at pad thickness and rotor condition where visible. During the road test, separate a light low-speed squeal from vibration through the pedal, pull under braking, grinding, warning lights, or a changed stopping feel. The latter symptoms need a proper brake inspection; replacing pads from a shortlist is not a diagnosis. Ask when pads and rotors were last replaced and whether the invoice identifies the axle and parts used.
+    </p>
+    <p class="mt-4">
+      At city and highway speed, listen for road-speed noise and observe whether vibration appears through the steering wheel, seat, or brake pedal. Begin with tire condition, pressure, wheel balance, and alignment history. That sequence prevents a buyer from pricing a bearing, suspension, or brake repair before checking the simpler and more common wheel-and-tire evidence.
+    </p>
+  </Section>
+
+  <Section title="Electrical and cabin checks" eyebrow="Everyday use">
+    <p>
+      Test the vehicle as a family SUV rather than taking a short loop around the block. Start it from cold, watch for warning lights that remain on, and operate climate control, infotainment, cameras, windows, locks, seats, and liftgate where fitted. Pair a weak or slow start with a 12-volt battery and charging-system test instead of guessing from age alone. Short-trip use and extended parking can be relevant, but neither replaces a test result.
+    </p>
+    <p class="mt-4">
+      Inspect second- and third-row mechanisms, seat belts, floor areas, and the headliner. Water marks, unusual odors, or inconsistent electrical behavior merit more investigation. These checks are not a substitute for a professional pre-purchase inspection; they help decide whether one is worth arranging before negotiation.
+    </p>
+  </Section>
+
+  <Section title="How to price the result" eyebrow="Decision point">
+    <p>
+      A clean Highlander with records, matching healthy tires, settled braking, normal electrical behavior, and completed VIN checks can justify a stronger price than an equivalent listing with unknown history. The premium should be tied to evidence you can verify, not to reputation alone. Document small issues during the viewing and turn them into a near-term maintenance allowance rather than arguing about each one in isolation.
+    </p>
+    <p class="mt-4">
+      Walk away or pause the deal when the seller will not supply the VIN, records contradict the mileage or stated condition, safety-related symptoms are unresolved, or the car needs several immediate wear items while being priced as ready to use. An independent inspection is most valuable when the evidence is mixed: it can confirm whether a manageable maintenance reset is all that remains or whether the price must account for a larger repair risk.
+    </p>
+  </Section>
+
+  <RelatedLinks
+    title="Highlander research"
+    items={[
+      {
+        href: "/cars/toyota-highlander-2020/",
+        title: "Toyota Highlander 2020 overview",
+        description: "Model-year scope, maintenance checks, fitment notes, and the first ownership decisions.",
+        image
+      },
+      {
+        href: "/problems/brake-squeal-at-low-speed-toyota-highlander-2020/",
+        title: "Low-speed brake noise on a 2020 Highlander",
+        description: "How to distinguish pad-and-hardware noise from symptoms that need a brake inspection.",
+        image
+      },
+      {
+        href: "/generations/toyota-highlander-xu70-2020-2023/",
+        title: "Toyota Highlander XU70 generation",
+        description: "Generation coverage and the model-year pages grouped under the 2020-2023 Highlander.",
+        image
+      }
+    ]}
+  />
+</ContentLayout>

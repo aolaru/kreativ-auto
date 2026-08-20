@@ -6,7 +6,6 @@ import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
 import BestDecisionBlock from "../../components/BestDecisionBlock.astro";
-import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
@@ -85,7 +84,7 @@ const buyingTiers = entry.data.buyingTiers;
 const categoryTerm = entry.data.category.toLowerCase();
 const vehicleLabel = entry.data.car_model;
 const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id] ?? highlanderBestQuality[entry.id];
-const priceIsVerified = Boolean(entry.data.pricingCheckedAt);
+const priceIsVerified = entry.data.priceVerified ?? Boolean(entry.data.pricingCheckedAt);
 const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??
   entry.data.fitment.phaseDifferences[0] ??
@@ -110,22 +109,6 @@ const beforeBuyingChecks = [
     description: topProduct
       ? `${topProduct.name} is the first shortlist option, but the right pick still depends on driving style, budget, and how long you plan to keep the car.`
       : "The best choice depends on driving style, budget, and how long you plan to keep the car."
-  }
-];
-const overbuyingCards = [
-  {
-    title: "Do not upgrade to hide a diagnosis",
-    description: `A more expensive ${categoryTerm} choice will not fix a wrong diagnosis, worn neighboring part, or installation issue.`
-  },
-  {
-    title: "Match normal use first",
-    description: bestFor[0]
-      ? `Start with the option that supports ${bestFor[0].toLowerCase()} before paying for a more aggressive spec.`
-      : "Start with the option that supports normal daily use before paying for a more aggressive spec."
-  },
-  {
-    title: "Keep a return path",
-    description: "Buy from a source with clear fitment confirmation, return terms, and enough product detail to verify that the part in the box matches the car."
   }
 ];
 const methodologyPointsForPage = [
@@ -203,27 +186,15 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro={`Compare ${categoryTerm} options for ${vehicleLabel}, then choose around the symptom, fitment, and how the car is actually used.`}
+  intro={entry.data.excerpt ?? seoDescription}
   faqs={entry.data.faqs}
   image={socialImage}
   modifiedTime={entry.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary={`${vehicleLabel} ${categoryTerm} picks are filtered for fitment confidence, daily-use value, and repairs that match the actual complaint.`}
-  editorialByline={`By ${editorialTeam.name}`}
-  editorialReviewedLabel={entry.data.updatedAt ? `Reviewed ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-  editorialBadges={["Comparison guide", "Methodology applied", "Fitment notes checked"]}
   enableAds={false}
   noindex={true}
 >
-  <TrustBlock
-    title="How these picks are chosen"
-    summary={`For ${vehicleLabel}, ${categoryTerm} recommendations are kept to options that match the common use case, have clear fitment paths, and avoid adding duplicate parts just to make the list longer.`}
-    byline={`By ${editorialTeam.name}`}
-    checkedLabel={entry.data.updatedAt ? `Checked ${entry.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-    points={methodologyPointsForPage}
-  />
-
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
   <Section
@@ -291,7 +262,7 @@ const schemas = [
     </div>
   </Section>
 
-  {vehicleQuality && <DecisionPathBlock title="Inspect before buying" intro={`Use the ${vehicleLabel} decision path before treating the shortlist as a confirmed repair.`} steps={vehicleQuality.decisionPath} />}
+  {vehicleQuality && <DecisionPathBlock title="Check before purchase" intro="Confirm the symptom and exact configuration before ordering a part." steps={vehicleQuality.decisionPath} />}
 
   <Section id="comparison-table" title={`${entry.data.category} comparison`} intro={`Compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
     <ComparisonTable products={entry.data.products} showPrice={priceIsVerified} />
@@ -309,19 +280,6 @@ const schemas = [
     </ul>
   </Section>
 
-  <Section id="choose-without-overbuying" title="Avoid overbuying" intro={`For ${categoryTerm}, the smartest choice is usually the part that matches the car's normal use and confirmed fault.`}>
-    <div class="grid gap-4 lg:grid-cols-3">
-      {
-        overbuyingCards.map((item) => (
-          <div class="rounded-2xl border border-slate-200 bg-white p-5">
-            <h3 class="text-lg font-semibold text-ink">{item.title}</h3>
-            <p class="mt-3 text-sm leading-6 text-steel">{item.description}</p>
-          </div>
-        ))
-      }
-    </div>
-  </Section>
-
   {
     (entry.data.fitment.appliesTo.length > 0 ||
       entry.data.fitment.doesNotApplyTo.length > 0 ||
@@ -336,16 +294,6 @@ const schemas = [
       </Section>
     )
   }
-
-  <Section
-    id="methodology"
-    title={`Why these ${categoryTerm} made the list`}
-    intro={`The ${vehicleLabel} shortlist favors fitment clarity, normal ownership use, and brands that make sense for this repair area.`}
-  >
-    <ul class="space-y-3 text-sm leading-6 text-steel">
-      {methodologyPointsForPage.map((item) => <li class="rounded-2xl bg-slate-50 px-4 py-3">{item}</li>)}
-    </ul>
-  </Section>
 
   <RelatedLinks
     title="Related cars"

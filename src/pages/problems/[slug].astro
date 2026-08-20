@@ -1,12 +1,11 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
 import FitmentNotes from "../../components/FitmentNotes.astro";
 import ProblemTriageBlock from "../../components/ProblemTriageBlock.astro";
-import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import { editorialTeam } from "../../data/editorial";
@@ -31,6 +30,8 @@ const problem = await getEntry("problems", slug);
 if (!problem) {
   throw new Error(`Problem entry not found for slug: ${slug}`);
 }
+
+const { Content } = await render(problem);
 
 const [carEntries, bestEntries] = await Promise.all([
   getCollection("cars"),
@@ -99,12 +100,6 @@ const seoDescription =
   problem.data.metaDescription ??
   `Diagnostic guide covering symptoms, likely causes, and repair solutions for: ${problem.data.title.toLowerCase()}.`;
 const socialImage = problem.data.heroImage ?? problem.data.recommendedParts[0]?.image;
-const quickFacts = [
-  { label: "Repair urgency", value: problem.data.urgency },
-  { label: "Can you drive it?", value: problem.data.canYouDrive },
-  { label: "Estimated cost", value: problem.data.estimatedCost },
-  { label: "DIY difficulty", value: problem.data.diyDifficulty }
-].filter((item) => item.value);
 const triageVerdict = problem.data.quickVerdict ?? problem.data.excerpt;
 const triageFirstCheck = problem.data.firstCheck ?? problem.data.solutions[0];
 const triageConfusedWith = problem.data.confusedWith;
@@ -113,18 +108,6 @@ const triageStopDrivingIf =
 const vehicleQuality = rav4ProblemQuality[problem.id] ?? hondaCivicProblemQuality[problem.id] ?? highlanderProblemQuality[problem.id];
 const reviewReady = isReviewReadyProblem(problem.id) && Boolean(vehicleQuality);
 const primaryCause = problem.data.causes[0];
-const primaryRelatedPart = relatedBest[0]?.eyebrow ?? relatedBest[0]?.title;
-const problemTrustPointsForPage = [
-  triageFirstCheck
-    ? `First check: ${triageFirstCheck}`
-    : `${problem.data.title} is checked against the symptom pattern before parts are considered.`,
-  primaryCause
-    ? `Likely cause to rule out early: ${primaryCause}`
-    : "Diagnosis starts with the common causes before moving into less common failures.",
-  primaryRelatedPart
-    ? `${primaryRelatedPart} links are useful only after the diagnosis points in that direction.`
-    : "Parts are treated as the last step after the symptom and first checks line up."
-];
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Problems", href: "/problems/" },
@@ -164,42 +147,28 @@ const schemas = [
 <ContentLayout
   title={seoTitle}
   description={seoDescription}
-  intro={`${problem.data.title} needs a calm first check before money goes into parts or a larger repair.`}
+  intro={problem.data.excerpt ?? seoDescription}
   faqs={problem.data.faqs}
   image={socialImage}
   modifiedTime={problem.data.updatedAt}
   breadcrumbs={breadcrumbs}
   schemas={schemas}
-  editorialSummary={`${problem.data.title} is organized around the complaint, the first check, and the repair path that follows from the evidence.`}
-  editorialByline={`By ${editorialTeam.name}`}
-  editorialReviewedLabel={problem.data.updatedAt ? `Reviewed ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-  editorialBadges={["Problem guide", "Fitment notes checked", "Parts links reviewed"]}
   enableAds={reviewReady}
   noindex={!reviewReady}
 >
-  <TrustBlock
-    summary={`${problem.data.title} is reviewed as a diagnosis path first and a parts decision second.`}
-    byline={`By ${editorialTeam.name}`}
-    checkedLabel={problem.data.updatedAt ? `Checked ${problem.data.updatedAt.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}` : undefined}
-    points={problemTrustPointsForPage}
-  />
-
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
 
-  <Section id="quick-answer" title={`${problem.data.title}: quick answer`} intro={`Use the quick facts to judge whether ${problem.data.title.toLowerCase()} can wait or needs attention now.`}>
-    <div class="grid gap-4 md:grid-cols-2">
-      {
-        quickFacts.map((item) => (
-          <div class="rounded-2xl bg-slate-50 p-5">
-            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-steel">{item.label}</p>
-            <p class="mt-3 text-sm leading-6 text-ink">{item.value}</p>
-          </div>
-        ))
-      }
-    </div>
-  </Section>
+  {
+    reviewReady && (
+      <Section id="model-context" title="Model-specific context">
+        <div class="max-w-none space-y-4 text-base leading-7 text-steel [&_p]:leading-7">
+          <Content />
+        </div>
+      </Section>
+    )
+  }
 
-  <Section id="triage" title="First check path" intro={triageFirstCheck ? `Start with ${triageFirstCheck.toLowerCase()}.` : "Start with the checks that can confirm the complaint before parts are ordered."}>
+  <Section id="triage" title="First check" intro={triageFirstCheck ? `Start with ${triageFirstCheck.toLowerCase()}.` : "Start with the checks that can confirm the complaint before parts are ordered."}>
     <ProblemTriageBlock
       quickVerdict={triageVerdict}
       firstCheck={triageFirstCheck}
