@@ -38,20 +38,15 @@ You can copy values from `.env.example`.
 
 Use `kreativauto.com` as the site's public domain.
 
-## Weekly content autopilot
+## Local content queue
 
-The repo includes a weekly workflow at `.github/workflows/weekly-new-car.yml`.
+The new-car backlog is kept in `scripts/autopilot/car-backlog.mjs` and is reviewed from the local project, not scheduled through GitHub Actions. The local weekly review reports the next candidate and any publishing blockers before a draft is generated.
 
-What it does:
+The generator creates:
 
-- picks the next missing curated backlog entry from `scripts/autopilot/car-backlog.mjs`
-- creates:
-  - one new car page scaffold in `src/content/cars/`
-  - one matching problem guide in `src/content/problems/`
-  - one matching best-parts guide in `src/content/best/`
-- runs `npm run build`
-- opens or updates a review PR from `codex/weekly-new-car`
-- skips the PR cleanly when the curated backlog has no new cluster to add
+- one new car page scaffold in `src/content/cars/`
+- one matching problem guide in `src/content/problems/`
+- one matching best-parts guide in `src/content/best/`
 
 Useful local commands:
 
@@ -60,20 +55,11 @@ npm run autopilot:add-next-car:dry
 npm run autopilot:add-next-car
 ```
 
-Required GitHub settings:
+Before generating a draft, verify that the candidate has a real optimized vehicle image, source-backed evidence, and a review-readiness record. Generated pages stay `noindex` until that review is complete.
 
-- `Settings -> Actions -> General -> Workflow permissions -> Read and write permissions`
-- enable `Allow GitHub Actions to create and approve pull requests`
+## Local quality maintenance
 
-Scheduling note:
-
-- the workflow is scheduled weekly on Monday at `06:15 UTC`
-- GitHub Actions cron is UTC-only, so local Europe/Bucharest run time shifts with daylight saving time
-- it now uses `npm ci` for deterministic installs and only builds/opens a PR when files actually changed
-
-## Daily maintenance autopilot
-
-The repo also includes a daily workflow at `.github/workflows/daily-site-maintenance.yml`.
+`.github/workflows/daily-site-maintenance.yml` is a manual GitHub quality check only. Local maintenance review is the place to identify potential content and technical fixes before they are edited.
 
 What it does:
 
@@ -88,9 +74,7 @@ What it does:
   - filling missing best-page recommendation fields like `bestFor`, `avoidIf`, and `buyingAdvice`
   - filling missing problem-page `relatedBest` links
   - refreshing the current month in `Updates` with a bounded automation note when it is still missing
-- runs `npm run build`
-- commits and pushes directly to `main` when there is a real fix
-- uses `npm ci` for deterministic installs and a short workflow timeout guard
+- runs `npm run build` and `npm run repo:health` after an approved change
 
 Useful local commands:
 
@@ -99,14 +83,7 @@ npm run autopilot:daily-maintenance:dry
 npm run autopilot:daily-maintenance
 ```
 
-Scheduling note:
-
-- the workflow is scheduled every 3 hours at minute `35`
-
-Operational note:
-
-- this workflow now writes directly to `main`
-- if branch protection blocks GitHub Actions pushes, the job will fail until those rules are adjusted
+The local recurring quality audit uses `npm run autopilot:daily-maintenance:dry`; it does not edit, commit, or push automatically.
 
 ### Notes
 
