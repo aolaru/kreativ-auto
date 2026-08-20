@@ -59,7 +59,7 @@ The generator now refuses to create a draft until the next candidate has a real 
 
 ## Local quality maintenance
 
-`.github/workflows/daily-site-maintenance.yml` is a manual GitHub quality check only. Local maintenance review is the place to identify potential content and technical fixes before they are edited.
+Local maintenance review is the place to identify potential content and technical fixes before they are edited. GitHub Actions is reserved for deployment.
 
 What it does:
 
