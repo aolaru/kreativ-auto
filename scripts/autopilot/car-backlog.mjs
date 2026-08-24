@@ -1521,7 +1521,7 @@ function categoryConfig(kind) {
 
 function buildQueueEntry(seed) {
   const cfg = categoryConfig(seed.kind);
-  const products = productCatalog[seed.kind];
+  const products = seed.products ?? productCatalog[seed.kind];
   const carSlug = seed.slug;
   const problemSlug = `${cfg.problemSlugBase}-${carSlug}`;
   const bestSlug = `best-${cfg.category.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-for-${carSlug}`;
@@ -1735,24 +1735,111 @@ const queuedCarSeeds = [
     generation: "Third Generation",
     generationCode: "YF6",
     generationYears: "2016-2022",
-    image: "/images/cars/honda-pilot-2020.svg",
+    image: "/images/photos/cars/honda-pilot-2020.webp",
     kind: "batteries",
+    products: [
+      {
+        name: "Duralast Platinum AGM H6-AGM",
+        price: "$259.99",
+        rating: 4.7,
+        affiliate_url: "https://www.autozone.com/batteries-starting-and-charging/battery/honda/pilot/2020",
+        summary: "AGM H6 option with 760 CCA; confirm the live vehicle-fitment result and terminal layout before ordering.",
+        image: "/images/photos/parts/car-battery.webp"
+      },
+      {
+        name: "Odyssey Performance AGM48H6L3",
+        price: "$362.99",
+        rating: 4.6,
+        affiliate_url: "https://www.autozone.com/batteries-starting-and-charging/battery/honda/pilot/2020",
+        summary: "Premium AGM H6 alternative with 720 CCA; verify exact fitment, warranty, and local availability.",
+        image: "/images/photos/parts/car-battery.webp"
+      },
+      {
+        name: "Optima YellowTop DH6",
+        price: "$369.99",
+        rating: 4.6,
+        affiliate_url: "https://www.autozone.com/batteries-starting-and-charging/battery/honda/pilot/2020",
+        summary: "AGM H6 alternative with 800 CCA for higher electrical demand; confirm exact vehicle fitment before purchase.",
+        image: "/images/photos/parts/car-battery.webp"
+      }
+    ],
     carDescription:
-      "The 2020 Honda Pilot stays broadly practical, but weak-start behavior, short-trip battery complaints, and the occasional brake or tire refinement issue are the things owners usually end up chasing first.",
+      "Assess a 2020 Honda Pilot through its service records, VIN-specific recall status, battery and charging-system test, and current brake and tire condition. A weak start or short-trip use pattern is a reason to test, not proof of a model-wide defect.",
     commonProblems: [
-      "Battery reserve complaints after sitting or repeated short-trip use",
-      "Brake feel and noise that make the Pilot feel heavier and older than it is",
-      "Highway tire vibration that gets blamed on the whole front end too early"
+      "A weak or no-start condition that requires battery, cable, charging-system, and use-pattern testing",
+      "Brake noise, vibration, or changed pedal feel that needs inspection before parts are selected",
+      "Highway vibration that should begin with tire, wheel, balance, and alignment checks"
     ],
     maintenanceTips: [
-      "Treat weak-start complaints like a battery-and-usage-pattern problem first, not an electrical mystery.",
-      "Keep brake hardware and tire condition in better shape than the size of the vehicle encourages.",
-      "Do not ignore short-trip ownership patterns when choosing the next battery."
+      "Follow Honda's Maintenance Minder and retain service records for ownership or used-buyer review.",
+      "Test battery condition and charging performance before buying a replacement or diagnosing parasitic draw.",
+      "Check tire age and wear, brake condition, and VIN-specific recalls rather than relying on generalized reliability claims."
     ],
     carFaqs: [
-      { question: "Do Pilots go through batteries quickly?", answer: "They can if the use pattern is heavy on short trips and sitting time." },
-      { question: "Is the 2020 Pilot still a practical used family SUV?", answer: "Yes, as long as the normal battery, brake, and tire wear patterns have not been ignored." }
-    ]
+      { question: "Do short trips prove that a Pilot needs a new battery?", answer: "No. Test battery condition and charging behavior first; the driving pattern is context, not a diagnosis." },
+      { question: "What should I check first on a used 2020 Pilot?", answer: "Start with service records, a battery and charging-system test, tire and brake condition, and VIN-specific recall status." }
+    ],
+    reviewReadiness: {
+      evidence: {
+        summary: "This coverage uses Honda's 2020 Pilot owner material for operating and maintenance context, NHTSA recall documentation for campaign context, and a test-first battery workflow. It does not present short-trip use or a weak start as proof of a model-wide defect.",
+        basedOn: [
+          "Honda's 2020 Pilot Owner's Guide and Maintenance Minder material for model-year operating, warning, and maintenance context.",
+          "Honda and NHTSA recall documentation for campaign context, with applicability and completion left to a VIN lookup.",
+          "Current supplier and retailer battery data for technology, group-size, CCA, warranty, and price comparisons; exact fitment remains a live catalog and vehicle check."
+        ],
+        appliesTo: [
+          "US-market 2020 Honda Pilot YF6 daily-driver ownership where a conventional 12-volt starting or reserve-capacity concern is being assessed.",
+          "Owner and used-buyer checks that can be confirmed through records, a battery load or conductance test, charging-system testing, inspection, and a road test."
+        ],
+        doesNotCover: [
+          "VIN-specific recall completion, warranty coverage, dealer diagnosis, or proof that every Pilot has the same battery complaint.",
+          "Exact battery fitment across every trim, accessory package, production split, or non-US market vehicle.",
+          "Collision or flood damage, modified electrical systems, or parasitic-draw diagnosis that requires professional testing."
+        ],
+        sourceLinks: [
+          { label: "Honda 2020 Pilot Owner's Guide", href: "https://techinfo.honda.com/rjanisis/pubs/QS/AH/ATG72020OG/enu/ATG72020OG.PDF" },
+          { label: "Honda 2020 Pilot Maintenance Minder", href: "https://owners.honda.com/utility/download?path=%2Fstatic%2Fpdfs%2F2020%2FPilot%2F2020_Pilot_Maintenance_Minder_System.pdf" },
+          { label: "NHTSA recall 20V-439 Honda owner notice", href: "https://static.nhtsa.gov/odi/rcl/2020/RCONL-20V439-5598.pdf" }
+        ]
+      },
+      decisionPath: [
+        {
+          trigger: "The Pilot cranks slowly or needs a jump after sitting or repeated short trips.",
+          check: "Inspect terminals and cables, record battery age and state of charge, then test battery health and charging voltage before selecting a replacement.",
+          nextStep: "Replace the battery only if testing supports it, using the exact live catalog listing for group size, terminal layout, technology, and trim."
+        },
+        {
+          trigger: "A known-good or recently replaced battery loses charge again.",
+          check: "Confirm charging performance and have parasitic draw measured after the battery is fully charged and known healthy.",
+          nextStep: "Repair the charging or draw fault before another battery is installed or repeatedly discharged."
+        },
+        {
+          trigger: "Battery or charging warnings appear while driving, or electrical systems become unstable.",
+          check: "Treat this as an active charging-system concern rather than a shopping decision.",
+          nextStep: "Limit driving and obtain a qualified diagnosis before relying on the vehicle."
+        }
+      ],
+      parts: {
+        selectionCriteria: [
+          "Confirm the exact 2020 Pilot trim and live supplier fitment result, including group size, case dimensions, hold-down, polarity, and terminal layout.",
+          "Match battery technology to the vehicle's current specification and use pattern; do not downgrade an AGM application without authoritative fitment guidance.",
+          "Compare cold-cranking amps, reserve capacity, free-replacement warranty, local availability, core charge, and return policy on the exact part number.",
+          "Test the existing battery and charging system first because a new battery cannot correct a charging or parasitic-draw fault."
+        ],
+        alternatives: [
+          "Have a qualified shop charge and test the existing battery, charging system, cable condition, and parasitic draw before replacement.",
+          "Use a Honda dealer or established battery retailer for VIN- or vehicle-confirmed fitment when production, trim, or equipment details are uncertain."
+        ],
+        sourceLinks: [
+          { label: "AutoZone 2020 Honda Pilot battery listings and current prices", href: "https://www.autozone.com/batteries-starting-and-charging/battery/honda/pilot/2020" },
+          { label: "Interstate 2020 Honda Pilot 3.5L battery results", href: "https://www.interstatebatteries.com/en-ca/product-search-results/2020-honda-pilot-v635l" },
+          { label: "Interstate MTX AGM battery specifications", href: "https://www.interstatebatteries.com/en-lx/car-and-truck-batteries/mtx" },
+          { label: "Optima battery fitment and product support", href: "https://www.optimabatteries.com/support" }
+        ],
+        pricingCheckedAt: "2026-08-25",
+        priceVerified: true
+      }
+    }
   },
   {
     slug: "mazda-cx-30-2020",

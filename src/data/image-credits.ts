@@ -11,6 +11,16 @@ export interface ImageCredit {
 
 export const imageCredits: ImageCredit[] = [
   {
+    title: "2019 Honda Pilot EX-L 3.5L",
+    localPath: "/images/photos/cars/honda-pilot-2020.webp",
+    sourceName: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:2019_Honda_Pilot_EX-L_3.5L_front_1.5.19.jpg",
+    author: "Kevauto",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    modifications: "Used for the same third-generation Pilot body style; resized, converted to WebP, and paired with a thumbnail for site performance."
+  },
+  {
     title: "2020 Toyota Highlander XLE AWD",
     localPath: "/images/photos/cars/toyota-highlander-2020.webp",
     sourceName: "Wikimedia Commons",
