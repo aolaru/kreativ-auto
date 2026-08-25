@@ -422,7 +422,7 @@ if (fs.existsSync(ownershipGuidesPath) && fs.existsSync(guidesDir)) {
 for (const [relativePath, requiredMarkers] of Object.entries({
   "src/data/toyota-rav4-quality.ts": ["RAV4 warranty and maintenance guide", "NHTSA RAV4 recall lookup"],
   "src/data/honda-civic-quality.ts": ["Civic maintenance minder", "NHTSA Civic recall lookup"],
-  "src/pages/best/[slug].astro": ["noindex={true}", "enableAds={false}", "pricingCheckedAt"],
+  "src/pages/best/[slug].astro": ["noindex={true}", "enableAds={false}", "pricingCheckedAt", "priceSourceLinks"],
   "src/pages/internal/search.json.ts": ["buildSearchIndex"]
 })) {
   const filePath = path.join(cwd, relativePath);

@@ -125,6 +125,7 @@ const best = defineCollection({
     selectionCriteria: z.array(z.string()).default([]),
     alternatives: z.array(z.string()).default([]),
     sourceLinks: z.array(sourceLinkSchema).default([]),
+    priceSourceLinks: z.array(sourceLinkSchema).default([]),
     pricingCheckedAt: z.coerce.date().optional(),
     priceVerified: z.boolean().optional(),
     faqs: z

@@ -1837,7 +1837,10 @@ const queuedCarSeeds = [
           { label: "Optima battery fitment and product support", href: "https://www.optimabatteries.com/support" }
         ],
         pricingCheckedAt: "2026-08-25",
-        priceVerified: true
+        priceVerified: true,
+        priceSourceLinks: [
+          { label: "AutoZone 2020 Honda Pilot battery listings and current prices", href: "https://www.autozone.com/batteries-starting-and-charging/battery/honda/pilot/2020" }
+        ]
       }
     }
   },

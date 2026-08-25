@@ -1,0 +1,54 @@
+<div id="privacy-choices" class="consent-banner" role="dialog" aria-labelledby="privacy-choices-title" aria-describedby="privacy-choices-description" hidden>
+  <div class="consent-banner__panel">
+    <p class="eyebrow">Privacy choices</p>
+    <h2 id="privacy-choices-title" class="mt-3 text-2xl font-semibold text-ink">Optional analytics</h2>
+    <p id="privacy-choices-description" class="mt-3 text-sm leading-6 text-steel">
+      Analytics helps identify useful guides, navigation problems, and searches with no result. It is optional and does not send search phrases or email addresses as event data.
+    </p>
+    <p class="mt-3 text-sm leading-6 text-steel">
+      Advertising remains disabled. Read the <a class="font-semibold text-accent hover:text-ink" href="/privacy-policy/">Privacy Policy</a> for details.
+    </p>
+    <div class="mt-5 flex flex-wrap gap-3">
+      <button id="consent-reject" class="rounded-xl border border-slate-300 bg-white px-4 py-3 text-sm font-semibold text-ink transition hover:border-accent/40 hover:text-accent" type="button">Reject optional analytics</button>
+      <button id="consent-accept" class="rounded-xl bg-ink px-4 py-3 text-sm font-semibold text-white transition hover:bg-accent" type="button">Accept analytics</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const consentStorageKey = "ka-analytics-consent";
+  const consentBanner = document.getElementById("privacy-choices");
+  const rejectConsent = document.getElementById("consent-reject");
+  const acceptConsent = document.getElementById("consent-accept");
+
+  const readConsent = () => {
+    try {
+      return window.localStorage.getItem(consentStorageKey);
+    } catch {
+      return null;
+    }
+  };
+
+  const setConsent = (value) => {
+    try {
+      window.localStorage.setItem(consentStorageKey, value);
+    } catch {
+      // Storage can be unavailable in private or restricted browsing modes.
+    }
+
+    window.kaSetAnalyticsConsent?.(value);
+    consentBanner?.setAttribute("hidden", "");
+  };
+
+  const openConsent = () => consentBanner?.removeAttribute("hidden");
+
+  if (!readConsent()) openConsent();
+  rejectConsent?.addEventListener("click", () => setConsent("denied"));
+  acceptConsent?.addEventListener("click", () => setConsent("granted"));
+  document.addEventListener("click", (event) => {
+    const trigger = event.target instanceof Element ? event.target.closest("[data-ka-open-consent]") : null;
+    if (!trigger) return;
+    event.preventDefault();
+    openConsent();
+  });
+</script>

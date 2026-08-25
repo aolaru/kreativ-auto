@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const updatedAt = new Date("2026-08-19T00:00:00Z");
+const updatedAt = new Date("2026-08-25T00:00:00Z");
 ---
 
 <BaseLayout
@@ -20,7 +20,7 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
             Kreativ Auto publishes automotive guides and uses standard website tools to understand traffic, maintain the service, and support advertising or affiliate revenue.
           </p>
           <p class="mt-4 max-w-3xl text-base leading-7 text-steel">
-            Last updated August 19, 2026.
+            Last updated August 25, 2026.
           </p>
         </div>
         <div class="accent-panel p-6">
@@ -32,7 +32,7 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
             </div>
             <div class="soft-panel p-4">
               <p class="text-sm font-semibold uppercase tracking-[0.2em] text-steel">Cookies and ads</p>
-              <p class="mt-2 text-sm leading-6 text-steel">Analytics and advertising partners may use cookies or similar technologies where allowed by law.</p>
+              <p class="mt-2 text-sm leading-6 text-steel">Optional analytics loads only after a visitor chooses to accept it. Advertising is disabled.</p>
             </div>
           </div>
         </div>
@@ -46,7 +46,7 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
         <div class="editorial-card">
           <h3 class="text-xl font-semibold text-ink">Basic usage data</h3>
           <p class="mt-3 text-sm leading-6 text-steel">
-            Google Analytics and Cloudflare Web Analytics may process page views, referring pages, approximate location, browser type, device type, and aggregate interaction events such as navigation, search-result, and guide clicks.
+            After a visitor accepts optional analytics, Google Analytics and Cloudflare Web Analytics may process page views, referring pages, approximate location, browser type, device type, and aggregate interaction events such as navigation, search-result, and guide clicks.
           </p>
         </div>
         <div class="editorial-card">
@@ -65,14 +65,14 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
     </section>
 
     <section class="mt-10 surface p-6 sm:p-8">
-      <p class="eyebrow">Advertising cookies</p>
-      <h2 class="mt-3 text-3xl font-semibold text-ink">Google AdSense and advertising partners</h2>
+      <p class="eyebrow">Advertising</p>
+      <h2 class="mt-3 text-3xl font-semibold text-ink">Google AdSense is disabled</h2>
       <div class="mt-6 space-y-4 text-sm leading-6 text-steel">
         <p>
-          Third-party vendors, including Google, use cookies to serve ads based on a user's prior visits to this website or other websites.
+          Kreativ Auto does not currently load Google AdSense or another advertising script on the public site.
         </p>
         <p>
-          Google's use of advertising cookies enables Google and its partners to serve ads to visitors based on visits to this site and other sites on the Internet.
+          The analytics choice on this site is not an advertising consent management platform. Before AdSense is enabled, Kreativ Auto will configure a Google-certified consent management platform wherever Google's consent requirements apply, including the EEA, United Kingdom, and Switzerland.
         </p>
         <p>
           Users may opt out of personalized advertising by visiting <a class="font-semibold text-accent hover:text-ink" href="https://www.google.com/settings/ads" rel="nofollow noopener">Google Ads Settings</a>.
@@ -82,7 +82,7 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
           Google explains how it uses information from sites and apps that use its services at <a class="font-semibold text-accent hover:text-ink" href="https://policies.google.com/technologies/partner-sites" rel="nofollow noopener">Google's partner sites policy page</a>.
         </p>
         <p>
-          If other ad networks or advertising vendors are used on Kreativ Auto, their cookies or similar technologies may also be used for ad serving, reporting, fraud prevention, and personalization where permitted.
+          If another advertising provider is enabled later, this policy will be updated before its script is loaded.
         </p>
       </div>
     </section>
@@ -91,7 +91,7 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
       <p class="eyebrow">Analytics</p>
       <h2 class="mt-3 text-3xl font-semibold text-ink">Google Analytics and Cloudflare Web Analytics</h2>
       <div class="mt-6 space-y-4 text-sm leading-6 text-steel">
-        <p>Kreativ Auto uses Google Analytics and Cloudflare Web Analytics to understand which pages are useful, how readers move through the site, and where technical or editorial improvements are needed. Analytics data is reviewed in aggregate and is not used to provide one-to-one repair advice.</p>
+        <p>Google Analytics and Cloudflare Web Analytics load only after a visitor selects Accept analytics in the Privacy choices panel. Rejecting optional analytics prevents those analytics scripts from loading. Analytics data is reviewed in aggregate and is not used to provide one-to-one repair advice.</p>
         <p>Search measurement records search starts, result-list views, result selections, and no-result events without sending the search phrase as an analytics event parameter.</p>
         <p>Email-link clicks are counted as a contact interaction without sending the email address as an analytics event parameter.</p>
       </div>
@@ -101,9 +101,10 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
       <p class="eyebrow">Choices</p>
       <h2 class="mt-3 text-3xl font-semibold text-ink">How readers can manage privacy choices</h2>
       <ul class="mt-6 space-y-3 text-sm leading-6 text-steel">
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">Use Privacy choices in the footer to accept or reject optional analytics, or to change an earlier selection.</li>
         <li class="rounded-2xl bg-slate-50 px-4 py-3">Browser settings can block, delete, or limit cookies.</li>
         <li class="rounded-2xl bg-slate-50 px-4 py-3">Google Ads Settings can be used to manage personalized advertising preferences.</li>
-        <li class="rounded-2xl bg-slate-50 px-4 py-3">AdSense is not currently enabled on the public site. Before it is enabled, Kreativ Auto will use a Google-certified consent management platform where Google's consent requirements apply, including the EEA, United Kingdom, and Switzerland.</li>
+        <li class="rounded-2xl bg-slate-50 px-4 py-3">AdSense remains disabled until a Google-certified consent management platform is configured for applicable regions.</li>
       </ul>
     </section>
 
@@ -115,7 +116,7 @@ const updatedAt = new Date("2026-08-19T00:00:00Z");
           Kreativ Auto links to retailer pages, manufacturer pages, image-source pages, and other external websites. Those sites have their own privacy practices, cookie settings, and terms.
         </p>
         <p>
-          Product links may use affiliate tracking parameters. Google Analytics, Cloudflare Web Analytics, and any future advertising scripts may process browser and device information according to their own policies and applicable consent choices.
+          Product links may use affiliate tracking parameters. Google Analytics and Cloudflare Web Analytics may process browser and device information only after optional analytics has been accepted. Any future advertising service will be added only with the required consent handling.
         </p>
       </div>
     </section>

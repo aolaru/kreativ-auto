@@ -1,0 +1,184 @@
+---
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import Section from "../../components/Section.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const title = "Used-car viewing worksheet";
+const description = "A printable used-car inspection worksheet for listing research, documents, cold-start checks, test-drive notes, and price decisions.";
+const breadcrumbs = [
+  { label: "Home", href: "/" },
+  { label: "Used-car viewing worksheet" }
+];
+const details = ["Vehicle and VIN", "Seller and viewing date", "Asking price", "Mileage", "Engine, trim, and drivetrain"];
+const documentChecks = [
+  "VIN matches the vehicle and paperwork.",
+  "Service records show dates, mileage, and the work completed.",
+  "Open recalls were checked with the VIN.",
+  "Title, accident, and ownership history are explained clearly.",
+  "Cold start has not been arranged before arrival."
+];
+const walkaroundChecks = [
+  "Panel gaps, paint texture, glass, lights, and underbody marks.",
+  "Tires match as a set; record brand, tread, age, and uneven wear.",
+  "Brake discs, pads, and wheel condition do not conflict with the seller's history.",
+  "Fluids, warning lights, leaks, and obvious smells are noted before the drive.",
+  "Cabin controls, A/C, cameras, locks, and charging ports work as expected."
+];
+const roadTestChecks = [
+  "Cold idle, warm idle, starting behavior, and warning lamps.",
+  "Steering tracks straight; record vibration, pull, clunks, or brake noise.",
+  "Acceleration, transmission response, and engine behavior match the exact powertrain.",
+  "Test rough pavement, turns, parking speeds, and normal road speeds.",
+  "A/C, heat, electronics, and driver aids work under normal use."
+];
+const rav4Checks = [
+  "Identify hybrid or gas before applying maintenance or battery advice.",
+  "Record any weak 12-volt battery, slow cranking, or repeated short-trip history.",
+  "Listen over driveways and uneven pavement for front or rear suspension noise.",
+  "Note brake feel, moisture-related noise, matching tires, and highway stability."
+];
+const civicChecks = [
+  "Identify the 1.5T or 2.0 before treating drivability or maintenance notes as comparable.",
+  "At idle, test A/C performance long enough to record any warm-air behavior.",
+  "Record charging or battery warnings rather than accepting a vague explanation.",
+  "Listen for front-end rattle over small bumps and brake noise at low speed."
+];
+const schemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: title,
+    description,
+    step: [
+      { "@type": "HowToStep", name: "Check records and recall status" },
+      { "@type": "HowToStep", name: "Inspect the cold vehicle and walk around" },
+      { "@type": "HowToStep", name: "Take a structured road test" },
+      { "@type": "HowToStep", name: "Record repairs, risks, and a price decision" }
+    ]
+  }
+];
+---
+
+<BaseLayout title={title} description={description} modifiedTime={new Date("2026-08-25")} schemas={schemas} enableAds={false}>
+  <main class="page-shell py-10 sm:py-14">
+    <Breadcrumbs items={breadcrumbs} />
+    <div class="max-w-3xl">
+      <p class="eyebrow">Inspection record</p>
+      <h1 class="mt-3 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Used-car viewing worksheet</h1>
+      <p class="mt-5 text-lg leading-8 text-steel">Use one sheet from the listing review through the test drive. Write down what was checked, what needs proof, and what changes the price.</p>
+      <button class="mt-6 inline-flex items-center border border-ink bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:border-accent hover:bg-accent print:hidden" type="button" onclick="window.print()">Print worksheet</button>
+    </div>
+
+    <div class="worksheet mt-10 space-y-6">
+      <Section title="Vehicle and viewing details" intro="Keep the vehicle identity, seller information, and price conversation on the same record.">
+        <div class="grid gap-4 sm:grid-cols-2">
+          {details.map((label) => (
+            <label class="block text-sm font-semibold text-ink">
+              {label}
+              <span class="worksheet-line mt-3 block" aria-hidden="true"></span>
+            </label>
+          ))}
+        </div>
+      </Section>
+
+      <Section title="Before the test drive" intro="Start with the paperwork and the vehicle before it is warmed up or explained away.">
+        <ul class="space-y-4">
+          {documentChecks.map((item) => <li class="worksheet-item"><span class="worksheet-box" aria-hidden="true"></span><span>{item}</span><span class="worksheet-note" aria-hidden="true"></span></li>)}
+        </ul>
+        <p class="mt-6 text-sm leading-6 text-steel">Check recall status by VIN with the <a class="font-semibold text-accent hover:text-ink" href="https://www.nhtsa.gov/recalls" rel="noopener" target="_blank">NHTSA recall lookup</a>. A clean history report does not replace an inspection.</p>
+      </Section>
+
+      <Section title="Walk-around and cold checks" intro="Capture visible condition and early behavior before road noise or a seller's explanation distracts from it.">
+        <ul class="space-y-4">
+          {walkaroundChecks.map((item) => <li class="worksheet-item"><span class="worksheet-box" aria-hidden="true"></span><span>{item}</span><span class="worksheet-note" aria-hidden="true"></span></li>)}
+        </ul>
+      </Section>
+
+      <Section title="Road-test notes" intro="Drive a normal route that includes low speed, turns, uneven pavement, and a safe stretch of faster road where possible.">
+        <ul class="space-y-4">
+          {roadTestChecks.map((item) => <li class="worksheet-item"><span class="worksheet-box" aria-hidden="true"></span><span>{item}</span><span class="worksheet-note" aria-hidden="true"></span></li>)}
+        </ul>
+      </Section>
+
+      <Section title="Model notes" intro="Use only the addendum that matches the vehicle in front of you.">
+        <div class="grid gap-6 lg:grid-cols-2">
+          <div>
+            <h3 class="text-xl font-semibold text-ink">Toyota RAV4 XA50</h3>
+            <ul class="mt-4 space-y-4">
+              {rav4Checks.map((item) => <li class="worksheet-item"><span class="worksheet-box" aria-hidden="true"></span><span>{item}</span></li>)}
+            </ul>
+            <p class="mt-5 text-sm leading-6 text-steel">Reference: <a class="font-semibold text-accent hover:text-ink" href="https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-21RAV4/pdf/T-MMS-21RAV4.pdf" rel="noopener" target="_blank">Toyota RAV4 warranty and maintenance guide</a>.</p>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold text-ink">Honda Civic facelift</h3>
+            <ul class="mt-4 space-y-4">
+              {civicChecks.map((item) => <li class="worksheet-item"><span class="worksheet-box" aria-hidden="true"></span><span>{item}</span></li>)}
+            </ul>
+            <p class="mt-5 text-sm leading-6 text-steel">Reference: <a class="font-semibold text-accent hover:text-ink" href="https://owners.honda.com/utility/download?path=%2Fstatic%2Fpdfs%2F2019%2FCivic+Sedan%2F2019_Civic_4D_Maintenance_Minder.pdf" rel="noopener" target="_blank">Honda Civic maintenance minder</a>.</p>
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Decision record" intro="Do not let a positive first impression replace the evidence you wrote down.">
+        <div class="grid gap-6 sm:grid-cols-2">
+          <label class="block text-sm font-semibold text-ink">Repairs, missing evidence, or a mechanic inspection to arrange<span class="worksheet-area mt-3 block" aria-hidden="true"></span></label>
+          <label class="block text-sm font-semibold text-ink">Price decision, walk-away point, and next contact<span class="worksheet-area mt-3 block" aria-hidden="true"></span></label>
+        </div>
+      </Section>
+    </div>
+  </main>
+</BaseLayout>
+
+<style>
+  .worksheet-item {
+    display: grid;
+    grid-template-columns: 1.25rem minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    color: rgb(71 85 105);
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+
+  .worksheet-box {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.25rem;
+    border: 1px solid rgb(71 85 105);
+  }
+
+  .worksheet-line {
+    height: 1.5rem;
+    border-bottom: 1px solid rgb(148 163 184);
+  }
+
+  .worksheet-note {
+    grid-column: 2;
+    height: 1.5rem;
+    border-bottom: 1px solid rgb(203 213 225);
+  }
+
+  .worksheet-area {
+    height: 9rem;
+    border: 1px solid rgb(203 213 225);
+    background-image: linear-gradient(to bottom, transparent 1.75rem, rgb(226 232 240) 1.75rem, rgb(226 232 240) calc(1.75rem + 1px), transparent calc(1.75rem + 1px));
+    background-size: 100% 1.75rem;
+  }
+
+  @media print {
+    :global(header),
+    :global(footer),
+    :global(.consent-banner),
+    :global(.print\\:hidden) {
+      display: none !important;
+    }
+
+    :global(body) {
+      background: white;
+    }
+
+    .worksheet {
+      margin-top: 1.5rem;
+    }
+  }
+</style>

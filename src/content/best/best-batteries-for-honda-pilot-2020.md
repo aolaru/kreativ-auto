@@ -53,6 +53,9 @@ sourceLinks:
     href: "https://www.optimabatteries.com/support"
 pricingCheckedAt: 2026-08-25
 priceVerified: true
+priceSourceLinks:
+  - label: "AutoZone 2020 Honda Pilot battery listings and current prices"
+    href: "https://www.autozone.com/batteries-starting-and-charging/battery/honda/pilot/2020"
 quickVerdict: "An AGM battery makes the most sense when the vehicle sees short trips, sitting time, or voltage-sensitive use. The real mistake is replacing the battery without checking the charging picture first."
 bestFor:
   - "Owners dealing with weak starts after sitting or repeated short-trip use."

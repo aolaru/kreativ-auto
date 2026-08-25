@@ -2,6 +2,12 @@
 
 The site records page views, search starts, search-result views, search-result selections, no-result searches, ownership-path clicks, and email-link clicks. Search text and email addresses are not sent as analytics parameters.
 
+## Consent and measurement
+
+Google Analytics and Cloudflare Web Analytics load only after a visitor accepts optional analytics in the site's Privacy choices panel. Rejecting optional analytics prevents those scripts from loading. The panel is a limited analytics preference, not an advertising consent management platform.
+
+Google AdSense remains disabled. Before enabling it, configure a Google-certified consent management platform for the EEA, United Kingdom, and Switzerland, validate the integration in AdSense, and then update the Privacy Policy. See [Google's consent requirements](https://support.google.com/adsense/answer/13554020) and [Consent Mode documentation](https://developers.google.com/tag-platform/security/guides/consent).
+
 ## GA4 actions
 
 1. Link the verified Search Console property `sc-domain:kreativauto.com` from GA4 Admin, Product links, Search Console links.

@@ -1,4 +1,5 @@
 ---
+import ConsentBanner from "../components/ConsentBanner.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import StructuredData from "../components/StructuredData.astro";
@@ -34,11 +35,12 @@ const searchConsoleVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATIO
 const rawAdsenseClient = import.meta.env.PUBLIC_GOOGLE_ADSENSE_CLIENT ?? "ca-pub-4706844277814411";
 const adsenseClient = rawAdsenseClient.startsWith("pub-") ? `ca-${rawAdsenseClient}` : rawAdsenseClient;
 const shouldExposeAdsenseAccount = !noindex && Boolean(adsenseClient);
-const shouldLoadAdsense =
-  enableAds && shouldExposeAdsenseAccount && import.meta.env.PUBLIC_GOOGLE_ADSENSE_LOAD_SCRIPT === "true";
+// Keep ad delivery disabled until a certified CMP is configured for applicable regions.
+const shouldLoadAdsense = false;
 const gaMeasurementId = "G-4NXQLN1J2R";
 const cloudflareAnalyticsToken = "0b8eb436f3d9413c9241f9ba54d11cec";
 const shouldLoadCloudflareAnalytics = !noindex && Boolean(cloudflareAnalyticsToken);
+const pageSection = Astro.url.pathname.split("/").filter(Boolean)[0] ?? "home";
 const baseSchemas = [
   {
     "@context": "https://schema.org",
@@ -106,95 +108,127 @@ const schemaItems = [...baseSchemas, ...schemas];
         ></script>
       )
     }
-    {
-      gaMeasurementId && (
-        <>
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
-          <script
-            is:inline
-            set:html={`
+    <script
+      is:inline
+      set:html={`
+        (() => {
+          const consentStorageKey = "ka-analytics-consent";
+          const measurementId = ${JSON.stringify(gaMeasurementId)};
+          const cloudflareToken = ${JSON.stringify(cloudflareAnalyticsToken)};
+          const allowCloudflareAnalytics = ${JSON.stringify(shouldLoadCloudflareAnalytics)};
+          const pageSection = ${JSON.stringify(pageSection)};
+
+          const readConsent = () => {
+            try {
+              return window.localStorage.getItem(consentStorageKey);
+            } catch {
+              return null;
+            }
+          };
+
+          const loadGoogleAnalytics = () => {
+            if (!measurementId || document.querySelector("script[data-ka-google-tag]")) return;
+
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${gaMeasurementId}');
-          `}
-          />
-          <script is:inline>
-            window.kaTrackEvent = function (eventName, params) {
-              if (typeof window.gtag !== "function") return;
-              window.gtag("event", eventName, {
-                event_category: "site_interaction",
-                ...params
-              });
-            };
-
-            const scrollMilestones = new Set([50, 90]);
-            const recordScrollDepth = () => {
-              const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
-              if (documentHeight <= 0) return;
-              const scrollPercent = Math.round((window.scrollY / documentHeight) * 100);
-
-              for (const milestone of [...scrollMilestones]) {
-                if (scrollPercent >= milestone) {
-                  scrollMilestones.delete(milestone);
-                  window.kaTrackEvent("scroll_depth", {
-                    event_label: `${milestone}%`,
-                    percent_scrolled: milestone,
-                    section: "page_engagement"
-                  });
-                }
-              }
-
-              if (!scrollMilestones.size) window.removeEventListener("scroll", recordScrollDepth);
-            };
-
-            window.addEventListener("scroll", recordScrollDepth, { passive: true });
-
-            document.addEventListener("click", (event) => {
-              const target = event.target instanceof Element ? event.target.closest("[data-ka-event]") : null;
-              const mailtoLink = event.target instanceof Element ? event.target.closest("a[href^='mailto:']") : null;
-
-              if (!target) {
-                if (mailtoLink) {
-                  window.kaTrackEvent("contact_click", {
-                    event_label: "email",
-                    section: "contact"
-                  });
-                }
-                return;
-              }
-
-              const eventName = target.getAttribute("data-ka-event");
-              if (!eventName) return;
-
-              window.kaTrackEvent(eventName, {
-                event_label: target.getAttribute("data-ka-label") || target.textContent?.trim() || undefined,
-                link_url: target.getAttribute("href") || undefined,
-                section: target.getAttribute("data-ka-section") || undefined,
-                result_position: Number(target.getAttribute("data-ka-result-position")) || undefined,
-                result_type: target.getAttribute("data-ka-result-type") || undefined
-              });
+            window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+            window.gtag("consent", "default", {
+              ad_storage: "denied",
+              ad_user_data: "denied",
+              ad_personalization: "denied",
+              analytics_storage: "denied"
             });
-          </script>
-        </>
-      )
-    }
-    {
-      shouldLoadCloudflareAnalytics && (
-        <script
-          is:inline
-          type="module"
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon={JSON.stringify({ token: cloudflareAnalyticsToken })}
-        ></script>
-      )
-    }
+            window.gtag("consent", "update", { analytics_storage: "granted" });
+            window.gtag("js", new Date());
+            window.gtag("config", measurementId, { anonymize_ip: true });
+
+            const script = document.createElement("script");
+            script.async = true;
+            script.dataset.kaGoogleTag = "true";
+            script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(measurementId);
+            document.head.append(script);
+          };
+
+          const loadCloudflareAnalytics = () => {
+            if (!allowCloudflareAnalytics || !cloudflareToken || document.querySelector("script[data-ka-cloudflare-analytics]")) return;
+
+            const script = document.createElement("script");
+            script.type = "module";
+            script.dataset.kaCloudflareAnalytics = "true";
+            script.src = "https://static.cloudflareinsights.com/beacon.min.js";
+            script.dataset.cfBeacon = JSON.stringify({ token: cloudflareToken });
+            document.head.append(script);
+          };
+
+          window.kaSetAnalyticsConsent = (value) => {
+            if (value !== "granted") return;
+            loadGoogleAnalytics();
+            loadCloudflareAnalytics();
+          };
+
+          window.kaTrackEvent = (eventName, params) => {
+            if (typeof window.gtag !== "function") return;
+            window.gtag("event", eventName, {
+              event_category: "site_interaction",
+              page_section: pageSection,
+              page_path: window.location.pathname,
+              ...params
+            });
+          };
+
+          if (readConsent() === "granted") window.kaSetAnalyticsConsent("granted");
+
+          const scrollMilestones = new Set([50, 90]);
+          const recordScrollDepth = () => {
+            const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+            if (documentHeight <= 0) return;
+            const scrollPercent = Math.round((window.scrollY / documentHeight) * 100);
+
+            for (const milestone of [...scrollMilestones]) {
+              if (scrollPercent >= milestone) {
+                scrollMilestones.delete(milestone);
+                window.kaTrackEvent("scroll_depth", {
+                  event_label: milestone + "%",
+                  percent_scrolled: milestone,
+                  section: "page_engagement"
+                });
+              }
+            }
+
+            if (!scrollMilestones.size) window.removeEventListener("scroll", recordScrollDepth);
+          };
+
+          window.addEventListener("scroll", recordScrollDepth, { passive: true });
+
+          document.addEventListener("click", (event) => {
+            const target = event.target instanceof Element ? event.target.closest("[data-ka-event]") : null;
+            const mailtoLink = event.target instanceof Element ? event.target.closest("a[href^='mailto:']") : null;
+
+            if (!target) {
+              if (mailtoLink) window.kaTrackEvent("contact_click", { event_label: "email", section: "contact" });
+              return;
+            }
+
+            const eventName = target.getAttribute("data-ka-event");
+            if (!eventName) return;
+
+            window.kaTrackEvent(eventName, {
+              event_label: target.getAttribute("data-ka-label") || target.textContent?.trim() || undefined,
+              link_url: target.getAttribute("href") || undefined,
+              section: target.getAttribute("data-ka-section") || undefined,
+              result_position: Number(target.getAttribute("data-ka-result-position")) || undefined,
+              result_type: target.getAttribute("data-ka-result-type") || undefined
+            });
+          });
+        })();
+      `}
+    />
   </head>
   <body class="min-h-screen">
     <Header />
     <main>
       <slot />
     </main>
+    <ConsentBanner />
     <Footer />
   </body>
 </html>

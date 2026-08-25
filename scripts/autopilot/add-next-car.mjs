@@ -74,13 +74,13 @@ function yamlBuyingTiers(items) {
   ].join("\n");
 }
 
-function yamlSourceLinks(items) {
+function yamlSourceLinks(items, key = "sourceLinks") {
   if (!items || items.length === 0) {
-    return "sourceLinks: []";
+    return `${key}: []`;
   }
 
   return [
-    "sourceLinks:",
+    `${key}:`,
     items.map((item) => `  - label: ${quote(item.label)}\n    href: ${quote(item.href)}`).join("\n")
   ].join("\n");
 }
@@ -222,6 +222,7 @@ function renderBest(entry, carSlug, problemSlug) {
     "alternatives:",
     yamlList(entry.alternatives, 2),
     yamlSourceLinks(entry.sourceLinks),
+    yamlSourceLinks(entry.priceSourceLinks, "priceSourceLinks"),
     entry.pricingCheckedAt ? `pricingCheckedAt: ${entry.pricingCheckedAt}` : null,
     entry.priceVerified === true ? "priceVerified: true" : "priceVerified: false",
     `quickVerdict: ${quote(entry.quickVerdict)}`,
@@ -307,6 +308,7 @@ function validateEditorialReadiness(entry) {
     if (!hasStringList(parts.alternatives, 2)) blockers.push("two parts alternatives");
     if (!hasSourceLinks(parts.sourceLinks)) blockers.push("at least two product or manufacturer source links");
     if (!/^\d{4}-\d{2}-\d{2}$/.test(parts.pricingCheckedAt ?? "")) blockers.push("pricing check date");
+    if (parts.priceVerified === true && !hasSourceLinks(parts.priceSourceLinks)) blockers.push("a product-level price source");
   }
 
   return blockers;
@@ -321,6 +323,7 @@ function applyEditorialReadiness(entry) {
       selectionCriteria: parts.selectionCriteria,
       alternatives: parts.alternatives,
       sourceLinks: parts.sourceLinks,
+      priceSourceLinks: parts.priceSourceLinks ?? [],
       pricingCheckedAt: parts.pricingCheckedAt,
       priceVerified: parts.priceVerified === true
     },

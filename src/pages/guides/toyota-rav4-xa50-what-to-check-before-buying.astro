@@ -2,17 +2,15 @@
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
-import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
-import { editorialTeam, carTrustPoints } from "../../data/editorial";
 import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "Toyota RAV4 XA50 what to check before buying";
 const quality = rav4GuideQuality["toyota-rav4-xa50-what-to-check-before-buying"];
 const description = "What to inspect on a Toyota RAV4 XA50 before buying, which weak points deserve the closest look, and what should not scare you too fast.";
 const intro = "An XA50 RAV4 can still be one of the easier used crossovers to buy, but only if the inspection stays disciplined. The useful checks are battery condition, brake refinement, suspension noise, tire and highway-feel issues, and whether hybrid-versus-gas advice is being mixed together lazily. Keep the viewing practical and disciplined.";
-const modifiedTime = new Date("2026-04-11");
+const modifiedTime = new Date("2026-08-25");
 const breadcrumbs = [
   { label: "Home", href: "/" },
   { label: "Guides", href: "/guides/toyota-rav4-xa50-what-to-check-before-buying/" },
@@ -33,6 +31,15 @@ const relatedBest = [
 const relatedComparisons = [
   { href: "/comparisons/toyota-rav4-hybrid-vs-gas/", title: "Toyota RAV4 Hybrid vs gas", description: "Best when the purchase decision depends on the powertrain, not just the model year.", eyebrow: "Powertrain guide" }
 ];
+
+const inspectionResources = [
+  {
+    href: "/checklists/used-car-viewing/",
+    title: "Printable used-car viewing worksheet",
+    description: "Record documents, cold-start observations, road-test notes, and the specific XA50 checks before negotiating.",
+    eyebrow: "Inspection worksheet"
+  }
+];
 ---
 
 <ContentLayout
@@ -42,19 +49,7 @@ const relatedComparisons = [
   image="/images/photos/cars/toyota-rav4-2021.webp"
   modifiedTime={modifiedTime}
   breadcrumbs={breadcrumbs}
-  editorialSummary="A buyer-focused checklist for the XA50 RAV4, concentrating on the weak points and viewing checks that matter most."
-  editorialByline={`By ${editorialTeam.name}`}
-  editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Buying guide", "Generation-specific", "Inspection-focused"]}
 >
-  <TrustBlock
-    title="Best starting point"
-    summary="Start here before a viewing or test drive. The goal is to separate normal XA50 wear from the signs that the price or the car itself needs more caution."
-    byline={`By ${editorialTeam.name}`}
-    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-    points={carTrustPoints}
-  />
-
   <EvidenceLimitsBlock {...quality.evidence} />
   <DecisionPathBlock title="Viewing decision path" intro="Keep the listing review or test drive grounded before reputation starts doing too much work." steps={quality.decisionPath} />
 
@@ -96,4 +91,5 @@ const relatedComparisons = [
   <RelatedLinks title="Related problem guides" intro="Open these if the viewing or test drive already points at a repeat complaint." items={relatedProblems} />
   <RelatedLinks title="Related best-parts guides" intro="Use these when the car is still worth buying but the weak point needs a realistic repair plan." items={relatedBest} />
   <RelatedLinks title="Related comparison guides" intro="Use these when the buying advice changes with the powertrain." items={relatedComparisons} />
+  <RelatedLinks title="Bring this to the viewing" intro="Use one record for the listing, inspection, test drive, and price discussion." items={inspectionResources} />
 </ContentLayout>
