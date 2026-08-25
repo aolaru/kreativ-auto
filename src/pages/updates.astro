@@ -58,7 +58,9 @@ const recentUpdates: UpdateEntry[] = [
     kind: "FIX",
     title: "Privacy and price-verification safeguards",
     detail:
-      "Optional analytics now waits for an explicit visitor choice, advertising remains disabled, and parts prices stay hidden unless a dated product-level price source is available."
+      "Optional analytics now waits for an explicit visitor choice, advertising remains disabled, and parts prices stay hidden unless a dated product-level price source is available.",
+    href: "/privacy-policy/",
+    linkLabel: "Read the privacy policy"
   },
   {
     date: "2026-08-20",
@@ -237,6 +239,7 @@ const kindClass: Record<UpdateKind, string> = {
               <div>
                 <h3 class="text-xl font-semibold text-ink">{item.title}</h3>
                 <p class="mt-2 text-sm leading-6 text-steel">{item.detail}</p>
+                {item.href && <a class="mt-4 inline-block text-sm font-semibold text-accent hover:text-ink" href={item.href}>{item.linkLabel ?? "View update"}</a>}
               </div>
             </li>
           ))
