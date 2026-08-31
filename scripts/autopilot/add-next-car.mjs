@@ -48,11 +48,11 @@ function yamlProducts(items, key = "products") {
       [
         `  - name: ${quote(item.name)}`,
         `    price: ${quote(item.price)}`,
-        `    rating: ${item.rating}`,
+        typeof item.rating === "number" ? `    rating: ${item.rating}` : null,
         `    affiliate_url: ${quote(item.affiliate_url)}`,
         `    summary: ${quote(item.summary)}`,
-        `    image: ${quote(item.image)}`
-      ].join("\n")
+        item.image ? `    image: ${quote(item.image)}` : null
+      ].filter(Boolean).join("\n")
     )
   ].join("\n");
 }
@@ -117,6 +117,7 @@ function renderCar(entry, problemSlug, bestSlug) {
   const frontmatter = [
     "---",
     `title: ${quote(entry.title)}`,
+    `hasResearchBody: ${entry.hasResearchBody === true}`,
     `brand: ${quote(entry.brand)}`,
     `model: ${quote(entry.model)}`,
     `year: ${entry.year}`,
@@ -158,6 +159,7 @@ function renderProblem(entry, carSlug, bestSlug) {
   const frontmatter = [
     "---",
     `title: ${quote(entry.title)}`,
+    `hasResearchBody: ${entry.hasResearchBody === true}`,
     `metaTitle: ${quote(entry.metaTitle)}`,
     `metaDescription: ${quote(entry.metaDescription)}`,
     `excerpt: ${quote(entry.excerpt)}`,
@@ -203,6 +205,7 @@ function renderBest(entry, carSlug, problemSlug) {
   const frontmatter = [
     "---",
     `title: ${quote(entry.title)}`,
+    `hasResearchBody: ${entry.hasResearchBody === true}`,
     `category: ${quote(entry.category)}`,
     `car_model: ${quote(entry.car_model)}`,
     `metaTitle: ${quote(entry.metaTitle)}`,

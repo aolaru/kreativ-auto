@@ -1,5 +1,5 @@
 ---
-import { getCollection, getEntry } from "astro:content";
+import { getCollection, getEntry, render } from "astro:content";
 import ComparisonTable from "../../components/ComparisonTable.astro";
 import ProductCard from "../../components/ProductCard.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
@@ -31,6 +31,8 @@ const entry = await getEntry("best", slug);
 if (!entry) {
   throw new Error(`Best entry not found for slug: ${slug}`);
 }
+
+const { Content } = await render(entry);
 
 const [carEntries, problemEntries] = await Promise.all([
   getCollection("cars"),
@@ -64,6 +66,7 @@ const relatedProblems = uniqueByHref(
       problem.data.causes.some((item) => includesPhrase(item, entry.data.category))
     );
   })
+  .sort((a, b) => Number(entry.data.relatedProblems.includes(b.id)) - Number(entry.data.relatedProblems.includes(a.id)))
   .map((problem) => ({
     href: `/problems/${problem.id}/`,
     title: problem.data.title,
@@ -196,6 +199,14 @@ const schemas = [
   noindex={true}
 >
   {vehicleQuality && <EvidenceLimitsBlock {...vehicleQuality.evidence} />}
+
+  {entry.data.hasResearchBody && (
+    <Section id="model-context" title="Model-specific research">
+      <div class="max-w-none space-y-4 text-base leading-7 text-steel [&_p]:leading-7 [&_h2]:text-xl [&_h2]:font-semibold [&_a]:underline [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
+        <Content />
+      </div>
+    </Section>
+  )}
 
   <Section
     id="research-notes"

@@ -11,6 +11,16 @@ export interface ImageCredit {
 
 export const imageCredits: ImageCredit[] = [
   {
+    title: "2020 Mazda CX-30 AWD",
+    localPath: "/images/photos/cars/mazda-cx-30-2020.webp",
+    sourceName: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:2020_Mazda_CX-30_AWD,_front_1.23.20.jpg",
+    author: "Kevauto",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    modifications: "Resized to 1600px WebP and a 640px thumbnail; both derivatives remain CC BY-SA 4.0."
+  },
+  {
     title: "2019 Honda Pilot EX-L 3.5L",
     localPath: "/images/photos/cars/honda-pilot-2020.webp",
     sourceName: "Wikimedia Commons",

@@ -4,7 +4,7 @@ import { glob } from "astro/loaders";
 const affiliateProductSchema = z.object({
   name: z.string(),
   price: z.string(),
-  rating: z.number().min(0).max(5),
+  rating: z.number().min(0).max(5).optional(),
   affiliate_url: z.string().url(),
   summary: z.string().optional(),
   image: z.string().optional()
@@ -22,6 +22,8 @@ const sourceLinkSchema = z.object({
 });
 
 const seoFields = {
+  // Opt in to displaying researched draft prose without granting indexing approval.
+  hasResearchBody: z.boolean().default(false),
   metaTitle: z.string().optional(),
   metaDescription: z.string().optional(),
   excerpt: z.string().optional(),

@@ -4,7 +4,7 @@ import { withAffiliateTag } from "../utils/affiliate";
 interface Product {
   name: string;
   price: string;
-  rating: number;
+  rating?: number;
   affiliate_url: string;
   summary?: string;
 }
@@ -37,7 +37,7 @@ const { products, showPrice = true } = Astro.props;
               <td class="px-4 py-4 text-steel">
                 {showPrice ? product.price : "Check current retailer price"}
               </td>
-              <td class="px-4 py-4 text-steel">{product.rating.toFixed(1)} / 5</td>
+              <td class="px-4 py-4 text-steel">{typeof product.rating === "number" ? `${product.rating.toFixed(1)} / 5` : "Not rated"}</td>
               <td class="px-4 py-4 text-steel">{product.summary ?? "Balanced value and fitment confidence."}</td>
               <td class="px-4 py-4">
                 <a

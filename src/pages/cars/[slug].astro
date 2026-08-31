@@ -180,8 +180,8 @@ const schemas = [
         <div class="max-w-none text-base leading-7 text-steel">
           <p>{car.data.description}</p>
           {
-            reviewReady && (
-              <div class="mt-4 space-y-4 [&_p]:leading-7">
+            (reviewReady || car.data.hasResearchBody) && (
+              <div class="mt-4 space-y-4 [&_p]:leading-7 [&_h2]:text-xl [&_h2]:font-semibold [&_a]:underline [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6">
                 <Content />
               </div>
             )

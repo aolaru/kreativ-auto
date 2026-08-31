@@ -1,3 +1,5 @@
+import { mazdaCx30Seed } from "./mazda-cx30-2020.mjs";
+
 const curatedCarBacklog = [
   {
     car: {
@@ -1529,7 +1531,7 @@ function buildQueueEntry(seed) {
   const modelName = seed.model ?? seed.modelDisplay.replace(new RegExp(`^${seed.brand}\\s+`, "i"), "");
   const image = seed.image ?? imageFallbacks[seed.brand];
 
-  return {
+  const entry = {
     reviewReadiness: seed.reviewReadiness,
     car: {
       slug: carSlug,
@@ -1638,6 +1640,12 @@ function buildQueueEntry(seed) {
       ]
     }
   };
+
+  // Researched entries can replace generic prose without changing cluster identities.
+  for (const kind of ["car", "problem", "best"]) {
+    entry[kind] = { ...entry[kind], ...seed.contentOverrides?.[kind], slug: entry[kind].slug };
+  }
+  return entry;
 }
 
 const queuedCarSeeds = [
@@ -1844,33 +1852,7 @@ const queuedCarSeeds = [
       }
     }
   },
-  {
-    slug: "mazda-cx-30-2020",
-    brand: "Mazda",
-    modelDisplay: "Mazda CX-30",
-    year: 2020,
-    generation: "First Generation",
-    generationCode: "DM",
-    generationYears: "2020-2023",
-    image: "/images/cars/mazda-cx-30-2020.svg",
-    kind: "swayBarLinks",
-    carDescription:
-      "The 2020 Mazda CX-30 feels polished for the class, but smaller front-end suspension noises, brake refinement complaints, and tire-related road noise are still the ownership issues most likely to show up first.",
-    commonProblems: [
-      "Front-end clunks over small bumps from early suspension-hardware wear",
-      "Brake squeal that makes the crossover feel cheaper than it is",
-      "Road-noise complaints that owners initially flatten into generic tire drama"
-    ],
-    maintenanceTips: [
-      "Catch small suspension knocks early before multiple front-end parts start sounding tired together.",
-      "Keep brake hardware serviced so the car keeps the refinement it starts with.",
-      "Separate tire noise from real suspension or hub noise before buying parts."
-    ],
-    carFaqs: [
-      { question: "What usually makes a CX-30 feel older than it is?", answer: "Small front-end noises and brake refinement complaints are some of the first things owners notice." },
-      { question: "Is the CX-30 expensive to fix when it starts knocking?", answer: "Usually not if the noise is caught while it is still a smaller hardware issue." }
-    ]
-  },
+  mazdaCx30Seed,
   {
     slug: "toyota-tacoma-2020",
     brand: "Toyota",
