@@ -12,9 +12,9 @@ export const ownershipTasks: OwnershipTask[] = [
   {
     title: "Buying used",
     label: "Buying Used",
-    description: "Used-buyer verdicts, red flags, trim choices, and pre-purchase checks before money changes hands.",
-    href: "/guides/toyota-rav4-xa50-should-you-buy-it-used/",
-    cta: "Open a buyer guide",
+    description: "Use a structured viewing worksheet, then move into model-specific buyer guides before money changes hands.",
+    href: "/checklists/used-car-viewing/",
+    cta: "Use the viewing worksheet",
     kind: "car",
     primary: true
   },

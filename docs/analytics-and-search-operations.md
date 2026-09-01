@@ -1,6 +1,6 @@
 # Analytics and search operations
 
-The site records page views, search starts, search-result views, search-result selections, no-result searches, ownership-path clicks, and email-link clicks. Search text and email addresses are not sent as analytics parameters.
+The site records page views, search starts, search-result views, search-result selections, no-result searches, ownership-path clicks, tool opens, worksheet prints, and email-link clicks. Search text and email addresses are not sent as analytics parameters.
 
 ## Consent and measurement
 
@@ -14,6 +14,7 @@ Google AdSense remains disabled. Before enabling it, configure a Google-certifie
 2. After traffic has accumulated, mark only `search_result_click` and `contact_click` as key events. Do not mark page views, scroll depth, or generic navigation clicks as key events.
 3. Review traffic filters before making decisions: exclude internal testing traffic and investigate unusual direct or geographically unrelated traffic.
 4. Use the linked Search Console report to compare query, landing page, engagement, and search-result selection data before expanding coverage.
+5. Review `tool_open` and `tool_print` by page section. A useful tool should lead to repeat openings or printing; a low-use tool needs a clearer entry point or a narrower purpose.
 
 ## Search Console actions
 

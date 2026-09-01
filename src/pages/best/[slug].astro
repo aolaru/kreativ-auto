@@ -11,6 +11,7 @@ import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import { editorialTeam } from "../../data/editorial";
 import { hondaCivicBestQuality } from "../../data/honda-civic-quality";
+import { cx30BestQuality } from "../../data/mazda-cx30-quality";
 import { highlanderBestQuality } from "../../data/toyota-highlander-quality";
 import { rav4BestQuality } from "../../data/toyota-rav4-quality";
 import { withAffiliateTag } from "../../utils/affiliate";
@@ -86,7 +87,7 @@ const avoidIf = entry.data.avoidIf;
 const buyingTiers = entry.data.buyingTiers;
 const categoryTerm = entry.data.category.toLowerCase();
 const vehicleLabel = entry.data.car_model;
-const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id] ?? highlanderBestQuality[entry.id];
+const vehicleQuality = rav4BestQuality[entry.id] ?? hondaCivicBestQuality[entry.id] ?? highlanderBestQuality[entry.id] ?? cx30BestQuality[entry.id];
 const priceIsVerified = entry.data.priceVerified === true && entry.data.priceSourceLinks.length > 0;
 const fitmentCaveat =
   entry.data.fitment.doesNotApplyTo[0] ??

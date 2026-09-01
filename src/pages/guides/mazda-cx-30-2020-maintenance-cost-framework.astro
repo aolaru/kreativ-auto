@@ -1,0 +1,63 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
+import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
+import RelatedLinks from "../../components/RelatedLinks.astro";
+import Section from "../../components/Section.astro";
+import { editorialTeam } from "../../data/editorial";
+import { cx30GuideQuality } from "../../data/mazda-cx30-quality";
+
+const title = "2020 Mazda CX-30 maintenance-cost framework";
+const description = "A practical framework for estimating 2020 Mazda CX-30 ownership costs from service records, condition checks, and itemized quotes rather than unsupported annual averages.";
+const image = "/images/photos/cars/mazda-cx-30-2020.webp";
+const modifiedTime = new Date("2026-09-01");
+const quality = cx30GuideQuality["mazda-cx-30-2020-maintenance-cost-framework"];
+const breadcrumbs = [{ label: "Home", href: "/" }, { label: "Guides", href: "/guides/" }, { label: title }];
+const related = [
+  { href: "/guides/mazda-cx-30-2020-service-schedule-and-maintenance-record/", title: "CX-30 service schedule and maintenance record", description: "Use the official schedule and invoices to establish the maintenance baseline.", eyebrow: "Maintenance" },
+  { href: "/problems/front-end-clunk-over-bumps-mazda-cx-30-2020/", title: "CX-30 front rattle diagnosis", description: "A noise belongs in a diagnosis quote until the actual cause is confirmed.", eyebrow: "Diagnosis" },
+  { href: "/best/best-front-sway-bar-links-for-mazda-cx-30-2020/", title: "CX-30 front sway-bar link research", description: "One genuine part reference after a workshop has confirmed that specific fault.", eyebrow: "Parts research" }
+];
+---
+
+<ContentLayout title={title} description={description} intro="There is no honest single annual cost for every CX-30. Start with records and current condition, separate maintenance from diagnosis, and compare full quotes for confirmed work." image={image} modifiedTime={modifiedTime} breadcrumbs={breadcrumbs} editorialSummary="A cost-planning method for the 2020 CX-30 that uses documented maintenance and condition instead of unverified model-wide repair totals." editorialByline={`By ${editorialTeam.name}`} editorialReviewedLabel="Reviewed September 1, 2026" editorialBadges={["Ownership planning", "No generic averages", "Source-backed"]}>
+  <EvidenceLimitsBlock {...quality.evidence} />
+  <DecisionPathBlock title="Price confirmed work" intro="A repair estimate becomes useful only after the vehicle, symptom, and scope are known." steps={quality.decisionPath} />
+
+  <Section title="Build a baseline first" intro="The first-year budget should start with work that can be verified today.">
+    <ol class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>1. Gather the record.</strong> Service invoices, VIN recall result, tire age and wear, brake condition, battery test result, warning-light history, and any earlier diagnosis.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>2. Separate categories.</strong> List scheduled maintenance, safety work, wear items, and unresolved diagnostic work independently. A front noise should not be converted into a parts price before the cause is found.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>3. Ask for itemized quotes.</strong> Each quote should state labour, parts, fluids or consumables, tax, alignment or calibration where relevant, warranty, and the exact service or repair being proposed.</li>
+    </ol>
+  </Section>
+
+  <Section title="Budget buckets that need evidence" intro="Use condition and records to decide whether each bucket belongs in the immediate budget, a future plan, or neither.">
+    <div class="grid gap-4 md:grid-cols-2">
+      <article class="rounded-2xl border border-slate-200 bg-white p-5"><p class="eyebrow">Scheduled maintenance</p><p class="mt-3 text-sm leading-6 text-steel">Compare invoices with Mazda's schedule, vehicle status monitor, date, mileage, and use conditions. Do not repeat already completed work because a generic checklist says it is usual.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-5"><p class="eyebrow">Tires and brakes</p><p class="mt-3 text-sm leading-6 text-steel">Record tread, date codes, uneven wear, brake-pad and rotor condition, and the scope of any brake symptom. These observations often matter more to the immediate budget than a broad reliability label.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-5"><p class="eyebrow">Diagnosis reserve</p><p class="mt-3 text-sm leading-6 text-steel">Keep a separate allowance for a confirmed inspection when a noise, warning, leak, vibration, or electrical symptom is unresolved. This is not the same as authorising a repair.</p></article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-5"><p class="eyebrow">Recall completion</p><p class="mt-3 text-sm leading-6 text-steel">Verify open campaigns by VIN. A recall report describes a population and campaign; it does not establish the condition or cost of one specific CX-30.</p></article>
+    </div>
+  </Section>
+
+  <Section title="Avoid misleading cost comparisons" intro="A lower headline number is not a better ownership decision when the scope changes.">
+    <p>Compare quotes only when they address the same confirmed work. For a suspension complaint, confirm whether the price covers diagnosis, one or both sides, fasteners, alignment, and a follow-up verification. For scheduled maintenance, match the oil specification, filters, fluid work, and the service interval. Retailer part prices do not include labour, taxes, shipping, diagnosis, or every item needed to complete a repair.</p>
+  </Section>
+
+  <Section title="Ask the same questions of every quote" intro="A written estimate can be compared without guessing when it identifies the work and the reason for it.">
+    <ol class="space-y-3 text-sm leading-6 text-steel">
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>Diagnosis:</strong> What observation, test, or inspection supports the proposed repair? Ask whether the original symptom was reproduced and whether another component still needs checking.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>Parts:</strong> Which brand and part number will be fitted, how many are required, and are related fasteners or fluids included? Keep this separate from a catalogue price or a vague “parts” line.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>Labour and follow-up:</strong> Does the quote include alignment, calibration, road-test verification, disposal fees, tax, and the workshop warranty? A lower quote may simply leave these items out.</li>
+      <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>Timing:</strong> Is the work required before regular use, advisable at the next service, or dependent on a later inspection? Put the answer next to the evidence rather than treating every recommendation as immediate.</li>
+    </ol>
+  </Section>
+
+  <Section title="Keep a decision record" intro="A simple record prevents an assumed cost from becoming a permanent part of the vehicle budget.">
+    <p>For each item, note the date, mileage, evidence seen, quote date, workshop, and the decision made. Mark an unresolved symptom as “diagnosis pending” rather than copying a proposed part into the maintenance total. When a repair is completed, retain the invoice and record whether the original symptom stopped. That distinction helps the next owner or workshop understand what is known, what was checked, and what still needs attention.</p>
+    <p class="mt-4">The <a class="font-semibold text-accent hover:text-ink" href="/checklists/maintenance-record/">printable maintenance record</a> provides a neutral place to keep that information alongside scheduled-service invoices and condition checks.</p>
+  </Section>
+
+  <RelatedLinks title="CX-30 cost-planning resources" intro="Use the service record and diagnosis before opening a parts page or accepting a repair estimate." items={related} />
+</ContentLayout>

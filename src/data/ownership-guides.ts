@@ -13,6 +13,46 @@ export interface OwnershipGuide {
 
 export const ownershipGuides: OwnershipGuide[] = [
   {
+    title: "2020 Mazda CX-30: what to check before buying",
+    href: "/guides/mazda-cx-30-2020-what-to-check-before-buying/",
+    description:
+      "A VIN-led used-buyer inspection for a 2020 CX-30, covering records, recalls, tires, brakes, and a front-rattle check that does not assume the repair.",
+    eyebrow: "Used buyer guide",
+    image: "/images/photos/cars/mazda-cx-30-2020.webp",
+    relatedCars: ["mazda-cx-30-2020"],
+    relatedGenerations: ["mazda-cx-30-dm-2020-model-year-covered"]
+  },
+  {
+    title: "2020 Mazda CX-30 service schedule and maintenance record",
+    href: "/guides/mazda-cx-30-2020-service-schedule-and-maintenance-record/",
+    description:
+      "A record-based guide to Mazda's published schedule, the vehicle status monitor, severe-use conditions, and the service evidence a buyer or workshop needs.",
+    eyebrow: "Service guide",
+    image: "/images/photos/cars/mazda-cx-30-2020.webp",
+    relatedCars: ["mazda-cx-30-2020"],
+    relatedGenerations: ["mazda-cx-30-dm-2020-model-year-covered"]
+  },
+  {
+    title: "2020 Mazda CX-30 maintenance-cost framework",
+    href: "/guides/mazda-cx-30-2020-maintenance-cost-framework/",
+    description:
+      "A practical method for planning CX-30 ownership costs from service records, inspection evidence, and itemized quotes instead of generic annual averages.",
+    eyebrow: "Ownership planning",
+    image: "/images/photos/cars/mazda-cx-30-2020.webp",
+    relatedCars: ["mazda-cx-30-2020"],
+    relatedGenerations: ["mazda-cx-30-dm-2020-model-year-covered"]
+  },
+  {
+    title: "2020 Mazda CX-30: what to avoid",
+    href: "/guides/mazda-cx-30-2020-what-to-avoid/",
+    description:
+      "The records, safety symptoms, and unsupported suspension diagnoses that should change a CX-30 buying decision before the price is agreed.",
+    eyebrow: "Avoid guide",
+    image: "/images/photos/cars/mazda-cx-30-2020.webp",
+    relatedCars: ["mazda-cx-30-2020"],
+    relatedGenerations: ["mazda-cx-30-dm-2020-model-year-covered"]
+  },
+  {
     title: "Toyota Highlander XU70: what to check before buying",
     href: "/guides/toyota-highlander-xu70-what-to-check-before-buying/",
     description:

@@ -66,7 +66,7 @@ const schemas = [
       <p class="eyebrow">Inspection record</p>
       <h1 class="mt-3 text-4xl font-semibold tracking-tight text-ink sm:text-5xl">Used-car viewing worksheet</h1>
       <p class="mt-5 text-lg leading-8 text-steel">Use one sheet from the listing review through the test drive. Write down what was checked, what needs proof, and what changes the price.</p>
-      <button class="mt-6 inline-flex items-center border border-ink bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:border-accent hover:bg-accent print:hidden" type="button" onclick="window.print()">Print worksheet</button>
+      <button class="mt-6 inline-flex items-center border border-ink bg-ink px-5 py-3 text-sm font-semibold text-white transition hover:border-accent hover:bg-accent print:hidden" type="button" onclick="window.kaTrackEvent?.('tool_print', { event_label: 'used-car viewing worksheet', section: 'used_car_viewing' }); window.print()">Print worksheet</button>
     </div>
 
     <div class="worksheet mt-10 space-y-6">
