@@ -16,6 +16,12 @@ Google AdSense remains disabled. Before enabling it, configure a Google-certifie
 4. Use the linked Search Console report to compare query, landing page, engagement, and search-result selection data before expanding coverage.
 5. Review `tool_open` and `tool_print` by page section. A useful tool should lead to repeat openings or printing; a low-use tool needs a clearer entry point or a narrower purpose.
 
+## Latest content decision
+
+On September 3, 2026, the Search Console three-month report showed 133 clicks from 17.6k impressions, a 0.8% average CTR, and an average position of 11.8. Queries for `toyota rav4 2020 problems` and `2020 toyota rav4 problems` showed demand for the existing RAV4 ownership topic, while product-led queries also generated impressions.
+
+The resulting work is a source-backed upgrade to the 2020 RAV4 problem guide and a deliberate decision to keep commercial pages `noindex`. Google Analytics showed 140 active users and 170 sessions in its previous 30-day overview, but the page-level sample is still too small to justify broader topic expansion. Re-check query and landing-page data before selecting the next public guide.
+
 ## Search Console actions
 
 1. In URL Inspection, request indexing only for materially upgraded, indexable core pages. Do not request indexing for `noindex` product, archive, browse, brand, model, category, or generic symptom pages.

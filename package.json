@@ -16,6 +16,7 @@
     "autopilot:add-next-car:dry": "node scripts/autopilot/add-next-car.mjs --dry-run",
     "autopilot:daily-maintenance": "node scripts/autopilot/daily-maintenance.mjs",
     "autopilot:daily-maintenance:dry": "node scripts/autopilot/daily-maintenance.mjs --dry-run",
+    "audit:commercial": "node scripts/audit-commercial-pages.mjs",
     "repo:health": "node scripts/check-repo-health.mjs"
   },
   "dependencies": {

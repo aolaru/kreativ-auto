@@ -11,6 +11,16 @@ export interface ImageCredit {
 
 export const imageCredits: ImageCredit[] = [
   {
+    title: "2020 Toyota Tacoma TRD Pro",
+    localPath: "/images/photos/cars/toyota-tacoma-2020.webp",
+    sourceName: "Wikimedia Commons",
+    sourceUrl: "https://commons.wikimedia.org/wiki/File:2020_Toyota_Tacoma_TRD_Pro_front_NYIAS_2019.jpg",
+    author: "Kevauto",
+    license: "CC BY-SA 4.0",
+    licenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    modifications: "Resized to 1920px WebP and a 640px thumbnail. The image depicts a TRD Pro and is visual model context only; it does not establish fitment or a fault condition. Both derivatives remain CC BY-SA 4.0."
+  },
+  {
     title: "2020 Mazda CX-30 AWD",
     localPath: "/images/photos/cars/mazda-cx-30-2020.webp",
     sourceName: "Wikimedia Commons",

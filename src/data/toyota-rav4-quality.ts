@@ -25,6 +25,10 @@ export interface QualityEnhancement {
 
 const rav4SourceLinks: SourceLink[] = [
   {
+    label: "Toyota 2020 RAV4 warranty and maintenance guide",
+    href: "https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-20RAV4/pdf/T-MMS-20RAV4.pdf"
+  },
+  {
     label: "Toyota 2021 RAV4 warranty and maintenance guide",
     href: "https://assets.sia.toyota.com/publications/en/omms-s/T-MMS-21RAV4/pdf/T-MMS-21RAV4.pdf"
   },
@@ -40,7 +44,7 @@ const rav4SourceLinks: SourceLink[] = [
 
 const commonRav4Evidence = {
   basedOn: [
-    "Toyota's 2021 RAV4 manuals and maintenance material for service requirements, warning information, and model-specific operating context.",
+    "Toyota's 2020 and 2021 RAV4 manuals and maintenance material for service requirements, warning information, and model-specific operating context.",
     "NHTSA's 2020 and 2021 RAV4 recall records for recall status and campaign context only.",
     "Editorial diagnosis guidance that separates normal wear patterns from vehicle-specific inspection and repair decisions."
   ],

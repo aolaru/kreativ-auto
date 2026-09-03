@@ -94,6 +94,7 @@ const fitmentCaveat =
   entry.data.fitment.phaseDifferences[0] ??
   entry.data.fitment.powertrainDifferences[0];
 const topProduct = entry.data.products[0];
+const hasProductShortlist = entry.data.products.length > 0;
 const mainRelatedProblem = relatedProblems[0];
 const beforeBuyingChecks = [
   {
@@ -142,31 +143,33 @@ const schemas = [
       item: item.href ? new URL(item.href, Astro.site).toString() : Astro.url.href
     }))
   },
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: seoTitle,
-    itemListElement: entry.data.products.map((product, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      item: {
-        "@type": "Product",
-        name: product.name,
-        image: product.image ? new URL(product.image, Astro.site).toString() : undefined,
-        offers: {
-          "@type": "Offer",
-          url: withAffiliateTag(product.affiliate_url),
-          ...(priceIsVerified
-            ? {
-                priceCurrency: "USD",
-                price: product.price.replace(/[^0-9.]/g, "")
-              }
-            : {})
-        }
-      }
-    })),
-    dateModified: entry.data.updatedAt?.toISOString()
-  },
+  ...(hasProductShortlist
+    ? [{
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        name: seoTitle,
+        itemListElement: entry.data.products.map((product, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "Product",
+            name: product.name,
+            image: product.image ? new URL(product.image, Astro.site).toString() : undefined,
+            offers: {
+              "@type": "Offer",
+              url: withAffiliateTag(product.affiliate_url),
+              ...(priceIsVerified
+                ? {
+                    priceCurrency: "USD",
+                    price: product.price.replace(/[^0-9.]/g, "")
+                  }
+                : {})
+            }
+          }
+        })),
+        dateModified: entry.data.updatedAt?.toISOString()
+      }]
+    : []),
   {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -263,16 +266,22 @@ const schemas = [
     }
   </Section>
 
-  <Section id="decision-block" title={`${entry.data.category} shortlist`} intro={`Start with the ${vehicleLabel} use case and the ${categoryTerm} problem you are trying to solve.`}>
-    <BestDecisionBlock
-      quickVerdict={quickVerdict}
-      bestFor={bestFor}
-      avoidIf={avoidIf}
-      buyingTiers={buyingTiers}
-      products={entry.data.products}
-      fitmentCaveat={fitmentCaveat}
-      showPrice={priceIsVerified}
-    />
+  <Section id="decision-block" title={hasProductShortlist ? `${entry.data.category} shortlist` : "Shortlist status"} intro={hasProductShortlist ? `Start with the ${vehicleLabel} use case and the ${categoryTerm} problem you are trying to solve.` : "No product shortlist is published until the exact vehicle and fitment evidence support one."}>
+    {
+      hasProductShortlist ? (
+        <BestDecisionBlock
+          quickVerdict={quickVerdict}
+          bestFor={bestFor}
+          avoidIf={avoidIf}
+          buyingTiers={buyingTiers}
+          products={entry.data.products}
+          fitmentCaveat={fitmentCaveat}
+          showPrice={priceIsVerified}
+        />
+      ) : (
+        <p class="max-w-3xl text-base leading-7 text-steel">This draft provides fitment and diagnostic checks only. It does not recommend a tire, publish a price, or imply that a product can resolve an unconfirmed vibration.</p>
+      )
+    }
   </Section>
 
   <Section id="before-you-buy" title="Before you buy" intro={`Confirm the symptom, the trim, and the part family before ordering ${categoryTerm} for ${vehicleLabel}.`}>
@@ -290,15 +299,21 @@ const schemas = [
 
   {vehicleQuality && <DecisionPathBlock title="Check before purchase" intro="Confirm the symptom and exact configuration before ordering a part." steps={vehicleQuality.decisionPath} />}
 
-  <Section id="comparison-table" title={`${entry.data.category} comparison`} intro={`Compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
-    <ComparisonTable products={entry.data.products} showPrice={priceIsVerified} />
-  </Section>
+  {
+    hasProductShortlist && (
+      <>
+        <Section id="comparison-table" title={`${entry.data.category} comparison`} intro={`Compare the main ${categoryTerm} tradeoffs before reading each product note.`}>
+          <ComparisonTable products={entry.data.products} showPrice={priceIsVerified} />
+        </Section>
 
-  <Section id="product-cards" title="Shortlist details" intro={`Each option below is framed around where it makes sense on ${vehicleLabel}.`}>
-    <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {entry.data.products.map((product) => <ProductCard product={product} showPrice={priceIsVerified} />)}
-    </div>
-  </Section>
+        <Section id="product-cards" title="Shortlist details" intro={`Each option below is framed around where it makes sense on ${vehicleLabel}.`}>
+          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {entry.data.products.map((product) => <ProductCard product={product} showPrice={priceIsVerified} />)}
+          </div>
+        </Section>
+      </>
+    )
+  }
 
   <Section id="buying-advice" title={`${entry.data.category} buying notes`} intro={`The right ${categoryTerm} depends on how ${vehicleLabel} is driven, how much refinement matters, and how much compromise is acceptable.`}>
     <ul class="space-y-3 text-sm leading-6 text-steel">

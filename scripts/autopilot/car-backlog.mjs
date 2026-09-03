@@ -1,4 +1,5 @@
 import { mazdaCx30Seed } from "./mazda-cx30-2020.mjs";
+import { toyotaTacomaSeed } from "./toyota-tacoma-2020.mjs";
 
 const curatedCarBacklog = [
   {
@@ -1853,33 +1854,7 @@ const queuedCarSeeds = [
     }
   },
   mazdaCx30Seed,
-  {
-    slug: "toyota-tacoma-2020",
-    brand: "Toyota",
-    modelDisplay: "Toyota Tacoma",
-    year: 2020,
-    generation: "Third Generation",
-    generationCode: "N300",
-    generationYears: "2016-2023",
-    image: "/images/cars/toyota-tacoma-2020.svg",
-    kind: "tires",
-    carDescription:
-      "The 2020 Toyota Tacoma is usually straightforward to own, but highway vibration, tire wear, and front-end harshness are the complaints owners most often end up trying to decode first.",
-    commonProblems: [
-      "Highway steering vibration from tire or wheel-end issues",
-      "Tire noise and wear that make the truck feel rougher than expected",
-      "Brake or front-end refinement complaints once the truck has spent time on rougher roads"
-    ],
-    maintenanceTips: [
-      "Take highway shake seriously early because trucks can hide tire problems longer than smaller vehicles.",
-      "Rotate and inspect tires consistently to keep road noise and wear pattern under control.",
-      "Do not assume every highway vibration means a bigger steering problem."
-    ],
-    carFaqs: [
-      { question: "What causes highway shake in a Tacoma most often?", answer: "Tire condition and balance are still the first things worth checking." },
-      { question: "Is the Tacoma an expensive truck to keep refined?", answer: "Not usually, but tire and wheel-end maintenance matter more than many owners expect." }
-    ]
-  },
+  toyotaTacomaSeed,
   {
     slug: "honda-odyssey-2020",
     brand: "Honda",
