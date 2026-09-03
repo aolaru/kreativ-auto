@@ -2,10 +2,9 @@
 import ContentLayout from "../../layouts/ContentLayout.astro";
 import RelatedLinks from "../../components/RelatedLinks.astro";
 import Section from "../../components/Section.astro";
-import TrustBlock from "../../components/TrustBlock.astro";
 import DecisionPathBlock from "../../components/DecisionPathBlock.astro";
 import EvidenceLimitsBlock from "../../components/EvidenceLimitsBlock.astro";
-import { editorialTeam, carTrustPoints } from "../../data/editorial";
+import { editorialTeam } from "../../data/editorial";
 import { rav4GuideQuality } from "../../data/toyota-rav4-quality";
 
 const title = "2020 Toyota RAV4 common problems: what to check first";
@@ -151,49 +150,39 @@ const relatedComparisons = [
   breadcrumbs={breadcrumbs}
   faqs={faqs}
   schemas={schemas}
-  editorialSummary="A flagship ownership page for the XA50 RAV4, pulling the repeat complaints and best next reads into one place."
   editorialByline={`By ${editorialTeam.name}`}
   editorialReviewedLabel={`Reviewed ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-  editorialBadges={["Ownership guide", "Generation-specific", "Related checks reviewed"]}
 >
-  <TrustBlock
-    title="Best starting point"
-    summary="Start here when the XA50 RAV4 still looks like a sensible crossover overall, but small repeat complaints are starting to shape the ownership experience."
-    byline={`By ${editorialTeam.name}`}
-    checkedLabel={`Checked ${modifiedTime.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}`}
-    points={carTrustPoints}
-  />
-
   <EvidenceLimitsBlock {...quality.evidence} />
-  <DecisionPathBlock title="RAV4 diagnosis path" intro="Best before turning a normal XA50 complaint into a bigger repair theory." steps={quality.decisionPath} />
+  <DecisionPathBlock title="RAV4 diagnosis path" intro="Use the observed condition to choose the next check before choosing a part." steps={quality.decisionPath} />
 
   <section class="surface surface-dark hero-frame p-6 sm:p-8">
     <div class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
       <div>
         <p class="editorial-kicker">At a glance</p>
-        <h2 class="mt-4 text-3xl font-semibold text-ink">The short version</h2>
+        <h2 class="mt-4 text-3xl font-semibold text-ink">What to record before deciding</h2>
         <p class="mt-3 max-w-3xl text-base leading-7 text-steel">
-          If you only need the fast read, this is the XA50 RAV4 ownership pattern in plain language.
+          Start with observations from the individual vehicle, then use the matching inspection path below.
         </p>
         <ul class="mt-6 grid gap-3 text-sm leading-6 text-steel">
-          <li class="stat-tile">The XA50 RAV4 is broadly solid, but it does have repeat weak spots around battery reserve, brake refinement, small suspension noises, and highway vibration diagnosis.</li>
-          <li class="stat-tile">The expensive mistakes usually come from turning mild noises into major suspension theories or treating battery complaints like random electronics problems.</li>
-          <li class="stat-tile">If you keep the diagnosis disciplined, most XA50 complaints stay in the ordinary-parts-and-normal-wear category.</li>
+          <li class="stat-tile">For a weak start, record battery age, recent use, charging result, and whether the symptom follows sitting or short journeys.</li>
+          <li class="stat-tile">For a noise, record location, speed, road surface, steering input, braking input, weather, and whether it repeats.</li>
+          <li class="stat-tile">For a vibration, record tire size, age, pressure, wear pattern, wheel damage, balance history, and alignment history.</li>
         </ul>
       </div>
       <div class="accent-panel p-6">
-        <p class="eyebrow">Ownership pattern</p>
+        <p class="eyebrow">Check sequence</p>
         <div class="mt-4 grid gap-4">
-          <a class="snapshot-card p-4" href="#trouble-areas" data-ka-event="guide_stat_click" data-ka-section="ownership_pattern" data-ka-label="Repeat trouble areas">
+          <a class="snapshot-card p-4" href="#trouble-areas" data-ka-event="guide_stat_click" data-ka-section="rav4_inspection" data-ka-label="Inspection paths">
             <p class="text-2xl font-semibold text-ink">5</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Repeat trouble areas</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Inspection paths</p>
           </a>
-          <a class="snapshot-card p-4" href="/comparisons/toyota-rav4-hybrid-vs-gas/" data-ka-event="guide_stat_click" data-ka-section="ownership_pattern" data-ka-label="Useful comparison guide">
+          <a class="snapshot-card p-4" href="/comparisons/toyota-rav4-hybrid-vs-gas/" data-ka-event="guide_stat_click" data-ka-section="rav4_inspection" data-ka-label="Hybrid and gas context">
             <p class="text-2xl font-semibold text-ink">1</p>
-            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Useful comparison guide</p>
+            <p class="mt-1 text-xs uppercase tracking-[0.2em] text-steel">Hybrid and gas context</p>
           </a>
           <div class="soft-panel p-4">
-            <p class="text-sm leading-6 text-steel">Most wasted money here comes from overdiagnosing small suspension noise, guessing at battery problems, and skipping tire-first highway vibration checks.</p>
+            <p class="text-sm leading-6 text-steel">Keep the maintenance record, VIN recall result, road-test notes, and inspection findings together before requesting an estimate.</p>
           </div>
         </div>
       </div>
@@ -205,27 +194,27 @@ const relatedComparisons = [
       <article class="mesh-card p-6">
         <p class="eyebrow">1. Battery reserve</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Weak starts and short-trip battery complaints</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">A lot of XA50 annoyance starts with reserve capacity, not dramatic alternator failure. Short trips and long sits make the car feel more electrical than it really is.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">Record use pattern, battery age, test result, and charging result before drawing a conclusion about the charging system.</p>
       </article>
       <article class="mesh-card p-6">
         <p class="eyebrow">2. Brake refinement</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Rear brake squeak and weather-sensitive brake noise</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The complaint is often more about refinement than stopping power. Moisture, rear pad behavior, and light-use noise can make the brake system feel worse than it is.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">Separate noise from a change in braking performance, and have pad material, rotor surface, hardware, and warning lights inspected.</p>
       </article>
       <article class="mesh-card p-6">
         <p class="eyebrow">3. Front-end refinement</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Front clunks that sound bigger than the repair</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The XA50 can sound loose over driveway entries or slow compression when the real repair is still down in the sway-bar-link and small wear-item tier.</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Front clunks over driveways or bumps</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Record the surface, steering angle, speed, and location of the sound; inspect visible links, bushings, tire condition, and play before quoting work.</p>
       </article>
       <article class="mesh-card p-6">
         <p class="eyebrow">4. Rear-end noises</p>
-        <h2 class="mt-3 text-2xl font-semibold text-ink">Rear suspension clunks that age the car early</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Rear noises change the feel of the vehicle quickly, but they still need a smaller-parts-first diagnosis before the repair estimate grows legs.</p>
+        <h2 class="mt-3 text-2xl font-semibold text-ink">Rear suspension noise over bumps</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Inspect the exact source and visible components before assigning the noise to a larger suspension repair.</p>
       </article>
       <article class="accent-panel p-6 lg:col-span-2">
         <p class="eyebrow">5. Highway refinement</p>
         <h2 class="mt-3 text-2xl font-semibold text-ink">Tire and wheel issues that get blamed on the wrong parts</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">Highway vibration on the XA50 often turns into a wheel-bearing or chassis story too quickly when the tire, balance, and wheel condition still need to be ruled out first.</p>
+        <p class="mt-3 text-sm leading-6 text-steel">Record tire condition, balance history, wheel damage, pressure, and the speed range before a wheel-bearing or suspension diagnosis is considered.</p>
       </article>
     </div>
   </Section>
@@ -237,39 +226,39 @@ const relatedComparisons = [
       <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>Tires and brakes:</strong> note the four tire sizes, date codes, tread pattern, pressure, visible damage, brake condition, and any invoice for pads, rotors, or alignment. A mismatched set or uneven wear changes both the budget and the accuracy of a vibration diagnosis.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3"><strong>Road-test evidence:</strong> record the speed, surface, steering input, braking input, and cabin location of a rattle, hum, pull, or vibration. A qualified workshop can work from those details; an unsupported parts guess cannot.</li>
     </ol>
-    <p class="mt-4">Keep the notes in the <a class="font-semibold text-accent hover:underline" href="/checklists/used-car-viewing/">used-car viewing worksheet</a> before negotiating or requesting an inspection quote.</p>
+    <p class="mt-4">Keep the notes in the <a class="font-semibold text-accent hover:underline" href="/checklists/used-car-viewing/" data-ka-event="ownership_task_click" data-ka-section="rav4_inspection_record" data-ka-label="used-car viewing worksheet">used-car viewing worksheet</a> before negotiating or requesting an inspection quote.</p>
   </Section>
 
-  <Section title="The three areas that make the biggest visual impression" intro="These are the repair buckets that most clearly change how the XA50 feels in normal use.">
+  <Section title="Follow-up checks by symptom" intro="Open a narrower guide only after the symptom and basic inspection record point to that area.">
     <div class="grid gap-6 lg:grid-cols-3">
       <a class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300" href="/best/best-batteries-for-toyota-rav4-2021/">
         <img src="/images/photos/parts/car-battery.webp" alt="Battery for Toyota RAV4" class="h-52 w-full object-cover" loading="lazy" width="960" height="640" />
         <div class="p-5">
           <p class="eyebrow">Battery reserve</p>
-          <h2 class="mt-3 text-2xl font-semibold text-ink">Short-trip use changes the whole mood of the car</h2>
-          <p class="mt-3 text-sm leading-6 text-steel">A tired battery makes the RAV4 feel electronically grumpy long before it creates a simple, obvious no-start.</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Weak starts after short trips or sitting</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Use it after a battery and charging check identifies a replacement decision rather than an unresolved electrical symptom.</p>
         </div>
       </a>
       <a class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300" href="/problems/rear-brakes-squeak-after-rain/">
         <img src="/images/photos/parts/akebono-proact.webp" alt="Brake pads for Toyota RAV4" class="h-52 w-full object-cover" loading="lazy" width="960" height="640" />
         <div class="p-5">
           <p class="eyebrow">Brake refinement</p>
-          <h2 class="mt-3 text-2xl font-semibold text-ink">Rear brake noise is more common than people expect</h2>
-          <p class="mt-3 text-sm leading-6 text-steel">The brake story is often about squeak and light-use refinement, not a full braking-system failure.</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Low-speed or wet-weather brake noise</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Use it after the inspection separates noise from any change in braking performance, warning light, or pedal response.</p>
         </div>
       </a>
       <a class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:-translate-y-0.5 hover:border-sand-300" href="/problems/front-end-clunk-when-pulling-into-driveways/">
         <img src="/images/photos/parts/moog-sway-bar-links.webp" alt="Sway bar links for Toyota RAV4" class="h-52 w-full object-cover" loading="lazy" width="960" height="640" />
         <div class="p-5">
           <p class="eyebrow">Suspension noise</p>
-          <h2 class="mt-3 text-2xl font-semibold text-ink">Small front-end wear changes the feel fast</h2>
-          <p class="mt-3 text-sm leading-6 text-steel">The good news is that the usual first suspects are still the normal wear items, not instant big-dollar suspension work.</p>
+          <h2 class="mt-3 text-2xl font-semibold text-ink">Front-end noise over driveways or bumps</h2>
+          <p class="mt-3 text-sm leading-6 text-steel">Use it after the road-test notes and a visual inspection point to a specific front-end repair area.</p>
         </div>
       </a>
     </div>
   </Section>
 
-  <Section title="What to check first before spending money" intro="The easiest way to waste money on an XA50 RAV4 is to skip the repeat offenders and jump straight to the broad theory.">
+  <Section title="Checks before requesting a quote" intro="A concise condition record helps a workshop price the correct inspection instead of a generic parts list.">
     <ul class="space-y-3 text-sm leading-6 text-steel">
       <li class="rounded-2xl bg-slate-50 px-4 py-3">If the battery goes flat after sitting, test reserve and usage pattern together before assuming a larger charging-system problem.</li>
       <li class="rounded-2xl bg-slate-50 px-4 py-3">If the brakes squeak after rain, separate refinement noise from actual braking weakness before replacing the wrong axle or mixing pad types loosely.</li>
@@ -279,23 +268,23 @@ const relatedComparisons = [
     </ul>
   </Section>
 
-  <Section title="Where owners usually overreact" intro="These are the spots where the RAV4 reputation gets distorted because the diagnosis starts too high on the parts tree.">
+  <Section title="Keep each diagnostic path separate" intro="A symptom may have several causes; these boundaries prevent unrelated checks from being combined into one explanation.">
     <div class="grid gap-6 lg:grid-cols-2">
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <h2 class="text-2xl font-semibold text-ink">Battery complaints get treated like random electronics</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">A weak-use pattern looks mysterious on a modern crossover, but the first useful move is often still basic battery reserve and usage diagnosis.</p>
+        <h2 class="text-2xl font-semibold text-ink">Weak starts need battery and charging evidence</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Record recent use, battery age, reserve test, and charging result before a broader electrical diagnosis is assumed.</p>
       </article>
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <h2 class="text-2xl font-semibold text-ink">Brake squeak gets turned into a full brake-system drama</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">A lot of XA50 brake complaints are about refinement and pad behavior, not a bigger safety-system failure story.</p>
+        <h2 class="text-2xl font-semibold text-ink">Brake noise and braking performance are different checks</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Inspect pad material, hardware, and rotor condition for a noise, and seek prompt assessment for a pedal, stopping, or warning-light concern.</p>
       </article>
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <h2 class="text-2xl font-semibold text-ink">Small suspension noises get blamed on major suspension work</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">The platform can sound more expensive than it is, especially when the first look should still be on links and ordinary wear points.</p>
+        <h2 class="text-2xl font-semibold text-ink">A clunk needs a repeatable road-test record</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Document the speed, surface, steering input, and location of the sound before any suspension component is named.</p>
       </article>
       <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
-        <h2 class="text-2xl font-semibold text-ink">Highway vibration diagnosis jumps past the tires too fast</h2>
-        <p class="mt-3 text-sm leading-6 text-steel">People want a mechanical explanation quickly, but tires and balance still deserve to lose before the repair gets ambitious.</p>
+        <h2 class="text-2xl font-semibold text-ink">A highway vibration needs tire and wheel records first</h2>
+        <p class="mt-3 text-sm leading-6 text-steel">Confirm the installed set, pressure, wear, wheel condition, balance history, and alignment history before the diagnosis moves further.</p>
       </article>
     </div>
   </Section>

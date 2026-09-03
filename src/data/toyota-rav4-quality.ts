@@ -125,7 +125,7 @@ export const rav4GuideQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "Separate the repeat XA50 ownership pattern from generic Toyota confidence. It uses official Toyota documents, recall checks, and buyer-visible symptoms as guardrails."
+        "Use Toyota maintenance material, VIN recall checks, and observations from the individual vehicle before a battery, brake, suspension, tire, or vibration repair is discussed."
     },
     decisionPath: ownershipDecisionPath
   },
@@ -216,7 +216,7 @@ export const rav4ProblemQuality: Record<string, QualityEnhancement> = {
     evidence: {
       ...commonRav4Evidence,
       summary:
-        "This RAV4 brake page is framed around weather-sensitive rear brake refinement. It does not treat every squeak as a safety failure or every pad change as a guaranteed fix."
+        "Weather-sensitive rear brake noise needs its own inspection path. A squeak does not establish a safety failure, and a pad change does not guarantee a cure."
     },
     decisionPath: [
       {

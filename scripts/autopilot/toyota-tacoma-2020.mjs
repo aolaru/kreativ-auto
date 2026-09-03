@@ -243,6 +243,14 @@ export const toyotaTacomaSeed = {
         `The ${link(sources.fitment)} shows why a vehicle-specific result needs cab, drivetrain, and tire-size inputs. It is limited to one 2WD Double Cab configuration and is not a substitute for the truck's placard or a live supplier check.`,
         "## Use case before marketing",
         `A highway-focused tire, an all-terrain tire, and an off-road-oriented tire make different noise, wear, wet-weather, snow, load, and comfort tradeoffs. ${link(sources.allTerrain)} describes its product category and warranty; it does not establish fitment or solve an undiagnosed vibration.`,
+        "## Record the current tire and wheel condition",
+        "Photograph all four tires and the spare, then record the placard specification, installed size, load and speed markings, date codes, cold pressures, remaining tread, uneven wear, repairs, and visible sidewall or wheel damage. Note whether the set is matched by size and construction. A mixed or damaged set can change ride, braking behavior, and the value of any later vibration diagnosis.",
+        "## Match the category to the use already documented",
+        "Write down the truck's usual highway speed, wet-weather and snow use, unpaved-road use, towing or payload demand, and the comfort or noise tradeoff the driver will accept. A tire category can be evaluated against those stated uses, but it cannot be selected from a model-year label alone. Keep the original specification unless a current catalog and a qualified installer confirm a permitted change.",
+        "## Keep installation evidence with the truck",
+        "For a replacement set, retain the dated quote or invoice, exact part number, tire size, load and speed rating, installation date, balance result, alignment result, warranty terms, and return policy. Re-test on the same road after any correction and record whether the original symptom changed. That gives the next technician a usable before-and-after record instead of an unsupported claim that tires did or did not fix the vibration.",
+        "## Use one documented decision sequence",
+        "First confirm the tire placard and the installed set. Next, inspect and correct a verified pressure, tread, wheel, balance, or alignment issue. Then repeat the same road test before considering a different tire category or a non-tire cause. Do not combine those steps, because a change in tire size and a new balance result at the same time makes the outcome difficult to interpret. When a shop recommends a different size or construction, ask what vehicle-specific catalog result and clearance, load, spare, and warranty checks support that recommendation.",
         "## Price disclosure",
         "No current price is published in this draft. Tire prices vary by exact size, load rating, retailer, installation, balancing, disposal, taxes, warranty, and local availability."
       ]

@@ -22,6 +22,20 @@ On September 3, 2026, the Search Console three-month report showed 133 clicks fr
 
 The resulting work is a source-backed upgrade to the 2020 RAV4 problem guide and a deliberate decision to keep commercial pages `noindex`. Google Analytics showed 140 active users and 170 sessions in its previous 30-day overview, but the page-level sample is still too small to justify broader topic expansion. Re-check query and landing-page data before selecting the next public guide.
 
+## RAV4 follow-up review
+
+Review the updated 2020 RAV4 guide seven and fourteen days after deployment. Do not make a content-expansion decision from one visitor or a single query.
+
+| Signal | Where to check | Decision it supports |
+| --- | --- | --- |
+| Search impressions, clicks, CTR, and position for RAV4 problem queries | Search Console Performance, filtered to the landing page | Improve the title, description, or claim-level content only when query intent and the page remain aligned. |
+| `ownership_task_click` for the used-car worksheet | GA4 Events, filtered to the RAV4 guide | Keep the inspection-record entry point prominent when visitors use it; otherwise test a clearer label or placement. |
+| `search_start`, `search_results_view`, `search_result_click`, and `search_no_results` | GA4 Events | Add or revise a guide only when repeated no-result searches identify a specific unresolved task. Search terms are intentionally not collected. |
+| `scroll_depth` at 50% and 90% | GA4 Events, filtered to the RAV4 guide | Shorten, regroup, or strengthen sections that visitors consistently leave before reaching. |
+| Engagement and query data for product-led pages | GA4 and Search Console | Keep a parts page `noindex` unless it has its own source-backed analysis and fitment record; impressions alone do not justify indexing. |
+
+Record the decision and the date in the Updates page only when a public guide changes. Keep raw visitor identifiers, search text, and private evidence out of the repository.
+
 ## Search Console actions
 
 1. In URL Inspection, request indexing only for materially upgraded, indexable core pages. Do not request indexing for `noindex` product, archive, browse, brand, model, category, or generic symptom pages.
