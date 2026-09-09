@@ -1,0 +1,33 @@
+name: Content correction
+description: Report an automotive claim, source, scope, or attribution that needs review.
+title: "[Content]: "
+labels:
+  - content
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page URL or repository path
+    validations:
+      required: true
+  - type: textarea
+    id: statement
+    attributes:
+      label: Statement to review
+      description: Quote only the smallest relevant passage.
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: Proposed correction and evidence
+      description: Link manufacturer, regulator, or other primary evidence when available.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed VINs, registration numbers, invoices, addresses, and other personal information.
+          required: true

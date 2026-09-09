@@ -2,6 +2,16 @@
   "name": "kreativ-auto",
   "version": "0.1.0",
   "private": true,
+  "description": "Open-source Astro site for used-car inspection records and evidence-backed ownership guides.",
+  "license": "MIT",
+  "homepage": "https://kreativauto.com/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aolaru/kreativ-auto.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aolaru/kreativ-auto/issues"
+  },
   "type": "module",
   "overrides": {
     "vite": "^7.1.12"

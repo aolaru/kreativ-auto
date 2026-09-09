@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible problem in the website or project tooling.
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What happened, and what did you expect instead?
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction
+      description: Provide the URL, command, or smallest set of steps that reproduces the problem.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include browser, operating system, Node.js version, or commit when relevant.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I did not include credentials, private analytics data, or personal vehicle records.
+          required: true
+        - label: This is not a private security report. Security issues must follow SECURITY.md.
+          required: true

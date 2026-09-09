@@ -1,93 +1,138 @@
 # Kreativ Auto
 
-Static Astro site for `kreativauto.com`, built for automotive SEO content, affiliate comparison pages, and future tools.
+Kreativ Auto is an open-source Astro website for practical used-car research,
+inspection records, maintenance planning, and model-specific ownership guides.
+The production site is available at [kreativauto.com](https://kreativauto.com/).
+
+The repository includes the complete site, its structured automotive content,
+quality checks, static search index, sitemap controls, and GitHub Pages deployment
+workflow. Some pages are intentionally kept out of search until their evidence and
+editorial review records meet the project's publishing standard.
+
+## Project status
+
+The existing website remains online and all current content is preserved. New
+coverage should be added deliberately: source quality and a distinct user task are
+more important than publishing volume.
+
+This project does not provide professional mechanical, safety, legal, or purchasing
+advice. Vehicle-specific decisions should be verified against the VIN, official
+manufacturer information, applicable regulator records, and a qualified technician.
+
+## Technology
+
+- Astro 6
+- Tailwind CSS 4
+- TypeScript
+- Static output hosted with GitHub Pages
+- Google Analytics and Cloudflare Web Analytics behind optional consent
 
 ## Local development
+
+Requirements:
+
+- Node.js 22 or later
+- npm 10 or later
 
 ```bash
 npm install
 npm run dev
 ```
 
-Production build:
+Build and validate the production output:
 
 ```bash
 npm run build
+npm run repo:health
+npm run audit:commercial
+```
+
+Preview the generated site:
+
+```bash
 npm run preview
 ```
 
+## Repository structure
+
+```text
+src/content/          Structured car, problem, and parts content
+src/pages/            Astro routes, guides, comparisons, and worksheets
+src/data/             Review readiness, evidence records, and relationships
+src/components/       Shared interface and editorial components
+scripts/              Build checks and local content-maintenance tools
+public/images/        Brand assets and editorial imagery
+docs/                 Analytics and operating documentation
+.github/workflows/    GitHub Pages deployment
+```
+
+## Editorial review gates
+
+`src/data/review-readiness.ts` controls which content is eligible for indexing.
+Draft and incomplete routes remain available for development but render with
+`noindex,follow`. The production sitemap and internal search include only eligible
+pages.
+
+The repository health check verifies, among other things, that:
+
+- `noindex` pages are excluded from the sitemap and internal search;
+- indexable pages meet minimum content and evidence requirements;
+- homepage links do not lead directly to restricted pages;
+- image references resolve to local optimized assets;
+- structured content satisfies the Astro content schemas.
+
+Automotive claims should cite manufacturer, regulator, or other primary material
+near the claim. Do not add unsupported reliability scores, product ratings,
+fitment claims, prices, or first-hand testing claims.
+
+## Local content tools
+
+The repository retains local tools for reviewing existing content and preparing a
+new-car draft. They never publish, commit, or push automatically.
+
+```bash
+npm run autopilot:daily-maintenance:dry
+npm run autopilot:add-next-car:dry
+```
+
+Remove `:dry` only after reviewing the proposed local change. Generated pages stay
+out of search until their sources, vehicle scope, decision path, imagery, and
+commercial metadata have been reviewed.
+
 ## Deployment
 
-This site should be deployed with GitHub Pages using the workflow in `.github/workflows/deploy.yml`.
+The workflow in `.github/workflows/deploy.yml` builds and deploys `main` to GitHub
+Pages. Configure GitHub Pages to use **GitHub Actions** as its source.
 
-Important:
-
-- In `Settings -> Pages`, set `Source` to `GitHub Actions`
-- Do not use the default branch-based Jekyll build for this repo
-
-### Environment variables
-
-Optional public environment variables:
+Optional public repository variables:
 
 - `PUBLIC_GA_MEASUREMENT_ID`
 - `PUBLIC_GOOGLE_SITE_VERIFICATION`
 
-You can copy values from `.env.example`.
+Use `.env.example` for local placeholders. Never commit account credentials,
+private analytics access, API secrets, or personal vehicle records.
 
-### Custom domain
+AdSense script loading remains disabled. A production deployment must not enable
+advertising until the applicable consent, privacy, and publisher requirements have
+been implemented and reviewed.
 
-Use `kreativauto.com` as the site's public domain.
+## Contributing
 
-## Local content queue
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Contributions
+must preserve source attribution, vehicle scope, review restrictions, and image
+provenance. Bug reports and focused improvements are welcome.
 
-The new-car backlog is kept in `scripts/autopilot/car-backlog.mjs` and is reviewed from the local project, not scheduled through GitHub Actions. The local weekly review reports the next candidate and any publishing blockers before a draft is generated.
+For security issues, follow [SECURITY.md](SECURITY.md) instead of opening a public
+issue.
 
-The generator creates:
+## Licensing
 
-- one new car page scaffold in `src/content/cars/`
-- one matching problem guide in `src/content/problems/`
-- one matching best-parts guide in `src/content/best/`
+- Software source code is licensed under the [MIT License](LICENSE).
+- Original editorial material is licensed under
+  [CC BY-SA 4.0](CONTENT_LICENSE.md).
+- Third-party photographs retain their original licenses. Other image and brand
+  assets are not covered by the code or content licenses. See
+  [ASSET_LICENSES.md](ASSET_LICENSES.md).
 
-Useful local commands:
-
-```bash
-npm run autopilot:add-next-car:dry
-npm run autopilot:add-next-car
-```
-
-The generator now refuses to create a draft until the next candidate has a real optimized vehicle image and thumbnail, claim-level sources, an evidence-and-scope record, two decision steps, and complete parts-research metadata. Generated pages stay `noindex` until editorial review is complete.
-
-## Local quality maintenance
-
-Local maintenance review is the place to identify potential content and technical fixes before they are edited. GitHub Actions is reserved for deployment.
-
-What it does:
-
-- applies up to four deterministic content-quality fixes to existing content
-- prefers:
-  - swapping `.jpg` or `.jpeg` image paths to matching `.webp` assets that already exist
-  - adding missing `excerpt` from `metaDescription`
-  - adding missing `heroImage` from `image`
-  - adding missing `updatedAt`
-  - adding missing `relatedProblems` and `relatedBest` links on car pages
-  - adding generic `buyingTiers` to older best-parts pages that still lack them
-  - filling missing best-page recommendation fields like `bestFor`, `avoidIf`, and `buyingAdvice`
-  - filling missing problem-page `relatedBest` links
-  - refreshing the current month in `Updates` with a bounded automation note when it is still missing
-- runs `npm run build` and `npm run repo:health` after an approved change
-
-Useful local commands:
-
-```bash
-npm run autopilot:daily-maintenance:dry
-npm run autopilot:daily-maintenance
-```
-
-The local recurring quality audit uses `npm run autopilot:daily-maintenance:dry`; it does not edit, commit, or push automatically.
-
-### Notes
-
-- The site is fully static.
-- Sitemap output is generated automatically during build.
-- `robots.txt` is generated by Astro.
-- See `docs/analytics-and-search-operations.md` for GA4, Search Console, and HTTPS redirect operating steps.
+The Kreativ Auto name, logo, favicon, and visual brand identity are not licensed for
+reuse.
